@@ -9,12 +9,30 @@
 #define HEADER_APPCONFIG_H_
 
 typedef struct {
-     //char *IP_KERNEL;
-     //char *PUERTO_KERNEL;
+     int PUERTO;
+     int MARCOS;
+     int MARCO_SIZE;
+     int ENTRADAS_CACHE;
+     int CACHE_X_PROC;
+     int RETARDO_MEMORIA;
+
+     //Agregado
+
+     int CANTIDAD_MAXIMA_CONCURRENCIA;
 } AppConfig;
 
 //Lo declaro como variable global
 AppConfig configuraciones;
+
+
+/****
+ * VARIABLES GLOBALES PROPIAS DEL SISTEMA MEMORIA
+ */
+
+char * MEMORIA_PRINCIPAL;
+
+
+
 
 void inicializar_configuracion(char *PATH_ARCHIVO_CONFIGURACION);
 

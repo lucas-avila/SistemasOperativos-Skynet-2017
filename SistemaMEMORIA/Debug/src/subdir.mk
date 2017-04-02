@@ -6,17 +6,20 @@
 C_SRCS += \
 ../src/InterfazCPU.c \
 ../src/InterfazKernel.c \
-../src/MEMORIA.c 
+../src/MEMORIA.c \
+../src/SolicitudesUsuario.c 
 
 OBJS += \
 ./src/InterfazCPU.o \
 ./src/InterfazKernel.o \
-./src/MEMORIA.o 
+./src/MEMORIA.o \
+./src/SolicitudesUsuario.o 
 
 C_DEPS += \
 ./src/InterfazCPU.d \
 ./src/InterfazKernel.d \
-./src/MEMORIA.d 
+./src/MEMORIA.d \
+./src/SolicitudesUsuario.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
