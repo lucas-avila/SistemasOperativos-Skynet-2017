@@ -28,8 +28,7 @@ int Abre_Socket_Inet(int puerto, int cantidad_maxima_concurrencia) {
 	int activado = 1;
 	setsockopt(servidor, SOL_SOCKET, SO_REUSEADDR, &activado, sizeof(activado));
 
-	if (bind(servidor, (void*) &direccionServidor, sizeof(direccionServidor))
-			!= 0) {
+	if (bind(servidor, (void*) &direccionServidor, sizeof(direccionServidor)) != 0) {
 		perror("Falló el bind");
 		return 1;
 	}
@@ -41,7 +40,7 @@ int Abre_Socket_Inet(int puerto, int cantidad_maxima_concurrencia) {
 }
 
 int iniciar_servidor(int puerto, int cantidad_maxima_concurrencia) {
-	int Socket_Servidor = Abre_Socket_Inet(puerto,cantidad_maxima_concurrencia);
+	int Socket_Servidor = Abre_Socket_Inet(puerto, cantidad_maxima_concurrencia);
 	if (Socket_Servidor == -1) {
 		printf("No se puede abrir socket servidor\n");
 		exit(-1);
@@ -60,8 +59,7 @@ int iniciar_conexion_servidor(char* ipServidor, int puerto) {
 	direccionServidor.sin_port = htons(puerto);
 
 	int cliente = socket(AF_INET, SOCK_STREAM, 0);
-	if (connect(cliente, (void*) &direccionServidor, sizeof(direccionServidor))
-			!= 0) {
+	if (connect(cliente, (void*) &direccionServidor, sizeof(direccionServidor)) != 0) {
 		perror("No se pudo conectar");
 		return 1;
 	}
@@ -79,7 +77,10 @@ int destruir_conexion_cliente(int conexion) {
 
 char* recibir_dato_serializado(int conexion) {
 	char* tamanioDato = malloc(4);
-	int byteRecibidos = recv(conexion, tamanioDato, 4, 0);
+	int byteRecibidos = 0;
+	do {
+		byteRecibidos = recv(conexion, tamanioDato, 4, 0);
+	} while (byteRecibidos == 0);
 	tamanioDato[byteRecibidos] = '\0';
 
 	char* dato = malloc(atoi(tamanioDato));
@@ -87,6 +88,8 @@ char* recibir_dato_serializado(int conexion) {
 	dato[atoi(tamanioDato)] = '\0';
 
 	printf("\n Recibi: %s, conexion : %d", dato, conexion);
+
+	free(tamanioDato);
 	return dato;
 }
 

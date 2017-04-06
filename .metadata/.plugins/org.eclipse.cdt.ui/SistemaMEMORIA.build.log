@@ -1,6 +1,75 @@
-11:22:49 **** Build of configuration Debug for project SistemaMEMORIA ****
+18:49:18 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
 make all 
-make: No se hace nada para «all».
+Building file: ../src/MEMORIA.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/MEMORIA.d" -MT"src/MEMORIA.d" -o "src/MEMORIA.o" "../src/MEMORIA.c"
+../src/MEMORIA.c: In function ‘reservar_memoria_principal’:
+../src/MEMORIA.c:72:3: warning: passing argument 2 of ‘strcpy’ makes pointer from integer without a cast [enabled by default]
+   strcpy(valor, i);
+   ^
+In file included from ../src/MEMORIA.c:13:0:
+/usr/include/string.h:129:14: note: expected ‘const char * __restrict__’ but argument is of type ‘int’
+ extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+              ^
+../src/MEMORIA.c:73:3: warning: passing argument 1 of ‘string_append’ from incompatible pointer type [enabled by default]
+   string_append(bloqueMemoriaAdministrativa, valor);
+   ^
+In file included from ../src/MEMORIA.c:24:0:
+/usr/include/commons/string.h:74:8: note: expected ‘char **’ but argument is of type ‘char *’
+  void  string_append(char ** original, char * string_to_add);
+        ^
+../src/MEMORIA.c:75:3: warning: passing argument 1 of ‘string_append’ from incompatible pointer type [enabled by default]
+   string_append(bloqueMemoriaAdministrativa, valor);
+   ^
+In file included from ../src/MEMORIA.c:24:0:
+/usr/include/commons/string.h:74:8: note: expected ‘char **’ but argument is of type ‘char *’
+  void  string_append(char ** original, char * string_to_add);
+        ^
+../src/MEMORIA.c:77:3: warning: passing argument 1 of ‘string_append’ from incompatible pointer type [enabled by default]
+   string_append(bloqueMemoriaAdministrativa, valor);
+   ^
+In file included from ../src/MEMORIA.c:24:0:
+/usr/include/commons/string.h:74:8: note: expected ‘char **’ but argument is of type ‘char *’
+  void  string_append(char ** original, char * string_to_add);
+        ^
+../src/MEMORIA.c:82:2: warning: passing argument 1 of ‘string_repeat’ makes integer from pointer without a cast [enabled by default]
+  char * bloqueMemoria = string_repeat("-",tamanio);
+  ^
+In file included from ../src/MEMORIA.c:24:0:
+/usr/include/commons/string.h:61:10: note: expected ‘char’ but argument is of type ‘char *’
+  char*   string_repeat(char ch, int count);
+          ^
+../src/MEMORIA.c:82:9: warning: unused variable ‘bloqueMemoria’ [-Wunused-variable]
+  char * bloqueMemoria = string_repeat("-",tamanio);
+         ^
+../src/MEMORIA.c: In function ‘escuchar_peticiones_cliente’:
+../src/MEMORIA.c:142:2: warning: implicit declaration of function ‘pthread_create’ [-Wimplicit-function-declaration]
+  pthread_create(&mihilo1, NULL, &CU_Recibir_conexiones, servidor);
+  ^
+../src/MEMORIA.c:143:2: warning: implicit declaration of function ‘pthread_detach’ [-Wimplicit-function-declaration]
+  pthread_detach(&mihilo1);
+  ^
+../src/MEMORIA.c: In function ‘CU_Solicitar_Bytes_Memoria’:
+../src/MEMORIA.c:171:2: warning: implicit declaration of function ‘solicitar_bytes_de_una_pagina’ [-Wimplicit-function-declaration]
+  enviar_dato_serializado(solicitar_bytes_de_una_pagina(PID, pagina, byteInicial, longitud), cliente);
+  ^
+../src/MEMORIA.c:171:2: warning: passing argument 1 of ‘enviar_dato_serializado’ makes pointer from integer without a cast [enabled by default]
+In file included from ../src/MEMORIA.c:28:0:
+../src/header/Socket.h:15:6: note: expected ‘char *’ but argument is of type ‘int’
+ void enviar_dato_serializado(char* mensajeEnviar, int conexion);
+      ^
+Finished building: ../src/MEMORIA.c
+ 
+Building file: ../src/SolicitudesUsuario.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolicitudesUsuario.d" -MT"src/SolicitudesUsuario.d" -o "src/SolicitudesUsuario.o" "../src/SolicitudesUsuario.c"
+Finished building: ../src/SolicitudesUsuario.c
+ 
+Building target: SistemaMEMORIA
+Invoking: GCC C Linker
+gcc  -o "SistemaMEMORIA"  ./src/header/AppConfig.o ./src/header/Socket.o ./src/header/funcionesUtiles.o  ./src/FuncionesMemoria.o ./src/InterfazCPU.o ./src/InterfazKernel.o ./src/MEMORIA.o ./src/SolicitudesUsuario.o   -lcommons -lpthread
+Finished building target: SistemaMEMORIA
+ 
 
-11:22:49 Build Finished (took 112ms)
+18:49:19 Build Finished (took 175ms)
 

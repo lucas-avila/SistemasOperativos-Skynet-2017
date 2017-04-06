@@ -28,6 +28,8 @@
 #include "header/SolicitudesUsuario.h"
 #include "header/funcionesUtiles.h"
 
+#include "header/InterfazMemoria.h"
+
 void atender_solicitudes_de_usuario();
 
 void escuchar_peticiones_CONSOLA(int servidor);
@@ -42,7 +44,7 @@ void CU_Recibir_Conexiones_CPU(int clienteCPU);
 int main(int argc, char *argv[]) {
 
 	//CUANDO SE INVOCA ENVIAR POR PARAMETRO EL PATH DEL ARCHIVO
-	puts(argv[1]); /** El primer argumento path de archivo **/
+
 	inicializar_configuracion(argv[1]);
 
 	//INICIAR SERVIDOR PARA ESCUCHAR CONSOLA:
@@ -61,14 +63,16 @@ int main(int argc, char *argv[]) {
 }
 
 void mostrar_menu_usuario() {
-	printf("******* MENU KERNEL ******");
+	printf("\n******* MENU KERNEL ******");
 	printf("\n 1 - Obtener listado de procesos del Sistema.");
 	printf("\n 2 - Obtener Informacion de un proceso");
 	printf("\n 3 - Obtener la tabla global de archivos");
 	printf("\n 4 - Modificar grado de multiprogramacion");
 	printf("\n 5 - Finalizar proceso");
 	printf("\n 6 - Detener la planificacion");
-	printf("\n 7 - Salir");
+	printf("\n 7 - CONECTARSE CON LA MEMORIA - PRIMER CHEKPOINT");
+	printf("\n 8 - CONECTARSE CON FILE SYSTEM - PRIMER CHEKPOINT");
+	printf("\n 9 - Salir");
 	printf("\n Opcion: ");
 }
 
@@ -76,7 +80,7 @@ void atender_solicitudes_de_usuario() {
 	int opcion = 0;
 	do {
 		mostrar_menu_usuario();
-		opcion = validarNumeroInput(1, 7);
+		opcion = validarNumeroInput(1, 9);
 		switch (opcion) {
 
 		case 1:
@@ -97,8 +101,14 @@ void atender_solicitudes_de_usuario() {
 		case 6:
 
 			break;
+		case 7:
+            solicitar_bytes_memoria();
+			break;
+		case 8:
+
+			break;
 		}
-	} while (opcion != 7);
+	} while (opcion != 9);
 }
 
 void escuchar_peticiones_CONSOLA(int servidor) {
@@ -141,13 +151,16 @@ void escuchar_Conexiones_CPU(int servidorCPU) {
 }
 
 void CU_Recibir_Conexiones_Consola(int clienteConsola) {
-
+	system("clear");
+	printf("Se conecto CONSOLA");
 
 }
 void CU_Recibir_Conexiones_CPU(int clienteCPU) {
-	system ("clear");
+
 	printf("Se conecto CPU");
-	enviar_dato_serializado("SIGUSR1",clienteCPU);
+
+	enviar_dato_serializado("RECIBIR_PCB", clienteCPU);
+	enviar_dato_serializado("SIGUSR1", clienteCPU);
 	destruir_conexion_cliente(clienteCPU);
 
 }

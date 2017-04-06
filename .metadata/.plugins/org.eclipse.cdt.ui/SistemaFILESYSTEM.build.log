@@ -1,6 +1,6 @@
-11:22:48 **** Build of configuration Debug for project SistemaFILESYSTEM ****
+15:22:53 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
 make all 
 make: No se hace nada para «all».
 
-11:22:48 Build Finished (took 151ms)
+15:22:53 Build Finished (took 74ms)
 

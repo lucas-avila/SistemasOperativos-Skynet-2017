@@ -1,228 +1,1197 @@
-09:10:16 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+18:34:26 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
 make all 
-Building file: ../src/header/AppConfig.c
-Invoking: GCC C Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/AppConfig.d" -MT"src/header/AppConfig.d" -o "src/header/AppConfig.o" "../src/header/AppConfig.c"
-Finished building: ../src/header/AppConfig.c
- 
-Building file: ../src/KERNEL.c
-Invoking: GCC C Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/KERNEL.d" -MT"src/KERNEL.d" -o "src/KERNEL.o" "../src/KERNEL.c"
-../src/KERNEL.c: In function ‘escuchar_peticiones_CONSOLA’:
-../src/KERNEL.c:106:2: warning: implicit declaration of function ‘pthread_create’ [-Wimplicit-function-declaration]
-  pthread_create(&mihilo1, NULL, &escuchar_Conexiones_Consola, servidor);
-  ^
-../src/KERNEL.c:107:2: warning: implicit declaration of function ‘pthread_detach’ [-Wimplicit-function-declaration]
-  pthread_detach(&mihilo1);
-  ^
-Finished building: ../src/KERNEL.c
- 
-Building target: SistemaKERNEL
+Building target: SistemaMEMORIA
 Invoking: GCC C Linker
-gcc  -o "SistemaKERNEL"  ./src/header/AppConfig.o ./src/header/Socket.o ./src/header/funcionesUtiles.o  ./src/InterfazCPU.o ./src/InterfazConsola.o ./src/InterfazFS.o ./src/InterfazMemoria.o ./src/KERNEL.o ./src/SolicitudesUsuario.o   -lcommons -lpthread
-Finished building target: SistemaKERNEL
- 
-09:10:23 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
-make all 
-make: No se hace nada para «all».
-09:14:07 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
-make all 
-Building file: ../src/KERNEL.c
-Invoking: GCC C Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/KERNEL.d" -MT"src/KERNEL.d" -o "src/KERNEL.o" "../src/KERNEL.c"
-../src/KERNEL.c: In function ‘escuchar_peticiones_CONSOLA’:
-../src/KERNEL.c:106:2: warning: implicit declaration of function ‘pthread_create’ [-Wimplicit-function-declaration]
-  pthread_create(&mihilo1, NULL, &escuchar_Conexiones_Consola, servidor);
-  ^
-../src/KERNEL.c:107:2: warning: implicit declaration of function ‘pthread_detach’ [-Wimplicit-function-declaration]
-  pthread_detach(&mihilo1);
-  ^
-Finished building: ../src/KERNEL.c
- 
-Building target: SistemaKERNEL
-Invoking: GCC C Linker
-gcc  -o "SistemaKERNEL"  ./src/header/AppConfig.o ./src/header/Socket.o ./src/header/funcionesUtiles.o  ./src/InterfazCPU.o ./src/InterfazConsola.o ./src/InterfazFS.o ./src/InterfazMemoria.o ./src/KERNEL.o ./src/SolicitudesUsuario.o   -lcommons -lpthread
-Finished building target: SistemaKERNEL
- 
-09:14:55 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
-make all 
-Building file: ../src/header/AppConfig.c
-Invoking: GCC C Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/AppConfig.d" -MT"src/header/AppConfig.d" -o "src/header/AppConfig.o" "../src/header/AppConfig.c"
-Finished building: ../src/header/AppConfig.c
- 
-Building target: SistemaKERNEL
-Invoking: GCC C Linker
-gcc  -o "SistemaKERNEL"  ./src/header/AppConfig.o ./src/header/Socket.o ./src/header/funcionesUtiles.o  ./src/InterfazCPU.o ./src/InterfazConsola.o ./src/InterfazFS.o ./src/InterfazMemoria.o ./src/KERNEL.o ./src/SolicitudesUsuario.o   -lcommons -lpthread
-Finished building target: SistemaKERNEL
- 
-09:14:59 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
-make all 
-make: No se hace nada para «all».
-09:15:54 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
-make all 
-Building file: ../src/KERNEL.c
-Invoking: GCC C Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/KERNEL.d" -MT"src/KERNEL.d" -o "src/KERNEL.o" "../src/KERNEL.c"
-../src/KERNEL.c: In function ‘escuchar_peticiones_CONSOLA’:
-../src/KERNEL.c:106:2: warning: implicit declaration of function ‘pthread_create’ [-Wimplicit-function-declaration]
-  pthread_create(&mihilo1, NULL, &escuchar_Conexiones_Consola, servidor);
-  ^
-../src/KERNEL.c:107:2: warning: implicit declaration of function ‘pthread_detach’ [-Wimplicit-function-declaration]
-  pthread_detach(&mihilo1);
-  ^
-Finished building: ../src/KERNEL.c
- 
-Building target: SistemaKERNEL
-Invoking: GCC C Linker
-gcc  -o "SistemaKERNEL"  ./src/header/AppConfig.o ./src/header/Socket.o ./src/header/funcionesUtiles.o  ./src/InterfazCPU.o ./src/InterfazConsola.o ./src/InterfazFS.o ./src/InterfazMemoria.o ./src/KERNEL.o ./src/SolicitudesUsuario.o   -lcommons -lpthread
-Finished building target: SistemaKERNEL
- 
-09:15:58 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
-make all 
-make: No se hace nada para «all».
-09:18:10 **** Build of configuration Debug for project SistemaCPU ****
-make all 
-make: No se hace nada para «all».
-09:19:13 **** Incremental Build of configuration Debug for project SistemaCPU ****
-make all 
-make: No se hace nada para «all».
-09:19:13 **** Build of configuration Debug for project SistemaConsola ****
-make all 
-make: No se hace nada para «all».
-09:19:13 **** Build of configuration Debug for project SistemaFILESYSTEM ****
-make all 
-make: No se hace nada para «all».
-09:19:13 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
-make all 
-make: No se hace nada para «all».
-09:19:13 **** Build of configuration Debug for project SistemaMEMORIA ****
+gcc  -o "SistemaMEMORIA"  ./src/header/AppConfig.o ./src/header/Socket.o ./src/header/funcionesUtiles.o  ./src/FuncionesMemoria.o ./src/InterfazCPU.o ./src/InterfazKernel.o ./src/MEMORIA.o ./src/SolicitudesUsuario.o   -lcommons -lpthread
+./src/MEMORIA.o: En la función `main':
+/home/utnso/UNIVERSIDAD/OPERATIVOS/SistemaMEMORIA/Debug/../src/MEMORIA.c:45: definiciones múltiples de `tablaPaginasInvertidas'
+./src/FuncionesMemoria.o:/home/utnso/UNIVERSIDAD/OPERATIVOS/SistemaMEMORIA/Debug/../src/FuncionesMemoria.c:14: primero se definió aquí
+./src/MEMORIA.o: En la función `main':
+/home/utnso/UNIVERSIDAD/OPERATIVOS/SistemaMEMORIA/Debug/../src/MEMORIA.c:45: definiciones múltiples de `indiceInicialPaginas'
+./src/FuncionesMemoria.o:/home/utnso/UNIVERSIDAD/OPERATIVOS/SistemaMEMORIA/Debug/../src/FuncionesMemoria.c:14: primero se definió aquí
+./src/FuncionesMemoria.o: En la función `asignar_paginas_a_proceso':
+FuncionesMemoria.c:(.text+0x385): referencia a `actualizar_tabla_pagina' sin definir
+collect2: error: ld returned 1 exit status
+make: *** [SistemaMEMORIA] Error 1
+18:35:32 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
 make all 
 Building file: ../src/MEMORIA.c
 Invoking: GCC C Compiler
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/MEMORIA.d" -MT"src/MEMORIA.d" -o "src/MEMORIA.o" "../src/MEMORIA.c"
+../src/MEMORIA.c: In function ‘main’:
+../src/MEMORIA.c:56:7: error: ‘MEMORIA_PRINCIPAL’ undeclared (first use in this function)
+  free(MEMORIA_PRINCIPAL); //Ver si esta bien que este asi.
+       ^
+../src/MEMORIA.c:56:7: note: each undeclared identifier is reported only once for each function it appears in
+../src/MEMORIA.c: In function ‘reservar_memoria_principal’:
+../src/MEMORIA.c:67:2: error: ‘MEMORIA_PRINCIPAL’ undeclared (first use in this function)
+  MEMORIA_PRINCIPAL = string_repeat('-', tamanio);
+  ^
 ../src/MEMORIA.c: In function ‘escuchar_peticiones_cliente’:
-../src/MEMORIA.c:134:2: warning: implicit declaration of function ‘pthread_create’ [-Wimplicit-function-declaration]
+../src/MEMORIA.c:126:2: warning: implicit declaration of function ‘pthread_create’ [-Wimplicit-function-declaration]
   pthread_create(&mihilo1, NULL, &CU_Recibir_conexiones, servidor);
   ^
-../src/MEMORIA.c:135:2: warning: implicit declaration of function ‘pthread_detach’ [-Wimplicit-function-declaration]
+../src/MEMORIA.c:127:2: warning: implicit declaration of function ‘pthread_detach’ [-Wimplicit-function-declaration]
   pthread_detach(&mihilo1);
   ^
+../src/MEMORIA.c: In function ‘CU_Solicitar_Bytes_Memoria’:
+../src/MEMORIA.c:155:2: warning: implicit declaration of function ‘solicitar_bytes_de_una_pagina’ [-Wimplicit-function-declaration]
+  enviar_dato_serializado(solicitar_bytes_de_una_pagina(PID,pagina,byteInicial,longitud), cliente);
+  ^
+../src/MEMORIA.c:155:2: warning: passing argument 1 of ‘enviar_dato_serializado’ makes pointer from integer without a cast [enabled by default]
+In file included from ../src/MEMORIA.c:28:0:
+../src/header/Socket.h:15:6: note: expected ‘char *’ but argument is of type ‘int’
+ void enviar_dato_serializado(char* mensajeEnviar, int conexion);
+      ^
+make: *** [src/MEMORIA.o] Error 1
+18:35:50 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+Building file: ../src/header/AppConfig.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/AppConfig.d" -MT"src/header/AppConfig.d" -o "src/header/AppConfig.o" "../src/header/AppConfig.c"
+Finished building: ../src/header/AppConfig.c
+ 
+Building file: ../src/FuncionesMemoria.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FuncionesMemoria.d" -MT"src/FuncionesMemoria.d" -o "src/FuncionesMemoria.o" "../src/FuncionesMemoria.c"
+../src/FuncionesMemoria.c: In function ‘getFrame’:
+../src/FuncionesMemoria.c:16:2: warning: passing argument 1 of ‘list_size’ from incompatible pointer type [enabled by default]
+  for (i = 0; i < list_size(tablaPaginasInvertidas); i++) {
+  ^
+In file included from ../src/FuncionesMemoria.c:12:0:
+/usr/include/commons/collections/list.h:171:6: note: expected ‘struct t_list *’ but argument is of type ‘struct t_list *’
+  int list_size(t_list *);
+      ^
+../src/FuncionesMemoria.c:17:3: warning: passing argument 1 of ‘list_get’ from incompatible pointer type [enabled by default]
+   Tabla_Pagina_Invertida *registro = list_get(tablaPaginasInvertidas, i);
+   ^
+In file included from ../src/FuncionesMemoria.c:12:0:
+/usr/include/commons/collections/list.h:70:8: note: expected ‘struct t_list *’ but argument is of type ‘struct t_list *’
+  void *list_get(t_list *, int index);
+        ^
+../src/FuncionesMemoria.c:18:3: warning: passing argument 2 of ‘strcmp’ makes pointer from integer without a cast [enabled by default]
+   if( (strcmp(registro->PID, PID) == 0) && (strcmp(registro->pagina, pagina) == 0) )  {
+   ^
+In file included from ../src/FuncionesMemoria.c:9:0:
+/usr/include/string.h:144:12: note: expected ‘const char *’ but argument is of type ‘int’
+ extern int strcmp (const char *__s1, const char *__s2)
+            ^
+../src/FuncionesMemoria.c:22:2: warning: return makes integer from pointer without a cast [enabled by default]
+  return "0";
+  ^
+../src/FuncionesMemoria.c: In function ‘obtenerNumeroPaginaNew’:
+../src/FuncionesMemoria.c:27:2: warning: passing argument 1 of ‘list_size’ from incompatible pointer type [enabled by default]
+  for (i = 0; i < list_size(tablaPaginasInvertidas); i++) {
+  ^
+In file included from ../src/FuncionesMemoria.c:12:0:
+/usr/include/commons/collections/list.h:171:6: note: expected ‘struct t_list *’ but argument is of type ‘struct t_list *’
+  int list_size(t_list *);
+      ^
+../src/FuncionesMemoria.c:28:3: warning: passing argument 1 of ‘list_get’ from incompatible pointer type [enabled by default]
+   Tabla_Pagina_Invertida *registro = list_get(tablaPaginasInvertidas, i);
+   ^
+In file included from ../src/FuncionesMemoria.c:12:0:
+/usr/include/commons/collections/list.h:70:8: note: expected ‘struct t_list *’ but argument is of type ‘struct t_list *’
+  void *list_get(t_list *, int index);
+        ^
+../src/FuncionesMemoria.c: In function ‘inicializar_programa’:
+../src/FuncionesMemoria.c:38:2: warning: passing argument 1 of ‘list_size’ from incompatible pointer type [enabled by default]
+  for (i = 0; i < list_size(tablaPaginasInvertidas); i++) {
+  ^
+In file included from ../src/FuncionesMemoria.c:12:0:
+/usr/include/commons/collections/list.h:171:6: note: expected ‘struct t_list *’ but argument is of type ‘struct t_list *’
+  int list_size(t_list *);
+      ^
+../src/FuncionesMemoria.c:39:3: warning: passing argument 1 of ‘list_get’ from incompatible pointer type [enabled by default]
+   Tabla_Pagina_Invertida *registro = list_get(tablaPaginasInvertidas, i);
+   ^
+In file included from ../src/FuncionesMemoria.c:12:0:
+/usr/include/commons/collections/list.h:70:8: note: expected ‘struct t_list *’ but argument is of type ‘struct t_list *’
+  void *list_get(t_list *, int index);
+        ^
+../src/FuncionesMemoria.c:40:3: warning: passing argument 2 of ‘strcmp’ makes pointer from integer without a cast [enabled by default]
+   if (strcmp(registro->PID, VACIO) == 0) {
+   ^
+In file included from ../src/FuncionesMemoria.c:9:0:
+/usr/include/string.h:144:12: note: expected ‘const char *’ but argument is of type ‘int’
+ extern int strcmp (const char *__s1, const char *__s2)
+            ^
+../src/FuncionesMemoria.c:42:4: warning: passing argument 1 of ‘list_replace’ from incompatible pointer type [enabled by default]
+    list_replace(tablaPaginasInvertidas, i, registro);
+    ^
+In file included from ../src/FuncionesMemoria.c:12:0:
+/usr/include/commons/collections/list.h:106:8: note: expected ‘struct t_list *’ but argument is of type ‘struct t_list *’
+  void *list_replace(t_list*, int index, void* element);
+        ^
+../src/FuncionesMemoria.c:43:4: warning: implicit declaration of function ‘actualizar_informacion_memoria_principal’ [-Wimplicit-function-declaration]
+    actualizar_informacion_memoria_principal(registro, i);
+    ^
+../src/FuncionesMemoria.c: In function ‘asignar_paginas_a_proceso’:
+../src/FuncionesMemoria.c:86:3: warning: implicit declaration of function ‘actualizar_tabla_pagina’ [-Wimplicit-function-declaration]
+   actualizar_tabla_pagina(registro);
+   ^
+../src/FuncionesMemoria.c: In function ‘buscar_pagina_disponible’:
+../src/FuncionesMemoria.c:95:2: warning: passing argument 1 of ‘list_size’ from incompatible pointer type [enabled by default]
+  for (i = 0; i < list_size(tablaPaginasInvertidas); i++) {
+  ^
+In file included from ../src/FuncionesMemoria.c:12:0:
+/usr/include/commons/collections/list.h:171:6: note: expected ‘struct t_list *’ but argument is of type ‘struct t_list *’
+  int list_size(t_list *);
+      ^
+../src/FuncionesMemoria.c:96:3: warning: passing argument 1 of ‘list_get’ from incompatible pointer type [enabled by default]
+   Tabla_Pagina_Invertida *registro = list_get(tablaPaginasInvertidas, i);
+   ^
+In file included from ../src/FuncionesMemoria.c:12:0:
+/usr/include/commons/collections/list.h:70:8: note: expected ‘struct t_list *’ but argument is of type ‘struct t_list *’
+  void *list_get(t_list *, int index);
+        ^
+../src/FuncionesMemoria.c:97:3: warning: passing argument 2 of ‘strcmp’ makes pointer from integer without a cast [enabled by default]
+   if (strcmp(registro->PID, VACIO) == 0) {
+   ^
+In file included from ../src/FuncionesMemoria.c:9:0:
+/usr/include/string.h:144:12: note: expected ‘const char *’ but argument is of type ‘int’
+ extern int strcmp (const char *__s1, const char *__s2)
+            ^
+../src/FuncionesMemoria.c: In function ‘finalizar_programa’:
+../src/FuncionesMemoria.c:106:2: warning: passing argument 1 of ‘list_size’ from incompatible pointer type [enabled by default]
+  for (i = 0; i < list_size(tablaPaginasInvertidas); i++) {
+  ^
+In file included from ../src/FuncionesMemoria.c:12:0:
+/usr/include/commons/collections/list.h:171:6: note: expected ‘struct t_list *’ but argument is of type ‘struct t_list *’
+  int list_size(t_list *);
+      ^
+../src/FuncionesMemoria.c:107:3: warning: passing argument 1 of ‘list_get’ from incompatible pointer type [enabled by default]
+   Tabla_Pagina_Invertida *registro = list_get(tablaPaginasInvertidas, i);
+   ^
+In file included from ../src/FuncionesMemoria.c:12:0:
+/usr/include/commons/collections/list.h:70:8: note: expected ‘struct t_list *’ but argument is of type ‘struct t_list *’
+  void *list_get(t_list *, int index);
+        ^
+../src/FuncionesMemoria.c:109:4: warning: passing argument 2 of ‘strcpy’ makes pointer from integer without a cast [enabled by default]
+    strcpy(registro->PID, VACIO);
+    ^
+In file included from ../src/FuncionesMemoria.c:9:0:
+/usr/include/string.h:129:14: note: expected ‘const char * __restrict__’ but argument is of type ‘int’
+ extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+              ^
+../src/FuncionesMemoria.c:110:4: warning: passing argument 2 of ‘strcpy’ makes pointer from integer without a cast [enabled by default]
+    strcpy(registro->pagina, VACIO);
+    ^
+In file included from ../src/FuncionesMemoria.c:9:0:
+/usr/include/string.h:129:14: note: expected ‘const char * __restrict__’ but argument is of type ‘int’
+ extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+              ^
+../src/FuncionesMemoria.c:111:4: warning: passing argument 1 of ‘list_replace’ from incompatible pointer type [enabled by default]
+    list_replace(tablaPaginasInvertidas, i, registro);
+    ^
+In file included from ../src/FuncionesMemoria.c:12:0:
+/usr/include/commons/collections/list.h:106:8: note: expected ‘struct t_list *’ but argument is of type ‘struct t_list *’
+  void *list_replace(t_list*, int index, void* element);
+        ^
+../src/FuncionesMemoria.c: At top level:
+../src/FuncionesMemoria.c:117:6: warning: conflicting types for ‘actualizar_informacion_memoria_principal’ [enabled by default]
+ void actualizar_informacion_memoria_principal(Tabla_Pagina_Invertida registro, int indiceRegistro) {
+      ^
+../src/FuncionesMemoria.c:43:4: note: previous implicit declaration of ‘actualizar_informacion_memoria_principal’ was here
+    actualizar_informacion_memoria_principal(registro, i);
+    ^
+../src/FuncionesMemoria.c: In function ‘actualizar_informacion_memoria_principal’:
+../src/FuncionesMemoria.c:124:2: warning: passing argument 1 of ‘string_append’ from incompatible pointer type [enabled by default]
+  string_append(textoMedio, registro.frame);
+  ^
+In file included from ../src/FuncionesMemoria.c:13:0:
+/usr/include/commons/string.h:74:8: note: expected ‘char **’ but argument is of type ‘char *’
+  void  string_append(char ** original, char * string_to_add);
+        ^
+../src/FuncionesMemoria.c:125:2: warning: passing argument 1 of ‘string_append’ from incompatible pointer type [enabled by default]
+  string_append(textoMedio, registro.pagina);
+  ^
+In file included from ../src/FuncionesMemoria.c:13:0:
+/usr/include/commons/string.h:74:8: note: expected ‘char **’ but argument is of type ‘char *’
+  void  string_append(char ** original, char * string_to_add);
+        ^
+../src/FuncionesMemoria.c:126:2: warning: passing argument 1 of ‘string_append’ from incompatible pointer type [enabled by default]
+  string_append(textoMedio, registro.PID);
+  ^
+In file included from ../src/FuncionesMemoria.c:13:0:
+/usr/include/commons/string.h:74:8: note: expected ‘char **’ but argument is of type ‘char *’
+  void  string_append(char ** original, char * string_to_add);
+        ^
+Finished building: ../src/FuncionesMemoria.c
+ 
+Building file: ../src/MEMORIA.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/MEMORIA.d" -MT"src/MEMORIA.d" -o "src/MEMORIA.o" "../src/MEMORIA.c"
+../src/MEMORIA.c: In function ‘escuchar_peticiones_cliente’:
+../src/MEMORIA.c:126:2: warning: implicit declaration of function ‘pthread_create’ [-Wimplicit-function-declaration]
+  pthread_create(&mihilo1, NULL, &CU_Recibir_conexiones, servidor);
+  ^
+../src/MEMORIA.c:127:2: warning: implicit declaration of function ‘pthread_detach’ [-Wimplicit-function-declaration]
+  pthread_detach(&mihilo1);
+  ^
+../src/MEMORIA.c: In function ‘CU_Solicitar_Bytes_Memoria’:
+../src/MEMORIA.c:155:2: warning: implicit declaration of function ‘solicitar_bytes_de_una_pagina’ [-Wimplicit-function-declaration]
+  enviar_dato_serializado(solicitar_bytes_de_una_pagina(PID,pagina,byteInicial,longitud), cliente);
+  ^
+../src/MEMORIA.c:155:2: warning: passing argument 1 of ‘enviar_dato_serializado’ makes pointer from integer without a cast [enabled by default]
+In file included from ../src/MEMORIA.c:28:0:
+../src/header/Socket.h:15:6: note: expected ‘char *’ but argument is of type ‘int’
+ void enviar_dato_serializado(char* mensajeEnviar, int conexion);
+      ^
 Finished building: ../src/MEMORIA.c
  
 Building target: SistemaMEMORIA
 Invoking: GCC C Linker
-gcc  -o "SistemaMEMORIA"  ./src/header/AppConfig.o ./src/header/Socket.o ./src/header/funcionesUtiles.o  ./src/InterfazCPU.o ./src/InterfazKernel.o ./src/MEMORIA.o ./src/SolicitudesUsuario.o   -lcommons -lpthread
+gcc  -o "SistemaMEMORIA"  ./src/header/AppConfig.o ./src/header/Socket.o ./src/header/funcionesUtiles.o  ./src/FuncionesMemoria.o ./src/InterfazCPU.o ./src/InterfazKernel.o ./src/MEMORIA.o ./src/SolicitudesUsuario.o   -lcommons -lpthread
+./src/FuncionesMemoria.o: En la función `asignar_paginas_a_proceso':
+/home/utnso/UNIVERSIDAD/OPERATIVOS/SistemaMEMORIA/Debug/../src/FuncionesMemoria.c:86: referencia a `actualizar_tabla_pagina' sin definir
+collect2: error: ld returned 1 exit status
+make: *** [SistemaMEMORIA] Error 1
+18:37:31 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+Building file: ../src/FuncionesMemoria.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FuncionesMemoria.d" -MT"src/FuncionesMemoria.d" -o "src/FuncionesMemoria.o" "../src/FuncionesMemoria.c"
+In file included from ../src/FuncionesMemoria.c:10:0:
+../src/header/FuncionesMemoria.h: In function ‘actualizar_tabla_pagina’:
+../src/header/FuncionesMemoria.h:23:1: error: parameter ‘indiceInicialPaginas’ is initialized
+ int indiceInicialPaginas = 0; /*los bloques de administracion ocupan los primeros n bloques de la memoria, este almacena la cantidad total que ocupa esa estructura administrativa*/
+ ^
+In file included from ../src/FuncionesMemoria.c:11:0:
+../src/header/AppConfig.h:22:3: error: storage class specified for parameter ‘AppConfig’
+ } AppConfig;
+   ^
+../src/header/AppConfig.h:25:1: error: expected declaration specifiers before ‘AppConfig’
+ AppConfig configuraciones;
+ ^
+In file included from /usr/include/commons/collections/list.h:20:0,
+                 from ../src/FuncionesMemoria.c:12:
+/usr/include/commons/collections/node.h:25:30: error: storage class specified for parameter ‘t_link_element’
+  typedef struct link_element t_link_element;
+                              ^
+/usr/include/commons/collections/node.h:32:37: error: storage class specified for parameter ‘t_double_link_element’
+  typedef struct double_link_element t_double_link_element;
+                                     ^
+/usr/include/commons/collections/node.h:40:30: error: storage class specified for parameter ‘t_hash_element’
+  typedef struct hash_element t_hash_element;
+                              ^
+In file included from ../src/FuncionesMemoria.c:12:0:
+/usr/include/commons/collections/list.h:24:3: error: expected specifier-qualifier-list before ‘t_link_element’
+   t_link_element *head;
+   ^
+/usr/include/commons/collections/list.h:26:4: error: storage class specified for parameter ‘t_list’
+  } t_list;
+    ^
+/usr/include/commons/collections/list.h:32:2: error: expected declaration specifiers before ‘t_list’
+  t_list * list_create();
+  ^
+/usr/include/commons/collections/list.h:39:20: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  void list_destroy(t_list *);
+                    ^
+/usr/include/commons/collections/list.h:45:41: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  void list_destroy_and_destroy_elements(t_list*, void(*element_destroyer)(void*));
+                                         ^
+/usr/include/commons/collections/list.h:51:15: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  int list_add(t_list *, void *element);
+               ^
+/usr/include/commons/collections/list.h:57:25: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  void list_add_in_index(t_list *, int index, void *element);
+                         ^
+/usr/include/commons/collections/list.h:64:20: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  void list_add_all(t_list*, t_list* other);
+                    ^
+/usr/include/commons/collections/list.h:64:29: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  void list_add_all(t_list*, t_list* other);
+                             ^
+/usr/include/commons/collections/list.h:70:17: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  void *list_get(t_list *, int index);
+                 ^
+/usr/include/commons/collections/list.h:77:2: error: expected declaration specifiers before ‘t_list’
+  t_list* list_take(t_list*, int count);
+  ^
+/usr/include/commons/collections/list.h:85:2: error: expected declaration specifiers before ‘t_list’
+  t_list* list_take_and_remove(t_list*, int count);
+  ^
+/usr/include/commons/collections/list.h:92:2: error: expected declaration specifiers before ‘t_list’
+  t_list* list_filter(t_list*, bool(*condition)(void*));
+  ^
+/usr/include/commons/collections/list.h:99:2: error: expected declaration specifiers before ‘t_list’
+  t_list* list_map(t_list*, void*(*transformer)(void*));
+  ^
+/usr/include/commons/collections/list.h:106:21: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  void *list_replace(t_list*, int index, void* element);
+                     ^
+/usr/include/commons/collections/list.h:113:40: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  void list_replace_and_destroy_element(t_list*, int index, void* element, void(*element_destroyer)(void*));
+                                        ^
+/usr/include/commons/collections/list.h:120:20: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  void *list_remove(t_list *, int index);
+                    ^
+/usr/include/commons/collections/list.h:127:39: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  void list_remove_and_destroy_element(t_list *, int index, void(*element_destroyer)(void*));
+                                       ^
+/usr/include/commons/collections/list.h:134:33: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  void *list_remove_by_condition(t_list *, bool(*condition)(void*));
+                                 ^
+/usr/include/commons/collections/list.h:141:44: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  void list_remove_and_destroy_by_condition(t_list *, bool(*condition)(void*), void(*element_destroyer)(void*));
+                                            ^
+/usr/include/commons/collections/list.h:147:18: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  void list_clean(t_list *);
+                  ^
+/usr/include/commons/collections/list.h:153:39: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  void list_clean_and_destroy_elements(t_list *self, void(*element_destroyer)(void*));
+                                       ^
+/usr/include/commons/collections/list.h:159:20: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  void list_iterate(t_list *, void(*closure)(void*));
+                    ^
+/usr/include/commons/collections/list.h:165:18: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  void *list_find(t_list *, bool(*closure)(void*));
+                  ^
+/usr/include/commons/collections/list.h:171:16: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  int list_size(t_list *);
+                ^
+/usr/include/commons/collections/list.h:177:20: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  int list_is_empty(t_list *);
+                    ^
+/usr/include/commons/collections/list.h:185:17: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  void list_sort(t_list *, bool (*comparator)(void *, void *));
+                 ^
+/usr/include/commons/collections/list.h:192:28: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  int list_count_satisfying(t_list* self, bool(*condition)(void*));
+                            ^
+/usr/include/commons/collections/list.h:199:24: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  bool list_any_satisfy(t_list* self, bool(*condition)(void*));
+                        ^
+/usr/include/commons/collections/list.h:206:24: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  bool list_all_satisfy(t_list* self, bool(*condition)(void*));
+                        ^
+../src/FuncionesMemoria.c:14:36: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ int getFrame(char*PID, int pagina) {
+                                    ^
+../src/FuncionesMemoria.c:25:41: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ char* obtenerNumeroPaginaNew(char* PID) {
+                                         ^
+../src/FuncionesMemoria.c:36:72: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ char* inicializar_programa(char* PID, int cantidad_paginas_requeridas) {
+                                                                        ^
+../src/FuncionesMemoria.c:49:91: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ char* solicitar_bytes_de_una_pagina(char* PID, int pagina, int byteInicial, int longitud) {
+                                                                                           ^
+../src/FuncionesMemoria.c:54:106: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ void almacenar_bytes_de_una_pagina(char* PID, int pagina, int byteInicial, int longitud, char*contenido) {
+                                                                                                          ^
+../src/FuncionesMemoria.c:76:77: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ char* asignar_paginas_a_proceso(char *PID, int cantidad_paginas_requeridas) {
+                                                                             ^
+../src/FuncionesMemoria.c:93:52: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ Tabla_Pagina_Invertida* buscar_pagina_disponible() {
+                                                    ^
+../src/FuncionesMemoria.c:104:36: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ void finalizar_programa(char *PID) {
+                                    ^
+../src/FuncionesMemoria.c:117:100: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ void actualizar_informacion_memoria_principal(Tabla_Pagina_Invertida registro, int indiceRegistro) {
+                                                                                                    ^
+In file included from ../src/FuncionesMemoria.c:10:0:
+../src/header/FuncionesMemoria.h:20:6: error: old-style parameter declarations in prototyped function definition
+ void actualizar_tabla_pagina( Tabla_Pagina_Invertida *registro )
+      ^
+../src/FuncionesMemoria.c:141:1: error: expected ‘{’ at end of input
+ }
+ ^
+make: *** [src/FuncionesMemoria.o] Error 1
+18:37:35 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+Building file: ../src/FuncionesMemoria.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FuncionesMemoria.d" -MT"src/FuncionesMemoria.d" -o "src/FuncionesMemoria.o" "../src/FuncionesMemoria.c"
+In file included from ../src/FuncionesMemoria.c:10:0:
+../src/header/FuncionesMemoria.h: In function ‘actualizar_tabla_pagina’:
+../src/header/FuncionesMemoria.h:23:1: error: parameter ‘indiceInicialPaginas’ is initialized
+ int indiceInicialPaginas = 0; /*los bloques de administracion ocupan los primeros n bloques de la memoria, este almacena la cantidad total que ocupa esa estructura administrativa*/
+ ^
+In file included from ../src/FuncionesMemoria.c:11:0:
+../src/header/AppConfig.h:22:3: error: storage class specified for parameter ‘AppConfig’
+ } AppConfig;
+   ^
+../src/header/AppConfig.h:25:1: error: expected declaration specifiers before ‘AppConfig’
+ AppConfig configuraciones;
+ ^
+In file included from /usr/include/commons/collections/list.h:20:0,
+                 from ../src/FuncionesMemoria.c:12:
+/usr/include/commons/collections/node.h:25:30: error: storage class specified for parameter ‘t_link_element’
+  typedef struct link_element t_link_element;
+                              ^
+/usr/include/commons/collections/node.h:32:37: error: storage class specified for parameter ‘t_double_link_element’
+  typedef struct double_link_element t_double_link_element;
+                                     ^
+/usr/include/commons/collections/node.h:40:30: error: storage class specified for parameter ‘t_hash_element’
+  typedef struct hash_element t_hash_element;
+                              ^
+In file included from ../src/FuncionesMemoria.c:12:0:
+/usr/include/commons/collections/list.h:24:3: error: expected specifier-qualifier-list before ‘t_link_element’
+   t_link_element *head;
+   ^
+/usr/include/commons/collections/list.h:26:4: error: storage class specified for parameter ‘t_list’
+  } t_list;
+    ^
+/usr/include/commons/collections/list.h:32:2: error: expected declaration specifiers before ‘t_list’
+  t_list * list_create();
+  ^
+/usr/include/commons/collections/list.h:39:20: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  void list_destroy(t_list *);
+                    ^
+/usr/include/commons/collections/list.h:45:41: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  void list_destroy_and_destroy_elements(t_list*, void(*element_destroyer)(void*));
+                                         ^
+/usr/include/commons/collections/list.h:51:15: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  int list_add(t_list *, void *element);
+               ^
+/usr/include/commons/collections/list.h:57:25: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  void list_add_in_index(t_list *, int index, void *element);
+                         ^
+/usr/include/commons/collections/list.h:64:20: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  void list_add_all(t_list*, t_list* other);
+                    ^
+/usr/include/commons/collections/list.h:64:29: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  void list_add_all(t_list*, t_list* other);
+                             ^
+/usr/include/commons/collections/list.h:70:17: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  void *list_get(t_list *, int index);
+                 ^
+/usr/include/commons/collections/list.h:77:2: error: expected declaration specifiers before ‘t_list’
+  t_list* list_take(t_list*, int count);
+  ^
+/usr/include/commons/collections/list.h:85:2: error: expected declaration specifiers before ‘t_list’
+  t_list* list_take_and_remove(t_list*, int count);
+  ^
+/usr/include/commons/collections/list.h:92:2: error: expected declaration specifiers before ‘t_list’
+  t_list* list_filter(t_list*, bool(*condition)(void*));
+  ^
+/usr/include/commons/collections/list.h:99:2: error: expected declaration specifiers before ‘t_list’
+  t_list* list_map(t_list*, void*(*transformer)(void*));
+  ^
+/usr/include/commons/collections/list.h:106:21: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  void *list_replace(t_list*, int index, void* element);
+                     ^
+/usr/include/commons/collections/list.h:113:40: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  void list_replace_and_destroy_element(t_list*, int index, void* element, void(*element_destroyer)(void*));
+                                        ^
+/usr/include/commons/collections/list.h:120:20: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  void *list_remove(t_list *, int index);
+                    ^
+/usr/include/commons/collections/list.h:127:39: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  void list_remove_and_destroy_element(t_list *, int index, void(*element_destroyer)(void*));
+                                       ^
+/usr/include/commons/collections/list.h:134:33: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  void *list_remove_by_condition(t_list *, bool(*condition)(void*));
+                                 ^
+/usr/include/commons/collections/list.h:141:44: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  void list_remove_and_destroy_by_condition(t_list *, bool(*condition)(void*), void(*element_destroyer)(void*));
+                                            ^
+/usr/include/commons/collections/list.h:147:18: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  void list_clean(t_list *);
+                  ^
+/usr/include/commons/collections/list.h:153:39: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  void list_clean_and_destroy_elements(t_list *self, void(*element_destroyer)(void*));
+                                       ^
+/usr/include/commons/collections/list.h:159:20: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  void list_iterate(t_list *, void(*closure)(void*));
+                    ^
+/usr/include/commons/collections/list.h:165:18: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  void *list_find(t_list *, bool(*closure)(void*));
+                  ^
+/usr/include/commons/collections/list.h:171:16: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  int list_size(t_list *);
+                ^
+/usr/include/commons/collections/list.h:177:20: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  int list_is_empty(t_list *);
+                    ^
+/usr/include/commons/collections/list.h:185:17: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  void list_sort(t_list *, bool (*comparator)(void *, void *));
+                 ^
+/usr/include/commons/collections/list.h:192:28: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  int list_count_satisfying(t_list* self, bool(*condition)(void*));
+                            ^
+/usr/include/commons/collections/list.h:199:24: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  bool list_any_satisfy(t_list* self, bool(*condition)(void*));
+                        ^
+/usr/include/commons/collections/list.h:206:24: error: expected declaration specifiers or ‘...’ before ‘t_list’
+  bool list_all_satisfy(t_list* self, bool(*condition)(void*));
+                        ^
+../src/FuncionesMemoria.c:14:36: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ int getFrame(char*PID, int pagina) {
+                                    ^
+../src/FuncionesMemoria.c:25:41: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ char* obtenerNumeroPaginaNew(char* PID) {
+                                         ^
+../src/FuncionesMemoria.c:36:72: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ char* inicializar_programa(char* PID, int cantidad_paginas_requeridas) {
+                                                                        ^
+../src/FuncionesMemoria.c:49:91: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ char* solicitar_bytes_de_una_pagina(char* PID, int pagina, int byteInicial, int longitud) {
+                                                                                           ^
+../src/FuncionesMemoria.c:54:106: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ void almacenar_bytes_de_una_pagina(char* PID, int pagina, int byteInicial, int longitud, char*contenido) {
+                                                                                                          ^
+../src/FuncionesMemoria.c:76:77: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ char* asignar_paginas_a_proceso(char *PID, int cantidad_paginas_requeridas) {
+                                                                             ^
+../src/FuncionesMemoria.c:95:65: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ void actualizar_tabla_pagina( Tabla_Pagina_Invertida *registro ){
+                                                                 ^
+../src/FuncionesMemoria.c:99:52: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ Tabla_Pagina_Invertida* buscar_pagina_disponible() {
+                                                    ^
+../src/FuncionesMemoria.c:110:36: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ void finalizar_programa(char *PID) {
+                                    ^
+../src/FuncionesMemoria.c:123:100: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ void actualizar_informacion_memoria_principal(Tabla_Pagina_Invertida registro, int indiceRegistro) {
+                                                                                                    ^
+In file included from ../src/FuncionesMemoria.c:10:0:
+../src/header/FuncionesMemoria.h:20:6: error: old-style parameter declarations in prototyped function definition
+ void actualizar_tabla_pagina( Tabla_Pagina_Invertida *registro )
+      ^
+../src/FuncionesMemoria.c:147:1: error: expected ‘{’ at end of input
+ }
+ ^
+make: *** [src/FuncionesMemoria.o] Error 1
+18:37:49 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+Building file: ../src/FuncionesMemoria.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FuncionesMemoria.d" -MT"src/FuncionesMemoria.d" -o "src/FuncionesMemoria.o" "../src/FuncionesMemoria.c"
+../src/FuncionesMemoria.c: In function ‘getFrame’:
+../src/FuncionesMemoria.c:16:2: warning: passing argument 1 of ‘list_size’ from incompatible pointer type [enabled by default]
+  for (i = 0; i < list_size(tablaPaginasInvertidas); i++) {
+  ^
+In file included from ../src/FuncionesMemoria.c:12:0:
+/usr/include/commons/collections/list.h:171:6: note: expected ‘struct t_list *’ but argument is of type ‘struct t_list *’
+  int list_size(t_list *);
+      ^
+../src/FuncionesMemoria.c:17:3: warning: passing argument 1 of ‘list_get’ from incompatible pointer type [enabled by default]
+   Tabla_Pagina_Invertida *registro = list_get(tablaPaginasInvertidas, i);
+   ^
+In file included from ../src/FuncionesMemoria.c:12:0:
+/usr/include/commons/collections/list.h:70:8: note: expected ‘struct t_list *’ but argument is of type ‘struct t_list *’
+  void *list_get(t_list *, int index);
+        ^
+../src/FuncionesMemoria.c:18:3: warning: passing argument 2 of ‘strcmp’ makes pointer from integer without a cast [enabled by default]
+   if( (strcmp(registro->PID, PID) == 0) && (strcmp(registro->pagina, pagina) == 0) )  {
+   ^
+In file included from ../src/FuncionesMemoria.c:9:0:
+/usr/include/string.h:144:12: note: expected ‘const char *’ but argument is of type ‘int’
+ extern int strcmp (const char *__s1, const char *__s2)
+            ^
+../src/FuncionesMemoria.c:22:2: warning: return makes integer from pointer without a cast [enabled by default]
+  return "0";
+  ^
+../src/FuncionesMemoria.c: In function ‘obtenerNumeroPaginaNew’:
+../src/FuncionesMemoria.c:27:2: warning: passing argument 1 of ‘list_size’ from incompatible pointer type [enabled by default]
+  for (i = 0; i < list_size(tablaPaginasInvertidas); i++) {
+  ^
+In file included from ../src/FuncionesMemoria.c:12:0:
+/usr/include/commons/collections/list.h:171:6: note: expected ‘struct t_list *’ but argument is of type ‘struct t_list *’
+  int list_size(t_list *);
+      ^
+../src/FuncionesMemoria.c:28:3: warning: passing argument 1 of ‘list_get’ from incompatible pointer type [enabled by default]
+   Tabla_Pagina_Invertida *registro = list_get(tablaPaginasInvertidas, i);
+   ^
+In file included from ../src/FuncionesMemoria.c:12:0:
+/usr/include/commons/collections/list.h:70:8: note: expected ‘struct t_list *’ but argument is of type ‘struct t_list *’
+  void *list_get(t_list *, int index);
+        ^
+../src/FuncionesMemoria.c: In function ‘inicializar_programa’:
+../src/FuncionesMemoria.c:38:2: warning: passing argument 1 of ‘list_size’ from incompatible pointer type [enabled by default]
+  for (i = 0; i < list_size(tablaPaginasInvertidas); i++) {
+  ^
+In file included from ../src/FuncionesMemoria.c:12:0:
+/usr/include/commons/collections/list.h:171:6: note: expected ‘struct t_list *’ but argument is of type ‘struct t_list *’
+  int list_size(t_list *);
+      ^
+../src/FuncionesMemoria.c:39:3: warning: passing argument 1 of ‘list_get’ from incompatible pointer type [enabled by default]
+   Tabla_Pagina_Invertida *registro = list_get(tablaPaginasInvertidas, i);
+   ^
+In file included from ../src/FuncionesMemoria.c:12:0:
+/usr/include/commons/collections/list.h:70:8: note: expected ‘struct t_list *’ but argument is of type ‘struct t_list *’
+  void *list_get(t_list *, int index);
+        ^
+../src/FuncionesMemoria.c:40:3: warning: passing argument 2 of ‘strcmp’ makes pointer from integer without a cast [enabled by default]
+   if (strcmp(registro->PID, VACIO) == 0) {
+   ^
+In file included from ../src/FuncionesMemoria.c:9:0:
+/usr/include/string.h:144:12: note: expected ‘const char *’ but argument is of type ‘int’
+ extern int strcmp (const char *__s1, const char *__s2)
+            ^
+../src/FuncionesMemoria.c:42:4: warning: passing argument 1 of ‘list_replace’ from incompatible pointer type [enabled by default]
+    list_replace(tablaPaginasInvertidas, i, registro);
+    ^
+In file included from ../src/FuncionesMemoria.c:12:0:
+/usr/include/commons/collections/list.h:106:8: note: expected ‘struct t_list *’ but argument is of type ‘struct t_list *’
+  void *list_replace(t_list*, int index, void* element);
+        ^
+../src/FuncionesMemoria.c:43:4: warning: implicit declaration of function ‘actualizar_informacion_memoria_principal’ [-Wimplicit-function-declaration]
+    actualizar_informacion_memoria_principal(registro, i);
+    ^
+../src/FuncionesMemoria.c: In function ‘buscar_pagina_disponible’:
+../src/FuncionesMemoria.c:101:2: warning: passing argument 1 of ‘list_size’ from incompatible pointer type [enabled by default]
+  for (i = 0; i < list_size(tablaPaginasInvertidas); i++) {
+  ^
+In file included from ../src/FuncionesMemoria.c:12:0:
+/usr/include/commons/collections/list.h:171:6: note: expected ‘struct t_list *’ but argument is of type ‘struct t_list *’
+  int list_size(t_list *);
+      ^
+../src/FuncionesMemoria.c:102:3: warning: passing argument 1 of ‘list_get’ from incompatible pointer type [enabled by default]
+   Tabla_Pagina_Invertida *registro = list_get(tablaPaginasInvertidas, i);
+   ^
+In file included from ../src/FuncionesMemoria.c:12:0:
+/usr/include/commons/collections/list.h:70:8: note: expected ‘struct t_list *’ but argument is of type ‘struct t_list *’
+  void *list_get(t_list *, int index);
+        ^
+../src/FuncionesMemoria.c:103:3: warning: passing argument 2 of ‘strcmp’ makes pointer from integer without a cast [enabled by default]
+   if (strcmp(registro->PID, VACIO) == 0) {
+   ^
+In file included from ../src/FuncionesMemoria.c:9:0:
+/usr/include/string.h:144:12: note: expected ‘const char *’ but argument is of type ‘int’
+ extern int strcmp (const char *__s1, const char *__s2)
+            ^
+../src/FuncionesMemoria.c: In function ‘finalizar_programa’:
+../src/FuncionesMemoria.c:112:2: warning: passing argument 1 of ‘list_size’ from incompatible pointer type [enabled by default]
+  for (i = 0; i < list_size(tablaPaginasInvertidas); i++) {
+  ^
+In file included from ../src/FuncionesMemoria.c:12:0:
+/usr/include/commons/collections/list.h:171:6: note: expected ‘struct t_list *’ but argument is of type ‘struct t_list *’
+  int list_size(t_list *);
+      ^
+../src/FuncionesMemoria.c:113:3: warning: passing argument 1 of ‘list_get’ from incompatible pointer type [enabled by default]
+   Tabla_Pagina_Invertida *registro = list_get(tablaPaginasInvertidas, i);
+   ^
+In file included from ../src/FuncionesMemoria.c:12:0:
+/usr/include/commons/collections/list.h:70:8: note: expected ‘struct t_list *’ but argument is of type ‘struct t_list *’
+  void *list_get(t_list *, int index);
+        ^
+../src/FuncionesMemoria.c:115:4: warning: passing argument 2 of ‘strcpy’ makes pointer from integer without a cast [enabled by default]
+    strcpy(registro->PID, VACIO);
+    ^
+In file included from ../src/FuncionesMemoria.c:9:0:
+/usr/include/string.h:129:14: note: expected ‘const char * __restrict__’ but argument is of type ‘int’
+ extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+              ^
+../src/FuncionesMemoria.c:116:4: warning: passing argument 2 of ‘strcpy’ makes pointer from integer without a cast [enabled by default]
+    strcpy(registro->pagina, VACIO);
+    ^
+In file included from ../src/FuncionesMemoria.c:9:0:
+/usr/include/string.h:129:14: note: expected ‘const char * __restrict__’ but argument is of type ‘int’
+ extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+              ^
+../src/FuncionesMemoria.c:117:4: warning: passing argument 1 of ‘list_replace’ from incompatible pointer type [enabled by default]
+    list_replace(tablaPaginasInvertidas, i, registro);
+    ^
+In file included from ../src/FuncionesMemoria.c:12:0:
+/usr/include/commons/collections/list.h:106:8: note: expected ‘struct t_list *’ but argument is of type ‘struct t_list *’
+  void *list_replace(t_list*, int index, void* element);
+        ^
+../src/FuncionesMemoria.c: At top level:
+../src/FuncionesMemoria.c:123:6: warning: conflicting types for ‘actualizar_informacion_memoria_principal’ [enabled by default]
+ void actualizar_informacion_memoria_principal(Tabla_Pagina_Invertida registro, int indiceRegistro) {
+      ^
+../src/FuncionesMemoria.c:43:4: note: previous implicit declaration of ‘actualizar_informacion_memoria_principal’ was here
+    actualizar_informacion_memoria_principal(registro, i);
+    ^
+../src/FuncionesMemoria.c: In function ‘actualizar_informacion_memoria_principal’:
+../src/FuncionesMemoria.c:130:2: warning: passing argument 1 of ‘string_append’ from incompatible pointer type [enabled by default]
+  string_append(textoMedio, registro.frame);
+  ^
+In file included from ../src/FuncionesMemoria.c:13:0:
+/usr/include/commons/string.h:74:8: note: expected ‘char **’ but argument is of type ‘char *’
+  void  string_append(char ** original, char * string_to_add);
+        ^
+../src/FuncionesMemoria.c:131:2: warning: passing argument 1 of ‘string_append’ from incompatible pointer type [enabled by default]
+  string_append(textoMedio, registro.pagina);
+  ^
+In file included from ../src/FuncionesMemoria.c:13:0:
+/usr/include/commons/string.h:74:8: note: expected ‘char **’ but argument is of type ‘char *’
+  void  string_append(char ** original, char * string_to_add);
+        ^
+../src/FuncionesMemoria.c:132:2: warning: passing argument 1 of ‘string_append’ from incompatible pointer type [enabled by default]
+  string_append(textoMedio, registro.PID);
+  ^
+In file included from ../src/FuncionesMemoria.c:13:0:
+/usr/include/commons/string.h:74:8: note: expected ‘char **’ but argument is of type ‘char *’
+  void  string_append(char ** original, char * string_to_add);
+        ^
+Finished building: ../src/FuncionesMemoria.c
+ 
+Building target: SistemaMEMORIA
+Invoking: GCC C Linker
+gcc  -o "SistemaMEMORIA"  ./src/header/AppConfig.o ./src/header/Socket.o ./src/header/funcionesUtiles.o  ./src/FuncionesMemoria.o ./src/InterfazCPU.o ./src/InterfazKernel.o ./src/MEMORIA.o ./src/SolicitudesUsuario.o   -lcommons -lpthread
 Finished building target: SistemaMEMORIA
  
-09:20:33 **** Incremental Build of configuration Debug for project SistemaCPU ****
+18:42:17 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
 make all 
-make: No se hace nada para «all».
-09:20:33 **** Incremental Build of configuration Debug for project SistemaConsola ****
-make all 
-make: No se hace nada para «all».
-09:20:34 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
-make all 
-make: No se hace nada para «all».
-09:20:34 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
-make all 
-make: No se hace nada para «all».
-09:20:34 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
-make all 
-make: No se hace nada para «all».
-09:23:25 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
-make all 
-Building file: ../src/KERNEL.c
+Building file: ../src/MEMORIA.c
 Invoking: GCC C Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/KERNEL.d" -MT"src/KERNEL.d" -o "src/KERNEL.o" "../src/KERNEL.c"
-../src/KERNEL.c: In function ‘escuchar_peticiones_CONSOLA’:
-../src/KERNEL.c:106:2: warning: implicit declaration of function ‘pthread_create’ [-Wimplicit-function-declaration]
-  pthread_create(&mihilo1, NULL, &escuchar_Conexiones_Consola, servidor);
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/MEMORIA.d" -MT"src/MEMORIA.d" -o "src/MEMORIA.o" "../src/MEMORIA.c"
+../src/MEMORIA.c: In function ‘reservar_memoria_principal’:
+../src/MEMORIA.c:70:2: error: ‘for’ loop initial declarations are only allowed in C99 mode
+  for (int i = 0; i < configuraciones.MARCOS; i++) {
   ^
-../src/KERNEL.c:107:2: warning: implicit declaration of function ‘pthread_detach’ [-Wimplicit-function-declaration]
+../src/MEMORIA.c:70:2: note: use option -std=c99 or -std=gnu99 to compile your code
+../src/MEMORIA.c:71:3: warning: passing argument 2 of ‘strcpy’ makes pointer from integer without a cast [enabled by default]
+   strcpy(valor, i);
+   ^
+In file included from ../src/MEMORIA.c:13:0:
+/usr/include/string.h:129:14: note: expected ‘const char * __restrict__’ but argument is of type ‘int’
+ extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+              ^
+../src/MEMORIA.c:72:3: warning: passing argument 1 of ‘string_append’ from incompatible pointer type [enabled by default]
+   string_append(bloqueMemoriaAdministrativa, valor);
+   ^
+In file included from ../src/MEMORIA.c:24:0:
+/usr/include/commons/string.h:74:8: note: expected ‘char **’ but argument is of type ‘char *’
+  void  string_append(char ** original, char * string_to_add);
+        ^
+../src/MEMORIA.c:74:3: warning: passing argument 1 of ‘string_append’ from incompatible pointer type [enabled by default]
+   string_append(bloqueMemoriaAdministrativa, valor);
+   ^
+In file included from ../src/MEMORIA.c:24:0:
+/usr/include/commons/string.h:74:8: note: expected ‘char **’ but argument is of type ‘char *’
+  void  string_append(char ** original, char * string_to_add);
+        ^
+../src/MEMORIA.c:76:3: warning: passing argument 1 of ‘string_append’ from incompatible pointer type [enabled by default]
+   string_append(bloqueMemoriaAdministrativa, valor);
+   ^
+In file included from ../src/MEMORIA.c:24:0:
+/usr/include/commons/string.h:74:8: note: expected ‘char **’ but argument is of type ‘char *’
+  void  string_append(char ** original, char * string_to_add);
+        ^
+../src/MEMORIA.c: In function ‘escuchar_peticiones_cliente’:
+../src/MEMORIA.c:138:2: warning: implicit declaration of function ‘pthread_create’ [-Wimplicit-function-declaration]
+  pthread_create(&mihilo1, NULL, &CU_Recibir_conexiones, servidor);
+  ^
+../src/MEMORIA.c:139:2: warning: implicit declaration of function ‘pthread_detach’ [-Wimplicit-function-declaration]
   pthread_detach(&mihilo1);
   ^
-Finished building: ../src/KERNEL.c
- 
-Building target: SistemaKERNEL
-Invoking: GCC C Linker
-gcc  -o "SistemaKERNEL"  ./src/header/AppConfig.o ./src/header/Socket.o ./src/header/funcionesUtiles.o  ./src/InterfazCPU.o ./src/InterfazConsola.o ./src/InterfazFS.o ./src/InterfazMemoria.o ./src/KERNEL.o ./src/SolicitudesUsuario.o   -lcommons -lpthread
-Finished building target: SistemaKERNEL
- 
-09:44:58 **** Incremental Build of configuration Debug for project SistemaCPU ****
-make all 
-make: No se hace nada para «all».
-09:44:58 **** Incremental Build of configuration Debug for project SistemaConsola ****
-make all 
-make: No se hace nada para «all».
-09:44:59 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
-make all 
-make: No se hace nada para «all».
-09:44:59 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
-make all 
-Building file: ../src/KERNEL.c
-Invoking: GCC C Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/KERNEL.d" -MT"src/KERNEL.d" -o "src/KERNEL.o" "../src/KERNEL.c"
-../src/KERNEL.c: In function ‘escuchar_peticiones_CONSOLA’:
-../src/KERNEL.c:106:2: warning: implicit declaration of function ‘pthread_create’ [-Wimplicit-function-declaration]
-  pthread_create(&mihilo1, NULL, &escuchar_Conexiones_Consola, servidor);
+../src/MEMORIA.c: In function ‘CU_Solicitar_Bytes_Memoria’:
+../src/MEMORIA.c:167:2: warning: implicit declaration of function ‘solicitar_bytes_de_una_pagina’ [-Wimplicit-function-declaration]
+  enviar_dato_serializado(solicitar_bytes_de_una_pagina(PID, pagina, byteInicial, longitud), cliente);
   ^
-../src/KERNEL.c:107:2: warning: implicit declaration of function ‘pthread_detach’ [-Wimplicit-function-declaration]
+../src/MEMORIA.c:167:2: warning: passing argument 1 of ‘enviar_dato_serializado’ makes pointer from integer without a cast [enabled by default]
+In file included from ../src/MEMORIA.c:28:0:
+../src/header/Socket.h:15:6: note: expected ‘char *’ but argument is of type ‘int’
+ void enviar_dato_serializado(char* mensajeEnviar, int conexion);
+      ^
+make: *** [src/MEMORIA.o] Error 1
+18:42:29 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+Building file: ../src/MEMORIA.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/MEMORIA.d" -MT"src/MEMORIA.d" -o "src/MEMORIA.o" "../src/MEMORIA.c"
+../src/MEMORIA.c: In function ‘reservar_memoria_principal’:
+../src/MEMORIA.c:72:3: warning: passing argument 2 of ‘strcpy’ makes pointer from integer without a cast [enabled by default]
+   strcpy(valor, i);
+   ^
+In file included from ../src/MEMORIA.c:13:0:
+/usr/include/string.h:129:14: note: expected ‘const char * __restrict__’ but argument is of type ‘int’
+ extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+              ^
+../src/MEMORIA.c:73:3: warning: passing argument 1 of ‘string_append’ from incompatible pointer type [enabled by default]
+   string_append(bloqueMemoriaAdministrativa, valor);
+   ^
+In file included from ../src/MEMORIA.c:24:0:
+/usr/include/commons/string.h:74:8: note: expected ‘char **’ but argument is of type ‘char *’
+  void  string_append(char ** original, char * string_to_add);
+        ^
+../src/MEMORIA.c:75:3: warning: passing argument 1 of ‘string_append’ from incompatible pointer type [enabled by default]
+   string_append(bloqueMemoriaAdministrativa, valor);
+   ^
+In file included from ../src/MEMORIA.c:24:0:
+/usr/include/commons/string.h:74:8: note: expected ‘char **’ but argument is of type ‘char *’
+  void  string_append(char ** original, char * string_to_add);
+        ^
+../src/MEMORIA.c:77:3: warning: passing argument 1 of ‘string_append’ from incompatible pointer type [enabled by default]
+   string_append(bloqueMemoriaAdministrativa, valor);
+   ^
+In file included from ../src/MEMORIA.c:24:0:
+/usr/include/commons/string.h:74:8: note: expected ‘char **’ but argument is of type ‘char *’
+  void  string_append(char ** original, char * string_to_add);
+        ^
+../src/MEMORIA.c: In function ‘escuchar_peticiones_cliente’:
+../src/MEMORIA.c:139:2: warning: implicit declaration of function ‘pthread_create’ [-Wimplicit-function-declaration]
+  pthread_create(&mihilo1, NULL, &CU_Recibir_conexiones, servidor);
+  ^
+../src/MEMORIA.c:140:2: warning: implicit declaration of function ‘pthread_detach’ [-Wimplicit-function-declaration]
   pthread_detach(&mihilo1);
   ^
-Finished building: ../src/KERNEL.c
- 
-Building target: SistemaKERNEL
-Invoking: GCC C Linker
-gcc  -o "SistemaKERNEL"  ./src/header/AppConfig.o ./src/header/Socket.o ./src/header/funcionesUtiles.o  ./src/InterfazCPU.o ./src/InterfazConsola.o ./src/InterfazFS.o ./src/InterfazMemoria.o ./src/KERNEL.o ./src/SolicitudesUsuario.o   -lcommons -lpthread
-Finished building target: SistemaKERNEL
- 
-09:44:59 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
-make all 
-make: No se hace nada para «all».
-09:47:23 **** Incremental Build of configuration Debug for project SistemaCPU ****
-make all 
-make: No se hace nada para «all».
-09:47:23 **** Incremental Build of configuration Debug for project SistemaConsola ****
-make all 
-make: No se hace nada para «all».
-09:47:23 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
-make all 
-make: No se hace nada para «all».
-09:47:24 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
-make all 
-Building file: ../src/KERNEL.c
-Invoking: GCC C Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/KERNEL.d" -MT"src/KERNEL.d" -o "src/KERNEL.o" "../src/KERNEL.c"
-../src/KERNEL.c: In function ‘escuchar_peticiones_CONSOLA’:
-../src/KERNEL.c:106:2: warning: implicit declaration of function ‘pthread_create’ [-Wimplicit-function-declaration]
-  pthread_create(&mihilo1, NULL, &escuchar_Conexiones_Consola, servidor);
+../src/MEMORIA.c: In function ‘CU_Solicitar_Bytes_Memoria’:
+../src/MEMORIA.c:168:2: warning: implicit declaration of function ‘solicitar_bytes_de_una_pagina’ [-Wimplicit-function-declaration]
+  enviar_dato_serializado(solicitar_bytes_de_una_pagina(PID, pagina, byteInicial, longitud), cliente);
   ^
-../src/KERNEL.c:107:2: warning: implicit declaration of function ‘pthread_detach’ [-Wimplicit-function-declaration]
+../src/MEMORIA.c:168:2: warning: passing argument 1 of ‘enviar_dato_serializado’ makes pointer from integer without a cast [enabled by default]
+In file included from ../src/MEMORIA.c:28:0:
+../src/header/Socket.h:15:6: note: expected ‘char *’ but argument is of type ‘int’
+ void enviar_dato_serializado(char* mensajeEnviar, int conexion);
+      ^
+Finished building: ../src/MEMORIA.c
+ 
+Building target: SistemaMEMORIA
+Invoking: GCC C Linker
+gcc  -o "SistemaMEMORIA"  ./src/header/AppConfig.o ./src/header/Socket.o ./src/header/funcionesUtiles.o  ./src/FuncionesMemoria.o ./src/InterfazCPU.o ./src/InterfazKernel.o ./src/MEMORIA.o ./src/SolicitudesUsuario.o   -lcommons -lpthread
+Finished building target: SistemaMEMORIA
+ 
+18:46:37 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+Building file: ../src/MEMORIA.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/MEMORIA.d" -MT"src/MEMORIA.d" -o "src/MEMORIA.o" "../src/MEMORIA.c"
+../src/MEMORIA.c: In function ‘reservar_memoria_principal’:
+../src/MEMORIA.c:72:3: warning: passing argument 2 of ‘strcpy’ makes pointer from integer without a cast [enabled by default]
+   strcpy(valor, i);
+   ^
+In file included from ../src/MEMORIA.c:13:0:
+/usr/include/string.h:129:14: note: expected ‘const char * __restrict__’ but argument is of type ‘int’
+ extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+              ^
+../src/MEMORIA.c:73:3: warning: passing argument 1 of ‘string_append’ from incompatible pointer type [enabled by default]
+   string_append(bloqueMemoriaAdministrativa, valor);
+   ^
+In file included from ../src/MEMORIA.c:24:0:
+/usr/include/commons/string.h:74:8: note: expected ‘char **’ but argument is of type ‘char *’
+  void  string_append(char ** original, char * string_to_add);
+        ^
+../src/MEMORIA.c:75:3: warning: passing argument 1 of ‘string_append’ from incompatible pointer type [enabled by default]
+   string_append(bloqueMemoriaAdministrativa, valor);
+   ^
+In file included from ../src/MEMORIA.c:24:0:
+/usr/include/commons/string.h:74:8: note: expected ‘char **’ but argument is of type ‘char *’
+  void  string_append(char ** original, char * string_to_add);
+        ^
+../src/MEMORIA.c:77:3: warning: passing argument 1 of ‘string_append’ from incompatible pointer type [enabled by default]
+   string_append(bloqueMemoriaAdministrativa, valor);
+   ^
+In file included from ../src/MEMORIA.c:24:0:
+/usr/include/commons/string.h:74:8: note: expected ‘char **’ but argument is of type ‘char *’
+  void  string_append(char ** original, char * string_to_add);
+        ^
+../src/MEMORIA.c:82:2: warning: passing argument 1 of ‘string_repeat’ makes integer from pointer without a cast [enabled by default]
+  char *bloqueMemoria = string_repeat("-",tamanio);
+  ^
+In file included from ../src/MEMORIA.c:24:0:
+/usr/include/commons/string.h:61:10: note: expected ‘char’ but argument is of type ‘char *’
+  char*   string_repeat(char ch, int count);
+          ^
+../src/MEMORIA.c:84:2: warning: passing argument 1 of ‘string_append’ from incompatible pointer type [enabled by default]
+  MEMORIA_PRINCIPAL = string_append(bloqueMemoriaAdministrativa, tamanio);
+  ^
+In file included from ../src/MEMORIA.c:24:0:
+/usr/include/commons/string.h:74:8: note: expected ‘char **’ but argument is of type ‘char *’
+  void  string_append(char ** original, char * string_to_add);
+        ^
+../src/MEMORIA.c:84:2: warning: passing argument 2 of ‘string_append’ makes pointer from integer without a cast [enabled by default]
+  MEMORIA_PRINCIPAL = string_append(bloqueMemoriaAdministrativa, tamanio);
+  ^
+In file included from ../src/MEMORIA.c:24:0:
+/usr/include/commons/string.h:74:8: note: expected ‘char *’ but argument is of type ‘int’
+  void  string_append(char ** original, char * string_to_add);
+        ^
+../src/MEMORIA.c:84:20: error: void value not ignored as it ought to be
+  MEMORIA_PRINCIPAL = string_append(bloqueMemoriaAdministrativa, tamanio);
+                    ^
+../src/MEMORIA.c:82:8: warning: unused variable ‘bloqueMemoria’ [-Wunused-variable]
+  char *bloqueMemoria = string_repeat("-",tamanio);
+        ^
+../src/MEMORIA.c: In function ‘escuchar_peticiones_cliente’:
+../src/MEMORIA.c:142:2: warning: implicit declaration of function ‘pthread_create’ [-Wimplicit-function-declaration]
+  pthread_create(&mihilo1, NULL, &CU_Recibir_conexiones, servidor);
+  ^
+../src/MEMORIA.c:143:2: warning: implicit declaration of function ‘pthread_detach’ [-Wimplicit-function-declaration]
   pthread_detach(&mihilo1);
   ^
-Finished building: ../src/KERNEL.c
+../src/MEMORIA.c: In function ‘CU_Solicitar_Bytes_Memoria’:
+../src/MEMORIA.c:171:2: warning: implicit declaration of function ‘solicitar_bytes_de_una_pagina’ [-Wimplicit-function-declaration]
+  enviar_dato_serializado(solicitar_bytes_de_una_pagina(PID, pagina, byteInicial, longitud), cliente);
+  ^
+../src/MEMORIA.c:171:2: warning: passing argument 1 of ‘enviar_dato_serializado’ makes pointer from integer without a cast [enabled by default]
+In file included from ../src/MEMORIA.c:28:0:
+../src/header/Socket.h:15:6: note: expected ‘char *’ but argument is of type ‘int’
+ void enviar_dato_serializado(char* mensajeEnviar, int conexion);
+      ^
+make: *** [src/MEMORIA.o] Error 1
+18:46:51 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+Building file: ../src/MEMORIA.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/MEMORIA.d" -MT"src/MEMORIA.d" -o "src/MEMORIA.o" "../src/MEMORIA.c"
+../src/MEMORIA.c: In function ‘reservar_memoria_principal’:
+../src/MEMORIA.c:72:3: warning: passing argument 2 of ‘strcpy’ makes pointer from integer without a cast [enabled by default]
+   strcpy(valor, i);
+   ^
+In file included from ../src/MEMORIA.c:13:0:
+/usr/include/string.h:129:14: note: expected ‘const char * __restrict__’ but argument is of type ‘int’
+ extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+              ^
+../src/MEMORIA.c:73:3: warning: passing argument 1 of ‘string_append’ from incompatible pointer type [enabled by default]
+   string_append(bloqueMemoriaAdministrativa, valor);
+   ^
+In file included from ../src/MEMORIA.c:24:0:
+/usr/include/commons/string.h:74:8: note: expected ‘char **’ but argument is of type ‘char *’
+  void  string_append(char ** original, char * string_to_add);
+        ^
+../src/MEMORIA.c:75:3: warning: passing argument 1 of ‘string_append’ from incompatible pointer type [enabled by default]
+   string_append(bloqueMemoriaAdministrativa, valor);
+   ^
+In file included from ../src/MEMORIA.c:24:0:
+/usr/include/commons/string.h:74:8: note: expected ‘char **’ but argument is of type ‘char *’
+  void  string_append(char ** original, char * string_to_add);
+        ^
+../src/MEMORIA.c:77:3: warning: passing argument 1 of ‘string_append’ from incompatible pointer type [enabled by default]
+   string_append(bloqueMemoriaAdministrativa, valor);
+   ^
+In file included from ../src/MEMORIA.c:24:0:
+/usr/include/commons/string.h:74:8: note: expected ‘char **’ but argument is of type ‘char *’
+  void  string_append(char ** original, char * string_to_add);
+        ^
+../src/MEMORIA.c:82:2: warning: passing argument 1 of ‘string_repeat’ makes integer from pointer without a cast [enabled by default]
+  char *bloqueMemoria = string_repeat("-",tamanio);
+  ^
+In file included from ../src/MEMORIA.c:24:0:
+/usr/include/commons/string.h:61:10: note: expected ‘char’ but argument is of type ‘char *’
+  char*   string_repeat(char ch, int count);
+          ^
+../src/MEMORIA.c:84:2: warning: passing argument 1 of ‘string_append’ from incompatible pointer type [enabled by default]
+  MEMORIA_PRINCIPAL = string_append(bloqueMemoriaAdministrativa, bloqueMemoria);
+  ^
+In file included from ../src/MEMORIA.c:24:0:
+/usr/include/commons/string.h:74:8: note: expected ‘char **’ but argument is of type ‘char *’
+  void  string_append(char ** original, char * string_to_add);
+        ^
+../src/MEMORIA.c:84:20: error: void value not ignored as it ought to be
+  MEMORIA_PRINCIPAL = string_append(bloqueMemoriaAdministrativa, bloqueMemoria);
+                    ^
+../src/MEMORIA.c: In function ‘escuchar_peticiones_cliente’:
+../src/MEMORIA.c:142:2: warning: implicit declaration of function ‘pthread_create’ [-Wimplicit-function-declaration]
+  pthread_create(&mihilo1, NULL, &CU_Recibir_conexiones, servidor);
+  ^
+../src/MEMORIA.c:143:2: warning: implicit declaration of function ‘pthread_detach’ [-Wimplicit-function-declaration]
+  pthread_detach(&mihilo1);
+  ^
+../src/MEMORIA.c: In function ‘CU_Solicitar_Bytes_Memoria’:
+../src/MEMORIA.c:171:2: warning: implicit declaration of function ‘solicitar_bytes_de_una_pagina’ [-Wimplicit-function-declaration]
+  enviar_dato_serializado(solicitar_bytes_de_una_pagina(PID, pagina, byteInicial, longitud), cliente);
+  ^
+../src/MEMORIA.c:171:2: warning: passing argument 1 of ‘enviar_dato_serializado’ makes pointer from integer without a cast [enabled by default]
+In file included from ../src/MEMORIA.c:28:0:
+../src/header/Socket.h:15:6: note: expected ‘char *’ but argument is of type ‘int’
+ void enviar_dato_serializado(char* mensajeEnviar, int conexion);
+      ^
+make: *** [src/MEMORIA.o] Error 1
+18:47:24 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+Building file: ../src/MEMORIA.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/MEMORIA.d" -MT"src/MEMORIA.d" -o "src/MEMORIA.o" "../src/MEMORIA.c"
+../src/MEMORIA.c: In function ‘reservar_memoria_principal’:
+../src/MEMORIA.c:72:3: warning: passing argument 2 of ‘strcpy’ makes pointer from integer without a cast [enabled by default]
+   strcpy(valor, i);
+   ^
+In file included from ../src/MEMORIA.c:13:0:
+/usr/include/string.h:129:14: note: expected ‘const char * __restrict__’ but argument is of type ‘int’
+ extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+              ^
+../src/MEMORIA.c:73:3: warning: passing argument 1 of ‘string_append’ from incompatible pointer type [enabled by default]
+   string_append(bloqueMemoriaAdministrativa, valor);
+   ^
+In file included from ../src/MEMORIA.c:24:0:
+/usr/include/commons/string.h:74:8: note: expected ‘char **’ but argument is of type ‘char *’
+  void  string_append(char ** original, char * string_to_add);
+        ^
+../src/MEMORIA.c:75:3: warning: passing argument 1 of ‘string_append’ from incompatible pointer type [enabled by default]
+   string_append(bloqueMemoriaAdministrativa, valor);
+   ^
+In file included from ../src/MEMORIA.c:24:0:
+/usr/include/commons/string.h:74:8: note: expected ‘char **’ but argument is of type ‘char *’
+  void  string_append(char ** original, char * string_to_add);
+        ^
+../src/MEMORIA.c:77:3: warning: passing argument 1 of ‘string_append’ from incompatible pointer type [enabled by default]
+   string_append(bloqueMemoriaAdministrativa, valor);
+   ^
+In file included from ../src/MEMORIA.c:24:0:
+/usr/include/commons/string.h:74:8: note: expected ‘char **’ but argument is of type ‘char *’
+  void  string_append(char ** original, char * string_to_add);
+        ^
+../src/MEMORIA.c:82:2: warning: passing argument 1 of ‘string_repeat’ makes integer from pointer without a cast [enabled by default]
+  char *bloqueMemoria = string_repeat("-",tamanio);
+  ^
+In file included from ../src/MEMORIA.c:24:0:
+/usr/include/commons/string.h:61:10: note: expected ‘char’ but argument is of type ‘char *’
+  char*   string_repeat(char ch, int count);
+          ^
+../src/MEMORIA.c:84:2: warning: passing argument 1 of ‘string_append’ from incompatible pointer type [enabled by default]
+  MEMORIA_PRINCIPAL = string_append(bloqueMemoriaAdministrativa, bloqueMemoria);
+  ^
+In file included from ../src/MEMORIA.c:24:0:
+/usr/include/commons/string.h:74:8: note: expected ‘char **’ but argument is of type ‘char *’
+  void  string_append(char ** original, char * string_to_add);
+        ^
+../src/MEMORIA.c:84:20: error: void value not ignored as it ought to be
+  MEMORIA_PRINCIPAL = string_append(bloqueMemoriaAdministrativa, bloqueMemoria);
+                    ^
+../src/MEMORIA.c: In function ‘escuchar_peticiones_cliente’:
+../src/MEMORIA.c:142:2: warning: implicit declaration of function ‘pthread_create’ [-Wimplicit-function-declaration]
+  pthread_create(&mihilo1, NULL, &CU_Recibir_conexiones, servidor);
+  ^
+../src/MEMORIA.c:143:2: warning: implicit declaration of function ‘pthread_detach’ [-Wimplicit-function-declaration]
+  pthread_detach(&mihilo1);
+  ^
+../src/MEMORIA.c: In function ‘CU_Solicitar_Bytes_Memoria’:
+../src/MEMORIA.c:171:2: warning: implicit declaration of function ‘solicitar_bytes_de_una_pagina’ [-Wimplicit-function-declaration]
+  enviar_dato_serializado(solicitar_bytes_de_una_pagina(PID, pagina, byteInicial, longitud), cliente);
+  ^
+../src/MEMORIA.c:171:2: warning: passing argument 1 of ‘enviar_dato_serializado’ makes pointer from integer without a cast [enabled by default]
+In file included from ../src/MEMORIA.c:28:0:
+../src/header/Socket.h:15:6: note: expected ‘char *’ but argument is of type ‘int’
+ void enviar_dato_serializado(char* mensajeEnviar, int conexion);
+      ^
+make: *** [src/MEMORIA.o] Error 1
+18:47:55 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+Building file: ../src/MEMORIA.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/MEMORIA.d" -MT"src/MEMORIA.d" -o "src/MEMORIA.o" "../src/MEMORIA.c"
+../src/MEMORIA.c: In function ‘reservar_memoria_principal’:
+../src/MEMORIA.c:72:3: warning: passing argument 2 of ‘strcpy’ makes pointer from integer without a cast [enabled by default]
+   strcpy(valor, i);
+   ^
+In file included from ../src/MEMORIA.c:13:0:
+/usr/include/string.h:129:14: note: expected ‘const char * __restrict__’ but argument is of type ‘int’
+ extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+              ^
+../src/MEMORIA.c:73:3: warning: passing argument 1 of ‘string_append’ from incompatible pointer type [enabled by default]
+   string_append(bloqueMemoriaAdministrativa, valor);
+   ^
+In file included from ../src/MEMORIA.c:24:0:
+/usr/include/commons/string.h:74:8: note: expected ‘char **’ but argument is of type ‘char *’
+  void  string_append(char ** original, char * string_to_add);
+        ^
+../src/MEMORIA.c:75:3: warning: passing argument 1 of ‘string_append’ from incompatible pointer type [enabled by default]
+   string_append(bloqueMemoriaAdministrativa, valor);
+   ^
+In file included from ../src/MEMORIA.c:24:0:
+/usr/include/commons/string.h:74:8: note: expected ‘char **’ but argument is of type ‘char *’
+  void  string_append(char ** original, char * string_to_add);
+        ^
+../src/MEMORIA.c:77:3: warning: passing argument 1 of ‘string_append’ from incompatible pointer type [enabled by default]
+   string_append(bloqueMemoriaAdministrativa, valor);
+   ^
+In file included from ../src/MEMORIA.c:24:0:
+/usr/include/commons/string.h:74:8: note: expected ‘char **’ but argument is of type ‘char *’
+  void  string_append(char ** original, char * string_to_add);
+        ^
+../src/MEMORIA.c:82:2: warning: passing argument 1 of ‘string_repeat’ makes integer from pointer without a cast [enabled by default]
+  char * bloqueMemoria = string_repeat("-",tamanio);
+  ^
+In file included from ../src/MEMORIA.c:24:0:
+/usr/include/commons/string.h:61:10: note: expected ‘char’ but argument is of type ‘char *’
+  char*   string_repeat(char ch, int count);
+          ^
+../src/MEMORIA.c:84:2: warning: passing argument 1 of ‘string_append’ from incompatible pointer type [enabled by default]
+  MEMORIA_PRINCIPAL = string_append(bloqueMemoriaAdministrativa, bloqueMemoria);
+  ^
+In file included from ../src/MEMORIA.c:24:0:
+/usr/include/commons/string.h:74:8: note: expected ‘char **’ but argument is of type ‘char *’
+  void  string_append(char ** original, char * string_to_add);
+        ^
+../src/MEMORIA.c:84:20: error: void value not ignored as it ought to be
+  MEMORIA_PRINCIPAL = string_append(bloqueMemoriaAdministrativa, bloqueMemoria);
+                    ^
+../src/MEMORIA.c: In function ‘escuchar_peticiones_cliente’:
+../src/MEMORIA.c:142:2: warning: implicit declaration of function ‘pthread_create’ [-Wimplicit-function-declaration]
+  pthread_create(&mihilo1, NULL, &CU_Recibir_conexiones, servidor);
+  ^
+../src/MEMORIA.c:143:2: warning: implicit declaration of function ‘pthread_detach’ [-Wimplicit-function-declaration]
+  pthread_detach(&mihilo1);
+  ^
+../src/MEMORIA.c: In function ‘CU_Solicitar_Bytes_Memoria’:
+../src/MEMORIA.c:171:2: warning: implicit declaration of function ‘solicitar_bytes_de_una_pagina’ [-Wimplicit-function-declaration]
+  enviar_dato_serializado(solicitar_bytes_de_una_pagina(PID, pagina, byteInicial, longitud), cliente);
+  ^
+../src/MEMORIA.c:171:2: warning: passing argument 1 of ‘enviar_dato_serializado’ makes pointer from integer without a cast [enabled by default]
+In file included from ../src/MEMORIA.c:28:0:
+../src/header/Socket.h:15:6: note: expected ‘char *’ but argument is of type ‘int’
+ void enviar_dato_serializado(char* mensajeEnviar, int conexion);
+      ^
+make: *** [src/MEMORIA.o] Error 1
+18:49:18 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+Building file: ../src/MEMORIA.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/MEMORIA.d" -MT"src/MEMORIA.d" -o "src/MEMORIA.o" "../src/MEMORIA.c"
+../src/MEMORIA.c: In function ‘reservar_memoria_principal’:
+../src/MEMORIA.c:72:3: warning: passing argument 2 of ‘strcpy’ makes pointer from integer without a cast [enabled by default]
+   strcpy(valor, i);
+   ^
+In file included from ../src/MEMORIA.c:13:0:
+/usr/include/string.h:129:14: note: expected ‘const char * __restrict__’ but argument is of type ‘int’
+ extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+              ^
+../src/MEMORIA.c:73:3: warning: passing argument 1 of ‘string_append’ from incompatible pointer type [enabled by default]
+   string_append(bloqueMemoriaAdministrativa, valor);
+   ^
+In file included from ../src/MEMORIA.c:24:0:
+/usr/include/commons/string.h:74:8: note: expected ‘char **’ but argument is of type ‘char *’
+  void  string_append(char ** original, char * string_to_add);
+        ^
+../src/MEMORIA.c:75:3: warning: passing argument 1 of ‘string_append’ from incompatible pointer type [enabled by default]
+   string_append(bloqueMemoriaAdministrativa, valor);
+   ^
+In file included from ../src/MEMORIA.c:24:0:
+/usr/include/commons/string.h:74:8: note: expected ‘char **’ but argument is of type ‘char *’
+  void  string_append(char ** original, char * string_to_add);
+        ^
+../src/MEMORIA.c:77:3: warning: passing argument 1 of ‘string_append’ from incompatible pointer type [enabled by default]
+   string_append(bloqueMemoriaAdministrativa, valor);
+   ^
+In file included from ../src/MEMORIA.c:24:0:
+/usr/include/commons/string.h:74:8: note: expected ‘char **’ but argument is of type ‘char *’
+  void  string_append(char ** original, char * string_to_add);
+        ^
+../src/MEMORIA.c:82:2: warning: passing argument 1 of ‘string_repeat’ makes integer from pointer without a cast [enabled by default]
+  char * bloqueMemoria = string_repeat("-",tamanio);
+  ^
+In file included from ../src/MEMORIA.c:24:0:
+/usr/include/commons/string.h:61:10: note: expected ‘char’ but argument is of type ‘char *’
+  char*   string_repeat(char ch, int count);
+          ^
+../src/MEMORIA.c:82:9: warning: unused variable ‘bloqueMemoria’ [-Wunused-variable]
+  char * bloqueMemoria = string_repeat("-",tamanio);
+         ^
+../src/MEMORIA.c: In function ‘escuchar_peticiones_cliente’:
+../src/MEMORIA.c:142:2: warning: implicit declaration of function ‘pthread_create’ [-Wimplicit-function-declaration]
+  pthread_create(&mihilo1, NULL, &CU_Recibir_conexiones, servidor);
+  ^
+../src/MEMORIA.c:143:2: warning: implicit declaration of function ‘pthread_detach’ [-Wimplicit-function-declaration]
+  pthread_detach(&mihilo1);
+  ^
+../src/MEMORIA.c: In function ‘CU_Solicitar_Bytes_Memoria’:
+../src/MEMORIA.c:171:2: warning: implicit declaration of function ‘solicitar_bytes_de_una_pagina’ [-Wimplicit-function-declaration]
+  enviar_dato_serializado(solicitar_bytes_de_una_pagina(PID, pagina, byteInicial, longitud), cliente);
+  ^
+../src/MEMORIA.c:171:2: warning: passing argument 1 of ‘enviar_dato_serializado’ makes pointer from integer without a cast [enabled by default]
+In file included from ../src/MEMORIA.c:28:0:
+../src/header/Socket.h:15:6: note: expected ‘char *’ but argument is of type ‘int’
+ void enviar_dato_serializado(char* mensajeEnviar, int conexion);
+      ^
+Finished building: ../src/MEMORIA.c
  
-Building target: SistemaKERNEL
+Building file: ../src/SolicitudesUsuario.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolicitudesUsuario.d" -MT"src/SolicitudesUsuario.d" -o "src/SolicitudesUsuario.o" "../src/SolicitudesUsuario.c"
+Finished building: ../src/SolicitudesUsuario.c
+ 
+Building target: SistemaMEMORIA
 Invoking: GCC C Linker
-gcc  -o "SistemaKERNEL"  ./src/header/AppConfig.o ./src/header/Socket.o ./src/header/funcionesUtiles.o  ./src/InterfazCPU.o ./src/InterfazConsola.o ./src/InterfazFS.o ./src/InterfazMemoria.o ./src/KERNEL.o ./src/SolicitudesUsuario.o   -lcommons -lpthread
-Finished building target: SistemaKERNEL
+gcc  -o "SistemaMEMORIA"  ./src/header/AppConfig.o ./src/header/Socket.o ./src/header/funcionesUtiles.o  ./src/FuncionesMemoria.o ./src/InterfazCPU.o ./src/InterfazKernel.o ./src/MEMORIA.o ./src/SolicitudesUsuario.o   -lcommons -lpthread
+Finished building target: SistemaMEMORIA
  
-09:47:24 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
-make all 
-make: No se hace nada para «all».
-11:22:47 **** Build of configuration Debug for project SistemaCPU ****
-make all 
-make: No se hace nada para «all».
-11:22:48 **** Build of configuration Debug for project SistemaConsola ****
-make all 
-make: No se hace nada para «all».
-11:22:48 **** Build of configuration Debug for project SistemaFILESYSTEM ****
-make all 
-make: No se hace nada para «all».
-11:22:48 **** Build of configuration Debug for project SistemaKERNEL ****
-make all 
-make: No se hace nada para «all».
-11:22:49 **** Build of configuration Debug for project SistemaMEMORIA ****
-make all 
-make: No se hace nada para «all».

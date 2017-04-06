@@ -8,6 +8,6 @@
 #ifndef HEADER_INTERFAZMEMORIA_H_
 #define HEADER_INTERFAZMEMORIA_H_
 
-
+void solicitar_bytes_memoria();
 
 #endif /* HEADER_INTERFAZMEMORIA_H_ */
