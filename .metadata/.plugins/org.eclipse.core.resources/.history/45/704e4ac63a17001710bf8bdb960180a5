@@ -1,0 +1,34 @@
+/*
+ * AppConfig.c
+ *
+ *  Created on: 1/4/2017
+ *      Author: utnso
+ */
+#include<stdlib.h>
+#include<stdio.h>
+#include "AppConfig.h"
+#include <commons/config.h>
+#include <commons/string.h>
+
+#include <stdlib.h>
+#include <string.h>
+
+
+void inicializar_configuracion(char *PATH_ARCHIVO_CONFIGURACION){
+
+	t_config *config = config_create("resources/config-double-newline.cfg");
+	config_destroy(config);
+
+
+
+	configuraciones.PUERTO=8080;
+	configuraciones.MARCOS=10;
+	configuraciones.MARCO_SIZE=10;
+	configuraciones.ENTRADAS_CACHE=10;
+	configuraciones.CACHE_X_PROC=10;
+	configuraciones.RETARDO_MEMORIA=10;
+
+	     //Agregado
+
+	configuraciones.CANTIDAD_MAXIMA_CONCURRENCIA=10;
+}

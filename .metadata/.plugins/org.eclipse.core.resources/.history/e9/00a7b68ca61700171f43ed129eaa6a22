@@ -1,0 +1,20 @@
+/*
+ * InterfazKernel.c
+ *
+ *  Created on: 1/4/2017
+ *      Author: utnso
+ */
+
+
+typedef struct {
+
+} PCB;
+
+/* se encarga de recibir y llenar toda la estructura struct PCB */
+void recibir_PCB_de_kernel(int conexionKernel);
+
+
+/* Se encarga de devolver al kernel el PCB con sus modificaciones por la ejecuci{on*/
+void enviar_PCB_a_kernel(int conexionKernel);
+
+void enviar_solicitud_reserva_memoria

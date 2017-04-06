@@ -1,0 +1,16 @@
+/*
+ * SolicitudesUsuario.h
+ *
+ *  Created on: 1/4/2017
+ *      Author: utnso
+ */
+
+#ifndef HEADER_SOLICITUDESUSUARIO_H_
+#define HEADER_SOLICITUDESUSUARIO_H_
+
+CU_Modificar_Retardo();
+		CU_Generar_Reporte();
+		CU_Limpiar_CACHE();
+		CU_Mostrar_Tamaño_MEMORIA_PID();
+
+#endif /* HEADER_SOLICITUDESUSUARIO_H_ */

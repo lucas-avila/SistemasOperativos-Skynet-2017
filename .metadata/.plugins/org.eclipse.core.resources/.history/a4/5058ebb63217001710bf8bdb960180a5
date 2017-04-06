@@ -1,0 +1,19 @@
+/*
+ * SolicitudesUsuario.c
+ *
+ *  Created on: 1/4/2017
+ *      Author: utnso
+ */
+
+void CU_Modificar_Retardo() {
+
+}
+void CU_Generar_Reporte() {
+
+}
+void CU_Limpiar_CACHE() {
+
+}
+void CU_Mostrar_Tamanio_MEMORIA_PID() {
+
+}

@@ -1,0 +1,47 @@
+/*
+ ============================================================================
+ Name        : KERNEL.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <sys/un.h>
+#include <netinet/in.h>
+#include <netdb.h>
+#include <unistd.h>
+#include <errno.h>
+#include <semaphore.h>
+#include <signal.h>
+
+#include <commons/string.h>
+
+#include "header/AppConfig.h"
+#include "header/Socket.h"
+#include "header/SolicitudesUsuario.h"
+#include "header/funcionesUtiles.h"
+
+
+
+
+int main(int argc, char *argv[]) {
+
+	//CUANDO SE INVOCA ENVIAR POR PARAMETRO EL PATH DEL ARCHIVO
+	puts(argv[1]); /** El primer argumento path de archivo **/
+	inicializar_configuracion(argv[1]);
+
+	//INICIAR SERVIDOR PARA ESCUCHAR CONSOLA:
+	int servidor_Consola = iniciar_servidor(configuraciones.PUERTO_PROG, configuraciones.CANTIDAD_MAXIMA_CONCURRENCIA);
+	escuchar_peticiones_CONSOLA(servidor_Consola); // asincronico - multihilo
+
+
+
+	return EXIT_SUCCESS;
+}

@@ -21,6 +21,8 @@
 #include <semaphore.h>
 #include <signal.h>
 
+#include <commons/string.h>
+
 #include "header/AppConfig.h"
 #include "header/Socket.h"
 
@@ -31,7 +33,6 @@ void reservar_memoria_principal();
 void crear_e_inicializar_tabla_paginas_invertidas();
 void atender_solicitudes_de_usuario();
 
-
 void CU_Recibir_Conexion_KERNEL(int cliente);
 void CU_Recibir_Conexion_CPU(int cliente);
 void CU_Recibir_conexiones(int servidor);
@@ -41,7 +42,6 @@ void escuchar_peticiones_cliente(int servidor);
 int main(int argc, char *argv[]) {
 
 	//CUANDO SE INVOCA ENVIAR POR PARAMETRO EL PATH DEL ARCHIVO
-
 
 	puts(argv[1]); /** El primer argumento path de archivo **/
 	inicializar_configuracion(argv[1]);
@@ -56,21 +56,38 @@ int main(int argc, char *argv[]) {
 }
 
 void reservar_memoria_principal() {
-	MEMORIA_PRINCIPAL = malloc(configuraciones.MARCOS*configuraciones.MARCO_SIZE);
-	//strcpy(MEMORIA_PRINCIPAL[10],"2");
 
-	//int i=0;
-	//for( i;i<configuraciones.MARCOS*configuraciones.MARCO_SIZE;i++){
+	/***CODIGO QUE SIRVE PARA UN FUTURO RESERVAR MEMORIA, Y ESCRIBIR Y LEER PAGINAS
+	 * SOBRE TODO LA LIBRERIA STRING DE SISTEMAS OPERATIVOS
+	 */
 
-	////	printf(" %s ",MEMORIA_PRINCIPAL[i]);
-	//}
+	int tamanio = configuraciones.MARCOS * configuraciones.MARCO_SIZE;
+	MEMORIA_PRINCIPAL = string_repeat('-', tamanio);
+	printf("\n%s", MEMORIA_PRINCIPAL);
+	printf("\n%d", strlen(MEMORIA_PRINCIPAL));
+	char* primeraParte = string_substring(MEMORIA_PRINCIPAL, 0, 50);
+	printf("\n%d", strlen(primeraParte));
+
+	char* textoMedio = "10005JONAS";
+	char* segundaParte = string_substring_from(MEMORIA_PRINCIPAL, 50 + strlen(textoMedio) );
+	printf("\n%d", strlen(segundaParte));
+	string_capitalized(MEMORIA_PRINCIPAL);
+
+	MEMORIA_PRINCIPAL = string_new();
+
+	string_append(&MEMORIA_PRINCIPAL, primeraParte);
+	string_append(&MEMORIA_PRINCIPAL, textoMedio);
+	string_append(&MEMORIA_PRINCIPAL, segundaParte);
+
+	string_capitalized(primeraParte);
+	string_capitalized(segundaParte);
+	printf("\n%s", MEMORIA_PRINCIPAL);
+	printf("\n%d", strlen(MEMORIA_PRINCIPAL));
 
 }
 void crear_e_inicializar_tabla_paginas_invertidas() {
 
 }
-
-
 
 void mostrar_menu_usuario() {
 	printf("******* MENU PRINCIPAL MEMORIA ******");
@@ -89,7 +106,6 @@ void atender_solicitudes_de_usuario() {
 		opcion = validarNumeroInput(1, 5);
 		switch (opcion) {
 
-
 		case 1:
 			CU_Modificar_Retardo();
 			break;
@@ -105,7 +121,6 @@ void atender_solicitudes_de_usuario() {
 		}
 	} while (opcion != 5);
 }
-
 
 void CU_Recibir_Conexion_KERNEL(int cliente) {
 
@@ -126,10 +141,10 @@ void CU_Recibir_conexiones(int servidor) {
 		char* codigo_IDENTIFICACION = recibir_dato_serializado(cliente);
 
 		pthread_t mihilo1;
-		if (strcmp(codigo_IDENTIFICACION, "KERNEL")==0) {
+		if (strcmp(codigo_IDENTIFICACION, "KERNEL") == 0) {
 			pthread_create(&mihilo1, NULL, &CU_Recibir_Conexion_KERNEL, cliente);
 			pthread_detach(&mihilo1);
-		} else if (strcmp(codigo_IDENTIFICACION, "CPU")==0) {
+		} else if (strcmp(codigo_IDENTIFICACION, "CPU") == 0) {
 			pthread_create(&mihilo1, NULL, &CU_Recibir_Conexion_CPU, cliente);
 			pthread_detach(&mihilo1);
 		} else {

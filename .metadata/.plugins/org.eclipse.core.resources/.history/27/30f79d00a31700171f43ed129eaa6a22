@@ -1,0 +1,24 @@
+/*
+ ============================================================================
+ Name        : CPU.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "header/AppConfig.h"
+#include "header/Socket.h"
+
+int main(int argc, char *argv[]) {
+
+	//CUANDO SE INVOCA ENVIAR POR PARAMETRO EL PATH DEL ARCHIVO
+
+
+	puts(argv[1]); /** El primer argumento path de archivo **/
+	inicializar_configuracion(argv[1]);
+	return EXIT_SUCCESS;
+}

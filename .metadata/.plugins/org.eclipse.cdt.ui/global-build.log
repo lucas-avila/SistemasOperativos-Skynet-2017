@@ -1,0 +1,228 @@
+09:10:16 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+Building file: ../src/header/AppConfig.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/AppConfig.d" -MT"src/header/AppConfig.d" -o "src/header/AppConfig.o" "../src/header/AppConfig.c"
+Finished building: ../src/header/AppConfig.c
+ 
+Building file: ../src/KERNEL.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/KERNEL.d" -MT"src/KERNEL.d" -o "src/KERNEL.o" "../src/KERNEL.c"
+../src/KERNEL.c: In function ‘escuchar_peticiones_CONSOLA’:
+../src/KERNEL.c:106:2: warning: implicit declaration of function ‘pthread_create’ [-Wimplicit-function-declaration]
+  pthread_create(&mihilo1, NULL, &escuchar_Conexiones_Consola, servidor);
+  ^
+../src/KERNEL.c:107:2: warning: implicit declaration of function ‘pthread_detach’ [-Wimplicit-function-declaration]
+  pthread_detach(&mihilo1);
+  ^
+Finished building: ../src/KERNEL.c
+ 
+Building target: SistemaKERNEL
+Invoking: GCC C Linker
+gcc  -o "SistemaKERNEL"  ./src/header/AppConfig.o ./src/header/Socket.o ./src/header/funcionesUtiles.o  ./src/InterfazCPU.o ./src/InterfazConsola.o ./src/InterfazFS.o ./src/InterfazMemoria.o ./src/KERNEL.o ./src/SolicitudesUsuario.o   -lcommons -lpthread
+Finished building target: SistemaKERNEL
+ 
+09:10:23 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+make: No se hace nada para «all».
+09:14:07 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+Building file: ../src/KERNEL.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/KERNEL.d" -MT"src/KERNEL.d" -o "src/KERNEL.o" "../src/KERNEL.c"
+../src/KERNEL.c: In function ‘escuchar_peticiones_CONSOLA’:
+../src/KERNEL.c:106:2: warning: implicit declaration of function ‘pthread_create’ [-Wimplicit-function-declaration]
+  pthread_create(&mihilo1, NULL, &escuchar_Conexiones_Consola, servidor);
+  ^
+../src/KERNEL.c:107:2: warning: implicit declaration of function ‘pthread_detach’ [-Wimplicit-function-declaration]
+  pthread_detach(&mihilo1);
+  ^
+Finished building: ../src/KERNEL.c
+ 
+Building target: SistemaKERNEL
+Invoking: GCC C Linker
+gcc  -o "SistemaKERNEL"  ./src/header/AppConfig.o ./src/header/Socket.o ./src/header/funcionesUtiles.o  ./src/InterfazCPU.o ./src/InterfazConsola.o ./src/InterfazFS.o ./src/InterfazMemoria.o ./src/KERNEL.o ./src/SolicitudesUsuario.o   -lcommons -lpthread
+Finished building target: SistemaKERNEL
+ 
+09:14:55 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+Building file: ../src/header/AppConfig.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/AppConfig.d" -MT"src/header/AppConfig.d" -o "src/header/AppConfig.o" "../src/header/AppConfig.c"
+Finished building: ../src/header/AppConfig.c
+ 
+Building target: SistemaKERNEL
+Invoking: GCC C Linker
+gcc  -o "SistemaKERNEL"  ./src/header/AppConfig.o ./src/header/Socket.o ./src/header/funcionesUtiles.o  ./src/InterfazCPU.o ./src/InterfazConsola.o ./src/InterfazFS.o ./src/InterfazMemoria.o ./src/KERNEL.o ./src/SolicitudesUsuario.o   -lcommons -lpthread
+Finished building target: SistemaKERNEL
+ 
+09:14:59 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+make: No se hace nada para «all».
+09:15:54 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+Building file: ../src/KERNEL.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/KERNEL.d" -MT"src/KERNEL.d" -o "src/KERNEL.o" "../src/KERNEL.c"
+../src/KERNEL.c: In function ‘escuchar_peticiones_CONSOLA’:
+../src/KERNEL.c:106:2: warning: implicit declaration of function ‘pthread_create’ [-Wimplicit-function-declaration]
+  pthread_create(&mihilo1, NULL, &escuchar_Conexiones_Consola, servidor);
+  ^
+../src/KERNEL.c:107:2: warning: implicit declaration of function ‘pthread_detach’ [-Wimplicit-function-declaration]
+  pthread_detach(&mihilo1);
+  ^
+Finished building: ../src/KERNEL.c
+ 
+Building target: SistemaKERNEL
+Invoking: GCC C Linker
+gcc  -o "SistemaKERNEL"  ./src/header/AppConfig.o ./src/header/Socket.o ./src/header/funcionesUtiles.o  ./src/InterfazCPU.o ./src/InterfazConsola.o ./src/InterfazFS.o ./src/InterfazMemoria.o ./src/KERNEL.o ./src/SolicitudesUsuario.o   -lcommons -lpthread
+Finished building target: SistemaKERNEL
+ 
+09:15:58 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+make: No se hace nada para «all».
+09:18:10 **** Build of configuration Debug for project SistemaCPU ****
+make all 
+make: No se hace nada para «all».
+09:19:13 **** Incremental Build of configuration Debug for project SistemaCPU ****
+make all 
+make: No se hace nada para «all».
+09:19:13 **** Build of configuration Debug for project SistemaConsola ****
+make all 
+make: No se hace nada para «all».
+09:19:13 **** Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+make: No se hace nada para «all».
+09:19:13 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+make: No se hace nada para «all».
+09:19:13 **** Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+Building file: ../src/MEMORIA.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/MEMORIA.d" -MT"src/MEMORIA.d" -o "src/MEMORIA.o" "../src/MEMORIA.c"
+../src/MEMORIA.c: In function ‘escuchar_peticiones_cliente’:
+../src/MEMORIA.c:134:2: warning: implicit declaration of function ‘pthread_create’ [-Wimplicit-function-declaration]
+  pthread_create(&mihilo1, NULL, &CU_Recibir_conexiones, servidor);
+  ^
+../src/MEMORIA.c:135:2: warning: implicit declaration of function ‘pthread_detach’ [-Wimplicit-function-declaration]
+  pthread_detach(&mihilo1);
+  ^
+Finished building: ../src/MEMORIA.c
+ 
+Building target: SistemaMEMORIA
+Invoking: GCC C Linker
+gcc  -o "SistemaMEMORIA"  ./src/header/AppConfig.o ./src/header/Socket.o ./src/header/funcionesUtiles.o  ./src/InterfazCPU.o ./src/InterfazKernel.o ./src/MEMORIA.o ./src/SolicitudesUsuario.o   -lcommons -lpthread
+Finished building target: SistemaMEMORIA
+ 
+09:20:33 **** Incremental Build of configuration Debug for project SistemaCPU ****
+make all 
+make: No se hace nada para «all».
+09:20:33 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+make: No se hace nada para «all».
+09:20:34 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+make: No se hace nada para «all».
+09:20:34 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+make: No se hace nada para «all».
+09:20:34 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+make: No se hace nada para «all».
+09:23:25 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+Building file: ../src/KERNEL.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/KERNEL.d" -MT"src/KERNEL.d" -o "src/KERNEL.o" "../src/KERNEL.c"
+../src/KERNEL.c: In function ‘escuchar_peticiones_CONSOLA’:
+../src/KERNEL.c:106:2: warning: implicit declaration of function ‘pthread_create’ [-Wimplicit-function-declaration]
+  pthread_create(&mihilo1, NULL, &escuchar_Conexiones_Consola, servidor);
+  ^
+../src/KERNEL.c:107:2: warning: implicit declaration of function ‘pthread_detach’ [-Wimplicit-function-declaration]
+  pthread_detach(&mihilo1);
+  ^
+Finished building: ../src/KERNEL.c
+ 
+Building target: SistemaKERNEL
+Invoking: GCC C Linker
+gcc  -o "SistemaKERNEL"  ./src/header/AppConfig.o ./src/header/Socket.o ./src/header/funcionesUtiles.o  ./src/InterfazCPU.o ./src/InterfazConsola.o ./src/InterfazFS.o ./src/InterfazMemoria.o ./src/KERNEL.o ./src/SolicitudesUsuario.o   -lcommons -lpthread
+Finished building target: SistemaKERNEL
+ 
+09:44:58 **** Incremental Build of configuration Debug for project SistemaCPU ****
+make all 
+make: No se hace nada para «all».
+09:44:58 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+make: No se hace nada para «all».
+09:44:59 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+make: No se hace nada para «all».
+09:44:59 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+Building file: ../src/KERNEL.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/KERNEL.d" -MT"src/KERNEL.d" -o "src/KERNEL.o" "../src/KERNEL.c"
+../src/KERNEL.c: In function ‘escuchar_peticiones_CONSOLA’:
+../src/KERNEL.c:106:2: warning: implicit declaration of function ‘pthread_create’ [-Wimplicit-function-declaration]
+  pthread_create(&mihilo1, NULL, &escuchar_Conexiones_Consola, servidor);
+  ^
+../src/KERNEL.c:107:2: warning: implicit declaration of function ‘pthread_detach’ [-Wimplicit-function-declaration]
+  pthread_detach(&mihilo1);
+  ^
+Finished building: ../src/KERNEL.c
+ 
+Building target: SistemaKERNEL
+Invoking: GCC C Linker
+gcc  -o "SistemaKERNEL"  ./src/header/AppConfig.o ./src/header/Socket.o ./src/header/funcionesUtiles.o  ./src/InterfazCPU.o ./src/InterfazConsola.o ./src/InterfazFS.o ./src/InterfazMemoria.o ./src/KERNEL.o ./src/SolicitudesUsuario.o   -lcommons -lpthread
+Finished building target: SistemaKERNEL
+ 
+09:44:59 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+make: No se hace nada para «all».
+09:47:23 **** Incremental Build of configuration Debug for project SistemaCPU ****
+make all 
+make: No se hace nada para «all».
+09:47:23 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+make: No se hace nada para «all».
+09:47:23 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+make: No se hace nada para «all».
+09:47:24 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+Building file: ../src/KERNEL.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/KERNEL.d" -MT"src/KERNEL.d" -o "src/KERNEL.o" "../src/KERNEL.c"
+../src/KERNEL.c: In function ‘escuchar_peticiones_CONSOLA’:
+../src/KERNEL.c:106:2: warning: implicit declaration of function ‘pthread_create’ [-Wimplicit-function-declaration]
+  pthread_create(&mihilo1, NULL, &escuchar_Conexiones_Consola, servidor);
+  ^
+../src/KERNEL.c:107:2: warning: implicit declaration of function ‘pthread_detach’ [-Wimplicit-function-declaration]
+  pthread_detach(&mihilo1);
+  ^
+Finished building: ../src/KERNEL.c
+ 
+Building target: SistemaKERNEL
+Invoking: GCC C Linker
+gcc  -o "SistemaKERNEL"  ./src/header/AppConfig.o ./src/header/Socket.o ./src/header/funcionesUtiles.o  ./src/InterfazCPU.o ./src/InterfazConsola.o ./src/InterfazFS.o ./src/InterfazMemoria.o ./src/KERNEL.o ./src/SolicitudesUsuario.o   -lcommons -lpthread
+Finished building target: SistemaKERNEL
+ 
+09:47:24 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+make: No se hace nada para «all».
+11:22:47 **** Build of configuration Debug for project SistemaCPU ****
+make all 
+make: No se hace nada para «all».
+11:22:48 **** Build of configuration Debug for project SistemaConsola ****
+make all 
+make: No se hace nada para «all».
+11:22:48 **** Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+make: No se hace nada para «all».
+11:22:48 **** Build of configuration Debug for project SistemaKERNEL ****
+make all 
+make: No se hace nada para «all».
+11:22:49 **** Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+make: No se hace nada para «all».
