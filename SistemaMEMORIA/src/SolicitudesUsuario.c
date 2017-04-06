@@ -7,11 +7,12 @@
 
 #include<stdio.h>
 #include<stdlib.h>
+#include "header/AppConfig.h"
 void CU_Modificar_Retardo() {
 
 }
 void CU_Generar_Reporte() {
-
+	printf("\n%s", MEMORIA_PRINCIPAL);
 }
 void CU_Limpiar_CACHE() {
 

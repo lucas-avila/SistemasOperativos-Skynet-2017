@@ -25,11 +25,10 @@ typedef struct {
 AppConfig configuraciones;
 
 
+char * MEMORIA_PRINCIPAL;
 /****
  * VARIABLES GLOBALES PROPIAS DEL SISTEMA MEMORIA
  */
-
-char * MEMORIA_PRINCIPAL;
 
 
 

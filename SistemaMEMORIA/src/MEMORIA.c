@@ -24,10 +24,14 @@
 #include <commons/string.h>
 
 #include "header/AppConfig.h"
+//#include "header/FuncionesMemoria.h"
 #include "header/Socket.h"
 
 #include "header/SolicitudesUsuario.h"
 #include "header/funcionesUtiles.h"
+
+
+#define TAMANIO 4
 
 void reservar_memoria_principal();
 void crear_e_inicializar_tabla_paginas_invertidas();
@@ -39,11 +43,12 @@ void CU_Recibir_conexiones(int servidor);
 
 void escuchar_peticiones_cliente(int servidor);
 
+void CU_Solicitar_Bytes_Memoria(int cliente);
+
 int main(int argc, char *argv[]) {
 
 	//CUANDO SE INVOCA ENVIAR POR PARAMETRO EL PATH DEL ARCHIVO
-
-	puts(argv[1]); /** El primer argumento path de archivo **/
+	/** El primer argumento path de archivo **/
 	inicializar_configuracion(argv[1]);
 	reservar_memoria_principal();
 	crear_e_inicializar_tabla_paginas_invertidas();
@@ -60,29 +65,23 @@ void reservar_memoria_principal() {
 	/***CODIGO QUE SIRVE PARA UN FUTURO RESERVAR MEMORIA, Y ESCRIBIR Y LEER PAGINAS
 	 * SOBRE TODO LA LIBRERIA STRING DE SISTEMAS OPERATIVOS
 	 */
+	char valor[TAMANIO];
+	char *bloqueMemoriaAdministrativa = string_new();
+	int i = 0;
+	for (i = 0; i < configuraciones.MARCOS; i++) {
+		strcpy(valor, i);
+		string_append(bloqueMemoriaAdministrativa, valor);
+		strcpy(valor, "-1");
+		string_append(bloqueMemoriaAdministrativa, valor);
+		strcpy(valor,  "-1");
+		string_append(bloqueMemoriaAdministrativa, valor);
+	}
 
-	int tamanio = configuraciones.MARCOS * configuraciones.MARCO_SIZE;
-	MEMORIA_PRINCIPAL = string_repeat('-', tamanio);
-	printf("\n%s", MEMORIA_PRINCIPAL);
-	printf("\n%d", strlen(MEMORIA_PRINCIPAL));
-	char* primeraParte = string_substring(MEMORIA_PRINCIPAL, 0, 50);
-	printf("\n%d", strlen(primeraParte));
+	int tamanio = configuraciones.MARCOS * configuraciones.MARCO_SIZE  ;
 
-	char* textoMedio = "10005JONAS";
-	char* segundaParte = string_substring_from(MEMORIA_PRINCIPAL, 50 + strlen(textoMedio) );
-	printf("\n%d", strlen(segundaParte));
-	string_capitalized(MEMORIA_PRINCIPAL);
+	char * bloqueMemoria = string_repeat("-",tamanio);
 
-	MEMORIA_PRINCIPAL = string_new();
-
-	string_append(&MEMORIA_PRINCIPAL, primeraParte);
-	string_append(&MEMORIA_PRINCIPAL, textoMedio);
-	string_append(&MEMORIA_PRINCIPAL, segundaParte);
-
-	string_capitalized(primeraParte);
-	string_capitalized(segundaParte);
-	printf("\n%s", MEMORIA_PRINCIPAL);
-	printf("\n%d", strlen(MEMORIA_PRINCIPAL));
+//	MEMORIA_PRINCIPAL = string_append(bloqueMemoriaAdministrativa, bloqueMemoria);
 
 }
 void crear_e_inicializar_tabla_paginas_invertidas() {
@@ -123,10 +122,19 @@ void atender_solicitudes_de_usuario() {
 }
 
 void CU_Recibir_Conexion_KERNEL(int cliente) {
+	char* codigo_operacion = recibir_dato_serializado(cliente);
+	if (strcmp(codigo_operacion, "SOLICITAR_BYTE_MEMORIA") == 0) {
+		CU_Solicitar_Bytes_Memoria(cliente);
+	}
 
+	destruir_conexion_cliente(cliente);
 }
 void CU_Recibir_Conexion_CPU(int cliente) {
-
+	char* codigo_operacion = recibir_dato_serializado(cliente);
+	if (strcmp(codigo_operacion, "SOLICITAR_BYTE_MEMORIA") == 0) {
+		CU_Solicitar_Bytes_Memoria(cliente);
+	}
+	destruir_conexion_cliente(cliente);
 }
 
 void escuchar_peticiones_cliente(int servidor) {
@@ -152,4 +160,14 @@ void CU_Recibir_conexiones(int servidor) {
 		}
 
 	} while (1);
+}
+
+void CU_Solicitar_Bytes_Memoria(int cliente) {
+
+	int pagina = atoi(recibir_dato_serializado(cliente)); //pagina
+	int byteInicial = atoi(recibir_dato_serializado(cliente)); //byte inicial de pagina
+	int longitud = atoi(recibir_dato_serializado(cliente)); //longitud de bytes a pedir
+	char* PID = "1241";
+	enviar_dato_serializado(solicitar_bytes_de_una_pagina(PID, pagina, byteInicial, longitud), cliente);
+
 }
