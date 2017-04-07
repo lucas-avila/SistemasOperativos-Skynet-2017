@@ -68,7 +68,7 @@ char * recibir_dato_serializado(int socket_conexion) {
 	recv(socket_conexion, dato, atoi(tamanio_dato), 0);
 	dato[atoi(tamanio_dato)] = '\0';
 
-	printf("\n Recibi: %s, conexion : %d \n", dato, socket_conexion);
+	//printf("\n Recibi: %s, conexion : %d \n", dato, socket_conexion);
 	return dato;
 }
 

@@ -137,8 +137,8 @@ void escuchar_Conexiones_CPU(int servidorCPU) {
 }
 
 void CU_Recibir_Conexiones_Consola(int clienteConsola) {
-	system("clear");
 	printf("Se conecto CONSOLA\n");
+	enviar_dato_serializado("KERNEL", clienteConsola);
 
 }
 void CU_Recibir_Conexiones_CPU(int clienteCPU) {
