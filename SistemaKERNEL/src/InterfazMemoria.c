@@ -10,7 +10,7 @@
 #include "header/AppConfig.h"
 #include "header/Socket.h"
 void solicitar_bytes_memoria() {
-	int serverMemoria = iniciar_conexion_servidor(configuraciones.IP_MEMORIA, configuraciones.PUERTO_MEMORIA);
+	int serverMemoria = crear_servidor(configuraciones.IP_MEMORIA, configuraciones.PUERTO_MEMORIA);
 	/**
 	 * Enviar datos para solicitar memoria
 	 */
@@ -24,5 +24,5 @@ void solicitar_bytes_memoria() {
 	//recibir datos
 	char* dato = recibir_dato_serializado(serverMemoria);
 	printf("DATO RECIBIDO DE MEMORIA : %s", dato);
-	destruir_conexion_servidor(serverMemoria);
+	close(serverMemoria);
 }

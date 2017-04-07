@@ -32,9 +32,6 @@
 
 void atender_solicitudes_de_usuario();
 
-void escuchar_peticiones_CONSOLA(int servidor);
-void escuchar_peticiones_CPU(int servidor);
-
 void escuchar_Conexiones_CPU(int servidorCPU);
 void escuchar_Conexiones_Consola(int servidorConsola);
 
@@ -48,12 +45,12 @@ int main(int argc, char *argv[]) {
 	inicializar_configuracion(argv[1]);
 
 	//INICIAR SERVIDOR PARA ESCUCHAR CONSOLA:
-	int servidor_Consola = iniciar_servidor(configuraciones.PUERTO_PROG, configuraciones.CANTIDAD_MAXIMA_CONCURRENCIA);
-	escuchar_peticiones_CONSOLA(servidor_Consola); // asincronico - multihilo
+	int servidor_Consola = crear_servidor(configuraciones.PUERTO_PROG, configuraciones.CANTIDAD_MAXIMA_CONCURRENCIA);
+	atender_clientes(servidor_Consola, &escuchar_Conexiones_Consola); // asincronico - multihilo
 
 	//INICIAR SERVIDOR PARA ESCUCHAR CPU:
-	int servidor_CPU = iniciar_servidor(configuraciones.PUERTO_CPU, configuraciones.CANTIDAD_MAXIMA_CONCURRENCIA);
-	escuchar_peticiones_CPU(servidor_CPU); // asincronico - multihilo
+	int servidor_CPU = crear_servidor(configuraciones.PUERTO_CPU, configuraciones.CANTIDAD_MAXIMA_CONCURRENCIA);
+	atender_clientes(servidor_CPU, &escuchar_Conexiones_CPU); // asincronico - multihilo
 
 	atender_solicitudes_de_usuario();
 
@@ -111,17 +108,6 @@ void atender_solicitudes_de_usuario() {
 	} while (opcion != 9);
 }
 
-void escuchar_peticiones_CONSOLA(int servidor) {
-	pthread_t mihilo1;
-	pthread_create(&mihilo1, NULL, &escuchar_Conexiones_Consola, servidor);
-	pthread_detach(&mihilo1);
-}
-void escuchar_peticiones_CPU(int servidor) {
-	pthread_t mihilo1;
-	pthread_create(&mihilo1, NULL, &escuchar_Conexiones_CPU, servidor);
-	pthread_detach(&mihilo1);
-}
-
 void escuchar_Conexiones_Consola(int servidorConsola) {
 	do {
 		int cliente = aceptar_conexion_cliente(servidorConsola);
@@ -131,7 +117,7 @@ void escuchar_Conexiones_Consola(int servidorConsola) {
 			pthread_create(&mihilo1, NULL, &CU_Recibir_Conexiones_Consola, cliente);
 			pthread_detach(&mihilo1);
 		} else {
-			destruir_conexion_cliente(cliente);
+			close(cliente);
 		}
 	} while (1);
 }
@@ -145,22 +131,22 @@ void escuchar_Conexiones_CPU(int servidorCPU) {
 			pthread_create(&mihilo1, NULL, &CU_Recibir_Conexiones_CPU, cliente);
 			pthread_detach(&mihilo1);
 		} else {
-			destruir_conexion_cliente(cliente);
+			close(cliente);
 		}
 	} while (1);
 }
 
 void CU_Recibir_Conexiones_Consola(int clienteConsola) {
 	system("clear");
-	printf("Se conecto CONSOLA");
+	printf("Se conecto CONSOLA\n");
 
 }
 void CU_Recibir_Conexiones_CPU(int clienteCPU) {
 
-	printf("Se conecto CPU");
+	printf("Se conecto CPU\n");
 
 	enviar_dato_serializado("RECIBIR_PCB", clienteCPU);
 	enviar_dato_serializado("SIGUSR1", clienteCPU);
-	destruir_conexion_cliente(clienteCPU);
+	close(clienteCPU);
 
 }

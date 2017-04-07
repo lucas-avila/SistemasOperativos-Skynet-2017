@@ -22,7 +22,8 @@ int main(int argc, char *argv[]) {
 
 	inicializar_configuracion(argv[1]);
 	controlEjecucionPrograma = false;
-	int kernel = iniciar_conexion_servidor(configuraciones.IP_KERNEL, configuraciones.PUERTO_KERNEL);
+	int kernel = conectar_servidor("127.0.0.1", configuraciones.PUERTO_KERNEL);
+
 	//Parametro de Identificacion
 	enviar_dato_serializado("CPU", kernel);
 	bool controlSeguir = true;
@@ -46,7 +47,7 @@ void CU_Procesar_PCB_a_ejecutar(int kernel) {
 }
 
 void solicitar_bytes_memoria() {
-	int serverMemoria = iniciar_conexion_servidor(configuraciones.IP_MEMORIA, configuraciones.PUERTO_MEMORIA);
+	int serverMemoria = crear_servidor(configuraciones.IP_MEMORIA, configuraciones.PUERTO_MEMORIA);
 	/**
 	 * Enviar datos para solicitar memoria
 	 */
@@ -60,6 +61,6 @@ void solicitar_bytes_memoria() {
 	//recibir datos
 	char* dato = recibir_dato_serializado(serverMemoria);
 	printf("DATO RECIBIDO DE MEMORIA : %s", dato);
-	destruir_conexion_servidor(serverMemoria);
+	close(serverMemoria);
 }
 
