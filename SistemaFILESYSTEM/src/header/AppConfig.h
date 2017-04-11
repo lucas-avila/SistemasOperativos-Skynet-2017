@@ -9,8 +9,11 @@
 #define HEADER_APPCONFIG_H_
 
 typedef struct {
-     //char *IP_KERNEL;
-     //char *PUERTO_KERNEL;
+     int PUERTO;
+     char * PUNTO_MONTAJE;
+
+     //Agregado--
+     int CANTIDAD_MAXIMA_CONCURRENCIA;
 } AppConfig;
 
 //Lo declaro como variable global
