@@ -21,8 +21,8 @@ void inicializar_configuracion(char * PATH_ARCHIVO_CONFIGURACION) {
 		perror("Archivo Inexistente");
 		exit(-2);
 	} else {
-		if (config_has_property(config, "PUERTO_KERNEL") == true) {
-			configuraciones.PUERTO = config_get_int_value(config, "PUERTO");
+		if (config_has_property(config, "PUERTO") == true) {
+					configuraciones.PUERTO = config_get_int_value(config, "PUERTO");
 		}
 
 		if (config_has_property(config, "PUNTO_MONTAJE") == true) {

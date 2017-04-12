@@ -37,6 +37,7 @@ void escuchar_Conexiones_Consola(int servidorConsola);
 
 void CU_Recibir_Conexiones_Consola(int clienteConsola);
 void CU_Recibir_Conexiones_CPU(int clienteCPU);
+void CU_iniciar_programa(int fileSystem);
 
 int main(int argc, char *argv[]) {
 
@@ -51,6 +52,10 @@ int main(int argc, char *argv[]) {
 	//INICIAR SERVIDOR PARA ESCUCHAR CPU:
 	int servidor_CPU = crear_servidor(configuraciones.PUERTO_CPU, configuraciones.CANTIDAD_MAXIMA_CONCURRENCIA);
 	atender_clientes(servidor_CPU, &escuchar_Conexiones_CPU); // asincronico - multihilo
+
+	//CLIENTE PARA EL FILESYSTEM:
+	int fileSystem = conectar_servidor(configuraciones.IP_FS, configuraciones.PUERTO_FS);
+	CU_iniciar_programa(fileSystem);
 
 	atender_solicitudes_de_usuario();
 
@@ -149,4 +154,14 @@ void CU_Recibir_Conexiones_CPU(int clienteCPU) {
 	enviar_dato_serializado("SIGUSR1", clienteCPU);
 	close(clienteCPU);
 
+}
+
+void CU_iniciar_programa(int fileSystem){
+	enviar_dato_serializado("KERNEL", fileSystem);
+
+	char * respuesta = recibir_dato_serializado(fileSystem);
+	if(strcmp(respuesta, "FILESYSTEM") == 0){
+		printf("Handshake exitoso\n");
+		exit(0);
+	}
 }
