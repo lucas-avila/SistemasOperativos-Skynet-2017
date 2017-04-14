@@ -39,11 +39,13 @@ int main(int argc, char *argv[]) {
 			CU_Procesar_PCB_a_ejecutar(kernel);
 		}
 	} while (controlSeguir);
+
+	close(kernel);
 	return EXIT_SUCCESS;
 }
 
 void CU_Procesar_PCB_a_ejecutar(int kernel) {
-	solicitar_bytes_memoria();
+	//solicitar_bytes_memoria();
 }
 
 void solicitar_bytes_memoria() {

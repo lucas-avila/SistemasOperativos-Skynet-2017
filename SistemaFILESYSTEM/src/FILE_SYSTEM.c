@@ -46,5 +46,5 @@ void escuchar_Conexiones_Kernel(int servidor){
 void CU_Recibir_Conexiones_Kernel(int clienteKernel){
 	printf("Se conecto KERNEL\n");
 	enviar_dato_serializado("KERNEL", clienteKernel);
-
+	close(clienteKernel);
 }

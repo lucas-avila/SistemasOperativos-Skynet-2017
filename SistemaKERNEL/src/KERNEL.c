@@ -37,7 +37,7 @@ void escuchar_Conexiones_Consola(int servidorConsola);
 
 void CU_Recibir_Conexiones_Consola(int clienteConsola);
 void CU_Recibir_Conexiones_CPU(int clienteCPU);
-void CU_iniciar_programa(int fileSystem);
+void CU_iniciar_programa(int filesystem);
 
 int main(int argc, char *argv[]) {
 
@@ -54,8 +54,8 @@ int main(int argc, char *argv[]) {
 	atender_clientes(servidor_CPU, &escuchar_Conexiones_CPU); // asincronico - multihilo
 
 	//CLIENTE PARA EL FILESYSTEM:
-	int fileSystem = conectar_servidor(configuraciones.IP_FS, configuraciones.PUERTO_FS);
-	CU_iniciar_programa(fileSystem);
+	int filesystem = conectar_servidor(configuraciones.IP_FS, configuraciones.PUERTO_FS);
+	CU_iniciar_programa(filesystem);
 
 	atender_solicitudes_de_usuario();
 
@@ -147,21 +147,23 @@ void CU_Recibir_Conexiones_Consola(int clienteConsola) {
 
 }
 void CU_Recibir_Conexiones_CPU(int clienteCPU) {
-
 	printf("Se conecto CPU\n");
 
 	enviar_dato_serializado("RECIBIR_PCB", clienteCPU);
+	enviar_dato_serializado("PEDIR_MEMORIA", clienteCPU);
 	enviar_dato_serializado("SIGUSR1", clienteCPU);
-	close(clienteCPU);
 
+
+	close(clienteCPU);
 }
 
-void CU_iniciar_programa(int fileSystem){
-	enviar_dato_serializado("KERNEL", fileSystem);
+void CU_iniciar_programa(int filesystem){
+	enviar_dato_serializado("KERNEL", filesystem);
 
-	char * respuesta = recibir_dato_serializado(fileSystem);
+	char * respuesta = recibir_dato_serializado(filesystem);
 	if(strcmp(respuesta, "FILESYSTEM") == 0){
 		printf("Handshake exitoso\n");
-		exit(0);
+
 	}
+	close(filesystem);
 }
