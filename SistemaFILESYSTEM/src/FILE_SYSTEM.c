@@ -22,8 +22,8 @@ int main(int argc, char * argv[]) {
 	inicializar_configuracion(argv[1]);
 	int servidor = crear_servidor(configuraciones.PUERTO, configuraciones.CANTIDAD_MAXIMA_CONCURRENCIA);
 	atender_clientes(servidor, &escuchar_Conexiones_Kernel);
-	//for Provisorio...
-	for (;;);
+	//while Provisorio...
+	while(1);
 
 	close(servidor);
 	return EXIT_SUCCESS;
@@ -45,6 +45,6 @@ void escuchar_Conexiones_Kernel(int servidor){
 
 void CU_Recibir_Conexiones_Kernel(int clienteKernel){
 	printf("Se conecto KERNEL\n");
-	enviar_dato_serializado("KERNEL", clienteKernel);
+	enviar_dato_serializado("FILESYSTEM", clienteKernel);
 	close(clienteKernel);
 }

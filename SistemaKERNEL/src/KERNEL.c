@@ -39,6 +39,7 @@ void CU_Recibir_Conexiones_Consola(int clienteConsola);
 void CU_Recibir_Conexiones_CPU(int clienteCPU);
 void CU_iniciar_programa(int filesystem);
 
+
 int main(int argc, char *argv[]) {
 
 	//CUANDO SE INVOCA ENVIAR POR PARAMETRO EL PATH DEL ARCHIVO
@@ -54,8 +55,9 @@ int main(int argc, char *argv[]) {
 	atender_clientes(servidor_CPU, &escuchar_Conexiones_CPU); // asincronico - multihilo
 
 	//CLIENTE PARA EL FILESYSTEM:
-	int filesystem = conectar_servidor(configuraciones.IP_FS, configuraciones.PUERTO_FS);
-	CU_iniciar_programa(filesystem);
+	//provisoriamente va en la opcion de usuario 8 para el handshake
+	//int filesystem = conectar_servidor(configuraciones.IP_FS, configuraciones.PUERTO_FS);
+	//CU_iniciar_programa(filesystem);
 
 	atender_solicitudes_de_usuario();
 
@@ -107,7 +109,8 @@ void atender_solicitudes_de_usuario() {
             solicitar_bytes_memoria();
 			break;
 		case 8:
-
+			//provisorio para el checkpoint
+			CU_iniciar_programa(conectar_servidor(configuraciones.IP_FS, configuraciones.PUERTO_FS));
 			break;
 		}
 	} while (opcion != 9);
@@ -158,9 +161,11 @@ void CU_Recibir_Conexiones_CPU(int clienteCPU) {
 }
 
 void CU_iniciar_programa(int filesystem){
+	printf("Se conecto FILE SYSTEM\n");
 	enviar_dato_serializado("KERNEL", filesystem);
 
 	char * respuesta = recibir_dato_serializado(filesystem);
+
 	if(strcmp(respuesta, "FILESYSTEM") == 0){
 		printf("Handshake exitoso\n");
 
