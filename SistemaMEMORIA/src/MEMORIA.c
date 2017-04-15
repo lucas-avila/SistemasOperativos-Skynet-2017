@@ -64,15 +64,15 @@ void reservar_memoria_principal() {
 	 * SOBRE TODO LA LIBRERIA STRING DE SISTEMAS OPERATIVOS
 	 */
 	char valor[TAMANIO];
-	char * bloqueMemoriaAdministrativa = string_new();
+	char* bloqueMemoriaAdministrativa = string_new();
 	int i = 0;
 	for (i = 0; i < configuraciones.MARCOS; i++) {
-		strcpy(valor, i);
-		string_append(bloqueMemoriaAdministrativa, valor);
+		sprintf(valor,"%d" ,i);
+		string_append(&bloqueMemoriaAdministrativa, valor);
 		strcpy(valor, "-1");
-		string_append(bloqueMemoriaAdministrativa, valor);
+		string_append(&bloqueMemoriaAdministrativa, valor);
 		strcpy(valor,  "-1");
-		string_append(bloqueMemoriaAdministrativa, valor);
+		string_append(&bloqueMemoriaAdministrativa, valor);
 	}
 
 	int tamanio = configuraciones.MARCOS * configuraciones.MARCO_SIZE  ;
@@ -82,6 +82,7 @@ void reservar_memoria_principal() {
 //	MEMORIA_PRINCIPAL = string_append(bloqueMemoriaAdministrativa, bloqueMemoria);
 
 }
+
 void crear_e_inicializar_tabla_paginas_invertidas() {
 
 }
@@ -160,6 +161,6 @@ void CU_Solicitar_Bytes_Memoria(int cliente) {
 	int byteInicial = atoi(recibir_dato_serializado(cliente)); //byte inicial de pagina
 	int longitud = atoi(recibir_dato_serializado(cliente)); //longitud de bytes a pedir
 	char* PID = "1241";
-	enviar_dato_serializado(solicitar_bytes_de_una_pagina(PID, pagina, byteInicial, longitud), cliente);
+	enviar_dato_serializado("MEMORIA", cliente);
 
 }

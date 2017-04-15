@@ -10,7 +10,7 @@
 #include "header/AppConfig.h"
 #include "header/Socket.h"
 void solicitar_bytes_memoria() {
-	int serverMemoria = crear_servidor(configuraciones.IP_MEMORIA, configuraciones.PUERTO_MEMORIA);
+	int serverMemoria = conectar_servidor(configuraciones.IP_MEMORIA, configuraciones.PUERTO_MEMORIA);
 	/**
 	 * Enviar datos para solicitar memoria
 	 */
