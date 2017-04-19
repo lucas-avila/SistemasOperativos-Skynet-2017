@@ -28,11 +28,15 @@ void inicializar_configuracion(char *PATH_ARCHIVO_CONFIGURACION) {
 		}
 
 		if (config_has_property(config, "IP_KERNEL") == true) {
-			configuraciones.IP_KERNEL = config_get_string_value(config, "IP_KERNEL");
+			configuraciones.IP_KERNEL = malloc(strlen(config_get_string_value(config, "IP_KERNEL")) + 1);
+			strcpy(configuraciones.IP_KERNEL, config_get_string_value(config, "IP_KERNEL"));
+
 		}
 
 		if (config_has_property(config, "IP_MEMORIA") == true) {
-			configuraciones.IP_MEMORIA = config_get_string_value(config, "IP_MEMORIA");
+			configuraciones.IP_MEMORIA = malloc(strlen(config_get_string_value(config, "IP_MEMORIA")) + 1);
+			strcpy(configuraciones.IP_MEMORIA, config_get_string_value(config, "IP_MEMORIA"));
+
 		}
 
 	}
