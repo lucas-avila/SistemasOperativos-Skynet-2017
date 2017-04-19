@@ -1,38 +1,46 @@
-/*
- * AppConfig.h
- *
- *  Created on: 1/4/2017
- *      Author: utnso
- */
-
 #ifndef HEADER_APPCONFIG_H_
 #define HEADER_APPCONFIG_H_
 
+#include <semaphore.h>
+
 typedef struct {
-     int PUERTO;
-     int MARCOS;
-     int MARCO_SIZE;
-     int ENTRADAS_CACHE;
-     int CACHE_X_PROC;
-     int RETARDO_MEMORIA;
+	int PUERTO;
+	int MARCOS;
+	int MARCO_SIZE;
+	int ENTRADAS_CACHE;
+	int CACHE_X_PROC;
+	int RETARDO_MEMORIA;
 
-     //Agregado
+	//Agregado
 
-     int CANTIDAD_MAXIMA_CONCURRENCIA;
+	int CANTIDAD_MAXIMA_CONCURRENCIA;
+	char* PATH_ARCHIVO_LOG;
 } AppConfig;
 
-//Lo declaro como variable global
-AppConfig configuraciones;
-
-
-char * MEMORIA_PRINCIPAL;
-/****
+/*
  * VARIABLES GLOBALES PROPIAS DEL SISTEMA MEMORIA
  */
+AppConfig configuraciones;
 
-
-
+char * MEMORIA_PRINCIPAL;
 
 void inicializar_configuracion(char *PATH_ARCHIVO_CONFIGURACION);
 
-#endif /* HEADER_APPCONFIG_H_ */
+
+
+/**
+ * Semaforos de la aplicacion
+ */
+
+sem_t semaforo_Tabla_MEMORY;
+sem_t semaforo_Tabla_CACHE;
+
+sem_t semaforo_Proceso_Asignar_Pagina;
+sem_t semaforo_Proceso_Finalizar_Programa;
+
+
+
+
+
+
+#endif

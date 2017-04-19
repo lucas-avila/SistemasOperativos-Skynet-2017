@@ -7,10 +7,13 @@
 
 #ifndef HEADER_SOLICITUDESUSUARIO_H_
 #define HEADER_SOLICITUDESUSUARIO_H_
-
+#include "MemoriaPrincipal.h"
 void CU_Modificar_Retardo();
 void CU_Generar_Reporte();
 void CU_Limpiar_CACHE();
 void CU_Mostrar_Tamanio_MEMORIA_PID();
-
+void generar_Reporte_Cache();
+void generar_Reporte_Contenido_de_Memoria();
+void mostrar_reporte_memoria();
+void mostrar_reporte_proceso();
 #endif /* HEADER_SOLICITUDESUSUARIO_H_ */
