@@ -39,6 +39,9 @@ void inicializar_configuracion(char *PATH_ARCHIVO_CONFIGURACION) {
 		}
 		configuraciones.PATH_ARCHIVO_LOG = malloc(strlen(config_get_string_value(config,"PATH_ARCHIVO_LOGUEO"))+1);
 		strcpy(configuraciones.PATH_ARCHIVO_LOG,config_get_string_value(config,"PATH_ARCHIVO_LOGUEO"));
+
+
+
 	}
 
 

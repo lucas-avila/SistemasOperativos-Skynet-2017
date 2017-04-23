@@ -15,6 +15,9 @@ typedef struct {
 
 	int CANTIDAD_MAXIMA_CONCURRENCIA;
 	char* PATH_ARCHIVO_LOG;
+
+
+
 } AppConfig;
 
 /*
@@ -38,6 +41,9 @@ sem_t semaforo_Tabla_CACHE;
 sem_t semaforo_Proceso_Asignar_Pagina;
 sem_t semaforo_Proceso_Finalizar_Programa;
 
+
+int conexion_MEMORIA;
+int conexion_FS;
 
 
 
