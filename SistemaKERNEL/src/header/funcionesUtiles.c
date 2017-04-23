@@ -6,6 +6,8 @@
  */
 
 
+#include <ctype.h>
+
 int validarNumeroInput(int rangoMinimo, int rangoMaximo) {
 	int numero = 0;
 	do {
@@ -15,4 +17,24 @@ int validarNumeroInput(int rangoMinimo, int rangoMaximo) {
 		}
 	} while (numero < rangoMinimo || numero > rangoMaximo);
 	return numero;
+}
+
+int is_white_line(char * str){
+	int i=0;
+	while(str[i] != '\0'){
+		if(!isspace(str[i]))
+			return 0;
+		i++;
+	}
+	return 1;
+}
+
+char first_char(char * str){
+	int i=0;
+	while(str[i] != '\0'){
+		if(!isspace(str[i]))
+			return str[i];
+		i++;
+	}
+	return '\0';
 }

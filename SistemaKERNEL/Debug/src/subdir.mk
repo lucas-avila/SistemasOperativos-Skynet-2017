@@ -9,6 +9,7 @@ C_SRCS += \
 ../src/InterfazFS.c \
 ../src/InterfazMemoria.c \
 ../src/KERNEL.c \
+../src/PCB.c \
 ../src/SolicitudesUsuario.c 
 
 OBJS += \
@@ -17,6 +18,7 @@ OBJS += \
 ./src/InterfazFS.o \
 ./src/InterfazMemoria.o \
 ./src/KERNEL.o \
+./src/PCB.o \
 ./src/SolicitudesUsuario.o 
 
 C_DEPS += \
@@ -25,6 +27,7 @@ C_DEPS += \
 ./src/InterfazFS.d \
 ./src/InterfazMemoria.d \
 ./src/KERNEL.d \
+./src/PCB.d \
 ./src/SolicitudesUsuario.d 
 
 

@@ -1,0 +1,10 @@
+#!codigoansisop caca
+begin
+
+did = 911
+bush = did
+
+#jasjsdsjaddasa dkd askjdas kasd dasj
+   #comentario con espacio antes
+
+end

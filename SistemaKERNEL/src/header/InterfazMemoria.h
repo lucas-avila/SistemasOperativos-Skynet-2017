@@ -9,5 +9,5 @@
 #define HEADER_INTERFAZMEMORIA_H_
 
 void solicitar_bytes_memoria();
-
+void enviar_programa_memoria(char * path_programa);
 #endif /* HEADER_INTERFAZMEMORIA_H_ */

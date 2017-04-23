@@ -27,8 +27,8 @@
 #include "header/Socket.h"
 #include "header/SolicitudesUsuario.h"
 #include "header/funcionesUtiles.h"
-
 #include "header/InterfazMemoria.h"
+#include "header/PCB.h"
 
 void atender_solicitudes_de_usuario();
 
@@ -88,11 +88,19 @@ void atender_solicitudes_de_usuario() {
 		switch (opcion) {
 
 		case 1:
-
+		{
+			//testeando crear PCB
+			PCB * pcb_nuevo = crear_pcb();
+			printf("PCB creado, PID es : %d\n", pcb_nuevo->pid);
 			break;
+		}
 		case 2:
+		{
+			//testeando leer archivo de programa
+			enviar_programa_memoria("../resource/programa_prueba.txt");
 
 			break;
+		}
 		case 3:
 
 			break;
