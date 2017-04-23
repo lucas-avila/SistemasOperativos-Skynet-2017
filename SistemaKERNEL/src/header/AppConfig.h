@@ -26,6 +26,7 @@ typedef struct {
 
 
      int CANTIDAD_MAXIMA_CONCURRENCIA;
+     int planificacion_activa;
 } AppConfig;
 
 //Lo declaro como variable global
