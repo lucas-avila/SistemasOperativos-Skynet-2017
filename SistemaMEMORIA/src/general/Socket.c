@@ -6,6 +6,7 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <arpa/inet.h>
 #include <sys/socket.h>
@@ -61,22 +62,38 @@ int recibir_dato_generico(int socket_conexion, char * buffer, int tam_bytes){
 }
 
 char* recibir_dato_serializado(int socket_conexion) {
-	char* tamanio_dato = malloc(4);
-	int bytes_recibidos = recv(socket_conexion, tamanio_dato, 4, 0);
+	char tamanio_dato[4];
+	int bytes_recibidos = recv(socket_conexion, &tamanio_dato, 4, 0);
 	tamanio_dato[bytes_recibidos] = '\0';
+	char dato[40];
 
-	char* dato = malloc(atoi(tamanio_dato));
-	recv(socket_conexion, dato, atoi(tamanio_dato), 0);
+	if(atoi(tamanio_dato)>40){
+		char* datoNuevo;
+		datoNuevo = malloc(atoi(tamanio_dato));
+		recv(socket_conexion, datoNuevo, atoi(tamanio_dato), 0);
+		datoNuevo[atoi(tamanio_dato)] = '\0';
+		char* resultado ;
+		resultado= string_substring(datoNuevo,0,atoi(tamanio_dato));
+		free(datoNuevo);
+		return resultado;
+	}else{
+
+	//dato =  malloc(atoi(tamanio_dato));
+	recv(socket_conexion, &dato, atoi(tamanio_dato), 0);
 	dato[atoi(tamanio_dato)] = '\0';
 
-	printf("\n Recibi: %s, conexion : %d \n", dato, socket_conexion);
-	return dato;
+
+
+
+	//printf("\n Recibi: %s, conexion : %d \n", dato, socket_conexion);
+	return string_substring(&dato,0,atoi(tamanio_dato));
+	}
 }
 
 void enviar_dato_serializado(char* mensaje, int conexion) {
-	char * tamanio = malloc(4);
-	sprintf(tamanio, "%d", strlen(mensaje));
-	send(conexion, tamanio, 4, 0);
+	char tamanio_dato[4];
+	sprintf(tamanio_dato, "%d", strlen(mensaje));
+	send(conexion, tamanio_dato, 4, 0);
 	send(conexion, mensaje, strlen(mensaje), 0);
 	//printf("\n Envie: %s, conexion : %d", mensaje, conexion);
 }
