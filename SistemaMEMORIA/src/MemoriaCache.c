@@ -13,7 +13,7 @@ int nroLlegada = 0;
 int cantidadMaximaEntradaPorProceso = 0;
 
 void inicializar_memoria_cache(int cantidadEntradas, int tamanioPagina, int cantMaximaPorProceso) {
-	memoriaCacheGlobal = malloc(sizeof(MEMORIA_CACHE) * cantidadEntradas);
+	/*memoriaCacheGlobal = malloc(sizeof(MEMORIA_CACHE) * cantidadEntradas);
 	int i = 0;
 	for (i = 0; i < cantidadEntradas; i++) {
 		strcpy(memoriaCacheGlobal[i].PID, "");
@@ -23,12 +23,11 @@ void inicializar_memoria_cache(int cantidadEntradas, int tamanioPagina, int cant
 		memoriaCacheGlobal[i].vecesUsada = -1;
 	}
 	cantidadEntradasCache = cantidadEntradas;
-	cantidadMaximaEntradaPorProceso = cantMaximaPorProceso;
+	cantidadMaximaEntradaPorProceso = cantMaximaPorProceso;*/
 }
 
 void ingresar_valor_en_cache(char* PID, int nroPagina, char* contenidoPagina) {
-	int i = 0;
-	/**Primero me fijo si existe para incrementarle en uno la cantidad de veces usada y actualizo su valor**/
+/*	int i = 0;
 	for (i = 0; i < cantidadEntradasCache; i++) {
 		if ((strcmp(memoriaCacheGlobal[i].PID, PID) == 0) && memoriaCacheGlobal[i].nroPagina == nroPagina) {
 			memoriaCacheGlobal[i].vecesUsada += 1;
@@ -56,10 +55,12 @@ void ingresar_valor_en_cache(char* PID, int nroPagina, char* contenidoPagina) {
 	 * TODO: tener en cuenta cantidad maxima de entradas por proceso, que no se pase
 	 * de ese numero
 	 */
+
+
 }
 
 char* buscar_valor_en_cache(char* PID, int nroPagina) {
-	int i = 0;
+	/**int i = 0;
 	char* valorBuscado;
 	for (i = 0; i < cantidadEntradasCache; i++) {
 		if ((strcmp(memoriaCacheGlobal[i].PID, PID) == 0) && (memoriaCacheGlobal[i].nroPagina == nroPagina)) {
@@ -68,12 +69,12 @@ char* buscar_valor_en_cache(char* PID, int nroPagina) {
 			memoriaCacheGlobal[i].vecesUsada += 1;
 			return valorBuscado;
 		}
-	}
+	}**/
 	return "No existe en Cache";
 }
 
 int obtener_cantidad_registros_de_proceso(char* PID) {
-	int cantidadFilas = 0;
+/*	int cantidadFilas = 0;
 	int i = 0;
 	for (i = 0; i < cantidadEntradasCache; i++) {
 		if (strcmp(memoriaCacheGlobal[i].PID, PID) == 0) {
@@ -81,10 +82,12 @@ int obtener_cantidad_registros_de_proceso(char* PID) {
 		}
 	}
 	return cantidadFilas;
+	*/
+	return 0;
 }
 
 void eliminar_filas_de_procesos_en_cache(char* PID) {
-	int i = 0;
+	/*int i = 0;
 	for (i = 0; i < cantidadEntradasCache; i++) {
 		if (strcmp(memoriaCacheGlobal[i].PID, PID) == 0) {
 			strcpy(memoriaCacheGlobal[i].PID, "");
@@ -95,11 +98,11 @@ void eliminar_filas_de_procesos_en_cache(char* PID) {
 
 
 		}
-	}
+	}*/
 }
 
 int obtener_mayor_edad() {
-	int i = 0;
+/*	int i = 0;
 	int edadMaxima = 0;
 	for (i = 0; i < cantidadEntradasCache; i++) {
 		if (memoriaCacheGlobal[i].tiempoLlegada >= 0) {
@@ -111,11 +114,12 @@ int obtener_mayor_edad() {
 			}
 		}
 	}
-	return edadMaxima;
+	return edadMaxima; */
+	return 0;
 }
 
 int obtener_indice_tabla_menos_usado_y_mas_viejo(int mayorEdad) {
-	int i = 0;
+	/* int i = 0;
 	int minCantUso = 0;
 	int indice = -1;
 	int controlPrimeraVez = 0;
@@ -132,10 +136,12 @@ int obtener_indice_tabla_menos_usado_y_mas_viejo(int mayorEdad) {
 			}
 		}
 	}
-	return indice;
+	return indice; */
+	return 0;
 }
 
 void reemplazar_linea_aplicando_algoritmo(MEMORIA_CACHE fila) {
+	/**
 	// Validacion de que cada proceso no ocupe mas lineas de las necesarias
 	if (obtener_cantidad_registros_de_proceso(fila.PID) >= cantidadMaximaEntradaPorProceso) {
 		return;
@@ -149,10 +155,11 @@ void reemplazar_linea_aplicando_algoritmo(MEMORIA_CACHE fila) {
 	nroLlegada++;
 	fila.vecesUsada = 0;
 	memoriaCacheGlobal[indiceReemplazo] = fila;
+	**/
 }
 
 void mostrar_tabla_memoria_cache() {
-	t_log* logger = log_create(configuraciones.PATH_ARCHIVO_LOG, "MEMORIA", false, LOG_LEVEL_INFO);
+/**	t_log* logger = log_create(configuraciones.PATH_ARCHIVO_LOG, "MEMORIA", false, LOG_LEVEL_INFO);
 	char* textoLoguear = string_new();
 	string_append(&textoLoguear, "\nContenido de la Memoria CACHE: ");
 
@@ -179,10 +186,11 @@ void mostrar_tabla_memoria_cache() {
 	}
 	 log_info(logger, "\n%s", textoLoguear);
 	log_destroy(logger);
+	**/
 }
 
 void vaciar_tabla_memoria_cache(int tamanioPagina) {
-	int i = 0;
+	/**int i = 0;
 	for (i = 0; i < cantidadEntradasCache; i++) {
 		strcpy(memoriaCacheGlobal[i].PID, "");
 		memoriaCacheGlobal[i].contenidoPagina = malloc(tamanioPagina);
@@ -190,4 +198,5 @@ void vaciar_tabla_memoria_cache(int tamanioPagina) {
 		memoriaCacheGlobal[i].tiempoLlegada = -1;
 		memoriaCacheGlobal[i].vecesUsada = -1;
 	}
+	**/
 }

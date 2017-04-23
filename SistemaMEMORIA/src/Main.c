@@ -26,6 +26,8 @@ int main(int argc, char *argv[]) {
 	reservar_memoria_principal();
 	int servidor = crear_servidor(configuraciones.PUERTO, configuraciones.CANTIDAD_MAXIMA_CONCURRENCIA);
 
+
+
 	atender_clientes(servidor, &CU_Recibir_conexiones);
 	atender_solicitudes_de_usuario();
 	finalizar_sistema_memoria(servidor);
