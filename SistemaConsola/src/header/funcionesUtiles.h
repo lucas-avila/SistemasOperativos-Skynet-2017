@@ -9,5 +9,6 @@
 #define HEADER_FUNCIONESUTILES_H_
 
 int validarNumeroInput(int rangoMinimo, int rangoMaximo) ;
+void validarArchivo(char * path);
 
 #endif /* HEADER_FUNCIONESUTILES_H_ */
