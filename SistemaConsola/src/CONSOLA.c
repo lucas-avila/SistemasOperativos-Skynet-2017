@@ -31,6 +31,8 @@ int main(int argc, char *argv[]) {
 
 	inicializar_configuracion(argv[1]);
 	kernel = conectar_servidor(configuraciones.IP_KERNEL, configuraciones.PUERTO_KERNEL);
+	enviar_dato_serializado("CONSOLA", kernel);
+
 
 	pthread_t t_interfaz;
 	pthread_create(&t_interfaz, NULL, &atender_solicitudes_de_usuario, NULL);
@@ -90,7 +92,7 @@ void CU_iniciar_programa(){
 	printf("Ingrese el PATH del archivo: ");
 	scanf("%s", path_archivo_fuente);
 	validarArchivo(path_archivo_fuente);
-	CU_handshake(kernel);
+	//CU_handshake(kernel);
 
 	pid = enviar_programa_ANSISOP(&path_archivo_fuente);
 }
@@ -98,16 +100,17 @@ void CU_iniciar_programa(){
 void CU_handshake(int kernel){
 	enviar_dato_serializado("CONSOLA", kernel);
 
-	char * respuesta = recibir_dato_serializado(kernel);
-	if(strcmp(respuesta, "KERNEL") == 0){
-		printf("--Handshake exitoso--\n");
-	}
+	//char * respuesta = recibir_dato_serializado(kernel);
+	//if(strcmp(respuesta, "KERNEL") == 0){
+	//	printf("--Handshake exitoso--\n");
+	//}
 }
 
 int enviar_programa_ANSISOP(char * path_archivo_fuente){
 
 	char * literal;
 	literal = obtener_codigo(path_archivo_fuente);
+	enviar_dato_serializado("INICIAR_PROGRAMA",kernel);
 	enviar_dato_serializado(literal, kernel);
 	//Todavía en testing...
 	return 3;
