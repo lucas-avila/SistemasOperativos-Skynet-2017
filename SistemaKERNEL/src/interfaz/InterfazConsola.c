@@ -37,8 +37,10 @@ void CU_Recibir_Conexiones_Consola(int clienteConsola) {
 }
 
 void CU_iniciar_programa(int filesystem){
-	printf("Se conecto FILE SYSTEM\n");
-	enviar_dato_serializado("KERNEL", filesystem);
+	void CU_iniciar_programa(int filesystem){
+	char * respuesta = recibir_dato_serializado(filesystem);
+printf("Archivo: %s", respuesta);
+	/**enviar_dato_serializado("KERNEL", filesystem);
 
 	char * respuesta = recibir_dato_serializado(filesystem);
 
@@ -46,5 +48,6 @@ void CU_iniciar_programa(int filesystem){
 		printf("Handshake exitoso\n");
 
 	}
-	close(filesystem);
+	close(filesystem);**/
+}
 }
