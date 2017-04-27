@@ -4,19 +4,13 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../src/header/AppConfig.c \
-../src/header/Socket.c \
-../src/header/funcionesUtiles.c 
+../src/header/AppConfig.c 
 
 OBJS += \
-./src/header/AppConfig.o \
-./src/header/Socket.o \
-./src/header/funcionesUtiles.o 
+./src/header/AppConfig.o 
 
 C_DEPS += \
-./src/header/AppConfig.d \
-./src/header/Socket.d \
-./src/header/funcionesUtiles.d 
+./src/header/AppConfig.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

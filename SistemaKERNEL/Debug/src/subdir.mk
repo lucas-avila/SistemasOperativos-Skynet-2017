@@ -4,30 +4,21 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../src/InterfazCPU.c \
-../src/InterfazConsola.c \
-../src/InterfazFS.c \
-../src/InterfazMemoria.c \
 ../src/KERNEL.c \
 ../src/PCB.c \
+../src/Planificacion.c \
 ../src/SolicitudesUsuario.c 
 
 OBJS += \
-./src/InterfazCPU.o \
-./src/InterfazConsola.o \
-./src/InterfazFS.o \
-./src/InterfazMemoria.o \
 ./src/KERNEL.o \
 ./src/PCB.o \
+./src/Planificacion.o \
 ./src/SolicitudesUsuario.o 
 
 C_DEPS += \
-./src/InterfazCPU.d \
-./src/InterfazConsola.d \
-./src/InterfazFS.d \
-./src/InterfazMemoria.d \
 ./src/KERNEL.d \
 ./src/PCB.d \
+./src/Planificacion.d \
 ./src/SolicitudesUsuario.d 
 
 

@@ -13,6 +13,9 @@ EXECUTABLES :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
+src/testing \
+src/interfaz \
 src/header \
+src/general \
 src \
 

@@ -6,6 +6,8 @@ typedef struct{
    unsigned int cantidad_paginas;
 } PCB;
 
+int enviar_pcb(PCB * pcb, int s_destino);
 PCB * crear_pcb();
+
 
 #endif /* HEADER_PCB_H_ */
