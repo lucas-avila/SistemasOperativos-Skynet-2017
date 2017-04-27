@@ -187,7 +187,7 @@ char* almacenar_bytes_de_una_pagina(char PID[4], int pagina, int byteInicial, in
 
 char* asignar_paginas_a_proceso(char *PID, int cantidad_paginas_requeridas) {
 	int cantidad_paginas_pedidas = 0;
-
+        int numero_pagina_inicial = 0;
 	/**
 	 * Voy recorriendo toda la tabla de administracion de la memoria
 	 * en busca de registros que esten vacios. Cuando los encuentra
@@ -204,6 +204,13 @@ char* asignar_paginas_a_proceso(char *PID, int cantidad_paginas_requeridas) {
 		strcpy(registro.PID, PID);
 		strcpy(registro.pagina, obtenerNumeroPaginaNew(PID));
 
+		if(cantidad_paginas_pedidas==0){
+			numero_pagina_inicial = atoi(registro.pagina);
+		}
+			
+
+		
+		
 		actualizar_tabla_pagina(registro);
 
 
@@ -212,7 +219,7 @@ char* asignar_paginas_a_proceso(char *PID, int cantidad_paginas_requeridas) {
 
 		desactivar_semaforo(&semaforo_Proceso_Asignar_Pagina);
 	}
-	return "OK";
+	return numero_pagina_inicial;
 
 }
 
