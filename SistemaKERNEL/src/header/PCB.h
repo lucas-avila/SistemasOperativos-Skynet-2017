@@ -7,6 +7,7 @@ typedef struct{
 } PCB;
 
 int enviar_pcb(PCB * pcb, int s_destino);
+PCB * recibir_pcb(int s_origen);
 PCB * crear_pcb();
 
 

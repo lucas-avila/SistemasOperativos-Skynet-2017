@@ -14,6 +14,7 @@
 #include <stdbool.h>
 #include "header/AppConfig.h"
 #include "header/Socket.h"
+#include "header/InterfazKernel.h"
 
 void CU_Procesar_PCB_a_ejecutar(int kernel);
 void solicitar_bytes_memoria();
@@ -37,6 +38,7 @@ int main(int argc, char *argv[]) {
 			controlSeguir = false;
 		} else if (strcmp(operacion, "RECIBIR_PCB") == 0) {
 			CU_Procesar_PCB_a_ejecutar(kernel);
+			controlSeguir = false;
 		}
 	} while (controlSeguir);
 
@@ -45,7 +47,9 @@ int main(int argc, char *argv[]) {
 }
 
 void CU_Procesar_PCB_a_ejecutar(int kernel) {
-	//solicitar_bytes_memoria();
+	PCB * pcb = recibir_pcb(kernel);
+
+	printf("El pcb recibido tiene como PID : %d\n y cantidad de paginas : %d\n", pcb->pid, pcb->cantidad_paginas);
 }
 
 void solicitar_bytes_memoria() {

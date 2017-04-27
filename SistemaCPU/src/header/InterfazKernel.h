@@ -9,12 +9,13 @@
 #define HEADER_INTERFAZKERNEL_H_
 
 
-typedef struct {
-
+typedef struct{
+   int pid;
+   int cantidad_paginas;
 } PCB;
 
 /* se encarga de recibir y llenar toda la estructura struct PCB */
-void recibir_PCB_de_kernel(int conexionKernel,PCB *pcb);
+PCB * recibir_pcb(int s_origen);
 
 /* Se encarga de devolver al kernel el PCB con sus modificaciones por la ejecucion*/
 void enviar_PCB_a_kernel(int conexionKernel,PCB pcb);

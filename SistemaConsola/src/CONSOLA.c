@@ -12,7 +12,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <pthread.h>
-#include <parser/metadata_program.h>
 
 #include "header/AppConfig.h"
 #include "header/Socket.h"

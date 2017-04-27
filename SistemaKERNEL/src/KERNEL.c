@@ -32,6 +32,7 @@
 #include "header/AppConfig.h"
 #include "interfaz/InterfazMemoria.h"
 #include "testing/TestingInterfazMemoria.h"
+#include "interfaz/InterfazConsola.h"
 
 void atender_solicitudes_de_usuario();
 
@@ -44,8 +45,7 @@ int main(int argc, char *argv[]) {
 	int servidor_Consola = crear_servidor(configuraciones.PUERTO_PROG, configuraciones.CANTIDAD_MAXIMA_CONCURRENCIA);
 	atender_clientes(servidor_Consola, &escuchar_Conexiones_Consola); // asincronico - multihilo
 
-	int servidor_CPU = crear_servidor(configuraciones.PUERTO_CPU, configuraciones.CANTIDAD_MAXIMA_CONCURRENCIA);
-	atender_clientes(servidor_CPU, &escuchar_Conexiones_CPU); // asincronico - multihilo
+	iniciar_conexion_servidor_cpu();
 
 	iniciar_conexion_servidor_memoria();
 
