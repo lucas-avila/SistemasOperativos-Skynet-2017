@@ -19,6 +19,7 @@ int tamanio_pagina_memoria = 0;
 void iniciar_conexion_servidor_memoria() {
 	servidor_Memoria = conectar_servidor(configuraciones.IP_MEMORIA, configuraciones.PUERTO_MEMORIA);
 	enviar_dato_serializado("KERNEL", servidor_Memoria);
+	tamanio_pagina_memoria = atoi(recibir_dato_serializado(servidor_Memoria));
 }
 
 char* solicitar_bytes_memoria(char* PID, char* pagina, char* byteInicial, char* longitud) {

@@ -30,6 +30,7 @@ void CU_Recibir_conexiones(int servidor) {
 
 void CU_Recibir_Conexion_KERNEL(int cliente) {
 	int controlSeguir = 1;
+	enviar_dato_serializado(string_itoa(configuraciones.MARCO_SIZE),cliente);
 	char* codigo_operacion;
 	do {
 
