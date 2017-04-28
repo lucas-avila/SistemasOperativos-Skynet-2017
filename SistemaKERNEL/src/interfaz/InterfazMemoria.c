@@ -14,6 +14,7 @@
 #include "../general/funcionesUtiles.h"
 
 int servidor_Memoria = 0;
+int tamanio_pagina_memoria = 0;
 
 void iniciar_conexion_servidor_memoria() {
 	servidor_Memoria = conectar_servidor(configuraciones.IP_MEMORIA, configuraciones.PUERTO_MEMORIA);
@@ -39,7 +40,7 @@ char* almacenar_Bytes_de_Pagina(char* PID, char* pagina, char* byteInicial, char
 	return recibir_dato_serializado(servidor_Memoria);
 }
 
-char* inicializar_Programa(char* PID, char* cantidad_paginas) {
+char* inicializar_Programa_memoria(char* PID, char* cantidad_paginas) {
 	enviar_dato_serializado("INICIALIZAR_PROGRAMA", servidor_Memoria);
 	enviar_dato_serializado(PID, servidor_Memoria);
 	enviar_dato_serializado(cantidad_paginas, servidor_Memoria);
@@ -51,28 +52,10 @@ char* asignar_Paginas_Programa(char* PID, char* cantidad_paginas) {
 	enviar_dato_serializado(cantidad_paginas, servidor_Memoria);
 	return recibir_dato_serializado(servidor_Memoria);
 }
-char* finalizar_Programa(char* PID) {
+char* finalizar_Programa_memoria(char* PID) {
 	enviar_dato_serializado("FINALIZAR_PROGRAMA", servidor_Memoria);
 	enviar_dato_serializado(PID, servidor_Memoria);
 	return recibir_dato_serializado(servidor_Memoria);
-}
-
-
-
-void enviar_programa_memoria(char * path_programa){
-	FILE * programa = fopen(path_programa, "r");
-	char line[256];
-
-	while (fgets(line, sizeof(line), programa)) {
-		if(is_valid_line(line))
-			printf("%s", line);
-			//aca enviamos la linea a memoria con la funcion de johnny
-	}
-
-	/* TODO: chequear aca que realmente se haya llegado al EOF
-	 * y que no haya terminado por un error */
-
-	fclose(programa);
 }
 
 int is_valid_line(char* line){
@@ -80,3 +63,57 @@ int is_valid_line(char* line){
 		return 0;
 	return 1;
 }
+
+void enviar_programa_memoria(char* path_programa) {
+	char pathPrograma = "/home/utnso/2017/C/UNIVERSIDAD/PROYECTOS/SistemaKERNEL/resource/programa_prueba.txt";
+
+	FILE* programa = fopen(pathPrograma, "r");
+	char line[256];
+
+	char* numeroPagina;
+	int tamanioPagina = 100;
+	int contadorTamanioPagina = 0;
+
+	char* processID = malloc(5);
+	strcpy(processID, "1024");
+	//TODO: completar todo esto ^^
+
+	numeroPagina = asignar_Paginas_Programa(processID, "1");
+	if (strcmp(numeroPagina, "FALTA ESPACIO") == 0) {
+		finalizar_Programa_memoria(processID);
+		printf("ERROR no hay espacio suficiente");
+		return;
+	}
+	char* contenidoPagina = malloc(tamanioPagina + 1);
+	strcpy(contenidoPagina, "");
+	while (fgets(line, sizeof(line), programa)) {
+		if (is_valid_line(line)) {
+			if ( (contadorTamanioPagina + strlen(line)) <= tamanioPagina) {
+				strcat(contenidoPagina, line);
+				contadorTamanioPagina += strlen(line);
+			} else {
+				almacenar_Bytes_de_Pagina(processID, numeroPagina, "0", string_itoa(strlen(contenidoPagina)), contenidoPagina);
+				numeroPagina = asignar_Paginas_Programa(processID, "1");
+				if (strcmp(numeroPagina, "FALTA ESPACIO") == 0) {
+					//TODO: handlear error cuando no hay mas memoria para reservar paginas
+					finalizar_Programa_memoria(processID);
+					printf("ERROR no hay espacio suficiente");
+					return;
+				}
+				strcpy(contenidoPagina, line);
+				contadorTamanioPagina = strlen(line);
+			}
+		}
+
+		//	printf("%s", line);
+		//aca enviamos la linea a memoria con la funcion de johnny
+	}
+	almacenar_Bytes_de_Pagina(processID, numeroPagina, "0", string_itoa(strlen(contenidoPagina)), contenidoPagina);
+	//free(contenidoPagina);
+
+	/* TODO: chequear aca que realmente se haya llegado al EOF
+	 * y que no haya terminado por un error */
+
+	fclose(programa);
+}
+

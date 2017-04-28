@@ -14,11 +14,11 @@ char* solicitar_bytes_memoria(char* PID, char* pagina, char* byteInicial, char* 
 
 char* almacenar_Bytes_de_Pagina(char* PID, char* pagina, char* byteInicial, char* longitud, char* texto);
 
-char* inicializar_Programa(char* PID, char* cantidad_paginas);
+char* inicializar_Programa_memoria(char* PID, char* cantidad_paginas);
 
 char* asignar_Paginas_Programa(char* PID, char* cantidad_paginas);
 
-char* finalizar_Programa(char* PID);
+char* finalizar_Programa_memoria(char* PID);
 
 
 

@@ -2,10 +2,12 @@
 #include<stdlib.h>
 #include<string.h>
 #include<pthread.h>
+#include <commons/collections/list.h>
 #include "../header/AppConfig.h"
 #include "../general/Socket.h"
 #include "InterfazCPU.h"
 #include "../header/PCB.h"
+#include "../header/Estructuras.h"
 
 int servidor_CPU = 0;
 
@@ -20,6 +22,7 @@ void escuchar_Conexiones_CPU(int servidorCPU) {
 		char* codigo_IDENTIFICACION = recibir_dato_serializado(cliente);
 		pthread_t mihilo1;
 		if (strcmp(codigo_IDENTIFICACION, "CPU") == 0) {
+			agregar_CPU_global(cliente, mihilo1);
 			pthread_create(&mihilo1, NULL, &CU_Recibir_Conexiones_CPU, cliente);
 			pthread_detach(&mihilo1);
 		} else {
@@ -28,6 +31,13 @@ void escuchar_Conexiones_CPU(int servidorCPU) {
 	} while (1);
 }
 
+void agregar_CPU_global(int numeroConexion, pthread_t hilo){
+	CPUInfo * cpu = malloc(sizeof(CPUInfo));
+	cpu->numeroConexion = numeroConexion;
+	cpu->hilo = hilo;
+	cpu->disponible = 1;
+	list_add(lista_CPUs, cpu);
+}
 
 void CU_Recibir_Conexiones_CPU(int clienteCPU) {
 	int controlSeguir = 1;

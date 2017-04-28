@@ -1,9 +1,11 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+#include<pthread.h>
+#include <commons/collections/list.h>
 #include "../general/Socket.h"
 #include "InterfazConsola.h"
-#include<pthread.h>
+#include "../header/Estructuras.h"
 
 void escuchar_Conexiones_Consola(int servidorConsola) {
 	do {
@@ -11,6 +13,7 @@ void escuchar_Conexiones_Consola(int servidorConsola) {
 		char* codigo_IDENTIFICACION = recibir_dato_serializado(cliente);
 		pthread_t mihilo1;
 		if (strcmp(codigo_IDENTIFICACION, "CONSOLA") == 0) {
+			agregar_consola_global(cliente, mihilo1);
 			pthread_create(&mihilo1, NULL, &CU_Recibir_Conexiones_Consola, cliente);
 			pthread_detach(&mihilo1);
 		} else {
@@ -34,6 +37,13 @@ void CU_Recibir_Conexiones_Consola(int clienteConsola) {
 		}
 	} while (controlSeguir == 1);
 	close(clienteConsola);
+}
+
+void agregar_consola_global(int numeroConexion, pthread_t hilo){
+	ConsolaInfo * consola = malloc(sizeof(ConsolaInfo));
+	consola->numeroConexion = numeroConexion;
+	consola->hilo = hilo;
+	list_add(lista_consolas, consola);
 }
 
 void CU_iniciar_programa(int filesystem){

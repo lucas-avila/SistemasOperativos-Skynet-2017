@@ -27,6 +27,7 @@
 #include "header/SolicitudesUsuario.h"
 
 #include "header/PCB.h"
+#include "header/Estructuras.h"
 
 #include "general/funcionesUtiles.h"
 #include "header/AppConfig.h"
@@ -34,6 +35,7 @@
 #include "testing/TestingInterfazMemoria.h"
 #include "interfaz/InterfazConsola.h"
 
+void inicializar_listas_globales();
 void atender_solicitudes_de_usuario();
 
 void escuchar_Conexiones_CPU(int servidorCPU);
@@ -41,6 +43,8 @@ void escuchar_Conexiones_Consola(int servidorConsola);
 
 int main(int argc, char *argv[]) {
 	inicializar_configuracion(argv[1]);
+
+	inicializar_listas_globales();
 
 	int servidor_Consola = crear_servidor(configuraciones.PUERTO_PROG, configuraciones.CANTIDAD_MAXIMA_CONCURRENCIA);
 	atender_clientes(servidor_Consola, &escuchar_Conexiones_Consola); // asincronico - multihilo
@@ -85,13 +89,32 @@ void atender_solicitudes_de_usuario() {
 
 			break;
 		}
-		case 3:
+		case 3: {
+			//testeando agregar cpu a lista global
+			pthread_t th;
+			int i = 4;
+			agregar_CPU_global(i, th);
+			CPUInfo * cpu = list_get(lista_CPUs, 0);
+			printf("CPUInfo es %d, %d\n", cpu->numeroConexion, cpu->disponible);
+
+			agregar_consola_global(7, th);
+			ConsolaInfo * consola = list_get(lista_consolas, 0);
+			printf("ConsolaInfo es %d\n", consola->numeroConexion);
+
+
+		}
 
 			break;
-		case 4:
+		case 4:{
+			CPUInfo * cpu = list_get(lista_CPUs, 0);
+						printf("CPUInfo es %d, %d\n", cpu->numeroConexion, cpu->disponible);
+		}
 
 			break;
-		case 5:
+		case 5:{
+			CPUInfo * cpu = list_get(lista_CPUs, 1);
+									printf("CPUInfo es %d, %d\n", cpu->numeroConexion, cpu->disponible);
+		}
 
 			break;
 		case 6:
@@ -107,5 +130,10 @@ void atender_solicitudes_de_usuario() {
 
 		}
 	} while (opcion != 7);
+}
+
+void inicializar_listas_globales(){
+	lista_consolas = list_create();
+	lista_CPUs = list_create();
 }
 
