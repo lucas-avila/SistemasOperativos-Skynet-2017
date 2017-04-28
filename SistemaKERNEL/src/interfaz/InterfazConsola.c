@@ -6,6 +6,7 @@
 #include "../general/Socket.h"
 #include "InterfazConsola.h"
 #include "../header/Estructuras.h"
+#include "../header/KERNEL.h"
 
 void escuchar_Conexiones_Consola(int servidorConsola) {
 	do {
@@ -44,20 +45,4 @@ void agregar_consola_global(int numeroConexion, pthread_t hilo){
 	consola->numeroConexion = numeroConexion;
 	consola->hilo = hilo;
 	list_add(lista_consolas, consola);
-}
-
-void CU_iniciar_programa(int filesystem){
-	void CU_iniciar_programa(int filesystem){
-	char * respuesta = recibir_dato_serializado(filesystem);
-printf("Archivo: %s", respuesta);
-	/**enviar_dato_serializado("KERNEL", filesystem);
-
-	char * respuesta = recibir_dato_serializado(filesystem);
-
-	if(strcmp(respuesta, "FILESYSTEM") == 0){
-		printf("Handshake exitoso\n");
-
-	}
-	close(filesystem);**/
-}
 }

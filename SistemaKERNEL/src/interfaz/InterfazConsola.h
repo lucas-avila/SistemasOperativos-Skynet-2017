@@ -10,5 +10,5 @@
 
 void escuchar_Conexiones_Consola(int servidorConsola) ;
 void CU_Recibir_Conexiones_Consola(int clienteConsola);
-void CU_iniciar_programa(int clienteConsola) ;
+void agregar_consola_global(int numeroConexion, pthread_t hilo);
 #endif /* HEADER_INTERFAZCONSOLA_H_ */

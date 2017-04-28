@@ -137,3 +137,21 @@ void inicializar_listas_globales(){
 	lista_CPUs = list_create();
 }
 
+void CU_iniciar_programa(int consola){
+	char * respuesta = recibir_dato_serializado(consola);
+	printf("Contenido: %s\n", respuesta);
+	PCB * pcb_nuevo = crear_pcb();
+
+	enviar_dato_serializado(string_itoa(pcb_nuevo->pid), consola);
+
+	/**enviar_dato_serializado("KERNEL", filesystem);
+
+	char * respuesta = recibir_dato_serializado(filesystem);
+
+	if(strcmp(respuesta, "FILESYSTEM") == 0){
+		printf("Handshake exitoso\n");
+
+	}
+	close(filesystem);**/
+}
+
