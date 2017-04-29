@@ -8,25 +8,11 @@
 #ifndef HEADER_INTERFAZKERNEL_H_
 #define HEADER_INTERFAZKERNEL_H_
 
-
-typedef struct {
-	//lista de sentencias
-	//lista de pila
-	//lista de etiquetas
-} Programa_Enviar;
-
-
-
-void enviar_programa_a_kernel(Programa_Enviar programa); //Envia el Request lleno
-char *recibir_PID_programa_de_kernel(); //llena el Response
-
-
-
+char * enviar_programa_ANSISOP(char * path_archivo_fuente, int kernel);
+void CU_handshake(int kernel);
 
 void enviar_solicitud_cancelar_proceso();
 
-
-//Este directamente recibe string string string
 void recibir_mensajes_consola();
 
 #endif /* HEADER_INTERFAZKERNEL_H_ */

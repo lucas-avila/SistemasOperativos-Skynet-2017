@@ -13,16 +13,21 @@
 #include <string.h>
 #include <pthread.h>
 
+#include "commons/collections/list.h"
 #include "header/AppConfig.h"
 #include "header/Socket.h"
 #include "header/funcionesUtiles.h"
+#include "header/ExitCodes.h"
+#include "header/InterfazKernel.h"
+#include "header/Estructuras.h"
 
 void atender_solicitudes_de_usuario();
-void CU_handshake(int kernel);
 void iniciar_thread();
 void CU_iniciar_programa();
-char * enviar_programa_ANSISOP();
-char * obtener_codigo(char * path_archivo_fuente);
+void recibir_mensajes(int pid);
+void finalizar_programa(int pid);
+void eliminar_info_proceso(int pid);
+void mostrar_info_proceso(pid);
 
 int kernel;
 
@@ -85,50 +90,52 @@ void iniciar_thread(){
 
 void CU_iniciar_programa(){
 	char path_archivo_fuente[100]; // No creo que exista un path muy largo...
-	int pid;
 
 	printf("Ingrese el PATH del archivo: ");
 	scanf("%s", path_archivo_fuente);
 	validarArchivo(path_archivo_fuente);
 	CU_handshake(kernel);
 
-	pid = atoi(enviar_programa_ANSISOP(&path_archivo_fuente));
+	int pid;
+	pid = atoi(enviar_programa_ANSISOP(path_archivo_fuente, kernel));
 	printf("El pid recibido es: %d\n", pid);
+
+	Info_ejecucion info_proceso;
+	//Falta almacenar las cosas en un struct Info_ejecucion..
+	//list_add(lista_procesos, info_proceso);
+
+	recibir_mensajes(pid);
 }
 
-void CU_handshake(int kernel){
+void recibir_mensajes(int pid){
+	char * mensaje;
 
-	enviar_dato_serializado("CONSOLA", kernel);
-	printf("--Handshake exitoso--\n");
+	do {
+		mensaje = recibir_dato_serializado(kernel);
+		printf("El mensaje del Proceso (%d) es: %s\n", pid, mensaje);
+	} while (strcmp(mensaje, "FIN_PROGRAMA") != 0);
 
+	finalizar_programa(pid);
 }
 
-char * enviar_programa_ANSISOP(char * path_archivo_fuente){
+void finalizar_programa(pid){
 
-	char * literal;
-	literal = obtener_codigo(path_archivo_fuente);
+	int exit_code;
 
-	enviar_dato_serializado("INICIAR_PROGRAMA",kernel);
-	enviar_dato_serializado(literal, kernel);
+	exit_code = atoi(recibir_dato_serializado(kernel));
+	mostrar_exit_code(exit_code);
 
-	return recibir_dato_serializado(kernel);
+	mostrar_info_proceso(pid);
+	eliminar_info_proceso(pid);
 }
 
-char * obtener_codigo(char * path_archivo_fuente){
-	FILE * archivo_fuente;
-	char * literal;
-	int size_buffer;
+void eliminar_info_proceso(int pid){
 
-	archivo_fuente = fopen(path_archivo_fuente, "r");
-
-	// Ahora necesitamos saber el tamaño del archivo.
-	fseek(archivo_fuente, 0, SEEK_END);
-	size_buffer = ftell(archivo_fuente);
-	fseek(archivo_fuente, 0, SEEK_SET);
-
-	//Para evitar segmentation fault allocamos memoria.
-	literal = malloc(sizeof(char) * size_buffer);
-	fread(literal, sizeof(char), size_buffer, archivo_fuente);
-
-	return literal;
+	//list_remove_and_destroy_element();
 }
+
+void mostrar_info_proceso(pid){
+
+	//list_find(lista_procesos, &pid_identicos());
+}
+

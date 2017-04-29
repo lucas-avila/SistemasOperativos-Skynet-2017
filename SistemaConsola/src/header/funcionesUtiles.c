@@ -4,7 +4,10 @@
  *  Created on: 1/4/2017
  *      Author: utnso
  */
+
 #include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 int validarNumeroInput(int rangoMinimo, int rangoMaximo) {
 	int numero = 0;
@@ -24,3 +27,28 @@ void validarArchivo(char * path){
 			exit(-2);
 		}
 }
+
+char * obtener_codigo(char * path_archivo_fuente){
+	FILE * archivo_fuente;
+	char * literal;
+	int size_buffer;
+
+	archivo_fuente = fopen(path_archivo_fuente, "r");
+
+	// Ahora necesitamos saber el tamaño del archivo.
+	fseek(archivo_fuente, 0, SEEK_END);
+	size_buffer = ftell(archivo_fuente);
+	fseek(archivo_fuente, 0, SEEK_SET);
+
+	//Para evitar segmentation fault allocamos memoria.
+	literal = malloc(sizeof(char) * size_buffer);
+	fread(literal, sizeof(char), size_buffer, archivo_fuente);
+
+	return literal;
+}
+
+/*int pid_identicos(Info_ejecucion info_proceso){
+
+	//FALTA terminar.
+	return 0;
+}*/

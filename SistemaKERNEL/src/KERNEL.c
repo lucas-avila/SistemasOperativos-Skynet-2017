@@ -8,9 +8,9 @@
  ============================================================================
  */
 
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <sys/un.h>
@@ -40,6 +40,7 @@ void atender_solicitudes_de_usuario();
 
 void escuchar_Conexiones_CPU(int servidorCPU);
 void escuchar_Conexiones_Consola(int servidorConsola);
+void CU_iniciar_programa(int consola);
 
 int main(int argc, char *argv[]) {
 	inicializar_configuracion(argv[1]);
@@ -138,20 +139,26 @@ void inicializar_listas_globales(){
 }
 
 void CU_iniciar_programa(int consola){
-	char * respuesta = recibir_dato_serializado(consola);
-	printf("Contenido: %s\n", respuesta);
+	char * codigo = recibir_dato_serializado(consola);
+	int resultado;
+	/* La variable RESULTADO es para saber si se le pudo
+	 * asignar memoria o no. En el caso de que NO el
+	 * resultado va a ser mayor a 0 y se utilizará para
+	 * actualizar el valor de cantidad_paginas del PCB.
+	 * En el caso de que NO, entonces su valor sera menor
+	 * a 0 y se empleara como EXIT_CODE.
+	*/
+	printf("Contenido: %s\n", codigo);
 	PCB * pcb_nuevo = crear_pcb();
 
 	enviar_dato_serializado(string_itoa(pcb_nuevo->pid), consola);
-
-	/**enviar_dato_serializado("KERNEL", filesystem);
-
-	char * respuesta = recibir_dato_serializado(filesystem);
-
-	if(strcmp(respuesta, "FILESYSTEM") == 0){
-		printf("Handshake exitoso\n");
-
-	}
-	close(filesystem);**/
+	// Hasta acá funciona todo.
+	/*resultado = enviar_programa_memoria(codigo);
+	if(resultado > 0){
+		pcb_nuevo->cantidad_paginas = resultado;
+	} else{
+		enviar_dato_serializado("FIN_PROGRAMA", consola);
+		enviar_dato_serializado(string_itoa(resultado), consola);
+	}*/
 }
 
