@@ -65,10 +65,7 @@ int is_valid_line(char* line){
 	return 1;
 }
 
-void enviar_programa_memoria(char* path_programa) {
-	char pathPrograma = "/home/utnso/2017/C/UNIVERSIDAD/PROYECTOS/SistemaKERNEL/resource/programa_prueba.txt";
-
-	FILE* programa = fopen(pathPrograma, "r");
+int enviar_programa_memoria(char * codigo, int pid) {
 	char line[256];
 
 	char* numeroPagina;
@@ -76,18 +73,17 @@ void enviar_programa_memoria(char* path_programa) {
 	int contadorTamanioPagina = 0;
 
 	char* processID = malloc(5);
-	strcpy(processID, "1024");
-	//TODO: completar todo esto ^^
+	strcpy(processID, string_itoa(pid));
 
 	numeroPagina = asignar_Paginas_Programa(processID, "1");
 	if (strcmp(numeroPagina, "FALTA ESPACIO") == 0) {
 		finalizar_Programa_memoria(processID);
 		printf("ERROR no hay espacio suficiente");
-		return;
+		return -1;
 	}
 	char* contenidoPagina = malloc(tamanioPagina + 1);
 	strcpy(contenidoPagina, "");
-	while (fgets(line, sizeof(line), programa)) {
+	while (get_line(codigo, line, 1)) {
 		if (is_valid_line(line)) {
 			if ( (contadorTamanioPagina + strlen(line)) <= tamanioPagina) {
 				strcat(contenidoPagina, line);
@@ -99,7 +95,7 @@ void enviar_programa_memoria(char* path_programa) {
 					//TODO: handlear error cuando no hay mas memoria para reservar paginas
 					finalizar_Programa_memoria(processID);
 					printf("ERROR no hay espacio suficiente");
-					return;
+					return -2;
 				}
 				strcpy(contenidoPagina, line);
 				contadorTamanioPagina = strlen(line);
@@ -110,11 +106,9 @@ void enviar_programa_memoria(char* path_programa) {
 		//aca enviamos la linea a memoria con la funcion de johnny
 	}
 	almacenar_Bytes_de_Pagina(processID, numeroPagina, "0", string_itoa(strlen(contenidoPagina)), contenidoPagina);
+
+	printf("contenidoPagina : %s\n", contenidoPagina);
 	//free(contenidoPagina);
-
-	/* TODO: chequear aca que realmente se haya llegado al EOF
-	 * y que no haya terminado por un error */
-
-	fclose(programa);
+	return 1;
 }
 

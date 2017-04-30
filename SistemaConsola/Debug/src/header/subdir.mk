@@ -5,16 +5,22 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../src/header/AppConfig.c \
+../src/header/ExitCodes.c \
+../src/header/InterfazKernel.c \
 ../src/header/Socket.c \
 ../src/header/funcionesUtiles.c 
 
 OBJS += \
 ./src/header/AppConfig.o \
+./src/header/ExitCodes.o \
+./src/header/InterfazKernel.o \
 ./src/header/Socket.o \
 ./src/header/funcionesUtiles.o 
 
 C_DEPS += \
 ./src/header/AppConfig.d \
+./src/header/ExitCodes.d \
+./src/header/InterfazKernel.d \
 ./src/header/Socket.d \
 ./src/header/funcionesUtiles.d 
 

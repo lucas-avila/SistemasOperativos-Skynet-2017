@@ -33,3 +33,30 @@ char first_char(char * str){
 	}
 	return '\0';
 }
+
+int get_line(char * text, char * line, int save_cursor){
+	//esta funcion (horripilante, mil perdones) sería como un fgets(lee linea por linea) pero para un string
+	static int pos = 0;
+	int i = 0;
+	while(text[pos] != '\0'){
+		if(text[pos] == '\n'){
+			if(save_cursor)
+				pos++; //salteamos el \n
+			else
+				pos = 0;
+			line[i] = '\0';
+			return 1;
+		}
+
+		line[i] = text[pos];
+		i++;
+		pos++;
+		if(text[pos] == '\0'){
+			line[i] = '\0';
+			return 1; //necesito que haga una iteracion mas para poder leer la ultima linea en un while
+		}
+	}
+	pos = 0;
+	line[i] = '\0';
+	return 0;
+}

@@ -7,6 +7,7 @@
 #include <unistd.h>
 #include <pthread.h>
 
+#include "header/AppConfig.h"
 #include "header/Interfaz.h"
 #include "general/Socket.h"
 #include "header/MemoriaPrincipal.h"

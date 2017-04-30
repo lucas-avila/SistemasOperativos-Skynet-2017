@@ -22,7 +22,7 @@ char* finalizar_Programa_memoria(char* PID);
 
 
 
-void enviar_programa_memoria(char * path_programa);
+int enviar_programa_memoria(char * path_programa, int pid);
 
 int is_valid_line(char* line);
 

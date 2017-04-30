@@ -86,7 +86,7 @@ void atender_solicitudes_de_usuario() {
 		}
 		case 2: {
 			//testeando leer archivo de programa
-			enviar_programa_memoria("../resource/programa_prueba.txt");
+
 
 			break;
 		}
@@ -140,16 +140,19 @@ void inicializar_listas_globales(){
 
 void CU_iniciar_programa(int consola){
 	char * codigo = recibir_dato_serializado(consola);
-	int resultado;
+
+	PCB * pcb_nuevo = crear_pcb();
+
+	int resultado = enviar_programa_memoria(codigo, pcb_nuevo->pid);
 	/* La variable RESULTADO es para saber si se le pudo
-	 * asignar memoria o no. En el caso de que NO el
+	 * asignar memoria o no. En el caso de que SI el
 	 * resultado va a ser mayor a 0 y se utilizará para
 	 * actualizar el valor de cantidad_paginas del PCB.
 	 * En el caso de que NO, entonces su valor sera menor
 	 * a 0 y se empleara como EXIT_CODE.
 	*/
-	printf("Contenido: %s\n", codigo);
-	PCB * pcb_nuevo = crear_pcb();
+
+
 
 	enviar_dato_serializado(string_itoa(pcb_nuevo->pid), consola);
 	// Hasta acá funciona todo.
