@@ -152,8 +152,6 @@ void CU_iniciar_programa(int consola){
 	 * a 0 y se empleara como EXIT_CODE.
 	*/
 
-
-
 	enviar_dato_serializado(string_itoa(pcb_nuevo->pid), consola);
 	// Hasta acá funciona todo.
 	/*resultado = enviar_programa_memoria(codigo);

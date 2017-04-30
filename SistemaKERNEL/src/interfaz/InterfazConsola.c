@@ -17,6 +17,8 @@ void escuchar_Conexiones_Consola(int servidorConsola) {
 			agregar_consola_global(cliente, mihilo1);
 			pthread_create(&mihilo1, NULL, &CU_Recibir_Conexiones_Consola, cliente);
 			pthread_detach(&mihilo1);
+			retirar_consola_global(cliente);
+
 		} else {
 			close(cliente);
 		}
@@ -40,9 +42,28 @@ void CU_Recibir_Conexiones_Consola(int clienteConsola) {
 	close(clienteConsola);
 }
 
+int index_of_consola(int numeroConexion){
+	if(numeroConexion < 0) return -1;
+	int i = 0;
+	ConsolaInfo * aux = malloc(sizeof(ConsolaInfo));
+	while(aux = list_get(lista_consolas, i)){
+		if(aux->numeroConexion == numeroConexion)
+			return i;
+		i++;
+	}
+}
+
 void agregar_consola_global(int numeroConexion, pthread_t hilo){
 	ConsolaInfo * consola = malloc(sizeof(ConsolaInfo));
 	consola->numeroConexion = numeroConexion;
 	consola->hilo = hilo;
 	list_add(lista_consolas, consola);
 }
+
+
+void retirar_consola_global(int numeroConexion){
+	printf("Se elimino a consola con posicion %d de la lista\n", index_of_consola(numeroConexion));
+	list_remove(lista_consolas, index_of_consola(numeroConexion));
+}
+
+

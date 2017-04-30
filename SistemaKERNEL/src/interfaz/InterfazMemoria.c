@@ -101,12 +101,9 @@ int enviar_programa_memoria(char * codigo, int pid) {
 				contadorTamanioPagina = strlen(line);
 			}
 		}
-
-		//	printf("%s", line);
-		//aca enviamos la linea a memoria con la funcion de johnny
 	}
-	almacenar_Bytes_de_Pagina(processID, numeroPagina, "0", string_itoa(strlen(contenidoPagina)), contenidoPagina);
-
+	char * resul = almacenar_Bytes_de_Pagina(processID, numeroPagina, "0", string_itoa(strlen(contenidoPagina)), contenidoPagina);
+	printf("resultado es %s\n", resul);
 	printf("contenidoPagina : %s\n", contenidoPagina);
 	//free(contenidoPagina);
 	return 1;
