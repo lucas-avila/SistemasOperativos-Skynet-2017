@@ -28,12 +28,13 @@
 
 #include "header/PCB.h"
 #include "header/Estructuras.h"
+#include "header/AppConfig.h"
 
 #include "general/funcionesUtiles.h"
-#include "header/AppConfig.h"
 #include "interfaz/InterfazMemoria.h"
-#include "testing/TestingInterfazMemoria.h"
 #include "interfaz/InterfazConsola.h"
+#include "testing/TestingInterfazMemoria.h"
+#include "parser/metadata_program.h"
 
 void inicializar_listas_globales();
 void atender_solicitudes_de_usuario();
@@ -153,13 +154,20 @@ void CU_iniciar_programa(int consola){
 	*/
 
 	enviar_dato_serializado(string_itoa(pcb_nuevo->pid), consola);
-	// Hasta acá funciona todo.
-	/*resultado = enviar_programa_memoria(codigo);
 	if(resultado > 0){
 		pcb_nuevo->cantidad_paginas = resultado;
+		pcb_nuevo->info_codigo = metadata_desde_literal(codigo);
+		/*Info_codigo va a almacenar toda la informacion util del codigo
+		 * como por ejemplo cantidad de etiquetas, de funciones,
+		 * las etiquetas, el puntero de inicio, etc. Ver en libreria del
+		 * parser.
+		 */
+		//FALTA agregar el PCB a la lista NEW.
+		printf("--El PCB fue creado exitosamente--\n");
+		//--PROBLEMA-- El metada_programa.h no implementa las funciones de su .c.
 	} else{
 		enviar_dato_serializado("FIN_PROGRAMA", consola);
 		enviar_dato_serializado(string_itoa(resultado), consola);
-	}*/
+	}
 }
 

@@ -109,7 +109,7 @@ void CU_iniciar_programa(){
 
 void recibir_mensajes(int pid){
 	char * mensaje;
-
+	printf("--Esperando mensajes--"); // TEMPORAL para el Checkpoint.
 	do {
 		mensaje = recibir_dato_serializado(kernel);
 		printf("El mensaje del Proceso (%d) es: %s\n", pid, mensaje);
@@ -120,11 +120,9 @@ void recibir_mensajes(int pid){
 
 void finalizar_programa(pid){
 
-	int exit_code;
+	int exit_code = atoi(recibir_dato_serializado(kernel));
 
-	exit_code = atoi(recibir_dato_serializado(kernel));
 	mostrar_exit_code(exit_code);
-
 	mostrar_info_proceso(pid);
 	eliminar_info_proceso(pid);
 }
