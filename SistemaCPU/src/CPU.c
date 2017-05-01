@@ -19,11 +19,13 @@
 void CU_Procesar_PCB_a_ejecutar(int kernel);
 void solicitar_bytes_memoria();
 
+int kernel;
+
 int main(int argc, char *argv[]) {
 
 	inicializar_configuracion(argv[1]);
 	controlEjecucionPrograma = false;
-	int kernel = conectar_servidor("127.0.0.1", configuraciones.PUERTO_KERNEL);
+	kernel = conectar_servidor("127.0.0.1", configuraciones.PUERTO_KERNEL);
 
 	//Parametro de Identificacion
 	enviar_dato_serializado("CPU", kernel);
