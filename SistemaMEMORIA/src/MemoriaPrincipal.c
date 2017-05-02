@@ -22,7 +22,7 @@ int frame_lookup(char*PID, int pagina) {
 	int controlSeguir = 0;
 	int i = numeroIndice;
 	do {
-		for (i=0; i < tope; i++) {
+		for (i = 0; i < tope; i++) {
 			Tabla_Pagina_Invertida registro = TABLA_MEMORY[i];
 			char valorAux[4];
 			sprintf(valorAux, "%d", pagina);
@@ -51,7 +51,7 @@ int getFrame(char*PID, int pagina) {
 	char valorAux[4];
 	for (i = 0; i < tope; i++) {
 		Tabla_Pagina_Invertida registro = TABLA_MEMORY[i];
-		strcpy(valorAux,"");
+		strcpy(valorAux, "");
 		sprintf(valorAux, "%d", pagina);
 		if ((strcmp(registro.PID, PID) == 0) && (strcmp(registro.pagina, valorAux) == 0)) {
 			return atoi(registro.frame);
@@ -138,6 +138,9 @@ char* almacenar_bytes_de_una_pagina(char PID[4], int pagina, int byteInicial, in
 	if (numeroFrame < 0) {
 		desactivar_semaforo(&semaforo_Tabla_MEMORY);
 		return "PAGINA_NO_EXISTE"; //getframe retorna negativo cuando no encuentra
+	} else if ((byteInicial > configuraciones.MARCO_SIZE || (byteInicial + longitud) > configuraciones.MARCO_SIZE)) {
+		desactivar_semaforo(&semaforo_Tabla_MEMORY);
+		return "CONTENIDO_NO_ENTRA_EN_PAGINA";
 	}
 	int numeroInicial = indiceInicialPaginas + (numeroFrame * configuraciones.MARCO_SIZE) + byteInicial;
 
@@ -187,7 +190,7 @@ char* almacenar_bytes_de_una_pagina(char PID[4], int pagina, int byteInicial, in
 
 char* asignar_paginas_a_proceso(char *PID, int cantidad_paginas_requeridas) {
 	int cantidad_paginas_pedidas = 0;
-        int numero_pagina_inicial = 0;
+	char* numero_pagina_inicial;
 	/**
 	 * Voy recorriendo toda la tabla de administracion de la memoria
 	 * en busca de registros que esten vacios. Cuando los encuentra
@@ -204,16 +207,11 @@ char* asignar_paginas_a_proceso(char *PID, int cantidad_paginas_requeridas) {
 		strcpy(registro.PID, PID);
 		strcpy(registro.pagina, obtenerNumeroPaginaNew(PID));
 
-		if(cantidad_paginas_pedidas==0){
-			numero_pagina_inicial = atoi(registro.pagina);
+		if (cantidad_paginas_pedidas == 0) {
+			numero_pagina_inicial = registro.pagina;
 		}
-			
 
-		
-		
 		actualizar_tabla_pagina(registro);
-
-
 
 		cantidad_paginas_pedidas++;
 
@@ -222,8 +220,6 @@ char* asignar_paginas_a_proceso(char *PID, int cantidad_paginas_requeridas) {
 	return numero_pagina_inicial;
 
 }
-
-
 
 /***
  * FUNCION DETONANTE
@@ -243,12 +239,12 @@ void actualizar_tabla_pagina(Tabla_Pagina_Invertida registro) {
 
 //	char* paginaAdministrativa = string_new();
 	char* paginaAdministrativa = malloc(bloqueAdmin + 1);
-	strcpy(paginaAdministrativa,"");
+	strcpy(paginaAdministrativa, "");
 	/**comienzo TODO: mejorar esta parte del codigo ya que tiene muchas cosas
 	 * que se pueden meter en una funcion **/
 
-	char* cerosLlenar = malloc(TAMANIO-1);
-	strcpy(cerosLlenar,"");
+	char* cerosLlenar = malloc(TAMANIO - 1);
+	strcpy(cerosLlenar, "");
 	int j;
 	for (j = 0; j < TAMANIO - strlen(registro.frame) - 1; j++) {
 		strcat(cerosLlenar, " ");
@@ -257,7 +253,7 @@ void actualizar_tabla_pagina(Tabla_Pagina_Invertida registro) {
 	strcat(paginaAdministrativa, cerosLlenar);
 	//string_capitalized(cerosLlenar);
 
-	strcpy(cerosLlenar,"");
+	strcpy(cerosLlenar, "");
 	for (j = 0; j < TAMANIO - strlen(registro.pagina) - 1; j++) {
 		strcat(cerosLlenar, " ");
 	}
@@ -265,7 +261,7 @@ void actualizar_tabla_pagina(Tabla_Pagina_Invertida registro) {
 	strcat(paginaAdministrativa, cerosLlenar);
 	//string_capitalized(cerosLlenar);
 
-	strcpy(cerosLlenar,"");
+	strcpy(cerosLlenar, "");
 	for (j = 0; j < TAMANIO - strlen(registro.PID) - 1; j++) {
 		strcat(cerosLlenar, " ");
 	}
@@ -328,11 +324,11 @@ Tabla_Pagina_Invertida buscar_pagina_disponible() {
 	desactivar_semaforo(&semaforo_Tabla_MEMORY);
 	return registro;
 }
-char* pagina_Blanco =NULL;
+char* pagina_Blanco = NULL;
 void finalizar_programa(char *PID) {
 
-	if(pagina_Blanco==NULL){
-		pagina_Blanco= string_repeat('-',configuraciones.MARCO_SIZE);
+	if (pagina_Blanco == NULL) {
+		pagina_Blanco = string_repeat('-', configuraciones.MARCO_SIZE);
 	}
 
 	activar_semaforo(&semaforo_Proceso_Finalizar_Programa);
@@ -341,7 +337,7 @@ void finalizar_programa(char *PID) {
 	for (i = 0; i < tope; i++) {
 		Tabla_Pagina_Invertida registro = TABLA_MEMORY[i];
 		if (strcmp(registro.PID, PID) == 0) {
-			almacenar_bytes_de_una_pagina(PID,atoi(registro.pagina),0,configuraciones.MARCO_SIZE,pagina_Blanco);
+			almacenar_bytes_de_una_pagina(PID, atoi(registro.pagina), 0, configuraciones.MARCO_SIZE, pagina_Blanco);
 
 			strcpy(registro.PID, VACIO);
 			strcpy(registro.pagina, VACIO);
@@ -349,9 +345,7 @@ void finalizar_programa(char *PID) {
 			actualizar_tabla_pagina(registro);
 			//printf("\nFinalizar Proceso Frame %s",registro.frame);
 
-
-
-				//actualizar_informacion_memoria_principal(registro, i);
+			//actualizar_informacion_memoria_principal(registro, i);
 		}
 	}
 	desactivar_semaforo(&semaforo_Proceso_Finalizar_Programa);
@@ -359,29 +353,27 @@ void finalizar_programa(char *PID) {
 	//eliminar_filas_de_procesos_en_cache(PID);
 }
 
-
-
 char* crear_tabla_memory_principal() {
 
 	char* paginaAdministrativa;
 	char* cerosLlenar;
 	char* valorAux;
 	int bloqueAdmin = (TAMANIO - 1) * 3;
-	char* bloqueMemoriaAdministrativa =  malloc((bloqueAdmin * configuraciones.MARCOS) + 1);
+	char* bloqueMemoriaAdministrativa = malloc((bloqueAdmin * configuraciones.MARCOS) + 1);
 	strcpy(bloqueMemoriaAdministrativa, "");
 	int i = 0;
 
 	TABLA_MEMORY = malloc(configuraciones.MARCOS * sizeof(Tabla_Pagina_Invertida));
 
-	paginaAdministrativa =  malloc(bloqueAdmin+1);
-	cerosLlenar =  malloc(TAMANIO-1);
+	paginaAdministrativa = malloc(bloqueAdmin + 1);
+	cerosLlenar = malloc(TAMANIO - 1);
 	valorAux = malloc(sizeof(int));
 	for (i = 0; i < configuraciones.MARCOS; i++) {
-		strcpy(valorAux,"");
+		strcpy(valorAux, "");
 		sprintf(valorAux, "%d", i);
 		int j = 0;
 
-		strcpy(cerosLlenar,"");
+		strcpy(cerosLlenar, "");
 		for (j = 0; j < TAMANIO - strlen(valorAux) - 1; j++) {
 			strcat(cerosLlenar, " ");
 		}
@@ -391,16 +383,12 @@ char* crear_tabla_memory_principal() {
 		strcpy(TABLA_MEMORY[i].PID, VACIO);
 		strcpy(TABLA_MEMORY[i].frame, cerosLlenar);
 
-
 		strcpy(paginaAdministrativa, "");
 		strcat(paginaAdministrativa, TABLA_MEMORY[i].frame);
 		strcat(paginaAdministrativa, TABLA_MEMORY[i].PID);
 		strcat(paginaAdministrativa, TABLA_MEMORY[i].pagina);
 
 		strcat(bloqueMemoriaAdministrativa, paginaAdministrativa);
-
-
-
 
 	}
 	free(valorAux);

@@ -6,7 +6,6 @@
 #include <netdb.h>
 #include <unistd.h>
 #include <pthread.h>
-
 #include "header/AppConfig.h"
 #include "header/Interfaz.h"
 #include "general/Socket.h"
@@ -31,7 +30,7 @@ void CU_Recibir_conexiones(int servidor) {
 
 void CU_Recibir_Conexion_KERNEL(int cliente) {
 	int controlSeguir = 1;
-	enviar_dato_serializado(string_itoa(configuraciones.MARCO_SIZE),cliente);
+	enviar_dato_serializado(string_itoa(configuraciones.MARCO_SIZE), cliente);
 	char* codigo_operacion;
 	do {
 
@@ -66,6 +65,8 @@ void CU_Recibir_Conexion_CPU(int cliente) {
 			CU_Solicitar_Bytes_Memoria(cliente);
 		} else if (strcmp(codigo_operacion, "ALMACENAR_BYTE_MEMORIA") == 0) {
 			CU_Almacenar_Bytes_de_Pagina(cliente);
+		} else if (strcmp(codigo_operacion, "ASIGNAR_PAGINAS_PROCESO") == 0) {
+			CU_Asignar_Paginas_Programa(cliente);
 		} else if (strcmp(codigo_operacion, "") == 0) {
 			close(cliente);
 			controlSeguir = 0;
@@ -120,7 +121,7 @@ void CU_Almacenar_Bytes_de_Pagina(int cliente) {
 
 	texto = almacenar_bytes_de_una_pagina(PID, pagina, byteInicial, tamanio, contenido);
 	enviar_dato_serializado(texto, cliente);
-free(contenido);
+	free(contenido);
 
 	//enviar_dato_serializado("OK JONY", cliente);
 	free(PID);
@@ -129,13 +130,12 @@ free(contenido);
 void CU_Inicializar_Programa(int cliente) {
 	char* PID = recibir_dato_serializado(cliente); //PID
 	char* texto;
-	texto = recibir_dato_serializado(cliente);
+	texto = recibir_dato_serializado(cliente); //TODO
 	int cantidad_paginas = atoi(texto);
 	free(texto);
 
 	texto = inicializar_programa(PID, cantidad_paginas);
 	enviar_dato_serializado(texto, cliente);
-
 
 	//enviar_dato_serializado("OK JONY", cliente);
 	free(PID);
@@ -151,7 +151,6 @@ void CU_Asignar_Paginas_Programa(int cliente) {
 	texto = asignar_paginas_a_proceso(PID, cantidad_paginas);
 	enviar_dato_serializado(texto, cliente);
 
-
 	//enviar_dato_serializado("OK JONY", cliente);
 	free(PID);
 }
@@ -160,7 +159,6 @@ void CU_Finalizar_Programa(int cliente) {
 
 	finalizar_programa(PID);
 	enviar_dato_serializado("OK", cliente);
-
 
 	free(PID);
 }
