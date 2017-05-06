@@ -12,8 +12,6 @@
 void CU_handshake(int kernel){
 
 	enviar_dato_serializado("CONSOLA", kernel);
-	printf("--Handshake exitoso--\n");
-
 }
 
 char * enviar_programa_ANSISOP(char * path_archivo_fuente, int kernel){

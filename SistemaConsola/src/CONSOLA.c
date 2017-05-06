@@ -36,7 +36,6 @@ int main(int argc, char *argv[]) {
 	inicializar_configuracion(argv[1]);
 	kernel = conectar_servidor(configuraciones.IP_KERNEL, configuraciones.PUERTO_KERNEL);
 
-
 	pthread_t t_interfaz;
 	pthread_create(&t_interfaz, NULL, &atender_solicitudes_de_usuario, NULL);
 	pthread_join(t_interfaz, NULL);
@@ -56,13 +55,17 @@ void mostrar_menu_usuario() {
 
 void atender_solicitudes_de_usuario() {
 	int opcion = -1;
+	char path_archivo_fuente[100];
 	do {
 		mostrar_menu_usuario();
 		opcion = validarNumeroInput(0, 4);
 		switch (opcion) {
 
 		case 1:
-			iniciar_thread();
+			printf("Ingrese el PATH del archivo: ");
+			scanf("%s", path_archivo_fuente);
+			iniciar_thread(path_archivo_fuente);
+			system("clear");
 			break;
 		case 2:
 
@@ -71,34 +74,28 @@ void atender_solicitudes_de_usuario() {
 
 			break;
 		case 4:
-
+			system("clear");
 			break;
 		}
 	} while (opcion != 0);
 }
 
-void iniciar_thread(){
+void iniciar_thread(char * path_archivo_fuente){
 
 	pthread_t t_programa;
 
-	pthread_create(&t_programa, NULL, &CU_iniciar_programa, NULL);
-	pthread_join(t_programa, NULL);
-
-	//falta modificar para que se puedan ejecutar varios hilos-programa en paralelo.
+	pthread_create(&t_programa, NULL, &CU_iniciar_programa, path_archivo_fuente);
+	pthread_detach(t_programa);
 
 }
 
-void CU_iniciar_programa(){
-	char path_archivo_fuente[100]; // No creo que exista un path muy largo...
+void CU_iniciar_programa(char * path_archivo_fuente){
 
-	printf("Ingrese el PATH del archivo: ");
-	scanf("%s", path_archivo_fuente);
 	validarArchivo(path_archivo_fuente);
 	CU_handshake(kernel);
 
 	int pid;
 	pid = atoi(enviar_programa_ANSISOP(path_archivo_fuente, kernel));
-	printf("El pid recibido es: %d\n", pid);
 
 	Info_ejecucion info_proceso;
 	//Falta almacenar las cosas en un struct Info_ejecucion..
@@ -109,7 +106,7 @@ void CU_iniciar_programa(){
 
 void recibir_mensajes(int pid){
 	char * mensaje;
-	printf("--Esperando mensajes--"); // TEMPORAL para el Checkpoint.
+
 	do {
 		mensaje = recibir_dato_serializado(kernel);
 		printf("El mensaje del Proceso (%d) es: %s\n", pid, mensaje);

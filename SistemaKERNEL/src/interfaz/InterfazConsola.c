@@ -17,7 +17,7 @@ void escuchar_Conexiones_Consola(int servidorConsola) {
 			agregar_consola_global(cliente, mihilo1);
 			pthread_create(&mihilo1, NULL, &CU_Recibir_Conexiones_Consola, cliente);
 			pthread_detach(&mihilo1);
-			retirar_consola_global(cliente);
+			//retirar_consola_global(cliente);
 
 		} else {
 			close(cliente);
