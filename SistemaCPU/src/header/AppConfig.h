@@ -18,15 +18,14 @@ typedef struct {
 
 } AppConfig;
 
+int servidor_Memoria ;
+int tamanio_pagina_memoria ;
+
 //Lo declaro como variable global
 AppConfig configuraciones;
 
 bool controlEjecucionPrograma;
 
 void inicializar_configuracion(char *PATH_ARCHIVO_CONFIGURACION);
-
-
-
-
 
 #endif /* HEADER_APPCONFIG_H_ */

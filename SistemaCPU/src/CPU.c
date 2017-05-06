@@ -13,11 +13,13 @@
 #include <string.h>
 #include <stdbool.h>
 #include "header/AppConfig.h"
-#include "header/Socket.h"
-#include "header/InterfazKernel.h"
+#include "general/Socket.h"
+
+#include "interfaz/InterfazMemoria.h"
+#include "interfaz/InterfazKernel.h"
+#include "testing/testearPrimitivasFunciones.h"
 
 void CU_Procesar_PCB_a_ejecutar(int kernel);
-void solicitar_bytes_memoria();
 
 int kernel;
 
@@ -25,50 +27,35 @@ int main(int argc, char *argv[]) {
 
 	inicializar_configuracion(argv[1]);
 	controlEjecucionPrograma = false;
-	kernel = conectar_servidor("127.0.0.1", configuraciones.PUERTO_KERNEL);
+	kernel = conectar_servidor(configuraciones.IP_KERNEL, configuraciones.PUERTO_KERNEL);
+
+	iniciar_conexion_servidor_memoria();
+
 
 	//Parametro de Identificacion
-	enviar_dato_serializado("CPU", kernel);
+	enviar_dato_serializado("CPU", conexionKernel);
 	bool controlSeguir = true;
+
+	atender_clientes(0, mostrar_menu_primitivas);
+
 	char *operacion;
 	do {
-		operacion = recibir_dato_serializado(kernel);
+		operacion = recibir_dato_serializado(conexionKernel);
 		//SEÑAL ENVIADA POR KERNEL PARA SALIR
 		if (strcmp(operacion, "SIGUSR1") == 0) {
 			while (controlEjecucionPrograma == true) {
 			}
 			controlSeguir = false;
 		} else if (strcmp(operacion, "RECIBIR_PCB") == 0) {
-			CU_Procesar_PCB_a_ejecutar(kernel);
-			controlSeguir = false;
+			CU_Procesar_PCB_a_ejecutar(conexionKernel);
 		}
 	} while (controlSeguir);
 
-	close(kernel);
+	close(conexionKernel);
 	return EXIT_SUCCESS;
 }
 
 void CU_Procesar_PCB_a_ejecutar(int kernel) {
-	PCB * pcb = recibir_pcb(kernel);
 
-	printf("El pcb recibido tiene como PID : %d\n y cantidad de paginas : %d\n", pcb->pid, pcb->cantidad_paginas);
-}
-
-void solicitar_bytes_memoria() {
-	int serverMemoria = crear_servidor(configuraciones.IP_MEMORIA, configuraciones.PUERTO_MEMORIA);
-	/**
-	 * Enviar datos para solicitar memoria
-	 */
-	enviar_dato_serializado("CPU", serverMemoria); //identificacion
-	enviar_dato_serializado("SOLICITAR_BYTE_MEMORIA", serverMemoria); //operacion
-
-	enviar_dato_serializado("1", serverMemoria); //pagina
-	enviar_dato_serializado("0", serverMemoria); //byte inicial de pagina
-	enviar_dato_serializado("20", serverMemoria); //longitud de bytes a pedir
-
-	//recibir datos
-	char* dato = recibir_dato_serializado(serverMemoria);
-	printf("DATO RECIBIDO DE MEMORIA : %s", dato);
-	close(serverMemoria);
 }
 
