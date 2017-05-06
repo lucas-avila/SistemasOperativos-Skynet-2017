@@ -4,23 +4,20 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../src/KERNEL.c \
-../src/PCB.c \
-../src/SolicitudesUsuario.c 
+../src/capaMEMORIA/GestMemoriaFuncionesAux.c \
+../src/capaMEMORIA/GestionMemoriaDinamica.c 
 
 OBJS += \
-./src/KERNEL.o \
-./src/PCB.o \
-./src/SolicitudesUsuario.o 
+./src/capaMEMORIA/GestMemoriaFuncionesAux.o \
+./src/capaMEMORIA/GestionMemoriaDinamica.o 
 
 C_DEPS += \
-./src/KERNEL.d \
-./src/PCB.d \
-./src/SolicitudesUsuario.d 
+./src/capaMEMORIA/GestMemoriaFuncionesAux.d \
+./src/capaMEMORIA/GestionMemoriaDinamica.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
-src/%.o: ../src/%.c
+src/capaMEMORIA/%.o: ../src/capaMEMORIA/%.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: GCC C Compiler'
 	gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"

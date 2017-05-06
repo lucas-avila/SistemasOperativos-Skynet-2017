@@ -13,8 +13,7 @@
 #include "InterfazMemoria.h"
 #include "../general/funcionesUtiles.h"
 
-int servidor_Memoria = 0;
-int tamanio_pagina_memoria = 0;
+
 
 void iniciar_conexion_servidor_memoria() {
 	servidor_Memoria = conectar_servidor(configuraciones.IP_MEMORIA, configuraciones.PUERTO_MEMORIA);

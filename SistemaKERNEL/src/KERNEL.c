@@ -88,7 +88,6 @@ void atender_solicitudes_de_usuario() {
 		case 2: {
 			//testeando leer archivo de programa
 
-
 			break;
 		}
 		case 3: {
@@ -103,19 +102,18 @@ void atender_solicitudes_de_usuario() {
 			ConsolaInfo * consola = list_get(lista_consolas, 0);
 			printf("ConsolaInfo es %d\n", consola->numeroConexion);
 
-
 		}
 
 			break;
-		case 4:{
+		case 4: {
 			CPUInfo * cpu = list_get(lista_CPUs, 0);
-						printf("CPUInfo es %d, %d\n", cpu->numeroConexion, cpu->disponible);
+			printf("CPUInfo es %d, %d\n", cpu->numeroConexion, cpu->disponible);
 		}
 
 			break;
-		case 5:{
+		case 5: {
 			CPUInfo * cpu = list_get(lista_CPUs, 1);
-									printf("CPUInfo es %d, %d\n", cpu->numeroConexion, cpu->disponible);
+			printf("CPUInfo es %d, %d\n", cpu->numeroConexion, cpu->disponible);
 		}
 
 			break;
@@ -134,12 +132,12 @@ void atender_solicitudes_de_usuario() {
 	} while (opcion != 7);
 }
 
-void inicializar_listas_globales(){
+void inicializar_listas_globales() {
 	lista_consolas = list_create();
 	lista_CPUs = list_create();
 }
 
-void CU_iniciar_programa(int consola){
+void CU_iniciar_programa(int consola) {
 	char * codigo = recibir_dato_serializado(consola);
 
 	PCB * pcb_nuevo = crear_pcb();
@@ -151,12 +149,12 @@ void CU_iniciar_programa(int consola){
 	 * actualizar el valor de cantidad_paginas del PCB.
 	 * En el caso de que NO, entonces su valor sera menor
 	 * a 0 y se empleara como EXIT_CODE.
-	*/
+	 */
 
 	enviar_dato_serializado(string_itoa(pcb_nuevo->pid), consola);
-	if(resultado > 0){
+	if (resultado > 0) {
 		pcb_nuevo->cantidad_paginas = resultado;
-		pcb_nuevo->info_codigo = metadata_desde_literal(codigo);
+		//pcb_nuevo->info_codigo = metadata_desde_literal(codigo);
 		/*Info_codigo va a almacenar toda la informacion util del codigo
 		 * como por ejemplo cantidad de etiquetas, de funciones,
 		 * las etiquetas, el puntero de inicio, etc. Ver en libreria del
@@ -165,7 +163,7 @@ void CU_iniciar_programa(int consola){
 		//FALTA agregar el PCB a la lista NEW.
 		printf("--El PCB fue creado exitosamente--\n");
 		//--PROBLEMA-- El metada_programa.h no implementa las funciones de su .c.
-	} else{
+	} else {
 		enviar_dato_serializado("FIN_PROGRAMA", consola);
 		enviar_dato_serializado(string_itoa(resultado), consola);
 	}
