@@ -4,19 +4,13 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../src/CPU.c \
-../src/InterfazKernel.c \
-../src/InterfazMemoria.c 
+../src/CPU.c 
 
 OBJS += \
-./src/CPU.o \
-./src/InterfazKernel.o \
-./src/InterfazMemoria.o 
+./src/CPU.o 
 
 C_DEPS += \
-./src/CPU.d \
-./src/InterfazKernel.d \
-./src/InterfazMemoria.d 
+./src/CPU.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

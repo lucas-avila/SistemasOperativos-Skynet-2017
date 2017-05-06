@@ -4,17 +4,20 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../src/header/AppConfig.c 
+../src/interfaz/InterfazKernel.c \
+../src/interfaz/InterfazMemoria.c 
 
 OBJS += \
-./src/header/AppConfig.o 
+./src/interfaz/InterfazKernel.o \
+./src/interfaz/InterfazMemoria.o 
 
 C_DEPS += \
-./src/header/AppConfig.d 
+./src/interfaz/InterfazKernel.d \
+./src/interfaz/InterfazMemoria.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
-src/header/%.o: ../src/header/%.c
+src/interfaz/%.o: ../src/interfaz/%.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: GCC C Compiler'
 	gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
