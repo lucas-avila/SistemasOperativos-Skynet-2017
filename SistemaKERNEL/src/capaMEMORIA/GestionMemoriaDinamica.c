@@ -12,6 +12,8 @@
 #include "GestionMemoriaDinamica.h"
 #include "GestMemoriaFuncionesAux.h"
 
+#include "../administrarPCB/EstadisticaProceso.h"
+
 void CU_Gestionar_HEAP(int conexionCPU) {
 	char* tipoAccionMemoria = recibir_dato_serializado(conexionCPU);
 	if (strcmp(tipoAccionMemoria, "MALLOC_MEMORIA") == 0) {
@@ -35,6 +37,8 @@ void CU_Reservar_memoria_MALLOC(int conexionCPU) {
 			enviar_dato_serializado("NO_HAY_ESPACIO_SUFICIENTE", conexionCPU);
 			return;
 		}
+
+
 		guardar_registro_tabla_memoria(ultima_pagina_asignada);
 	}
 	int resultadoVerificacion = verificar_si_malloc_entra_en_pagina(ultima_pagina_asignada, tamanioMALLOC);
@@ -58,6 +62,9 @@ void CU_Reservar_memoria_MALLOC(int conexionCPU) {
 		byteInicial = reservar_espacio_memoria_en_pagina(ultima_pagina_asignada, tamanioMALLOC);
 		enviar_datos_respuesta(conexionCPU, ultima_pagina_asignada->nroPagina, ultima_pagina_asignada->PID, byteInicial);
 	}
+
+	//Lleno informacion estadistica
+	incrementar_MALLOC(PID, tamanioMALLOC);
 }
 
 void CU_Liberar_memoria_FREE(int conexionCPU) {
@@ -68,6 +75,8 @@ void CU_Liberar_memoria_FREE(int conexionCPU) {
 	int resultado = liberar_pagina_encontrada(pagina_Buscada, byteInicial);
 	if (resultado == 1) {
 		enviar_dato_serializado("OK", conexionCPU);
+
+
 
 		aplicar_algoritmo_Desfragmentacion_Interna(pagina_Buscada);
 		return;

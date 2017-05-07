@@ -7,6 +7,8 @@
 
 #include "../interfaz/InterfazMemoria.h"
 #include "commons/string.h"
+#include "../administrarPCB/EstadisticaProceso.h"
+
 void inicializar_tabla_proceso_memoria() {
 	TABLA_PROCESS_MEMORY = list_create();
 }
@@ -22,6 +24,8 @@ TABLA_MEMORIA_PROCESO* crear_item_Tabla_memoria_proceso(char* PID, unsigned nroP
 
 void guardar_registro_tabla_memoria(TABLA_MEMORIA_PROCESO* registro) {
 	list_add(TABLA_PROCESS_MEMORY, registro);
+	//Guardar informacion estadistica
+	incrementar_en_uno_paginas_HEAP(registro->PID);
 }
 
 void modificar_registro_tabla_memoria(TABLA_MEMORIA_PROCESO* registro) {
@@ -164,10 +168,11 @@ int liberar_pagina_encontrada(TABLA_MEMORIA_PROCESO* pagina_Buscada, unsigned by
 		return 3;
 	} else {
 		almacenar_Bytes_de_Pagina(pagina_Buscada->PID, string_itoa(pagina_Buscada->nroPagina), string_itoa(byteInicial), "1", "1");
-		pagina_Buscada->espacioDisponible += atoi(solicitar_bytes_memoria(pagina_Buscada->PID, string_itoa(pagina_Buscada->nroPagina), string_itoa(byteInicial + 1), "4"));
+		int tamanioLiberado = atoi(solicitar_bytes_memoria(pagina_Buscada->PID, string_itoa(pagina_Buscada->nroPagina), string_itoa(byteInicial + 1), "4"));
+		pagina_Buscada->espacioDisponible += tamanioLiberado;
 		modificar_registro_tabla_memoria(pagina_Buscada);
-
-		//eliminar_registro_tabla_memoria(pagina_Buscada);
+		//Lleno informacion estadistica
+		incrementar_FREE(pagina_Buscada->PID, tamanioLiberado);
 		return 1;
 	}
 	return -1;
@@ -201,7 +206,7 @@ void aplicar_algoritmo_Desfragmentacion_Interna(TABLA_MEMORIA_PROCESO* pagina_Bu
 			indicePrimerLibre = -1;
 			indiceSegundoLibre = -1;
 		}
-		contadorIndice = contadorIndice + tamanioBloque + 4+1;
+		contadorIndice = contadorIndice + tamanioBloque + 4 + 1;
 	}
 
 	if (indiceSegundoLibre == -1) {

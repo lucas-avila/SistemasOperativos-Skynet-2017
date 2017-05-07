@@ -49,6 +49,8 @@ void enviar_PCB_Serializado_a_CPU(CPUInfo* cpu, PCB* pcb);
 
 void marcar_CPU_Ocupada(CPUInfo* cpu);
 
-void* ejecutar_algoritmo_planificacion_FIFO();
+
+
+void recepcion_PCB_en_COLA_EXIT();
 
 #endif /* HEADER_PLANIFICACION_H_ */

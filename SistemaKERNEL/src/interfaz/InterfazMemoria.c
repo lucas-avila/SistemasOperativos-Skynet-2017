@@ -64,7 +64,7 @@ int is_valid_line(char* line){
 	return 1;
 }
 
-int enviar_programa_memoria(char * codigo, int pid) {
+int enviar_programa_memoria(char * codigo, char *  pid) {
 	char line[256];
 
 	char* numeroPagina;

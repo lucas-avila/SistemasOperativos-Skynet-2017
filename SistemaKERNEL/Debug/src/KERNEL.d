@@ -7,7 +7,8 @@ src/KERNEL.d: ../src/KERNEL.c ../src/general/Socket.h \
  ../src/testing/TestingInterfazMemoria.h \
  ../src/planificacion/Planificacion.h \
  ../src/planificacion/../header/PCB.h \
- ../src/planificacion/../header/Estructuras.h
+ ../src/planificacion/../header/Estructuras.h \
+ ../src/administrarPCB/EstadisticaProceso.h
 
 ../src/general/Socket.h:
 
@@ -34,3 +35,5 @@ src/KERNEL.d: ../src/KERNEL.c ../src/general/Socket.h \
 ../src/planificacion/../header/PCB.h:
 
 ../src/planificacion/../header/Estructuras.h:
+
+../src/administrarPCB/EstadisticaProceso.h:

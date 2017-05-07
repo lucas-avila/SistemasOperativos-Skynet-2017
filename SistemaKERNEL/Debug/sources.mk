@@ -19,5 +19,6 @@ src/interfaz \
 src/header \
 src/general \
 src/capaMEMORIA \
+src/administrarPCB \
 src \
 

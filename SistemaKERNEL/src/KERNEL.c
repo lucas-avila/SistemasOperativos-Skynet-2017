@@ -39,6 +39,7 @@
 #include "parser/metadata_program.h"
 
 #include "planificacion/Planificacion.h"
+#include "administrarPCB/EstadisticaProceso.h"
 
 void inicializar_listas_globales();
 void atender_solicitudes_de_usuario();
@@ -50,6 +51,7 @@ void CU_iniciar_programa(int consola);
 int main(int argc, char *argv[]) {
 	inicializar_configuracion(argv[1]);
 	inicializar_listas_globales();
+	inicializar_tabla_proceso_estadistica();
 
 	inicializar_tabla_proceso_memoria();
 
@@ -94,8 +96,9 @@ void atender_solicitudes_de_usuario() {
 
 			//JONY: esto lo agrego para probar la planificacion
 			queue_push(COLA_NEW, pcb_nuevo);
+			crear_Proceso_en_tabla(pcb_nuevo->PID);
 
-			printf("PCB creado, PID es : %d\n", pcb_nuevo->pid);
+			printf("PCB creado, PID es : %s\n", pcb_nuevo->PID);
 			break;
 		}
 		case 2: {
@@ -155,7 +158,7 @@ void CU_iniciar_programa(int consola) {
 
 	PCB * pcb_nuevo = crear_pcb();
 
-	int resultado = enviar_programa_memoria(codigo, pcb_nuevo->pid);
+	int resultado = enviar_programa_memoria(codigo, pcb_nuevo->PID);
 	/* La variable RESULTADO es para saber si se le pudo
 	 * asignar memoria o no. En el caso de que SI el
 	 * resultado va a ser mayor a 0 y se utilizará para
@@ -164,9 +167,9 @@ void CU_iniciar_programa(int consola) {
 	 * a 0 y se empleara como EXIT_CODE.
 	 */
 
-	enviar_dato_serializado(string_itoa(pcb_nuevo->pid), consola);
+	enviar_dato_serializado(pcb_nuevo->PID, consola);
 	if (resultado > 0) {
-		pcb_nuevo->cantidad_paginas = resultado;
+		pcb_nuevo->cantidad_paginas_codigo = resultado;
 		//pcb_nuevo->info_codigo = metadata_desde_literal(codigo);
 		/*Info_codigo va a almacenar toda la informacion util del codigo
 		 * como por ejemplo cantidad de etiquetas, de funciones,

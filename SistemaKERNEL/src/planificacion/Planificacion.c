@@ -8,6 +8,8 @@
 #include "../header/PCB.h"
 #include "../header/Estructuras.h"
 
+#include "../administrarPCB/EstadisticaProceso.h"
+
 void* EJECUTAR_ALGORITMO_PLANIFICACION() {
 	if (strcmp(configuraciones.ALGORITMO, "FIFO") == 0) {
 		ejecutar_algoritmo_planificacion_FIFO();
@@ -91,4 +93,13 @@ void marcar_CPU_Ocupada(CPUInfo* cpu) {
 	}
 
 }
+/**
+ * Es cuando el proceso ya llega a la cola EXIT
+ */
+void recepcion_PCB_en_COLA_EXIT() {
+	if (strcmp(configuraciones.ALGORITMO, "FIFO") == 0) {
+		recepcion_PCB_en_COLA_EXIT_FIFO();
 
+	}
+
+}

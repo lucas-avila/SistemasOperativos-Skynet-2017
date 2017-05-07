@@ -25,7 +25,7 @@ char* finalizar_Programa_memoria(char* PID);
 
 
 
-int enviar_programa_memoria(char * path_programa, int pid);
+int enviar_programa_memoria(char * path_programa, char * pid);
 
 int is_valid_line(char* line);
 
