@@ -10,7 +10,7 @@
 
 #include "commons/collections/queue.h"
 #include "../header/PCB.h"
-
+#include "../header/Estructuras.h"
 
 t_queue* COLA_NEW;
 t_queue* COLA_READY;
@@ -24,15 +24,13 @@ typedef enum {
 	  EXIT= 4
 } COLA;
 
-typedef struct{
 
-}CPU;
 
 t_list lista_CPU;
 
 
 
-
+void* EJECUTAR_ALGORITMO_PLANIFICACION();
 
 void inicializar_lista_CPU();
 
@@ -41,14 +39,16 @@ void inicializar_colas_5_estados();
 
 void mover_PCB_de_cola(PCB* pcb,COLA origen, COLA destino);
 
-CPU* obtener_CPU_Disponible();
+CPUInfo* obtener_CPU_Disponible();
 
 PCB*  obtener_proceso_de_cola_NEW();
 
+
+
+void enviar_PCB_Serializado_a_CPU(CPUInfo* cpu, PCB* pcb);
+
+void marcar_CPU_Ocupada(CPUInfo* cpu);
+
 void* ejecutar_algoritmo_planificacion_FIFO();
-
-void enviar_PCB_Serializado_a_CPU(CPU* cpu, PCB* pcb);
-
-void marcar_CPU_Ocupada(CPU* cpu);
 
 #endif /* HEADER_PLANIFICACION_H_ */

@@ -1,4 +1,5 @@
-src/planificacion/Planificacion.d: ../src/planificacion/Planificacion.c \
+src/planificacion/PlanificacionFIFO.d: \
+ ../src/planificacion/PlanificacionFIFO.c \
  ../src/planificacion/Planificacion.h \
  ../src/planificacion/../header/PCB.h \
  ../src/planificacion/../header/Estructuras.h \

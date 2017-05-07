@@ -30,7 +30,6 @@
 #include "header/Estructuras.h"
 #include "header/AppConfig.h"
 
-
 #include "capaMEMORIA/GestMemoriaFuncionesAux.h"
 
 #include "general/funcionesUtiles.h"
@@ -38,6 +37,8 @@
 #include "interfaz/InterfazConsola.h"
 #include "testing/TestingInterfazMemoria.h"
 #include "parser/metadata_program.h"
+
+#include "planificacion/Planificacion.h"
 
 void inicializar_listas_globales();
 void atender_solicitudes_de_usuario();
@@ -58,6 +59,10 @@ int main(int argc, char *argv[]) {
 	iniciar_conexion_servidor_cpu();
 
 	iniciar_conexion_servidor_memoria();
+
+	//PLanificacion
+	inicializar_colas_5_estados();
+	atender_clientes(0, &EJECUTAR_ALGORITMO_PLANIFICACION);
 
 	atender_solicitudes_de_usuario();
 
@@ -86,6 +91,10 @@ void atender_solicitudes_de_usuario() {
 		case 1: {
 			//testeando crear PCB
 			PCB * pcb_nuevo = crear_pcb();
+
+			//JONY: esto lo agrego para probar la planificacion
+			queue_push(COLA_NEW, pcb_nuevo);
+
 			printf("PCB creado, PID es : %d\n", pcb_nuevo->pid);
 			break;
 		}
