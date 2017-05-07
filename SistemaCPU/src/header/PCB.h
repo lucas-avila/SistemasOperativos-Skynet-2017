@@ -63,7 +63,7 @@ typedef struct {
 	char PID[5];
 	unsigned int program_counter;
 	unsigned int cantidad_paginas_codigo;
-	IndiceCodigo* codigo;
+	t_list* codigo;
 	unsigned int cantidad_codigo;
 
 	t_list* pila;
@@ -73,6 +73,11 @@ typedef struct {
 	int exit_code;  //Modificado porque puede ser valor negativo
 
 	int pagina_inicial_stack;
+
+
+	//Agregados PARA EJECUCION
+	int RR; //0 - FIFO , 1  -RR
+	int cantidad_rafagas; //RR se le da pelota, si no , nada
 } PCB;
 
 #endif /* HEADER_PCB_H_ */

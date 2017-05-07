@@ -10,7 +10,18 @@
 #include "../header/PCB.h"
 #include "../primitivas/EstructurasDeDatosPrimitivas.h"
 #include "../primitivas/FuncionesAuxiliares.h"
+
+#include "../procesador/Ejecucion.h"
+
 PCB* procesoPrueba;
+IndiceCodigo* crearIndiceCodigo(int programCounter, int byteInicial, int tamanio, int pagina) {
+	IndiceCodigo* indice1 = malloc(sizeof(IndiceCodigo));
+	indice1->byte_inicial_codigo = byteInicial;
+	indice1->byte_final_codigo = byteInicial + tamanio;
+	indice1->pagina = pagina;
+	indice1->program_counter = programCounter;
+	return indice1;
+}
 
 void crear_PCB_TEST() {
 	procesoPrueba = malloc(sizeof(PCB));
@@ -26,6 +37,29 @@ void crear_PCB_TEST() {
 	filaInicial->posicion = 0;
 	list_add(procesoPrueba->pila, filaInicial);
 	procesoPrueba->pagina_inicial_stack = atoi(asignar_Paginas_Programa(procesoPrueba->PID, "1"));
+
+	procesoPrueba->RR = 0;
+
+	/****** HACEMOS DE CUENTA QUE CARGAMOS NOSOTROS EL CODIGO FUENTE*******/
+	int paginaSentencia = atoi(asignar_Paginas_Programa(procesoPrueba->PID, "1"));
+	char sentencias[][40] = { "variables a, b", "a = 3", "b = 5", "a = b + 12" };
+	/**
+	 * variables a, b
+	 a = 3
+	 b = 5
+	 a = b + 12
+	 */
+	int cantidadSentencias = 4;
+	int i = 0;
+	int indiceInicial = 0;
+	procesoPrueba->codigo = list_create();
+	for (i = 0; i < cantidadSentencias; i++) {
+		IndiceCodigo* indiceNuevo = crearIndiceCodigo(i, indiceInicial, strlen(sentencias[i]), paginaSentencia);
+		indiceInicial = indiceInicial + strlen(sentencias[i]) ;
+		list_add(procesoPrueba->codigo, indiceNuevo);
+
+		almacenar_Bytes_de_Pagina(procesoPrueba->PID,string_itoa(indiceNuevo->pagina),string_itoa(indiceNuevo->byte_inicial_codigo),string_itoa(indiceNuevo->byte_final_codigo-indiceNuevo->byte_inicial_codigo),sentencias[i]);
+	}
 
 }
 
@@ -47,9 +81,12 @@ void mostrar_menu_primitivas() {
 		printf("\n 7 - Probar CASOS MULTIPLES (ANTERIORES)");
 
 		printf("\n 8 - Probar FRAGMENTACION INTERNA (MALLOC Y FREE)");
-		printf("\n 9 - Salir");
+
+		printf("\n 9 - Probar ANALIZADOR SINTACTICO");
+
+		printf("\n 10 - Salir");
 		printf("\n Opcion: ");
-		opcion_Salir = validarNumeroInput(0, 9);
+		opcion_Salir = validarNumeroInput(0, 10);
 		switch (opcion_Salir) {
 		case 1:
 			printf("\n Nombre Variable: ");
@@ -112,15 +149,17 @@ void mostrar_menu_primitivas() {
 			printf("\n Fragmentacion Realizada ");
 			printf("\n\nMemoria Despues del FREE: \n %s", solicitar_bytes_memoria(procesoPrueba->PID, string_itoa(dir->pagina), string_itoa(dir->byteInicial), "512"));
 
-
 			break;
 
 		case 7:
 			casos_multiples_primitivas();
 			break;
-
+		case 9:
+			setPCBEjecucion(procesoPrueba);
+			ejecutar_Programa();
+			break;
 		}
-	} while (opcion_Salir != 9);
+	} while (opcion_Salir != 10);
 }
 
 void casos_multiples_primitivas() {

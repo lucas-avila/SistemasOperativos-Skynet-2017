@@ -29,7 +29,7 @@ int obtener_cantidad_registros_de_proceso(char* PID);
 
 void eliminar_filas_de_procesos_en_cache(char* PID);
 
-void reemplazar_linea_aplicando_algoritmo(MEMORIA_CACHE fila);
+int reemplazar_linea_aplicando_algoritmo(MEMORIA_CACHE fila);
 
 void mostrar_tabla_memoria_cache();
 

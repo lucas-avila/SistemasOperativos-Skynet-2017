@@ -184,7 +184,7 @@ char* almacenar_bytes_de_una_pagina(char PID[4], int pagina, int byteInicial, in
 
 	desactivar_semaforo(&semaforo_Tabla_MEMORY);
 	/**CACHE **/
-	//ingresar_valor_en_cache(PID, pagina, solicitar_bytes_de_una_pagina(PID, pagina, 0, configuraciones.MARCO_SIZE));
+	ingresar_valor_en_cache(PID, pagina, solicitar_bytes_de_una_pagina(PID, pagina, 0, configuraciones.MARCO_SIZE));
 	return "OK";
 }
 
@@ -208,7 +208,9 @@ char* asignar_paginas_a_proceso(char *PID, int cantidad_paginas_requeridas) {
 		strcpy(registro.pagina, obtenerNumeroPaginaNew(PID));
 
 		if (cantidad_paginas_pedidas == 0) {
-			numero_pagina_inicial = registro.pagina;
+			numero_pagina_inicial=malloc(strlen( registro.pagina)+1);
+			strcpy(numero_pagina_inicial,registro.pagina);
+		//	numero_pagina_inicial = registro.pagina;
 		}
 
 		actualizar_tabla_pagina(registro);
@@ -350,7 +352,7 @@ void finalizar_programa(char *PID) {
 	}
 	desactivar_semaforo(&semaforo_Proceso_Finalizar_Programa);
 	/**Liberar memoria cache de ese proceso**/
-	//eliminar_filas_de_procesos_en_cache(PID);
+	eliminar_filas_de_procesos_en_cache(PID);
 }
 
 char* crear_tabla_memory_principal() {
