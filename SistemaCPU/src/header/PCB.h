@@ -70,7 +70,7 @@ typedef struct {
 
 	IndiceEtiqueta* etiqueta;
 	unsigned int cantidad_etiqueta;
-	unsigned int exit_code;
+	int exit_code;  //Modificado porque puede ser valor negativo
 
 	int pagina_inicial_stack;
 } PCB;
