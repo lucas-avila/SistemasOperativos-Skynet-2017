@@ -111,30 +111,34 @@ void ASIGNAR_VARIABLE(t_puntero direccion_variable, t_valor_variable valor) {
 t_valor_variable DEREFERENCIAR(t_puntero puntero) {
 
 	PunteroVariable* punteroVariable = deserializarPunteroStack(puntero);
-
+	int valor = 0;
 	if (punteroVariable->esVariable == 1) {
 		Variable* var = buscar_variable_por_stack_y_fila(pcb, punteroVariable->filaStack, punteroVariable->filaTabla);
-		return atoi(solicitar_bytes_memoria(pcb->PID, string_itoa(var->pagina), string_itoa(var->byte_inicial), string_itoa(4)));
+
+		valor = atoi(solicitar_bytes_memoria(pcb->PID, string_itoa(var->pagina), string_itoa(var->byte_inicial), string_itoa(4)));
 	} else {
 		Argumento* arg = buscar_argumento_por_stack_y_fila(pcb, punteroVariable->filaStack, punteroVariable->filaTabla);
-		return atoi(solicitar_bytes_memoria(pcb->PID, string_itoa(arg->pagina), string_itoa(arg->byte_inicial), string_itoa(4)));
+		valor = atoi(solicitar_bytes_memoria(pcb->PID, string_itoa(arg->pagina), string_itoa(arg->byte_inicial), string_itoa(4)));
 	}
+	return valor;
 }
 t_puntero ALOCAR(t_valor_variable espacio) {
 
-	Variable* variable_malloc = enviar_SYSCALL_solicitar_memoria_dinamica_a_kernel(pcb->PID, espacio);
+	char* mensaje = enviar_SYSCALL_solicitar_memoria_dinamica_a_kernel(pcb->PID, espacio);
 
-	t_puntero memoria_serializada = serializarMemoriaDinamica(variable_malloc->pagina, variable_malloc->byte_inicial);
+	if (strcmp(mensaje, "ERROR") == 0) {
 
-	return memoria_serializada;
+	}
+	return atoi(mensaje);
 
 }
 
 void LIBERAR(t_puntero memoria_serializada) {
 
-	Variable* variableLiberar = deserializarMemoriaDinamica(memoria_serializada);
+	DireccionMemoriaDinamica* variableLiberar = deserializarMemoriaDinamica(pcb->PID, memoria_serializada);
 
-	enviar_SYSCALL_liberar_memoria_dinamica_a_kernel(pcb->PID, variableLiberar);
+	char* resultado = enviar_SYSCALL_liberar_memoria_dinamica_a_kernel(variableLiberar);
+	printf("\nResultado de LIBERAR el puntero %d: %s", memoria_serializada, resultado);
 
 }
 

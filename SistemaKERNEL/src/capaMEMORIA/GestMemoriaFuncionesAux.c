@@ -6,7 +6,7 @@
 #include "GestMemoriaFuncionesAux.h"
 
 #include "../interfaz/InterfazMemoria.h"
-
+#include "commons/string.h"
 void inicializar_tabla_proceso_memoria() {
 	TABLA_PROCESS_MEMORY = list_create();
 }
@@ -67,6 +67,18 @@ TABLA_MEMORIA_PROCESO* buscar_ultima_pagina_asignada_a_proceso(char* PID) {
 
 TABLA_MEMORIA_PROCESO* solicitar_nueva_pagina_memoria(char* PID) {
 	char* nroPagina = asignar_Paginas_Programa(PID, "1");
+	//char* metadata = solicitar_bytes_memoria(PID,nroPagina,"0","5");
+
+	char* metadata = malloc(5 + 1);
+	char numeroBytesOcupados[4 + 1];
+	strcpy(metadata, "1");
+
+	strcpy(numeroBytesOcupados, string_repeat('0', 4 - strlen(string_itoa(tamanio_pagina_memoria - 5))));
+	strcat(numeroBytesOcupados, string_itoa(tamanio_pagina_memoria - 5));
+	strcat(metadata, numeroBytesOcupados);
+
+	almacenar_Bytes_de_Pagina(PID, nroPagina, "0", "5", metadata);
+
 	return crear_item_Tabla_memoria_proceso(PID, atoi(nroPagina), tamanio_pagina_memoria - 20);
 }
 
@@ -78,7 +90,7 @@ TABLA_MEMORIA_PROCESO* solicitar_nueva_pagina_memoria(char* PID) {
 int verificar_si_malloc_entra_en_pagina(TABLA_MEMORIA_PROCESO* registro, unsigned espacioSolicitado) {
 	if (espacioSolicitado > tamanio_pagina_memoria - 20) {
 		return 3;
-	} else if (espacioSolicitado > registro->espacioDisponible) {
+	} else if (espacioSolicitado > (registro->espacioDisponible - 5)) {
 		return 2;
 	} else {
 		return 1;
@@ -92,10 +104,13 @@ int reservar_espacio_memoria_en_pagina(TABLA_MEMORIA_PROCESO* registro, unsigned
 	int tamanioSolicitar = espacioSolicitado + 5 + 5;
 	//10 para el metadata inicial.
 
-	int byteInicalSolicitar = analizar_espacio_pagina(registro, espacioSolicitado);
-	if (byteInicalSolicitar < 0) {
+	Metadata_Memoria* metadataMemoria = analizar_espacio_pagina(registro, espacioSolicitado);
+	if (metadataMemoria == NULL) {
 		return -1;
 	}
+
+	metadataMemoria->espacioDisponible -= (espacioSolicitado + 5);
+
 	// - 10 para posicionarse desde donde empieza el metadata;
 
 	char *paginaMemoria = malloc(tamanioSolicitar + 1);
@@ -103,28 +118,28 @@ int reservar_espacio_memoria_en_pagina(TABLA_MEMORIA_PROCESO* registro, unsigned
 
 	strcpy(paginaMemoria, "0");
 
-	char* tamanioMalloc_String = string_itoa(espacioSolicitado);
+	char* tamanioMalloc_String = string_itoa((int) espacioSolicitado);
 
-	strcpy(numeroBytesOcupados, string_repeat('0', 4 - strlen(tamanioMalloc_String)));
-	strcat(numeroBytesOcupados, string_itoa(tamanioMalloc_String));
-	strcpy(paginaMemoria, numeroBytesOcupados);
+	strcpy(numeroBytesOcupados, string_repeat('0', (4 - strlen(tamanioMalloc_String))));
+	strcat(numeroBytesOcupados, tamanioMalloc_String);
+	strcat(paginaMemoria, numeroBytesOcupados);
 
-	strcat(paginaMemoria, string_repeat(' ', strlen(espacioSolicitado)));
+	strcat(paginaMemoria, string_repeat(' ', espacioSolicitado));
 
 	strcat(paginaMemoria, "1");
 	registro->espacioDisponible -= tamanioSolicitar;
 
-	strcpy(numeroBytesOcupados, string_repeat('0', 4 - strlen(registro->espacioDisponible)));
-	strcat(numeroBytesOcupados, string_itoa(registro->espacioDisponible));
+	strcpy(numeroBytesOcupados, string_repeat('0', (4 - strlen(string_itoa(metadataMemoria->espacioDisponible)))));
+	strcat(numeroBytesOcupados, string_itoa(metadataMemoria->espacioDisponible));
 
 	strcat(paginaMemoria, numeroBytesOcupados);
 
-	almacenar_Bytes_de_Pagina(registro->PID, registro->nroPagina, byteInicalSolicitar, tamanioSolicitar, tamanioMalloc_String);
+	almacenar_Bytes_de_Pagina(registro->PID, string_itoa(registro->nroPagina), string_itoa(metadataMemoria->byteInicial), string_itoa(tamanioSolicitar), paginaMemoria);
 
 	modificar_registro_tabla_memoria(registro);
 
 	free(paginaMemoria);
-	return byteInicalSolicitar;
+	return metadataMemoria->byteInicial;
 
 }
 
@@ -142,14 +157,17 @@ TABLA_MEMORIA_PROCESO* buscar_pagina_por_PID_NroPagina(char* PID, unsigned pagin
 }
 
 int liberar_pagina_encontrada(TABLA_MEMORIA_PROCESO* pagina_Buscada, unsigned byteInicial) {
-	char* paginaBuscada = solicitar_bytes_memoria(pagina_Buscada->PID, pagina_Buscada->nroPagina, byteInicial, "1");
+	char* paginaBuscada = solicitar_bytes_memoria(pagina_Buscada->PID, string_itoa(pagina_Buscada->nroPagina), string_itoa(byteInicial), "1");
 	if (strcmp(paginaBuscada, "PAGINA_NO_EXISTE") == 0) {
 		return 2;
 	} else if (strcmp(paginaBuscada, "1") == 0) {
 		return 3;
 	} else {
-		almacenar_Bytes_de_Pagina(pagina_Buscada->PID, pagina_Buscada->nroPagina, byteInicial, "1", "1");
-		eliminar_registro_tabla_memoria(pagina_Buscada);
+		almacenar_Bytes_de_Pagina(pagina_Buscada->PID, string_itoa(pagina_Buscada->nroPagina), string_itoa(byteInicial), "1", "1");
+		pagina_Buscada->espacioDisponible += atoi(solicitar_bytes_memoria(pagina_Buscada->PID, string_itoa(pagina_Buscada->nroPagina), string_itoa(byteInicial + 1), "4"));
+		modificar_registro_tabla_memoria(pagina_Buscada);
+
+		//eliminar_registro_tabla_memoria(pagina_Buscada);
 		return 1;
 	}
 	return -1;
@@ -157,7 +175,7 @@ int liberar_pagina_encontrada(TABLA_MEMORIA_PROCESO* pagina_Buscada, unsigned by
 
 void aplicar_algoritmo_Desfragmentacion_Interna(TABLA_MEMORIA_PROCESO* pagina_Buscada) {
 	char* paginaMemoria = solicitar_bytes_memoria(pagina_Buscada->PID, string_itoa(pagina_Buscada->nroPagina), "0", string_itoa(tamanio_pagina_memoria));
-	char* nuevaPaginaFragmentada = malloc(tamanio_pagina_memoria + 1);
+
 	int contadorIndice = 0;
 	int tamanioBloque = 0;
 
@@ -183,8 +201,31 @@ void aplicar_algoritmo_Desfragmentacion_Interna(TABLA_MEMORIA_PROCESO* pagina_Bu
 			indicePrimerLibre = -1;
 			indiceSegundoLibre = -1;
 		}
-		contadorIndice = contadorIndice + tamanioBloque + 4;
+		contadorIndice = contadorIndice + tamanioBloque + 4+1;
 	}
+
+	if (indiceSegundoLibre == -1) {
+		return;
+	}
+	//Metadata Primer Bloque
+	//Metadata Segundo Bloque
+	//Tamanio Primer Bloque
+	//Tamanio Segundo Bloque
+	int espacioContenidoNuevo = 5 + tamanioPrimerLibre + tamanioSegundoLibre;
+	char* paginaNueva = malloc(5 + espacioContenidoNuevo + 1);
+
+	char numeroBytesOcupados[4 + 1];
+	strcpy(paginaNueva, "1");
+
+	char* contenido_String = string_itoa((int) espacioContenidoNuevo);
+
+	strcpy(numeroBytesOcupados, string_repeat('0', (4 - strlen(contenido_String))));
+	strcat(numeroBytesOcupados, contenido_String);
+	strcat(paginaNueva, numeroBytesOcupados);
+
+	strcat(paginaNueva, string_repeat('-', espacioContenidoNuevo));
+	almacenar_Bytes_de_Pagina(pagina_Buscada->PID, string_itoa(pagina_Buscada->nroPagina), string_itoa(indicePrimerLibre), string_itoa(5 + espacioContenidoNuevo), paginaNueva);
+
 }
 
 int buscar_indice_elemento_tabla_memoria(char* PID, unsigned pagina) {
@@ -200,20 +241,24 @@ int buscar_indice_elemento_tabla_memoria(char* PID, unsigned pagina) {
 	return -1;
 }
 
-int analizar_espacio_pagina(TABLA_MEMORIA_PROCESO* registro, int espacioRequerido) {
-	char* paginaMemoria = solicitar_bytes_memoria(registro->PID, registro->nroPagina, 0, tamanio_pagina_memoria);
+Metadata_Memoria* analizar_espacio_pagina(TABLA_MEMORIA_PROCESO* registro, int espacioRequerido) {
+	char* paginaMemoria = solicitar_bytes_memoria(registro->PID, string_itoa(registro->nroPagina), "0", string_itoa(tamanio_pagina_memoria - 10));
 	int contadorIndice = 0;
 	int tamanioBloque = 0;
 	while (contadorIndice < tamanio_pagina_memoria) {
 		tamanioBloque = atoi(string_substring(paginaMemoria, (contadorIndice + 1), 4));
 		if (paginaMemoria[contadorIndice] == '1') {
-			if (espacioRequerido <= tamanioBloque) {
-				return contadorIndice;
+			if (espacioRequerido <= (tamanioBloque - 5)) {
+				Metadata_Memoria* metadata = malloc(sizeof(Metadata_Memoria));
+				metadata->byteInicial = contadorIndice;
+				metadata->espacioDisponible = tamanioBloque;
+				//return contadorIndice;
+				return metadata;
 			}
 		}
-		contadorIndice = contadorIndice + tamanioBloque + 4;
+		contadorIndice = contadorIndice + tamanioBloque + 4 + 1;
 	}
-	return -1;
+	return NULL;
 
 }
 

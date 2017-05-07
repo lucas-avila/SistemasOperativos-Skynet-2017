@@ -14,7 +14,7 @@
 
 void CU_Gestionar_HEAP(int conexionCPU) {
 	char* tipoAccionMemoria = recibir_dato_serializado(conexionCPU);
-	if (strcmp(tipoAccionMemoria, "MALLOC") == 0) {
+	if (strcmp(tipoAccionMemoria, "MALLOC_MEMORIA") == 0) {
 		CU_Reservar_memoria_MALLOC(conexionCPU);
 	} else if (strcmp(tipoAccionMemoria, "FREE") == 0) {
 		CU_Liberar_memoria_FREE(conexionCPU);
@@ -29,11 +29,13 @@ void CU_Reservar_memoria_MALLOC(int conexionCPU) {
 	TABLA_MEMORIA_PROCESO* ultima_pagina_asignada = buscar_ultima_pagina_asignada_a_proceso(PID);
 	if (ultima_pagina_asignada == NULL) {
 		ultima_pagina_asignada = solicitar_nueva_pagina_memoria(PID);
+
 		// Si ya no me asigna otra pagina, la memoria se quedo sin espacio.
 		if (ultima_pagina_asignada == NULL) {
 			enviar_dato_serializado("NO_HAY_ESPACIO_SUFICIENTE", conexionCPU);
 			return;
 		}
+		guardar_registro_tabla_memoria(ultima_pagina_asignada);
 	}
 	int resultadoVerificacion = verificar_si_malloc_entra_en_pagina(ultima_pagina_asignada, tamanioMALLOC);
 	if (resultadoVerificacion == 3) {
@@ -47,6 +49,7 @@ void CU_Reservar_memoria_MALLOC(int conexionCPU) {
 			enviar_dato_serializado("NO_HAY_ESPACIO_SUFICIENTE", conexionCPU);
 			return;
 		}
+		guardar_registro_tabla_memoria(ultima_pagina_asignada);
 		//Asigno Espacio
 		byteInicial = reservar_espacio_memoria_en_pagina(ultima_pagina_asignada, tamanioMALLOC);
 		enviar_datos_respuesta(conexionCPU, ultima_pagina_asignada->nroPagina, ultima_pagina_asignada->PID, byteInicial);
@@ -65,6 +68,8 @@ void CU_Liberar_memoria_FREE(int conexionCPU) {
 	int resultado = liberar_pagina_encontrada(pagina_Buscada, byteInicial);
 	if (resultado == 1) {
 		enviar_dato_serializado("OK", conexionCPU);
+
+		aplicar_algoritmo_Desfragmentacion_Interna(pagina_Buscada);
 		return;
 	} else if (resultado == 2) {
 		enviar_dato_serializado("BLOQUE_INEXISTENTE", conexionCPU);
@@ -73,8 +78,7 @@ void CU_Liberar_memoria_FREE(int conexionCPU) {
 		enviar_dato_serializado("BLOQUE_NO_OCUPADO", conexionCPU);
 		return;
 	}
-	/*Puede que se pueda compactar un poco la pagina luego de la liberacion*/
-	aplicar_algoritmo_Desfragmentacion_Interna(pagina_Buscada);
+
 }
 
 void enviar_datos_respuesta(int conexionCPU, unsigned pagina, char*PID, int byteInicial) {

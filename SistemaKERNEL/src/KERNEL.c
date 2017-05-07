@@ -30,6 +30,9 @@
 #include "header/Estructuras.h"
 #include "header/AppConfig.h"
 
+
+#include "capaMEMORIA/GestMemoriaFuncionesAux.h"
+
 #include "general/funcionesUtiles.h"
 #include "interfaz/InterfazMemoria.h"
 #include "interfaz/InterfazConsola.h"
@@ -45,8 +48,9 @@ void CU_iniciar_programa(int consola);
 
 int main(int argc, char *argv[]) {
 	inicializar_configuracion(argv[1]);
-
 	inicializar_listas_globales();
+
+	inicializar_tabla_proceso_memoria();
 
 	int servidor_Consola = crear_servidor(configuraciones.PUERTO_PROG, configuraciones.CANTIDAD_MAXIMA_CONCURRENCIA);
 	atender_clientes(servidor_Consola, &escuchar_Conexiones_Consola); // asincronico - multihilo

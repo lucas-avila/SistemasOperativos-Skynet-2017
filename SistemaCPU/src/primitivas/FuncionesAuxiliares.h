@@ -13,5 +13,5 @@ t_puntero generarPunteroStack(char* filaStack, char*tipoVariable, char* filaTabl
 PunteroVariable* deserializarPunteroStack(t_puntero punteroDireccion);
 
 t_puntero serializarMemoriaDinamica(char* pagina, char* byteInicial);
-Variable* deserializarMemoriaDinamica(t_puntero memoria_serializada);
+DireccionMemoriaDinamica* deserializarMemoriaDinamica(char* proceso, t_puntero memoria_serializada);
 #endif /* PRIMITIVAS_FUNCIONESAUXILIARES_H_ */

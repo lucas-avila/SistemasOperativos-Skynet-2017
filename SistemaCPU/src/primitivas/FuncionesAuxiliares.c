@@ -87,46 +87,46 @@ PunteroVariable* deserializarPunteroStack(t_puntero punteroDireccion) {
 	return punteroVariable;
 }
 
-
-
 t_puntero serializarMemoriaDinamica(char* pagina, char* byteInicial) {
 
-	char puntero[2 + (TAMANIO_MAXIMO * 2) + 1];
+	char puntero[2 + 2+ 3 + 1];
+       //PROCESO + PAGINA + BYTEINICIAL
+	strcpy(puntero, "");
 
-		strcpy(puntero, "88");
+	char* completaVacio;
+	char contenido_Formateado[TAMANIO_MAXIMO + 1];
 
-		char* completaVacio;
-		char contenido_Formateado[TAMANIO_MAXIMO + 1];
-		completaVacio = string_repeat('0', (int) (TAMANIO_MAXIMO - strlen(pagina)));
+	strcat(puntero, "88");
 
-		strcpy(contenido_Formateado, completaVacio);
-		strcat(contenido_Formateado, pagina);
+	completaVacio = string_repeat('0', (int) (2 - strlen(pagina)));
+	strcpy(contenido_Formateado, completaVacio);
+	strcat(contenido_Formateado, pagina);
 
-		strcat(puntero, contenido_Formateado);
+	strcat(puntero, contenido_Formateado);
 
-		completaVacio = string_repeat("0", (int) (TAMANIO_MAXIMO - strlen(byteInicial))) ;
+	completaVacio = string_repeat('0', (int) (3 - strlen(byteInicial)));
 
-		strcpy(contenido_Formateado, completaVacio);
-		strcat(contenido_Formateado, byteInicial);
+	strcpy(contenido_Formateado, completaVacio);
+	strcat(contenido_Formateado, byteInicial);
 
-		strcat(puntero, contenido_Formateado);
+	strcat(puntero, contenido_Formateado);
 
 	t_puntero memoria_serializada = atoi(puntero);
 
 	return memoria_serializada;
 }
 
-Variable* deserializarMemoriaDinamica(t_puntero memoria_serializada) {
+DireccionMemoriaDinamica* deserializarMemoriaDinamica(char* proceso, t_puntero memoria_serializada) {
 	char* datos_memoria = string_itoa(memoria_serializada);
 
-	Variable* punteroMemoria = malloc(sizeof(PunteroVariable));
-
+	DireccionMemoriaDinamica* punteroMemoria = malloc(sizeof(DireccionMemoriaDinamica));
+	//char* proceso = string_substring(datos_memoria, 0, 4);
 	char* pag = string_substring(datos_memoria, 2, 2);
-	char* byte = string_substring(datos_memoria, 4, 2);
+	char* byte = string_substring(datos_memoria, 4, 3);
 
-	punteroMemoria->pagina = pag;
-	punteroMemoria->byte_inicial = byte;
-	punteroMemoria->tamanio = (sizeof(unsigned int));
+	punteroMemoria->pid = atoi(proceso);
+	punteroMemoria->pagina = atoi(pag);
+	punteroMemoria->byteInicial = atoi(byte);
 	//No estoy seguro si dejando el tamanio en blanco trae problemas
 	return punteroMemoria;
 }

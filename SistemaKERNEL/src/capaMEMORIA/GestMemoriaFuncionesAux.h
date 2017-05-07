@@ -21,6 +21,11 @@ typedef struct {
 	bool isFree;
 } HeapMetadata;
 
+typedef struct {
+	int espacioDisponible;
+	int byteInicial;
+} Metadata_Memoria;
+
 t_list* TABLA_PROCESS_MEMORY;
 
 TABLA_MEMORIA_PROCESO* crear_item_Tabla_memoria_proceso(char* PID, unsigned nroPagina, unsigned espacioDisponible);
@@ -53,5 +58,7 @@ void aplicar_algoritmo_Desfragmentacion_Interna(TABLA_MEMORIA_PROCESO* pagina_Bu
 int buscar_indice_elemento_tabla_memoria(char* PID, unsigned pagina);
 
 void inicializar_tabla_proceso_memoria();
+
+Metadata_Memoria* analizar_espacio_pagina(TABLA_MEMORIA_PROCESO* registro, int espacioRequerido);
 
 #endif /* CAPAMEMORIA_GESTMEMORIAFUNCIONESAUX_H_ */

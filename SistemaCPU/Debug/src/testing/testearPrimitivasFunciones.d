@@ -5,7 +5,9 @@ src/testing/testearPrimitivasFunciones.d: \
  ../src/testing/../primitivas/EstructurasDeDatosPrimitivas.h \
  ../src/testing/../general/funcionesUtiles.h \
  ../src/testing/../interfaz/InterfazMemoria.h \
- ../src/testing/../header/PCB.h
+ ../src/testing/../header/PCB.h \
+ ../src/testing/../primitivas/EstructurasDeDatosPrimitivas.h \
+ ../src/testing/../primitivas/FuncionesAuxiliares.h
 
 ../src/testing/../primitivas/PrimitivasFunciones.h:
 
@@ -18,3 +20,7 @@ src/testing/testearPrimitivasFunciones.d: \
 ../src/testing/../interfaz/InterfazMemoria.h:
 
 ../src/testing/../header/PCB.h:
+
+../src/testing/../primitivas/EstructurasDeDatosPrimitivas.h:
+
+../src/testing/../primitivas/FuncionesAuxiliares.h:

@@ -19,6 +19,9 @@ typedef struct {
 } AppConfig;
 
 int servidor_Memoria ;
+int servidor_kernel;
+
+
 int tamanio_pagina_memoria ;
 
 //Lo declaro como variable global

@@ -68,8 +68,8 @@ void CU_Recibir_Conexion_CPU(int cliente) {
 		} else if (strcmp(codigo_operacion, "ASIGNAR_PAGINAS_PROCESO") == 0) {
 			CU_Asignar_Paginas_Programa(cliente);
 		} else if (strcmp(codigo_operacion, "") == 0) {
-			close(cliente);
-			controlSeguir = 0;
+			//close(cliente);
+			//controlSeguir = 0;
 		} else {
 			enviar_dato_serializado("ERROR: CODIGO OPERACION INEXISTENTE", cliente);
 		}
@@ -147,9 +147,9 @@ void CU_Asignar_Paginas_Programa(int cliente) {
 	texto = recibir_dato_serializado(cliente);
 	int cantidad_paginas = atoi(texto);
 	free(texto);
-
-	texto = asignar_paginas_a_proceso(PID, cantidad_paginas);
-	enviar_dato_serializado(texto, cliente);
+	char texto2[4 + 1];
+	strcpy(texto2, asignar_paginas_a_proceso(PID, cantidad_paginas));
+	enviar_dato_serializado(&texto2, cliente);
 
 	//enviar_dato_serializado("OK JONY", cliente);
 	free(PID);

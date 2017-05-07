@@ -21,37 +21,37 @@
 
 void CU_Procesar_PCB_a_ejecutar(int kernel);
 
-int kernel;
+
 
 int main(int argc, char *argv[]) {
 
 	inicializar_configuracion(argv[1]);
 	controlEjecucionPrograma = false;
-	kernel = conectar_servidor(configuraciones.IP_KERNEL, configuraciones.PUERTO_KERNEL);
+	servidor_kernel = conectar_servidor(configuraciones.IP_KERNEL, configuraciones.PUERTO_KERNEL);
 
 	iniciar_conexion_servidor_memoria();
 
 
 	//Parametro de Identificacion
-	enviar_dato_serializado("CPU", conexionKernel);
+	enviar_dato_serializado("CPU", servidor_kernel);
 	bool controlSeguir = true;
-
-	atender_clientes(0, mostrar_menu_primitivas);
+	mostrar_menu_primitivas();
+	//atender_clientes(0, mostrar_menu_primitivas);
 
 	char *operacion;
 	do {
-		operacion = recibir_dato_serializado(conexionKernel);
+		operacion = recibir_dato_serializado(servidor_kernel);
 		//SEÑAL ENVIADA POR KERNEL PARA SALIR
 		if (strcmp(operacion, "SIGUSR1") == 0) {
 			while (controlEjecucionPrograma == true) {
 			}
 			controlSeguir = false;
 		} else if (strcmp(operacion, "RECIBIR_PCB") == 0) {
-			CU_Procesar_PCB_a_ejecutar(conexionKernel);
+			CU_Procesar_PCB_a_ejecutar(servidor_kernel);
 		}
 	} while (controlSeguir);
 
-	close(conexionKernel);
+	close(servidor_kernel);
 	return EXIT_SUCCESS;
 }
 

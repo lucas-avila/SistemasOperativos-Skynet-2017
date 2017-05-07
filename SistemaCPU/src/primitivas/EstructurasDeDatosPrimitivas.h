@@ -15,6 +15,14 @@ typedef struct {
 } DireccionVariable;
 
 typedef struct {
+	unsigned int pagina;
+	unsigned int byteInicial;
+	unsigned int pid;
+} DireccionMemoriaDinamica;
+
+
+
+typedef struct {
 	unsigned int filaStack;
 	unsigned int esVariable; //1 si , 0 no
 	unsigned int filaTabla; //Fila de la tabla, tanto en argumento como en variable
