@@ -35,6 +35,7 @@ int main(int argc, char *argv[]) {
 
 	inicializar_configuracion(argv[1]);
 	kernel = conectar_servidor(configuraciones.IP_KERNEL, configuraciones.PUERTO_KERNEL);
+	CU_handshake_consola(kernel);
 
 	pthread_t t_interfaz;
 	pthread_create(&t_interfaz, NULL, &atender_solicitudes_de_usuario, NULL);
@@ -92,7 +93,7 @@ void iniciar_thread(char * path_archivo_fuente){
 void CU_iniciar_programa(char * path_archivo_fuente){
 
 	validarArchivo(path_archivo_fuente);
-	CU_handshake(kernel);
+	CU_handshake_programa(kernel);
 
 	int pid;
 	pid = atoi(enviar_programa_ANSISOP(path_archivo_fuente, kernel));
