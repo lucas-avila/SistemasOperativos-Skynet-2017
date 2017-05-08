@@ -1,14 +1,15 @@
 #include<stdlib.h>
 #include<stdio.h>
-
+#include <string.h>
 #include<stdbool.h>
 #include <commons/collections/list.h>
-#include "../header/AppConfig.h"
-#include <commons/config.h>
 #include <commons/string.h>
-#include "../general/Socket.h"
-#include <string.h>
 
+#include "../header/AppConfig.h"
+
+#include "../general/Socket.h"
+
+#include <commons/config.h>
 #include "GestionMemoriaDinamica.h"
 #include "GestMemoriaFuncionesAux.h"
 

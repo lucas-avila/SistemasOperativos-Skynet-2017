@@ -99,7 +99,7 @@ void enviar_dato_serializado(char* mensaje, int conexion) {
 	sprintf(tamanio_dato, "%d", tamanio);
 	send(conexion, tamanio_dato, 4, 0);
 	send(conexion, mensaje, tamanio, 0);
-	printf("\n Envie: %s, conexion : %d", mensaje, conexion);
+	//printf("\n Envie: %s, conexion : %d", mensaje, conexion);
 }
 
 void atender_clientes(int servidor, void (*f)(int)) {

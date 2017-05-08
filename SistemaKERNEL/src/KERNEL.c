@@ -1,74 +1,50 @@
-/*
- ============================================================================
- Name        : KERNEL.c
- Author      : 
- Version     :
- Copyright   : Your copyright notice
- Description : Hello World in C, Ansi-style
- ============================================================================
- */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <sys/un.h>
-#include <netinet/in.h>
-#include <netdb.h>
-#include <unistd.h>
-#include <errno.h>
-#include <semaphore.h>
-#include <signal.h>
-
 #include <commons/string.h>
-
 #include "general/Socket.h"
 #include "header/SolicitudesUsuario.h"
-
 #include "header/PCB.h"
 #include "header/Estructuras.h"
 #include "header/AppConfig.h"
-
 #include "capaMEMORIA/GestMemoriaFuncionesAux.h"
-
 #include "general/funcionesUtiles.h"
-#include "interfaz/InterfazMemoria.h"
-#include "interfaz/InterfazConsola.h"
 #include "testing/TestingInterfazMemoria.h"
 #include "parser/metadata_program.h"
-
 #include "planificacion/Planificacion.h"
 #include "administrarPCB/EstadisticaProceso.h"
+#include "capaFILESYSTEM/TablaGlobalArchivo.h"
+
+#include "interfaz/InterfazMemoria.h"
+#include "interfaz/InterfazConsola.h"
+#include "interfaz/InterfazCPU.h"
 
 void inicializar_listas_globales();
 void atender_solicitudes_de_usuario();
 
-void escuchar_Conexiones_CPU(int servidorCPU);
-void escuchar_Conexiones_Consola(int servidorConsola);
 void CU_iniciar_programa(int consola);
+
+void inicializar_KERNEL();
 
 int main(int argc, char *argv[]) {
 	inicializar_configuracion(argv[1]);
+	inicializar_KERNEL();
+	iniciar_conexion_servidor_consola();
+	iniciar_conexion_servidor_cpu();
+	iniciar_conexion_servidor_memoria();
+//	iniciar_conexion_servidor_FS();
+	atender_solicitudes_de_usuario();
+	return EXIT_SUCCESS;
+}
+
+void inicializar_KERNEL() {
 	inicializar_listas_globales();
 	inicializar_tabla_proceso_estadistica();
-
 	inicializar_tabla_proceso_memoria();
-
-	int servidor_Consola = crear_servidor(configuraciones.PUERTO_PROG, configuraciones.CANTIDAD_MAXIMA_CONCURRENCIA);
-	atender_clientes(servidor_Consola, &escuchar_Conexiones_Consola); // asincronico - multihilo
-
-	iniciar_conexion_servidor_cpu();
-
-	iniciar_conexion_servidor_memoria();
-
-	//PLanificacion
+	inicializar_tabla_global_archivo();
+	//   PLanificacion
 	inicializar_colas_5_estados();
 	atender_clientes(0, &EJECUTAR_ALGORITMO_PLANIFICACION);
-
-	atender_solicitudes_de_usuario();
-
-	return EXIT_SUCCESS;
 }
 
 void mostrar_menu_usuario() {

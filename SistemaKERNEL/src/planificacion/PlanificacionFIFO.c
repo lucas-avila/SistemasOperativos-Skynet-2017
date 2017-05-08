@@ -3,7 +3,7 @@
 #include "../header/AppConfig.h"
 #include "../administrarPCB/EstadisticaProceso.h"
 
-void* ejecutar_algoritmo_planificacion_FIFO() {
+void ejecutar_algoritmo_planificacion_FIFO() {
 	PCB* pcb;
 	CPUInfo* cpu;
 	while (configuraciones.planificacion_activa == 1) {

@@ -10,7 +10,7 @@
 
 #include "../administrarPCB/EstadisticaProceso.h"
 
-void* EJECUTAR_ALGORITMO_PLANIFICACION() {
+void EJECUTAR_ALGORITMO_PLANIFICACION() {
 	if (strcmp(configuraciones.ALGORITMO, "FIFO") == 0) {
 		ejecutar_algoritmo_planificacion_FIFO();
 

@@ -1,28 +1,14 @@
-/*
- * PCB.h
- *
- *  Created on: 30/4/2017
- *      Author: utnso
- */
-
 #ifndef HEADER_PCB_H_
 #define HEADER_PCB_H_
 
 #include "commons/collections/list.h"
-/*
- * PCB.h
- *
- *  Created on: 16/4/2017
- *      Author: utnso
- */
+
 
 typedef struct {
 	unsigned int program_counter;
 	unsigned int byte_inicial_codigo;
 	unsigned int byte_final_codigo;
 	unsigned int pagina;
-//Offset byte inicial
-//longitud diferencia byte_final_codigo - byte_inicial_codigo
 } IndiceCodigo;
 
 typedef struct {
@@ -74,10 +60,11 @@ typedef struct {
 
 	int pagina_inicial_stack;
 
-
 	//Agregados PARA EJECUCION
 	int RR; //0 - FIFO , 1  -RR
 	int cantidad_rafagas; //RR se le da pelota, si no , nada
+
+	int cantidad_rafagas_ejecutadas;
 } PCB;
 
 #endif /* HEADER_PCB_H_ */

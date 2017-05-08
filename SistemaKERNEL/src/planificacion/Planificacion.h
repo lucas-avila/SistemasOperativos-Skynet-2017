@@ -30,7 +30,7 @@ t_list lista_CPU;
 
 
 
-void* EJECUTAR_ALGORITMO_PLANIFICACION();
+void EJECUTAR_ALGORITMO_PLANIFICACION();
 
 void inicializar_lista_CPU();
 

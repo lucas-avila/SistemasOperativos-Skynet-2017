@@ -4,20 +4,12 @@
 #include "parser/metadata_program.h"
 
 #include "commons/collections/list.h"
-/*
- * PCB.h
- *
- *  Created on: 16/4/2017
- *      Author: utnso
- */
 
 typedef struct {
 	unsigned int program_counter;
 	unsigned int byte_inicial_codigo;
 	unsigned int byte_final_codigo;
 	unsigned int pagina;
-//Offset byte inicial
-//longitud diferencia byte_final_codigo - byte_inicial_codigo
 } IndiceCodigo;
 
 typedef struct {

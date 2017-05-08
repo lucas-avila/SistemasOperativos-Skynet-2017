@@ -7,6 +7,14 @@
 #include "InterfazConsola.h"
 #include "../header/Estructuras.h"
 #include "../header/KERNEL.h"
+#include "../header/AppConfig.h"
+
+
+void iniciar_conexion_servidor_consola() {
+	int servidor_Consola = crear_servidor(configuraciones.PUERTO_PROG, configuraciones.CANTIDAD_MAXIMA_CONCURRENCIA);
+	atender_clientes(servidor_Consola, &escuchar_Conexiones_Consola); // asincronico - multihilo
+
+}
 
 void escuchar_Conexiones_Consola(int servidorConsola) {
 	do {
@@ -42,28 +50,27 @@ void CU_Recibir_Conexiones_Consola(int clienteConsola) {
 	close(clienteConsola);
 }
 
-int index_of_consola(int numeroConexion){
-	if(numeroConexion < 0) return -1;
+int index_of_consola(int numeroConexion) {
+	if (numeroConexion < 0)
+		return -1;
 	int i = 0;
 	ConsolaInfo * aux = malloc(sizeof(ConsolaInfo));
-	while(aux = list_get(lista_consolas, i)){
-		if(aux->numeroConexion == numeroConexion)
+	while (aux = list_get(lista_consolas, i)) {
+		if (aux->numeroConexion == numeroConexion)
 			return i;
 		i++;
 	}
 }
 
-void agregar_consola_global(int numeroConexion, pthread_t hilo){
+void agregar_consola_global(int numeroConexion, pthread_t hilo) {
 	ConsolaInfo * consola = malloc(sizeof(ConsolaInfo));
 	consola->numeroConexion = numeroConexion;
 	consola->hilo = hilo;
 	list_add(lista_consolas, consola);
 }
 
-
-void retirar_consola_global(int numeroConexion){
+void retirar_consola_global(int numeroConexion) {
 	printf("Se elimino a consola con posicion %d de la lista\n", index_of_consola(numeroConexion));
 	list_remove(lista_consolas, index_of_consola(numeroConexion));
 }
-
 
