@@ -1,9 +1,12 @@
 #ifndef HEADER_PCB_H_
 #define HEADER_PCB_H_
 
-#include "parser/metadata_program.h"
+//#include "parser/metadata_program.h"
 
-#include "commons/collections/list.h"
+#include <commons/collections/list.h>
+#include <stdint.h>
+#include <sys/types.h>
+
 /*
  * PCB.h
  *
@@ -11,77 +14,101 @@
  *      Author: utnso
  */
 
+
+/*
+ *
+ *
+ * Un identificador único (PID), el cual deberá informar a la consola.
+
+● Program Counter (PC)
+
+● Referencia a la tabla de Archivos del Proceso
+
+● Posición del Stack (SP)
+
+● El Exit Code (EC) del proceso
+
+Páginas de código Cantidad de páginas utilizadas por el código del Programa AnSISOP, empezando por la página cero.
+
+Índice de código Estructura auxiliar que contiene el offset del inicio y del fin de cada sentencia del Programa.
+
+Índice de etiquetas Estructura auxiliar utilizada para conocer las líneas de código correspondientes al inicio de los procedimientos y a las etiquetas.
+
+Índice del Stack Estructura auxiliar encargada de ordenar los valores almacenados en el Stack.
+ */
 typedef struct {
-	unsigned int program_counter;
-	unsigned int byte_inicial_codigo;
-	unsigned int byte_final_codigo;
-	unsigned int pagina;
+	uint32_t program_counter;
+	uint32_t byte_inicial_codigo;
+	uint32_t byte_final_codigo;
+	uint32_t pagina;
 //Offset byte inicial
 //longitud diferencia byte_final_codigo - byte_inicial_codigo
-} IndiceCodigo;
+} __attribute__((packed))
+IndiceCodigo;
 
 typedef struct {
 	char id;
-	unsigned int pagina;
-	unsigned int byte_inicial;
-	unsigned int tamanio;
-} Argumento;
+	uint32_t pagina;
+	uint32_t byte_inicial;
+	uint32_t tamanio;
+} __attribute__((packed))
+Argumento;
 
 typedef struct {
 	char id;
-	unsigned int pagina;
-	unsigned int byte_inicial;
-	unsigned int tamanio;
-} Variable;
+	uint32_t pagina;
+	uint32_t byte_inicial;
+	uint32_t tamanio;
+} __attribute__((packed))
+Variable;
 
 typedef struct {
-	unsigned int pagina;
-	unsigned int byte_inicial;
-	unsigned int tamanio;
-} ReturnVariable;
+	uint32_t pagina;
+	uint32_t byte_inicial;
+	uint32_t tamanio;
+} __attribute__((packed))
+ReturnVariable;
 
 typedef struct {
-	unsigned int posicion;
+	uint32_t posicion;
 	t_list* argumentos;
 	t_list* variables;
-	unsigned int retPos;
+	uint32_t retPos;
 	ReturnVariable* retVar;
-} IndiceStack;
+} __attribute__((packed))
+IndiceStack;
 
 typedef struct {
 	char* identificador_funcion; //funcion donde se encuentra la etiqueta
 	char* nombre_etiqueta; //nombre de la etiqueta
-	unsigned int valor_program_counter; //valor que debe tomar el program_counter al pasar por ahi
-} IndiceEtiqueta;
+	uint32_t valor_program_counter; //valor que debe tomar el program_counter al pasar por ahi
+} __attribute__((packed))
+IndiceEtiqueta;
 
 typedef struct {
 	char PID[5];
-	unsigned int program_counter;
-	unsigned int cantidad_paginas_codigo;
-	t_list* codigo;
-	unsigned int cantidad_codigo;
+	uint32_t program_counter;
+	uint32_t cantidad_paginas_codigo;
+	t_list* codigo; //tiene elementos de tipo IndiceCodigo
+	uint32_t cantidad_codigo;
 
-	t_list* pila;
+	t_list* pila; //tiene elementos de tipo IndiceStack
 
 	IndiceEtiqueta* etiqueta;
-	unsigned int cantidad_etiqueta;
-	int exit_code;  //Modificado porque puede ser valor negativo
+	uint32_t cantidad_etiqueta;
+	int32_t exit_code;  //Modificado porque puede ser valor negativo
 
-	int pagina_inicial_stack;
+	int32_t pagina_inicial_stack;
 
 
 	//Agregados PARA EJECUCION
-	int RR; //0 - FIFO , 1  -RR
-	int cantidad_rafagas; //RR se le da pelota, si no , nada
+	int32_t RR; //0 - FIFO , 1  -RR
+	int32_t cantidad_rafagas; //RR se le da pelota, si no , nada
 
-	int cantidad_rafagas_ejecutadas;
-} PCB;
+	int32_t cantidad_rafagas_ejecutadas;
+} __attribute__((packed))
+PCB;
 
-/**typedef struct{
-   int pid;
-   unsigned int cantidad_paginas;
-   t_metadata_program * info_codigo;
-} PCB; **/
 
 int enviar_pcb(PCB * pcb, int s_destino);
 PCB * recibir_pcb(int s_origen);

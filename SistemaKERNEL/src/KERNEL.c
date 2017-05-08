@@ -36,7 +36,7 @@
 #include "interfaz/InterfazMemoria.h"
 #include "interfaz/InterfazConsola.h"
 #include "testing/TestingInterfazMemoria.h"
-#include "parser/metadata_program.h"
+//#include "parser/metadata_program.h"
 
 #include "planificacion/Planificacion.h"
 #include "administrarPCB/EstadisticaProceso.h"
@@ -102,8 +102,23 @@ void atender_solicitudes_de_usuario() {
 			break;
 		}
 		case 2: {
-			//testeando leer archivo de programa
+			//testeando serializador con header
+			IndiceCodigo * in1 = malloc(sizeof(IndiceCodigo));
+			IndiceCodigo * in2 = malloc(sizeof(IndiceCodigo));
+			in1->program_counter = 1;
+			in1->byte_inicial_codigo = 2;
+			in1->byte_final_codigo = 3;
+			in1->pagina = 4;
+			in2->program_counter = 5;
+			in2->byte_inicial_codigo = 6;
+			in2->byte_final_codigo = 7;
+			in2->pagina = 8;
+			t_list * lista = list_create();
+			list_add(lista, in1);
+			list_add(lista, in2);
+			char * result = serializar_con_header(lista, "LISTA_CODIGO");
 
+			deserializar_con_header(result, "LISTA_CODIGO");
 			break;
 		}
 		case 3: {
@@ -133,7 +148,31 @@ void atender_solicitudes_de_usuario() {
 		}
 
 			break;
-		case 6:
+		case 6:{
+			int i = 2;
+			int x = 2000;
+			IndiceCodigo * in1 = malloc(sizeof(IndiceCodigo));
+			IndiceCodigo * in2 = malloc(sizeof(IndiceCodigo));
+			in1->program_counter = 13;
+			in1->byte_inicial_codigo = 2;
+			in1->byte_final_codigo = 355;
+			in1->pagina = 4;
+			char * Buffer = malloc(sizeof(char) * sizeof(IndiceCodigo));
+			int offset = 0;
+			memcpy(Buffer + offset, &in1->program_counter, sizeof(in1->program_counter));
+			offset += sizeof(in1->program_counter);
+			memcpy(Buffer + offset, &in1->byte_inicial_codigo, sizeof(in1->byte_inicial_codigo));
+			offset += sizeof(in1->byte_inicial_codigo);
+			memcpy(Buffer + offset, &in1->byte_final_codigo, sizeof(in1->byte_final_codigo));
+			offset += sizeof(in1->byte_final_codigo);
+			memcpy(Buffer + offset, &in1->pagina, sizeof(in1->pagina));
+			offset += sizeof(in1->pagina);
+
+			IndiceCodigo * resultado = malloc(sizeof(IndiceCodigo));
+			memcpy(resultado, Buffer, sizeof(IndiceCodigo));
+			printf("Resultado str : %s\n", Buffer);
+			printf("Resultado : %d, %d, %d, %d \n", resultado->program_counter, resultado->byte_inicial_codigo, resultado->byte_final_codigo, resultado->pagina);
+		}
 
 			break;
 		case 8:
