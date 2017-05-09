@@ -8,6 +8,8 @@
 #include "general/Socket.h"
 #define MIN_PIDS 1000
 
+char * serializar_con_header(t_list * lista, char * tipo_lista);
+
 int pids_reg = MIN_PIDS;
 
 PCB* crear_pcb() {
@@ -51,37 +53,41 @@ char * serializar_con_header(t_list * lista, char * tipo_lista){
 	 * 						^ asi le digo al receptor que tiene para moverse por 3 elementos
 	 * SI LOS ELEMENTOS TIENEN LISTAS ADENTRO, TAMBIEN SE SERIALIZAN DE ESTA MANERA
 	 */
-	char * resultado = string_new();
+	char * buffer;
 	int i = 0;
 	uint32_t count_lista = list_size(lista);
 	if(strcmp(tipo_lista, "LISTA_CODIGO") == 0){
+		char * count_lista_s = string_itoa(count_lista);
+		int offset = strlen(count_lista_s) + 1;
+		buffer = malloc(sizeof(char) * sizeof(IndiceCodigo) * count_lista + offset);
 		//inicializo el resultado con su header
-		string_append(&resultado, string_itoa(count_lista));
-		string_append(&resultado, "|");
-		char * elemento_serializado = string_new();
+		strcpy(buffer, count_lista_s);
+		string_append(&buffer, "|");
 		IndiceCodigo * elemento = malloc(sizeof(IndiceCodigo));
 		for(i; i < count_lista; i++){
-			strcpy(elemento_serializado, "");
 			elemento = list_get(lista, i);
-			string_append(&elemento_serializado, string_itoa(elemento->program_counter));
-			string_append(&elemento_serializado, string_itoa(elemento->byte_inicial_codigo));
-			string_append(&elemento_serializado, string_itoa(elemento->byte_final_codigo));
-			string_append(&elemento_serializado, string_itoa(elemento->pagina));
-			string_append(&resultado, elemento_serializado);
+			memcpy(buffer + offset, &elemento->program_counter, sizeof(elemento->program_counter));
+			offset += sizeof(elemento->program_counter);
+			memcpy(buffer + offset, &elemento->byte_inicial_codigo, sizeof(elemento->byte_inicial_codigo));
+			offset += sizeof(elemento->byte_inicial_codigo);
+			memcpy(buffer + offset, &elemento->byte_final_codigo, sizeof(elemento->byte_final_codigo));
+			offset += sizeof(elemento->byte_final_codigo);
+			memcpy(buffer + offset, &elemento->pagina, sizeof(elemento->pagina));
+			offset += sizeof(elemento->pagina);
 		}
 
-		printf("El resultado es %s \n", resultado);
 	}
-	return resultado;
+	return buffer;
 }
 
 char * substr_hasta(char * cadena, char delimitador){
 	char * count_lista_s = string_new();
 	int i = 0;
 	while(cadena[i] != delimitador){
-		string_append(&count_lista_s, &cadena[i]);
+		count_lista_s[i] = cadena[i];
 		i++;
 	}
+	count_lista_s[i] = '\0';
 	return count_lista_s;
 }
 
@@ -95,14 +101,17 @@ t_list * deserializar_con_header(char * cadena, char * tipo_lista){
 	t_list * resultado = list_create();
 	// Obtenemos la cantidad de elementos de la lista recibida
 	int count_lista = atoi(substr_hasta(cadena, '|'));
-
 	if(strcmp(tipo_lista, "LISTA_CODIGO") == 0){
-		int i = 0;
-		IndiceCodigo * elemento = malloc(sizeof(IndiceCodigo));
-		for(i; i < count_lista; i++){
+		//length del header para saltearlo
+		int i = strlen(string_itoa(count_lista)) + 1;
 
+		for(i; i < count_lista * sizeof(IndiceCodigo); i+=sizeof(IndiceCodigo)){
+			IndiceCodigo * elemento = malloc(sizeof(IndiceCodigo));
+			memcpy(elemento, &cadena[i], sizeof(IndiceCodigo));
+			list_add(resultado, elemento);
 		}
 	}
+	return resultado;
 }
 
 
