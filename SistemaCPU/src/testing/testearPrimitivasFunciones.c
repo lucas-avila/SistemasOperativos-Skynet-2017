@@ -42,23 +42,22 @@ void crear_PCB_TEST() {
 
 	/****** HACEMOS DE CUENTA QUE CARGAMOS NOSOTROS EL CODIGO FUENTE*******/
 	int paginaSentencia = atoi(asignar_Paginas_Programa(procesoPrueba->PID, "1"));
-	char sentencias[][40] = { "variables a, b", "a = 3", "b = 5", "a = b + 12" };
-	/**
+	char sentencias[][40] = { "variables a, b, x,d,e,f,g,h,i,j,k,l", "a = 3", "b = 5", "a = b + 12", "alocar x 50 ", "liberar x", "alocar d 50 ", "liberar d", "alocar e 50 ", "liberar e", "alocar f 50 ", "liberar f", "alocar g 50 ", "liberar g", "alocar h 50 ", "liberar h", "alocar i 50 ", "liberar i", "alocar j 50 ", "liberar j", "alocar k 50 ", "liberar k", "alocar l 50 ", "liberar l" };/**
 	 * variables a, b
 	 a = 3
 	 b = 5
 	 a = b + 12
 	 */
-	int cantidadSentencias = 4;
+	int cantidadSentencias = 11;
 	int i = 0;
 	int indiceInicial = 0;
 	procesoPrueba->codigo = list_create();
 	for (i = 0; i < cantidadSentencias; i++) {
 		IndiceCodigo* indiceNuevo = crearIndiceCodigo(i, indiceInicial, strlen(sentencias[i]), paginaSentencia);
-		indiceInicial = indiceInicial + strlen(sentencias[i]) ;
+		indiceInicial = indiceInicial + strlen(sentencias[i]);
 		list_add(procesoPrueba->codigo, indiceNuevo);
 
-		almacenar_Bytes_de_Pagina(procesoPrueba->PID,string_itoa(indiceNuevo->pagina),string_itoa(indiceNuevo->byte_inicial_codigo),string_itoa(indiceNuevo->byte_final_codigo-indiceNuevo->byte_inicial_codigo),sentencias[i]);
+		almacenar_Bytes_de_Pagina(procesoPrueba->PID, string_itoa(indiceNuevo->pagina), string_itoa(indiceNuevo->byte_inicial_codigo), string_itoa(indiceNuevo->byte_final_codigo - indiceNuevo->byte_inicial_codigo), sentencias[i]);
 	}
 
 }

@@ -13,16 +13,18 @@ typedef struct {
 
 typedef struct {
 	char id;
-	unsigned int pagina;
-	unsigned int byte_inicial;
-	unsigned int tamanio;
+	 int pagina;
+	 int byte_inicial;
+	 int tamanio;
 } Argumento;
 
 typedef struct {
 	char id;
-	unsigned int pagina;
-	unsigned int byte_inicial;
-	unsigned int tamanio;
+	 int pagina;
+	 int byte_inicial;
+	 int tamanio;
+
+	unsigned int dinamica;
 } Variable;
 
 typedef struct {

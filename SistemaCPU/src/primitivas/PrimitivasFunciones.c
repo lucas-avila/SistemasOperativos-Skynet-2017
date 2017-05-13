@@ -21,28 +21,11 @@ t_puntero DEFINIR_VARIABLE(t_nombre_variable variable) {
 	// 1. Obtenemos la ultima fila de la tabla del stack(porque es la que estamos trabajando)
 	IndiceStack* pila = obtener_Ultima_fila_Indice_Stack(pcb);
 
-	// 2. Obtenemos la ultima variable creada, para obtener la ultima posicion de memoria utilizada
-	Variable* ultima_variable = obtener_Ultima_variable_declarada(pcb->pila);
-	int pagina;
-	int byte_inicial;
-	if (ultima_variable == NULL) {
-		// 2.A Esto quiere decir que no se crearon variables
-		pagina = pcb->pagina_inicial_stack;
-		byte_inicial = 0;
-	} else {
-		// 2.B A partir de la ultima posicion de memoria de la variable, declaro la mia.
-		pagina = ultima_variable->pagina;
-		byte_inicial = ultima_variable->byte_inicial + TAMANIO_VARIABLE;
-	}
-
 	// 3. Creo la variable
-	Variable* var_new = crear_variable(variable, pagina, byte_inicial, TAMANIO_VARIABLE);
+	Variable* var_new = crear_variable(variable, -1, -1, TAMANIO_VARIABLE, 0);
 
 	// 4. Almaceno la variable en la ultima fila de la tabla variable de la pila
 	crear_variable_en_Indice_Stack(pila, var_new);
-
-	// 5. Almaceno en memoria la variable declarada.
-	almacenar_Bytes_de_Pagina(pcb->PID, string_itoa(pagina), string_itoa(byte_inicial), string_itoa(TAMANIO_VARIABLE), "    ");
 
 	// 6. Genero el puntero de la variable al indice de Stack, poniendo el numero de fila del stack, si es argumento o variable, y el numero de fila dentro de la tabla
 	// Por ejemplo la variable a, fue declarada en la primer fila del stack, es de tipo variable, y ocupa la posicon 7 de la tabla de variables.
@@ -67,16 +50,42 @@ t_puntero OBTENER_DIRECCION_DE_VARIABLE(t_nombre_variable variable) {
 
 void ASIGNAR_VARIABLE(t_puntero direccion_variable, t_valor_variable valor) {
 	PunteroVariable* punteroVariable = deserializarPunteroStack(direccion_variable);
-	char contenido_variable[5];
-	char* varComplete = string_repeat(' ', (int) (TAMANIO_VARIABLE - strlen(string_itoa(valor))));
-	strcpy(contenido_variable, varComplete);
-	strcat(contenido_variable, string_itoa(valor));
+	if (strlen(string_itoa(valor)) > 4) {
+		Variable* var = buscar_variable_por_stack_y_fila(pcb, punteroVariable->filaStack, punteroVariable->filaTabla);
+		DireccionMemoriaDinamica* variableDiamica = deserializarMemoriaDinamica(pcb->PID, valor);
+		var->byte_inicial = variableDiamica->byteInicial;
+		var->pagina = variableDiamica->pagina;
+
+		int tamanio = atoi(solicitar_bytes_memoria(pcb->PID, string_itoa(var->pagina), string_itoa(var->byte_inicial + 1), string_itoa(4)));
+
+		var->tamanio = tamanio;
+		var->dinamica=1;
+		return;
+	}
+
 	if (punteroVariable->esVariable == 1) {
 		Variable* var = buscar_variable_por_stack_y_fila(pcb, punteroVariable->filaStack, punteroVariable->filaTabla);
-		almacenar_Bytes_de_Pagina(pcb->PID, string_itoa(var->pagina), string_itoa(var->byte_inicial), string_itoa(4), contenido_variable);
+
+		if (var->byte_inicial == -1) {
+			//No tiene espacio de memoria asginado, se lo asignamos.
+			asingar_espacio_memoria_variable(pcb, var, punteroVariable->filaStack, punteroVariable->filaTabla);
+		}
+
+		char* contenido_variable = malloc(var->tamanio + 1);
+		char* varComplete = string_repeat(' ', (int) (var->tamanio - strlen(string_itoa(valor))));
+		strcpy(contenido_variable, varComplete);
+		strcat(contenido_variable, string_itoa(valor));
+
+		almacenar_Bytes_de_Pagina(pcb->PID, string_itoa(var->pagina), string_itoa(var->byte_inicial), string_itoa(strlen(contenido_variable)), contenido_variable);
 	} else {
 		Argumento* arg = buscar_argumento_por_stack_y_fila(pcb, punteroVariable->filaStack, punteroVariable->filaTabla);
-		almacenar_Bytes_de_Pagina(pcb->PID, string_itoa(arg->pagina), string_itoa(arg->byte_inicial), string_itoa(4), contenido_variable);
+
+		char* contenido_variable = malloc(arg->tamanio + 1);
+		char* varComplete = string_repeat(' ', (int) (arg->tamanio - strlen(string_itoa(valor))));
+		strcpy(contenido_variable, varComplete);
+		strcat(contenido_variable, string_itoa(valor));
+
+		almacenar_Bytes_de_Pagina(pcb->PID, string_itoa(arg->pagina), string_itoa(arg->byte_inicial), string_itoa(strlen(contenido_variable)), contenido_variable);
 
 	}
 
@@ -129,14 +138,21 @@ t_puntero ALOCAR(t_valor_variable espacio) {
 	if (strcmp(mensaje, "ERROR") == 0) {
 
 	}
-	return atoi(mensaje);
+	int numero = atoi(mensaje);
+	return numero;
 
 }
 
 void LIBERAR(t_puntero memoria_serializada) {
 
-	DireccionMemoriaDinamica* variableLiberar = deserializarMemoriaDinamica(pcb->PID, memoria_serializada);
+	//DireccionMemoriaDinamica* variableLiberar = deserializarMemoriaDinamica(pcb->PID, memoria_serializada);
+	PunteroVariable* punteroVariable = deserializarPunteroStack(memoria_serializada);
+	Variable* var = buscar_variable_por_stack_y_fila(pcb, punteroVariable->filaStack, punteroVariable->filaTabla);
 
+	DireccionMemoriaDinamica* variableLiberar = malloc(sizeof(DireccionMemoriaDinamica));
+	variableLiberar->pid = atoi(pcb->PID);
+	variableLiberar->pagina = var->pagina;
+	variableLiberar->byteInicial = var->byte_inicial;
 	char* resultado = enviar_SYSCALL_liberar_memoria_dinamica_a_kernel(variableLiberar);
 	printf("\nResultado de LIBERAR el puntero %d: %s", memoria_serializada, resultado);
 

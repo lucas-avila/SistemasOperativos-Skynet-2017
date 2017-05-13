@@ -23,11 +23,11 @@ IndiceStack* crear_variable_en_Indice_Stack(IndiceStack* pila, Variable* variabl
 
 IndiceStack* crear_variable_retorno_en_Indice_Stack(IndiceStack* pila, ReturnVariable* variable_retorno);
 
-Variable* crear_variable(char id, unsigned int pagina, unsigned int byte_inicial, unsigned int tamanio);
+Variable* crear_variable(char id, unsigned int pagina, unsigned int byte_inicial, unsigned int tamanio,int dinamica) ;
 
 ReturnVariable* crear_return_variable(unsigned int pagina, unsigned int byte_inicial, unsigned int tamanio);
 
-Argumento* crear_argumento(char* id, unsigned int pagina, unsigned int byte_inicial, unsigned int tamanio);
+Argumento* crear_argumento(char id, unsigned int pagina, unsigned int byte_inicial, unsigned int tamanio);
 
 Variable* obtener_Ultima_variable_declarada(t_list* pila);
 /**
@@ -38,4 +38,6 @@ PunteroVariable* buscar_posicion_variable_por_nombre(IndiceStack* pila, t_nombre
 
 Variable* buscar_variable_por_stack_y_fila(PCB* pcb, unsigned int stack, unsigned int filaTabla);
 Argumento* buscar_argumento_por_stack_y_fila(PCB* pcb, unsigned int stack, unsigned int filaTabla);
+
+void asingar_espacio_memoria_variable(PCB* pcb, Variable* var, int filaStack, int filaTabla);
 #endif /* PRIMITIVAS_STACK_H_ */

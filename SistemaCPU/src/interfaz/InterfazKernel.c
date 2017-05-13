@@ -37,7 +37,7 @@ char* enviar_SYSCALL_solicitar_memoria_dinamica_a_kernel(char* PID, int espacio)
 	}
 }
 
-char* enviar_SYSCALL_liberar_memoria_dinamica_a_kernel(DireccionMemoriaDinamica* varDinamica) {
+char* enviar_SYSCALL_liberar_memoria_dinamica_a_kernel(	DireccionMemoriaDinamica* varDinamica) {
 	enviar_dato_serializado("GESTION_MEMORIA", servidor_kernel);
 	enviar_dato_serializado("FREE", servidor_kernel);
 	enviar_dato_serializado(string_itoa(varDinamica->pid), servidor_kernel);
