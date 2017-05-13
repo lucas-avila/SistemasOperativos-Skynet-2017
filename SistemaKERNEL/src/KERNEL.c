@@ -1,23 +1,24 @@
+#include <commons/collections/list.h>
+#include <commons/collections/queue.h>
+#include <commons/string.h>
+#include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <commons/string.h>
-#include "general/Socket.h"
-#include "header/SolicitudesUsuario.h"
-#include "header/PCB.h"
-#include "header/Estructuras.h"
-#include "header/AppConfig.h"
-#include "capaMEMORIA/GestMemoriaFuncionesAux.h"
-#include "general/funcionesUtiles.h"
-#include "testing/TestingInterfazMemoria.h"
-#include "parser/metadata_program.h"
-#include "planificacion/Planificacion.h"
+
 #include "administrarPCB/EstadisticaProceso.h"
 #include "capaFILESYSTEM/TablaGlobalArchivo.h"
-
-#include "interfaz/InterfazMemoria.h"
+#include "capaMEMORIA/GestMemoriaFuncionesAux.h"
+#include "general/funcionesUtiles.h"
+#include "general/Socket.h"
+#include "header/AppConfig.h"
+#include "header/Estructuras.h"
+#include "header/PCB.h"
 #include "interfaz/InterfazConsola.h"
 #include "interfaz/InterfazCPU.h"
+#include "interfaz/InterfazMemoria.h"
+#include "planificacion/Planificacion.h"
+#include "testing/TestingInterfazMemoria.h"
 
 void inicializar_listas_globales();
 void atender_solicitudes_de_usuario();
@@ -78,7 +79,23 @@ void atender_solicitudes_de_usuario() {
 			break;
 		}
 		case 2: {
-			//testeando leer archivo de programa
+			//testeando serializador con header
+			IndiceCodigo * in1 = malloc(sizeof(IndiceCodigo));
+			IndiceCodigo * in2 = malloc(sizeof(IndiceCodigo));
+			in1->program_counter = 1;
+			in1->byte_inicial_codigo = 2;
+			in1->byte_final_codigo = 3;
+			in1->pagina = 4;
+			in2->program_counter = 5;
+			in2->byte_inicial_codigo = 6;
+			in2->byte_final_codigo = 7;
+			in2->pagina = 8;
+			t_list * lista = list_create();
+			list_add(lista, in1);
+			list_add(lista, in2);
+			char * result = serializar_con_header(lista, "LISTA_CODIGO");
+
+			deserializar_con_header(result, "LISTA_CODIGO");
 
 			break;
 		}
@@ -109,8 +126,30 @@ void atender_solicitudes_de_usuario() {
 		}
 
 			break;
-		case 6:
+		case 6: {
+			IndiceCodigo * in1 = malloc(sizeof(IndiceCodigo));
+			IndiceCodigo * in2 = malloc(sizeof(IndiceCodigo));
+			in1->program_counter = 15;
+			in1->byte_inicial_codigo = 2;
+			in1->byte_final_codigo = 355;
+			in1->pagina = 4;
+			in2->program_counter = 14;
+			in2->byte_inicial_codigo = 3;
+			in2->byte_final_codigo = 356;
+			in2->pagina = 5;
+			t_list * lista = list_create();
+			list_add(lista, in1);
+			list_add(lista, in2);
 
+			char * buffer = serializar_con_header(lista, "LISTA_CODIGO");
+
+			t_list * lista_deserializada = deserializar_con_header(buffer, "LISTA_CODIGO");
+			IndiceCodigo * elemento = list_get(lista_deserializada, 0);
+			printf("Resultado : %d, %d, %d, %d \n", elemento->program_counter, elemento->byte_inicial_codigo, elemento->byte_final_codigo, elemento->pagina);
+			elemento = list_get(lista_deserializada, 1);
+			printf("Resultado : %d, %d, %d, %d \n", elemento->program_counter, elemento->byte_inicial_codigo, elemento->byte_final_codigo, elemento->pagina);
+
+		}
 			break;
 		case 8:
 			//provisorio para el checkpoint
