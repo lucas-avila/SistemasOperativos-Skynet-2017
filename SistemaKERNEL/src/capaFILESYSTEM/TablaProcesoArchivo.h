@@ -12,7 +12,7 @@
 typedef struct {
 	int FD;
 	char* flags;
-	int ProcesoFD;
+	int GlobalFD;
 
 	//dato agregado que no debe mostrarse
 	int cursor_bloque; //guardar el numero de bloque desde donde se desea hacer la operacion
@@ -24,4 +24,5 @@ void modificar_registro_Tabla_Proceso_Archivo(t_list* tabla, TablaProcesoArchivo
 void eliminar_registro_Tabla_Proceso_Archivo(t_list* tabla, TablaProcesoArchivo* registro);
 int buscar_indice_TablaProcesoArchivo(t_list* tabla, int FD);
 TablaProcesoArchivo* buscar_TablaProcesoArchivo_por_FD(t_list* tabla, int FD);
+void mostrar_tabla_proceso_archivos(t_list* tablaProceso);
 #endif /* CAPAFILESYSTEM_TABLAPROCESOARCHIVO_H_ */

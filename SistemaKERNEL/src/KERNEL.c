@@ -19,7 +19,8 @@
 #include "interfaz/InterfazMemoria.h"
 #include "planificacion/Planificacion.h"
 #include "testing/TestingInterfazMemoria.h"
-
+#include "testing/TestingCapaFileSystem.h"
+#include "administrarProcesos/Proceso.h"
 void inicializar_listas_globales();
 void atender_solicitudes_de_usuario();
 
@@ -43,6 +44,7 @@ void inicializar_KERNEL() {
 	inicializar_tabla_proceso_estadistica();
 	inicializar_tabla_proceso_memoria();
 	inicializar_tabla_global_archivo();
+	inicializar_lista_procesos();
 	//   PLanificacion
 	inicializar_colas_5_estados();
 	atender_clientes(0, &EJECUTAR_ALGORITMO_PLANIFICACION);
@@ -56,6 +58,9 @@ void mostrar_menu_usuario() {
 	printf("\n 4 - Modificar grado de multiprogramacion");
 	printf("\n 5 - Finalizar proceso");
 	printf("\n 6 - Detener la planificacion");
+
+	printf("\n 50 - Testing FileSystem");
+
 	printf("\n 7 - Salir");
 	printf("\n Opcion: ");
 }
@@ -64,7 +69,7 @@ void atender_solicitudes_de_usuario() {
 	int opcion = 0;
 	do {
 		mostrar_menu_usuario();
-		opcion = validarNumeroInput(1, 10);
+		opcion = validarNumeroInput(1, 50);
 		switch (opcion) {
 
 		case 1: {
@@ -158,6 +163,11 @@ void atender_solicitudes_de_usuario() {
 		case 10:
 			testear_intefaz();
 			break;
+
+
+		case 50:
+			 mostrar_menu_testing_filesystem();
+			 break;
 
 		}
 	} while (opcion != 7);

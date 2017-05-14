@@ -20,6 +20,7 @@ src/header \
 src/general \
 src/capaMEMORIA \
 src/capaFILESYSTEM \
+src/administrarProcesos \
 src/administrarPCB \
 src \
 

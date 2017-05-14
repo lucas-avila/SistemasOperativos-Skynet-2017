@@ -8,6 +8,8 @@
 #ifndef HEADER_INTERFAZFS_H_
 #define HEADER_INTERFAZFS_H_
 
+void inicializar();
+
 char* validar_archivo(char *path);
 char* crear_archivo(char *path);
 char* borrar(char* path);

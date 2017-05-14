@@ -15,6 +15,7 @@ RM := rm -rf
 -include src/general/subdir.mk
 -include src/capaMEMORIA/subdir.mk
 -include src/capaFILESYSTEM/subdir.mk
+-include src/administrarProcesos/subdir.mk
 -include src/administrarPCB/subdir.mk
 -include src/subdir.mk
 -include subdir.mk

@@ -8,7 +8,11 @@ src/KERNEL.d: ../src/KERNEL.c ../src/administrarPCB/EstadisticaProceso.h \
  ../src/planificacion/Planificacion.h \
  ../src/planificacion/../header/PCB.h \
  ../src/planificacion/../header/Estructuras.h \
- ../src/testing/TestingInterfazMemoria.h
+ ../src/testing/TestingInterfazMemoria.h \
+ ../src/testing/TestingCapaFileSystem.h \
+ ../src/administrarProcesos/Proceso.h \
+ ../src/administrarProcesos/../header/PCB.h \
+ ../src/administrarProcesos/../capaFILESYSTEM/TablaProcesoArchivo.h
 
 ../src/administrarPCB/EstadisticaProceso.h:
 
@@ -39,3 +43,11 @@ src/KERNEL.d: ../src/KERNEL.c ../src/administrarPCB/EstadisticaProceso.h \
 ../src/planificacion/../header/Estructuras.h:
 
 ../src/testing/TestingInterfazMemoria.h:
+
+../src/testing/TestingCapaFileSystem.h:
+
+../src/administrarProcesos/Proceso.h:
+
+../src/administrarProcesos/../header/PCB.h:
+
+../src/administrarProcesos/../capaFILESYSTEM/TablaProcesoArchivo.h:
