@@ -1,3 +1,4 @@
+
 #include<stdlib.h>
 #include<stdio.h>
 #include<string.h>
@@ -78,4 +79,5 @@ void inicializar_contexto_ejecucion() {
 //	kernel->AnSISOP_escribir = escribir;
 //	kernel->AnSISOP_leer = leer;
 }
+
 

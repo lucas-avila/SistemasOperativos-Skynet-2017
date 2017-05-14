@@ -29,6 +29,7 @@ typedef struct {
 	uint32_t pagina;
 	uint32_t byte_inicial;
 	uint32_t tamanio;
+	uint32_t dinamica;
 } __attribute__((packed))
 Variable;
 
@@ -56,7 +57,7 @@ typedef struct {
 IndiceEtiqueta;
 
 typedef struct {
-	char PID[5];
+	uint32_t PID;
 	uint32_t program_counter;
 	uint32_t cantidad_paginas_codigo;
 	t_list* codigo; //tiene elementos de tipo IndiceCodigo
