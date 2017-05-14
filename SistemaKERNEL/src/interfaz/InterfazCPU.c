@@ -9,6 +9,9 @@
 #include "../header/PCB.h"
 #include "../header/Estructuras.h"
 #include "../capaMEMORIA/GestionMemoriaDinamica.h"
+
+#include "../planificacion/Planificacion.h"
+
 int servidor_CPU = 0;
 
 void iniciar_conexion_servidor_cpu() {
@@ -44,6 +47,8 @@ void CU_Recibir_Conexiones_CPU(int clienteCPU) {
 
 		if (strcmp(codigo_operacion, "GESTION_MEMORIA") == 0) {
 			CU_Gestionar_HEAP(clienteCPU);
+		} else if (strcmp(codigo_operacion, "RECIBIR_CPU") == 0) {
+			recibir_PCB_de_CPU(clienteCPU);
 		} else if (strcmp(codigo_operacion, "") == 0) {
 			close(clienteCPU);
 			controlSeguir = 0;

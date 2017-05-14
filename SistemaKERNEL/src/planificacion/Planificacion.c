@@ -4,6 +4,8 @@
 
 #include "Planificacion.h"
 #include "PlanificacionFIFO.h"
+
+#include "PlanificacionRR.h"
 #include "../header/AppConfig.h"
 #include "../header/PCB.h"
 #include "../header/Estructuras.h"
@@ -14,15 +16,16 @@ void EJECUTAR_ALGORITMO_PLANIFICACION() {
 	if (strcmp(configuraciones.ALGORITMO, "FIFO") == 0) {
 		ejecutar_algoritmo_planificacion_FIFO();
 
-	} /*else   if(strcmp(configuraciones.ALGORITMO,"RR")==0){
-	 ejecutar_algoritmo_planificacion_FIFO();
+	} else if (strcmp(configuraciones.ALGORITMO, "RR") == 0) {
+		ejecutar_algoritmo_planificacion_RR();
 
-	 }*/
+	}
 }
 
 void inicializar_colas_5_estados() {
 	COLA_NEW = queue_create();
 	COLA_READY = queue_create();
+	COLA_BLOQUEADO = queue_create();
 	COLA_EJECUTANDO = queue_create();
 	COLA_EXIT = queue_create();
 }
@@ -37,6 +40,8 @@ t_queue* obtener_cola(COLA nombreCola) {
 		return COLA_EJECUTANDO;
 	case 4:
 		return COLA_EXIT;
+	case 5:
+		return COLA_BLOQUEADO;
 	}
 	return NULL;
 }
@@ -60,16 +65,25 @@ CPUInfo* obtener_CPU_Disponible() {
 	return NULL;
 }
 
-PCB* obtener_proceso_de_cola_NEW() {
+void planificador_mediano_plazo() {
+	while (configuraciones.planificacion_activa == 1) {
+
+		if (configuraciones.GRADO_MULTIPROG > (queue_size(COLA_READY) + queue_size(COLA_EJECUTANDO) + queue_size(COLA_BLOQUEADO))) {
+			if (!queue_is_empty(COLA_NEW)) {
+				mover_PCB_de_cola(queue_peek(COLA_NEW), NEW, READY);
+			}
+		}
+	}
+}
+
+PCB* obtener_proceso_de_cola_READY() {
 	while (configuraciones.planificacion_activa == 1) {
 		//SE CONTROLA LA MULTIPROGRAMACION DE ESTA MANERA
-		if (configuraciones.GRADO_MULTIPROG > queue_size(COLA_READY)) {
-			if (!queue_is_empty(COLA_NEW)) {
-				//TODO: Semaforo
-				PCB* pcb = queue_pop(COLA_NEW);
-				//TODO: Fin Semaforo
-				return pcb;
-			}
+		if (!queue_is_empty(COLA_READY)) {
+			//TODO: Semaforo
+			PCB* pcb = queue_peek(COLA_READY);
+			//TODO: Fin Semaforo
+			return pcb;
 		}
 	}
 	return NULL;
@@ -101,5 +115,12 @@ void recepcion_PCB_en_COLA_EXIT() {
 		recepcion_PCB_en_COLA_EXIT_FIFO();
 
 	}
+}
+
+void recibir_PCB_de_CPU(int clienteCPU) {
+	PCB* pcb;
+
+	//INVOCAR FUNCION DE DESERIALIZAR PCB
 
 }
+

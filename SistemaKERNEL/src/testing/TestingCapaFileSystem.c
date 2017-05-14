@@ -106,7 +106,7 @@ void mostrar_menu_testing_filesystem() {
 			TEST_VER_TABLA_PROCESO();
 			break;
 		}
-		while (getchar() == '\n')
+		while (getchar() == '\n' && opcion != 13)
 			;
 	} while (opcion != 13);
 	destruir_test();
