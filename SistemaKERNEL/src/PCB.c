@@ -32,28 +32,6 @@ int enviar_pcb(PCB * pcb, int s_destino) {
 	if (strcmp(respuesta, "ENVIAR_PCB") != 0)
 		return -1;
 
-
-	char PID[5];
-		uint32_t program_counter;
-		uint32_t cantidad_paginas_codigo;
-		t_list* codigo; //tiene elementos de tipo IndiceCodigo
-		uint32_t cantidad_codigo;
-
-		t_list* pila; //tiene elementos de tipo IndiceStack
-
-		IndiceEtiqueta* etiqueta;
-		uint32_t cantidad_etiqueta;
-		int32_t exit_code;  //Modificado porque puede ser valor negativo
-
-		int32_t pagina_inicial_stack;
-
-
-		//Agregados PARA EJECUCION
-		int32_t RR; //0 - FIFO , 1  -RR
-		int32_t cantidad_rafagas; //RR se le da pelota, si no , nada
-
-		int32_t cantidad_rafagas_ejecutadas;
-
 	int offset = 0;
 
 	LISTA_SERIALIZADA * buffer_lista_codigo = serializar_con_header(pcb->codigo, "LISTA_CODIGO");
@@ -61,12 +39,45 @@ int enviar_pcb(PCB * pcb, int s_destino) {
 	char * paquete = malloc(sizeof(uint32_t) * 4 + sizeof(int32_t) * 5 + buffer_lista_codigo->size + buffer_lista_pila->size + sizeof(IndiceEtiqueta));
 	uint32_t pid = atoi(pcb->PID);
 	memcpy(paquete, &pid, sizeof(uint32_t));
-	offset = sizeof(uint32_t);
+	offset += sizeof(uint32_t);
 	memcpy(paquete, &pcb->program_counter, sizeof(uint32_t));
-	offset = sizeof(uint32_t);
+	offset += sizeof(uint32_t);
+	memcpy(paquete, &pcb->cantidad_paginas_codigo, sizeof(uint32_t));
+	offset += sizeof(uint32_t);
+	memcpy(paquete, buffer_lista_codigo->buffer, buffer_lista_codigo->size);
+	offset += buffer_lista_codigo->size;
+	memcpy(paquete, &pcb->cantidad_codigo, sizeof(uint32_t));
+	offset += sizeof(uint32_t);
+	memcpy(paquete, buffer_lista_pila->buffer, buffer_lista_pila->size);
+	offset += buffer_lista_pila->size;
+	memcpy(paquete, pcb->etiqueta, sizeof(IndiceEtiqueta));
+	offset += sizeof(IndiceEtiqueta);
+	memcpy(paquete, &pcb->cantidad_etiqueta, sizeof(uint32_t));
+	offset += sizeof(uint32_t);
+	memcpy(paquete, &pcb->exit_code, sizeof(int32_t));
+	offset += sizeof(int32_t);
+	memcpy(paquete, &pcb->pagina_inicial_stack, sizeof(int32_t));
+	offset += sizeof(int32_t);
+	memcpy(paquete, &pcb->RR, sizeof(int32_t));
+	offset += sizeof(int32_t);
+	memcpy(paquete, &pcb->cantidad_rafagas, sizeof(int32_t));
+	offset += sizeof(int32_t);
+	memcpy(paquete, &pcb->cantidad_rafagas_ejecutadas, sizeof(int32_t));
+	offset += sizeof(int32_t);
+
+	//enviar_pcb_serializado(buffer, size);
+}
+
+PCB * recibir_pcb(int s_origen) {
+	PCB * pcb;
+	enviar_dato_serializado("ENVIAR_PCB", s_origen);
+
+	//LISTA_SERIALIZADA * buffer = recibir_pcb_serializado(s_origen);
+	LISTA_SERIALIZADA * buffer;
+	char * paquete = buffer->buffer;
 
 
-
+	return pcb;
 }
 
 LISTA_SERIALIZADA * serializar_con_header(t_list * lista, char * tipo_lista){
@@ -183,21 +194,6 @@ LISTA_SERIALIZADA * serializar_con_header(t_list * lista, char * tipo_lista){
 	return resultado;
 }
 
-char * substr_hasta(char * cadena, char delimitador){
-	char * count_lista_s = string_new();
-	int i = 0;
-	while(cadena[i] != delimitador){
-		count_lista_s[i] = cadena[i];
-		i++;
-	}
-	count_lista_s[i] = '\0';
-	return count_lista_s;
-}
-
-int obtener_length_lista(char * cadena){
-	return atoi(substr_hasta(cadena, '|'));
-}
-
 t_list * deserializar_con_header(char * cadena, char * tipo_lista){
 	/* FUNCION DESERIALIZADORA PARA ESTRUCTURAS CON TAMAÑO VARIABLE
 	 * LA CANTIDAD DE ELEMENTOS DE LA LISTA RECIBIDA VIENE EN LOS PRIMEROS
@@ -283,17 +279,6 @@ t_list * deserializar_con_header(char * cadena, char * tipo_lista){
 }
 
 
-PCB * recibir_pcb(int s_origen) {
-	PCB * pcb;
-	enviar_dato_serializado("ENVIAR_PCB", s_origen);
 
-	//pid
-
-	strcpy(pcb->PID, recibir_dato_serializado(s_origen));
-	//cantidad paginas codigo
-	pcb->cantidad_paginas_codigo = atoi(recibir_dato_serializado(s_origen));
-
-	return pcb;
-}
 
 
