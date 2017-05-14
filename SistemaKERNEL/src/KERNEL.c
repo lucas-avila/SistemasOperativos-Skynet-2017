@@ -177,10 +177,31 @@ void atender_solicitudes_de_usuario() {
 			in->variables = l_vars;
 			in->retPos = 6;
 			in->retVar = retVar;
+
 			t_list * lista = list_create();
 			list_add(lista, in);
-			serializar_con_header(lista, "LISTA_STACK");
+			list_add(lista, in);
+			list_add(lista, in);
 
+
+			LISTA_SERIALIZADA * buffer = serializar_con_header(lista, "LISTA_STACK");
+			t_list * lista_des = deserializar_con_header(buffer->buffer, "LISTA_STACK");
+			IndiceStack * e = malloc(sizeof(IndiceStack));
+			int i=0;
+			for(i; i < list_size(lista_des); i++){
+				e = list_get(lista_des, i);
+				printf("Elemento %d del stack:\n posicion: %d\n", i, e->posicion);
+				int x=0;
+				for(x; x < list_size(e->argumentos); x++){
+					Argumento * a = list_get(e->argumentos, x);
+					printf("argumentos:\n--id:%d\n--pagina:%d\n--byte_inicial:%d\n--tamanio:%d\n", a->id, a->pagina, a->byte_inicial, a->tamanio);
+				}
+				for(x=0; x < list_size(e->variables); x++){
+					Variable * v = list_get(e->variables, x);
+					printf("variables:\n--id:%d\n--pagina:%d\n--byte_inicial:%d\n--tamanio:%d\n", v->id, v->pagina, v->byte_inicial, v->tamanio);
+				}
+				printf("retPos: %d\nretVar:\n--byte_inicial:%d\n--pagina:%d\n--tamanio:%d\n", e->retPos, e->retVar->byte_inicial, e->retVar->pagina, e->retVar->tamanio);
+			}
 		}
 			break;
 		case 8:

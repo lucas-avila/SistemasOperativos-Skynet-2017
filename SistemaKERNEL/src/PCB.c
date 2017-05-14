@@ -8,9 +8,10 @@
 #include "general/Socket.h"
 #define MIN_PIDS 1000
 
-char * serializar_con_header(t_list * lista, char * tipo_lista);
+LISTA_SERIALIZADA * serializar_con_header(t_list * lista, char * tipo_lista);
 
 int pids_reg = MIN_PIDS;
+
 
 PCB* crear_pcb() {
 	PCB * pcb = malloc(sizeof(PCB));
@@ -31,18 +32,44 @@ int enviar_pcb(PCB * pcb, int s_destino) {
 	if (strcmp(respuesta, "ENVIAR_PCB") != 0)
 		return -1;
 
-	//pid
-	char * pid = pcb->PID;
-	char * program_counter = string_itoa(pcb->program_counter);
-	char * cantidad_paginas_codigo = string_itoa(pcb->cantidad_paginas_codigo);
-	char * codigo = serializar_con_header(pcb->codigo, "LISTA_CODIGO");
 
-	enviar_dato_serializado(cantidad_paginas_codigo, s_destino);
-	printf("Enviando cantidad pagians %s\n", cantidad_paginas_codigo);
+	char PID[5];
+		uint32_t program_counter;
+		uint32_t cantidad_paginas_codigo;
+		t_list* codigo; //tiene elementos de tipo IndiceCodigo
+		uint32_t cantidad_codigo;
+
+		t_list* pila; //tiene elementos de tipo IndiceStack
+
+		IndiceEtiqueta* etiqueta;
+		uint32_t cantidad_etiqueta;
+		int32_t exit_code;  //Modificado porque puede ser valor negativo
+
+		int32_t pagina_inicial_stack;
+
+
+		//Agregados PARA EJECUCION
+		int32_t RR; //0 - FIFO , 1  -RR
+		int32_t cantidad_rafagas; //RR se le da pelota, si no , nada
+
+		int32_t cantidad_rafagas_ejecutadas;
+
+	int offset = 0;
+
+	LISTA_SERIALIZADA * buffer_lista_codigo = serializar_con_header(pcb->codigo, "LISTA_CODIGO");
+	LISTA_SERIALIZADA * buffer_lista_pila = serializar_con_header(pcb->pila, "LISTA_PILA");
+	char * paquete = malloc(sizeof(uint32_t) * 4 + sizeof(int32_t) * 5 + buffer_lista_codigo->size + buffer_lista_pila->size + sizeof(IndiceEtiqueta));
+	uint32_t pid = atoi(pcb->PID);
+	memcpy(paquete, &pid, sizeof(uint32_t));
+	offset = sizeof(uint32_t);
+	memcpy(paquete, &pcb->program_counter, sizeof(uint32_t));
+	offset = sizeof(uint32_t);
+
+
 
 }
 
-char * serializar_con_header(t_list * lista, char * tipo_lista){
+LISTA_SERIALIZADA * serializar_con_header(t_list * lista, char * tipo_lista){
 	/* FUNCION SERIALIZADORA PARA ESTRUCTURAS CON TAMAÑO VARIABLE
 	 * POR EJEMPLO : LISTAS
 	 * LA SERIALZIACION SE LLEVA A CABO DE LA SIGUIENTE MANERA
@@ -54,15 +81,15 @@ char * serializar_con_header(t_list * lista, char * tipo_lista){
 	 * SI LOS ELEMENTOS TIENEN LISTAS ADENTRO, TAMBIEN SE SERIALIZAN DE ESTA MANERA
 	 */
 	char * buffer;
+	int size = 0;
 	int i = 0;
 	uint32_t count_lista = list_size(lista);
 	if(strcmp(tipo_lista, "LISTA_CODIGO") == 0){
-		char * count_lista_s = string_itoa(count_lista);
-		int offset = strlen(count_lista_s) + 1;
-		buffer = malloc(sizeof(char) * sizeof(IndiceCodigo) * count_lista + offset);
+		int offset = sizeof(uint32_t);
+		size = sizeof(char) * sizeof(IndiceCodigo) * count_lista + offset;
+		buffer = malloc(size);
 		//inicializo el resultado con su header
-		strcpy(buffer, count_lista_s);
-		string_append(&buffer, "|");
+		memcpy(buffer, &count_lista, sizeof(uint32_t));
 		IndiceCodigo * elemento = malloc(sizeof(IndiceCodigo));
 		for(i; i < count_lista; i++){
 			elemento = list_get(lista, i);
@@ -92,23 +119,23 @@ char * serializar_con_header(t_list * lista, char * tipo_lista){
 		 */
 
 		IndiceStack * elemento = malloc(sizeof(IndiceStack));
-		char * count_lista_s = string_itoa(count_lista);
-		int offset = strlen(count_lista_s) + 1;
+		int offset = sizeof(uint32_t);
 		int byte_size = 0;
 		while(i < count_lista){
 			elemento = list_get(lista, i);
 			int size_arg = list_size(elemento->argumentos);
 			int size_var = list_size(elemento->variables);
 			//el buffer va a tener estructuras de tipo int + 3|Arg1Arg2Arg3 + 4|Var1Var2Var3Var4 + int + ReturnVariable
-			byte_size += sizeof(uint32_t) * 2 + sizeof(ReturnVariable) + size_arg * sizeof(Argumento) + (strlen(size_arg)+1) + size_var * sizeof(Variable) + (strlen(size_arg)+1);
+			byte_size += sizeof(uint32_t) * 2 + sizeof(ReturnVariable) + size_arg * sizeof(Argumento) + sizeof(uint32_t) + size_var * sizeof(Variable) + sizeof(uint32_t);
 			i++;
 		}
 		i=0;
 
-		buffer = malloc(byte_size + offset);
+		size = byte_size + offset;
+		buffer = malloc(size);
+
 		//inicializo el resultado con su header
-		strcpy(buffer, count_lista_s);
-		string_append(&buffer, "|");
+		memcpy(buffer, &count_lista, sizeof(uint32_t));
 
 		//comienzo serializacion elemento por elemento
 		for(i; i < count_lista; i++){
@@ -119,28 +146,22 @@ char * serializar_con_header(t_list * lista, char * tipo_lista){
 			offset += sizeof(elemento->posicion);
 
 			//cargo lista de argumentos
-			int size_arg = list_size(elemento->argumentos);
-			char * size_arg_s = string_itoa(size_arg);
-			string_append(&size_arg_s, "|");
-			char * aux = buffer + offset;
-			string_append(&aux, size_arg_s);
+			uint32_t size_arg = list_size(elemento->argumentos);
+			memcpy(buffer + offset, &size_arg, sizeof(uint32_t));
+			offset += sizeof(uint32_t);
 			int x=0;
-			offset += strlen(size_arg_s);
 			while(x < size_arg){
 				memcpy(buffer + offset, list_get(elemento->argumentos, x), sizeof(Argumento));
 				offset += sizeof(Argumento);
 				x++;
 			}
 
-			//cargo lista de variables (reuso size_arg)
-			size_arg = list_size(elemento->variables);
-			size_arg_s = string_itoa(size_arg);
-			string_append(&size_arg_s, "|");
-			aux = buffer + offset;
-			string_append(&aux, size_arg_s);
+			//cargo lista de variables
+			int size_var = list_size(elemento->variables);
+			memcpy(buffer + offset, &size_var, sizeof(uint32_t));
+			offset += sizeof(uint32_t);
 			x=0;
-			offset += strlen(size_arg_s);
-			while(x < size_arg){
+			while(x < size_var){
 				memcpy(buffer + offset, list_get(elemento->variables, x), sizeof(Variable));
 				offset += sizeof(Variable);
 				x++;
@@ -156,7 +177,10 @@ char * serializar_con_header(t_list * lista, char * tipo_lista){
 		}
 
 	}
-	return buffer;
+	LISTA_SERIALIZADA * resultado = malloc(sizeof(LISTA_SERIALIZADA));
+	resultado->buffer = buffer;
+	resultado->size = size;
+	return resultado;
 }
 
 char * substr_hasta(char * cadena, char delimitador){
@@ -183,10 +207,10 @@ t_list * deserializar_con_header(char * cadena, char * tipo_lista){
 
 	t_list * resultado = list_create();
 	// Obtenemos la cantidad de elementos de la lista recibida
-	int count_lista = obtener_length_lista(cadena);
+	int count_lista = 0;
+	memcpy(&count_lista, cadena, sizeof(uint32_t));
 	if(strcmp(tipo_lista, "LISTA_CODIGO") == 0){
-		//length del header para saltearlo
-		int i = strlen(string_itoa(count_lista)) + 1;
+		int i = sizeof(uint32_t);
 
 		for(i; i < count_lista * sizeof(IndiceCodigo); i+=sizeof(IndiceCodigo)){
 			IndiceCodigo * elemento = malloc(sizeof(IndiceCodigo));
@@ -209,35 +233,39 @@ t_list * deserializar_con_header(char * cadena, char * tipo_lista){
 			uint32_t retPos;
 			ReturnVariable* retVar;
 		*/
-		int i = strlen(string_itoa(count_lista)) + 1;
+		int i = sizeof(uint32_t);
 		int length_argumentos = 0;
 		int length_variables = 0;
 
 		int x = 0;
+		int j = 0;
 		while(x < count_lista){
 			IndiceStack * elemento = malloc(sizeof(IndiceStack));
-			memcpy(elemento->posicion, &cadena[i], sizeof(uint32_t));
-			i += sizeof(uint32_t);
-			length_argumentos = obtener_length_lista(&cadena[i]);
 			t_list * argumentos = list_create();
-			i+= strlen(string_itoa(length_argumentos)) + 1;
-			for(i; i < length_argumentos * sizeof(Argumento); i+=sizeof(Argumento)){
+			t_list * variables = list_create();
+
+			memcpy(&elemento->posicion, &cadena[i], sizeof(uint32_t));
+			i += sizeof(uint32_t);
+
+			memcpy(&length_argumentos, &cadena[i], sizeof(uint32_t));
+			i+= sizeof(uint32_t);
+			for(i, j=0; j < length_argumentos * sizeof(Argumento);j+=sizeof(Argumento), i+=sizeof(Argumento)){
 				Argumento * arg = malloc(sizeof(Argumento));
 				memcpy(arg, &cadena[i], sizeof(Argumento));
 				list_add(argumentos, arg);
 			}
 			elemento->argumentos = argumentos;
-			//fijarse aca i
-			length_variables = obtener_length_lista(&cadena[i]);
-			t_list * variables = list_create();
-			i+= strlen(string_itoa(length_variables)) + 1;
-			for(i; i < length_variables * sizeof(Variable); i+=sizeof(Variable)){
+
+			memcpy(&length_variables, &cadena[i], sizeof(uint32_t));
+			i+= sizeof(uint32_t);
+			for(i, j=0; j < length_variables * sizeof(Variable); j+=sizeof(Variable), i+=sizeof(Variable)){
 				Variable * var = malloc(sizeof(Variable));
 				memcpy(var, &cadena[i], sizeof(Variable));
 				list_add(variables, var);
 			}
-			//fijarse aca i
-			memcpy(elemento->retPos, &cadena[i], sizeof(uint32_t));
+			elemento->variables = variables;
+
+			memcpy(&elemento->retPos, &cadena[i], sizeof(uint32_t));
 			i += sizeof(uint32_t);
 			ReturnVariable * retVar = malloc(sizeof(ReturnVariable));
 			memcpy(retVar, &cadena[i], sizeof(ReturnVariable));

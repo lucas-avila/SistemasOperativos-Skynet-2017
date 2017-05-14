@@ -17,7 +17,7 @@ typedef struct {
 IndiceCodigo;
 
 typedef struct {
-	char id;
+	uint32_t id;
 	uint32_t pagina;
 	uint32_t byte_inicial;
 	uint32_t tamanio;
@@ -25,7 +25,7 @@ typedef struct {
 Argumento;
 
 typedef struct {
-	char id;
+	uint32_t id;
 	uint32_t pagina;
 	uint32_t byte_inicial;
 	uint32_t tamanio;
@@ -89,5 +89,11 @@ int enviar_pcb(PCB * pcb, int s_destino);
 PCB * recibir_pcb(int s_origen);
 PCB * crear_pcb();
 
+/* estructuras auxiliares */
+
+typedef struct{
+	char * buffer;
+	int size;
+} LISTA_SERIALIZADA;
 
 #endif /* HEADER_PCB_H_ */
