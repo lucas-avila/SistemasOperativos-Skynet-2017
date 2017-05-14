@@ -96,4 +96,9 @@ typedef struct{
 	int size;
 } LISTA_SERIALIZADA;
 
+typedef struct{
+	t_list * lista;
+	int size;
+} LISTA_DESERIALIZADA;
+
 #endif /* HEADER_PCB_H_ */

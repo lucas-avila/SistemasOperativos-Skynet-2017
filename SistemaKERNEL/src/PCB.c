@@ -12,6 +12,29 @@ LISTA_SERIALIZADA * serializar_con_header(t_list * lista, char * tipo_lista);
 
 int pids_reg = MIN_PIDS;
 
+//modificaciones a las funciones de enviar y recibir por sockets
+void enviar_estructura_serializada(char* mensaje, int size, int conexion) {
+	char * tamanio_dato = malloc(sizeof(uint32_t));
+	memcpy(tamanio_dato, &size, sizeof(uint32_t));
+	send(conexion, tamanio_dato, sizeof(uint32_t), 0);
+	send(conexion, mensaje, size, 0);
+}
+
+LISTA_SERIALIZADA * recibir_estructura_serializada(int socket_conexion) {
+	char * tamanio_dato = malloc(sizeof(uint32_t));
+	int bytes_recibidos = recv(socket_conexion, tamanio_dato, sizeof(uint32_t), 0);
+
+	int size = 0;
+	memcpy(&size, tamanio_dato, sizeof(uint32_t));
+
+	char * buffer = malloc(size);
+	recv(socket_conexion, buffer, size, 0);
+
+	LISTA_SERIALIZADA * l = malloc(sizeof(LISTA_SERIALIZADA));
+	l->buffer = buffer;
+	l->size = size;
+	return l;
+}
 
 PCB* crear_pcb() {
 	PCB * pcb = malloc(sizeof(PCB));
@@ -36,7 +59,8 @@ int enviar_pcb(PCB * pcb, int s_destino) {
 
 	LISTA_SERIALIZADA * buffer_lista_codigo = serializar_con_header(pcb->codigo, "LISTA_CODIGO");
 	LISTA_SERIALIZADA * buffer_lista_pila = serializar_con_header(pcb->pila, "LISTA_PILA");
-	char * paquete = malloc(sizeof(uint32_t) * 4 + sizeof(int32_t) * 5 + buffer_lista_codigo->size + buffer_lista_pila->size + sizeof(IndiceEtiqueta));
+	int size = sizeof(uint32_t) * 4 + sizeof(int32_t) * 5 + buffer_lista_codigo->size + buffer_lista_pila->size + sizeof(IndiceEtiqueta);
+	char * paquete = malloc(size);
 	uint32_t pid = atoi(pcb->PID);
 	memcpy(paquete, &pid, sizeof(uint32_t));
 	offset += sizeof(uint32_t);
@@ -65,17 +89,51 @@ int enviar_pcb(PCB * pcb, int s_destino) {
 	memcpy(paquete, &pcb->cantidad_rafagas_ejecutadas, sizeof(int32_t));
 	offset += sizeof(int32_t);
 
-	//enviar_pcb_serializado(buffer, size);
+	enviar_estructura_serializada(paquete, size, s_destino);
 }
 
 PCB * recibir_pcb(int s_origen) {
 	PCB * pcb;
 	enviar_dato_serializado("ENVIAR_PCB", s_origen);
 
-	//LISTA_SERIALIZADA * buffer = recibir_pcb_serializado(s_origen);
-	LISTA_SERIALIZADA * buffer;
+	LISTA_SERIALIZADA * buffer = recibir_estructura_serializada(s_origen);
 	char * paquete = buffer->buffer;
 
+	memcpy(&pcb->PID, paquete, sizeof(uint32_t));
+	int offset = sizeof(uint32_t);
+	memcpy(&pcb->program_counter, paquete + offset, sizeof(uint32_t));
+	offset += sizeof(uint32_t);
+	memcpy(&pcb->cantidad_paginas_codigo, paquete + offset, sizeof(uint32_t));
+	offset += sizeof(uint32_t);
+
+	LISTA_DESERIALIZADA * lista_codigo = deserializar_con_header(paquete + offset, "LISTA_CODIGO");
+	pcb->codigo = lista_codigo->lista;
+	offset += lista_codigo->size;
+
+	memcpy(&pcb->cantidad_codigo, paquete + offset, sizeof(uint32_t));
+	offset += sizeof(uint32_t);
+
+	LISTA_DESERIALIZADA * lista_pila = deserializar_con_header(paquete + offset, "LISTA_STACK");
+	pcb->pila = lista_pila->lista;
+	offset += lista_pila->size;
+
+	pcb->etiqueta = malloc(sizeof(IndiceEtiqueta));
+	memcpy(pcb->etiqueta, paquete + offset, sizeof(IndiceEtiqueta));
+	offset += sizeof(IndiceEtiqueta);
+
+	memcpy(&pcb->cantidad_etiqueta, paquete + offset, sizeof(uint32_t));
+	offset += sizeof(uint32_t);
+
+	memcpy(&pcb->exit_code, paquete + offset, sizeof(int32_t));
+	offset += sizeof(int32_t);
+	memcpy(&pcb->pagina_inicial_stack, paquete + offset, sizeof(int32_t));
+	offset += sizeof(int32_t);
+	memcpy(&pcb->RR, paquete + offset, sizeof(int32_t));
+	offset += sizeof(int32_t);
+	memcpy(&pcb->cantidad_rafagas, paquete + offset, sizeof(int32_t));
+	offset += sizeof(int32_t);
+	memcpy(&pcb->cantidad_rafagas_ejecutadas, paquete + offset, sizeof(int32_t));
+	offset += sizeof(int32_t);
 
 	return pcb;
 }
@@ -194,7 +252,7 @@ LISTA_SERIALIZADA * serializar_con_header(t_list * lista, char * tipo_lista){
 	return resultado;
 }
 
-t_list * deserializar_con_header(char * cadena, char * tipo_lista){
+LISTA_DESERIALIZADA * deserializar_con_header(char * cadena, char * tipo_lista){
 	/* FUNCION DESERIALIZADORA PARA ESTRUCTURAS CON TAMAÑO VARIABLE
 	 * LA CANTIDAD DE ELEMENTOS DE LA LISTA RECIBIDA VIENE EN LOS PRIMEROS
 	 * CARACTERES HASTA LA APARICION DEL DELIMITADOR DEL HEADER '|'
@@ -202,11 +260,14 @@ t_list * deserializar_con_header(char * cadena, char * tipo_lista){
 	 * */
 
 	t_list * resultado = list_create();
+	int size = 0;
 	// Obtenemos la cantidad de elementos de la lista recibida
 	int count_lista = 0;
 	memcpy(&count_lista, cadena, sizeof(uint32_t));
 	if(strcmp(tipo_lista, "LISTA_CODIGO") == 0){
 		int i = sizeof(uint32_t);
+
+		size = i + sizeof(uint32_t) * count_lista;
 
 		for(i; i < count_lista * sizeof(IndiceCodigo); i+=sizeof(IndiceCodigo)){
 			IndiceCodigo * elemento = malloc(sizeof(IndiceCodigo));
@@ -272,10 +333,14 @@ t_list * deserializar_con_header(char * cadena, char * tipo_lista){
 
 			x++;
 		}
-
+		size = i;
 
 	}
-	return resultado;
+
+	LISTA_DESERIALIZADA * l = malloc(LISTA_DESERIALIZADA);
+	l->lista = resultado;
+	l->size = size;
+	return l;
 }
 
 
