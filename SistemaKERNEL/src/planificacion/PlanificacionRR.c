@@ -1,10 +1,10 @@
 #include "Planificacion.h"
-#include "PlanificacionFIFO.h"
+#include "PlanificacionRR.h"
 #include "../header/AppConfig.h"
 #include "../administrarPCB/EstadisticaProceso.h"
 #include "../general/Socket.h"
 
-void ejecutar_algoritmo_planificacion_FIFO() {
+void ejecutar_algoritmo_planificacion_RR() {
 	PCB* pcb;
 	CPUInfo* cpu;
 	atender_clientes(0, planificador_mediano_plazo);
@@ -15,12 +15,4 @@ void ejecutar_algoritmo_planificacion_FIFO() {
 		mover_PCB_de_cola(pcb, READY, EJECUTANDO);
 		enviar_PCB_Serializado_a_CPU(cpu, pcb);
 	}
-}
-
-void recepcion_PCB_en_COLA_EXIT_FIFO() {
-	PCB* pcb;
-	pcb = queue_pop(COLA_EXIT);
-	//INFORMACION ESTADISTICA
-	//incrementar_rafagas_ejecutadas();
-	queue_push(COLA_EXIT, pcb);
 }

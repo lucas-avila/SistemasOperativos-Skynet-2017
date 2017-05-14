@@ -4,6 +4,7 @@
 #include "../interfaz/InterfazMemoria.h"
 #include "commons/string.h"
 void testear_intefaz(){
+	system("clear");
     inicializar_Programa_memoria("1241","2");
     inicializar_Programa_memoria("1241","2");
     inicializar_Programa_memoria("1241","2");
