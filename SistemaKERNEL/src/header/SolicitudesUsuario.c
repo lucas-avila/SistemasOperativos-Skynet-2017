@@ -10,6 +10,8 @@
 #include "../general/funcionesUtiles.h"
 #include "../header/AppConfig.h"
 #include "../testing/TestingMenu.h"
+#include "PCB.h"
+
 void mostrar_menu_usuario() {
 	printf("\n******* MENU KERNEL ******");
 	printf("\n 1 - Obtener listado de procesos del Sistema.");
@@ -26,7 +28,7 @@ void mostrar_menu_usuario() {
 void atender_solicitudes_de_usuario() {
 	int opcion = 0;
 	do {
-		system("clear");
+		//system("clear");
 		mostrar_menu_usuario();
 		opcion = validarNumeroInput(1, 8);
 		system("clear");
@@ -44,8 +46,14 @@ void atender_solicitudes_de_usuario() {
 		case 4:
 
 			break;
-		case 5:
-
+		case 5: {
+			int pid;
+			PCB * pcb_a_eliminar;
+			printf("\nPor favor ingrese el PID del proceso que desea MATAR: ");
+			scanf("%d", &pid);
+			pcb_a_eliminar = actualizar_exit_code(-7, pid);
+			finalizar_proceso(pcb_a_eliminar);
+		}
 			break;
 		case 6:
 			break;

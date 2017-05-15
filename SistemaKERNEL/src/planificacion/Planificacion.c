@@ -49,6 +49,10 @@ t_queue* obtener_cola(COLA nombreCola) {
 void mover_PCB_de_cola(PCB* pcb, COLA origen, COLA destino) {
 	queue_pop(obtener_cola(origen));
 	queue_push(obtener_cola(destino), pcb);
+	if(destino == 4){
+		pcb->exit_code = 0;
+		finalizar_proceso(pcb);
+	}
 }
 
 CPUInfo* obtener_CPU_Disponible() {

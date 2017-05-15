@@ -8,6 +8,7 @@
 #include "../header/Estructuras.h"
 #include "../header/KERNEL.h"
 #include "../header/AppConfig.h"
+#include "../header/PCB.h"
 
 
 void iniciar_conexion_servidor_consola() {
@@ -40,6 +41,11 @@ void CU_Recibir_Conexiones_Consola(int clienteConsola) {
 		codigo_operacion = recibir_dato_serializado(clienteConsola);
 		if (strcmp(codigo_operacion, "INICIAR_PROGRAMA") == 0) {
 			CU_iniciar_programa(clienteConsola);
+		} else if (strcmp(codigo_operacion, "FINALIZAR_PROGRAMA") == 0) {
+			PCB * pcb_a_eliminar;
+			int pid = atoi(recibir_dato_serializado(clienteConsola));
+			pcb_a_eliminar = actualizar_exit_code(-7, pid);
+			finalizar_proceso(pcb_a_eliminar);
 		} else if (strcmp(codigo_operacion, "") == 0) {
 			close(clienteConsola);
 			controlSeguir = 0;

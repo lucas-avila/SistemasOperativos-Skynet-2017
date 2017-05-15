@@ -8,6 +8,8 @@
 #ifndef HEADER_APPCONFIG_H_
 #define HEADER_APPCONFIG_H_
 
+#include <semaphore.h>
+
 typedef struct {
      char *IP_KERNEL;
      char *PUERTO_KERNEL;

@@ -77,7 +77,12 @@ typedef struct {
 	int32_t cantidad_rafagas; //RR se le da pelota, si no , nada
 	int32_t quantum_sleep;
 	int32_t cantidad_rafagas_ejecutadas;
+<<<<<<< HEAD
 }__attribute__((packed))
+=======
+	uint32_t consola; // Para saber a qué consola pertenece el proceso y facilitar su finalización.
+} __attribute__((packed))
+>>>>>>> ac471a853b3fca00ce5ead0b5b65168968ac3f6c
 PCB;
 
 /**typedef struct{
