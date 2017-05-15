@@ -39,6 +39,10 @@ int enviar_pcb(PCB * pcb, int s_destino) {
 	//Se envia el PCB descomponiendo el struct en string y enviandolo por paquetes
 	enviar_dato_serializado("RECIBIR_PCB", s_destino);
 	/*char * respuesta = recibir_dato_serializado(s_destino);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 66b9928fcae6b13a76791143805aefa97841206e
 	if (strcmp(respuesta, "ENVIAR_PCB") != 0)
 		return -1;*/
 
@@ -372,3 +376,4 @@ LISTA_DESERIALIZADA * deserializar_con_header(char * cadena, char * tipo_lista){
 	l->size = size;
 	return l;
 }
+

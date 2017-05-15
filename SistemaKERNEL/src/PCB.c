@@ -122,7 +122,10 @@ PCB * crear_pcb() {
 
 int enviar_pcb(PCB * pcb, int s_destino) {
 	//Se envia el PCB descomponiendo el struct en string y enviandolo por paquetes
-	enviar_dato_serializado("RECIBIR_PCB", s_destino);
+//	enviar_dato_serializado("RECIBIR_PCB", s_destino);
+
+	/*char * respuesta = recibir_dato_serializado(s_destino);
+>>>>>>> 66b9928fcae6b13a76791143805aefa97841206e
 
 	/*char * respuesta = recibir_dato_serializado(s_destino);
 	if (strcmp(respuesta, "ENVIAR_PCB") != 0)
@@ -133,6 +136,8 @@ int enviar_pcb(PCB * pcb, int s_destino) {
 	LISTA_SERIALIZADA * buffer_lista_codigo = serializar_con_header(pcb->codigo, "LISTA_CODIGO");
 	LISTA_SERIALIZADA * buffer_lista_pila = serializar_con_header(pcb->pila, "LISTA_PILA");
 	char * buffer_indice_etiqueta = string_new();
+
+
 	int size_indice_etiqueta = serializar_indice_etiqueta(pcb->etiqueta, &buffer_indice_etiqueta);
 
 	int size = sizeof(uint32_t) * 4 + sizeof(int32_t) * 5 + buffer_lista_codigo->size + buffer_lista_pila->size + size_indice_etiqueta;
@@ -170,7 +175,7 @@ int enviar_pcb(PCB * pcb, int s_destino) {
 	memcpy(paquete + offset, &pcb->cantidad_rafagas_ejecutadas, sizeof(int32_t));
 	offset += sizeof(int32_t);
 
-
+	enviar_dato_serializado("RECIBIR_PCB", s_destino);
 	enviar_estructura_serializada(paquete, size, s_destino);
 }
 
@@ -457,6 +462,8 @@ LISTA_SERIALIZADA * serializar_con_header(t_list * lista, char * tipo_lista){
 			offset += sizeof(elemento->retPos);
 
 			//cargo retVar
+			elemento->retVar = elemento->retVar ==NULL ? malloc(sizeof(ReturnVariable)) :elemento->retVar;
+
 			memcpy(buffer + offset, elemento->retVar, sizeof(ReturnVariable));
 			offset += sizeof(ReturnVariable);
 		}

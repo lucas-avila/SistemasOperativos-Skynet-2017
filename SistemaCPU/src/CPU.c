@@ -22,23 +22,22 @@
 
 void CU_Procesar_PCB_a_ejecutar();
 
-
-
 int main(int argc, char *argv[]) {
 
 	inicializar_configuracion(argv[1]);
+	//inicializar_configuracion("/home/utnso/Escritorio/tp-2017-1c-Skynet/SistemaCPU/resource/config.cfg");
 	controlEjecucionPrograma = false;
 	servidor_kernel = conectar_servidor(configuraciones.IP_KERNEL, configuraciones.PUERTO_KERNEL);
 
-	iniciar_conexion_servidor_memoria();
+	 iniciar_conexion_servidor_memoria();
 
 
-	inicializar_contexto_ejecucion();
+	 inicializar_contexto_ejecucion();
 
 	//Parametro de Identificacion
 	enviar_dato_serializado("CPU", servidor_kernel);
 	bool controlSeguir = true;
-	mostrar_menu_primitivas();
+	//mostrar_menu_primitivas();
 	//atender_clientes(0, mostrar_menu_primitivas);
 
 	char *operacion;
@@ -59,8 +58,8 @@ int main(int argc, char *argv[]) {
 }
 
 void CU_Procesar_PCB_a_ejecutar() {
-   PCB* pcb = recibir_PCB_de_kernel();
-   setPCBEjecucion(pcb);
-   ejecutar_Programa();
+	PCB* pcb = recibir_PCB_de_kernel();
+	setPCBEjecucion(pcb);
+	ejecutar_Programa();
 }
 

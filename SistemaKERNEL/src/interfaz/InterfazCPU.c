@@ -39,12 +39,8 @@ void CU_Recibir_Conexiones_CPU(int clienteCPU) {
 	int controlSeguir = 1;
 	char* codigo_operacion;
 
-	/*PCB * pcb = crear_pcb();
-	 enviar_pcb(pcb, clienteCPU);*/
-
 	do {
 		codigo_operacion = recibir_dato_serializado(clienteCPU);
-
 		if (strcmp(codigo_operacion, "GESTION_MEMORIA") == 0) {
 			CU_Gestionar_HEAP(clienteCPU);
 		} else if (strcmp(codigo_operacion, "RECIBIR_CPU") == 0) {

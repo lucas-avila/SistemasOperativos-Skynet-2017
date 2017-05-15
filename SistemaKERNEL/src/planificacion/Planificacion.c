@@ -70,7 +70,7 @@ void planificador_mediano_plazo() {
 
 		if (configuraciones.GRADO_MULTIPROG > (queue_size(COLA_READY) + queue_size(COLA_EJECUTANDO) + queue_size(COLA_BLOQUEADO))) {
 			if (!queue_is_empty(COLA_NEW)) {
-				mover_PCB_de_cola(queue_peek(COLA_NEW), NEW, READY);
+				//mover_PCB_de_cola(queue_peek(COLA_NEW), NEW, READY);
 			}
 		}
 	}

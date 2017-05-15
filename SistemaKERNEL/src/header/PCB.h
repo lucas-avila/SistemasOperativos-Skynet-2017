@@ -29,7 +29,9 @@ typedef struct {
 	uint32_t byte_inicial;
 	uint32_t tamanio;
 	uint32_t dinamica;
+
 }__attribute__((packed))
+
 Variable;
 
 typedef struct {

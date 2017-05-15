@@ -17,17 +17,18 @@ PCB* pcbEjecutar;
 
 void setPCBEjecucion(PCB* pcb) {
 	pcbEjecutar = pcb;
+	setearPCB(pcb);
 }
 char* solicitar_sentencia_ejecutar() {
 	IndiceCodigo* indiceCodigo = obtener_Indice_codigo(pcbEjecutar->codigo, pcbEjecutar->program_counter);
 	if (indiceCodigo == NULL) {
 		return "FIN";
 	} else {
-		return solicitar_bytes_memoria(pcbEjecutar->PID, string_itoa(indiceCodigo->pagina), string_itoa(indiceCodigo->byte_inicial_codigo), string_itoa((indiceCodigo->byte_final_codigo - indiceCodigo->byte_inicial_codigo)));
+		return solicitar_bytes_memoria(string_itoa(pcbEjecutar->PID), string_itoa(indiceCodigo->pagina), string_itoa(indiceCodigo->byte_inicial_codigo), string_itoa((indiceCodigo->byte_final_codigo - indiceCodigo->byte_inicial_codigo)));
 	}
 }
 void ejecutar_Programa() {
-	bool esRoundRobin = (pcbEjecutar->registroPlanificacion->RR == 1);
+	bool esRoundRobin = (pcbEjecutar->RR == 1);
 	if (!esRoundRobin) {
 		ejecutar_programa_por_FIFO();
 	} else {
@@ -55,11 +56,10 @@ void ejecutar_programa_por_FIFO() {
 
 void ejecutar_programa_por_RR() {
 	bool esFinPrograma = false;
-	int topeEjecucion = pcbEjecutar->registroPlanificacion->quantum;
+	int topeEjecucion = pcbEjecutar->cantidad_rafagas;
 	int cantidadEjecutada = 0;
 
-
-	while (!esFinPrograma && cantidadEjecutada< topeEjecucion) {
+	while (!esFinPrograma && cantidadEjecutada < topeEjecucion) {
 		char* sentencia = solicitar_sentencia_ejecutar();
 		esFinPrograma = (strcmp(sentencia, "FIN") == 0);
 		if (!esFinPrograma) { //Este if tiene que sacarse, es solo para probar ahora

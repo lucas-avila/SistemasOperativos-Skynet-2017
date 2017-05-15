@@ -24,7 +24,7 @@ void menu_principal_testing() {
 			testear_intefaz();
 			break;
 		case 3:
-			mostrar_estado_colas() ;
+			 mostrar_menu_planificacion() ;
 			break;
 		case 4:
 			mostrar_menu_testing_general();
