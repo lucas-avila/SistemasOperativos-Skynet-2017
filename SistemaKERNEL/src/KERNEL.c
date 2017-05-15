@@ -7,6 +7,7 @@
 #include <string.h>
 
 #include "administrarPCB/EstadisticaProceso.h"
+#include "administrarPCB/PCBData.h"
 #include "capaFILESYSTEM/TablaGlobalArchivo.h"
 #include "capaMEMORIA/GestMemoriaFuncionesAux.h"
 
@@ -29,8 +30,8 @@ void CU_iniciar_programa(int consola);
 void inicializar_KERNEL();
 
 int main(int argc, char *argv[]) {
-	inicializar_configuracion(argv[1]);
-	//inicializar_configuracion("/home/utnso/Escritorio/tp-2017-1c-Skynet/SistemaKERNEL/resource/config.cfg");
+	//inicializar_configuracion(argv[1]);
+	inicializar_configuracion("/home/utnso/Escritorio/tp-2017-1c-Skynet/SistemaKERNEL/resource/config.cfg");
 	inicializar_KERNEL();
 	iniciar_conexion_servidor_consola();
 	iniciar_conexion_servidor_cpu();

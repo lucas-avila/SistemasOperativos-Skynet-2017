@@ -7,6 +7,7 @@
 #include <string.h>
 
 #include "../administrarPCB/EstadisticaProceso.h"
+#include "../administrarPCB/PCBData.h"
 #include "../capaFILESYSTEM/TablaGlobalArchivo.h"
 #include "../capaMEMORIA/GestMemoriaFuncionesAux.h"
 #include "../general/funcionesUtiles.h"
@@ -30,6 +31,7 @@ void mostrar_menu_testing_general() {
 		printf("\n3 - Agregar CPU y CONSOLA en tabla GLOBAL");
 		//printf("\n4 - Testear COSAS GENERALES");
 		printf("\n6 - Enviar PCB hardcodeado a CPU(tiene q estar conectada)");
+		printf("\n7 - Enviar programa a procesar_programa");
 		printf("\n8 - Salir");
 		printf("\nOpcion: ");
 
@@ -93,6 +95,11 @@ void mostrar_menu_testing_general() {
 			PCB * pcb = hardcodear_pcb();
 			CPUInfo * cpu0 = list_get(lista_CPUs, 0);
 			enviar_pcb(pcb, cpu0->numeroConexion);
+		}
+			break;
+		case 7: {
+			char * codigo = obtener_codigo("/home/utnso/Escritorio/tp-2017-1c-Skynet/SistemaConsola/resource/completo.ansisop");
+			procesar_programa(codigo);
 		}
 			break;
 

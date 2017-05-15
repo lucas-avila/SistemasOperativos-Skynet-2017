@@ -1,10 +1,7 @@
-#!codigoansisop caca
+#!/usr/bin/ansisop
 begin
-
-did = 911
-bush = did
-
-#jasjsdsjaddasa dkd askjdas kasd dasj
-   #comentario con espacio antes
-
+	variables a, b
+	a = 3
+	b = 5
+	a = b + 12
 end
