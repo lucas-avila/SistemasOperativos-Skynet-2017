@@ -1,4 +1,5 @@
 src/KERNEL.d: ../src/KERNEL.c ../src/administrarPCB/EstadisticaProceso.h \
+ ../src/administrarPCB/PCBData.h \
  ../src/capaFILESYSTEM/TablaGlobalArchivo.h \
  ../src/capaMEMORIA/GestMemoriaFuncionesAux.h ../src/general/Socket.h \
  ../src/header/AppConfig.h ../src/header/Estructuras.h \
@@ -13,6 +14,8 @@ src/KERNEL.d: ../src/KERNEL.c ../src/administrarPCB/EstadisticaProceso.h \
  ../src/header/SolicitudesUsuario.h
 
 ../src/administrarPCB/EstadisticaProceso.h:
+
+../src/administrarPCB/PCBData.h:
 
 ../src/capaFILESYSTEM/TablaGlobalArchivo.h:
 

@@ -4,13 +4,16 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../src/administrarPCB/EstadisticaProceso.c 
+../src/administrarPCB/EstadisticaProceso.c \
+../src/administrarPCB/PCBData.c 
 
 OBJS += \
-./src/administrarPCB/EstadisticaProceso.o 
+./src/administrarPCB/EstadisticaProceso.o \
+./src/administrarPCB/PCBData.o 
 
 C_DEPS += \
-./src/administrarPCB/EstadisticaProceso.d 
+./src/administrarPCB/EstadisticaProceso.d \
+./src/administrarPCB/PCBData.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

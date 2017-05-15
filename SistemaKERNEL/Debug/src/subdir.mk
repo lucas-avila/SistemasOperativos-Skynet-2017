@@ -5,18 +5,15 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../src/KERNEL.c \
-../src/PCB.c \
-../src/SolicitudesUsuario.c 
+../src/PCB.c 
 
 OBJS += \
 ./src/KERNEL.o \
-./src/PCB.o \
-./src/SolicitudesUsuario.o 
+./src/PCB.o 
 
 C_DEPS += \
 ./src/KERNEL.d \
-./src/PCB.d \
-./src/SolicitudesUsuario.d 
+./src/PCB.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
