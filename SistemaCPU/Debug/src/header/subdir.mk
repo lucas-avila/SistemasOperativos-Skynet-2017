@@ -4,13 +4,16 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../src/header/AppConfig.c 
+../src/header/AppConfig.c \
+../src/header/PCB.c 
 
 OBJS += \
-./src/header/AppConfig.o 
+./src/header/AppConfig.o \
+./src/header/PCB.o 
 
 C_DEPS += \
-./src/header/AppConfig.d 
+./src/header/AppConfig.d \
+./src/header/PCB.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

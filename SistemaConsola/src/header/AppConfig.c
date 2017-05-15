@@ -14,7 +14,7 @@
 #include <commons/string.h>
 
 #include <string.h>
-
+#include "Semaforo.h"
 
 void inicializar_configuracion(char *PATH_ARCHIVO_CONFIGURACION) {
 
@@ -33,3 +33,5 @@ void inicializar_configuracion(char *PATH_ARCHIVO_CONFIGURACION) {
 
 	}
 }
+
+

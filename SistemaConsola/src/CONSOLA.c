@@ -68,8 +68,13 @@ void atender_solicitudes_de_usuario() {
 			iniciar_thread(path_archivo_fuente);
 			system("clear");
 			break;
-		case 2:
-
+		case 2: {
+			int pid;
+			printf("\nIngrese el PID del programa que desea terminar: ");
+			scanf("%d", &pid);
+			enviar_dato_serializado("FINALIZAR_PROGRAMA", kernel);
+			enviar_dato_serializado(string_itoa(pid), kernel);
+		}
 			break;
 		case 3:
 
@@ -108,10 +113,11 @@ void CU_iniciar_programa(char * path_archivo_fuente){
 void recibir_mensajes(int pid){
 	char * mensaje;
 
-	do {
-		mensaje = recibir_dato_serializado(kernel);
+	mensaje = recibir_dato_serializado(kernel);
+	while (strcmp(mensaje, "FIN_PROGRAMA") != 0){
 		printf("El mensaje del Proceso (%d) es: %s\n", pid, mensaje);
-	} while (strcmp(mensaje, "FIN_PROGRAMA") != 0);
+		mensaje = recibir_dato_serializado(kernel);
+	}
 
 	finalizar_programa(pid);
 }

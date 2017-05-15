@@ -77,6 +77,7 @@ typedef struct {
 	int32_t cantidad_rafagas; //RR se le da pelota, si no , nada
 
 	int32_t cantidad_rafagas_ejecutadas;
+	uint32_t consola; // Para saber a qué consola pertenece el proceso y facilitar su finalización.
 } __attribute__((packed))
 PCB;
 
