@@ -60,3 +60,22 @@ int get_line(char * text, char * line, int save_cursor){
 	line[i] = '\0';
 	return 0;
 }
+
+char * obtener_codigo(char * path_archivo_fuente){
+	FILE * archivo_fuente;
+	char * literal;
+	int size_buffer;
+
+	archivo_fuente = fopen(path_archivo_fuente, "r");
+
+	// Ahora necesitamos saber el tamaño del archivo.
+	fseek(archivo_fuente, 0, SEEK_END);
+	size_buffer = ftell(archivo_fuente);
+	fseek(archivo_fuente, 0, SEEK_SET);
+
+	//Para evitar segmentation fault allocamos memoria.
+	literal = malloc(sizeof(char) * size_buffer);
+	fread(literal, sizeof(char), size_buffer, archivo_fuente);
+
+	return literal;
+}

@@ -13,4 +13,5 @@ int is_white_line(char * str);
 int get_line(char * text, char * line, int save_cursor);
 
 char first_char(char * str);
+char * obtener_codigo(char * path_archivo_fuente);
 #endif /* HEADER_FUNCIONESUTILES_H_ */
