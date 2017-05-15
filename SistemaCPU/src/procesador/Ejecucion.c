@@ -11,7 +11,7 @@
 #include "../header/PCB.h"
 #include "../primitivas/PrimitivasFunciones.h"
 #include "../primitivas/IndiceCodigo.h"
-
+#include "../interfaz/InterfazKernel.h"
 #include "../interfaz/InterfazMemoria.h"
 PCB* pcbEjecutar;
 
@@ -27,7 +27,7 @@ char* solicitar_sentencia_ejecutar() {
 	}
 }
 void ejecutar_Programa() {
-	bool esRoundRobin = (pcbEjecutar->RR == 1);
+	bool esRoundRobin = (pcbEjecutar->registroPlanificacion->RR == 1);
 	if (!esRoundRobin) {
 		ejecutar_programa_por_FIFO();
 	} else {
@@ -49,12 +49,27 @@ void ejecutar_programa_por_FIFO() {
 
 	}
 
+	enviar_PCB_a_kernel(pcbEjecutar);
+
 }
 
 void ejecutar_programa_por_RR() {
 	bool esFinPrograma = false;
-	int topeEjecucion = pcbEjecutar->cantidad_rafagas;
+	int topeEjecucion = pcbEjecutar->registroPlanificacion->quantum;
 	int cantidadEjecutada = 0;
+
+
+	while (!esFinPrograma && cantidadEjecutada< topeEjecucion) {
+		char* sentencia = solicitar_sentencia_ejecutar();
+		esFinPrograma = (strcmp(sentencia, "FIN") == 0);
+		if (!esFinPrograma) { //Este if tiene que sacarse, es solo para probar ahora
+			analizadorLinea(sentencia, funciones, kernel);
+
+			pcbEjecutar->program_counter++;
+			cantidadEjecutada++;
+		}
+
+	}
 
 }
 

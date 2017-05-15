@@ -10,6 +10,12 @@ void ejecutar_algoritmo_planificacion_FIFO() {
 	atender_clientes(0, planificador_mediano_plazo);
 	while (configuraciones.planificacion_activa == 1) {
 		pcb = obtener_proceso_de_cola_READY();
+
+		//Setamos QUANTUM
+		pcb->RR = 1;
+		pcb->cantidad_rafagas = configuraciones.QUANTUM;
+		pcb->quantum_sleep = configuraciones.QUANTUM_SLEEP;
+
 		cpu = obtener_CPU_Disponible();
 		marcar_CPU_Ocupada(cpu);
 		mover_PCB_de_cola(pcb, READY, EJECUTANDO);

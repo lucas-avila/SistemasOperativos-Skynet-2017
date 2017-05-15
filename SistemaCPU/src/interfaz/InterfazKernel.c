@@ -8,11 +8,12 @@
 #include "../primitivas/FuncionesAuxiliares.h"
 #include "commons/string.h"
 /* se encarga de recibir y llenar toda la estructura struct PCB */
-void recibir_PCB_de_kernel(int conexionKernel, PCB *pcb) {
+PCB* recibir_PCB_de_kernel( ) {
+	return NULL;
 }
 
 /* Se encarga de devolver al kernel el PCB con sus modificaciones por la ejecucion*/
-void enviar_PCB_a_kernel(int conexionKernel, PCB pcb) {
+void enviar_PCB_a_kernel(PCB* pcb) {
 }
 
 char* enviar_SYSCALL_solicitar_memoria_dinamica_a_kernel(char* PID, int espacio) {

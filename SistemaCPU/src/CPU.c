@@ -20,7 +20,7 @@
 #include "testing/testearPrimitivasFunciones.h"
 #include "procesador/Ejecucion.h"
 
-void CU_Procesar_PCB_a_ejecutar(int kernel);
+void CU_Procesar_PCB_a_ejecutar();
 
 
 
@@ -50,7 +50,7 @@ int main(int argc, char *argv[]) {
 			}
 			controlSeguir = false;
 		} else if (strcmp(operacion, "RECIBIR_PCB") == 0) {
-			CU_Procesar_PCB_a_ejecutar(servidor_kernel);
+			CU_Procesar_PCB_a_ejecutar();
 		}
 	} while (controlSeguir);
 
@@ -58,7 +58,9 @@ int main(int argc, char *argv[]) {
 	return EXIT_SUCCESS;
 }
 
-void CU_Procesar_PCB_a_ejecutar(int kernel) {
-
+void CU_Procesar_PCB_a_ejecutar() {
+   PCB* pcb = recibir_PCB_de_kernel();
+   setPCBEjecucion(pcb);
+   ejecutar_Programa();
 }
 

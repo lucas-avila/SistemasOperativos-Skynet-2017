@@ -38,7 +38,7 @@ void crear_PCB_TEST() {
 	list_add(procesoPrueba->pila, filaInicial);
 	procesoPrueba->pagina_inicial_stack = atoi(asignar_Paginas_Programa(procesoPrueba->PID, "1"));
 
-	procesoPrueba->RR = 0;
+	procesoPrueba->registroPlanificacion->RR = 0;
 
 	/****** HACEMOS DE CUENTA QUE CARGAMOS NOSOTROS EL CODIGO FUENTE*******/
 	int paginaSentencia = atoi(asignar_Paginas_Programa(procesoPrueba->PID, "1"));
