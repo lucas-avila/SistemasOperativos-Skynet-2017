@@ -11,6 +11,8 @@
 #include "../header/AppConfig.h"
 #include "../testing/TestingMenu.h"
 #include "PCB.h"
+#include "../administrarProcesos/Proceso.h"
+
 
 void mostrar_menu_usuario() {
 	printf("\n******* MENU KERNEL ******");
@@ -25,6 +27,96 @@ void mostrar_menu_usuario() {
 	printf("\n Opcion: ");
 }
 
+void mostrar_menu_listado_procesos(){
+	printf("\n******* Listado de procesos: ******");
+	printf("\n 1 - Todos.");
+	printf("\n 2 - En algún estado (cola).");
+	printf("\n 3 - Volver.");
+	printf("\n Opcion: ");
+}
+
+void listar_procesos(){
+	int opcion = 0;
+	do {
+		mostrar_menu_listado_procesos();
+		opcion = validarNumeroInput(1, 3);
+		system("clear");
+		switch(opcion) {
+
+		case 1:
+			mostrar_info_procesos(procesos);
+			break;
+		case 2:
+			listar_procesos_por_cola();
+			break;
+		}
+	} while (opcion != 3);
+	system("clear");
+	atender_solicitudes_de_usuario();
+}
+
+void listar_procesos_por_cola(){
+	mostrar_menu_colas();
+	int opcion = 0;
+	scanf("%d", &opcion);
+	if(opcion != 6) {
+		int buscar_procesos_por_cola(Proceso * proceso){
+			return proceso->cola == opcion;
+		}
+		t_list * procesos_filtrados = list_filter(procesos, &buscar_procesos_por_cola);
+		mostrar_info_procesos(procesos_filtrados);
+	}
+}
+
+void mostrar_info_procesos(t_list * procesos_lista){
+	int size = list_size(procesos_lista);
+	int i = 0;
+	Proceso * proceso;
+	while(i < size){
+		proceso = list_get(procesos_lista, i);
+		printf("----------------------------\n");
+		printf("Proceso ID: %d\n", proceso->PID);
+		printf("Su consola es: %d\n", proceso->consola);
+		proceso->cola = 1;
+		mostrar_cola(proceso->cola);
+		i++;
+	}
+	printf("---> Cantidad de procesos totales encontrados: %d\n", i);
+	printf("-----Fin de busqueda-----\n");
+}
+
+void mostrar_menu_colas(){
+	printf("\n******* Elija una cola de procesos: ******");
+	printf("\n 1 - New.");
+	printf("\n 2 - Ready.");
+	printf("\n 3 - Running.");
+	printf("\n 4 - Finished.");
+	printf("\n 5 - Waiting.");
+	printf("\n 6 - Volver.");
+	printf("\n Opcion: ");
+}
+
+void mostrar_cola(COLA cola){
+
+	switch(cola){
+	case NEW:
+		printf("Su cola actual es: NEW\n");
+		break;
+	case READY:
+		printf("Su cola actual es: READY\n");
+		break;
+	case EJECUTANDO:
+		printf("Su cola actual es: RUNNING\n");
+		break;
+	case EXIT:
+		printf("Su cola actual es: EXIT\n");
+		break;
+	case BLOQUEADO:
+		printf("Su cola actual es: WAITING\n");
+		break;
+	}
+}
+
 void atender_solicitudes_de_usuario() {
 	int opcion = 0;
 	do {
@@ -35,7 +127,7 @@ void atender_solicitudes_de_usuario() {
 		switch (opcion) {
 
 		case 1:
-
+			listar_procesos();
 			break;
 		case 2:
 			break;
@@ -48,11 +140,11 @@ void atender_solicitudes_de_usuario() {
 			break;
 		case 5: {
 			int pid;
-			PCB * pcb_a_eliminar;
+			Proceso * proceso_a_eliminar;
 			printf("\nPor favor ingrese el PID del proceso que desea MATAR: ");
 			scanf("%d", &pid);
-			pcb_a_eliminar = actualizar_exit_code(-7, pid);
-			finalizar_proceso(pcb_a_eliminar);
+			proceso_a_eliminar = actualizar_exit_code(-7, pid);
+			finalizar_proceso(proceso_a_eliminar);
 		}
 			break;
 		case 6:

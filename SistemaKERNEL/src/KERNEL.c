@@ -31,8 +31,8 @@ void CU_iniciar_programa(int consola);
 void inicializar_KERNEL();
 
 int main(int argc, char *argv[]) {
-	//inicializar_configuracion(argv[1]);
-	inicializar_configuracion("/home/utnso/Escritorio/tp-2017-1c-Skynet/SistemaKERNEL/resource/config.cfg");
+	inicializar_configuracion(argv[1]);
+	//inicializar_configuracion("/home/utnso/Escritorio/tp-2017-1c-Skynet/SistemaKERNEL/resource/config.cfg");
 	inicializar_KERNEL();
 	iniciar_conexion_servidor_consola();
 	iniciar_conexion_servidor_cpu();
@@ -56,14 +56,14 @@ void inicializar_KERNEL() {
 void inicializar_listas_globales() {
 	lista_consolas = list_create();
 	lista_CPUs = list_create();
-	lista_pcbs = list_create();
 }
 
 void CU_iniciar_programa(int consola) {
 	char * codigo = recibir_dato_serializado(consola);
 	PCB * pcb_nuevo = crear_pcb();
+	Proceso * proceso_nuevo = new_Proceso(pcb_nuevo);
 
-	list_add(lista_pcbs, pcb_nuevo);
+	list_add(procesos, proceso_nuevo);
 	int resultado = enviar_programa_memoria(codigo, string_itoa(pcb_nuevo->PID));
 	//TODO enviar_programa_memoria deberia devolver algo que no sea 1 .-.
 	/* La variable RESULTADO es para saber si se le pudo
@@ -77,29 +77,28 @@ void CU_iniciar_programa(int consola) {
 	enviar_dato_serializado(string_itoa(pcb_nuevo->PID), consola);
 	if (resultado > 0) {
 		t_metadata_program * info_codigo = metadata_desde_literal(codigo);
-		llenar_PCB(pcb_nuevo, resultado, info_codigo, consola);
+		llenar_PCB(proceso_nuevo, resultado, info_codigo, consola);
 		printf("--El PCB fue creado exitosamente--\n");
 	} else {
 		notificar_exit_code(resultado, consola);
 	}
 }
 
-void llenar_PCB(PCB * pcb, int paginas_codigo, t_metadata_program * info_codigo, int consola){
+void llenar_PCB(Proceso * proceso, int paginas_codigo, t_metadata_program * info_codigo, int consola){
 
-	pcb->consola = consola;
-	pcb->cantidad_paginas_codigo = paginas_codigo;
-	pcb->cantidad_etiqueta = info_codigo->cantidad_de_etiquetas;
+	proceso->consola = consola;
+	proceso->pcb->cantidad_paginas_codigo = paginas_codigo;
 	//FALTA TERMINAR
 
 }
 
-void finalizar_proceso(PCB * pcb){
+void finalizar_proceso(Proceso * proceso){
 
-	char * respuesta = finalizar_Programa_memoria(string_itoa(pcb->PID));
+	char * respuesta = finalizar_Programa_memoria(string_itoa(proceso->PID));
 	// TODO finalizar_programa_memoria no devuelve OK?
 	if (strcmp(respuesta, "OK") == 0) {
 
-		notificar_exit_code(pcb->exit_code, pcb->consola);
+		notificar_exit_code(proceso->pcb->exit_code, proceso->consola);
 	} else {
 		printf("No se pudo finalizar el programa\n");
 		//TODO ver qué mierda hacemos acá...
@@ -111,19 +110,19 @@ void finalizar_proceso(PCB * pcb){
  * actualizará previamente su exit_code y luego se llamará a
  * la función para finalizar el proceso. Al actualizar el exit_code
  * borraremos directamente el proceso de la lista de procesos
- * (donde se encuentran todos los pcbs) y retornaremos el PCB del proceso.
+ * (donde se encuentran todos ellos) y retornaremos el Proceso.
  */
 
-PCB * actualizar_exit_code(int exit_code, int pid){
-	PCB * pcb_a_actualizar;
-	int buscar_pcb(PCB * pcb){
-		return pcb->PID == pid;
+Proceso * actualizar_exit_code(int exit_code, int pid){
+	Proceso * proceso_a_actualizar;
+	int buscar_proceso(Proceso * proceso){
+		return proceso->PID == pid;
 	}
-	pcb_a_actualizar = list_find(lista_pcbs, &buscar_pcb);
-	list_remove_by_condition(lista_pcbs, &buscar_pcb);
-	pcb_a_actualizar->exit_code = exit_code;
+	proceso_a_actualizar = list_find(procesos, &buscar_proceso);
+	list_remove_by_condition(procesos, &buscar_proceso);
+	proceso_a_actualizar->pcb->exit_code = exit_code;
 
-	return pcb_a_actualizar;
+	return proceso_a_actualizar;
 }
 
 void notificar_exit_code(int exit_code, int consola){
