@@ -13,7 +13,8 @@
 void CU_Gestionar_HEAP(int conexionCPU);
 void CU_Reservar_memoria_MALLOC(int conexionCPU);
 void CU_Liberar_memoria_FREE(int conexionCPU);
-void enviar_datos_respuesta(int conexionCPU, unsigned pagina, char*PID, int byteInicial) ;
+void enviar_datos_respuesta(int conexionCPU, unsigned pagina, char*PID, int byteInicial);
+void asignar_valor_var_comp (int conexionCPU);
 
 
 
