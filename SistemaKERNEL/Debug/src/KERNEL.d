@@ -11,6 +11,7 @@ src/KERNEL.d: ../src/KERNEL.c ../src/administrarPCB/EstadisticaProceso.h \
  ../src/administrarProcesos/Proceso.h \
  ../src/administrarProcesos/../header/PCB.h \
  ../src/administrarProcesos/../capaFILESYSTEM/TablaProcesoArchivo.h \
+ ../src/administrarProcesos/../planificacion/Planificacion.h \
  ../src/header/SolicitudesUsuario.h
 
 ../src/administrarPCB/EstadisticaProceso.h:
@@ -46,5 +47,7 @@ src/KERNEL.d: ../src/KERNEL.c ../src/administrarPCB/EstadisticaProceso.h \
 ../src/administrarProcesos/../header/PCB.h:
 
 ../src/administrarProcesos/../capaFILESYSTEM/TablaProcesoArchivo.h:
+
+../src/administrarProcesos/../planificacion/Planificacion.h:
 
 ../src/header/SolicitudesUsuario.h:
