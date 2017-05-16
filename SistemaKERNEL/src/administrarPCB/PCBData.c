@@ -1,5 +1,5 @@
 #include <parser/metadata_program.h>
-
+#include "../header/PCB.h"
 /*
 	typedef struct {
 		t_puntero_instruccion	start;
@@ -22,9 +22,16 @@ void procesar_programa(char * programa){
 	t_metadata_program * meta = metadata_desde_literal(programa);
 	int program_counter = 0;
 
+	PCB * pcb = crear_pcb();
+
+	char etiqueta[] = "Proximo";
+	t_puntero_instruccion instruccion = metadata_buscar_etiqueta(etiqueta, meta->etiquetas, meta->etiquetas_size);
+	printf("Instruccion correspondiente a la etiqueta imprimir es %s\n", string_substring(programa, meta->instrucciones_serializado[instruccion].start, meta->instrucciones_serializado[instruccion].offset));
+
 	while(program_counter < meta->instrucciones_size){
 		char * instruccion = string_substring(programa, meta->instrucciones_serializado[program_counter].start, meta->instrucciones_serializado[program_counter].offset);
 		instruccion[meta->instrucciones_serializado[program_counter].offset] = '\0';
+
 
 		printf("%s\n", instruccion);
 		program_counter++;

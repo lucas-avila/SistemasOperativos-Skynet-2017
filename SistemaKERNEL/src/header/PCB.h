@@ -31,7 +31,6 @@ typedef struct {
 	uint32_t dinamica;
 
 }__attribute__((packed))
-
 Variable;
 
 typedef struct {

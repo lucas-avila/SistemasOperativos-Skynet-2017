@@ -13,6 +13,17 @@ LISTA_DESERIALIZADA * deserializar_con_header(char * cadena, char * tipo_lista);
 
 int pids_reg = MIN_PIDS;
 
+PCB * crear_pcb() {
+	PCB * pcb = malloc(sizeof(PCB));
+
+	pcb->PID = pids_reg;
+	pids_reg++;
+	pcb->codigo = list_create();
+	pcb->pila = list_create();
+
+	return pcb;
+}
+
 PCB * hardcodear_pcb(){
 	PCB * pcb = crear_pcb();
 				pcb->RR = 22;
@@ -109,15 +120,6 @@ LISTA_SERIALIZADA * recibir_estructura_serializada(int socket_conexion) {
 	l->buffer = buffer;
 	l->size = size;
 	return l;
-}
-
-PCB * crear_pcb() {
-	PCB * pcb = malloc(sizeof(PCB));
-
-	pcb->PID = pids_reg;
-	pids_reg++;
-
-	return pcb;
 }
 
 int enviar_pcb(PCB * pcb, int s_destino) {
