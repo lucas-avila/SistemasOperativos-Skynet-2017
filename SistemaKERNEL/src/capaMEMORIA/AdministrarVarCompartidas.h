@@ -1,0 +1,16 @@
+/*
+ * AdministrarVarCompartidas.h
+ *
+ *  Created on: 15/5/2017
+ *      Author: utnso
+ */
+
+#ifndef CAPAMEMORIA_ADMINISTRARVARCOMPARTIDAS_H_
+#define CAPAMEMORIA_ADMINISTRARVARCOMPARTIDAS_H_
+
+
+void obtener_valor_var_comp(int conexionCPU);
+void asignar_valor_var_comp(int conexionCPU);
+
+
+#endif /* CAPAMEMORIA_ADMINISTRARVARCOMPARTIDAS_H_ */

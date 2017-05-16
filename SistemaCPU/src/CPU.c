@@ -37,8 +37,8 @@ int main(int argc, char *argv[]) {
 	//Parametro de Identificacion
 	enviar_dato_serializado("CPU", servidor_kernel);
 	bool controlSeguir = true;
-	//mostrar_menu_primitivas();
-	//atender_clientes(0, mostrar_menu_primitivas);
+	mostrar_menu_primitivas();
+	atender_clientes(0, mostrar_menu_primitivas);
 
 	char *operacion;
 	do {

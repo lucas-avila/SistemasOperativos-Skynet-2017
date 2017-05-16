@@ -109,6 +109,42 @@ void enviar_SYSCALL_operacion_guardar_datos_archivo_a_kernel(int PID, PCB* pcb) 
 void enviar_SYSCALL_operacion_borrar_archivo_a_kernel(int PID, PCB* pcb) {
 }
 
-DireccionVariable* obtener_valor_Variable_Compartida(int PID, char *nombreVariableCompartida) {
-	return NULL;
+int asignar_valor_a_variable_compartida_en_kernel(char* nombre_varComp, int valor_varComp) {
+	enviar_dato_serializado("ASIGNAR_VAR_COMP", servidor_kernel);
+	enviar_dato_serializado(nombre_varComp, servidor_kernel);
+	enviar_dato_serializado(string_itoa(valor_varComp), servidor_kernel);
+
+	char* resultado = recibir_dato_serializado(servidor_kernel);
+	if (strcmp(resultado, "OK") == 0) {
+
+		printf(resultado);
+		return 0;
+	}
+	else {
+
+		printf("\n Error en ASIGNAR VARIABLE COMPARTIDA: %s", resultado);
+		return -1;
+
+	}
+}
+
+int obtener_valor_a_variable_compartida_en_kernel(char* nombre_varComp, int* valorVariable) {
+	enviar_dato_serializado("BUSCAR_VAL_VAR_COMP", servidor_kernel);
+	enviar_dato_serializado(nombre_varComp, servidor_kernel);
+
+
+	char* resultado = recibir_dato_serializado(servidor_kernel);
+	if (strcmp(resultado, "OK") == 0) {
+		char* valor_var_comp = recibir_dato_serializado(servidor_kernel);
+		valorVariable = (atoi(valor_var_comp));
+		return 0;
+	}
+	else {
+
+		printf("\n Error en BUSCAR VARIABLE COMPARTIDA: %s", resultado);
+		return -1;
+		/*
+		 * FALTA VER QUE DEVOLVER EN CASO DE ERROR (podria haber error?)
+		*/
+	}
 }

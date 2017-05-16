@@ -81,7 +81,8 @@ void inicializar_contexto_ejecucion() {
 	funciones->AnSISOP_obtenerPosicionVariable = OBTENER_DIRECCION_DE_VARIABLE;
 	funciones->AnSISOP_dereferenciar = DEREFERENCIAR;
 	funciones->AnSISOP_asignar = ASIGNAR_VARIABLE;
-
+	funciones->AnSISOP_asignarValorCompartida = ASIGNAR_VALOR_COMPARTIDA;
+	funciones->AnSISOP_obtenerValorCompartida=OBTENER_VALOR_COMPARTIDA;
 //	funciones->AnSISOP_irAlLabel = irAlLabel;
 
 	kernel->AnSISOP_reservar = ALOCAR;

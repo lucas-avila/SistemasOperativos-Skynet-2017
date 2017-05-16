@@ -28,7 +28,7 @@ void enviar_SYSCALL_operacion_leer_archivo_a_kernel(int PID, PCB* pcb);
 void enviar_SYSCALL_operacion_guardar_datos_archivo_a_kernel( int PID, PCB* pcb);
 
 void enviar_SYSCALL_operacion_borrar_archivo_a_kernel(int  PID, PCB* pcb);
-
-DireccionVariable* obtener_valor_Variable_Compartida(int  PID, char *nombreVariableCompartida);
+int asignar_valor_a_variable_compartida_en_kernel(char* nombre_varComp, int valor_varComp);
+int obtener_valor_a_variable_compartida_en_kernel(char* nombre_varComp, int* valorVariable);
 
 #endif /* HEADER_INTERFAZKERNEL_H_ */
