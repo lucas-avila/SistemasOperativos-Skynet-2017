@@ -15,10 +15,6 @@
 
 #include <string.h>
 
-char** SEM_IDS;
-int* SEM_INIT;
-char**SHERED_VARS;
-
 void inicializar_configuracion(char *PATH_ARCHIVO_CONFIGURACION) {
 
 	t_config *config = config_create(PATH_ARCHIVO_CONFIGURACION);
@@ -73,7 +69,7 @@ void inicializar_configuracion(char *PATH_ARCHIVO_CONFIGURACION) {
 			configuraciones.SEM_IDS = config_get_array_value(config, "SEM_IDS");
 		}
 		if (config_has_property(config, "SHERED_VARS") == true) {
-			configuraciones.SHERED_VARS = config_get_array_value(config, "SHERED_VARS");
+			configuraciones.VAR_COMP = config_get_array_value(config, "SHERED_VARS");
 		}
 
 		if (config_has_property(config, "SEM_INIT") == true) {
@@ -84,6 +80,28 @@ void inicializar_configuracion(char *PATH_ARCHIVO_CONFIGURACION) {
 			configuraciones.CANTIDAD_MAXIMA_CONCURRENCIA = config_get_int_value(config, "CANTIDAD_MAXIMA_CONCURRENCIA");
 		}
 
-		configuraciones.planificacion_activa=1;
+		if (config_has_property(config, "CANT_VAR_COM") == true) {
+
+			configuraciones.cantidad_var_comp = config_get_int_value(config, "CANT_VAR_COM");
+		}
+
+		configuraciones.planificacion_activa = 1;
 	}
+	inicializar_vector_variables_compartidas();
 }
+
+void inicializar_vector_variables_compartidas() {
+	int i = 0;
+	//malloc del vector ser    var = malloc(configuraciones.cantida_var_comp);
+	/*	while (VAR_COMP[i] != NULL) {
+	 i++;
+	 cant_var_comp = i;
+	 }
+	 i--;
+	 while (i >= 0) {
+	 vector_var_comp[(i - 1)] = 0;
+	 i--;
+
+	 }*/
+}
+

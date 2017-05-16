@@ -25,11 +25,11 @@ IndiceCodigo* crearIndiceCodigo(int programCounter, int byteInicial, int tamanio
 
 void crear_PCB_TEST() {
 	procesoPrueba = malloc(sizeof(PCB));
-	strcpy(procesoPrueba->PID, "1241");
+	procesoPrueba->PID=1241;
 	procesoPrueba->program_counter = 0;
 	procesoPrueba->cantidad_paginas_codigo = 1;
 
-	procesoPrueba->pila = list_create();
+	/** procesoPrueba->pila = list_create();
 
 	IndiceStack* filaInicial = malloc(sizeof(IndiceStack));
 	filaInicial->argumentos = list_create();
@@ -40,14 +40,10 @@ void crear_PCB_TEST() {
 
 	procesoPrueba->RR = 0;
 
-	/****** HACEMOS DE CUENTA QUE CARGAMOS NOSOTROS EL CODIGO FUENTE*******/
+
 	int paginaSentencia = atoi(asignar_Paginas_Programa(procesoPrueba->PID, "1"));
 	char sentencias[][40] = { "variables a, b, x,d,e,f,g,h,i,j,k,l", "a = 3", "b = 5", "a = b + 12", "alocar x 50 ", "liberar x", "alocar d 50 ", "liberar d", "alocar e 50 ", "liberar e", "alocar f 50 ", "liberar f", "alocar g 50 ", "liberar g", "alocar h 50 ", "liberar h", "alocar i 50 ", "liberar i", "alocar j 50 ", "liberar j", "alocar k 50 ", "liberar k", "alocar l 50 ", "liberar l" };/**
-	 * variables a, b
-	 a = 3
-	 b = 5
-	 a = b + 12
-	 */
+
 	int cantidadSentencias = 11;
 	int i = 0;
 	int indiceInicial = 0;
@@ -59,12 +55,14 @@ void crear_PCB_TEST() {
 
 		almacenar_Bytes_de_Pagina(procesoPrueba->PID, string_itoa(indiceNuevo->pagina), string_itoa(indiceNuevo->byte_inicial_codigo), string_itoa(indiceNuevo->byte_final_codigo - indiceNuevo->byte_inicial_codigo), sentencias[i]);
 	}
-
+*/
 }
 
 void casos_multiples_primitivas();
 
 void mostrar_menu_primitivas() {
+	char nombreVariable[20];
+	int valor;
 	char nombre;
 	int punterosAlocar[3];
 	crear_PCB_TEST();
@@ -83,9 +81,12 @@ void mostrar_menu_primitivas() {
 
 		printf("\n 9 - Probar ANALIZADOR SINTACTICO");
 
-		printf("\n 10 - Salir");
+		printf("\n 10 - Probar Asginar Compartida");
+		printf("\n 11 - Probar Buscar Compartida");
+
+		printf("\n 20 - Salir");
 		printf("\n Opcion: ");
-		opcion_Salir = validarNumeroInput(0, 10);
+		opcion_Salir = validarNumeroInput(0, 20);
 		switch (opcion_Salir) {
 		case 1:
 			printf("\n Nombre Variable: ");
@@ -157,8 +158,29 @@ void mostrar_menu_primitivas() {
 			setPCBEjecucion(procesoPrueba);
 			ejecutar_Programa();
 			break;
+
+		case 10:
+
+			printf("\n Nombre Variable: ");
+			do {
+				scanf("%s", &nombre);
+			} while (nombre == '\n');
+			printf("\n Valor: ");
+			valor = validarNumeroInput(0, 999999);
+			ASIGNAR_VALOR_COMPARTIDA(nombre, valor);
+			break;
+		case 11:
+
+
+			printf("\n Nombre Variable: ");
+			do {
+				scanf("%s", &nombre);
+			} while (nombre == '\n');
+			OBTENER_VALOR_COMPARTIDA(nombreVariable);
+			break;
 		}
-	} while (opcion_Salir != 10);
+
+	} while (opcion_Salir != 20);
 }
 
 void casos_multiples_primitivas() {

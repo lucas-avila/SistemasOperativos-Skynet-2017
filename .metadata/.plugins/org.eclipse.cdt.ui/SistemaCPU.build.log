@@ -1,15 +1,6 @@
-15:22:52 **** Incremental Build of configuration Debug for project SistemaCPU ****
+21:41:23 **** Incremental Build of configuration Debug for project SistemaCPU ****
 make all 
-Building file: ../src/CPU.c
-Invoking: GCC C Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/CPU.d" -MT"src/CPU.d" -o "src/CPU.o" "../src/CPU.c"
-Finished building: ../src/CPU.c
- 
-Building target: SistemaCPU
-Invoking: GCC C Linker
-gcc  -o "SistemaCPU"  ./src/header/AppConfig.o ./src/header/Socket.o  ./src/CPU.o ./src/InterfazKernel.o ./src/InterfazMemoria.o   -lpthread -lcommons
-Finished building target: SistemaCPU
- 
+make: No se hace nada para «all».
 
-15:22:53 Build Finished (took 125ms)
+21:41:23 Build Finished (took 356ms)
 

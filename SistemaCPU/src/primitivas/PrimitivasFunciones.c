@@ -52,14 +52,14 @@ void ASIGNAR_VARIABLE(t_puntero direccion_variable, t_valor_variable valor) {
 	PunteroVariable* punteroVariable = deserializarPunteroStack(direccion_variable);
 	if (strlen(string_itoa(valor)) > 4) {
 		Variable* var = buscar_variable_por_stack_y_fila(pcb, punteroVariable->filaStack, punteroVariable->filaTabla);
-		DireccionMemoriaDinamica* variableDiamica = deserializarMemoriaDinamica( string_itoa(pcb->PID), valor);
+		DireccionMemoriaDinamica* variableDiamica = deserializarMemoriaDinamica(string_itoa(pcb->PID), valor);
 		var->byte_inicial = variableDiamica->byteInicial;
 		var->pagina = variableDiamica->pagina;
 
-		int tamanio = atoi(solicitar_bytes_memoria( string_itoa(pcb->PID), string_itoa(var->pagina), string_itoa(var->byte_inicial + 1), string_itoa(4)));
+		int tamanio = atoi(solicitar_bytes_memoria(string_itoa(pcb->PID), string_itoa(var->pagina), string_itoa(var->byte_inicial + 1), string_itoa(4)));
 
 		var->tamanio = tamanio;
-		var->dinamica=1;
+		var->dinamica = 1;
 		return;
 	}
 
@@ -76,7 +76,7 @@ void ASIGNAR_VARIABLE(t_puntero direccion_variable, t_valor_variable valor) {
 		strcpy(contenido_variable, varComplete);
 		strcat(contenido_variable, string_itoa(valor));
 
-		almacenar_Bytes_de_Pagina( string_itoa(pcb->PID), string_itoa(var->pagina), string_itoa(var->byte_inicial), string_itoa(strlen(contenido_variable)), contenido_variable);
+		almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(var->pagina), string_itoa(var->byte_inicial), string_itoa(strlen(contenido_variable)), contenido_variable);
 	} else {
 		Argumento* arg = buscar_argumento_por_stack_y_fila(pcb, punteroVariable->filaStack, punteroVariable->filaTabla);
 
@@ -85,7 +85,7 @@ void ASIGNAR_VARIABLE(t_puntero direccion_variable, t_valor_variable valor) {
 		strcpy(contenido_variable, varComplete);
 		strcat(contenido_variable, string_itoa(valor));
 
-		almacenar_Bytes_de_Pagina( string_itoa(pcb->PID), string_itoa(arg->pagina), string_itoa(arg->byte_inicial), string_itoa(strlen(contenido_variable)), contenido_variable);
+		almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(arg->pagina), string_itoa(arg->byte_inicial), string_itoa(strlen(contenido_variable)), contenido_variable);
 
 	}
 
@@ -124,16 +124,16 @@ t_valor_variable DEREFERENCIAR(t_puntero puntero) {
 	if (punteroVariable->esVariable == 1) {
 		Variable* var = buscar_variable_por_stack_y_fila(pcb, punteroVariable->filaStack, punteroVariable->filaTabla);
 
-		valor = atoi(solicitar_bytes_memoria( string_itoa(pcb->PID), string_itoa(var->pagina), string_itoa(var->byte_inicial), string_itoa(4)));
+		valor = atoi(solicitar_bytes_memoria(string_itoa(pcb->PID), string_itoa(var->pagina), string_itoa(var->byte_inicial), string_itoa(4)));
 	} else {
 		Argumento* arg = buscar_argumento_por_stack_y_fila(pcb, punteroVariable->filaStack, punteroVariable->filaTabla);
-		valor = atoi(solicitar_bytes_memoria( string_itoa(pcb->PID), string_itoa(arg->pagina), string_itoa(arg->byte_inicial), string_itoa(4)));
+		valor = atoi(solicitar_bytes_memoria(string_itoa(pcb->PID), string_itoa(arg->pagina), string_itoa(arg->byte_inicial), string_itoa(4)));
 	}
 	return valor;
 }
 t_puntero ALOCAR(t_valor_variable espacio) {
 
-	char* mensaje = enviar_SYSCALL_solicitar_memoria_dinamica_a_kernel( pcb->PID, espacio);
+	char* mensaje = enviar_SYSCALL_solicitar_memoria_dinamica_a_kernel(pcb->PID, espacio);
 
 	if (strcmp(mensaje, "ERROR") == 0) {
 
@@ -182,4 +182,12 @@ void LIBERAR(t_puntero memoria_serializada) {
  return solicitar_bytes_memoria( string_itoa(pcb->PID), string_itoa(direccion_var->pagina), string_itoa(direccion_var->byteInicial), string_itoa(TAMANIO_VARIABLE));
  }
  **/
+
+t_valor_variable OBTENER_VALOR_COMPARTIDA(t_nombre_compartida variable){
+printf("Hola obtener valor");
+}
+
+t_valor_variable ASIGNAR_VALOR_COMPARTIDA(t_nombre_compartida variable, t_valor_variable valor) {
+	printf("Hola ASIGNAR_VALOR_COMPARTIDA");
+}
 

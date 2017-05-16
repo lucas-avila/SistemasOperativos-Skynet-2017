@@ -1,6 +1,7 @@
-15:22:53 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
-make all 
-make: No se hace nada para «all».
+21:23:14 **** Clean-only build of configuration Debug for project SistemaFILESYSTEM ****
+make clean 
+rm -rf  ./src/header/AppConfig.o ./src/header/Socket.o  ./src/FILE_SYSTEM.o ./src/InterfazKernel.o  ./src/header/AppConfig.d ./src/header/Socket.d  ./src/FILE_SYSTEM.d ./src/InterfazKernel.d  SistemaFILESYSTEM
+ 
 
-15:22:53 Build Finished (took 74ms)
+21:23:14 Build Finished (took 715ms)
 

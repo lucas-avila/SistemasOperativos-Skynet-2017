@@ -9,7 +9,7 @@
 #include "../header/PCB.h"
 #include "../header/Estructuras.h"
 #include "../capaMEMORIA/GestionMemoriaDinamica.h"
-
+#include "../capaMEMORIA/AdministrarVarCompartidas.h"
 #include "../planificacion/Planificacion.h"
 
 int servidor_CPU = 0;
@@ -45,6 +45,11 @@ void CU_Recibir_Conexiones_CPU(int clienteCPU) {
 			CU_Gestionar_HEAP(clienteCPU);
 		} else if (strcmp(codigo_operacion, "RECIBIR_CPU") == 0) {
 			recibir_PCB_de_CPU(clienteCPU);
+		} else if (strcmp(codigo_operacion, "ASIGNAR_VAR_COMP") == 0) {
+			asignar_valor_var_comp(clienteCPU);
+		} else if (strcmp(codigo_operacion, "BUSCAR_VAL_VAR_COMP") == 0) {
+			obtener_valor_var_comp(clienteCPU);
+
 		} else if (strcmp(codigo_operacion, "") == 0) {
 			close(clienteCPU);
 			controlSeguir = 0;
