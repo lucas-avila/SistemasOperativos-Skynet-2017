@@ -87,6 +87,9 @@ void CU_iniciar_programa(int consola) {
 void llenar_PCB(Proceso * proceso, int paginas_codigo, t_metadata_program * info_codigo, int consola){
 
 	proceso->consola = consola;
+	proceso->operaciones_privilegiadas_ejecutadas = 0;
+	proceso->pcb->cantidad_rafagas_ejecutadas = 0;
+	proceso->syscalls_ejecutadas = 0;
 	proceso->pcb->cantidad_paginas_codigo = paginas_codigo;
 	//FALTA TERMINAR
 
@@ -113,16 +116,14 @@ void finalizar_proceso(Proceso * proceso){
  * (donde se encuentran todos ellos) y retornaremos el Proceso.
  */
 
-Proceso * actualizar_exit_code(int exit_code, int pid){
-	Proceso * proceso_a_actualizar;
-	int buscar_proceso(Proceso * proceso){
-		return proceso->PID == pid;
-	}
-	proceso_a_actualizar = list_find(procesos, &buscar_proceso);
-	list_remove_by_condition(procesos, &buscar_proceso);
-	proceso_a_actualizar->pcb->exit_code = exit_code;
+void actualizar_exit_code(Proceso * proceso, int exit_code){
 
-	return proceso_a_actualizar;
+	int buscar_proceso(Proceso * elem_proceso){
+		return elem_proceso->PID == proceso->PID;
+	}
+	list_remove_by_condition(procesos, &buscar_proceso);
+	proceso->pcb->exit_code = exit_code;
+
 }
 
 void notificar_exit_code(int exit_code, int consola){

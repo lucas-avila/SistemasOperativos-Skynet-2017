@@ -17,13 +17,13 @@
 void mostrar_menu_usuario() {
 	printf("\n******* MENU KERNEL ******");
 	printf("\n 1 - Obtener listado de procesos del Sistema.");
-	printf("\n 2 - Obtener Informacion de un proceso");
-	printf("\n 3 - Obtener la tabla global de archivos");
-	printf("\n 4 - Modificar grado de multiprogramacion");
-	printf("\n 5 - Finalizar proceso");
-	printf("\n 6 - Detener la planificacion");
-	printf("\n 7 - MENU TESTING");
-	printf("\n 8 - Salir");
+	printf("\n 2 - Obtener Informacion de un proceso.");
+	printf("\n 3 - Obtener la tabla global de archivos.");
+	printf("\n 4 - Modificar grado de multiprogramacion.");
+	printf("\n 5 - Finalizar proceso.");
+	printf("\n 6 - Detener la planificacion.");
+	printf("\n 7 - MENU TESTING.");
+	printf("\n 8 - Salir.");
 	printf("\n Opcion: ");
 }
 
@@ -44,7 +44,7 @@ void listar_procesos(){
 		switch(opcion) {
 
 		case 1:
-			mostrar_info_procesos(procesos);
+			mostrar_procesos(procesos);
 			break;
 		case 2:
 			listar_procesos_por_cola();
@@ -64,17 +64,17 @@ void listar_procesos_por_cola(){
 			return proceso->cola == opcion;
 		}
 		t_list * procesos_filtrados = list_filter(procesos, &buscar_procesos_por_cola);
-		mostrar_info_procesos(procesos_filtrados);
+		mostrar_procesos(procesos_filtrados);
 	}
 }
 
-void mostrar_info_procesos(t_list * procesos_lista){
+void mostrar_procesos(t_list * procesos_lista){
 	int size = list_size(procesos_lista);
 	int i = 0;
 	Proceso * proceso;
 	while(i < size){
 		proceso = list_get(procesos_lista, i);
-		printf("----------------------------\n");
+		printf("⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛\n");
 		printf("Proceso ID: %d\n", proceso->PID);
 		printf("Su consola es: %d\n", proceso->consola);
 		proceso->cola = 1;
@@ -82,7 +82,7 @@ void mostrar_info_procesos(t_list * procesos_lista){
 		i++;
 	}
 	printf("---> Cantidad de procesos totales encontrados: %d\n", i);
-	printf("-----Fin de busqueda-----\n");
+	printf("⚛⚛⚛⚛⚛ Fin de busqueda ⚛⚛⚛⚛⚛\n");
 }
 
 void mostrar_menu_colas(){
@@ -117,6 +117,90 @@ void mostrar_cola(COLA cola){
 	}
 }
 
+void mostrar_menu_informacion_proceso(){
+	printf("\n******* Elija la informacion deseada: ******");
+	printf("\n 1 - Cantidad de rafagas ejecutadas.");
+	printf("\n 2 - Cantidad de operaciones privilegiadas ejecutadas.");
+	printf("\n 3 - Tabla de archivos abiertos por el proceso.");
+	printf("\n 4 - Cantidad de paginas de Heap utilizadas.");
+	printf("\n 5 - Cantidad de syscalls ejecutadas.");
+	printf("\n 6 - Volver.");
+	printf("\n Opcion: ");
+}
+
+void obtener_informacion_proceso(){
+	int opcion = 0;
+	int pid;
+	Proceso * proceso;
+	printf("\nPor favor ingrese el PID del proceso del cual desea informacion: ");
+	scanf("%d", &pid);
+	proceso = buscar_proceso_by_PID(pid);
+		do {
+			mostrar_menu_informacion_proceso();
+			opcion = validarNumeroInput(1, 6);
+			system("clear");
+			switch(opcion) {
+
+			case 1:
+				printf("⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛\n");
+				printf("Cantidad rafagas ejecutadas: %d.\n", proceso->pcb->cantidad_rafagas_ejecutadas);
+				printf("⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛\n");
+				break;
+			case 2:
+				printf("⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛\n");
+				printf("Cantidad operaciones privilegiadas ejecutadas: %d.\n", proceso->operaciones_privilegiadas_ejecutadas);
+				printf("⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛\n");
+				break;
+			case 3:
+				//mostrar_tabla_archivos(proceso); TODO
+				break;
+			case 4:
+				//mostrar_paginas_heap(proceso); TODO
+				break;
+			case 5:
+				printf("⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛\n");
+				printf("Cantidad syscalls ejecutadas: %d.\n", proceso->syscalls_ejecutadas);
+				printf("⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛\n");
+				break;
+			}
+		} while (opcion != 6);
+		system("clear");
+		atender_solicitudes_de_usuario();
+}
+
+void modificar_grado_multiprogramacion(){
+	int grado_multiprog;
+
+	system("clear");
+	do {
+		printf("Ingrese el nuevo grado de multiprogramacion: ");
+		scanf("%d", &grado_multiprog);
+		if( grado_multiprog < 0) printf("Por favor vuelva a intentarlo con un numero mayor/igual a 0.\n");
+	} while (grado_multiprog < 0);
+
+	configuraciones.GRADO_MULTIPROG = grado_multiprog;
+	printf("--- Modificacion exitosa ---\n");
+}
+
+void detener_planificacion(){
+	configuraciones.planificacion_activa = 0;
+	printf("--- Se detuvo la planificacion ---\n");
+}
+
+void verificar_estado(uint32_t pid){
+
+	Proceso * proceso_a_eliminar = buscar_proceso_by_PID(pid);
+	while(proceso_a_eliminar->cola == EJECUTANDO);
+
+	if(proceso_a_eliminar->cola == EXIT) {
+		printf("El proceso ya ha finalizado.\n");
+	} else {
+		actualizar_exit_code(proceso_a_eliminar, -7);
+		finalizar_proceso(proceso_a_eliminar);
+	}
+
+}
+
 void atender_solicitudes_de_usuario() {
 	int opcion = 0;
 	do {
@@ -130,29 +214,28 @@ void atender_solicitudes_de_usuario() {
 			listar_procesos();
 			break;
 		case 2:
+			obtener_informacion_proceso();
 			break;
-
 		case 3:
-
+			//mostrar_tabla_global_archivos(); TODO
 			break;
 		case 4:
-
+			modificar_grado_multiprogramacion();
 			break;
 		case 5: {
 			int pid;
 			Proceso * proceso_a_eliminar;
 			printf("\nPor favor ingrese el PID del proceso que desea MATAR: ");
 			scanf("%d", &pid);
-			proceso_a_eliminar = actualizar_exit_code(-7, pid);
-			finalizar_proceso(proceso_a_eliminar);
+			verificar_estado(pid);
 		}
 			break;
 		case 6:
+			detener_planificacion();
 			break;
 		case 7:
 			menu_principal_testing();
 			break;
-
 		}
 	} while (opcion != 8);
 }

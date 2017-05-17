@@ -22,6 +22,8 @@ typedef struct {
 
 	COLA cola;
 	uint32_t consola;
+	uint32_t operaciones_privilegiadas_ejecutadas;
+	uint32_t syscalls_ejecutadas;
 } Proceso;
 
 t_list* procesos;
