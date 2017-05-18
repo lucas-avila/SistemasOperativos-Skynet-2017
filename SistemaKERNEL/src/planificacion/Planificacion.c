@@ -46,6 +46,11 @@ t_queue* obtener_cola(COLA nombreCola) {
 	return NULL;
 }
 
+void proceso_a_NEW(Proceso * p){
+	p->cola = NEW;
+	queue_push(obtener_cola(NEW), p->pcb);
+}
+
 void mover_PCB_de_cola(PCB* pcb, COLA origen, COLA destino) {
 	queue_pop(obtener_cola(origen));
 	queue_push(obtener_cola(destino), pcb);
@@ -95,6 +100,7 @@ PCB* obtener_proceso_de_cola_READY() {
 
 void enviar_PCB_Serializado_a_CPU(CPUInfo* cpu, PCB* pcb) {
 	//TODO: Invocar la funcion de POLO y DELL que envia todaaaaa la serializacion del PCB a la CPU.
+	enviar_pcb(pcb, cpu->numeroConexion); // ^es esta
 }
 
 //TODO: VOLVER A VERIFICAR SI ESTA FUNCION ANDA BIEN, Y SI NECESITA SEMAFOROS.
@@ -125,6 +131,8 @@ void recibir_PCB_de_CPU(int clienteCPU) {
 	PCB* pcb;
 
 	//INVOCAR FUNCION DE DESERIALIZAR PCB
+
+	pcb = recibir_pcb(clienteCPU); // ^ok
 
 }
 

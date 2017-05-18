@@ -69,6 +69,7 @@ void CU_iniciar_programa(int consola) {
 
 	list_add(procesos, proceso_nuevo);
 
+	proceso_a_NEW(proceso_nuevo);
 
 	enviar_dato_serializado(string_itoa(pcb_nuevo->PID), consola);
 }
