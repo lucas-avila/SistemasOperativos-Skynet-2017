@@ -1,11 +1,14 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-#include <commons/collections/list.h>
-#include <commons/string.h>
-
 #include "header/PCB.h"
+
+#include <commons/string.h>
+#include <semaphore.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/socket.h>
+
+#include "general/Semaforo.h"
 #include "general/Socket.h"
+
 #define MIN_PIDS 1000
 
 LISTA_SERIALIZADA * serializar_con_header(t_list * lista, char * tipo_lista);
@@ -16,8 +19,12 @@ int pids_reg = MIN_PIDS;
 PCB * crear_pcb() {
 	PCB * pcb = malloc(sizeof(PCB));
 
+	//sem_wait(mutex_pids);
 	pcb->PID = pids_reg;
 	pids_reg++;
+	//sem_post(mutex_pids);
+	pcb->etiquetas = string_new();
+	pcb->etiquetas_size = 0;
 	pcb->codigo = list_create();
 	pcb->pila = list_create();
 

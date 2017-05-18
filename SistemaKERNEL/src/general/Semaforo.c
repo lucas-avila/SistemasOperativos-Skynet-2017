@@ -1,9 +1,7 @@
 
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
 #include <semaphore.h>
 #include <signal.h>
+#include <pthread.h>
 
 void inicializar_semaforo(sem_t* variable_semaforo) {
 	sem_init(variable_semaforo, 0, 1); //-->Inicializo un semaforo

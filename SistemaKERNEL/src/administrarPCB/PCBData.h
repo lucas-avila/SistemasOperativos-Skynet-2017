@@ -10,7 +10,7 @@
 
 #include "../header/PCB.h"
 
-IndiceCodigo* crear_IndiceCodigo(int programCounter, int byteInicial, int tamanio, int pagina);
-void procesar_programa(char * programa);
+
+void procesar_programa(char * programa, PCB * pcb);
 
 #endif /* ADMINISTRARPCB_PCBDATA_H_ */

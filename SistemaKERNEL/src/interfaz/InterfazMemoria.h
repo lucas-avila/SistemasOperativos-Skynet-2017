@@ -8,6 +8,10 @@
 #ifndef HEADER_INTERFAZMEMORIA_H_
 #define HEADER_INTERFAZMEMORIA_H_
 
+#include <parser/metadata_program.h>
+
+#include "../header/PCB.h"
+
 int servidor_Memoria;
 int tamanio_pagina_memoria;
 
@@ -23,9 +27,9 @@ char* asignar_Paginas_Programa(char* PID, char* cantidad_paginas);
 
 char* finalizar_Programa_memoria(char* PID);
 
+IndiceCodigo* crear_IndiceCodigo(int programCounter, int byteInicial, int tamanio, int pagina);
 
-
-int enviar_programa_memoria(char * path_programa, char * pid);
+int enviar_programa_memoria(t_metadata_program * meta, PCB * pcb, char * programa);
 
 int is_valid_line(char* line);
 
