@@ -122,12 +122,6 @@ int enviar_pcb(PCB * pcb, int s_destino) {
 	//Se envia el PCB descomponiendo el struct en string y enviandolo por paquetes
 //	enviar_dato_serializado("RECIBIR_PCB", s_destino);
 
-	/*char * respuesta = recibir_dato_serializado(s_destino);
->>>>>>> 66b9928fcae6b13a76791143805aefa97841206e
-
-	/*char * respuesta = recibir_dato_serializado(s_destino);
-	if (strcmp(respuesta, "ENVIAR_PCB") != 0)
-		return -1;*/
 
 	int offset = 0;
 
@@ -299,7 +293,9 @@ PCB * recibir_pcb(int s_origen) {
 	memcpy(&pcb->etiquetas_size, paquete + offset, sizeof(uint32_t));
 	offset += sizeof(uint32_t);
 
+	pcb->etiquetas = string_new();
 	memcpy(pcb->etiquetas, paquete + offset, pcb->etiquetas_size);
+	pcb->etiquetas[pcb->etiquetas_size] = '\0';
 	offset += pcb->etiquetas_size;
 
 	memcpy(&pcb->exit_code, paquete + offset, sizeof(int32_t));
