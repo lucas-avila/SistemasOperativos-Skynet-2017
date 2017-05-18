@@ -91,6 +91,10 @@ void mostrar_menu_testing_general() {
 		}
 
 			break;
+		case 5: {
+			PCB * pcb = hardcodear_pcb();
+			enviar_pcb_deb(pcb);
+		}
 		case 6: {
 			PCB * pcb = hardcodear_pcb();
 			CPUInfo * cpu0 = list_get(lista_CPUs, 0);
