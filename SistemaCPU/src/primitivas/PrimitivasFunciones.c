@@ -184,10 +184,23 @@ void LIBERAR(t_puntero memoria_serializada) {
  **/
 
 t_valor_variable OBTENER_VALOR_COMPARTIDA(t_nombre_compartida variable){
-printf("Hola obtener valor");
+	t_valor_variable valorVariable;
+	if ((obtener_valor_de_variable_compartida_en_kernel(variable, &valorVariable )) == 0){
+	return valorVariable;
+	}
+	else{
+		printf("Ocurrio un error al buscar la variable %s\n", variable);
+		return -1;
+		}
 }
-
 t_valor_variable ASIGNAR_VALOR_COMPARTIDA(t_nombre_compartida variable, t_valor_variable valor) {
-	printf("Hola ASIGNAR_VALOR_COMPARTIDA");
+	if ((asignar_valor_a_variable_compartida_en_kernel(variable, valor)) == 0){
+		printf("Asignacion exitosa!!\n");
+		return valor;
+	}
+	else {
+		printf("Ocurrio un error al asiignar el valor a la variable\n");
+		return valor;
+	}
 }
 

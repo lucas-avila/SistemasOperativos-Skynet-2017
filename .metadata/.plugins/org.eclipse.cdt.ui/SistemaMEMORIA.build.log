@@ -1,7 +1,6 @@
-21:23:15 **** Clean-only build of configuration Debug for project SistemaMEMORIA ****
-make clean 
-rm -rf  ./src/header/AppConfig.o  ./src/Interfaz.o ./src/Main.o ./src/MemoriaCache.o ./src/MemoriaPrincipal.o ./src/SolicitudesUsuario.o  ./src/header/AppConfig.d  ./src/Interfaz.d ./src/Main.d ./src/MemoriaCache.d ./src/MemoriaPrincipal.d ./src/SolicitudesUsuario.d  SistemaMEMORIA
- 
+14:34:20 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+make: No se hace nada para «all».
 
-21:23:16 Build Finished (took 394ms)
+14:34:21 Build Finished (took 311ms)
 

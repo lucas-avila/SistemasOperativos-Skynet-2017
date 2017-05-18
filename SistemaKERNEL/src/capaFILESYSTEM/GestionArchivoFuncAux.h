@@ -15,6 +15,13 @@ char* grabar_apertura_en_tablas_archivos(char* pathArchivo,  Proceso* proc, bool
 int guardar_archivo_tabla_local_archivo( Proceso* proc, char* pathArchivo, char* modoApertura);
 void guardar_apertura_archivo_tabla_global_archivos(char* pathArchivo);
 char* obtener_modo_apertura(bool flagCreate, bool flagRead, bool flagWrite);
+void abrir_archivo(clienteCPU);
+void cerrar_archivo(clienteCPU);
+void leer_archivo(clienteCPU);
+void borrar_archivo(clienteCPU);
+void mover_cursor_archivo(clienteCPU);
+
+
 
 TablaProcesoArchivo* buscar_registro_TablaProcesoArchivo(char* PID, int FD);
 char* getNombreArchivo(int FD);

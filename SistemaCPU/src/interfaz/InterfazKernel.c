@@ -128,7 +128,7 @@ int asignar_valor_a_variable_compartida_en_kernel(char* nombre_varComp, int valo
 	}
 }
 
-int obtener_valor_a_variable_compartida_en_kernel(char* nombre_varComp, int* valorVariable) {
+int obtener_valor_de_variable_compartida_en_kernel(char* nombre_varComp, int* valorVariable) {
 	enviar_dato_serializado("BUSCAR_VAL_VAR_COMP", servidor_kernel);
 	enviar_dato_serializado(nombre_varComp, servidor_kernel);
 
@@ -143,8 +143,72 @@ int obtener_valor_a_variable_compartida_en_kernel(char* nombre_varComp, int* val
 
 		printf("\n Error en BUSCAR VARIABLE COMPARTIDA: %s", resultado);
 		return -1;
-		/*
-		 * FALTA VER QUE DEVOLVER EN CASO DE ERROR (podria haber error?)
-		*/
+
 	}
+}
+
+
+char* abrir_archivo(char* PID, char* pathArchivo, bool flagCreate, bool flagRead, bool flagWrite){
+
+char* respuesta;
+
+enviar_dato_serializado("ABRIR_ARCHIVO", servidor_kernel);
+enviar_dato_serializado(PID, servidor_kernel);
+enviar_dato_serializado(pathArchivo,servidor_kernel);
+enviar_dato_serializado(string_itoa(flagCreate),servidor_kernel);
+enviar_dato_serializado(string_itoa(flagRead),servidor_kernel);
+enviar_dato_serializado(string_itoa(flagWrite),servidor_kernel);
+
+respuesta = recibir_dato_serializado(servidor_kernel);
+// SI ALGO SALE MAL, DEVUELVE UN MSG DE ERROR--SI SALE BIEN DEVUELVE EL 'FD'
+return respuesta;
+
+}
+
+char* mover_cursor_archivo(char* PID, int FD, int cursor_bloque){
+
+enviar_dato_serializado("MOVER_CURSOR_ARCHIVO", servidor_kernel);
+enviar_dato_serializado(PID, servidor_kernel);
+enviar_dato_serializado(string_itoa(FD),servidor_kernel);
+enviar_dato_serializado(string_itoa(cursor_bloque),servidor_kernel);
+
+char* respuesta = recibir_dato_serializado(servidor_kernel);
+
+return respuesta;
+}
+
+
+char* leer_archivo(char* PID, int FD, int tamanio){
+
+enviar_dato_serializado("LEER_ARCHIVO", servidor_kernel);
+enviar_dato_serializado(PID, servidor_kernel);
+enviar_dato_serializado(string_itoa(FD),servidor_kernel);
+enviar_dato_serializado(string_itoa(tamanio),servidor_kernel);
+
+char* respuesta = recibir_dato_serializado(servidor_kernel);
+
+return respuesta;
+}
+
+
+char* cerrar_archivo(char* PID, int FD){
+
+enviar_dato_serializado("CERRAR_ARCHIVO", servidor_kernel);
+enviar_dato_serializado(PID, servidor_kernel);
+enviar_dato_serializado(string_itoa(FD),servidor_kernel);
+
+char* respuesta = recibir_dato_serializado(servidor_kernel);
+
+return respuesta;
+}
+
+char* borrar_archivo(char* PID, char* rutaArchivo){
+
+enviar_dato_serializado("BORRAR_ARCHIVO", servidor_kernel);
+enviar_dato_serializado(PID, servidor_kernel);
+enviar_dato_serializado(rutaArchivo,servidor_kernel);
+char* respuesta = recibir_dato_serializado(servidor_kernel);
+
+return respuesta;
+
 }

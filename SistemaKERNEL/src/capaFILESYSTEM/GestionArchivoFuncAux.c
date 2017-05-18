@@ -69,3 +69,60 @@ bool verificarFlag(char* flags, char flagBuscado) {
 	}
 	return false;
 }
+
+
+void abrir_archivo(clienteCPU){
+	char* PID = recibir_dato_serializado(clienteCPU);
+	char* pathArchivo = recibir_dato_serializado(clienteCPU);
+	char* flagCreate = recibir_dato_serializado(clienteCPU);
+	char* flagRead = recibir_dato_serializado(clienteCPU);
+	char* flagWrite = recibir_dato_serializado(clienteCPU);
+
+	char* respuesta = CU_ABRIR_ARCHIVO(PID, pathArchivo, flagCreate, flagRead, flagWrite);
+
+	enviar_dato_serializado(respuesta, clienteCPU);
+}
+
+void mover_cursor_archivo(clienteCPU){
+
+	char* PID = recibir_dato_serializado(clienteCPU);
+	int FD = atoi(recibir_dato_serializado(clienteCPU));
+	int cursor_bloque = atoi(recibir_dato_serializado(clienteCPU));
+
+	char* respuesta = CU_MOVER_CURSOR_ARCHIVO(PID, FD, cursor_bloque);
+
+	enviar_dato_serializado(respuesta, clienteCPU);
+
+
+}
+
+void leer_archivo(clienteCPU){
+
+	char* PID = recibir_dato_serializado(clienteCPU);
+	int FD = atoi(recibir_dato_serializado(clienteCPU));
+	int tamanio = atoi(recibir_dato_serializado(clienteCPU));
+
+	char* respuesta = LEER_ARCHIVO(PID, FD, tamanio);
+
+	enviar_dato_serializado(respuesta, clienteCPU);
+
+}
+
+void cerrar_archivo(clienteCPU){
+	char* PID = recibir_dato_serializado(clienteCPU);
+	int FD = atoi(recibir_dato_serializado(clienteCPU));
+
+	char* respuesta = CERRAR_ARCHIVO(PID, FD);
+
+	enviar_dato_serializado(respuesta, clienteCPU);
+}
+
+void borrar_archivo(clienteCPU){
+
+	char* PID = recibir_dato_serializado(clienteCPU);
+	char* rutaArchivo = atoi(recibir_dato_serializado(clienteCPU));
+
+	char* respuesta = BORRAR_ARCHIVO(PID, rutaArchivo);
+
+	enviar_dato_serializado(respuesta, clienteCPU);
+}

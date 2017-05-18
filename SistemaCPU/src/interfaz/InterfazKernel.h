@@ -28,7 +28,23 @@ void enviar_SYSCALL_operacion_leer_archivo_a_kernel(int PID, PCB* pcb);
 void enviar_SYSCALL_operacion_guardar_datos_archivo_a_kernel( int PID, PCB* pcb);
 
 void enviar_SYSCALL_operacion_borrar_archivo_a_kernel(int  PID, PCB* pcb);
+
 int asignar_valor_a_variable_compartida_en_kernel(char* nombre_varComp, int valor_varComp);
-int obtener_valor_a_variable_compartida_en_kernel(char* nombre_varComp, int* valorVariable);
+
+int obtener_valor_de_variable_compartida_en_kernel(char* nombre_varComp, t_valor_variable* valorVariable);
+
+
+//DESDE ACÁ FALATA IMPLEMENTAR ESTAS FUNCIONES, TAMBIEN INVOCARLAS EN LAS PRIMITIVAS.
+char* abrir_archivo(char* PID, char* pathArchivo, bool flagCreate, bool flagRead, bool flagWrite);
+
+char* mover_cursor_archivo(char* PID, int FD, int cursor_bloque);
+
+char* leer_archivo(char* PID, int FD, int tamanio);
+
+char* escribir_archivo(char* PID, int FD, int tamanio, char* contenido);
+
+char* cerrar_archivo(char* PID, int FD);
+
+char* borrar_archivo(char* PID, char* rutaArchivo);
 
 #endif /* HEADER_INTERFAZKERNEL_H_ */

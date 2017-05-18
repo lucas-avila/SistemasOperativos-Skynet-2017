@@ -40,5 +40,5 @@ void LIBERAR(t_puntero puntero);
 
 t_valor_variable OBTENER_VALOR_COMPARTIDA(t_nombre_compartida variable);
 
-t_valor_variable ASIGNAR_VALOR_COMPARTIDA(t_nombre_compartida variable, t_valor_variable valor) ;
+t_valor_variable ASIGNAR_VALOR_COMPARTIDA(t_nombre_compartida variable, t_valor_variable valor);
 #endif /* PRIMITIVAS_PRIMITIVASFUNCIONES_H_ */
