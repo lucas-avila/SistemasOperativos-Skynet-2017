@@ -1,7 +1,18 @@
-21:23:15 **** Clean-only build of configuration Debug for project SistemaMEMORIA ****
-make clean 
-rm -rf  ./src/header/AppConfig.o  ./src/Interfaz.o ./src/Main.o ./src/MemoriaCache.o ./src/MemoriaPrincipal.o ./src/SolicitudesUsuario.o  ./src/header/AppConfig.d  ./src/Interfaz.d ./src/Main.d ./src/MemoriaCache.d ./src/MemoriaPrincipal.d ./src/SolicitudesUsuario.d  SistemaMEMORIA
+23:39:04 **** Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+Building file: ../src/testing/PruebasUnitarias.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/PruebasUnitarias.d" -MT"src/testing/PruebasUnitarias.d" -o "src/testing/PruebasUnitarias.o" "../src/testing/PruebasUnitarias.c"
+Finished building: ../src/testing/PruebasUnitarias.c
  
+Building file: ../src/testing/TestingMemoriaCache.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/TestingMemoriaCache.d" -MT"src/testing/TestingMemoriaCache.d" -o "src/testing/TestingMemoriaCache.o" "../src/testing/TestingMemoriaCache.c"
+../src/testing/TestingMemoriaCache.c:4:28: fatal error: commons/string.h: No existe el archivo o el directorio
+ #include "commons/string.h"
+                            ^
+compilation terminated.
+make: *** [src/testing/TestingMemoriaCache.o] Error 1
 
-21:23:16 Build Finished (took 394ms)
+23:39:04 Build Finished (took 492ms)
 

@@ -1,7 +1,13 @@
-21:23:13 **** Clean-only build of configuration Debug for project SistemaConsola ****
-make clean 
-rm -rf  ./src/header/AppConfig.o ./src/header/ExitCodes.o ./src/header/InterfazKernel.o ./src/header/Semaforo.o ./src/header/Socket.o ./src/header/funcionesUtiles.o  ./src/CONSOLA.o ./src/InterfazKernel.o  ./src/header/AppConfig.d ./src/header/ExitCodes.d ./src/header/InterfazKernel.d ./src/header/Semaforo.d ./src/header/Socket.d ./src/header/funcionesUtiles.d  ./src/CONSOLA.d ./src/InterfazKernel.d  SistemaConsola
- 
+23:42:44 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+Building file: ../src/header/AppConfig.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/AppConfig.d" -MT"src/header/AppConfig.d" -o "src/header/AppConfig.o" "../src/header/AppConfig.c"
+../src/header/AppConfig.c:13:28: fatal error: commons/config.h: No existe el archivo o el directorio
+ #include <commons/config.h>
+                            ^
+compilation terminated.
+make: *** [src/header/AppConfig.o] Error 1
 
-21:23:14 Build Finished (took 784ms)
+23:42:44 Build Finished (took 114ms)
 

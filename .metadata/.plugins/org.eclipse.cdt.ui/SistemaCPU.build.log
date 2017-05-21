@@ -1,6 +1,13 @@
-21:41:23 **** Incremental Build of configuration Debug for project SistemaCPU ****
+23:39:02 **** Build of configuration Debug for project SistemaCPU ****
 make all 
-make: No se hace nada para «all».
+Building file: ../src/testing/testearPrimitivasFunciones.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/testearPrimitivasFunciones.d" -MT"src/testing/testearPrimitivasFunciones.d" -o "src/testing/testearPrimitivasFunciones.o" "../src/testing/testearPrimitivasFunciones.c"
+../src/testing/testearPrimitivasFunciones.c:5:38: fatal error: commons/collections/list.h: No existe el archivo o el directorio
+ #include "commons/collections/list.h"
+                                      ^
+compilation terminated.
+make: *** [src/testing/testearPrimitivasFunciones.o] Error 1
 
-21:41:23 Build Finished (took 356ms)
+23:39:02 Build Finished (took 597ms)
 

@@ -1,7 +1,15 @@
-21:23:14 **** Clean-only build of configuration Debug for project SistemaKERNEL ****
-make clean 
-rm -rf  ./src/testing/TestingCapaFileSystem.o ./src/testing/TestingGeneral.o ./src/testing/TestingInterfazMemoria.o ./src/testing/TestingMenu.o ./src/testing/TestingPlanificacion.o  ./src/planificacion/Planificacion.o ./src/planificacion/PlanificacionFIFO.o ./src/planificacion/PlanificacionRR.o  ./src/interfaz/InterfazCPU.o ./src/interfaz/InterfazConsola.o ./src/interfaz/InterfazFS.o ./src/interfaz/InterfazMemoria.o  ./src/header/AppConfig.o ./src/header/SolicitudesUsuario.o  ./src/general/Semaforo.o ./src/general/Socket.o ./src/general/funcionesUtiles.o  ./src/capaMEMORIA/AdministrarVarCompartidas.o ./src/capaMEMORIA/GestMemoriaFuncionesAux.o ./src/capaMEMORIA/GestionMemoriaDinamica.o  ./src/capaFILESYSTEM/GestionArchivoFuncAux.o ./src/capaFILESYSTEM/GestionArchivos.o ./src/capaFILESYSTEM/TablaGlobalArchivo.o ./src/capaFILESYSTEM/TablaProcesoArchivo.o  ./src/administrarProcesos/Proceso.o  ./src/administrarPCB/EstadisticaProceso.o ./src/administrarPCB/PCBData.o  ./src/KERNEL.o ./src/PCB.o ./src/SolicitudesUsuario.o  ./src/testing/TestingCapaFileSystem.d ./src/testing/TestingGeneral.d ./src/testing/TestingInterfazMemoria.d ./src/testing/TestingMenu.d ./src/testing/TestingPlanificacion.d  ./src/planificacion/Planificacion.d ./src/planificacion/PlanificacionFIFO.d ./src/planificacion/PlanificacionRR.d  ./src/interfaz/InterfazCPU.d ./src/interfaz/InterfazConsola.d ./src/interfaz/InterfazFS.d ./src/interfaz/InterfazMemoria.d  ./src/header/AppConfig.d ./src/header/SolicitudesUsuario.d  ./src/general/Semaforo.d ./src/general/Socket.d ./src/general/funcionesUtiles.d  ./src/capaMEMORIA/AdministrarVarCompartidas.d ./src/capaMEMORIA/GestMemoriaFuncionesAux.d ./src/capaMEMORIA/GestionMemoriaDinamica.d  ./src/capaFILESYSTEM/GestionArchivoFuncAux.d ./src/capaFILESYSTEM/GestionArchivos.d ./src/capaFILESYSTEM/TablaGlobalArchivo.d ./src/capaFILESYSTEM/TablaProcesoArchivo.d  ./src/administrarProcesos/Proceso.d  ./src/administrarPCB/EstadisticaProceso.d ./src/administrarPCB/PCBData.d  ./src/KERNEL.d ./src/PCB.d ./src/SolicitudesUsuario.d  SistemaKERNEL
- 
+23:39:03 **** Build of configuration Debug for project SistemaKERNEL ****
+make all 
+Building file: ../src/testing/TestingCapaFileSystem.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/TestingCapaFileSystem.d" -MT"src/testing/TestingCapaFileSystem.d" -o "src/testing/TestingCapaFileSystem.o" "../src/testing/TestingCapaFileSystem.c"
+In file included from ../src/testing/../capaFILESYSTEM/GestionArchivos.h:11:0,
+                 from ../src/testing/TestingCapaFileSystem.c:4:
+../src/testing/../capaFILESYSTEM/TablaGlobalArchivo.h:10:38: fatal error: commons/collections/list.h: No existe el archivo o el directorio
+ #include "commons/collections/list.h"
+                                      ^
+compilation terminated.
+make: *** [src/testing/TestingCapaFileSystem.o] Error 1
 
-21:23:15 Build Finished (took 613ms)
+23:39:03 Build Finished (took 320ms)
 

@@ -28,11 +28,16 @@ void eliminar_todos_registros() {
 	list_clean(procesos);
 }
 
+void eliminar_proceso(Proceso* proceso) {
+	list_remove(procesos, proceso);
+}
+
 Proceso* buscar_proceso_by_PID(uint32_t PID) {
 	int tamanio = list_size(procesos);
 	int i = 0;
+	Proceso* proceso;
 	for (i = 0; i < tamanio; i++) {
-		Proceso* proceso = list_get(procesos, i);
+		proceso = list_get(procesos, i);
 		if (proceso->PID == PID) {
 			return proceso;
 		}

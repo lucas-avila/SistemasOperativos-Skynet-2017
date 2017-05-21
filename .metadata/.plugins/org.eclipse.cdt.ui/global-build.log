@@ -1769,3 +1769,73 @@ Finished building target: SistemaCPU
 21:41:23 **** Incremental Build of configuration Debug for project SistemaCPU ****
 make all 
 make: No se hace nada para «all».
+23:39:02 **** Build of configuration Debug for project SistemaCPU ****
+make all 
+Building file: ../src/testing/testearPrimitivasFunciones.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/testearPrimitivasFunciones.d" -MT"src/testing/testearPrimitivasFunciones.d" -o "src/testing/testearPrimitivasFunciones.o" "../src/testing/testearPrimitivasFunciones.c"
+../src/testing/testearPrimitivasFunciones.c:5:38: fatal error: commons/collections/list.h: No existe el archivo o el directorio
+ #include "commons/collections/list.h"
+                                      ^
+compilation terminated.
+make: *** [src/testing/testearPrimitivasFunciones.o] Error 1
+23:39:02 **** Build of configuration Debug for project SistemaConsola ****
+make all 
+Building file: ../src/header/AppConfig.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/AppConfig.d" -MT"src/header/AppConfig.d" -o "src/header/AppConfig.o" "../src/header/AppConfig.c"
+../src/header/AppConfig.c:13:28: fatal error: commons/config.h: No existe el archivo o el directorio
+ #include <commons/config.h>
+                            ^
+compilation terminated.
+make: *** [src/header/AppConfig.o] Error 1
+23:39:03 **** Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+make: No se hace nada para «all».
+23:39:03 **** Build of configuration Debug for project SistemaKERNEL ****
+make all 
+Building file: ../src/testing/TestingCapaFileSystem.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/TestingCapaFileSystem.d" -MT"src/testing/TestingCapaFileSystem.d" -o "src/testing/TestingCapaFileSystem.o" "../src/testing/TestingCapaFileSystem.c"
+In file included from ../src/testing/../capaFILESYSTEM/GestionArchivos.h:11:0,
+                 from ../src/testing/TestingCapaFileSystem.c:4:
+../src/testing/../capaFILESYSTEM/TablaGlobalArchivo.h:10:38: fatal error: commons/collections/list.h: No existe el archivo o el directorio
+ #include "commons/collections/list.h"
+                                      ^
+compilation terminated.
+make: *** [src/testing/TestingCapaFileSystem.o] Error 1
+23:39:04 **** Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+Building file: ../src/testing/PruebasUnitarias.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/PruebasUnitarias.d" -MT"src/testing/PruebasUnitarias.d" -o "src/testing/PruebasUnitarias.o" "../src/testing/PruebasUnitarias.c"
+Finished building: ../src/testing/PruebasUnitarias.c
+ 
+Building file: ../src/testing/TestingMemoriaCache.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/TestingMemoriaCache.d" -MT"src/testing/TestingMemoriaCache.d" -o "src/testing/TestingMemoriaCache.o" "../src/testing/TestingMemoriaCache.c"
+../src/testing/TestingMemoriaCache.c:4:28: fatal error: commons/string.h: No existe el archivo o el directorio
+ #include "commons/string.h"
+                            ^
+compilation terminated.
+make: *** [src/testing/TestingMemoriaCache.o] Error 1
+23:42:16 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+Building file: ../src/header/AppConfig.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/AppConfig.d" -MT"src/header/AppConfig.d" -o "src/header/AppConfig.o" "../src/header/AppConfig.c"
+../src/header/AppConfig.c:13:28: fatal error: commons/config.h: No existe el archivo o el directorio
+ #include <commons/config.h>
+                            ^
+compilation terminated.
+make: *** [src/header/AppConfig.o] Error 1
+23:42:44 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+Building file: ../src/header/AppConfig.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/AppConfig.d" -MT"src/header/AppConfig.d" -o "src/header/AppConfig.o" "../src/header/AppConfig.c"
+../src/header/AppConfig.c:13:28: fatal error: commons/config.h: No existe el archivo o el directorio
+ #include <commons/config.h>
+                            ^
+compilation terminated.
+make: *** [src/header/AppConfig.o] Error 1
