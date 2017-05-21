@@ -1,15 +1,172 @@
-23:39:03 **** Build of configuration Debug for project SistemaKERNEL ****
+13:39:00 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
 make all 
 Building file: ../src/testing/TestingCapaFileSystem.c
 Invoking: GCC C Compiler
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/TestingCapaFileSystem.d" -MT"src/testing/TestingCapaFileSystem.d" -o "src/testing/TestingCapaFileSystem.o" "../src/testing/TestingCapaFileSystem.c"
-In file included from ../src/testing/../capaFILESYSTEM/GestionArchivos.h:11:0,
-                 from ../src/testing/TestingCapaFileSystem.c:4:
-../src/testing/../capaFILESYSTEM/TablaGlobalArchivo.h:10:38: fatal error: commons/collections/list.h: No existe el archivo o el directorio
- #include "commons/collections/list.h"
-                                      ^
-compilation terminated.
+In file included from ../src/testing/../capaFILESYSTEM/../administrarProcesos/Proceso.h:15:0,
+                 from ../src/testing/../capaFILESYSTEM/GestionArchivoFuncAux.h:13,
+                 from ../src/testing/TestingCapaFileSystem.c:8:
+../src/testing/../capaFILESYSTEM/../administrarProcesos/../planificacion/Planificacion.h:33:20: error: unknown type name ‘Proceso’
+ void proceso_a_NEW(Proceso * p);
+                    ^
+../src/testing/TestingCapaFileSystem.c: In function ‘inicializar_test’:
+../src/testing/TestingCapaFileSystem.c:19:2: warning: passing argument 1 of ‘strcpy’ makes pointer from integer without a cast [enabled by default]
+  strcpy(pcb->PID, "1241");
+  ^
+In file included from ../src/testing/TestingCapaFileSystem.c:3:0:
+/usr/include/string.h:129:14: note: expected ‘char * __restrict__’ but argument is of type ‘uint32_t’
+ extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+              ^
+../src/testing/TestingCapaFileSystem.c:24:2: warning: passing argument 1 of ‘strcpy’ makes pointer from integer without a cast [enabled by default]
+  strcpy(pcb->PID, "1371");
+  ^
+In file included from ../src/testing/TestingCapaFileSystem.c:3:0:
+/usr/include/string.h:129:14: note: expected ‘char * __restrict__’ but argument is of type ‘uint32_t’
+ extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+              ^
+../src/testing/TestingCapaFileSystem.c:29:2: warning: passing argument 1 of ‘strcpy’ makes pointer from integer without a cast [enabled by default]
+  strcpy(pcb->PID, "1189");
+  ^
+In file included from ../src/testing/TestingCapaFileSystem.c:3:0:
+/usr/include/string.h:129:14: note: expected ‘char * __restrict__’ but argument is of type ‘uint32_t’
+ extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+              ^
+../src/testing/TestingCapaFileSystem.c: In function ‘mostrar_menu_testing_filesystem’:
+../src/testing/TestingCapaFileSystem.c:65:3: warning: implicit declaration of function ‘validarNumeroInput’ [-Wimplicit-function-declaration]
+   opcion = validarNumeroInput(1, 14);
+   ^
+../src/testing/TestingCapaFileSystem.c:70:4: warning: implicit declaration of function ‘TEST_Manual_CU_ABRIR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Manual_CU_ABRIR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:73:4: warning: implicit declaration of function ‘TEST_Manual_CU_MOVER_CURSOR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Manual_CU_MOVER_CURSOR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:76:4: warning: implicit declaration of function ‘TEST_Manual_CU_LEER_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Manual_CU_LEER_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:79:4: warning: implicit declaration of function ‘TEST_Manual_CU_ESCRIBIR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Manual_CU_ESCRIBIR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:82:4: warning: implicit declaration of function ‘TEST_Manual_CU_CERRAR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Manual_CU_CERRAR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:85:4: warning: implicit declaration of function ‘TEST_Manual_CU_BORRAR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Manual_CU_BORRAR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:88:4: warning: implicit declaration of function ‘TEST_Auto_CU_ABRIR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Auto_CU_ABRIR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:91:4: warning: implicit declaration of function ‘TEST_Auto_CU_MOVER_CURSOR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Auto_CU_MOVER_CURSOR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:94:4: warning: implicit declaration of function ‘TEST_Auto_CU_LEER_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Auto_CU_LEER_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:97:4: warning: implicit declaration of function ‘TEST_Auto_CU_ESCRIBIR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Auto_CU_ESCRIBIR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:100:4: warning: implicit declaration of function ‘TEST_Auto_CU_CERRAR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Auto_CU_CERRAR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:103:4: warning: implicit declaration of function ‘TEST_Auto_CU_BORRAR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Auto_CU_BORRAR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:106:4: warning: implicit declaration of function ‘TEST_VER_TABLA_PROCESO’ [-Wimplicit-function-declaration]
+    TEST_VER_TABLA_PROCESO();
+    ^
+../src/testing/TestingCapaFileSystem.c: In function ‘recibir_INPUT’:
+../src/testing/TestingCapaFileSystem.c:119:3: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char (*)[250]’ [-Wformat=]
+   scanf("%s", &dato);
+   ^
+../src/testing/TestingCapaFileSystem.c: At top level:
+../src/testing/TestingCapaFileSystem.c:124:6: warning: conflicting types for ‘TEST_Manual_CU_ABRIR_ARCHIVO’ [enabled by default]
+ void TEST_Manual_CU_ABRIR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:70:4: note: previous implicit declaration of ‘TEST_Manual_CU_ABRIR_ARCHIVO’ was here
+    TEST_Manual_CU_ABRIR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:135:6: warning: conflicting types for ‘TEST_Manual_CU_MOVER_CURSOR_ARCHIVO’ [enabled by default]
+ void TEST_Manual_CU_MOVER_CURSOR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:73:4: note: previous implicit declaration of ‘TEST_Manual_CU_MOVER_CURSOR_ARCHIVO’ was here
+    TEST_Manual_CU_MOVER_CURSOR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:143:6: warning: conflicting types for ‘TEST_Manual_CU_LEER_ARCHIVO’ [enabled by default]
+ void TEST_Manual_CU_LEER_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:76:4: note: previous implicit declaration of ‘TEST_Manual_CU_LEER_ARCHIVO’ was here
+    TEST_Manual_CU_LEER_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:151:6: warning: conflicting types for ‘TEST_Manual_CU_ESCRIBIR_ARCHIVO’ [enabled by default]
+ void TEST_Manual_CU_ESCRIBIR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:79:4: note: previous implicit declaration of ‘TEST_Manual_CU_ESCRIBIR_ARCHIVO’ was here
+    TEST_Manual_CU_ESCRIBIR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:160:6: warning: conflicting types for ‘TEST_Manual_CU_CERRAR_ARCHIVO’ [enabled by default]
+ void TEST_Manual_CU_CERRAR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:82:4: note: previous implicit declaration of ‘TEST_Manual_CU_CERRAR_ARCHIVO’ was here
+    TEST_Manual_CU_CERRAR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:166:6: warning: conflicting types for ‘TEST_Manual_CU_BORRAR_ARCHIVO’ [enabled by default]
+ void TEST_Manual_CU_BORRAR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:85:4: note: previous implicit declaration of ‘TEST_Manual_CU_BORRAR_ARCHIVO’ was here
+    TEST_Manual_CU_BORRAR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:173:6: warning: conflicting types for ‘TEST_Auto_CU_ABRIR_ARCHIVO’ [enabled by default]
+ void TEST_Auto_CU_ABRIR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:88:4: note: previous implicit declaration of ‘TEST_Auto_CU_ABRIR_ARCHIVO’ was here
+    TEST_Auto_CU_ABRIR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:188:6: warning: conflicting types for ‘TEST_Auto_CU_MOVER_CURSOR_ARCHIVO’ [enabled by default]
+ void TEST_Auto_CU_MOVER_CURSOR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:91:4: note: previous implicit declaration of ‘TEST_Auto_CU_MOVER_CURSOR_ARCHIVO’ was here
+    TEST_Auto_CU_MOVER_CURSOR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:191:6: warning: conflicting types for ‘TEST_Auto_CU_LEER_ARCHIVO’ [enabled by default]
+ void TEST_Auto_CU_LEER_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:94:4: note: previous implicit declaration of ‘TEST_Auto_CU_LEER_ARCHIVO’ was here
+    TEST_Auto_CU_LEER_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:194:6: warning: conflicting types for ‘TEST_Auto_CU_ESCRIBIR_ARCHIVO’ [enabled by default]
+ void TEST_Auto_CU_ESCRIBIR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:97:4: note: previous implicit declaration of ‘TEST_Auto_CU_ESCRIBIR_ARCHIVO’ was here
+    TEST_Auto_CU_ESCRIBIR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:197:6: warning: conflicting types for ‘TEST_Auto_CU_CERRAR_ARCHIVO’ [enabled by default]
+ void TEST_Auto_CU_CERRAR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:100:4: note: previous implicit declaration of ‘TEST_Auto_CU_CERRAR_ARCHIVO’ was here
+    TEST_Auto_CU_CERRAR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:200:6: warning: conflicting types for ‘TEST_Auto_CU_BORRAR_ARCHIVO’ [enabled by default]
+ void TEST_Auto_CU_BORRAR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:103:4: note: previous implicit declaration of ‘TEST_Auto_CU_BORRAR_ARCHIVO’ was here
+    TEST_Auto_CU_BORRAR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:204:6: warning: conflicting types for ‘TEST_VER_TABLA_PROCESO’ [enabled by default]
+ void TEST_VER_TABLA_PROCESO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:106:4: note: previous implicit declaration of ‘TEST_VER_TABLA_PROCESO’ was here
+    TEST_VER_TABLA_PROCESO();
+    ^
+../src/testing/TestingCapaFileSystem.c: In function ‘TEST_VER_TABLA_PROCESO’:
+../src/testing/TestingCapaFileSystem.c:207:2: warning: passing argument 1 of ‘buscar_proceso_by_PID’ makes integer from pointer without a cast [enabled by default]
+  t_list* listaArchivos = buscar_proceso_by_PID(PID)->tablaProcesoArchivo;
+  ^
+In file included from ../src/testing/../capaFILESYSTEM/GestionArchivoFuncAux.h:13:0,
+                 from ../src/testing/TestingCapaFileSystem.c:8:
+../src/testing/../capaFILESYSTEM/../administrarProcesos/Proceso.h:37:10: note: expected ‘uint32_t’ but argument is of type ‘char *’
+ Proceso* buscar_proceso_by_PID(uint32_t PID);
+          ^
 make: *** [src/testing/TestingCapaFileSystem.o] Error 1
 
-23:39:03 Build Finished (took 320ms)
+13:39:00 Build Finished (took 341ms)
 

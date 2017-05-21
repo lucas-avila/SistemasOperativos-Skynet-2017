@@ -1,13 +1,41 @@
-23:42:44 **** Incremental Build of configuration Debug for project SistemaConsola ****
+13:38:59 **** Incremental Build of configuration Debug for project SistemaConsola ****
 make all 
 Building file: ../src/header/AppConfig.c
 Invoking: GCC C Compiler
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/AppConfig.d" -MT"src/header/AppConfig.d" -o "src/header/AppConfig.o" "../src/header/AppConfig.c"
-../src/header/AppConfig.c:13:28: fatal error: commons/config.h: No existe el archivo o el directorio
- #include <commons/config.h>
-                            ^
-compilation terminated.
-make: *** [src/header/AppConfig.o] Error 1
+../src/header/AppConfig.c: In function ‘inicializar_configuracion’:
+../src/header/AppConfig.c:27:34: warning: assignment makes pointer from integer without a cast [enabled by default]
+    configuraciones.PUERTO_KERNEL = config_get_int_value(config, "PUERTO_KERNEL");
+                                  ^
+Finished building: ../src/header/AppConfig.c
+ 
+Building file: ../src/header/Estructuras.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/Estructuras.d" -MT"src/header/Estructuras.d" -o "src/header/Estructuras.o" "../src/header/Estructuras.c"
+../src/header/Estructuras.c: In function ‘new_Info_ejecucion’:
+../src/header/Estructuras.c:14:2: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]
+  Info_ejecucion * info_ejecucion = malloc(sizeof(Info_ejecucion));
+  ^
+../src/header/Estructuras.c:14:36: warning: incompatible implicit declaration of built-in function ‘malloc’ [enabled by default]
+  Info_ejecucion * info_ejecucion = malloc(sizeof(Info_ejecucion));
+                                    ^
+../src/header/Estructuras.c: In function ‘eliminar_info_proceso’:
+../src/header/Estructuras.c:31:2: warning: passing argument 2 of ‘list_remove’ makes integer from pointer without a cast [enabled by default]
+  list_remove(Info_procesos, info_ejecucion);
+  ^
+In file included from ../src/header/Estructuras.h:12:0,
+                 from ../src/header/Estructuras.c:7:
+/usr/include/commons/collections/list.h:120:8: note: expected ‘int’ but argument is of type ‘struct Info_ejecucion *’
+  void *list_remove(t_list *, int index);
+        ^
+../src/header/Estructuras.c: At top level:
+../src/header/Estructuras.c:34:32: error: unknown type name ‘uint32_t’
+ int buscar_indice_Info_proceso(uint32_t PID) {
+                                ^
+../src/header/Estructuras.c:47:37: error: unknown type name ‘uint32_t’
+ Info_ejecucion* buscar_info_por_PID(uint32_t PID) {
+                                     ^
+make: *** [src/header/Estructuras.o] Error 1
 
-23:42:44 Build Finished (took 114ms)
+13:38:59 Build Finished (took 271ms)
 

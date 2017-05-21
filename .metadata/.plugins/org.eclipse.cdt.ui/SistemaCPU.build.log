@@ -1,13 +1,14 @@
-23:39:02 **** Build of configuration Debug for project SistemaCPU ****
+13:38:59 **** Incremental Build of configuration Debug for project SistemaCPU ****
 make all 
 Building file: ../src/testing/testearPrimitivasFunciones.c
 Invoking: GCC C Compiler
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/testearPrimitivasFunciones.d" -MT"src/testing/testearPrimitivasFunciones.d" -o "src/testing/testearPrimitivasFunciones.o" "../src/testing/testearPrimitivasFunciones.c"
-../src/testing/testearPrimitivasFunciones.c:5:38: fatal error: commons/collections/list.h: No existe el archivo o el directorio
- #include "commons/collections/list.h"
-                                      ^
+In file included from ../src/testing/testearPrimitivasFunciones.c:14:0:
+../src/testing/../procesador/Ejecucion.h:11:27: fatal error: parser/parser.h: No existe el archivo o el directorio
+ #include "parser/parser.h"
+                           ^
 compilation terminated.
 make: *** [src/testing/testearPrimitivasFunciones.o] Error 1
 
-23:39:02 Build Finished (took 597ms)
+13:38:59 Build Finished (took 303ms)
 
