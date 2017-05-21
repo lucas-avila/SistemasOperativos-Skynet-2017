@@ -12,8 +12,6 @@
 #include <commons/collections/list.h>
 
 
-
-
 typedef struct {
 
 	int pid;
@@ -23,18 +21,5 @@ typedef struct {
 } Info_ejecucion;
 
 t_list* Info_procesos;
-
-void inicializar_lista_Info_procesos();
-
-Info_ejecucion* new_Info_ejecucion(int pid);
-
-void agregar_proceso(Info_ejecucion* info_ejecucion);
-void eliminar_todas_infos();
-void eliminar_info_proceso(Info_ejecucion* info_ejecucion);
-int buscar_indice_Info_proceso(uint32_t PID);
-
-Info_ejecucion* buscar_info_por_PID(uint32_t PID);
-
-
 
 #endif /* HEADER_ESTRUCTURAS_H_ */

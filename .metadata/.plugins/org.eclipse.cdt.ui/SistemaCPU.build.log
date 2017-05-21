@@ -1,4 +1,4 @@
-13:38:59 **** Incremental Build of configuration Debug for project SistemaCPU ****
+13:46:59 **** Incremental Build of configuration Debug for project SistemaCPU ****
 make all 
 Building file: ../src/testing/testearPrimitivasFunciones.c
 Invoking: GCC C Compiler
@@ -10,5 +10,5 @@ In file included from ../src/testing/testearPrimitivasFunciones.c:14:0:
 compilation terminated.
 make: *** [src/testing/testearPrimitivasFunciones.o] Error 1
 
-13:38:59 Build Finished (took 303ms)
+13:46:59 Build Finished (took 113ms)
 

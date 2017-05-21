@@ -1,14 +1,5 @@
-13:38:59 **** Incremental Build of configuration Debug for project SistemaConsola ****
+13:46:59 **** Incremental Build of configuration Debug for project SistemaConsola ****
 make all 
-Building file: ../src/header/AppConfig.c
-Invoking: GCC C Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/AppConfig.d" -MT"src/header/AppConfig.d" -o "src/header/AppConfig.o" "../src/header/AppConfig.c"
-../src/header/AppConfig.c: In function ‘inicializar_configuracion’:
-../src/header/AppConfig.c:27:34: warning: assignment makes pointer from integer without a cast [enabled by default]
-    configuraciones.PUERTO_KERNEL = config_get_int_value(config, "PUERTO_KERNEL");
-                                  ^
-Finished building: ../src/header/AppConfig.c
- 
 Building file: ../src/header/Estructuras.c
 Invoking: GCC C Compiler
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/Estructuras.d" -MT"src/header/Estructuras.d" -o "src/header/Estructuras.o" "../src/header/Estructuras.c"
@@ -37,5 +28,5 @@ In file included from ../src/header/Estructuras.h:12:0,
                                      ^
 make: *** [src/header/Estructuras.o] Error 1
 
-13:38:59 Build Finished (took 271ms)
+13:46:59 Build Finished (took 61ms)
 

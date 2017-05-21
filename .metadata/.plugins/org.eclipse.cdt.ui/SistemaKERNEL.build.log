@@ -1,4 +1,4 @@
-13:39:00 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+13:46:59 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
 make all 
 Building file: ../src/testing/TestingCapaFileSystem.c
 Invoking: GCC C Compiler
@@ -168,5 +168,5 @@ In file included from ../src/testing/../capaFILESYSTEM/GestionArchivoFuncAux.h:1
           ^
 make: *** [src/testing/TestingCapaFileSystem.o] Error 1
 
-13:39:00 Build Finished (took 341ms)
+13:47:00 Build Finished (took 286ms)
 
