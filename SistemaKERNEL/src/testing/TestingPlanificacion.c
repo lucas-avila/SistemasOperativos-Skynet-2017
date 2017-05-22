@@ -117,12 +117,8 @@ void crear_PCB_TEST() {
 		almacenar_Bytes_de_Pagina(string_itoa(procesoPrueba->PID), string_itoa(indiceNuevo->pagina), string_itoa(indiceNuevo->byte_inicial_codigo), string_itoa(indiceNuevo->byte_final_codigo - indiceNuevo->byte_inicial_codigo), sentencias[i]);
 	}
 
-	IndiceEtiqueta * eti = malloc(sizeof(IndiceEtiqueta));
-	eti->identificador_funcion = string_new();
-	eti->nombre_etiqueta = string_new();
-	string_append(&eti->identificador_funcion, "allahu akbar garfield");
-	string_append(&eti->nombre_etiqueta, "shalom shabat jon");
-	eti->valor_program_counter = 400;
-	procesoPrueba->etiqueta = eti;
+	procesoPrueba->etiquetas = string_new();
+	string_append(&procesoPrueba->etiquetas, "holachaunorevimos");
+	procesoPrueba->etiquetas_size = strlen(procesoPrueba->etiquetas);
 
 }

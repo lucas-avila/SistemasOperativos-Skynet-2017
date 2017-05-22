@@ -1,4 +1,16 @@
+#include "PCBData.h"
+
+#include <commons/collections/list.h>
+#include <commons/string.h>
 #include <parser/metadata_program.h>
+#include <parser/parser.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "../header/PCB.h"
+#include "../interfaz/InterfazMemoria.h"
+
 
 /*
 	typedef struct {
@@ -18,21 +30,30 @@
 		int				cantidad_de_etiquetas;
 	} t_metadata_program;
  */
-void procesar_programa(char * programa){
+
+void procesar_programa(char * programa, PCB * pcb){
 	t_metadata_program * meta = metadata_desde_literal(programa);
-	int program_counter = 0;
 
-	while(program_counter < meta->instrucciones_size){
-		char * instruccion = string_substring(programa, meta->instrucciones_serializado[program_counter].start, meta->instrucciones_serializado[program_counter].offset);
-		instruccion[meta->instrucciones_serializado[program_counter].offset] = '\0';
+	pcb->etiquetas = meta->etiquetas;
+	pcb->etiquetas_size = meta->etiquetas_size;
 
-		printf("%s\n", instruccion);
-		program_counter++;
-	}
-
-
-	int debugeame = 0;
+	int resultado = enviar_programa_memoria(meta, pcb, programa);
+	printf("LLego el programa de consola, prueba (si enviaste el completo.ansisop te tira la primera etiqueta): %s\n", meta->etiquetas);
+	//TODO enviar_programa_memoria deberia devolver algo que no sea 1 .-.
+		/* La variable RESULTADO es para saber si se le pudo
+		 * asignar memoria o no. En el caso de que SI el
+		 * resultado va a ser mayor a 0 y se utilizará para
+		 * actualizar el valor de cantidad_paginas del PCB.
+		 * En el caso de que NO, entonces su valor sera menor
+		 * a 0 y se empleara como EXIT_CODE.
+		 */
 }
 
-
+/*
+ * //ejemplo de busqueda de etiqueta espeficifica en la lista serializada
+	char etiqueta[] = "Proximo";
+	t_puntero_instruccion instruccion_obtenida = metadata_buscar_etiqueta(etiqueta, meta->etiquetas, meta->etiquetas_size);
+	printf("Instruccion correspondiente a la etiqueta imprimir es %s\n", string_substring(programa, meta->instrucciones_serializado[instruccion_obtenida].start, meta->instrucciones_serializado[instruccion_obtenida].offset));
+ *
+ */
 

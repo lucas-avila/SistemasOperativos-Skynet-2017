@@ -12,9 +12,8 @@ void inicializar_lista_procesos() {
 }
 
 Proceso* new_Proceso(PCB* pcb) {
-	Proceso* proceso = malloc(sizeof(Proceso));
-	proceso->PID = malloc(strlen(pcb->PID) + 1);
-	strcpy(proceso->PID, pcb->PID);
+	Proceso * proceso = malloc(sizeof(Proceso));
+	proceso->PID = pcb->PID;
 	proceso->activo = 1;
 	proceso->pcb = pcb;
 	proceso->tablaProcesoArchivo = list_create();
@@ -29,12 +28,12 @@ void eliminar_todos_registros() {
 	list_clean(procesos);
 }
 
-Proceso* buscar_proceso_by_PID(char* PID) {
+Proceso* buscar_proceso_by_PID(uint32_t PID) {
 	int tamanio = list_size(procesos);
 	int i = 0;
 	for (i = 0; i < tamanio; i++) {
 		Proceso* proceso = list_get(procesos, i);
-		if (strcmp(proceso->PID, PID) == 0) {
+		if (proceso->PID == PID) {
 			return proceso;
 		}
 	}

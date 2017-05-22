@@ -1,11 +1,14 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-#include <commons/collections/list.h>
-#include <commons/string.h>
-
 #include "header/PCB.h"
+
+#include <commons/string.h>
+#include <semaphore.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/socket.h>
+
+#include "general/Semaforo.h"
 #include "general/Socket.h"
+
 #define MIN_PIDS 1000
 
 LISTA_SERIALIZADA * serializar_con_header(t_list * lista, char * tipo_lista);
@@ -13,11 +16,26 @@ LISTA_DESERIALIZADA * deserializar_con_header(char * cadena, char * tipo_lista);
 
 int pids_reg = MIN_PIDS;
 
+PCB * crear_pcb() {
+	PCB * pcb = malloc(sizeof(PCB));
+
+	//sem_wait(mutex_pids);
+	pcb->PID = pids_reg;
+	pids_reg++;
+	//sem_post(mutex_pids);
+	pcb->etiquetas = string_new();
+	pcb->etiquetas_size = 0;
+	pcb->codigo = list_create();
+	pcb->pila = list_create();
+
+	return pcb;
+}
+
 PCB * hardcodear_pcb(){
 	PCB * pcb = crear_pcb();
 				pcb->RR = 22;
 				pcb->cantidad_codigo = 9;
-				pcb->cantidad_etiqueta = 7;
+
 				pcb->cantidad_paginas_codigo = 567;
 				pcb->cantidad_rafagas = 30;
 				pcb->cantidad_rafagas_ejecutadas = 20;
@@ -25,13 +43,9 @@ PCB * hardcodear_pcb(){
 				pcb->pagina_inicial_stack = 0;
 				pcb->program_counter = 23;
 
-				IndiceEtiqueta * eti = malloc(sizeof(IndiceEtiqueta));
-				eti->identificador_funcion = string_new();
-				eti->nombre_etiqueta = string_new();
-				string_append(&eti->identificador_funcion, "allahu akbar garfield");
-				string_append(&eti->nombre_etiqueta, "shalom shabat jon");
-				eti->valor_program_counter = 400;
-				pcb->etiqueta = eti;
+				pcb->etiquetas = string_new();
+				string_append(&pcb->etiquetas, "holachaunorevimos");
+				pcb->etiquetas_size = strlen(pcb->etiquetas);
 
 				IndiceCodigo * in1 = malloc(sizeof(IndiceCodigo));
 				IndiceCodigo * in2 = malloc(sizeof(IndiceCodigo));
@@ -111,36 +125,18 @@ LISTA_SERIALIZADA * recibir_estructura_serializada(int socket_conexion) {
 	return l;
 }
 
-PCB * crear_pcb() {
-	PCB * pcb = malloc(sizeof(PCB));
-
-	pcb->PID = pids_reg;
-	pids_reg++;
-
-	return pcb;
-}
-
 int enviar_pcb(PCB * pcb, int s_destino) {
 	//Se envia el PCB descomponiendo el struct en string y enviandolo por paquetes
 //	enviar_dato_serializado("RECIBIR_PCB", s_destino);
 
-	/*char * respuesta = recibir_dato_serializado(s_destino);
->>>>>>> 66b9928fcae6b13a76791143805aefa97841206e
-
-	/*char * respuesta = recibir_dato_serializado(s_destino);
-	if (strcmp(respuesta, "ENVIAR_PCB") != 0)
-		return -1;*/
 
 	int offset = 0;
 
 	LISTA_SERIALIZADA * buffer_lista_codigo = serializar_con_header(pcb->codigo, "LISTA_CODIGO");
 	LISTA_SERIALIZADA * buffer_lista_pila = serializar_con_header(pcb->pila, "LISTA_PILA");
-	char * buffer_indice_etiqueta = string_new();
 
 
-	int size_indice_etiqueta = serializar_indice_etiqueta(pcb->etiqueta, &buffer_indice_etiqueta);
-
-	int size = sizeof(uint32_t) * 4 + sizeof(int32_t) * 5 + buffer_lista_codigo->size + buffer_lista_pila->size + size_indice_etiqueta;
+	int size = sizeof(uint32_t) * 4 + sizeof(int32_t) * 5 + buffer_lista_codigo->size + buffer_lista_pila->size + pcb->etiquetas_size;
 	char * paquete = malloc(size);
 
 	memcpy(paquete + offset, &pcb->PID, sizeof(uint32_t));
@@ -159,11 +155,12 @@ int enviar_pcb(PCB * pcb, int s_destino) {
 	memcpy(paquete + offset, buffer_lista_pila->buffer, buffer_lista_pila->size);
 	offset += buffer_lista_pila->size;
 
-	memcpy(paquete + offset, buffer_indice_etiqueta, size_indice_etiqueta);
-	offset += size_indice_etiqueta;
-
-	memcpy(paquete + offset, &pcb->cantidad_etiqueta, sizeof(uint32_t));
+	memcpy(paquete + offset, &pcb->etiquetas_size, sizeof(uint32_t));
 	offset += sizeof(uint32_t);
+
+	memcpy(paquete + offset, pcb->etiquetas, pcb->etiquetas_size);
+	offset += pcb->etiquetas_size;
+
 	memcpy(paquete + offset, &pcb->exit_code, sizeof(int32_t));
 	offset += sizeof(int32_t);
 	memcpy(paquete + offset, &pcb->pagina_inicial_stack, sizeof(int32_t));
@@ -171,6 +168,8 @@ int enviar_pcb(PCB * pcb, int s_destino) {
 	memcpy(paquete + offset, &pcb->RR, sizeof(int32_t));
 	offset += sizeof(int32_t);
 	memcpy(paquete + offset, &pcb->cantidad_rafagas, sizeof(int32_t));
+	offset += sizeof(int32_t);
+	memcpy(paquete + offset, &pcb->quantum_sleep, sizeof(int32_t));
 	offset += sizeof(int32_t);
 	memcpy(paquete + offset, &pcb->cantidad_rafagas_ejecutadas, sizeof(int32_t));
 	offset += sizeof(int32_t);
@@ -200,26 +199,13 @@ PCB * recibir_pcb_deb(char * paquete) {
 	pcb->pila = lista_pila->lista;
 	offset += lista_pila->size;
 
-	pcb->etiqueta = malloc(sizeof(IndiceEtiqueta));
-	uint32_t size_identificador_funcion = 0;
-	uint32_t size_nombre_etiqueta = 0;
-	memcpy(&size_identificador_funcion, paquete + offset, sizeof(uint32_t));
-	offset += sizeof(uint32_t);
-	pcb->etiqueta->identificador_funcion = string_new();
-	memcpy(pcb->etiqueta->identificador_funcion, paquete + offset, size_identificador_funcion);
-	pcb->etiqueta->identificador_funcion[size_identificador_funcion] = '\0';
-	offset += size_identificador_funcion;
-	memcpy(&size_nombre_etiqueta, paquete + offset, sizeof(uint32_t));
-	offset += sizeof(uint32_t);
-	pcb->etiqueta->nombre_etiqueta = string_new();
-	memcpy(pcb->etiqueta->nombre_etiqueta, paquete + offset, size_nombre_etiqueta);
-	pcb->etiqueta->nombre_etiqueta[size_nombre_etiqueta] = '\0';
-	offset += size_nombre_etiqueta;
-	memcpy(&pcb->etiqueta->valor_program_counter, paquete + offset, sizeof(uint32_t));
+	memcpy(&pcb->etiquetas_size, paquete + offset, sizeof(uint32_t));
 	offset += sizeof(uint32_t);
 
-	memcpy(&pcb->cantidad_etiqueta, paquete + offset, sizeof(uint32_t));
-	offset += sizeof(uint32_t);
+	pcb->etiquetas = string_new();
+	memcpy(pcb->etiquetas, paquete + offset, pcb->etiquetas_size);
+	pcb->etiquetas[pcb->etiquetas_size] = '\0';
+	offset += pcb->etiquetas_size;
 
 	memcpy(&pcb->exit_code, paquete + offset, sizeof(int32_t));
 	offset += sizeof(int32_t);
@@ -228,6 +214,8 @@ PCB * recibir_pcb_deb(char * paquete) {
 	memcpy(&pcb->RR, paquete + offset, sizeof(int32_t));
 	offset += sizeof(int32_t);
 	memcpy(&pcb->cantidad_rafagas, paquete + offset, sizeof(int32_t));
+	offset += sizeof(int32_t);
+	memcpy(&pcb->quantum_sleep, paquete + offset, sizeof(int32_t));
 	offset += sizeof(int32_t);
 	memcpy(&pcb->cantidad_rafagas_ejecutadas, paquete + offset, sizeof(int32_t));
 	offset += sizeof(int32_t);
@@ -238,12 +226,12 @@ PCB * recibir_pcb_deb(char * paquete) {
 PCB * enviar_pcb_deb(PCB * pcb){
 	int offset = 0;
 
+
 	LISTA_SERIALIZADA * buffer_lista_codigo = serializar_con_header(pcb->codigo, "LISTA_CODIGO");
 	LISTA_SERIALIZADA * buffer_lista_pila = serializar_con_header(pcb->pila, "LISTA_PILA");
-	char * buffer_indice_etiqueta = string_new();
-	int size_indice_etiqueta = serializar_indice_etiqueta(pcb->etiqueta, &buffer_indice_etiqueta);
 
-	int size = sizeof(uint32_t) * 4 + sizeof(int32_t) * 5 + buffer_lista_codigo->size + buffer_lista_pila->size + size_indice_etiqueta;
+
+	int size = sizeof(uint32_t) * 4 + sizeof(int32_t) * 5 + buffer_lista_codigo->size + buffer_lista_pila->size + pcb->etiquetas_size;
 	char * paquete = malloc(size);
 
 	memcpy(paquete + offset, &pcb->PID, sizeof(uint32_t));
@@ -262,11 +250,12 @@ PCB * enviar_pcb_deb(PCB * pcb){
 	memcpy(paquete + offset, buffer_lista_pila->buffer, buffer_lista_pila->size);
 	offset += buffer_lista_pila->size;
 
-	memcpy(paquete + offset, buffer_indice_etiqueta, size_indice_etiqueta);
-	offset += size_indice_etiqueta;
-
-	memcpy(paquete + offset, &pcb->cantidad_etiqueta, sizeof(uint32_t));
+	memcpy(paquete + offset, &pcb->etiquetas_size, sizeof(uint32_t));
 	offset += sizeof(uint32_t);
+
+	memcpy(paquete + offset, pcb->etiquetas, pcb->etiquetas_size);
+	offset += pcb->etiquetas_size;
+
 	memcpy(paquete + offset, &pcb->exit_code, sizeof(int32_t));
 	offset += sizeof(int32_t);
 	memcpy(paquete + offset, &pcb->pagina_inicial_stack, sizeof(int32_t));
@@ -274,6 +263,8 @@ PCB * enviar_pcb_deb(PCB * pcb){
 	memcpy(paquete + offset, &pcb->RR, sizeof(int32_t));
 	offset += sizeof(int32_t);
 	memcpy(paquete + offset, &pcb->cantidad_rafagas, sizeof(int32_t));
+	offset += sizeof(int32_t);
+	memcpy(paquete + offset, &pcb->quantum_sleep, sizeof(int32_t));
 	offset += sizeof(int32_t);
 	memcpy(paquete + offset, &pcb->cantidad_rafagas_ejecutadas, sizeof(int32_t));
 	offset += sizeof(int32_t);
@@ -306,26 +297,13 @@ PCB * recibir_pcb(int s_origen) {
 	pcb->pila = lista_pila->lista;
 	offset += lista_pila->size;
 
-	pcb->etiqueta = malloc(sizeof(IndiceEtiqueta));
-	uint32_t size_identificador_funcion = 0;
-	uint32_t size_nombre_etiqueta = 0;
-	memcpy(&size_identificador_funcion, paquete + offset, sizeof(uint32_t));
-	offset += sizeof(uint32_t);
-	pcb->etiqueta->identificador_funcion = malloc(sizeof(char) * size_identificador_funcion);
-	memcpy(pcb->etiqueta->identificador_funcion, paquete + offset, size_identificador_funcion);
-	pcb->etiqueta->identificador_funcion[size_identificador_funcion] = '\0';
-	offset += size_identificador_funcion;
-	memcpy(&size_nombre_etiqueta, paquete + offset, sizeof(uint32_t));
-	offset += sizeof(uint32_t);
-	pcb->etiqueta->nombre_etiqueta = malloc(sizeof(char) * size_nombre_etiqueta);
-	memcpy(pcb->etiqueta->nombre_etiqueta, paquete + offset, size_nombre_etiqueta);
-	pcb->etiqueta->nombre_etiqueta[size_nombre_etiqueta] = '\0';
-	offset += size_nombre_etiqueta;
-	memcpy(&pcb->etiqueta->valor_program_counter, paquete + offset, sizeof(uint32_t));
+	memcpy(&pcb->etiquetas_size, paquete + offset, sizeof(uint32_t));
 	offset += sizeof(uint32_t);
 
-	memcpy(&pcb->cantidad_etiqueta, paquete + offset, sizeof(uint32_t));
-	offset += sizeof(uint32_t);
+	pcb->etiquetas = string_new();
+	memcpy(pcb->etiquetas, paquete + offset, pcb->etiquetas_size);
+	pcb->etiquetas[pcb->etiquetas_size] = '\0';
+	offset += pcb->etiquetas_size;
 
 	memcpy(&pcb->exit_code, paquete + offset, sizeof(int32_t));
 	offset += sizeof(int32_t);
@@ -335,28 +313,12 @@ PCB * recibir_pcb(int s_origen) {
 	offset += sizeof(int32_t);
 	memcpy(&pcb->cantidad_rafagas, paquete + offset, sizeof(int32_t));
 	offset += sizeof(int32_t);
+	memcpy(&pcb->quantum_sleep, paquete + offset, sizeof(int32_t));
+	offset += sizeof(int32_t);
 	memcpy(&pcb->cantidad_rafagas_ejecutadas, paquete + offset, sizeof(int32_t));
 	offset += sizeof(int32_t);
 
 	return pcb;
-}
-
-int serializar_indice_etiqueta(IndiceEtiqueta * in, char ** buffer){
-	uint32_t size_identificador_funcion = strlen(in->identificador_funcion);
-	uint32_t size_nombre_etiqueta = strlen(in->nombre_etiqueta);
-	int size = sizeof(uint32_t) * 3 + size_identificador_funcion + size_nombre_etiqueta;
-	*buffer = malloc(size);
-	int offset = 0;
-	memcpy(*buffer, &size_identificador_funcion, sizeof(uint32_t));
-	offset += sizeof(uint32_t);
-	memcpy(*buffer + offset, in->identificador_funcion, size_identificador_funcion);
-	offset += size_identificador_funcion;
-	memcpy(*buffer + offset, &size_nombre_etiqueta, sizeof(uint32_t));
-	offset += sizeof(uint32_t);
-	memcpy(*buffer + offset, in->nombre_etiqueta, size_nombre_etiqueta);
-	offset += size_nombre_etiqueta;
-	memcpy(*buffer + offset, &in->valor_program_counter, sizeof(uint32_t));
-	return size;
 }
 
 LISTA_SERIALIZADA * serializar_con_header(t_list * lista, char * tipo_lista){

@@ -8,6 +8,9 @@
 #ifndef ADMINISTRARPCB_PCBDATA_H_
 #define ADMINISTRARPCB_PCBDATA_H_
 
-void procesar_programa(char * programa);
+#include "../header/PCB.h"
+
+
+void procesar_programa(char * programa, PCB * pcb);
 
 #endif /* ADMINISTRARPCB_PCBDATA_H_ */

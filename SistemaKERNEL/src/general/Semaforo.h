@@ -10,7 +10,8 @@
 
 #include <semaphore.h>
 
-
+//LISTA DE SEMAFOROS GLOBALES
+sem_t * mutex_pids;
 
 void inicializar_semaforo(sem_t* variable_semaforo);
 void destruir_semaforo(sem_t* variable_semaforo);

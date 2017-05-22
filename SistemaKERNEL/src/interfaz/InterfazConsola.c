@@ -44,8 +44,7 @@ void CU_Recibir_Conexiones_Consola(int clienteConsola) {
 		} else if (strcmp(codigo_operacion, "FINALIZAR_PROGRAMA") == 0) {
 			PCB * pcb_a_eliminar;
 			int pid = atoi(recibir_dato_serializado(clienteConsola));
-			pcb_a_eliminar = actualizar_exit_code(-7, pid);
-			finalizar_proceso(pcb_a_eliminar);
+			verificar_estado(pid);
 		} else if (strcmp(codigo_operacion, "") == 0) {
 			close(clienteConsola);
 			controlSeguir = 0;

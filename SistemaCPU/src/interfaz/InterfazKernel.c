@@ -1,17 +1,20 @@
-#include<stdlib.h>
-#include<stdio.h>
-#include<string.h>
+#include "InterfazKernel.h"
+
+#include <commons/collections/list.h>
+#include <commons/string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 #include "../general/Socket.h"
-#include "../header/PCB.h"
 #include "../header/AppConfig.h"
-#include "../primitivas/PrimitivasFunciones.h"
+#include "../header/PCB.h"
+#include "../primitivas/EstructurasDeDatosPrimitivas.h"
 #include "../primitivas/FuncionesAuxiliares.h"
 
-#include "InterfazKernel.h"
-#include "commons/string.h"
 /* se encarga de recibir y llenar toda la estructura struct PCB */
 PCB* recibir_PCB_de_kernel() {
-	int kernel =servidor_kernel;
+	int kernel = servidor_kernel;
 	PCB * pcb = recibir_pcb(kernel);
 
 	printf("El fucking PCB es :\n");
@@ -48,15 +51,14 @@ PCB* recibir_PCB_de_kernel() {
 	}
 
 	printf("Indice etiqueta:\n");
-	printf("--id funcion: %s\n--nombre etiqueta: %s\n--valor program counter: %d\n", pcb->etiqueta->identificador_funcion, pcb->etiqueta->nombre_etiqueta, pcb->etiqueta->valor_program_counter);
-
-	printf("Cantidad etiqueta: %d\n", pcb->cantidad_etiqueta);
+	printf("--no voy a hacer una funcion que devuelva todas las etiquetas dame el nombre de una etiqueta y te tiro el PC correspondiente, asi funcionan las cosas mostro\n");
 	printf("Exit code: %d\n", pcb->exit_code);
 	printf("Pagina inicial de la pila: %d\n", pcb->pagina_inicial_stack);
 
 	printf("Cosas de planificacion\n");
 	printf("RR (0->fifo, 1->RR): %d\n", pcb->RR);
 	printf("Cantidad de rafagas para RR: %d\n", pcb->cantidad_rafagas);
+	printf("Quantum sleep %d\n", pcb->quantum_sleep);
 	printf("Cantidad de rafagas ejecutadas: %d\n", pcb->cantidad_rafagas_ejecutadas);
 	return pcb;
 }

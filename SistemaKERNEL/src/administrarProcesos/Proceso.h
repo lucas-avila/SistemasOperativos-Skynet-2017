@@ -12,11 +12,18 @@
 #include "../capaFILESYSTEM/TablaProcesoArchivo.h"
 
 #include "commons/collections/list.h"
+#include "../planificacion/Planificacion.h"
+
 typedef struct {
-	char* PID;
+	uint32_t PID;
 	PCB* pcb;
 	t_list* tablaProcesoArchivo;
 	int activo;
+
+	COLA cola;
+	uint32_t consola;
+	uint32_t operaciones_privilegiadas_ejecutadas;
+	uint32_t syscalls_ejecutadas;
 } Proceso;
 
 t_list* procesos;
@@ -27,6 +34,6 @@ Proceso* new_Proceso(PCB* pcb);
 
 void agregar_proceso(Proceso* proceso);
 
-Proceso* buscar_proceso_by_PID(char* PID);
+Proceso* buscar_proceso_by_PID(uint32_t PID);
 
 #endif /* ADMINISTRARPROCESOS_PROCESO_H_ */

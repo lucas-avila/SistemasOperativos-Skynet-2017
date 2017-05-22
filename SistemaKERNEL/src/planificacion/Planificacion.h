@@ -30,6 +30,8 @@ void inicializar_lista_CPU();
 
 void inicializar_colas_5_estados();
 
+void proceso_a_NEW(Proceso * p);
+
 void mover_PCB_de_cola(PCB* pcb, COLA origen, COLA destino);
 
 CPUInfo* obtener_CPU_Disponible();

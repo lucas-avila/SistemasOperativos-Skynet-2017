@@ -4,14 +4,20 @@
  *  Created on: 1/4/2017
  *      Author: utnso
  */
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-#include<unistd.h>
-#include "../header/AppConfig.h"
-#include "../general/Socket.h"
+
 #include "InterfazMemoria.h"
+
+#include <commons/collections/list.h>
+#include <commons/string.h>
+#include <parser/metadata_program.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "../administrarPCB/PCBData.h"
 #include "../general/funcionesUtiles.h"
+#include "../general/Socket.h"
+#include "../header/AppConfig.h"
+#include "../header/PCB.h"
 
 
 
@@ -64,6 +70,40 @@ int is_valid_line(char* line){
 	return 1;
 }
 
+int enviar_programa_memoria(t_metadata_program * meta, PCB * pcb, char * programa){
+	int paginaSentencia = atoi(asignar_Paginas_Programa(string_itoa(pcb->PID), "1"));
+
+	int cantidadSentencias = meta->instrucciones_size;
+	int i = 0;
+	int indiceInicial = 0;
+	for (i = 0; i < cantidadSentencias; i++) {
+		char * instruccion = string_substring(programa, meta->instrucciones_serializado[i].start, meta->instrucciones_serializado[i].offset);
+		instruccion[meta->instrucciones_serializado[i].offset] = '\0';
+
+		IndiceCodigo* indiceNuevo = crear_IndiceCodigo(i, indiceInicial, strlen(instruccion), paginaSentencia);
+		indiceInicial = indiceInicial + strlen(instruccion);
+		list_add(pcb->codigo, indiceNuevo);
+
+		almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(indiceNuevo->pagina), string_itoa(indiceNuevo->byte_inicial_codigo), string_itoa(indiceNuevo->byte_final_codigo - indiceNuevo->byte_inicial_codigo), instruccion);
+		free(instruccion);
+	}
+	return 0;
+}
+
+IndiceCodigo* crear_IndiceCodigo(int programCounter, int byteInicial, int tamanio, int pagina) {
+	IndiceCodigo* indice1 = malloc(sizeof(IndiceCodigo));
+	indice1->byte_inicial_codigo = byteInicial;
+	indice1->byte_final_codigo = byteInicial + tamanio;
+	indice1->pagina = pagina;
+	indice1->program_counter = programCounter;
+	return indice1;
+}
+
+/*
+ *
+ *
+ * GUARDO LA FUNCION ANTERIOR PORQUE TIENE COSAS UTILES
+ *
 int enviar_programa_memoria(char * codigo, char *  pid) {
 	char line[256];
 
@@ -108,3 +148,4 @@ int enviar_programa_memoria(char * codigo, char *  pid) {
 	return 1;
 }
 
+*/

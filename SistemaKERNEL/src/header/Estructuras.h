@@ -25,6 +25,5 @@ typedef struct {
 
 t_list * lista_consolas;
 t_list * lista_CPUs;
-t_list * lista_pcbs;
 
 #endif /* HEADER_ESTRUCTURAS_H_ */
