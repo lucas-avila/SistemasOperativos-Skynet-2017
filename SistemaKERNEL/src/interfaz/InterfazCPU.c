@@ -91,10 +91,10 @@ void retirar_CPU_global(int numeroConexion) {
 
 // En esta funcion se usan funciones de Proceso.c. Tal vez falte incluir acceso. Revisar funcion atoi.
 void CU_Atender_Solicitud_Escritura_Por_Pantalla(int clienteCPU) {
-	char* pidMensaje = recibir_dato_serizado(clienteCPU);
+	char* pidMensaje = recibir_dato_serializado(clienteCPU);
 	char* mensajeSolicitado = recibir_dato_serializado(clienteCPU);
 	int pidSolicitante = atoi(pidMensaje);
 	Proceso* procesoSolicitante = buscar_proceso_by_PID(pidSolicitante);
-	int consolaDelProceso = procesoSolicitante->consola;
-	enviar_dato_serializado(mensajeSolicitado, consolaDelProceso);
+	int socketDelProceso = procesoSolicitante->socket;
+	enviar_dato_serializado(mensajeSolicitado, socketDelProceso);
 }

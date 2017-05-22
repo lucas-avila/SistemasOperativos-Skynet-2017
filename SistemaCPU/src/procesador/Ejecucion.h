@@ -12,6 +12,7 @@
 AnSISOP_funciones *funciones;
 AnSISOP_kernel *kernel ;
 
+PCB* pcbEjecutar;
 
 void setPCBEjecucion(PCB* pcb);
 

@@ -6,10 +6,7 @@ src/capaFILESYSTEM/GestionArchivoFuncAux.d: \
  ../src/capaFILESYSTEM/../capaFILESYSTEM/TablaProcesoArchivo.h \
  ../src/capaFILESYSTEM/../administrarProcesos/Proceso.h \
  ../src/capaFILESYSTEM/../administrarProcesos/../header/PCB.h \
- ../src/capaFILESYSTEM/../administrarProcesos/../capaFILESYSTEM/TablaProcesoArchivo.h \
- ../src/capaFILESYSTEM/../administrarProcesos/../planificacion/Planificacion.h \
- ../src/capaFILESYSTEM/../administrarProcesos/../planificacion/../header/PCB.h \
- ../src/capaFILESYSTEM/../administrarProcesos/../planificacion/../header/Estructuras.h
+ ../src/capaFILESYSTEM/../administrarProcesos/../capaFILESYSTEM/TablaProcesoArchivo.h
 
 ../src/capaFILESYSTEM/../capaFILESYSTEM/TablaGlobalArchivo.h:
 
@@ -24,9 +21,3 @@ src/capaFILESYSTEM/GestionArchivoFuncAux.d: \
 ../src/capaFILESYSTEM/../administrarProcesos/../header/PCB.h:
 
 ../src/capaFILESYSTEM/../administrarProcesos/../capaFILESYSTEM/TablaProcesoArchivo.h:
-
-../src/capaFILESYSTEM/../administrarProcesos/../planificacion/Planificacion.h:
-
-../src/capaFILESYSTEM/../administrarProcesos/../planificacion/../header/PCB.h:
-
-../src/capaFILESYSTEM/../administrarProcesos/../planificacion/../header/Estructuras.h:

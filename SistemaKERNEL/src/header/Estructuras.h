@@ -11,8 +11,8 @@
 #include <commons/collections/list.h>
 
 typedef struct {
-	int numeroConexion;
-	pthread_t hilo;
+	int consola_ID;
+	t_list * programas;
 } ConsolaInfo;
 
 typedef struct {
