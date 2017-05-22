@@ -1769,15 +1769,195 @@ Finished building target: SistemaCPU
 21:41:23 **** Incremental Build of configuration Debug for project SistemaCPU ****
 make all 
 make: No se hace nada para «all».
+<<<<<<< HEAD
 23:46:32 **** Clean-only build of configuration Debug for project SistemaKERNEL ****
 make clean 
 rm -rf  ./src/testing/TestingCapaFileSystem.o ./src/testing/TestingGeneral.o ./src/testing/TestingInterfazMemoria.o ./src/testing/TestingMenu.o ./src/testing/TestingPlanificacion.o  ./src/planificacion/Planificacion.o ./src/planificacion/PlanificacionFIFO.o ./src/planificacion/PlanificacionRR.o  ./src/interfaz/InterfazCPU.o ./src/interfaz/InterfazConsola.o ./src/interfaz/InterfazFS.o ./src/interfaz/InterfazMemoria.o  ./src/header/AppConfig.o ./src/header/SolicitudesUsuario.o  ./src/general/Semaforo.o ./src/general/Socket.o ./src/general/funcionesUtiles.o  ./src/capaMEMORIA/AdministrarVarCompartidas.o ./src/capaMEMORIA/GestMemoriaFuncionesAux.o ./src/capaMEMORIA/GestionMemoriaDinamica.o  ./src/capaFILESYSTEM/GestionArchivoFuncAux.o ./src/capaFILESYSTEM/GestionArchivos.o ./src/capaFILESYSTEM/TablaGlobalArchivo.o ./src/capaFILESYSTEM/TablaProcesoArchivo.o  ./src/administrarProcesos/Proceso.o  ./src/administrarPCB/EstadisticaProceso.o ./src/administrarPCB/PCBData.o  ./src/KERNEL.o ./src/PCB.o ./src/SolicitudesUsuario.o  ./src/testing/TestingCapaFileSystem.d ./src/testing/TestingGeneral.d ./src/testing/TestingInterfazMemoria.d ./src/testing/TestingMenu.d ./src/testing/TestingPlanificacion.d  ./src/planificacion/Planificacion.d ./src/planificacion/PlanificacionFIFO.d ./src/planificacion/PlanificacionRR.d  ./src/interfaz/InterfazCPU.d ./src/interfaz/InterfazConsola.d ./src/interfaz/InterfazFS.d ./src/interfaz/InterfazMemoria.d  ./src/header/AppConfig.d ./src/header/SolicitudesUsuario.d  ./src/general/Semaforo.d ./src/general/Socket.d ./src/general/funcionesUtiles.d  ./src/capaMEMORIA/AdministrarVarCompartidas.d ./src/capaMEMORIA/GestMemoriaFuncionesAux.d ./src/capaMEMORIA/GestionMemoriaDinamica.d  ./src/capaFILESYSTEM/GestionArchivoFuncAux.d ./src/capaFILESYSTEM/GestionArchivos.d ./src/capaFILESYSTEM/TablaGlobalArchivo.d ./src/capaFILESYSTEM/TablaProcesoArchivo.d  ./src/administrarProcesos/Proceso.d  ./src/administrarPCB/EstadisticaProceso.d ./src/administrarPCB/PCBData.d  ./src/KERNEL.d ./src/PCB.d ./src/SolicitudesUsuario.d  SistemaKERNEL
  
 23:47:15 **** Build of configuration Debug for project SistemaKERNEL ****
+=======
+23:39:02 **** Build of configuration Debug for project SistemaCPU ****
+make all 
+Building file: ../src/testing/testearPrimitivasFunciones.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/testearPrimitivasFunciones.d" -MT"src/testing/testearPrimitivasFunciones.d" -o "src/testing/testearPrimitivasFunciones.o" "../src/testing/testearPrimitivasFunciones.c"
+../src/testing/testearPrimitivasFunciones.c:5:38: fatal error: commons/collections/list.h: No existe el archivo o el directorio
+ #include "commons/collections/list.h"
+                                      ^
+compilation terminated.
+make: *** [src/testing/testearPrimitivasFunciones.o] Error 1
+23:39:02 **** Build of configuration Debug for project SistemaConsola ****
+make all 
+Building file: ../src/header/AppConfig.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/AppConfig.d" -MT"src/header/AppConfig.d" -o "src/header/AppConfig.o" "../src/header/AppConfig.c"
+../src/header/AppConfig.c:13:28: fatal error: commons/config.h: No existe el archivo o el directorio
+ #include <commons/config.h>
+                            ^
+compilation terminated.
+make: *** [src/header/AppConfig.o] Error 1
+23:39:03 **** Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+make: No se hace nada para «all».
+23:39:03 **** Build of configuration Debug for project SistemaKERNEL ****
 make all 
 Building file: ../src/testing/TestingCapaFileSystem.c
 Invoking: GCC C Compiler
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/TestingCapaFileSystem.d" -MT"src/testing/TestingCapaFileSystem.d" -o "src/testing/TestingCapaFileSystem.o" "../src/testing/TestingCapaFileSystem.c"
+In file included from ../src/testing/../capaFILESYSTEM/GestionArchivos.h:11:0,
+                 from ../src/testing/TestingCapaFileSystem.c:4:
+../src/testing/../capaFILESYSTEM/TablaGlobalArchivo.h:10:38: fatal error: commons/collections/list.h: No existe el archivo o el directorio
+ #include "commons/collections/list.h"
+                                      ^
+compilation terminated.
+make: *** [src/testing/TestingCapaFileSystem.o] Error 1
+23:39:04 **** Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+Building file: ../src/testing/PruebasUnitarias.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/PruebasUnitarias.d" -MT"src/testing/PruebasUnitarias.d" -o "src/testing/PruebasUnitarias.o" "../src/testing/PruebasUnitarias.c"
+Finished building: ../src/testing/PruebasUnitarias.c
+ 
+Building file: ../src/testing/TestingMemoriaCache.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/TestingMemoriaCache.d" -MT"src/testing/TestingMemoriaCache.d" -o "src/testing/TestingMemoriaCache.o" "../src/testing/TestingMemoriaCache.c"
+../src/testing/TestingMemoriaCache.c:4:28: fatal error: commons/string.h: No existe el archivo o el directorio
+ #include "commons/string.h"
+                            ^
+compilation terminated.
+make: *** [src/testing/TestingMemoriaCache.o] Error 1
+23:42:16 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+Building file: ../src/header/AppConfig.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/AppConfig.d" -MT"src/header/AppConfig.d" -o "src/header/AppConfig.o" "../src/header/AppConfig.c"
+../src/header/AppConfig.c:13:28: fatal error: commons/config.h: No existe el archivo o el directorio
+ #include <commons/config.h>
+                            ^
+compilation terminated.
+make: *** [src/header/AppConfig.o] Error 1
+23:42:44 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+Building file: ../src/header/AppConfig.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/AppConfig.d" -MT"src/header/AppConfig.d" -o "src/header/AppConfig.o" "../src/header/AppConfig.c"
+../src/header/AppConfig.c:13:28: fatal error: commons/config.h: No existe el archivo o el directorio
+ #include <commons/config.h>
+                            ^
+compilation terminated.
+make: *** [src/header/AppConfig.o] Error 1
+01:34:39 **** Incremental Build of configuration Debug for project SistemaCPU ****
+make all 
+Building file: ../src/testing/testearPrimitivasFunciones.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/testearPrimitivasFunciones.d" -MT"src/testing/testearPrimitivasFunciones.d" -o "src/testing/testearPrimitivasFunciones.o" "../src/testing/testearPrimitivasFunciones.c"
+../src/testing/testearPrimitivasFunciones.c:5:38: fatal error: commons/collections/list.h: No existe el archivo o el directorio
+ #include "commons/collections/list.h"
+                                      ^
+compilation terminated.
+make: *** [src/testing/testearPrimitivasFunciones.o] Error 1
+01:34:40 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+Building file: ../src/header/AppConfig.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/AppConfig.d" -MT"src/header/AppConfig.d" -o "src/header/AppConfig.o" "../src/header/AppConfig.c"
+../src/header/AppConfig.c:13:28: fatal error: commons/config.h: No existe el archivo o el directorio
+ #include <commons/config.h>
+                            ^
+compilation terminated.
+make: *** [src/header/AppConfig.o] Error 1
+01:34:41 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+make: No se hace nada para «all».
+01:34:41 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+>>>>>>> b1145973ec31846d400904a018731be4db187bd4
+make all 
+Building file: ../src/testing/TestingCapaFileSystem.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/TestingCapaFileSystem.d" -MT"src/testing/TestingCapaFileSystem.d" -o "src/testing/TestingCapaFileSystem.o" "../src/testing/TestingCapaFileSystem.c"
+<<<<<<< HEAD
+=======
+In file included from ../src/testing/../capaFILESYSTEM/GestionArchivos.h:11:0,
+                 from ../src/testing/TestingCapaFileSystem.c:4:
+../src/testing/../capaFILESYSTEM/TablaGlobalArchivo.h:10:38: fatal error: commons/collections/list.h: No existe el archivo o el directorio
+ #include "commons/collections/list.h"
+                                      ^
+compilation terminated.
+make: *** [src/testing/TestingCapaFileSystem.o] Error 1
+01:34:42 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+Building file: ../src/testing/TestingMemoriaCache.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/TestingMemoriaCache.d" -MT"src/testing/TestingMemoriaCache.d" -o "src/testing/TestingMemoriaCache.o" "../src/testing/TestingMemoriaCache.c"
+../src/testing/TestingMemoriaCache.c:4:28: fatal error: commons/string.h: No existe el archivo o el directorio
+ #include "commons/string.h"
+                            ^
+compilation terminated.
+make: *** [src/testing/TestingMemoriaCache.o] Error 1
+13:38:59 **** Incremental Build of configuration Debug for project SistemaCPU ****
+make all 
+Building file: ../src/testing/testearPrimitivasFunciones.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/testearPrimitivasFunciones.d" -MT"src/testing/testearPrimitivasFunciones.d" -o "src/testing/testearPrimitivasFunciones.o" "../src/testing/testearPrimitivasFunciones.c"
+In file included from ../src/testing/testearPrimitivasFunciones.c:14:0:
+../src/testing/../procesador/Ejecucion.h:11:27: fatal error: parser/parser.h: No existe el archivo o el directorio
+ #include "parser/parser.h"
+                           ^
+compilation terminated.
+make: *** [src/testing/testearPrimitivasFunciones.o] Error 1
+13:38:59 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+Building file: ../src/header/AppConfig.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/AppConfig.d" -MT"src/header/AppConfig.d" -o "src/header/AppConfig.o" "../src/header/AppConfig.c"
+../src/header/AppConfig.c: In function ‘inicializar_configuracion’:
+../src/header/AppConfig.c:27:34: warning: assignment makes pointer from integer without a cast [enabled by default]
+    configuraciones.PUERTO_KERNEL = config_get_int_value(config, "PUERTO_KERNEL");
+                                  ^
+Finished building: ../src/header/AppConfig.c
+ 
+Building file: ../src/header/Estructuras.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/Estructuras.d" -MT"src/header/Estructuras.d" -o "src/header/Estructuras.o" "../src/header/Estructuras.c"
+../src/header/Estructuras.c: In function ‘new_Info_ejecucion’:
+../src/header/Estructuras.c:14:2: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]
+  Info_ejecucion * info_ejecucion = malloc(sizeof(Info_ejecucion));
+  ^
+../src/header/Estructuras.c:14:36: warning: incompatible implicit declaration of built-in function ‘malloc’ [enabled by default]
+  Info_ejecucion * info_ejecucion = malloc(sizeof(Info_ejecucion));
+                                    ^
+../src/header/Estructuras.c: In function ‘eliminar_info_proceso’:
+../src/header/Estructuras.c:31:2: warning: passing argument 2 of ‘list_remove’ makes integer from pointer without a cast [enabled by default]
+  list_remove(Info_procesos, info_ejecucion);
+  ^
+In file included from ../src/header/Estructuras.h:12:0,
+                 from ../src/header/Estructuras.c:7:
+/usr/include/commons/collections/list.h:120:8: note: expected ‘int’ but argument is of type ‘struct Info_ejecucion *’
+  void *list_remove(t_list *, int index);
+        ^
+../src/header/Estructuras.c: At top level:
+../src/header/Estructuras.c:34:32: error: unknown type name ‘uint32_t’
+ int buscar_indice_Info_proceso(uint32_t PID) {
+                                ^
+../src/header/Estructuras.c:47:37: error: unknown type name ‘uint32_t’
+ Info_ejecucion* buscar_info_por_PID(uint32_t PID) {
+                                     ^
+make: *** [src/header/Estructuras.o] Error 1
+13:39:00 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+make: No se hace nada para «all».
+13:39:00 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+Building file: ../src/testing/TestingCapaFileSystem.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/TestingCapaFileSystem.d" -MT"src/testing/TestingCapaFileSystem.d" -o "src/testing/TestingCapaFileSystem.o" "../src/testing/TestingCapaFileSystem.c"
+In file included from ../src/testing/../capaFILESYSTEM/../administrarProcesos/Proceso.h:15:0,
+                 from ../src/testing/../capaFILESYSTEM/GestionArchivoFuncAux.h:13,
+                 from ../src/testing/TestingCapaFileSystem.c:8:
+../src/testing/../capaFILESYSTEM/../administrarProcesos/../planificacion/Planificacion.h:33:20: error: unknown type name ‘Proceso’
+ void proceso_a_NEW(Proceso * p);
+                    ^
+>>>>>>> b1145973ec31846d400904a018731be4db187bd4
 ../src/testing/TestingCapaFileSystem.c: In function ‘inicializar_test’:
 ../src/testing/TestingCapaFileSystem.c:19:2: warning: passing argument 1 of ‘strcpy’ makes pointer from integer without a cast [enabled by default]
   strcpy(pcb->PID, "1241");
@@ -1885,6 +2065,7 @@ In file included from ../src/testing/TestingCapaFileSystem.c:3:0:
     TEST_Manual_CU_BORRAR_ARCHIVO();
     ^
 ../src/testing/TestingCapaFileSystem.c:173:6: warning: conflicting types for ‘TEST_Auto_CU_ABRIR_ARCHIVO’ [enabled by default]
+<<<<<<< HEAD
  void TEST_Auto_CU_ABRIR_ARCHIVO() {
       ^
 ../src/testing/TestingCapaFileSystem.c:88:4: note: previous implicit declaration of ‘TEST_Auto_CU_ABRIR_ARCHIVO’ was here
@@ -2990,6 +3171,61 @@ Invoking: GCC C Compiler
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/PruebasUnitarias.d" -MT"src/testing/PruebasUnitarias.d" -o "src/testing/PruebasUnitarias.o" "../src/testing/PruebasUnitarias.c"
 Finished building: ../src/testing/PruebasUnitarias.c
  
+=======
+ void TEST_Auto_CU_ABRIR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:88:4: note: previous implicit declaration of ‘TEST_Auto_CU_ABRIR_ARCHIVO’ was here
+    TEST_Auto_CU_ABRIR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:188:6: warning: conflicting types for ‘TEST_Auto_CU_MOVER_CURSOR_ARCHIVO’ [enabled by default]
+ void TEST_Auto_CU_MOVER_CURSOR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:91:4: note: previous implicit declaration of ‘TEST_Auto_CU_MOVER_CURSOR_ARCHIVO’ was here
+    TEST_Auto_CU_MOVER_CURSOR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:191:6: warning: conflicting types for ‘TEST_Auto_CU_LEER_ARCHIVO’ [enabled by default]
+ void TEST_Auto_CU_LEER_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:94:4: note: previous implicit declaration of ‘TEST_Auto_CU_LEER_ARCHIVO’ was here
+    TEST_Auto_CU_LEER_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:194:6: warning: conflicting types for ‘TEST_Auto_CU_ESCRIBIR_ARCHIVO’ [enabled by default]
+ void TEST_Auto_CU_ESCRIBIR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:97:4: note: previous implicit declaration of ‘TEST_Auto_CU_ESCRIBIR_ARCHIVO’ was here
+    TEST_Auto_CU_ESCRIBIR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:197:6: warning: conflicting types for ‘TEST_Auto_CU_CERRAR_ARCHIVO’ [enabled by default]
+ void TEST_Auto_CU_CERRAR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:100:4: note: previous implicit declaration of ‘TEST_Auto_CU_CERRAR_ARCHIVO’ was here
+    TEST_Auto_CU_CERRAR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:200:6: warning: conflicting types for ‘TEST_Auto_CU_BORRAR_ARCHIVO’ [enabled by default]
+ void TEST_Auto_CU_BORRAR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:103:4: note: previous implicit declaration of ‘TEST_Auto_CU_BORRAR_ARCHIVO’ was here
+    TEST_Auto_CU_BORRAR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:204:6: warning: conflicting types for ‘TEST_VER_TABLA_PROCESO’ [enabled by default]
+ void TEST_VER_TABLA_PROCESO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:106:4: note: previous implicit declaration of ‘TEST_VER_TABLA_PROCESO’ was here
+    TEST_VER_TABLA_PROCESO();
+    ^
+../src/testing/TestingCapaFileSystem.c: In function ‘TEST_VER_TABLA_PROCESO’:
+../src/testing/TestingCapaFileSystem.c:207:2: warning: passing argument 1 of ‘buscar_proceso_by_PID’ makes integer from pointer without a cast [enabled by default]
+  t_list* listaArchivos = buscar_proceso_by_PID(PID)->tablaProcesoArchivo;
+  ^
+In file included from ../src/testing/../capaFILESYSTEM/GestionArchivoFuncAux.h:13:0,
+                 from ../src/testing/TestingCapaFileSystem.c:8:
+../src/testing/../capaFILESYSTEM/../administrarProcesos/Proceso.h:37:10: note: expected ‘uint32_t’ but argument is of type ‘char *’
+ Proceso* buscar_proceso_by_PID(uint32_t PID);
+          ^
+make: *** [src/testing/TestingCapaFileSystem.o] Error 1
+13:39:00 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+>>>>>>> b1145973ec31846d400904a018731be4db187bd4
 Building file: ../src/testing/TestingMemoriaCache.c
 Invoking: GCC C Compiler
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/TestingMemoriaCache.d" -MT"src/testing/TestingMemoriaCache.d" -o "src/testing/TestingMemoriaCache.o" "../src/testing/TestingMemoriaCache.c"
@@ -3189,6 +3425,7 @@ Invoking: GCC C Linker
 gcc  -o "SistemaMEMORIA"  ./src/testing/PruebasUnitarias.o ./src/testing/TestingMemoriaCache.o  ./src/header/AppConfig.o  ./src/general/Semaforo.o ./src/general/Socket.o ./src/general/funcionesUtiles.o  ./src/Interfaz.o ./src/Main.o ./src/MemoriaCache.o ./src/MemoriaPrincipal.o ./src/SolicitudesUsuario.o   -lcommons -lpthread
 Finished building target: SistemaMEMORIA
  
+<<<<<<< HEAD
 14:14:40 **** Build of configuration Debug for project SistemaCPU ****
 make all 
 make: No se hace nada para «all».
@@ -3217,5 +3454,220 @@ make: No se hace nada para «all».
 make all 
 make: No se hace nada para «all».
 14:34:20 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+=======
+13:46:59 **** Incremental Build of configuration Debug for project SistemaCPU ****
+make all 
+Building file: ../src/testing/testearPrimitivasFunciones.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/testearPrimitivasFunciones.d" -MT"src/testing/testearPrimitivasFunciones.d" -o "src/testing/testearPrimitivasFunciones.o" "../src/testing/testearPrimitivasFunciones.c"
+In file included from ../src/testing/testearPrimitivasFunciones.c:14:0:
+../src/testing/../procesador/Ejecucion.h:11:27: fatal error: parser/parser.h: No existe el archivo o el directorio
+ #include "parser/parser.h"
+                           ^
+compilation terminated.
+make: *** [src/testing/testearPrimitivasFunciones.o] Error 1
+13:46:59 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+Building file: ../src/header/Estructuras.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/Estructuras.d" -MT"src/header/Estructuras.d" -o "src/header/Estructuras.o" "../src/header/Estructuras.c"
+../src/header/Estructuras.c: In function ‘new_Info_ejecucion’:
+../src/header/Estructuras.c:14:2: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]
+  Info_ejecucion * info_ejecucion = malloc(sizeof(Info_ejecucion));
+  ^
+../src/header/Estructuras.c:14:36: warning: incompatible implicit declaration of built-in function ‘malloc’ [enabled by default]
+  Info_ejecucion * info_ejecucion = malloc(sizeof(Info_ejecucion));
+                                    ^
+../src/header/Estructuras.c: In function ‘eliminar_info_proceso’:
+../src/header/Estructuras.c:31:2: warning: passing argument 2 of ‘list_remove’ makes integer from pointer without a cast [enabled by default]
+  list_remove(Info_procesos, info_ejecucion);
+  ^
+In file included from ../src/header/Estructuras.h:12:0,
+                 from ../src/header/Estructuras.c:7:
+/usr/include/commons/collections/list.h:120:8: note: expected ‘int’ but argument is of type ‘struct Info_ejecucion *’
+  void *list_remove(t_list *, int index);
+        ^
+../src/header/Estructuras.c: At top level:
+../src/header/Estructuras.c:34:32: error: unknown type name ‘uint32_t’
+ int buscar_indice_Info_proceso(uint32_t PID) {
+                                ^
+../src/header/Estructuras.c:47:37: error: unknown type name ‘uint32_t’
+ Info_ejecucion* buscar_info_por_PID(uint32_t PID) {
+                                     ^
+make: *** [src/header/Estructuras.o] Error 1
+13:46:59 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+make: No se hace nada para «all».
+13:46:59 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+Building file: ../src/testing/TestingCapaFileSystem.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/TestingCapaFileSystem.d" -MT"src/testing/TestingCapaFileSystem.d" -o "src/testing/TestingCapaFileSystem.o" "../src/testing/TestingCapaFileSystem.c"
+In file included from ../src/testing/../capaFILESYSTEM/../administrarProcesos/Proceso.h:15:0,
+                 from ../src/testing/../capaFILESYSTEM/GestionArchivoFuncAux.h:13,
+                 from ../src/testing/TestingCapaFileSystem.c:8:
+../src/testing/../capaFILESYSTEM/../administrarProcesos/../planificacion/Planificacion.h:33:20: error: unknown type name ‘Proceso’
+ void proceso_a_NEW(Proceso * p);
+                    ^
+../src/testing/TestingCapaFileSystem.c: In function ‘inicializar_test’:
+../src/testing/TestingCapaFileSystem.c:19:2: warning: passing argument 1 of ‘strcpy’ makes pointer from integer without a cast [enabled by default]
+  strcpy(pcb->PID, "1241");
+  ^
+In file included from ../src/testing/TestingCapaFileSystem.c:3:0:
+/usr/include/string.h:129:14: note: expected ‘char * __restrict__’ but argument is of type ‘uint32_t’
+ extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+              ^
+../src/testing/TestingCapaFileSystem.c:24:2: warning: passing argument 1 of ‘strcpy’ makes pointer from integer without a cast [enabled by default]
+  strcpy(pcb->PID, "1371");
+  ^
+In file included from ../src/testing/TestingCapaFileSystem.c:3:0:
+/usr/include/string.h:129:14: note: expected ‘char * __restrict__’ but argument is of type ‘uint32_t’
+ extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+              ^
+../src/testing/TestingCapaFileSystem.c:29:2: warning: passing argument 1 of ‘strcpy’ makes pointer from integer without a cast [enabled by default]
+  strcpy(pcb->PID, "1189");
+  ^
+In file included from ../src/testing/TestingCapaFileSystem.c:3:0:
+/usr/include/string.h:129:14: note: expected ‘char * __restrict__’ but argument is of type ‘uint32_t’
+ extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+              ^
+../src/testing/TestingCapaFileSystem.c: In function ‘mostrar_menu_testing_filesystem’:
+../src/testing/TestingCapaFileSystem.c:65:3: warning: implicit declaration of function ‘validarNumeroInput’ [-Wimplicit-function-declaration]
+   opcion = validarNumeroInput(1, 14);
+   ^
+../src/testing/TestingCapaFileSystem.c:70:4: warning: implicit declaration of function ‘TEST_Manual_CU_ABRIR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Manual_CU_ABRIR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:73:4: warning: implicit declaration of function ‘TEST_Manual_CU_MOVER_CURSOR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Manual_CU_MOVER_CURSOR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:76:4: warning: implicit declaration of function ‘TEST_Manual_CU_LEER_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Manual_CU_LEER_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:79:4: warning: implicit declaration of function ‘TEST_Manual_CU_ESCRIBIR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Manual_CU_ESCRIBIR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:82:4: warning: implicit declaration of function ‘TEST_Manual_CU_CERRAR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Manual_CU_CERRAR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:85:4: warning: implicit declaration of function ‘TEST_Manual_CU_BORRAR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Manual_CU_BORRAR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:88:4: warning: implicit declaration of function ‘TEST_Auto_CU_ABRIR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Auto_CU_ABRIR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:91:4: warning: implicit declaration of function ‘TEST_Auto_CU_MOVER_CURSOR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Auto_CU_MOVER_CURSOR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:94:4: warning: implicit declaration of function ‘TEST_Auto_CU_LEER_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Auto_CU_LEER_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:97:4: warning: implicit declaration of function ‘TEST_Auto_CU_ESCRIBIR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Auto_CU_ESCRIBIR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:100:4: warning: implicit declaration of function ‘TEST_Auto_CU_CERRAR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Auto_CU_CERRAR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:103:4: warning: implicit declaration of function ‘TEST_Auto_CU_BORRAR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Auto_CU_BORRAR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:106:4: warning: implicit declaration of function ‘TEST_VER_TABLA_PROCESO’ [-Wimplicit-function-declaration]
+    TEST_VER_TABLA_PROCESO();
+    ^
+../src/testing/TestingCapaFileSystem.c: In function ‘recibir_INPUT’:
+../src/testing/TestingCapaFileSystem.c:119:3: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char (*)[250]’ [-Wformat=]
+   scanf("%s", &dato);
+   ^
+../src/testing/TestingCapaFileSystem.c: At top level:
+../src/testing/TestingCapaFileSystem.c:124:6: warning: conflicting types for ‘TEST_Manual_CU_ABRIR_ARCHIVO’ [enabled by default]
+ void TEST_Manual_CU_ABRIR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:70:4: note: previous implicit declaration of ‘TEST_Manual_CU_ABRIR_ARCHIVO’ was here
+    TEST_Manual_CU_ABRIR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:135:6: warning: conflicting types for ‘TEST_Manual_CU_MOVER_CURSOR_ARCHIVO’ [enabled by default]
+ void TEST_Manual_CU_MOVER_CURSOR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:73:4: note: previous implicit declaration of ‘TEST_Manual_CU_MOVER_CURSOR_ARCHIVO’ was here
+    TEST_Manual_CU_MOVER_CURSOR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:143:6: warning: conflicting types for ‘TEST_Manual_CU_LEER_ARCHIVO’ [enabled by default]
+ void TEST_Manual_CU_LEER_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:76:4: note: previous implicit declaration of ‘TEST_Manual_CU_LEER_ARCHIVO’ was here
+    TEST_Manual_CU_LEER_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:151:6: warning: conflicting types for ‘TEST_Manual_CU_ESCRIBIR_ARCHIVO’ [enabled by default]
+ void TEST_Manual_CU_ESCRIBIR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:79:4: note: previous implicit declaration of ‘TEST_Manual_CU_ESCRIBIR_ARCHIVO’ was here
+    TEST_Manual_CU_ESCRIBIR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:160:6: warning: conflicting types for ‘TEST_Manual_CU_CERRAR_ARCHIVO’ [enabled by default]
+ void TEST_Manual_CU_CERRAR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:82:4: note: previous implicit declaration of ‘TEST_Manual_CU_CERRAR_ARCHIVO’ was here
+    TEST_Manual_CU_CERRAR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:166:6: warning: conflicting types for ‘TEST_Manual_CU_BORRAR_ARCHIVO’ [enabled by default]
+ void TEST_Manual_CU_BORRAR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:85:4: note: previous implicit declaration of ‘TEST_Manual_CU_BORRAR_ARCHIVO’ was here
+    TEST_Manual_CU_BORRAR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:173:6: warning: conflicting types for ‘TEST_Auto_CU_ABRIR_ARCHIVO’ [enabled by default]
+ void TEST_Auto_CU_ABRIR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:88:4: note: previous implicit declaration of ‘TEST_Auto_CU_ABRIR_ARCHIVO’ was here
+    TEST_Auto_CU_ABRIR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:188:6: warning: conflicting types for ‘TEST_Auto_CU_MOVER_CURSOR_ARCHIVO’ [enabled by default]
+ void TEST_Auto_CU_MOVER_CURSOR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:91:4: note: previous implicit declaration of ‘TEST_Auto_CU_MOVER_CURSOR_ARCHIVO’ was here
+    TEST_Auto_CU_MOVER_CURSOR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:191:6: warning: conflicting types for ‘TEST_Auto_CU_LEER_ARCHIVO’ [enabled by default]
+ void TEST_Auto_CU_LEER_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:94:4: note: previous implicit declaration of ‘TEST_Auto_CU_LEER_ARCHIVO’ was here
+    TEST_Auto_CU_LEER_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:194:6: warning: conflicting types for ‘TEST_Auto_CU_ESCRIBIR_ARCHIVO’ [enabled by default]
+ void TEST_Auto_CU_ESCRIBIR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:97:4: note: previous implicit declaration of ‘TEST_Auto_CU_ESCRIBIR_ARCHIVO’ was here
+    TEST_Auto_CU_ESCRIBIR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:197:6: warning: conflicting types for ‘TEST_Auto_CU_CERRAR_ARCHIVO’ [enabled by default]
+ void TEST_Auto_CU_CERRAR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:100:4: note: previous implicit declaration of ‘TEST_Auto_CU_CERRAR_ARCHIVO’ was here
+    TEST_Auto_CU_CERRAR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:200:6: warning: conflicting types for ‘TEST_Auto_CU_BORRAR_ARCHIVO’ [enabled by default]
+ void TEST_Auto_CU_BORRAR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:103:4: note: previous implicit declaration of ‘TEST_Auto_CU_BORRAR_ARCHIVO’ was here
+    TEST_Auto_CU_BORRAR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:204:6: warning: conflicting types for ‘TEST_VER_TABLA_PROCESO’ [enabled by default]
+ void TEST_VER_TABLA_PROCESO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:106:4: note: previous implicit declaration of ‘TEST_VER_TABLA_PROCESO’ was here
+    TEST_VER_TABLA_PROCESO();
+    ^
+../src/testing/TestingCapaFileSystem.c: In function ‘TEST_VER_TABLA_PROCESO’:
+../src/testing/TestingCapaFileSystem.c:207:2: warning: passing argument 1 of ‘buscar_proceso_by_PID’ makes integer from pointer without a cast [enabled by default]
+  t_list* listaArchivos = buscar_proceso_by_PID(PID)->tablaProcesoArchivo;
+  ^
+In file included from ../src/testing/../capaFILESYSTEM/GestionArchivoFuncAux.h:13:0,
+                 from ../src/testing/TestingCapaFileSystem.c:8:
+../src/testing/../capaFILESYSTEM/../administrarProcesos/Proceso.h:37:10: note: expected ‘uint32_t’ but argument is of type ‘char *’
+ Proceso* buscar_proceso_by_PID(uint32_t PID);
+          ^
+make: *** [src/testing/TestingCapaFileSystem.o] Error 1
+13:47:00 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+>>>>>>> b1145973ec31846d400904a018731be4db187bd4
 make all 
 make: No se hace nada para «all».

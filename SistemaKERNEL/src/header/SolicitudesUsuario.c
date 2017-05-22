@@ -76,7 +76,7 @@ void mostrar_procesos(t_list * procesos_lista){
 		proceso = list_get(procesos_lista, i);
 		printf("⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛\n");
 		printf("Proceso ID: %d\n", proceso->PID);
-		printf("Su consola es: %d\n", proceso->consola);
+		printf("Su socket es: %d\n", proceso->socket);
 		proceso->cola = 1;
 		mostrar_cola(proceso->cola);
 		i++;
@@ -218,6 +218,8 @@ void atender_solicitudes_de_usuario() {
 			break;
 		case 3:
 			//mostrar_tabla_global_archivos(); TODO
+			enviar_dato_serializado("MENSAJE 1", 8);
+			enviar_dato_serializado("MENSAJE 2", 9);
 			break;
 		case 4:
 			modificar_grado_multiprogramacion();

@@ -21,6 +21,7 @@
 #include "procesador/Ejecucion.h"
 
 void CU_Procesar_PCB_a_ejecutar();
+void CU_Escribir_Pantalla_AnSISOP();
 
 int main(int argc, char *argv[]) {
 
@@ -63,3 +64,10 @@ void CU_Procesar_PCB_a_ejecutar() {
 	ejecutar_Programa();
 }
 
+void CU_Escribir_Pantalla_AnSISOP(char* mensaje) {
+	enviar_dato_serializado("IMPRIMIR_POR_PANTALLA", servidor_kernel);
+
+	char* pidMensaje = string_itoa(pcbEjecutar->PID);
+	enviar_dato_serializado(pidMensaje, servidor_kernel);
+	enviar_dato_serializado(mensaje, servidor_kernel);
+}

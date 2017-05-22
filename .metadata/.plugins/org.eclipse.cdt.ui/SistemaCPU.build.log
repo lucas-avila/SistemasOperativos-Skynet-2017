@@ -1,6 +1,22 @@
+<<<<<<< HEAD
 14:34:17 **** Incremental Build of configuration Debug for project SistemaCPU ****
+=======
+13:46:59 **** Incremental Build of configuration Debug for project SistemaCPU ****
+>>>>>>> b1145973ec31846d400904a018731be4db187bd4
 make all 
-make: No se hace nada para «all».
+Building file: ../src/testing/testearPrimitivasFunciones.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/testearPrimitivasFunciones.d" -MT"src/testing/testearPrimitivasFunciones.d" -o "src/testing/testearPrimitivasFunciones.o" "../src/testing/testearPrimitivasFunciones.c"
+In file included from ../src/testing/testearPrimitivasFunciones.c:14:0:
+../src/testing/../procesador/Ejecucion.h:11:27: fatal error: parser/parser.h: No existe el archivo o el directorio
+ #include "parser/parser.h"
+                           ^
+compilation terminated.
+make: *** [src/testing/testearPrimitivasFunciones.o] Error 1
 
+<<<<<<< HEAD
 14:34:17 Build Finished (took 179ms)
+=======
+13:46:59 Build Finished (took 113ms)
+>>>>>>> b1145973ec31846d400904a018731be4db187bd4
 

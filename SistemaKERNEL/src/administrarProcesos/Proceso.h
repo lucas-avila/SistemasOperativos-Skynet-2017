@@ -12,7 +12,10 @@
 #include "../capaFILESYSTEM/TablaProcesoArchivo.h"
 
 #include "commons/collections/list.h"
-#include "../planificacion/Planificacion.h"
+
+typedef enum {
+	NEW = 1, READY = 2, EJECUTANDO = 3, EXIT = 4, BLOQUEADO = 5
+} COLA;
 
 typedef struct {
 	uint32_t PID;
@@ -21,7 +24,7 @@ typedef struct {
 	int activo;
 
 	COLA cola;
-	uint32_t consola;
+	uint32_t socket;
 	uint32_t operaciones_privilegiadas_ejecutadas;
 	uint32_t syscalls_ejecutadas;
 } Proceso;

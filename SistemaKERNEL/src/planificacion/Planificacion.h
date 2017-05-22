@@ -11,6 +11,7 @@
 #include "commons/collections/queue.h"
 #include "../header/PCB.h"
 #include "../header/Estructuras.h"
+#include "../administrarProcesos/Proceso.h"
 
 t_queue* COLA_NEW;
 t_queue* COLA_BLOQUEADO;
@@ -18,9 +19,6 @@ t_queue* COLA_READY;
 t_queue* COLA_EJECUTANDO;
 t_queue* COLA_EXIT;
 //t_queue* COLA_SUSPENDIDO;
-typedef enum {
-	NEW = 1, READY = 2, EJECUTANDO = 3, EXIT = 4, BLOQUEADO = 5
-} COLA;
 
 t_list lista_CPU;
 

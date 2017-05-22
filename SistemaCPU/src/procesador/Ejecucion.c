@@ -13,7 +13,6 @@
 #include "../primitivas/IndiceCodigo.h"
 #include "../interfaz/InterfazKernel.h"
 #include "../interfaz/InterfazMemoria.h"
-PCB* pcbEjecutar;
 
 void setPCBEjecucion(PCB* pcb) {
 	pcbEjecutar = pcb;
