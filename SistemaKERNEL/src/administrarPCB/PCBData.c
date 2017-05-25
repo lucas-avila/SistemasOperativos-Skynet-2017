@@ -37,7 +37,10 @@ void procesar_programa(char * programa, PCB * pcb){
 	pcb->etiquetas = meta->etiquetas;
 	pcb->etiquetas_size = meta->etiquetas_size;
 
-	int resultado = enviar_programa_memoria(meta, pcb, programa);
+	int cantidad_paginas = enviar_programa_memoria(meta, pcb, programa);
+	if(cantidad_paginas >= 0)
+		pcb->cantidad_paginas_codigo = cantidad_paginas;
+
 	printf("LLego el programa de consola, prueba (si enviaste el completo.ansisop te tira la primera etiqueta): %s\n", meta->etiquetas);
 	//TODO enviar_programa_memoria deberia devolver algo que no sea 1 .-.
 		/* La variable RESULTADO es para saber si se le pudo
