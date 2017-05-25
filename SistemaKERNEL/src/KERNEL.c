@@ -40,7 +40,7 @@ int main(int argc, char *argv[]) {
 }
 
 void inicializar_KERNEL() {
-	//inicializar_semaforos();
+	inicializar_semaforos();
 	inicializar_listas_globales();
 	inicializar_tabla_proceso_estadistica();
 	inicializar_tabla_proceso_memoria();
@@ -52,7 +52,9 @@ void inicializar_KERNEL() {
 }
 
 void inicializar_semaforos(){
-	inicializar_semaforo(mutex_pids);
+	inicializar_semaforo(&mutex_pids);
+	//PLANIFICACION
+	inicializar_semaforo(&mutex_cola_READY);
 }
 
 void inicializar_listas_globales() {

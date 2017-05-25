@@ -15,7 +15,7 @@
 PCB* recibir_PCB_de_kernel();
 
 /* Se encarga de devolver al kernel el PCB con sus modificaciones por la ejecucion*/
-void enviar_PCB_a_kernel(PCB* pcb);
+void enviar_PCB_a_kernel(PCB* pcb, char * modo);
 
 char* enviar_SYSCALL_solicitar_memoria_dinamica_a_kernel(int PID, int espacio);
 

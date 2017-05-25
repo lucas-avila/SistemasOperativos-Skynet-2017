@@ -49,7 +49,7 @@ void ejecutar_programa_por_FIFO() {
 
 	}
 
-	enviar_PCB_a_kernel(pcbEjecutar);
+	enviar_PCB_a_kernel(pcbEjecutar, "TERMINADO");
 
 }
 
@@ -67,8 +67,12 @@ void ejecutar_programa_por_RR() {
 			pcbEjecutar->program_counter++;
 			cantidadEjecutada++;
 		}
-
 	}
+
+	if(esFinPrograma)
+		enviar_PCB_a_kernel(pcbEjecutar, "TERMINADO");
+	else
+		enviar_PCB_a_kernel(pcbEjecutar, "QUANTUM");
 
 }
 

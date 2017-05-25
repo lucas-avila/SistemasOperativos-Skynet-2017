@@ -45,8 +45,12 @@ void CU_Recibir_Conexiones_CPU(int clienteCPU) {
 		codigo_operacion = recibir_dato_serializado(clienteCPU);
 		if (strcmp(codigo_operacion, "GESTION_MEMORIA") == 0) {
 			CU_Gestionar_HEAP(clienteCPU);
-		} else if (strcmp(codigo_operacion, "RECIBIR_CPU") == 0) {
-			recibir_PCB_de_CPU(clienteCPU);
+		} else if (strcmp(codigo_operacion, "QUANTUM") == 0) {
+			if(strcmp(recibir_dato_serializado(clienteCPU), "RECIBIR_PCB") == 0)
+				recibir_PCB_de_CPU(clienteCPU, "QUANTUM");
+		} else if (strcmp(codigo_operacion, "TERMINADO") == 0) {
+			if(strcmp(recibir_dato_serializado(clienteCPU), "RECIBIR_PCB") == 0)
+				recibir_PCB_de_CPU(clienteCPU, "TERMINADO");
 		} else if (strcmp(codigo_operacion, "ASIGNAR_VAR_COMP") == 0) {
 			asignar_valor_var_comp(clienteCPU);
 		} else if (strcmp(codigo_operacion, "BUSCAR_VAL_VAR_COMP") == 0) {

@@ -1,16 +1,13 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-
 #include "Planificacion.h"
-#include "PlanificacionFIFO.h"
 
-#include "PlanificacionRR.h"
+#include <commons/collections/list.h>
+#include <semaphore.h>
+#include <string.h>
+
+#include "../general/Semaforo.h"
 #include "../header/AppConfig.h"
-#include "../header/PCB.h"
-#include "../header/Estructuras.h"
-
-#include "../administrarPCB/EstadisticaProceso.h"
+#include "PlanificacionFIFO.h"
+#include "PlanificacionRR.h"
 
 void EJECUTAR_ALGORITMO_PLANIFICACION() {
 	if (strcmp(configuraciones.ALGORITMO, "FIFO") == 0) {
@@ -89,9 +86,9 @@ PCB* obtener_proceso_de_cola_READY() {
 	while (configuraciones.planificacion_activa == 1) {
 		//SE CONTROLA LA MULTIPROGRAMACION DE ESTA MANERA
 		if (!queue_is_empty(COLA_READY)) {
-			//TODO: Semaforo
+			sem_wait(&mutex_cola_READY);
 			PCB* pcb = queue_peek(COLA_READY);
-			//TODO: Fin Semaforo
+			sem_post(&mutex_cola_READY);
 			return pcb;
 		}
 	}
@@ -127,12 +124,14 @@ void recepcion_PCB_en_COLA_EXIT() {
 	}
 }
 
-void recibir_PCB_de_CPU(int clienteCPU) {
-	PCB* pcb;
+void recibir_PCB_de_CPU(int clienteCPU, char * modo) {
+	PCB* pcb = recibir_pcb(clienteCPU);
 
-	//INVOCAR FUNCION DE DESERIALIZAR PCB
-
-	pcb = recibir_pcb(clienteCPU); // ^ok
+	if(strcmp(modo, "TERMINADO") == 0){
+		mover_PCB_de_cola(pcb, EJECUTANDO, EXIT);
+	} else if(strcmp(modo, "QUANTUM") == 0){
+		mover_PCB_de_cola(pcb, EJECUTANDO, READY);
+	}
 
 }
 

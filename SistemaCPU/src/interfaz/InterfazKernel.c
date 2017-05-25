@@ -64,8 +64,14 @@ PCB* recibir_PCB_de_kernel() {
 }
 
 /* Se encarga de devolver al kernel el PCB con sus modificaciones por la ejecucion*/
-void enviar_PCB_a_kernel(PCB* pcb) {
-
+void enviar_PCB_a_kernel(PCB* pcb, char * modo) {
+	if(strcmp(modo, "TERMINADO") == 0){
+		enviar_dato_serializado(servidor_kernel, "TERMINADO");
+		enviar_pcb(pcb, servidor_kernel);
+	}else if(strcmp(modo, "QUANTUM") == 0){
+		enviar_dato_serializado(servidor_kernel, "QUANTUM");
+		enviar_pcb(pcb, servidor_kernel);
+	}
 }
 
 char* enviar_SYSCALL_solicitar_memoria_dinamica_a_kernel(int PID, int espacio) {

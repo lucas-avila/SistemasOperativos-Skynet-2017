@@ -19,10 +19,10 @@ int pids_reg = MIN_PIDS;
 PCB * crear_pcb() {
 	PCB * pcb = malloc(sizeof(PCB));
 
-	//sem_wait(mutex_pids);
+	sem_wait(&mutex_pids);
 	pcb->PID = pids_reg;
 	pids_reg++;
-	//sem_post(mutex_pids);
+	sem_post(&mutex_pids);
 	pcb->etiquetas = string_new();
 	pcb->etiquetas_size = 0;
 	pcb->codigo = list_create();
