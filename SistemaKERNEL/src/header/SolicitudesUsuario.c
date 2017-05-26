@@ -105,13 +105,13 @@ void mostrar_cola(COLA cola){
 	case READY:
 		printf("Su cola actual es: READY\n");
 		break;
-	case EJECUTANDO:
+	case EXEC:
 		printf("Su cola actual es: RUNNING\n");
 		break;
 	case EXIT:
 		printf("Su cola actual es: EXIT\n");
 		break;
-	case BLOQUEADO:
+	case WAITING:
 		printf("Su cola actual es: WAITING\n");
 		break;
 	}
@@ -190,7 +190,7 @@ void detener_planificacion(){
 void verificar_estado(uint32_t pid){
 
 	Proceso * proceso_a_eliminar = buscar_proceso_by_PID(pid);
-	while(proceso_a_eliminar->cola == EJECUTANDO);
+	while(proceso_a_eliminar->cola == EXEC);
 
 	if(proceso_a_eliminar->cola == EXIT) {
 		printf("El proceso ya ha finalizado.\n");

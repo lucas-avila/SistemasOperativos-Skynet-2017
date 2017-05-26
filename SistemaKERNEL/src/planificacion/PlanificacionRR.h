@@ -8,6 +8,7 @@
 #ifndef PLANIFICACION_PLANIFICACIONRR_H_
 #define PLANIFICACION_PLANIFICACIONRR_H_
 
-void ejecutar_algoritmo_planificacion_RR();
+void dispatcher_RR();
+void recepcion_PCB_en_COLA_EXIT_RR();
 
 #endif /* PLANIFICACION_PLANIFICACIONRR_H_ */

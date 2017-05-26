@@ -1,15 +1,19 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-#include<pthread.h>
-#include <commons/collections/list.h>
-#include "../header/AppConfig.h"
-#include "../general/Socket.h"
 #include "InterfazCPU.h"
-#include "../header/PCB.h"
-#include "../header/Estructuras.h"
-#include "../capaMEMORIA/GestionMemoriaDinamica.h"
+
+#include <commons/collections/list.h>
+#include <pthread.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+
+#include "../administrarProcesos/Proceso.h"
+#include "../capaFILESYSTEM/GestionArchivoFuncAux.h"
 #include "../capaMEMORIA/AdministrarVarCompartidas.h"
+#include "../capaMEMORIA/GestionMemoriaDinamica.h"
+#include "../general/Socket.h"
+#include "../header/AppConfig.h"
+#include "../header/Estructuras.h"
 #include "../planificacion/Planificacion.h"
 
 int servidor_CPU = 0;

@@ -14,7 +14,7 @@
 #include "commons/collections/list.h"
 
 typedef enum {
-	NEW = 1, READY = 2, EJECUTANDO = 3, EXIT = 4, BLOQUEADO = 5
+	NEW = 1, READY = 2, EXEC = 3, EXIT = 4, WAITING = 5
 } COLA;
 
 typedef struct {

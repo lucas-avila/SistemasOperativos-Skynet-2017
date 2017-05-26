@@ -1,10 +1,15 @@
-#include "Planificacion.h"
 #include "PlanificacionRR.h"
-#include "../header/AppConfig.h"
-#include "../administrarPCB/EstadisticaProceso.h"
-#include "../general/Socket.h"
 
-void ejecutar_algoritmo_planificacion_RR() {
+#include <stddef.h>
+
+#include "../administrarProcesos/Proceso.h"
+#include "../general/Socket.h"
+#include "../header/AppConfig.h"
+#include "../header/Estructuras.h"
+#include "../header/PCB.h"
+#include "Planificacion.h"
+
+void dispatcher_RR() {
 	PCB* pcb;
 	CPUInfo* cpu;
 	atender_clientes(0, planificador_mediano_plazo);
@@ -16,8 +21,8 @@ void ejecutar_algoritmo_planificacion_RR() {
 
 		//Seteamos QUANTUM
 		pcb->RR=1;
-		pcb->cantidad_rafagas =configuraciones.QUANTUM;
-		pcb->quantum_sleep=configuraciones.QUANTUM_SLEEP;
+		pcb->cantidad_rafagas = configuraciones.QUANTUM;
+		pcb->quantum_sleep = configuraciones.QUANTUM_SLEEP;
 
 		//Esperamos hasta obtener una CPU
 		cpu = obtener_CPU_Disponible();
@@ -26,8 +31,16 @@ void ejecutar_algoritmo_planificacion_RR() {
 		if(cpu == NULL) return;
 
 		marcar_CPU_Ocupada(cpu);
-		mover_PCB_de_cola(pcb, READY, EJECUTANDO);
+		mover_PCB_de_cola(pcb, READY, EXEC);
 		enviar_PCB_Serializado_a_CPU(cpu, pcb);
 
 	}
+}
+
+void recepcion_PCB_en_COLA_EXIT_RR(){
+	PCB* pcb;
+	pcb = queue_pop(COLA_EXIT);
+	//INFORMACION ESTADISTICA
+	//incrementar_rafagas_ejecutadas();
+	queue_push(COLA_EXIT, pcb);
 }

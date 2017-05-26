@@ -12,7 +12,7 @@ LISTA_SERIALIZADA * serializar_con_header(t_list * lista, char * tipo_lista);
 LISTA_DESERIALIZADA * deserializar_con_header(char * cadena, char * tipo_lista);
 
 //modificaciones a las funciones de enviar y recibir por sockets
-void enviar_estructura_serializada(char* mensaje, int size, int conexion) {
+void enviar_estructura_serializada(char* mensaje, uint32_t size, int conexion) {
 	char * tamanio_dato = malloc(sizeof(uint32_t));
 	memcpy(tamanio_dato, &size, sizeof(uint32_t));
 	send(conexion, tamanio_dato, sizeof(uint32_t), 0);
@@ -45,7 +45,7 @@ int enviar_pcb(PCB * pcb, int s_destino) {
 	LISTA_SERIALIZADA * buffer_lista_pila = serializar_con_header(pcb->pila, "LISTA_PILA");
 
 
-	int size = sizeof(uint32_t) * 4 + sizeof(int32_t) * 5 + buffer_lista_codigo->size + buffer_lista_pila->size + pcb->etiquetas_size;
+	int size = (sizeof(PCB) - 2 * sizeof(t_list *) - sizeof(char *)) + buffer_lista_codigo->size + buffer_lista_pila->size + pcb->etiquetas_size;
 	char * paquete = malloc(size);
 
 	memcpy(paquete + offset, &pcb->PID, sizeof(uint32_t));

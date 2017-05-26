@@ -55,7 +55,7 @@ void mostrar_estado_colas() {
 		printf("\n\tCOLA READY: ");
 		mostrar_datos_cola(COLA_READY);
 		printf("\n\tCOLA EJECUTANDO: ");
-		mostrar_datos_cola(COLA_EJECUTANDO);
+		mostrar_datos_cola(COLA_EXEC);
 		printf("\n\tCOLA EXIT: ");
 		mostrar_datos_cola(COLA_EXIT);
 		printf("\n\n Presione 0 para terminar");

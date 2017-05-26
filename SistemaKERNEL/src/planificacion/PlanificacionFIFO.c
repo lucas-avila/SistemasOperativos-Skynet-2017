@@ -4,7 +4,7 @@
 #include "../administrarPCB/EstadisticaProceso.h"
 #include "../general/Socket.h"
 
-void ejecutar_algoritmo_planificacion_FIFO() {
+void dispatcher_FIFO() {
 	PCB* pcb;
 	CPUInfo* cpu;
 	atender_clientes(0, planificador_mediano_plazo);
@@ -16,7 +16,7 @@ void ejecutar_algoritmo_planificacion_FIFO() {
 
 		cpu = obtener_CPU_Disponible();
 		marcar_CPU_Ocupada(cpu);
-		mover_PCB_de_cola(pcb, READY, EJECUTANDO);
+		mover_PCB_de_cola(pcb, READY, EXEC);
 		enviar_PCB_Serializado_a_CPU(cpu, pcb);
 	}
 }
