@@ -1,40 +1,6 @@
-<<<<<<< HEAD
-14:34:18 **** Incremental Build of configuration Debug for project SistemaConsola ****
+20:16:21 **** Incremental Build of configuration Debug for project SistemaConsola ****
 make all 
 make: No se hace nada para «all».
 
-14:34:18 Build Finished (took 219ms)
-=======
-13:46:59 **** Incremental Build of configuration Debug for project SistemaConsola ****
-make all 
-Building file: ../src/header/Estructuras.c
-Invoking: GCC C Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/Estructuras.d" -MT"src/header/Estructuras.d" -o "src/header/Estructuras.o" "../src/header/Estructuras.c"
-../src/header/Estructuras.c: In function ‘new_Info_ejecucion’:
-../src/header/Estructuras.c:14:2: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]
-  Info_ejecucion * info_ejecucion = malloc(sizeof(Info_ejecucion));
-  ^
-../src/header/Estructuras.c:14:36: warning: incompatible implicit declaration of built-in function ‘malloc’ [enabled by default]
-  Info_ejecucion * info_ejecucion = malloc(sizeof(Info_ejecucion));
-                                    ^
-../src/header/Estructuras.c: In function ‘eliminar_info_proceso’:
-../src/header/Estructuras.c:31:2: warning: passing argument 2 of ‘list_remove’ makes integer from pointer without a cast [enabled by default]
-  list_remove(Info_procesos, info_ejecucion);
-  ^
-In file included from ../src/header/Estructuras.h:12:0,
-                 from ../src/header/Estructuras.c:7:
-/usr/include/commons/collections/list.h:120:8: note: expected ‘int’ but argument is of type ‘struct Info_ejecucion *’
-  void *list_remove(t_list *, int index);
-        ^
-../src/header/Estructuras.c: At top level:
-../src/header/Estructuras.c:34:32: error: unknown type name ‘uint32_t’
- int buscar_indice_Info_proceso(uint32_t PID) {
-                                ^
-../src/header/Estructuras.c:47:37: error: unknown type name ‘uint32_t’
- Info_ejecucion* buscar_info_por_PID(uint32_t PID) {
-                                     ^
-make: *** [src/header/Estructuras.o] Error 1
-
-13:46:59 Build Finished (took 61ms)
->>>>>>> b1145973ec31846d400904a018731be4db187bd4
+20:16:21 Build Finished (took 71ms)
 

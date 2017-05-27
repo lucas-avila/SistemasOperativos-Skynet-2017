@@ -134,6 +134,9 @@ void recibir_PCB_de_CPU(int clienteCPU, char * modo) {
 		mover_PCB_de_cola(pcb, EXEC, READY);
 	} else if(strcmp(modo, "WAITING_ARCHIVO") == 0){
 		mover_PCB_de_cola(pcb, EXEC, WAITING);
+	} else if(strcmp(modo, "WAIT_SEM") == 0){
+		char * nombre_sem = recibir_dato_serializado(clienteCPU);
+
 	}
 
 }

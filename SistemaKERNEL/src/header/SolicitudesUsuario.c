@@ -148,7 +148,7 @@ void obtener_informacion_proceso(){
 				break;
 			case 2:
 				printf("⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛\n");
-				printf("Cantidad operaciones privilegiadas ejecutadas: %d.\n", proceso->operaciones_privilegiadas_ejecutadas);
+				printf("Cantidad operaciones privilegiadas ejecutadas: Movido a su correspondiente EstadisticaProceso.\n");
 				printf("⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛\n");
 				break;
 			case 3:
@@ -159,7 +159,7 @@ void obtener_informacion_proceso(){
 				break;
 			case 5:
 				printf("⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛\n");
-				printf("Cantidad syscalls ejecutadas: %d.\n", proceso->syscalls_ejecutadas);
+				printf("Cantidad syscalls ejecutadas: Movido a su correspondiente EstadisticaProceso d.\n");
 				printf("⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛\n");
 				break;
 			}

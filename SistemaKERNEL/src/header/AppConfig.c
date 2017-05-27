@@ -76,6 +76,11 @@ void inicializar_configuracion(char *PATH_ARCHIVO_CONFIGURACION) {
 			configuraciones.SEM_INIT = config_get_array_value(config, "SEM_INIT");
 		}
 
+		if (config_has_property(config, "CANT_SEM") == true) {
+
+			configuraciones.cantidad_sem = config_get_int_value(config, "CANT_SEM");
+		}
+
 		if (config_has_property(config, "CANTIDAD_MAXIMA_CONCURRENCIA") == true) {
 			configuraciones.CANTIDAD_MAXIMA_CONCURRENCIA = config_get_int_value(config, "CANTIDAD_MAXIMA_CONCURRENCIA");
 		}

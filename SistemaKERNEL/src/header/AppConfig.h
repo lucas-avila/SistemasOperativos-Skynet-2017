@@ -21,6 +21,7 @@ typedef struct {
 	int GRADO_MULTIPROG;
 	char** SEM_IDS;
 	char** SEM_INIT;
+	int cantidad_sem;
 	char** VAR_COMP;
 
 	int cantidad_var_comp;

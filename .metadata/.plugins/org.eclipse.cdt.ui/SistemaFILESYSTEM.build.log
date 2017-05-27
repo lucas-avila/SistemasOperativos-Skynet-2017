@@ -1,14 +1,6 @@
-<<<<<<< HEAD
-14:34:18 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
+20:16:21 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
 make all 
 make: No se hace nada para «all».
 
-14:34:19 Build Finished (took 378ms)
-=======
-13:46:59 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
-make all 
-make: No se hace nada para «all».
-
-13:46:59 Build Finished (took 82ms)
->>>>>>> b1145973ec31846d400904a018731be4db187bd4
+20:16:21 Build Finished (took 118ms)
 
