@@ -28,7 +28,7 @@ char* CU_ABRIR_ARCHIVO(char* PID, char* pathArchivo, bool flagCreate, bool flagR
 	} else if (!existeArchivoFS && flagCreate) {
 
 		//Informacion Estadistica
-		incremetnar_sysCall(PID, 1);
+		incrementar_SYSCALL(PID, 1);
 
 		crear_archivo(pathArchivo);
 		return grabar_apertura_en_tablas_archivos(pathArchivo, proc, flagCreate, flagRead, flagWrite);
@@ -49,7 +49,7 @@ char* CU_MOVER_CURSOR_ARCHIVO(char* PID, int FD, int cursor_bloque) {
 	registro->cursor_bloque = cursor_bloque;
 
 	//Informacion Estadistica
-	incremetnar_sysCall(PID, 1);
+	incrementar_SYSCALL(PID, 1);
 	return "OK";
 
 }
@@ -61,7 +61,7 @@ char* CU_LEER_ARCHIVO(char* PID, int FD, int tamanio) {
 	}
 	if (verificarFlag(registro->flags, 'L')) {
 		//Informacion Estadistica
-		incremetnar_sysCall(PID, 1);
+		incrementar_SYSCALL(PID, 1);
 		return obtenerDatos(getNombreArchivo(FD), registro->cursor_bloque, tamanio);
 	} else {
 		return "ERROR_FALTA_MODO_LECTURA";
@@ -75,7 +75,7 @@ char* CU_ESCRIBIR_ARCHIVO(char* PID, int FD, int tamanio, char* contenido) {
 	}
 	if (verificarFlag(registro->flags, 'E')) {
 		//Informacion Estadistica
-		incremetnar_sysCall(PID, 1);
+		incrementar_SYSCALL(PID, 1);
 		return guardarDatos(getNombreArchivo(FD), registro->cursor_bloque, tamanio, contenido);
 	} else {
 		return "ERROR_FALTA_MODO_ESCRITURA";
@@ -95,7 +95,7 @@ char* CU_CERRAR_ARCHIVO(char* PID, int FD) {
 	registroGlobal->open -= 1;
 	if (registroGlobal->open == 0) {
 		//Informacion Estadistica
-		incremetnar_sysCall(PID, 1);
+		incrementar_SYSCALL(PID, 1);
 		eliminar_Tabla_Global_Archivo(registroGlobal);
 	}
 	return "OK";
@@ -113,6 +113,6 @@ char* CU_BORRAR_ARCHIVO(char* PID, char* rutaArchivo) {
 	borrar(rutaArchivo);
 
 	//Informacion Estadistica
-	incremetnar_sysCall(PID, 1);
+	incrementar_SYSCALL(PID, 1);
 	return "OK";
 }

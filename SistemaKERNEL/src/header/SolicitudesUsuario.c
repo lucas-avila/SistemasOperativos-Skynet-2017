@@ -105,13 +105,13 @@ void mostrar_cola(COLA cola){
 	case READY:
 		printf("Su cola actual es: READY\n");
 		break;
-	case EJECUTANDO:
+	case EXEC:
 		printf("Su cola actual es: RUNNING\n");
 		break;
 	case EXIT:
 		printf("Su cola actual es: EXIT\n");
 		break;
-	case BLOQUEADO:
+	case WAITING:
 		printf("Su cola actual es: WAITING\n");
 		break;
 	}
@@ -148,7 +148,7 @@ void obtener_informacion_proceso(){
 				break;
 			case 2:
 				printf("⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛\n");
-				printf("Cantidad operaciones privilegiadas ejecutadas: %d.\n", proceso->operaciones_privilegiadas_ejecutadas);
+				printf("Cantidad operaciones privilegiadas ejecutadas: Movido a su correspondiente EstadisticaProceso.\n");
 				printf("⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛\n");
 				break;
 			case 3:
@@ -159,7 +159,7 @@ void obtener_informacion_proceso(){
 				break;
 			case 5:
 				printf("⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛\n");
-				printf("Cantidad syscalls ejecutadas: %d.\n", proceso->syscalls_ejecutadas);
+				printf("Cantidad syscalls ejecutadas: Movido a su correspondiente EstadisticaProceso d.\n");
 				printf("⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛\n");
 				break;
 			}
@@ -190,7 +190,7 @@ void detener_planificacion(){
 void verificar_estado(uint32_t pid){
 
 	Proceso * proceso_a_eliminar = buscar_proceso_by_PID(pid);
-	while(proceso_a_eliminar->cola == EJECUTANDO);
+	while(proceso_a_eliminar->cola == EXEC);
 
 	if(proceso_a_eliminar->cola == EXIT) {
 		printf("El proceso ya ha finalizado.\n");

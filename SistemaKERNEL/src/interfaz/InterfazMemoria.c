@@ -71,23 +71,47 @@ int is_valid_line(char* line){
 }
 
 int enviar_programa_memoria(t_metadata_program * meta, PCB * pcb, char * programa){
-	int paginaSentencia = atoi(asignar_Paginas_Programa(string_itoa(pcb->PID), "1"));
+
+	int cantidad_paginas = 0;
+	char * numeroPagina = asignar_Paginas_Programa(string_itoa(pcb->PID), "1");
+	if (strcmp(numeroPagina, "FALTA ESPACIO") == 0) {
+		finalizar_Programa_memoria(string_itoa(pcb->PID));
+		printf("ERROR no hay espacio suficiente");
+		return -1;
+	}
+	cantidad_paginas++;
 
 	int cantidadSentencias = meta->instrucciones_size;
 	int i = 0;
 	int indiceInicial = 0;
+
 	for (i = 0; i < cantidadSentencias; i++) {
 		char * instruccion = string_substring(programa, meta->instrucciones_serializado[i].start, meta->instrucciones_serializado[i].offset);
 		instruccion[meta->instrucciones_serializado[i].offset] = '\0';
 
-		IndiceCodigo* indiceNuevo = crear_IndiceCodigo(i, indiceInicial, strlen(instruccion), paginaSentencia);
+		IndiceCodigo * indiceNuevo = crear_IndiceCodigo(i, indiceInicial, strlen(instruccion), atoi(numeroPagina));
 		indiceInicial = indiceInicial + strlen(instruccion);
 		list_add(pcb->codigo, indiceNuevo);
 
-		almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(indiceNuevo->pagina), string_itoa(indiceNuevo->byte_inicial_codigo), string_itoa(indiceNuevo->byte_final_codigo - indiceNuevo->byte_inicial_codigo), instruccion);
+		char * respuesta = almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(indiceNuevo->pagina), string_itoa(indiceNuevo->byte_inicial_codigo), string_itoa(indiceNuevo->byte_final_codigo - indiceNuevo->byte_inicial_codigo), instruccion);
+
+		//Si no queda mas espacio en esa pagina pedimos una nueva y seguimos
+		if(strcmp(respuesta, "CONTENIDO_NO_ENTRA_EN_PAGINA") == 0){
+			numeroPagina = asignar_Paginas_Programa(string_itoa(pcb->PID), "1");
+			if (strcmp(numeroPagina, "FALTA ESPACIO") == 0) {
+				finalizar_Programa_memoria(string_itoa(pcb->PID));
+				printf("ERROR no hay espacio suficiente");
+				return -1;
+			}
+			almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(indiceNuevo->pagina), string_itoa(indiceNuevo->byte_inicial_codigo), string_itoa(indiceNuevo->byte_final_codigo - indiceNuevo->byte_inicial_codigo), instruccion);
+			cantidad_paginas++;
+		}
+
 		free(instruccion);
+		free(respuesta);
 	}
-	return 0;
+
+	return cantidad_paginas;
 }
 
 IndiceCodigo* crear_IndiceCodigo(int programCounter, int byteInicial, int tamanio, int pagina) {

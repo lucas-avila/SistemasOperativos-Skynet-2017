@@ -76,6 +76,11 @@ void inicializar_configuracion(char *PATH_ARCHIVO_CONFIGURACION) {
 			configuraciones.SEM_INIT = config_get_array_value(config, "SEM_INIT");
 		}
 
+		if (config_has_property(config, "CANT_SEM") == true) {
+
+			configuraciones.cantidad_sem = config_get_int_value(config, "CANT_SEM");
+		}
+
 		if (config_has_property(config, "CANTIDAD_MAXIMA_CONCURRENCIA") == true) {
 			configuraciones.CANTIDAD_MAXIMA_CONCURRENCIA = config_get_int_value(config, "CANTIDAD_MAXIMA_CONCURRENCIA");
 		}
@@ -87,11 +92,19 @@ void inicializar_configuracion(char *PATH_ARCHIVO_CONFIGURACION) {
 
 		configuraciones.planificacion_activa = 1;
 	}
+<<<<<<< HEAD
 	inicializar_vec_variables_compartidas();
 }
 
 void inicializar_vec_variables_compartidas() {
 	VECTOR_VAR_COM = malloc(configuraciones.cantidad_var_comp);
+=======
+	inicializar_vec_variables_compartidas(VECTOR_VAR_COM);
+}
+
+void inicializar_vec_variables_compartidas(int** VECTOR_VAR_COMP) {
+	VECTOR_VAR_COMP = malloc(configuraciones.cantidad_var_comp);
+>>>>>>> 005292d7e95364d69bce6cbac3570e65b830004c
 	int i = 0;
 	 while ( i < configuraciones.cantidad_var_comp) {
 	 VECTOR_VAR_COM[i] = 0;

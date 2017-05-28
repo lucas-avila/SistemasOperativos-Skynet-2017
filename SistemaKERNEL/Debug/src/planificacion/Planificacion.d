@@ -5,10 +5,10 @@ src/planificacion/Planificacion.d: ../src/planificacion/Planificacion.c \
  ../src/planificacion/../administrarProcesos/Proceso.h \
  ../src/planificacion/../administrarProcesos/../header/PCB.h \
  ../src/planificacion/../administrarProcesos/../capaFILESYSTEM/TablaProcesoArchivo.h \
- ../src/planificacion/PlanificacionFIFO.h \
- ../src/planificacion/PlanificacionRR.h \
+ ../src/planificacion/../general/Semaforo.h \
  ../src/planificacion/../header/AppConfig.h \
- ../src/planificacion/../administrarPCB/EstadisticaProceso.h
+ ../src/planificacion/PlanificacionFIFO.h \
+ ../src/planificacion/PlanificacionRR.h
 
 ../src/planificacion/Planificacion.h:
 
@@ -22,10 +22,10 @@ src/planificacion/Planificacion.d: ../src/planificacion/Planificacion.c \
 
 ../src/planificacion/../administrarProcesos/../capaFILESYSTEM/TablaProcesoArchivo.h:
 
-../src/planificacion/PlanificacionFIFO.h:
-
-../src/planificacion/PlanificacionRR.h:
+../src/planificacion/../general/Semaforo.h:
 
 ../src/planificacion/../header/AppConfig.h:
 
-../src/planificacion/../administrarPCB/EstadisticaProceso.h:
+../src/planificacion/PlanificacionFIFO.h:
+
+../src/planificacion/PlanificacionRR.h:

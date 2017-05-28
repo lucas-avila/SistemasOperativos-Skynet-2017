@@ -14,9 +14,9 @@
 #include "../administrarProcesos/Proceso.h"
 
 t_queue* COLA_NEW;
-t_queue* COLA_BLOQUEADO;
+t_queue* COLA_WAITING;
 t_queue* COLA_READY;
-t_queue* COLA_EJECUTANDO;
+t_queue* COLA_EXEC;
 t_queue* COLA_EXIT;
 //t_queue* COLA_SUSPENDIDO;
 
@@ -44,6 +44,6 @@ void recepcion_PCB_en_COLA_EXIT();
 
 void planificador_mediano_plazo();
 
-void recibir_PCB_de_CPU(int clienteCPU);
+void recibir_PCB_de_CPU(int clienteCPU, char * modo);
 
 #endif /* HEADER_PLANIFICACION_H_ */

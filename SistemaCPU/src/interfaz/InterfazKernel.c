@@ -64,8 +64,22 @@ PCB* recibir_PCB_de_kernel() {
 }
 
 /* Se encarga de devolver al kernel el PCB con sus modificaciones por la ejecucion*/
-void enviar_PCB_a_kernel(PCB* pcb) {
+void enviar_PCB_a_kernel(PCB* pcb, char * modo) {
+	enviar_dato_serializado(servidor_kernel, modo);
+	enviar_pcb(pcb, servidor_kernel);
+}
 
+int enviar_SYSCALL_wait_semaforo_a_kernel(char* nombre_semaforo, PCB * pcb){
+	enviar_PCB_a_kernel(pcb, "WAIT_SEM");
+	enviar_dato_serializado(nombre_semaforo, servidor_kernel);
+	char * respuesta = recibir_dato_serializado(servidor_kernel);
+	if(strcmp(respuesta, "BLOQUEAR") == 0){
+		//el semaforo quedo bloqueando el proceso, se libera esta cpu
+		return 1;
+	}else{
+		//el semaforo no bloqueó el proceso, el proceso continua su ejecucion normal
+		return 0;
+	}
 }
 
 char* enviar_SYSCALL_solicitar_memoria_dinamica_a_kernel(int PID, int espacio) {

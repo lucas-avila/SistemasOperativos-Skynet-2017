@@ -19,10 +19,10 @@ int pids_reg = MIN_PIDS;
 PCB * crear_pcb() {
 	PCB * pcb = malloc(sizeof(PCB));
 
-	//sem_wait(mutex_pids);
+	sem_wait(&mutex_pids);
 	pcb->PID = pids_reg;
 	pids_reg++;
-	//sem_post(mutex_pids);
+	sem_post(&mutex_pids);
 	pcb->etiquetas = string_new();
 	pcb->etiquetas_size = 0;
 	pcb->codigo = list_create();
@@ -41,6 +41,7 @@ PCB * hardcodear_pcb(){
 				pcb->cantidad_rafagas_ejecutadas = 20;
 				pcb->exit_code = -20;
 				pcb->pagina_inicial_stack = 0;
+				pcb->quantum_sleep = 5;
 				pcb->program_counter = 23;
 
 				pcb->etiquetas = string_new();
@@ -102,7 +103,7 @@ PCB * hardcodear_pcb(){
 }
 
 //modificaciones a las funciones de enviar y recibir por sockets
-void enviar_estructura_serializada(char* mensaje, int size, int conexion) {
+void enviar_estructura_serializada(char* mensaje, uint32_t size, int conexion) {
 	char * tamanio_dato = malloc(sizeof(uint32_t));
 	memcpy(tamanio_dato, &size, sizeof(uint32_t));
 	send(conexion, tamanio_dato, sizeof(uint32_t), 0);
@@ -136,7 +137,7 @@ int enviar_pcb(PCB * pcb, int s_destino) {
 	LISTA_SERIALIZADA * buffer_lista_pila = serializar_con_header(pcb->pila, "LISTA_PILA");
 
 
-	int size = sizeof(uint32_t) * 4 + sizeof(int32_t) * 5 + buffer_lista_codigo->size + buffer_lista_pila->size + pcb->etiquetas_size;
+	int size =  (sizeof(PCB) - 2 * sizeof(t_list *) - sizeof(char *))  + buffer_lista_codigo->size + buffer_lista_pila->size + pcb->etiquetas_size;
 	char * paquete = malloc(size);
 
 	memcpy(paquete + offset, &pcb->PID, sizeof(uint32_t));
@@ -231,7 +232,7 @@ PCB * enviar_pcb_deb(PCB * pcb){
 	LISTA_SERIALIZADA * buffer_lista_pila = serializar_con_header(pcb->pila, "LISTA_PILA");
 
 
-	int size = sizeof(uint32_t) * 4 + sizeof(int32_t) * 5 + buffer_lista_codigo->size + buffer_lista_pila->size + pcb->etiquetas_size;
+	int size =  (sizeof(PCB) - 2 * sizeof(t_list *) - sizeof(char *))  + buffer_lista_codigo->size + buffer_lista_pila->size + pcb->etiquetas_size;
 	char * paquete = malloc(size);
 
 	memcpy(paquete + offset, &pcb->PID, sizeof(uint32_t));

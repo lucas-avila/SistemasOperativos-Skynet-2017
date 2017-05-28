@@ -21,7 +21,11 @@
 <stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_START_MODE" value="run"/>
 <booleanAttribute key="org.eclipse.cdt.launch.DEBUGGER_STOP_AT_MAIN" value="true"/>
 <stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_STOP_AT_MAIN_SYMBOL" value="main"/>
+<<<<<<< HEAD
 <stringAttribute key="org.eclipse.cdt.launch.PROGRAM_ARGUMENTS" value="/home/utnso/UNIVERSIDAD/2017/OPERATIVOS/PROYECTOS/SistemaKERNEL/resource/config.cfg"/>
+=======
+<stringAttribute key="org.eclipse.cdt.launch.PROGRAM_ARGUMENTS" value="/home/utnso/Escritorio/tp-2017-1c-Skynet/SistemaKERNEL/resource/config.cfg"/>
+>>>>>>> 005292d7e95364d69bce6cbac3570e65b830004c
 <stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="Debug/SistemaKERNEL"/>
 <stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="SistemaKERNEL"/>
 <stringAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_ID_ATTR" value="cdt.managedbuild.config.gnu.exe.debug.383112105"/>

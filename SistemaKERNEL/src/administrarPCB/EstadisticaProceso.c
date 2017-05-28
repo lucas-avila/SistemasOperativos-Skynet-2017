@@ -102,7 +102,7 @@ void incrementar_FREE(char *PID, int tamanioFREE) {
 	elemento->tamanio_Total_Liberar += tamanioFREE;
 	actualizar_registro_proceso(elemento);
 }
-void incremetnar_sysCall(char *PID, int cantidadSysCall) {
+void incrementar_SYSCALL(char *PID, int cantidadSysCall) {
 	EstadisticaProceso* elemento = buscar_registro_por_PID(PID);
 	if (elemento == NULL) {
 		crear_Proceso_en_tabla(PID);

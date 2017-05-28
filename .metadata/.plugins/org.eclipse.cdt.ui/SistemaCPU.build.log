@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 18:43:48 **** Incremental Build of configuration Debug for project SistemaCPU ****
+=======
+20:16:21 **** Incremental Build of configuration Debug for project SistemaCPU ****
+>>>>>>> 005292d7e95364d69bce6cbac3570e65b830004c
 make all 
-Building file: ../src/testing/testearPrimitivasFunciones.c
+Building file: ../src/interfaz/InterfazKernel.c
 Invoking: GCC C Compiler
+<<<<<<< HEAD
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/testearPrimitivasFunciones.d" -MT"src/testing/testearPrimitivasFunciones.d" -o "src/testing/testearPrimitivasFunciones.o" "../src/testing/testearPrimitivasFunciones.c"
 ../src/testing/testearPrimitivasFunciones.c: In function ‘crear_PCB_TEST’:
 ../src/testing/testearPrimitivasFunciones.c:45:390: warning: "/*" within comment [-Wcomment]
@@ -65,6 +70,44 @@ In file included from ../src/testing/testearPrimitivasFunciones.c:7:0:
   char nombreVariable[20];
        ^
 Finished building: ../src/testing/testearPrimitivasFunciones.c
+=======
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/interfaz/InterfazKernel.d" -MT"src/interfaz/InterfazKernel.d" -o "src/interfaz/InterfazKernel.o" "../src/interfaz/InterfazKernel.c"
+../src/interfaz/InterfazKernel.c: In function ‘recibir_PCB_de_kernel’:
+../src/interfaz/InterfazKernel.c:28:2: warning: statement with no effect [-Wunused-value]
+  for (i; i < list_size(pcb->codigo); i++) {
+  ^
+../src/interfaz/InterfazKernel.c:42:3: warning: statement with no effect [-Wunused-value]
+   for (x; x < list_size(e->argumentos); x++) {
+   ^
+../src/interfaz/InterfazKernel.c: In function ‘enviar_PCB_a_kernel’:
+../src/interfaz/InterfazKernel.c:68:2: warning: passing argument 1 of ‘enviar_dato_serializado’ makes pointer from integer without a cast [enabled by default]
+  enviar_dato_serializado(servidor_kernel, modo);
+  ^
+In file included from ../src/interfaz/InterfazKernel.c:9:0:
+../src/interfaz/../general/Socket.h:15:6: note: expected ‘char *’ but argument is of type ‘int’
+ void enviar_dato_serializado(char * mensaje, int conexion);
+      ^
+../src/interfaz/InterfazKernel.c:68:2: warning: passing argument 2 of ‘enviar_dato_serializado’ makes integer from pointer without a cast [enabled by default]
+  enviar_dato_serializado(servidor_kernel, modo);
+  ^
+In file included from ../src/interfaz/InterfazKernel.c:9:0:
+../src/interfaz/../general/Socket.h:15:6: note: expected ‘int’ but argument is of type ‘char *’
+ void enviar_dato_serializado(char * mensaje, int conexion);
+      ^
+../src/interfaz/InterfazKernel.c: In function ‘enviar_SYSCALL_solicitar_memoria_dinamica_a_kernel’:
+../src/interfaz/InterfazKernel.c:93:9: warning: unused variable ‘PIDR’ [-Wunused-variable]
+   char* PIDR = recibir_dato_serializado(servidor_kernel);
+         ^
+../src/interfaz/InterfazKernel.c: In function ‘asignar_valor_a_variable_compartida_en_kernel’:
+../src/interfaz/InterfazKernel.c:136:3: warning: format not a string literal and no format arguments [-Wformat-security]
+   printf(resultado);
+   ^
+../src/interfaz/InterfazKernel.c: In function ‘obtener_valor_de_variable_compartida_en_kernel’:
+../src/interfaz/InterfazKernel.c:155:17: warning: assignment makes pointer from integer without a cast [enabled by default]
+   valorVariable = (atoi(valor_var_comp));
+                 ^
+Finished building: ../src/interfaz/InterfazKernel.c
+>>>>>>> 005292d7e95364d69bce6cbac3570e65b830004c
  
 Building target: SistemaCPU
 Invoking: GCC C Linker
@@ -72,5 +115,9 @@ gcc  -o "SistemaCPU"  ./src/testing/testearPrimitivasFunciones.o ./src/testing/t
 Finished building target: SistemaCPU
  
 
+<<<<<<< HEAD
 18:43:51 Build Finished (took 2s.517ms)
+=======
+20:16:21 Build Finished (took 160ms)
+>>>>>>> 005292d7e95364d69bce6cbac3570e65b830004c
 

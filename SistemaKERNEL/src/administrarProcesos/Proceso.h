@@ -14,7 +14,7 @@
 #include "commons/collections/list.h"
 
 typedef enum {
-	NEW = 1, READY = 2, EJECUTANDO = 3, EXIT = 4, BLOQUEADO = 5
+	NEW = 1, READY = 2, EXEC = 3, EXIT = 4, WAITING = 5
 } COLA;
 
 typedef struct {
@@ -25,8 +25,6 @@ typedef struct {
 
 	COLA cola;
 	uint32_t socket;
-	uint32_t operaciones_privilegiadas_ejecutadas;
-	uint32_t syscalls_ejecutadas;
 } Proceso;
 
 t_list* procesos;

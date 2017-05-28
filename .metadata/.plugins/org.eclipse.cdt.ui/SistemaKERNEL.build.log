@@ -1,6 +1,613 @@
+<<<<<<< HEAD
 18:47:05 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
 make all 
 make: No se hace nada para «all».
 
 18:47:06 Build Finished (took 1s.169ms)
+=======
+20:16:21 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+Building file: ../src/testing/TestingGeneral.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/TestingGeneral.d" -MT"src/testing/TestingGeneral.d" -o "src/testing/TestingGeneral.o" "../src/testing/TestingGeneral.c"
+../src/testing/TestingGeneral.c: In function ‘mostrar_menu_testing_general’:
+../src/testing/TestingGeneral.c:47:4: warning: passing argument 1 of ‘crear_Proceso_en_tabla’ makes pointer from integer without a cast [enabled by default]
+    crear_Proceso_en_tabla(pcb_nuevo->PID);
+    ^
+In file included from ../src/testing/TestingGeneral.c:9:0:
+../src/testing/../administrarPCB/EstadisticaProceso.h:32:6: note: expected ‘char *’ but argument is of type ‘uint32_t’
+ void crear_Proceso_en_tabla(char *PID);
+      ^
+../src/testing/TestingGeneral.c:49:4: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘uint32_t’ [-Wformat=]
+    printf("PCB creado, PID es : %s\n", pcb_nuevo->PID);
+    ^
+../src/testing/TestingGeneral.c:67:4: warning: implicit declaration of function ‘serializar_con_header’ [-Wimplicit-function-declaration]
+    char * result = serializar_con_header(lista, "LISTA_CODIGO");
+    ^
+../src/testing/TestingGeneral.c:67:20: warning: initialization makes pointer from integer without a cast [enabled by default]
+    char * result = serializar_con_header(lista, "LISTA_CODIGO");
+                    ^
+../src/testing/TestingGeneral.c:69:4: warning: implicit declaration of function ‘deserializar_con_header’ [-Wimplicit-function-declaration]
+    deserializar_con_header(result, "LISTA_CODIGO");
+    ^
+../src/testing/TestingGeneral.c:95:4: warning: implicit declaration of function ‘hardcodear_pcb’ [-Wimplicit-function-declaration]
+    PCB * pcb = hardcodear_pcb();
+    ^
+../src/testing/TestingGeneral.c:95:16: warning: initialization makes pointer from integer without a cast [enabled by default]
+    PCB * pcb = hardcodear_pcb();
+                ^
+../src/testing/TestingGeneral.c:96:4: warning: implicit declaration of function ‘enviar_pcb_deb’ [-Wimplicit-function-declaration]
+    enviar_pcb_deb(pcb);
+    ^
+../src/testing/TestingGeneral.c:99:16: warning: initialization makes pointer from integer without a cast [enabled by default]
+    PCB * pcb = hardcodear_pcb();
+                ^
+../src/testing/TestingGeneral.c:108:8: warning: unused variable ‘debugeame’ [-Wunused-variable]
+    int debugeame = 111;
+        ^
+../src/testing/TestingGeneral.c:77:22: warning: ‘th’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+    agregar_CPU_global(i, th);
+                      ^
+Finished building: ../src/testing/TestingGeneral.c
+ 
+Building file: ../src/planificacion/Planificacion.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/planificacion/Planificacion.d" -MT"src/planificacion/Planificacion.d" -o "src/planificacion/Planificacion.o" "../src/planificacion/Planificacion.c"
+../src/planificacion/Planificacion.c: In function ‘mover_PCB_de_cola’:
+../src/planificacion/Planificacion.c:54:3: warning: implicit declaration of function ‘finalizar_proceso’ [-Wimplicit-function-declaration]
+   finalizar_proceso(pcb);
+   ^
+../src/planificacion/Planificacion.c: In function ‘obtener_proceso_de_cola_READY’:
+../src/planificacion/Planificacion.c:90:4: warning: passing argument 1 of ‘sem_wait’ from incompatible pointer type [enabled by default]
+    sem_wait(&mutex_cola_READY);
+    ^
+In file included from ../src/planificacion/Planificacion.c:4:0:
+/usr/include/semaphore.h:54:12: note: expected ‘union sem_t *’ but argument is of type ‘union sem_t **’
+ extern int sem_wait (sem_t *__sem);
+            ^
+../src/planificacion/Planificacion.c:92:4: warning: passing argument 1 of ‘sem_post’ from incompatible pointer type [enabled by default]
+    sem_post(&mutex_cola_READY);
+    ^
+In file included from ../src/planificacion/Planificacion.c:4:0:
+/usr/include/semaphore.h:69:12: note: expected ‘union sem_t *’ but argument is of type ‘union sem_t **’
+ extern int sem_post (sem_t *__sem) __THROWNL;
+            ^
+Finished building: ../src/planificacion/Planificacion.c
+ 
+Building file: ../src/planificacion/PlanificacionFIFO.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/planificacion/PlanificacionFIFO.d" -MT"src/planificacion/PlanificacionFIFO.d" -o "src/planificacion/PlanificacionFIFO.o" "../src/planificacion/PlanificacionFIFO.c"
+Finished building: ../src/planificacion/PlanificacionFIFO.c
+ 
+Building file: ../src/planificacion/PlanificacionRR.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/planificacion/PlanificacionRR.d" -MT"src/planificacion/PlanificacionRR.d" -o "src/planificacion/PlanificacionRR.o" "../src/planificacion/PlanificacionRR.c"
+Finished building: ../src/planificacion/PlanificacionRR.c
+ 
+Building file: ../src/interfaz/InterfazCPU.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/interfaz/InterfazCPU.d" -MT"src/interfaz/InterfazCPU.d" -o "src/interfaz/InterfazCPU.o" "../src/interfaz/InterfazCPU.c"
+In file included from ../src/interfaz/InterfazCPU.c:11:0:
+../src/interfaz/../capaFILESYSTEM/GestionArchivoFuncAux.h:18:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void abrir_archivo(clienteCPU);
+ ^
+../src/interfaz/../capaFILESYSTEM/GestionArchivoFuncAux.h:19:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void cerrar_archivo(clienteCPU);
+ ^
+../src/interfaz/../capaFILESYSTEM/GestionArchivoFuncAux.h:20:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void leer_archivo(clienteCPU);
+ ^
+../src/interfaz/../capaFILESYSTEM/GestionArchivoFuncAux.h:21:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void borrar_archivo(clienteCPU);
+ ^
+../src/interfaz/../capaFILESYSTEM/GestionArchivoFuncAux.h:22:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void mover_cursor_archivo(clienteCPU);
+ ^
+../src/interfaz/InterfazCPU.c: In function ‘escuchar_Conexiones_CPU’:
+../src/interfaz/InterfazCPU.c:34:4: warning: passing argument 3 of ‘pthread_create’ from incompatible pointer type [enabled by default]
+    pthread_create(&mihilo1, NULL, &CU_Recibir_Conexiones_CPU, cliente);
+    ^
+In file included from ../src/interfaz/InterfazCPU.h:11:0,
+                 from ../src/interfaz/InterfazCPU.c:1:
+/usr/include/pthread.h:244:12: note: expected ‘void * (*)(void *)’ but argument is of type ‘void (*)(int)’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/interfaz/InterfazCPU.c:34:4: warning: passing argument 4 of ‘pthread_create’ makes pointer from integer without a cast [enabled by default]
+    pthread_create(&mihilo1, NULL, &CU_Recibir_Conexiones_CPU, cliente);
+    ^
+In file included from ../src/interfaz/InterfazCPU.h:11:0,
+                 from ../src/interfaz/InterfazCPU.c:1:
+/usr/include/pthread.h:244:12: note: expected ‘void * __restrict__’ but argument is of type ‘int’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/interfaz/InterfazCPU.c:35:4: warning: passing argument 1 of ‘pthread_detach’ makes integer from pointer without a cast [enabled by default]
+    pthread_detach(&mihilo1);
+    ^
+In file included from ../src/interfaz/InterfazCPU.h:11:0,
+                 from ../src/interfaz/InterfazCPU.c:1:
+/usr/include/pthread.h:282:12: note: expected ‘pthread_t’ but argument is of type ‘pthread_t *’
+ extern int pthread_detach (pthread_t __th) __THROW;
+            ^
+../src/interfaz/InterfazCPU.c: In function ‘CU_Recibir_Conexiones_CPU’:
+../src/interfaz/InterfazCPU.c:75:4: warning: implicit declaration of function ‘CU_Atender_Solicitud_Escritura_Por_Pantalla’ [-Wimplicit-function-declaration]
+    CU_Atender_Solicitud_Escritura_Por_Pantalla();
+    ^
+../src/interfaz/InterfazCPU.c: In function ‘index_of_CPU’:
+../src/interfaz/InterfazCPU.c:92:2: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  while (aux = list_get(lista_CPUs, i)) {
+  ^
+../src/interfaz/InterfazCPU.c: At top level:
+../src/interfaz/InterfazCPU.c:113:6: warning: conflicting types for ‘CU_Atender_Solicitud_Escritura_Por_Pantalla’ [enabled by default]
+ void CU_Atender_Solicitud_Escritura_Por_Pantalla(int clienteCPU) {
+      ^
+../src/interfaz/InterfazCPU.c:75:4: note: previous implicit declaration of ‘CU_Atender_Solicitud_Escritura_Por_Pantalla’ was here
+    CU_Atender_Solicitud_Escritura_Por_Pantalla();
+    ^
+../src/interfaz/InterfazCPU.c: In function ‘index_of_CPU’:
+../src/interfaz/InterfazCPU.c:97:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/interfaz/InterfazCPU.c
+ 
+Building file: ../src/interfaz/InterfazConsola.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/interfaz/InterfazConsola.d" -MT"src/interfaz/InterfazConsola.d" -o "src/interfaz/InterfazConsola.o" "../src/interfaz/InterfazConsola.c"
+../src/interfaz/InterfazConsola.c: In function ‘escuchar_Conexiones_Consola’:
+../src/interfaz/InterfazConsola.c:27:4: warning: implicit declaration of function ‘string_itoa’ [-Wimplicit-function-declaration]
+    enviar_dato_serializado(string_itoa(cliente), cliente);
+    ^
+../src/interfaz/InterfazConsola.c:27:4: warning: passing argument 1 of ‘enviar_dato_serializado’ makes pointer from integer without a cast [enabled by default]
+In file included from ../src/interfaz/InterfazConsola.c:6:0:
+../src/interfaz/../general/Socket.h:15:6: note: expected ‘char *’ but argument is of type ‘int’
+ void enviar_dato_serializado(char * mensaje, int conexion);
+      ^
+../src/interfaz/InterfazConsola.c:33:4: warning: passing argument 3 of ‘pthread_create’ from incompatible pointer type [enabled by default]
+    pthread_create(&thread_programa, NULL, &CU_Recibir_Conexiones_Programa, cliente);
+    ^
+In file included from ../src/interfaz/InterfazConsola.c:4:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * (*)(void *)’ but argument is of type ‘void (*)(int)’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/interfaz/InterfazConsola.c:33:4: warning: passing argument 4 of ‘pthread_create’ makes pointer from integer without a cast [enabled by default]
+    pthread_create(&thread_programa, NULL, &CU_Recibir_Conexiones_Programa, cliente);
+    ^
+In file included from ../src/interfaz/InterfazConsola.c:4:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * __restrict__’ but argument is of type ‘int’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/interfaz/InterfazConsola.c:34:4: warning: passing argument 1 of ‘pthread_detach’ makes integer from pointer without a cast [enabled by default]
+    pthread_detach(&thread_programa);
+    ^
+In file included from ../src/interfaz/InterfazConsola.c:4:0:
+/usr/include/pthread.h:282:12: note: expected ‘pthread_t’ but argument is of type ‘pthread_t *’
+ extern int pthread_detach (pthread_t __th) __THROW;
+            ^
+../src/interfaz/InterfazConsola.c:39:4: warning: passing argument 2 of ‘list_add’ makes pointer from integer without a cast [enabled by default]
+    list_add(consola->programas, thread_programa);
+    ^
+In file included from ../src/interfaz/InterfazConsola.c:5:0:
+/usr/include/commons/collections/list.h:51:6: note: expected ‘void *’ but argument is of type ‘pthread_t’
+  int list_add(t_list *, void *element);
+      ^
+../src/interfaz/InterfazConsola.c:41:4: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+    close(cliente);
+    ^
+../src/interfaz/InterfazConsola.c: In function ‘CU_Recibir_Conexiones_Programa’:
+../src/interfaz/InterfazConsola.c:54:4: warning: implicit declaration of function ‘verificar_estado’ [-Wimplicit-function-declaration]
+    verificar_estado(pid);
+    ^
+../src/interfaz/InterfazConsola.c: In function ‘index_of_consola’:
+../src/interfaz/InterfazConsola.c:70:2: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  while (aux = list_get(lista_consolas, i)) {
+  ^
+../src/interfaz/InterfazConsola.c:75:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/interfaz/InterfazConsola.c
+ 
+Building file: ../src/interfaz/InterfazMemoria.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/interfaz/InterfazMemoria.d" -MT"src/interfaz/InterfazMemoria.d" -o "src/interfaz/InterfazMemoria.o" "../src/interfaz/InterfazMemoria.c"
+Finished building: ../src/interfaz/InterfazMemoria.c
+ 
+Building file: ../src/header/AppConfig.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/AppConfig.d" -MT"src/header/AppConfig.d" -o "src/header/AppConfig.o" "../src/header/AppConfig.c"
+../src/header/AppConfig.c: In function ‘inicializar_configuracion’:
+../src/header/AppConfig.c:95:2: warning: passing argument 1 of ‘inicializar_vec_variables_compartidas’ from incompatible pointer type [enabled by default]
+  inicializar_vec_variables_compartidas(VECTOR_VAR_COM);
+  ^
+In file included from ../src/header/AppConfig.c:12:0:
+../src/header/AppConfig.h:40:6: note: expected ‘int **’ but argument is of type ‘int *’
+ void inicializar_vec_variables_compartidas(int** vector_var_comp);
+      ^
+Finished building: ../src/header/AppConfig.c
+ 
+Building file: ../src/header/SolicitudesUsuario.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/SolicitudesUsuario.d" -MT"src/header/SolicitudesUsuario.d" -o "src/header/SolicitudesUsuario.o" "../src/header/SolicitudesUsuario.c"
+../src/header/SolicitudesUsuario.c: In function ‘listar_procesos’:
+../src/header/SolicitudesUsuario.c:47:4: warning: implicit declaration of function ‘mostrar_procesos’ [-Wimplicit-function-declaration]
+    mostrar_procesos(procesos);
+    ^
+../src/header/SolicitudesUsuario.c:50:4: warning: implicit declaration of function ‘listar_procesos_por_cola’ [-Wimplicit-function-declaration]
+    listar_procesos_por_cola();
+    ^
+../src/header/SolicitudesUsuario.c:55:2: warning: implicit declaration of function ‘atender_solicitudes_de_usuario’ [-Wimplicit-function-declaration]
+  atender_solicitudes_de_usuario();
+  ^
+../src/header/SolicitudesUsuario.c: At top level:
+../src/header/SolicitudesUsuario.c:58:6: warning: conflicting types for ‘listar_procesos_por_cola’ [enabled by default]
+ void listar_procesos_por_cola(){
+      ^
+../src/header/SolicitudesUsuario.c:50:4: note: previous implicit declaration of ‘listar_procesos_por_cola’ was here
+    listar_procesos_por_cola();
+    ^
+../src/header/SolicitudesUsuario.c: In function ‘listar_procesos_por_cola’:
+../src/header/SolicitudesUsuario.c:59:2: warning: implicit declaration of function ‘mostrar_menu_colas’ [-Wimplicit-function-declaration]
+  mostrar_menu_colas();
+  ^
+../src/header/SolicitudesUsuario.c:66:3: warning: passing argument 2 of ‘list_filter’ from incompatible pointer type [enabled by default]
+   t_list * procesos_filtrados = list_filter(procesos, &buscar_procesos_por_cola);
+   ^
+In file included from ../src/header/PCB.h:4:0,
+                 from ../src/header/SolicitudesUsuario.c:13:
+/usr/include/commons/collections/list.h:92:10: note: expected ‘_Bool (*)(void *)’ but argument is of type ‘int (*)(struct Proceso *)’
+  t_list* list_filter(t_list*, bool(*condition)(void*));
+          ^
+../src/header/SolicitudesUsuario.c: At top level:
+../src/header/SolicitudesUsuario.c:71:6: warning: conflicting types for ‘mostrar_procesos’ [enabled by default]
+ void mostrar_procesos(t_list * procesos_lista){
+      ^
+../src/header/SolicitudesUsuario.c:47:4: note: previous implicit declaration of ‘mostrar_procesos’ was here
+    mostrar_procesos(procesos);
+    ^
+../src/header/SolicitudesUsuario.c: In function ‘mostrar_procesos’:
+../src/header/SolicitudesUsuario.c:81:3: warning: implicit declaration of function ‘mostrar_cola’ [-Wimplicit-function-declaration]
+   mostrar_cola(proceso->cola);
+   ^
+../src/header/SolicitudesUsuario.c: At top level:
+../src/header/SolicitudesUsuario.c:88:6: warning: conflicting types for ‘mostrar_menu_colas’ [enabled by default]
+ void mostrar_menu_colas(){
+      ^
+../src/header/SolicitudesUsuario.c:59:2: note: previous implicit declaration of ‘mostrar_menu_colas’ was here
+  mostrar_menu_colas();
+  ^
+../src/header/SolicitudesUsuario.c:99:6: warning: conflicting types for ‘mostrar_cola’ [enabled by default]
+ void mostrar_cola(COLA cola){
+      ^
+../src/header/SolicitudesUsuario.c:81:3: note: previous implicit declaration of ‘mostrar_cola’ was here
+   mostrar_cola(proceso->cola);
+   ^
+../src/header/SolicitudesUsuario.c: In function ‘verificar_estado’:
+../src/header/SolicitudesUsuario.c:198:3: warning: implicit declaration of function ‘actualizar_exit_code’ [-Wimplicit-function-declaration]
+   actualizar_exit_code(proceso_a_eliminar, -7);
+   ^
+../src/header/SolicitudesUsuario.c:199:3: warning: implicit declaration of function ‘finalizar_proceso’ [-Wimplicit-function-declaration]
+   finalizar_proceso(proceso_a_eliminar);
+   ^
+../src/header/SolicitudesUsuario.c: At top level:
+../src/header/SolicitudesUsuario.c:204:6: warning: conflicting types for ‘atender_solicitudes_de_usuario’ [enabled by default]
+ void atender_solicitudes_de_usuario() {
+      ^
+../src/header/SolicitudesUsuario.c:55:2: note: previous implicit declaration of ‘atender_solicitudes_de_usuario’ was here
+  atender_solicitudes_de_usuario();
+  ^
+../src/header/SolicitudesUsuario.c: In function ‘atender_solicitudes_de_usuario’:
+../src/header/SolicitudesUsuario.c:221:4: warning: implicit declaration of function ‘enviar_dato_serializado’ [-Wimplicit-function-declaration]
+    enviar_dato_serializado("MENSAJE 1", 8);
+    ^
+../src/header/SolicitudesUsuario.c:229:14: warning: unused variable ‘proceso_a_eliminar’ [-Wunused-variable]
+    Proceso * proceso_a_eliminar;
+              ^
+Finished building: ../src/header/SolicitudesUsuario.c
+ 
+Building file: ../src/capaMEMORIA/AdministrarSemaforos.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/capaMEMORIA/AdministrarSemaforos.d" -MT"src/capaMEMORIA/AdministrarSemaforos.d" -o "src/capaMEMORIA/AdministrarSemaforos.o" "../src/capaMEMORIA/AdministrarSemaforos.c"
+Finished building: ../src/capaMEMORIA/AdministrarSemaforos.c
+ 
+Building file: ../src/capaMEMORIA/AdministrarVarCompartidas.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/capaMEMORIA/AdministrarVarCompartidas.d" -MT"src/capaMEMORIA/AdministrarVarCompartidas.d" -o "src/capaMEMORIA/AdministrarVarCompartidas.o" "../src/capaMEMORIA/AdministrarVarCompartidas.c"
+../src/capaMEMORIA/AdministrarVarCompartidas.c: In function ‘obtener_valor_var_comp’:
+../src/capaMEMORIA/AdministrarVarCompartidas.c:14:2: warning: implicit declaration of function ‘recibir_dato_serializado’ [-Wimplicit-function-declaration]
+  char* nombreVarComp = recibir_dato_serializado(conexionCPU);
+  ^
+../src/capaMEMORIA/AdministrarVarCompartidas.c:14:24: warning: initialization makes pointer from integer without a cast [enabled by default]
+  char* nombreVarComp = recibir_dato_serializado(conexionCPU);
+                        ^
+../src/capaMEMORIA/AdministrarVarCompartidas.c:20:10: warning: assignment makes integer from pointer without a cast [enabled by default]
+    valor = configuraciones.VAR_COMP[i];
+          ^
+../src/capaMEMORIA/AdministrarVarCompartidas.c:21:4: warning: implicit declaration of function ‘enviar_dato_serializado’ [-Wimplicit-function-declaration]
+    enviar_dato_serializado("OK",conexionCPU);
+    ^
+../src/capaMEMORIA/AdministrarVarCompartidas.c:22:4: warning: implicit declaration of function ‘string_itoa’ [-Wimplicit-function-declaration]
+    enviar_dato_serializado(string_itoa(valor), conexionCPU);
+    ^
+../src/capaMEMORIA/AdministrarVarCompartidas.c: In function ‘asignar_valor_var_comp’:
+../src/capaMEMORIA/AdministrarVarCompartidas.c:34:24: warning: initialization makes pointer from integer without a cast [enabled by default]
+  char* nombreVarComp = recibir_dato_serializado(conexionCPU);
+                        ^
+../src/capaMEMORIA/AdministrarVarCompartidas.c:35:2: warning: implicit declaration of function ‘atoi’ [-Wimplicit-function-declaration]
+  int valorVarComp =atoi(recibir_dato_serializado(conexionCPU));
+  ^
+../src/capaMEMORIA/AdministrarVarCompartidas.c:39:33: warning: assignment makes pointer from integer without a cast [enabled by default]
+     configuraciones.VAR_COMP[i] = valorVarComp;
+                                 ^
+Finished building: ../src/capaMEMORIA/AdministrarVarCompartidas.c
+ 
+Building file: ../src/capaMEMORIA/GestionMemoriaDinamica.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/capaMEMORIA/GestionMemoriaDinamica.d" -MT"src/capaMEMORIA/GestionMemoriaDinamica.d" -o "src/capaMEMORIA/GestionMemoriaDinamica.o" "../src/capaMEMORIA/GestionMemoriaDinamica.c"
+Finished building: ../src/capaMEMORIA/GestionMemoriaDinamica.c
+ 
+Building file: ../src/capaFILESYSTEM/GestionArchivoFuncAux.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/capaFILESYSTEM/GestionArchivoFuncAux.d" -MT"src/capaFILESYSTEM/GestionArchivoFuncAux.d" -o "src/capaFILESYSTEM/GestionArchivoFuncAux.o" "../src/capaFILESYSTEM/GestionArchivoFuncAux.c"
+In file included from ../src/capaFILESYSTEM/GestionArchivoFuncAux.c:9:0:
+../src/capaFILESYSTEM/GestionArchivoFuncAux.h:18:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void abrir_archivo(clienteCPU);
+ ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.h:19:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void cerrar_archivo(clienteCPU);
+ ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.h:20:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void leer_archivo(clienteCPU);
+ ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.h:21:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void borrar_archivo(clienteCPU);
+ ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.h:22:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void mover_cursor_archivo(clienteCPU);
+ ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.c: In function ‘buscar_registro_TablaProcesoArchivo’:
+../src/capaFILESYSTEM/GestionArchivoFuncAux.c:50:2: warning: passing argument 1 of ‘buscar_proceso_by_PID’ makes integer from pointer without a cast [enabled by default]
+  t_list* tabla = ((Proceso*) buscar_proceso_by_PID(PID))->tablaProcesoArchivo;
+  ^
+In file included from ../src/capaFILESYSTEM/GestionArchivoFuncAux.h:13:0,
+                 from ../src/capaFILESYSTEM/GestionArchivoFuncAux.c:9:
+../src/capaFILESYSTEM/../administrarProcesos/Proceso.h:38:10: note: expected ‘uint32_t’ but argument is of type ‘char *’
+ Proceso* buscar_proceso_by_PID(uint32_t PID);
+          ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.c: In function ‘abrir_archivo’:
+../src/capaFILESYSTEM/GestionArchivoFuncAux.c:75:2: warning: implicit declaration of function ‘recibir_dato_serializado’ [-Wimplicit-function-declaration]
+  char* PID = recibir_dato_serializado(clienteCPU);
+  ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.c:75:14: warning: initialization makes pointer from integer without a cast [enabled by default]
+  char* PID = recibir_dato_serializado(clienteCPU);
+              ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.c:76:22: warning: initialization makes pointer from integer without a cast [enabled by default]
+  char* pathArchivo = recibir_dato_serializado(clienteCPU);
+                      ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.c:77:21: warning: initialization makes pointer from integer without a cast [enabled by default]
+  char* flagCreate = recibir_dato_serializado(clienteCPU);
+                     ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.c:78:19: warning: initialization makes pointer from integer without a cast [enabled by default]
+  char* flagRead = recibir_dato_serializado(clienteCPU);
+                   ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.c:79:20: warning: initialization makes pointer from integer without a cast [enabled by default]
+  char* flagWrite = recibir_dato_serializado(clienteCPU);
+                    ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.c:81:2: warning: implicit declaration of function ‘CU_ABRIR_ARCHIVO’ [-Wimplicit-function-declaration]
+  char* respuesta = CU_ABRIR_ARCHIVO(PID, pathArchivo, flagCreate, flagRead, flagWrite);
+  ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.c:81:20: warning: initialization makes pointer from integer without a cast [enabled by default]
+  char* respuesta = CU_ABRIR_ARCHIVO(PID, pathArchivo, flagCreate, flagRead, flagWrite);
+                    ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.c:83:2: warning: implicit declaration of function ‘enviar_dato_serializado’ [-Wimplicit-function-declaration]
+  enviar_dato_serializado(respuesta, clienteCPU);
+  ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.c: In function ‘mover_cursor_archivo’:
+../src/capaFILESYSTEM/GestionArchivoFuncAux.c:88:14: warning: initialization makes pointer from integer without a cast [enabled by default]
+  char* PID = recibir_dato_serializado(clienteCPU);
+              ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.c:89:2: warning: passing argument 1 of ‘atoi’ makes pointer from integer without a cast [enabled by default]
+  int FD = atoi(recibir_dato_serializado(clienteCPU));
+  ^
+In file included from ../src/capaFILESYSTEM/GestionArchivoFuncAux.c:1:0:
+/usr/include/stdlib.h:147:12: note: expected ‘const char *’ but argument is of type ‘int’
+ extern int atoi (const char *__nptr)
+            ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.c:90:2: warning: passing argument 1 of ‘atoi’ makes pointer from integer without a cast [enabled by default]
+  int cursor_bloque = atoi(recibir_dato_serializado(clienteCPU));
+  ^
+In file included from ../src/capaFILESYSTEM/GestionArchivoFuncAux.c:1:0:
+/usr/include/stdlib.h:147:12: note: expected ‘const char *’ but argument is of type ‘int’
+ extern int atoi (const char *__nptr)
+            ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.c:92:2: warning: implicit declaration of function ‘CU_MOVER_CURSOR_ARCHIVO’ [-Wimplicit-function-declaration]
+  char* respuesta = CU_MOVER_CURSOR_ARCHIVO(PID, FD, cursor_bloque);
+  ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.c:92:20: warning: initialization makes pointer from integer without a cast [enabled by default]
+  char* respuesta = CU_MOVER_CURSOR_ARCHIVO(PID, FD, cursor_bloque);
+                    ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.c: In function ‘leer_archivo’:
+../src/capaFILESYSTEM/GestionArchivoFuncAux.c:101:14: warning: initialization makes pointer from integer without a cast [enabled by default]
+  char* PID = recibir_dato_serializado(clienteCPU);
+              ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.c:102:2: warning: passing argument 1 of ‘atoi’ makes pointer from integer without a cast [enabled by default]
+  int FD = atoi(recibir_dato_serializado(clienteCPU));
+  ^
+In file included from ../src/capaFILESYSTEM/GestionArchivoFuncAux.c:1:0:
+/usr/include/stdlib.h:147:12: note: expected ‘const char *’ but argument is of type ‘int’
+ extern int atoi (const char *__nptr)
+            ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.c:103:2: warning: passing argument 1 of ‘atoi’ makes pointer from integer without a cast [enabled by default]
+  int tamanio = atoi(recibir_dato_serializado(clienteCPU));
+  ^
+In file included from ../src/capaFILESYSTEM/GestionArchivoFuncAux.c:1:0:
+/usr/include/stdlib.h:147:12: note: expected ‘const char *’ but argument is of type ‘int’
+ extern int atoi (const char *__nptr)
+            ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.c:105:2: warning: implicit declaration of function ‘CU_LEER_ARCHIVO’ [-Wimplicit-function-declaration]
+  char* respuesta = CU_LEER_ARCHIVO(PID, FD, tamanio);
+  ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.c:105:20: warning: initialization makes pointer from integer without a cast [enabled by default]
+  char* respuesta = CU_LEER_ARCHIVO(PID, FD, tamanio);
+                    ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.c: In function ‘cerrar_archivo’:
+../src/capaFILESYSTEM/GestionArchivoFuncAux.c:112:14: warning: initialization makes pointer from integer without a cast [enabled by default]
+  char* PID = recibir_dato_serializado(clienteCPU);
+              ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.c:113:2: warning: passing argument 1 of ‘atoi’ makes pointer from integer without a cast [enabled by default]
+  int FD = atoi(recibir_dato_serializado(clienteCPU));
+  ^
+In file included from ../src/capaFILESYSTEM/GestionArchivoFuncAux.c:1:0:
+/usr/include/stdlib.h:147:12: note: expected ‘const char *’ but argument is of type ‘int’
+ extern int atoi (const char *__nptr)
+            ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.c:115:2: warning: implicit declaration of function ‘CU_CERRAR_ARCHIVO’ [-Wimplicit-function-declaration]
+  char* respuesta = CU_CERRAR_ARCHIVO(PID, FD);
+  ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.c:115:20: warning: initialization makes pointer from integer without a cast [enabled by default]
+  char* respuesta = CU_CERRAR_ARCHIVO(PID, FD);
+                    ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.c: In function ‘borrar_archivo’:
+../src/capaFILESYSTEM/GestionArchivoFuncAux.c:122:14: warning: initialization makes pointer from integer without a cast [enabled by default]
+  char* PID = recibir_dato_serializado(clienteCPU);
+              ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.c:123:2: warning: passing argument 1 of ‘atoi’ makes pointer from integer without a cast [enabled by default]
+  char* rutaArchivo = atoi(recibir_dato_serializado(clienteCPU));
+  ^
+In file included from ../src/capaFILESYSTEM/GestionArchivoFuncAux.c:1:0:
+/usr/include/stdlib.h:147:12: note: expected ‘const char *’ but argument is of type ‘int’
+ extern int atoi (const char *__nptr)
+            ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.c:123:22: warning: initialization makes pointer from integer without a cast [enabled by default]
+  char* rutaArchivo = atoi(recibir_dato_serializado(clienteCPU));
+                      ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.c:125:2: warning: implicit declaration of function ‘CU_BORRAR_ARCHIVO’ [-Wimplicit-function-declaration]
+  char* respuesta = CU_BORRAR_ARCHIVO(PID, rutaArchivo);
+  ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.c:125:20: warning: initialization makes pointer from integer without a cast [enabled by default]
+  char* respuesta = CU_BORRAR_ARCHIVO(PID, rutaArchivo);
+                    ^
+Finished building: ../src/capaFILESYSTEM/GestionArchivoFuncAux.c
+ 
+Building file: ../src/capaFILESYSTEM/GestionArchivos.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/capaFILESYSTEM/GestionArchivos.d" -MT"src/capaFILESYSTEM/GestionArchivos.d" -o "src/capaFILESYSTEM/GestionArchivos.o" "../src/capaFILESYSTEM/GestionArchivos.c"
+../src/capaFILESYSTEM/GestionArchivos.c: In function ‘CU_ABRIR_ARCHIVO’:
+../src/capaFILESYSTEM/GestionArchivos.c:15:2: warning: passing argument 1 of ‘buscar_proceso_by_PID’ makes integer from pointer without a cast [enabled by default]
+  Proceso* proc = buscar_proceso_by_PID(PID);
+  ^
+In file included from ../src/capaFILESYSTEM/GestionArchivos.c:11:0:
+../src/capaFILESYSTEM/../administrarProcesos/Proceso.h:38:10: note: expected ‘uint32_t’ but argument is of type ‘char *’
+ Proceso* buscar_proceso_by_PID(uint32_t PID);
+          ^
+../src/capaFILESYSTEM/GestionArchivos.c:34:3: warning: implicit declaration of function ‘grabar_apertura_en_tablas_archivos’ [-Wimplicit-function-declaration]
+   return grabar_apertura_en_tablas_archivos(pathArchivo, proc, flagCreate, flagRead, flagWrite);
+   ^
+../src/capaFILESYSTEM/GestionArchivos.c:34:3: warning: return makes pointer from integer without a cast [enabled by default]
+../src/capaFILESYSTEM/GestionArchivos.c:36:3: warning: return makes pointer from integer without a cast [enabled by default]
+   return grabar_apertura_en_tablas_archivos(pathArchivo, proc, flagCreate, flagRead, flagWrite);
+   ^
+../src/capaFILESYSTEM/GestionArchivos.c: In function ‘CU_MOVER_CURSOR_ARCHIVO’:
+../src/capaFILESYSTEM/GestionArchivos.c:45:2: warning: implicit declaration of function ‘buscar_registro_TablaProcesoArchivo’ [-Wimplicit-function-declaration]
+  TablaProcesoArchivo* registro = buscar_registro_TablaProcesoArchivo(PID, FD);
+  ^
+../src/capaFILESYSTEM/GestionArchivos.c:45:34: warning: initialization makes pointer from integer without a cast [enabled by default]
+  TablaProcesoArchivo* registro = buscar_registro_TablaProcesoArchivo(PID, FD);
+                                  ^
+../src/capaFILESYSTEM/GestionArchivos.c: In function ‘CU_LEER_ARCHIVO’:
+../src/capaFILESYSTEM/GestionArchivos.c:58:34: warning: initialization makes pointer from integer without a cast [enabled by default]
+  TablaProcesoArchivo* registro = buscar_registro_TablaProcesoArchivo(PID, FD);
+                                  ^
+../src/capaFILESYSTEM/GestionArchivos.c:62:2: warning: implicit declaration of function ‘verificarFlag’ [-Wimplicit-function-declaration]
+  if (verificarFlag(registro->flags, 'L')) {
+  ^
+../src/capaFILESYSTEM/GestionArchivos.c:65:3: warning: implicit declaration of function ‘getNombreArchivo’ [-Wimplicit-function-declaration]
+   return obtenerDatos(getNombreArchivo(FD), registro->cursor_bloque, tamanio);
+   ^
+../src/capaFILESYSTEM/GestionArchivos.c:65:3: warning: passing argument 1 of ‘obtenerDatos’ makes pointer from integer without a cast [enabled by default]
+In file included from ../src/capaFILESYSTEM/GestionArchivos.c:8:0:
+../src/capaFILESYSTEM/../interfaz/InterfazFS.h:16:7: note: expected ‘char *’ but argument is of type ‘int’
+ char* obtenerDatos(char* path,int bloqueInicial,int size);
+       ^
+../src/capaFILESYSTEM/GestionArchivos.c: In function ‘CU_ESCRIBIR_ARCHIVO’:
+../src/capaFILESYSTEM/GestionArchivos.c:72:34: warning: initialization makes pointer from integer without a cast [enabled by default]
+  TablaProcesoArchivo* registro = buscar_registro_TablaProcesoArchivo(PID, FD);
+                                  ^
+../src/capaFILESYSTEM/GestionArchivos.c:79:3: warning: passing argument 1 of ‘guardarDatos’ makes pointer from integer without a cast [enabled by default]
+   return guardarDatos(getNombreArchivo(FD), registro->cursor_bloque, tamanio, contenido);
+   ^
+In file included from ../src/capaFILESYSTEM/GestionArchivos.c:8:0:
+../src/capaFILESYSTEM/../interfaz/InterfazFS.h:17:7: note: expected ‘char *’ but argument is of type ‘int’
+ char* guardarDatos(char* path,int bloqueInicial,int size,char* contenido);
+       ^
+../src/capaFILESYSTEM/GestionArchivos.c: In function ‘CU_CERRAR_ARCHIVO’:
+../src/capaFILESYSTEM/GestionArchivos.c:85:34: warning: initialization makes pointer from integer without a cast [enabled by default]
+  TablaProcesoArchivo* registro = buscar_registro_TablaProcesoArchivo(PID, FD);
+                                  ^
+../src/capaFILESYSTEM/GestionArchivos.c:93:2: warning: passing argument 1 of ‘buscar_proceso_by_PID’ makes integer from pointer without a cast [enabled by default]
+  eliminar_registro_Tabla_Proceso_Archivo(((Proceso*) buscar_proceso_by_PID(PID))->tablaProcesoArchivo, registro);
+  ^
+In file included from ../src/capaFILESYSTEM/GestionArchivos.c:11:0:
+../src/capaFILESYSTEM/../administrarProcesos/Proceso.h:38:10: note: expected ‘uint32_t’ but argument is of type ‘char *’
+ Proceso* buscar_proceso_by_PID(uint32_t PID);
+          ^
+Finished building: ../src/capaFILESYSTEM/GestionArchivos.c
+ 
+Building file: ../src/capaFILESYSTEM/TablaGlobalArchivo.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/capaFILESYSTEM/TablaGlobalArchivo.d" -MT"src/capaFILESYSTEM/TablaGlobalArchivo.d" -o "src/capaFILESYSTEM/TablaGlobalArchivo.o" "../src/capaFILESYSTEM/TablaGlobalArchivo.c"
+Finished building: ../src/capaFILESYSTEM/TablaGlobalArchivo.c
+ 
+Building file: ../src/capaFILESYSTEM/TablaProcesoArchivo.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/capaFILESYSTEM/TablaProcesoArchivo.d" -MT"src/capaFILESYSTEM/TablaProcesoArchivo.d" -o "src/capaFILESYSTEM/TablaProcesoArchivo.o" "../src/capaFILESYSTEM/TablaProcesoArchivo.c"
+Finished building: ../src/capaFILESYSTEM/TablaProcesoArchivo.c
+ 
+Building file: ../src/KERNEL.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/KERNEL.d" -MT"src/KERNEL.d" -o "src/KERNEL.o" "../src/KERNEL.c"
+../src/KERNEL.c: In function ‘inicializar_semaforos’:
+../src/KERNEL.c:54:2: warning: passing argument 1 of ‘inicializar_semaforo’ from incompatible pointer type [enabled by default]
+  inicializar_semaforo(&mutex_pids);
+  ^
+In file included from ../src/KERNEL.c:12:0:
+../src/general/Semaforo.h:19:6: note: expected ‘union sem_t *’ but argument is of type ‘union sem_t **’
+ void inicializar_semaforo(sem_t* variable_semaforo);
+      ^
+../src/KERNEL.c:56:2: warning: passing argument 1 of ‘inicializar_semaforo’ from incompatible pointer type [enabled by default]
+  inicializar_semaforo(&mutex_cola_READY);
+  ^
+In file included from ../src/KERNEL.c:12:0:
+../src/general/Semaforo.h:19:6: note: expected ‘union sem_t *’ but argument is of type ‘union sem_t **’
+ void inicializar_semaforo(sem_t* variable_semaforo);
+      ^
+../src/KERNEL.c: In function ‘finalizar_proceso’:
+../src/KERNEL.c:84:3: warning: implicit declaration of function ‘notificar_exit_code’ [-Wimplicit-function-declaration]
+   notificar_exit_code(proceso->pcb->exit_code, proceso->socket);
+   ^
+../src/KERNEL.c:85:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+   close(proceso->socket);
+   ^
+../src/KERNEL.c: In function ‘actualizar_exit_code’:
+../src/KERNEL.c:105:2: warning: passing argument 2 of ‘list_remove_by_condition’ from incompatible pointer type [enabled by default]
+  list_remove_by_condition(procesos, &buscar_proceso);
+  ^
+In file included from ../src/KERNEL.c:1:0:
+/usr/include/commons/collections/list.h:134:8: note: expected ‘_Bool (*)(void *)’ but argument is of type ‘int (*)(struct Proceso *)’
+  void *list_remove_by_condition(t_list *, bool(*condition)(void*));
+        ^
+../src/KERNEL.c: At top level:
+../src/KERNEL.c:110:6: warning: conflicting types for ‘notificar_exit_code’ [enabled by default]
+ void notificar_exit_code(int exit_code, int socket){
+      ^
+../src/KERNEL.c:84:3: note: previous implicit declaration of ‘notificar_exit_code’ was here
+   notificar_exit_code(proceso->pcb->exit_code, proceso->socket);
+   ^
+Finished building: ../src/KERNEL.c
+ 
+Building target: SistemaKERNEL
+Invoking: GCC C Linker
+gcc  -o "SistemaKERNEL"  ./src/testing/TestingCapaFileSystem.o ./src/testing/TestingGeneral.o ./src/testing/TestingInterfazMemoria.o ./src/testing/TestingMenu.o ./src/testing/TestingPlanificacion.o  ./src/planificacion/Planificacion.o ./src/planificacion/PlanificacionFIFO.o ./src/planificacion/PlanificacionRR.o  ./src/interfaz/InterfazCPU.o ./src/interfaz/InterfazConsola.o ./src/interfaz/InterfazFS.o ./src/interfaz/InterfazMemoria.o  ./src/header/AppConfig.o ./src/header/SolicitudesUsuario.o  ./src/general/Semaforo.o ./src/general/Socket.o ./src/general/funcionesUtiles.o  ./src/capaMEMORIA/AdministrarSemaforos.o ./src/capaMEMORIA/AdministrarVarCompartidas.o ./src/capaMEMORIA/GestMemoriaFuncionesAux.o ./src/capaMEMORIA/GestionMemoriaDinamica.o  ./src/capaFILESYSTEM/GestionArchivoFuncAux.o ./src/capaFILESYSTEM/GestionArchivos.o ./src/capaFILESYSTEM/TablaGlobalArchivo.o ./src/capaFILESYSTEM/TablaProcesoArchivo.o  ./src/administrarProcesos/Proceso.o  ./src/administrarPCB/EstadisticaProceso.o ./src/administrarPCB/PCBData.o  ./src/KERNEL.o ./src/PCB.o ./src/SolicitudesUsuario.o   -lcommons -lpthread -lparser-ansisop
+Finished building target: SistemaKERNEL
+ 
+
+20:16:24 Build Finished (took 2s.680ms)
+>>>>>>> 005292d7e95364d69bce6cbac3570e65b830004c
 

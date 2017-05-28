@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.internal.QuickAccess">
-<<<<<<< HEAD
-		<item value="853" key="dialogWidth"/>
-		<item value="415" key="dialogHeight"/>
-=======
-		<item value="960" key="dialogWidth"/>
-		<item value="487" key="dialogHeight"/>
->>>>>>> b1145973ec31846d400904a018731be4db187bd4
+		<item value="1194" key="dialogWidth"/>
+		<item value="669" key="dialogHeight"/>
 		<list key="orderedProviders">
 		</list>
 		<list key="textArray">
@@ -17,11 +12,20 @@
 		<list key="textEntries">
 		</list>
 	</section>
-	<section name="ImportExportAction">
-		<item value="org.eclipse.ui.wizards.import.ExternalProject" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
-		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
-			<item value="org.eclipse.ui.Basic"/>
-			<item value="org.eclipse.cdt.ui.importWizardCategory"/>
+	<section name="WorkbenchPreferenceDialogSettings">
+		<item value="100" key="DIALOG_Y_ORIGIN"/>
+		<item value="725" key="DIALOG_X_ORIGIN"/>
+	</section>
+	<section name="ShowViewDialog">
+		<item value="378" key="DIALOG_WIDTH"/>
+		<item value="org.eclipse.debug.ui.ExpressionView" key="ShowViewDialog.STORE_SELECTED_VIEW_ID"/>
+		<item value="234" key="DIALOG_Y_ORIGIN"/>
+		<item value="445" key="DIALOG_HEIGHT"/>
+		<item value="772" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<list key="ShowViewDialog.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.cdt.ui.views"/>
+			<item value="org.eclipse.debug.ui"/>
 		</list>
 	</section>
 </section>

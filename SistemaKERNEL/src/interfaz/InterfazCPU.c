@@ -1,15 +1,19 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-#include<pthread.h>
-#include <commons/collections/list.h>
-#include "../header/AppConfig.h"
-#include "../general/Socket.h"
 #include "InterfazCPU.h"
-#include "../header/PCB.h"
-#include "../header/Estructuras.h"
-#include "../capaMEMORIA/GestionMemoriaDinamica.h"
+
+#include <commons/collections/list.h>
+#include <pthread.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+
+#include "../administrarProcesos/Proceso.h"
+#include "../capaFILESYSTEM/GestionArchivoFuncAux.h"
 #include "../capaMEMORIA/AdministrarVarCompartidas.h"
+#include "../capaMEMORIA/GestionMemoriaDinamica.h"
+#include "../general/Socket.h"
+#include "../header/AppConfig.h"
+#include "../header/Estructuras.h"
 #include "../planificacion/Planificacion.h"
 
 int servidor_CPU = 0;
@@ -45,8 +49,14 @@ void CU_Recibir_Conexiones_CPU(int clienteCPU) {
 		codigo_operacion = recibir_dato_serializado(clienteCPU);
 		if (strcmp(codigo_operacion, "GESTION_MEMORIA") == 0) {
 			CU_Gestionar_HEAP(clienteCPU);
-		} else if (strcmp(codigo_operacion, "RECIBIR_CPU") == 0) {
-			recibir_PCB_de_CPU(clienteCPU);
+		} else if (strcmp(codigo_operacion, "QUANTUM") == 0) {
+			if(strcmp(recibir_dato_serializado(clienteCPU), "RECIBIR_PCB") == 0)
+				recibir_PCB_de_CPU(clienteCPU, "QUANTUM");
+		} else if (strcmp(codigo_operacion, "TERMINADO") == 0) {
+			if(strcmp(recibir_dato_serializado(clienteCPU), "RECIBIR_PCB") == 0)
+				recibir_PCB_de_CPU(clienteCPU, "TERMINADO");
+		} else if(strcmp(recibir_dato_serializado(clienteCPU), "WAIT_SEM") == 0){
+				recibir_PCB_de_CPU(clienteCPU, "WAIT_SEM");
 		} else if (strcmp(codigo_operacion, "ASIGNAR_VAR_COMP") == 0) {
 			asignar_valor_var_comp(clienteCPU);
 		} else if (strcmp(codigo_operacion, "BUSCAR_VAL_VAR_COMP") == 0) {
