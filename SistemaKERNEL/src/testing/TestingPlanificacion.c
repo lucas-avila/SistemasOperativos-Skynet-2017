@@ -51,13 +51,13 @@ void mostrar_estado_colas() {
 		}
 		printf("\n\n Tiempo: %d", tiempo);
 		printf("\n\tCOLA NEW: ");
-		mostrar_datos_cola(COLA_NEW);
+		mostrar_datos_cola(cola(NEW));
 		printf("\n\tCOLA READY: ");
-		mostrar_datos_cola(COLA_READY);
+		mostrar_datos_cola(cola(READY));
 		printf("\n\tCOLA EJECUTANDO: ");
-		mostrar_datos_cola(COLA_EXEC);
+		mostrar_datos_cola(cola(EXEC));
 		printf("\n\tCOLA EXIT: ");
-		mostrar_datos_cola(COLA_EXIT);
+		mostrar_datos_cola(cola(EXIT));
 		printf("\n\n Presione 0 para terminar");
 		sleep(1);
 

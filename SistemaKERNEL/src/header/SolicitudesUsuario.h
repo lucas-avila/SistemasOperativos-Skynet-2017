@@ -10,7 +10,7 @@
 
 void atender_solicitudes_de_usuario();
 void mostrar_menu_usuario() ;
-void mostrar_cola(COLA cola);
+void mostrar_cola(char * cola);
 void mostrar_menu_colas();
 void mostrar_info_procesos(t_list * procesos_lista);
 void listar_procesos_por_cola();

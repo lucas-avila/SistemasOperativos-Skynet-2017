@@ -5,8 +5,8 @@ src/capaFILESYSTEM/GestionArchivos.d: \
  ../src/capaFILESYSTEM/../capaFILESYSTEM/TablaProcesoArchivo.h \
  ../src/capaFILESYSTEM/../capaFILESYSTEM/TablaGlobalArchivo.h \
  ../src/capaFILESYSTEM/../administrarProcesos/Proceso.h \
+ ../src/capaFILESYSTEM/../administrarProcesos/../header/Estructuras.h \
  ../src/capaFILESYSTEM/../administrarProcesos/../header/PCB.h \
- ../src/capaFILESYSTEM/../administrarProcesos/../capaFILESYSTEM/TablaProcesoArchivo.h \
  ../src/capaFILESYSTEM/../administrarPCB/EstadisticaProceso.h
 
 ../src/capaFILESYSTEM/../header/AppConfig.h:
@@ -19,8 +19,8 @@ src/capaFILESYSTEM/GestionArchivos.d: \
 
 ../src/capaFILESYSTEM/../administrarProcesos/Proceso.h:
 
-../src/capaFILESYSTEM/../administrarProcesos/../header/PCB.h:
+../src/capaFILESYSTEM/../administrarProcesos/../header/Estructuras.h:
 
-../src/capaFILESYSTEM/../administrarProcesos/../capaFILESYSTEM/TablaProcesoArchivo.h:
+../src/capaFILESYSTEM/../administrarProcesos/../header/PCB.h:
 
 ../src/capaFILESYSTEM/../administrarPCB/EstadisticaProceso.h:

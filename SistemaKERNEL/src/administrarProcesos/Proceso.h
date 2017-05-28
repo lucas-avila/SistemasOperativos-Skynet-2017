@@ -8,14 +8,11 @@
 #ifndef ADMINISTRARPROCESOS_PROCESO_H_
 #define ADMINISTRARPROCESOS_PROCESO_H_
 
+#include <commons/collections/list.h>
+#include <stdint.h>
+
+#include "../header/Estructuras.h"
 #include "../header/PCB.h"
-#include "../capaFILESYSTEM/TablaProcesoArchivo.h"
-
-#include "commons/collections/list.h"
-
-typedef enum {
-	NEW = 1, READY = 2, EXEC = 3, EXIT = 4, WAITING = 5
-} COLA;
 
 typedef struct {
 	uint32_t PID;
@@ -23,8 +20,10 @@ typedef struct {
 	t_list* tablaProcesoArchivo;
 	int activo;
 
-	COLA cola;
+	char * cola;
 	uint32_t socket;
+	CPUInfo * cpu;
+
 } Proceso;
 
 t_list* procesos;
@@ -36,5 +35,7 @@ Proceso* new_Proceso(PCB* pcb);
 void agregar_proceso(Proceso* proceso);
 
 Proceso* buscar_proceso_by_PID(uint32_t PID);
+
+Proceso* proceso(PCB * pcb);
 
 #endif /* ADMINISTRARPROCESOS_PROCESO_H_ */

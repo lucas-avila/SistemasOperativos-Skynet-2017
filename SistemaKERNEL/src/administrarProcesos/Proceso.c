@@ -1,11 +1,9 @@
-#include<stdlib.h>
-#include<stdio.h>
-#include <string.h>
-
-#include "../header/PCB.h"
-#include "../capaFILESYSTEM/TablaProcesoArchivo.h"
-#include "commons/collections/list.h"
 #include "Proceso.h"
+
+#include <commons/string.h>
+#include <stdint.h>
+#include <stdlib.h>
+
 
 void inicializar_lista_procesos() {
 	procesos = list_create();
@@ -17,6 +15,8 @@ Proceso* new_Proceso(PCB* pcb) {
 	proceso->activo = 1;
 	proceso->pcb = pcb;
 	proceso->tablaProcesoArchivo = list_create();
+	proceso->cpu = NULL;
+	proceso->cola = string_new();
 	return proceso;
 }
 
@@ -43,4 +43,8 @@ Proceso* buscar_proceso_by_PID(uint32_t PID) {
 		}
 	}
 	return NULL;
+}
+
+Proceso* proceso(PCB * pcb){
+	return buscar_proceso_by_PID(pcb->PID);
 }

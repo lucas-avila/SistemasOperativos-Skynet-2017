@@ -51,7 +51,8 @@ void CU_Recibir_Conexiones_Programa(int clientePrograma) {
 		if (strcmp(codigo_operacion, "FINALIZAR_PROGRAMA") == 0) {
 			int pid = atoi(recibir_dato_serializado(clientePrograma));
 			// Proceso* Proceso_a_eliminar = buscar_proceso_by_PID(pid);
-			verificar_estado(pid);
+			//TODO: Cambiar esta funcion de abajo junto con todo ese comportamiento porque cambio la estructura de COLAS
+			//verificar_estado(pid);
 		} else if (strcmp(codigo_operacion, "") == 0) {
 			close(clientePrograma);
 			controlSeguir = 0;
