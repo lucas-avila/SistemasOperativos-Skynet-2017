@@ -17,7 +17,7 @@ void obtener_valor_var_comp(int conexionCPU){
 	while (i < configuraciones.cantidad_var_comp){
 		if (strcmp(configuraciones.VAR_COMP[i], nombreVarComp)== 0){
 
-			valor = configuraciones.VAR_COMP[i];
+			valor = VECTOR_VAR_COM[i];
 			enviar_dato_serializado("OK",conexionCPU);
 			enviar_dato_serializado(string_itoa(valor), conexionCPU);
 			return;
@@ -36,7 +36,7 @@ void asignar_valor_var_comp (int conexionCPU){
 	int i = 0;
 	while (i < configuraciones.cantidad_var_comp){
 			if (strcmp(configuraciones.VAR_COMP[i], nombreVarComp)== 0){
-				configuraciones.VAR_COMP[i] = valorVarComp;
+				VECTOR_VAR_COM[i] = valorVarComp;
 				enviar_dato_serializado("OK",conexionCPU);
 				return;
 			}

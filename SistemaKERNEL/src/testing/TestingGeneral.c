@@ -44,9 +44,11 @@ void mostrar_menu_testing_general() {
 
 			//JONY: esto lo agrego para probar la planificacion
 			queue_push(COLA_NEW, pcb_nuevo);
-			crear_Proceso_en_tabla(pcb_nuevo->PID);
+			crear_Proceso_en_tabla(string_itoa(pcb_nuevo->PID));
+			Proceso* proc = new_Proceso(pcb_nuevo);
+			agregar_proceso(proc);
 
-			printf("PCB creado, PID es : %s\n", pcb_nuevo->PID);
+			printf("PCB creado, PID es : %d\n", pcb_nuevo->PID);
 			break;
 		}
 		case 2: {

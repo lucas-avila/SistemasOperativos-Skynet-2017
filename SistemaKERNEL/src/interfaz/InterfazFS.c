@@ -2,6 +2,25 @@
 #include<stdlib.h>
 #include<string.h>
 #include "commons/collections/list.h"
+
+#include "../administrarPCB/EstadisticaProceso.h"
+#include "../administrarPCB/PCBData.h"
+#include "../capaFILESYSTEM/TablaGlobalArchivo.h"
+#include "../capaMEMORIA/GestMemoriaFuncionesAux.h"
+#include "../general/funcionesUtiles.h"
+#include "../general/Socket.h"
+#include "../header/AppConfig.h"
+#include "../header/Estructuras.h"
+#include "../header/PCB.h"
+#include "../interfaz/InterfazConsola.h"
+#include "../interfaz/InterfazCPU.h"
+#include "../interfaz/InterfazMemoria.h"
+#include "../planificacion/Planificacion.h"
+
+#include "../administrarProcesos/Proceso.h"
+
+
+
 t_list* listaArchivos;
 t_list* contenidoArchivo;
 void inicializar() {
@@ -39,6 +58,15 @@ void inicializar() {
 	list_add(contenidoArchivo, contenido2);
 
 	list_add(contenidoArchivo, contenido3);
+
+	//testeando crear PCB
+	PCB * pcb_nuevo = crear_pcb();
+	pcb_nuevo->PID= 1024;
+	//JONY: esto lo agrego para probar la planificacion
+	queue_push(COLA_NEW, pcb_nuevo);
+	crear_Proceso_en_tabla(string_itoa(pcb_nuevo->PID));
+	Proceso* proc = new_Proceso(pcb_nuevo);
+	agregar_proceso(proc);
 }
 int buscarIndice(char* path) {
 	int tam = list_size(listaArchivos);

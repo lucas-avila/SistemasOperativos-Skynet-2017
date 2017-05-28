@@ -158,6 +158,16 @@ void LIBERAR(t_puntero memoria_serializada) {
 
 }
 
+void LLAMAR_SIN_RETORNO(t_nombre_etiqueta nombreEtiqueta){
+
+//primero tiene que guardar el PCB actual
+// genera un nuevo PCB
+	PCB* pcbFuncion;
+
+}
+
+
+
 /**DireccionVariable* obtener_dir_variable(char* variable) {
  if (variable[0] == '!') {
  //ir a buscar variable Compartida

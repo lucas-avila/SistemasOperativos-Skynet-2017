@@ -12,7 +12,7 @@
 
 #include "../administrarPCB/EstadisticaProceso.h"
 char* CU_ABRIR_ARCHIVO(char* PID, char* pathArchivo, bool flagCreate, bool flagRead, bool flagWrite) {
-	Proceso* proc = buscar_proceso_by_PID(PID);
+	Proceso* proc = buscar_proceso_by_PID(atoi(PID));
 	if(proc==NULL){
 		return "ERROR_PROCESO_NO_EXISTE";
 	}

@@ -16,17 +16,17 @@ void inicializar_test() {
 	Proceso* proc;
 
 	pcb = crear_pcb();
-	strcpy(pcb->PID, "1241");
+	pcb->PID=1241;
 	proc = new_Proceso(pcb);
 	agregar_proceso(proc);
 
 	pcb = crear_pcb();
-	strcpy(pcb->PID, "1371");
+	pcb->PID=1371;
 	proc = new_Proceso(pcb);
 	agregar_proceso(proc);
 
 	pcb = crear_pcb();
-	strcpy(pcb->PID, "1189");
+	pcb->PID=1189;
 	proc = new_Proceso(pcb);
 	agregar_proceso(proc);
 

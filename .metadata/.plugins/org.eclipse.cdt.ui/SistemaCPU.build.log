@@ -1,22 +1,76 @@
-<<<<<<< HEAD
-14:34:17 **** Incremental Build of configuration Debug for project SistemaCPU ****
-=======
-13:46:59 **** Incremental Build of configuration Debug for project SistemaCPU ****
->>>>>>> b1145973ec31846d400904a018731be4db187bd4
+18:43:48 **** Incremental Build of configuration Debug for project SistemaCPU ****
 make all 
 Building file: ../src/testing/testearPrimitivasFunciones.c
 Invoking: GCC C Compiler
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/testearPrimitivasFunciones.d" -MT"src/testing/testearPrimitivasFunciones.d" -o "src/testing/testearPrimitivasFunciones.o" "../src/testing/testearPrimitivasFunciones.c"
-In file included from ../src/testing/testearPrimitivasFunciones.c:14:0:
-../src/testing/../procesador/Ejecucion.h:11:27: fatal error: parser/parser.h: No existe el archivo o el directorio
- #include "parser/parser.h"
+../src/testing/testearPrimitivasFunciones.c: In function ‘crear_PCB_TEST’:
+../src/testing/testearPrimitivasFunciones.c:45:390: warning: "/*" within comment [-Wcomment]
+  char sentencias[][40] = { "variables a, b, x,d,e,f,g,h,i,j,k,l", "a = 3", "b = 5", "a = b + 12", "alocar x 50 ", "liberar x", "alocar d 50 ", "liberar d", "alocar e 50 ", "liberar e", "alocar f 50 ", "liberar f", "alocar g 50 ", "liberar g", "alocar h 50 ", "liberar h", "alocar i 50 ", "liberar i", "alocar j 50 ", "liberar j", "alocar k 50 ", "liberar k", "alocar l 50 ", "liberar l" };/**
+ ^
+../src/testing/testearPrimitivasFunciones.c: In function ‘mostrar_menu_primitivas’:
+../src/testing/testearPrimitivasFunciones.c:145:4: warning: passing argument 1 of ‘deserializarMemoriaDinamica’ makes pointer from integer without a cast [enabled by default]
+    DireccionMemoriaDinamica* dir = deserializarMemoriaDinamica(procesoPrueba->PID, punterosAlocar[0]);
+    ^
+In file included from ../src/testing/testearPrimitivasFunciones.c:12:0:
+../src/testing/../primitivas/FuncionesAuxiliares.h:16:27: note: expected ‘char *’ but argument is of type ‘uint32_t’
+ DireccionMemoriaDinamica* deserializarMemoriaDinamica(char* proceso, t_puntero memoria_serializada);
                            ^
-compilation terminated.
-make: *** [src/testing/testearPrimitivasFunciones.o] Error 1
+../src/testing/testearPrimitivasFunciones.c:146:4: warning: passing argument 1 of ‘solicitar_bytes_memoria’ makes pointer from integer without a cast [enabled by default]
+    printf("\n\nMemoria Despues del MALLOC: \n %s", solicitar_bytes_memoria(procesoPrueba->PID, string_itoa(dir->pagina), string_itoa(dir->byteInicial), "512"));
+    ^
+In file included from ../src/testing/testearPrimitivasFunciones.c:9:0:
+../src/testing/../interfaz/InterfazMemoria.h:15:7: note: expected ‘char *’ but argument is of type ‘uint32_t’
+ char* solicitar_bytes_memoria(char* PID, char* pagina, char* byteInicial, char* longitud);
+       ^
+../src/testing/testearPrimitivasFunciones.c:153:4: warning: passing argument 1 of ‘solicitar_bytes_memoria’ makes pointer from integer without a cast [enabled by default]
+    printf("\n\nMemoria Despues del FREE: \n %s", solicitar_bytes_memoria(procesoPrueba->PID, string_itoa(dir->pagina), string_itoa(dir->byteInicial), "512"));
+    ^
+In file included from ../src/testing/testearPrimitivasFunciones.c:9:0:
+../src/testing/../interfaz/InterfazMemoria.h:15:7: note: expected ‘char *’ but argument is of type ‘uint32_t’
+ char* solicitar_bytes_memoria(char* PID, char* pagina, char* byteInicial, char* longitud);
+       ^
+../src/testing/testearPrimitivasFunciones.c:169:5: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char * (*)[20]’ [-Wformat=]
+     scanf("%s", &nombVarComp);
+     ^
+../src/testing/testearPrimitivasFunciones.c:170:25: warning: comparison between pointer and integer [enabled by default]
+    } while (nombVarComp == '\n');
+                         ^
+../src/testing/testearPrimitivasFunciones.c:173:4: warning: passing argument 1 of ‘ASIGNAR_VALOR_COMPARTIDA’ from incompatible pointer type [enabled by default]
+    ASIGNAR_VALOR_COMPARTIDA(nombVarComp, valor);
+    ^
+In file included from ../src/testing/testearPrimitivasFunciones.c:7:0:
+../src/testing/../primitivas/PrimitivasFunciones.h:45:18: note: expected ‘t_nombre_compartida’ but argument is of type ‘char **’
+ t_valor_variable ASIGNAR_VALOR_COMPARTIDA(t_nombre_compartida variable, t_valor_variable valor);
+                  ^
+../src/testing/testearPrimitivasFunciones.c:180:5: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char * (*)[20]’ [-Wformat=]
+     scanf("%s", &nombVarComp);
+     ^
+../src/testing/testearPrimitivasFunciones.c:181:25: warning: comparison between pointer and integer [enabled by default]
+    } while (nombVarComp == '\n');
+                         ^
+../src/testing/testearPrimitivasFunciones.c:182:4: warning: passing argument 1 of ‘OBTENER_VALOR_COMPARTIDA’ from incompatible pointer type [enabled by default]
+    OBTENER_VALOR_COMPARTIDA(nombVarComp);
+    ^
+In file included from ../src/testing/testearPrimitivasFunciones.c:7:0:
+../src/testing/../primitivas/PrimitivasFunciones.h:43:18: note: expected ‘t_nombre_compartida’ but argument is of type ‘char **’
+ t_valor_variable OBTENER_VALOR_COMPARTIDA(t_nombre_compartida variable);
+                  ^
+../src/testing/testearPrimitivasFunciones.c:185:4: warning: implicit declaration of function ‘abrir_archivo’ [-Wimplicit-function-declaration]
+    abrir_archivo("1024", "archivo", true, false, false);
+    ^
+../src/testing/testearPrimitivasFunciones.c:65:6: warning: unused variable ‘valor’ [-Wunused-variable]
+  int valor;
+      ^
+../src/testing/testearPrimitivasFunciones.c:64:7: warning: unused variable ‘nombreVariable’ [-Wunused-variable]
+  char nombreVariable[20];
+       ^
+Finished building: ../src/testing/testearPrimitivasFunciones.c
+ 
+Building target: SistemaCPU
+Invoking: GCC C Linker
+gcc  -o "SistemaCPU"  ./src/testing/testearPrimitivasFunciones.o ./src/testing/testingPCB.o  ./src/procesador/Ejecucion.o  ./src/primitivas/FuncionesAuxiliares.o ./src/primitivas/IndiceCodigo.o ./src/primitivas/PrimitivasFunciones.o ./src/primitivas/Stack.o  ./src/interfaz/InterfazKernel.o ./src/interfaz/InterfazMemoria.o  ./src/header/AppConfig.o ./src/header/PCB.o  ./src/general/Semaforo.o ./src/general/Socket.o ./src/general/funcionesUtiles.o  ./src/CPU.o   -lparser-ansisop -lpthread -lcommons
+Finished building target: SistemaCPU
+ 
 
-<<<<<<< HEAD
-14:34:17 Build Finished (took 179ms)
-=======
-13:46:59 Build Finished (took 113ms)
->>>>>>> b1145973ec31846d400904a018731be4db187bd4
+18:43:51 Build Finished (took 2s.517ms)
 

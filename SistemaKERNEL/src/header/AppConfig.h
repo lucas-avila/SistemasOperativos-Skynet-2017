@@ -36,6 +36,6 @@ AppConfig configuraciones;
 int* VECTOR_VAR_COM;
 
 void inicializar_configuracion(char *PATH_ARCHIVO_CONFIGURACION);
-void inicializar_vec_variables_compartidas(int** vector_var_comp);
+void inicializar_vec_variables_compartidas();
 
 #endif /* HEADER_APPCONFIG_H_ */

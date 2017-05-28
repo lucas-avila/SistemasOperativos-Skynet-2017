@@ -29,17 +29,17 @@ void crear_PCB_TEST() {
 	procesoPrueba->program_counter = 0;
 	procesoPrueba->cantidad_paginas_codigo = 1;
 
-	/** procesoPrueba->pila = list_create();
+    procesoPrueba->pila = list_create();
 
 	IndiceStack* filaInicial = malloc(sizeof(IndiceStack));
 	filaInicial->argumentos = list_create();
 	filaInicial->variables = list_create();
 	filaInicial->posicion = 0;
 	list_add(procesoPrueba->pila, filaInicial);
-	procesoPrueba->pagina_inicial_stack = atoi(asignar_Paginas_Programa(procesoPrueba->PID, "1"));
+	procesoPrueba->pagina_inicial_stack = atoi(asignar_Paginas_Programa(string_itoa(procesoPrueba->PID), "1"));
 
 	procesoPrueba->RR = 0;
-
+/**
 
 	int paginaSentencia = atoi(asignar_Paginas_Programa(procesoPrueba->PID, "1"));
 	char sentencias[][40] = { "variables a, b, x,d,e,f,g,h,i,j,k,l", "a = 3", "b = 5", "a = b + 12", "alocar x 50 ", "liberar x", "alocar d 50 ", "liberar d", "alocar e 50 ", "liberar e", "alocar f 50 ", "liberar f", "alocar g 50 ", "liberar g", "alocar h 50 ", "liberar h", "alocar i 50 ", "liberar i", "alocar j 50 ", "liberar j", "alocar k 50 ", "liberar k", "alocar l 50 ", "liberar l" };/**
@@ -63,6 +63,7 @@ void casos_multiples_primitivas();
 void mostrar_menu_primitivas() {
 	char nombreVariable[20];
 	int valor;
+	t_nombre_compartida nombVarComp[20];
 	char nombre;
 	int punterosAlocar[3];
 	crear_PCB_TEST();
@@ -81,8 +82,10 @@ void mostrar_menu_primitivas() {
 
 		printf("\n 9 - Probar ANALIZADOR SINTACTICO");
 
-		printf("\n 10 - Probar Asginar Compartida");
-		printf("\n 11 - Probar Buscar Compartida");
+		printf("\n 10 - Probar ASIGNAR COMPARTIDA");
+		printf("\n 11 - Probar BUSCAR COMPARTIDA");
+		printf("\n 12 - Probar ABRIR ARCHIVO");
+
 
 		printf("\n 20 - Salir");
 		printf("\n Opcion: ");
@@ -163,21 +166,26 @@ void mostrar_menu_primitivas() {
 
 			printf("\n Nombre Variable: ");
 			do {
-				scanf("%s", &nombre);
-			} while (nombre == '\n');
+				scanf("%s", &nombVarComp);
+			} while (nombVarComp == '\n');
 			printf("\n Valor: ");
 			valor = validarNumeroInput(0, 999999);
-			ASIGNAR_VALOR_COMPARTIDA(nombre, valor);
+			ASIGNAR_VALOR_COMPARTIDA(nombVarComp, valor);
 			break;
 		case 11:
 
 
 			printf("\n Nombre Variable: ");
 			do {
-				scanf("%s", &nombre);
-			} while (nombre == '\n');
-			OBTENER_VALOR_COMPARTIDA(nombreVariable);
+				scanf("%s", &nombVarComp);
+			} while (nombVarComp == '\n');
+			OBTENER_VALOR_COMPARTIDA(nombVarComp);
 			break;
+		case 12:
+			abrir_archivo("1024", "archivo", true, false, false);
+
+
+					break;
 		}
 
 	} while (opcion_Salir != 20);

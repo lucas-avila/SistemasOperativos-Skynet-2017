@@ -29,11 +29,20 @@ void inicializar_KERNEL();
 
 int main(int argc, char *argv[]) {
 	inicializar_configuracion(argv[1]);
-	//inicializar_configuracion("/home/utnso/Escritorio/tp-2017-1c-Skynet/SistemaKERNEL/resource/config.cfg");
+	//inicializar_configuracion("..//resource//config.cfg");
+
+
+
 	inicializar_KERNEL();
 	iniciar_conexion_servidor_consola();
 	iniciar_conexion_servidor_cpu();
 	iniciar_conexion_servidor_memoria();
+
+	inicializar();//sacar esto despues ESPARA PROBAR FILE SYSTEM
+
+
+
+
 //	iniciar_conexion_servidor_FS();
 	atender_solicitudes_de_usuario();
 	return EXIT_SUCCESS;

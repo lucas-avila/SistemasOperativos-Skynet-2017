@@ -51,21 +51,20 @@ void CU_Recibir_Conexiones_CPU(int clienteCPU) {
 			asignar_valor_var_comp(clienteCPU);
 		} else if (strcmp(codigo_operacion, "BUSCAR_VAL_VAR_COMP") == 0) {
 			obtener_valor_var_comp(clienteCPU);
-<<<<<<< HEAD
 		}else if (strcmp(codigo_operacion, "ABRIR_ARCHIVO") == 0) {
 			abrir_archivo(clienteCPU);
 		}else if (strcmp(codigo_operacion, "MOVER_CURSOR_ARCHIVO") == 0) {
 			mover_cursor_archivo(clienteCPU);
 		}else if (strcmp(codigo_operacion, "LEER_ARCHIVO") == 0) {
 			leer_archivo(clienteCPU);
-		}else if (strcmp(codigo_operacion, "CERRAR_ARCHIVO") == 0) {
-			cerrar_archivo(clienteCPU);
+		}else if (strcmp(codigo_operacion, "LEER_ARCHIVO") == 0) {
+			leer_archivo(clienteCPU);
+		}else if (strcmp(codigo_operacion, "ESCRIBIR_ARCHIVO") == 0) {
+			escribir_archivo(clienteCPU);
 		}else if (strcmp(codigo_operacion, "BORRAR_ARCHIVO") == 0) {
 			borrar_archivo(clienteCPU);
-=======
 		} else if (strcmp(codigo_operacion, "IMPRIMIR_POR_PANTALLA")) {
 			CU_Atender_Solicitud_Escritura_Por_Pantalla();
->>>>>>> b1145973ec31846d400904a018731be4db187bd4
 		} else if (strcmp(codigo_operacion, "") == 0) {
 			close(clienteCPU);
 			controlSeguir = 0;
