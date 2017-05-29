@@ -9,6 +9,7 @@
 #define HEADER_ESTRUCTURAS_H_
 
 #include <commons/collections/list.h>
+#include <pthread.h>
 
 typedef struct {
 	int consola_ID;

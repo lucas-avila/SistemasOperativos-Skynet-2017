@@ -8,6 +8,8 @@
 #ifndef HEADER_APPCONFIG_H_
 #define HEADER_APPCONFIG_H_
 
+#include <commons/collections/dictionary.h>
+
 typedef struct {
 	int PUERTO_PROG;
 	int PUERTO_CPU;
@@ -35,6 +37,7 @@ typedef struct {
 AppConfig configuraciones;
 
 int* VECTOR_VAR_COM;
+t_dictionary * dict_semaforos_ansisop;
 
 void inicializar_configuracion(char *PATH_ARCHIVO_CONFIGURACION);
 void inicializar_vec_variables_compartidas();

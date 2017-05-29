@@ -13,7 +13,9 @@
 #include "PCB.h"
 #include "../administrarProcesos/Proceso.h"
 
+//TODO: Actualizar este codigo con la nueva estructura de COLAS
 
+/*
 void mostrar_menu_usuario() {
 	printf("\n******* MENU KERNEL ******");
 	printf("\n 1 - Obtener listado de procesos del Sistema.");
@@ -200,9 +202,10 @@ void verificar_estado(uint32_t pid){
 	}
 
 }
-
+*/
 void atender_solicitudes_de_usuario() {
 	int opcion = 0;
+	/*
 	do {
 		//system("clear");
 		mostrar_menu_usuario();
@@ -240,4 +243,6 @@ void atender_solicitudes_de_usuario() {
 			break;
 		}
 	} while (opcion != 8);
+	*/
 }
+

@@ -57,6 +57,9 @@ void CU_Recibir_Conexiones_CPU(int clienteCPU) {
 				recibir_PCB_de_CPU(clienteCPU, "TERMINADO");
 		} else if(strcmp(recibir_dato_serializado(clienteCPU), "WAIT_SEM") == 0){
 				recibir_PCB_de_CPU(clienteCPU, "WAIT_SEM");
+		} else if (strcmp(codigo_operacion, "SIGNAL_SEM")) {
+			char * nombre_sem = recibir_dato_serializado(clienteCPU);
+			recepcion_SIGNAL_semaforo_ansisop(nombre_sem);
 		} else if (strcmp(codigo_operacion, "ASIGNAR_VAR_COMP") == 0) {
 			asignar_valor_var_comp(clienteCPU);
 		} else if (strcmp(codigo_operacion, "BUSCAR_VAL_VAR_COMP") == 0) {

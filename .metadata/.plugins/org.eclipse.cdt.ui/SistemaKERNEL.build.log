@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 16:48:00 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
 make all 
 Building file: ../src/KERNEL.c
@@ -45,6 +46,18 @@ In file included from ../src/KERNEL.c:1:0:
    notificar_exit_code(proceso->pcb->exit_code, proceso->socket);
    ^
 Finished building: ../src/KERNEL.c
+=======
+02:38:37 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+Building file: ../src/header/SolicitudesUsuario.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/SolicitudesUsuario.d" -MT"src/header/SolicitudesUsuario.d" -o "src/header/SolicitudesUsuario.o" "../src/header/SolicitudesUsuario.c"
+../src/header/SolicitudesUsuario.c: In function ‘atender_solicitudes_de_usuario’:
+../src/header/SolicitudesUsuario.c:207:6: warning: unused variable ‘opcion’ [-Wunused-variable]
+  int opcion = 0;
+      ^
+Finished building: ../src/header/SolicitudesUsuario.c
+>>>>>>> 59bfcdef756a50cceec3fe44eb9e987455ca213e
  
 Building file: ../src/PCB.c
 Invoking: GCC C Compiler
@@ -105,5 +118,9 @@ gcc  -o "SistemaKERNEL"  ./src/testing/TestingCapaFileSystem.o ./src/testing/Tes
 Finished building target: SistemaKERNEL
  
 
+<<<<<<< HEAD
 16:48:05 Build Finished (took 4s.942ms)
+=======
+02:38:37 Build Finished (took 306ms)
+>>>>>>> 59bfcdef756a50cceec3fe44eb9e987455ca213e
 

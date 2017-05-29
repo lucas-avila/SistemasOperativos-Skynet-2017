@@ -1,8 +1,10 @@
+#include <commons/collections/dictionary.h>
 #include <commons/collections/list.h>
 #include <commons/string.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 
 #include "administrarPCB/EstadisticaProceso.h"
 #include "administrarPCB/PCBData.h"
@@ -17,6 +19,7 @@
 #include "header/SolicitudesUsuario.h"
 #include "interfaz/InterfazConsola.h"
 #include "interfaz/InterfazCPU.h"
+#include "interfaz/InterfazFS.h"
 #include "interfaz/InterfazMemoria.h"
 #include "planificacion/Planificacion.h"
 
@@ -29,12 +32,15 @@ void inicializar_KERNEL();
 
 int main(int argc, char *argv[]) {
 	inicializar_configuracion(argv[1]);
+<<<<<<< HEAD
 
 	//inicializar_configuracion("..//resource//config.cfg");
 
 
 
 
+=======
+>>>>>>> 59bfcdef756a50cceec3fe44eb9e987455ca213e
 	inicializar_KERNEL();
 	iniciar_conexion_servidor_consola();
 	iniciar_conexion_servidor_cpu();
@@ -71,6 +77,8 @@ void inicializar_semaforos(){
 void inicializar_listas_globales() {
 	lista_consolas = list_create();
 	lista_CPUs = list_create();
+	inicializar_vec_variables_compartidas();
+	inicializar_dict_semaforos_ansisop();
 }
 
 void CU_iniciar_programa(int programa_socket) {
@@ -80,7 +88,7 @@ void CU_iniciar_programa(int programa_socket) {
 
 	Proceso * proceso_nuevo = new_Proceso(pcb_nuevo);
 	proceso_nuevo->socket = programa_socket;
-	list_add(procesos, proceso_nuevo);
+	agregar_proceso(proceso_nuevo);
 
 	proceso_a_NEW(proceso_nuevo);
 

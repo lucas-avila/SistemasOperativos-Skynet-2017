@@ -1,26 +1,18 @@
 #include <commons/collections/list.h>
-#include <commons/collections/queue.h>
 #include <commons/string.h>
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 #include "../administrarPCB/EstadisticaProceso.h"
 #include "../administrarPCB/PCBData.h"
-#include "../capaFILESYSTEM/TablaGlobalArchivo.h"
-#include "../capaMEMORIA/GestMemoriaFuncionesAux.h"
+#include "../administrarProcesos/Proceso.h"
 #include "../general/funcionesUtiles.h"
-#include "../general/Socket.h"
-#include "../header/AppConfig.h"
 #include "../header/Estructuras.h"
 #include "../header/PCB.h"
 #include "../interfaz/InterfazConsola.h"
 #include "../interfaz/InterfazCPU.h"
-#include "../interfaz/InterfazMemoria.h"
 #include "../planificacion/Planificacion.h"
-
-#include "../administrarProcesos/Proceso.h"
 
 void mostrar_menu_testing_general() {
 	int opcion = 0;
@@ -42,11 +34,12 @@ void mostrar_menu_testing_general() {
 			//testeando crear PCB
 			PCB * pcb_nuevo = crear_pcb();
 
-			//JONY: esto lo agrego para probar la planificacion
-			queue_push(COLA_NEW, pcb_nuevo);
 			crear_Proceso_en_tabla(string_itoa(pcb_nuevo->PID));
 			Proceso* proc = new_Proceso(pcb_nuevo);
 			agregar_proceso(proc);
+
+			//JONY: esto lo agrego para probar la planificacion
+			proceso_a_NEW(proc);
 
 			printf("PCB creado, PID es : %d\n", pcb_nuevo->PID);
 			break;
