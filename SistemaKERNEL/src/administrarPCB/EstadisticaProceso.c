@@ -9,10 +9,9 @@ void inicializar_tabla_proceso_estadistica() {
 	TABLA_PROCESO_ESTADISTICA = list_create();
 }
 
-EstadisticaProceso* crear_Estadistica_Proceso(char*PID, unsigned cantidad_Rafagas_Ejecutadas, unsigned cantidad_Operaciones_Privilegadas_Ejecutadas, int cantidad_Paginas_HEAP_Utilizadas, unsigned cantidad_Operaciones_Alocar, int tamanio_Total_Alocar, unsigned cantidad_Operaciones_Liberar, int tamanio_Total_Liberar, int cantidad_SysCall_Ejecutadas) {
+EstadisticaProceso* crear_Estadistica_Proceso(uint32_t PID, uint32_t cantidad_Rafagas_Ejecutadas, uint32_t cantidad_Operaciones_Privilegadas_Ejecutadas, uint32_t cantidad_Paginas_HEAP_Utilizadas, uint32_t cantidad_Operaciones_Alocar, uint32_t tamanio_Total_Alocar, uint32_t cantidad_Operaciones_Liberar, uint32_t tamanio_Total_Liberar, uint32_t cantidad_SysCall_Ejecutadas) {
 	EstadisticaProceso* estadistica = malloc(sizeof(EstadisticaProceso));
-	estadistica->PID = malloc(strlen(PID) + 1);
-	strcpy(estadistica->PID, PID);
+	estadistica->PID = PID;
 	estadistica->cantidad_Rafagas_Ejecutadas = cantidad_Rafagas_Ejecutadas;
 	estadistica->cantidad_Operaciones_Privilegadas_Ejecutadas = cantidad_Operaciones_Privilegadas_Ejecutadas;
 	estadistica->cantidad_Paginas_HEAP_Utilizadas = cantidad_Paginas_HEAP_Utilizadas;
@@ -24,21 +23,22 @@ EstadisticaProceso* crear_Estadistica_Proceso(char*PID, unsigned cantidad_Rafaga
 	return estadistica;
 }
 
-void crear_Proceso_en_tabla(char *PID) {
+void crear_Proceso_en_tabla(uint32_t PID) {
 	EstadisticaProceso* estadistica = crear_Estadistica_Proceso(PID, 0, 0, 0, 0, 0, 0, 0, 0);
 	guardar_registro_proceso(estadistica);
+	printf("TABLAAA\n");
 }
 
 void guardar_registro_proceso(EstadisticaProceso* estadisticaProceso) {
 	list_add(TABLA_PROCESO_ESTADISTICA, estadisticaProceso);
 }
 
-EstadisticaProceso* buscar_registro_por_PID(char* PID) {
+EstadisticaProceso* buscar_registro_por_PID(uint32_t PID) {
 	int tamanio = list_size(TABLA_PROCESO_ESTADISTICA);
 	int i = 0;
 	for (i = 0; i < tamanio; i++) {
 		EstadisticaProceso* element = list_get(TABLA_PROCESO_ESTADISTICA, i);
-		if (strcmp(element->PID, PID) == 0) {
+		if (element->PID == PID) {
 			return element;
 		}
 	}
@@ -49,19 +49,19 @@ void actualizar_registro_proceso(EstadisticaProceso* estadisticaProceso) {
 	list_replace(TABLA_PROCESO_ESTADISTICA, buscar_indice_tabla_estadistica_proceso(estadisticaProceso->PID), estadisticaProceso);
 }
 
-int buscar_indice_tabla_estadistica_proceso(char* PID) {
+int buscar_indice_tabla_estadistica_proceso(uint32_t PID) {
 	int tamanio = list_size(TABLA_PROCESO_ESTADISTICA);
 	int i = 0;
 	for (i = 0; i < tamanio; i++) {
 		EstadisticaProceso* element = list_get(TABLA_PROCESO_ESTADISTICA, i);
-		if (strcmp(element->PID, PID) == 0) {
+		if (element->PID == PID) {
 			return i;
 		}
 	}
 	return -1;
 }
 
-void incrementar_rafagas_ejecutadas(char *PID, unsigned rafagasEjecutadas) {
+void incrementar_rafagas_ejecutadas(uint32_t PID, uint32_t rafagasEjecutadas) {
 	EstadisticaProceso* elemento = buscar_registro_por_PID(PID);
 	if (elemento == NULL) {
 		crear_Proceso_en_tabla(PID);
@@ -70,7 +70,7 @@ void incrementar_rafagas_ejecutadas(char *PID, unsigned rafagasEjecutadas) {
 	elemento->cantidad_Rafagas_Ejecutadas += rafagasEjecutadas;
 	actualizar_registro_proceso(elemento);
 }
-void incrementar_en_uno_paginas_HEAP(char *PID) {
+void incrementar_en_uno_paginas_HEAP(uint32_t PID) {
 	EstadisticaProceso* elemento = buscar_registro_por_PID(PID);
 	if (elemento == NULL) {
 		crear_Proceso_en_tabla(PID);
@@ -80,7 +80,7 @@ void incrementar_en_uno_paginas_HEAP(char *PID) {
 	actualizar_registro_proceso(elemento);
 
 }
-void incrementar_MALLOC(char *PID, int tamanioMalloc) {
+void incrementar_MALLOC(uint32_t PID, uint32_t tamanioMalloc) {
 	EstadisticaProceso* elemento = buscar_registro_por_PID(PID);
 	if (elemento == NULL) {
 		crear_Proceso_en_tabla(PID);
@@ -91,7 +91,7 @@ void incrementar_MALLOC(char *PID, int tamanioMalloc) {
 	elemento->tamanio_Total_Alocar += tamanioMalloc;
 	actualizar_registro_proceso(elemento);
 }
-void incrementar_FREE(char *PID, int tamanioFREE) {
+void incrementar_FREE(uint32_t PID, uint32_t tamanioFREE) {
 	EstadisticaProceso* elemento = buscar_registro_por_PID(PID);
 	if (elemento == NULL) {
 		crear_Proceso_en_tabla(PID);
@@ -102,7 +102,7 @@ void incrementar_FREE(char *PID, int tamanioFREE) {
 	elemento->tamanio_Total_Liberar += tamanioFREE;
 	actualizar_registro_proceso(elemento);
 }
-void incrementar_SYSCALL(char *PID, int cantidadSysCall) {
+void incrementar_SYSCALL(uint32_t PID, uint32_t cantidadSysCall) {
 	EstadisticaProceso* elemento = buscar_registro_por_PID(PID);
 	if (elemento == NULL) {
 		crear_Proceso_en_tabla(PID);

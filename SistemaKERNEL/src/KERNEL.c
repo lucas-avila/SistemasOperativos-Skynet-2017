@@ -78,6 +78,7 @@ void CU_iniciar_programa(int programa_socket) {
 	procesar_programa(codigo, pcb_nuevo); //aca adentro se llena el pcb y se envia el programa a memoria
 
 	Proceso * proceso_nuevo = new_Proceso(pcb_nuevo);
+	crear_Proceso_en_tabla(proceso_nuevo->PID);
 	proceso_nuevo->socket = programa_socket;
 	agregar_proceso(proceso_nuevo);
 
