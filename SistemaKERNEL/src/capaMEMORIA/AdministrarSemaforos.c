@@ -4,7 +4,7 @@
  *  Created on: 27/5/2017
  *      Author: utnso
  */
-<<<<<<< HEAD
+
 /*
 =======
 
@@ -54,7 +54,4 @@ int semaforo_ansisop_index(char * nombre_sem){
 }
 <<<<<<< HEAD
 */
-=======
 
-
->>>>>>> 59bfcdef756a50cceec3fe44eb9e987455ca213e
