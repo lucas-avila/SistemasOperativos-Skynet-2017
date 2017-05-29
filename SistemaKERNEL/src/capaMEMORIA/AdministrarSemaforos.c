@@ -4,6 +4,9 @@
  *  Created on: 27/5/2017
  *      Author: utnso
  */
+<<<<<<< HEAD
+/*
+=======
 
 #include <commons/collections/dictionary.h>
 #include <stdlib.h>
@@ -11,6 +14,7 @@
 #include "../header/AppConfig.h"
 
 //Obtiene el valor actual de un determinado semaforo ansisop
+>>>>>>> 59bfcdef756a50cceec3fe44eb9e987455ca213e
 int obtener_valor_semaforo(char * nombre_sem){
 	if(dictionary_has_key(dict_semaforos_ansisop, nombre_sem))
 		return *((int *) dictionary_get(dict_semaforos_ansisop, nombre_sem));
@@ -48,5 +52,9 @@ int semaforo_ansisop_index(char * nombre_sem){
 	}
 	return -1;
 }
+<<<<<<< HEAD
+*/
+=======
 
 
+>>>>>>> 59bfcdef756a50cceec3fe44eb9e987455ca213e

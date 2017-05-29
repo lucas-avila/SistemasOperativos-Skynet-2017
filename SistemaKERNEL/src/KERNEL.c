@@ -32,6 +32,15 @@ void inicializar_KERNEL();
 
 int main(int argc, char *argv[]) {
 	inicializar_configuracion(argv[1]);
+<<<<<<< HEAD
+
+	//inicializar_configuracion("..//resource//config.cfg");
+
+
+
+
+=======
+>>>>>>> 59bfcdef756a50cceec3fe44eb9e987455ca213e
 	inicializar_KERNEL();
 	iniciar_conexion_servidor_consola();
 	iniciar_conexion_servidor_cpu();

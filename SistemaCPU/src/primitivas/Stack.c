@@ -186,13 +186,13 @@ void asingar_espacio_memoria_variable(PCB* pcb, Variable* var, int filaStack, in
 	} else {
 		// 2.B A partir de la ultima posicion de memoria de la variable, declaro la mia.
 		pagina = ultima_variable->pagina;
-		byte_inicial = ultima_variable->byte_inicial + TAMANIO_VARIABLE_D;
+		byte_inicial = ultima_variable->byte_inicial + sizeof(var);
 	}
 	// 5. Almaceno en memoria la variable declarada.
 	almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(byte_inicial), string_itoa(TAMANIO_VARIABLE_D), "    ");
 
 	var->pagina = pagina;
-	var->tamanio = TAMANIO_VARIABLE_D;
+	var->tamanio = sizeof(var);
 	var->byte_inicial = byte_inicial;
 
 }
