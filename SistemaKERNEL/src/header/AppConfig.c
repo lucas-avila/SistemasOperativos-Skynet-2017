@@ -92,19 +92,18 @@ void inicializar_configuracion(char *PATH_ARCHIVO_CONFIGURACION) {
 
 		configuraciones.planificacion_activa = 1;
 	}
-<<<<<<< HEAD
+
 	inicializar_vec_variables_compartidas();
 }
 
-void inicializar_vec_variables_compartidas() {
+/*void inicializar_vec_variables_compartidas() {
 	VECTOR_VAR_COM = malloc(configuraciones.cantidad_var_comp);
-=======
 	inicializar_vec_variables_compartidas(VECTOR_VAR_COM);
-}
+}*/
 
 void inicializar_vec_variables_compartidas(int** VECTOR_VAR_COMP) {
 	VECTOR_VAR_COMP = malloc(configuraciones.cantidad_var_comp);
->>>>>>> 005292d7e95364d69bce6cbac3570e65b830004c
+
 	int i = 0;
 	 while ( i < configuraciones.cantidad_var_comp) {
 	 VECTOR_VAR_COM[i] = 0;

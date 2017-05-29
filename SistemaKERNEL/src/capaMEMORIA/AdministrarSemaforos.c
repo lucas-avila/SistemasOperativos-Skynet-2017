@@ -4,7 +4,7 @@
  *  Created on: 27/5/2017
  *      Author: utnso
  */
-
+/*
 int obtener_valor_semaforo(char * nombre_sem){
 
 	int i = 0;
@@ -16,3 +16,4 @@ int obtener_valor_semaforo(char * nombre_sem){
 	}
 
 }
+*/

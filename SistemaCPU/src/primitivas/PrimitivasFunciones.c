@@ -1,6 +1,7 @@
 #include<stdlib.h>
 #include<stdio.h>
 #include<string.h>
+#include <ctype.h>
 
 #include "PrimitivasFunciones.h"
 #include "../interfaz/InterfazMemoria.h"
@@ -20,9 +21,9 @@ void setearPCB(PCB* pcbEnviado) {
 t_puntero DEFINIR_VARIABLE(t_nombre_variable variable) {
 	// 1. Obtenemos la ultima fila de la tabla del stack(porque es la que estamos trabajando)
 	IndiceStack* pila = obtener_Ultima_fila_Indice_Stack(pcb);
-
+	if(isalpha(variable)){
 	// 3. Creo la variable
-	Variable* var_new = crear_variable(variable, -1, -1, TAMANIO_VARIABLE, 0);
+	Variable* var_new = crear_variable(variable, -1, -1, sizeof(variable), 0);
 
 	// 4. Almaceno la variable en la ultima fila de la tabla variable de la pila
 	crear_variable_en_Indice_Stack(pila, var_new);
@@ -31,7 +32,20 @@ t_puntero DEFINIR_VARIABLE(t_nombre_variable variable) {
 	// Por ejemplo la variable a, fue declarada en la primer fila del stack, es de tipo variable, y ocupa la posicon 7 de la tabla de variables.
 	// El puntero para esto seria 99 0000 0001 0007
 	PunteroVariable* direccionPuntero = buscar_posicion_variable_por_nombre(pila, variable);
+
+	//printf("La nueva variable %s tiene la direccion:\n",variable);
 	return generarPunteroStack(string_itoa(direccionPuntero->filaStack), string_itoa(direccionPuntero->esVariable), string_itoa(direccionPuntero->filaTabla));
+	}
+	else{
+		Argumento* arg_new = crear_argumento(variable,-1,-1,sizeof(variable));
+
+		crear_argumento_en_Indice_Stack(pila, arg_new);
+
+		PunteroVariable* direccionPuntero = buscar_posicion_variable_por_nombre(pila, variable);
+
+		return generarPunteroStack(string_itoa(direccionPuntero->filaStack), string_itoa(direccionPuntero->esVariable), string_itoa(direccionPuntero->filaTabla));
+	}
+
 }
 
 t_puntero OBTENER_DIRECCION_DE_VARIABLE(t_nombre_variable variable) {
@@ -158,11 +172,9 @@ void LIBERAR(t_puntero memoria_serializada) {
 
 }
 
-void LLAMAR_SIN_RETORNO(t_nombre_etiqueta nombreEtiqueta){
+void RETORNAR(t_valor_variable variableRetorno){
 
-//primero tiene que guardar el PCB actual
-// genera un nuevo PCB
-	PCB* pcbFuncion;
+
 
 }
 
