@@ -86,7 +86,7 @@ void inicializar_contexto_ejecucion() {
 	funciones->AnSISOP_asignar = ASIGNAR_VARIABLE;
 	funciones->AnSISOP_asignarValorCompartida = ASIGNAR_VALOR_COMPARTIDA;
 	funciones->AnSISOP_obtenerValorCompartida=OBTENER_VALOR_COMPARTIDA;
-//	funciones->AnSISOP_irAlLabel = irAlLabel;
+	funciones->AnSISOP_irAlLabel = IR_A_LABEL;
 	funciones->AnSISOP_llamarConRetorno = LLAMAR_CON_RETORNO;
 	funciones->AnSISOP_llamarSinRetorno = LLAMAR_SIN_RETORNO;
 	funciones->AnSISOP_retornar = RETORNAR;

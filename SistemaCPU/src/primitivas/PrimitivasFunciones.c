@@ -1,15 +1,19 @@
-#include<stdlib.h>
-#include<stdio.h>
-#include<string.h>
-#include <ctype.h>
-
 #include "PrimitivasFunciones.h"
-#include "../interfaz/InterfazMemoria.h"
+
+#include <commons/collections/list.h>
+#include <commons/string.h>
+#include <ctype.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "../header/PCB.h"
 #include "../interfaz/InterfazKernel.h"
+#include "../interfaz/InterfazMemoria.h"
+#include "EstructurasDeDatosPrimitivas.h"
 #include "FuncionesAuxiliares.h"
 #include "Stack.h"
-#include "commons/string.h"
-#include "EstructurasDeDatosPrimitivas.h"
+#include <parser/metadata_program.h>
 
 PCB* pcb;
 const int TAMANIO_VARIABLE = 4;
@@ -171,6 +175,11 @@ void LIBERAR(t_puntero memoria_serializada) {
 	printf("\nResultado de LIBERAR el puntero %d: %s", memoria_serializada, resultado);
 
 }
+void IR_A_LABEL(t_nombre_etiqueta nombre_etiqueta){
+
+	pcb->program_counter = metadata_buscar_etiqueta(nombre_etiqueta, pcb->etiquetas, pcb->etiquetas_size);
+
+}
 
 void RETORNAR(t_valor_variable variableRetorno){
 	ASIGNAR_VARIABLE((stackDeFuncion->retVar), variableRetorno);
@@ -188,8 +197,8 @@ void LLAMAR_SIN_RETORNO(t_nombre_etiqueta nombre_etiqueta ){
 	list_add(pcb->pila, stackDeFuncion);
 	stackDeFuncion->retPos = pcb->program_counter;
 	// tiene que buscar la etiqueta en la lista de etiquetas y conseguir la direccion
-	// t_direccion_etiqueta direccionEtiqueta = buscar_direccion_etiqueta(nombre_etiqueta); (CODIGO INVENTADO!!)
-	//pcb->program_counter = direccionEtiqueta;
+	t_puntero_instruccion direccionEtiqueta = metadata_buscar_etiqueta(nombre_etiqueta, pcb->etiquetas, pcb->etiquetas_size);
+	pcb->program_counter = direccionEtiqueta;
 
 }
 
@@ -198,8 +207,8 @@ void LLAMAR_CON_RETORNO(t_nombre_etiqueta nombre_etiqueta, t_puntero direccionRe
 	stackDeFuncion->retPos = pcb->program_counter;
 	stackDeFuncion->retVar = direccionRetorno;
 	// tiene que buscar la etiqueta en la lista de etiquetas y conseguir la direccion
-	// t_direccion_etiqueta direccionEtiqueta = buscar_direccion_etiqueta(nombre_etiqueta); (CODIGO INVENTADO!!)
-	//pcb->program_counter = direccionEtiqueta;
+	t_puntero_instruccion direccionEtiqueta = metadata_buscar_etiqueta(nombre_etiqueta, pcb->etiquetas, pcb->etiquetas_size);
+		pcb->program_counter = direccionEtiqueta;
 
 }
 /**DireccionVariable* obtener_dir_variable(char* variable) {

@@ -105,3 +105,54 @@ Invoking: GCC C Linker
 gcc  -o "SistemaCPU"  ./src/testing/testearPrimitivasFunciones.o ./src/testing/testingPCB.o  ./src/procesador/Ejecucion.o  ./src/primitivas/FuncionesAuxiliares.o ./src/primitivas/IndiceCodigo.o ./src/primitivas/PrimitivasFunciones.o ./src/primitivas/Stack.o  ./src/interfaz/InterfazKernel.o ./src/interfaz/InterfazMemoria.o  ./src/header/AppConfig.o ./src/header/PCB.o  ./src/general/Semaforo.o ./src/general/Socket.o ./src/general/funcionesUtiles.o  ./src/CPU.o   -lparser-ansisop -lpthread -lcommons
 Finished building target: SistemaCPU
  
+14:34:01 **** Build of configuration Debug for project SistemaCPU ****
+make all 
+make: No se hace nada para «all».
+14:34:02 **** Build of configuration Debug for project SistemaConsola ****
+make all 
+make: No se hace nada para «all».
+14:34:02 **** Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+make: No se hace nada para «all».
+14:34:03 **** Build of configuration Debug for project SistemaKERNEL ****
+make all 
+Building file: ../src/header/AppConfig.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/AppConfig.d" -MT"src/header/AppConfig.d" -o "src/header/AppConfig.o" "../src/header/AppConfig.c"
+../src/header/AppConfig.c: In function ‘inicializar_configuracion’:
+../src/header/AppConfig.c:95:1: error: expected expression before ‘<<’ token
+ <<<<<<< HEAD
+ ^
+../src/header/AppConfig.c:100:1: error: expected expression before ‘==’ token
+ =======
+ ^
+../src/header/AppConfig.c:103:1: error: expected expression before ‘>>’ token
+ >>>>>>> 947eb90b9b6dfbe642144eddb24a9cd741fa75a3
+ ^
+../src/header/AppConfig.c:103:9: error: exponent has no digits
+ >>>>>>> 947eb90b9b6dfbe642144eddb24a9cd741fa75a3
+         ^
+../src/header/AppConfig.c: In function ‘inicializar_vec_variables_compartidas’:
+../src/header/AppConfig.c:115:1: error: expected expression before ‘<<’ token
+ <<<<<<< HEAD
+ ^
+../src/header/AppConfig.c:118:9: error: exponent has no digits
+ >>>>>>> 947eb90b9b6dfbe642144eddb24a9cd741fa75a3
+         ^
+../src/header/AppConfig.c:120:10: error: ‘i’ undeclared (first use in this function)
+  while ( i < configuraciones.cantidad_var_comp) {
+          ^
+../src/header/AppConfig.c:120:10: note: each undeclared identifier is reported only once for each function it appears in
+../src/header/AppConfig.c: In function ‘inicializar_dict_semaforos_ansisop’:
+../src/header/AppConfig.c:130:3: warning: passing argument 3 of ‘dictionary_put’ makes pointer from integer without a cast [enabled by default]
+   dictionary_put(dict_semaforos_ansisop, configuraciones.SEM_IDS[i], atoi(configuraciones.SEM_INIT[i]));
+   ^
+In file included from ../src/header/AppConfig.h:11:0,
+                 from ../src/header/AppConfig.c:12:
+/usr/include/commons/collections/dictionary.h:42:11: note: expected ‘void *’ but argument is of type ‘int’
+  void     dictionary_put(t_dictionary *, char *key, void *data);
+           ^
+make: *** [src/header/AppConfig.o] Error 1
+14:34:05 **** Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+make: No se hace nada para «all».

@@ -52,7 +52,7 @@ void procesar_programa(char * programa, PCB * pcb){
 		 */
 }
 
-/*
+/
  * //ejemplo de busqueda de etiqueta espeficifica en la lista serializada
 	char etiqueta[] = "Proximo";
 	t_puntero_instruccion instruccion_obtenida = metadata_buscar_etiqueta(etiqueta, meta->etiquetas, meta->etiquetas_size);

@@ -38,6 +38,8 @@ t_puntero ALOCAR(t_valor_variable espacio);
 
 void LIBERAR(t_puntero puntero);
 
+void IR_A_LABEL (t_nombre_etiqueta nombreEtiqueta);
+
 void LLAMAR_SIN_RETORNO (t_nombre_etiqueta nombreEtiqueta );
 
 void LLAMAR_CON_RETORNO(t_nombre_etiqueta nombre_etiqueta, t_puntero direccionRetorno );
