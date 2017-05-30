@@ -1,14 +1,110 @@
-<<<<<<< HEAD
-16:46:51 **** Incremental Build of configuration Debug for project SistemaCPU ****
+23:54:43 **** Incremental Build of configuration Debug for project SistemaCPU ****
 make all 
-make: No se hace nada para «all».
+Building file: ../src/primitivas/FuncionesAuxiliares.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/primitivas/FuncionesAuxiliares.d" -MT"src/primitivas/FuncionesAuxiliares.d" -o "src/primitivas/FuncionesAuxiliares.o" "../src/primitivas/FuncionesAuxiliares.c"
+Finished building: ../src/primitivas/FuncionesAuxiliares.c
+ 
+Building file: ../src/primitivas/PrimitivasFunciones.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/primitivas/PrimitivasFunciones.d" -MT"src/primitivas/PrimitivasFunciones.d" -o "src/primitivas/PrimitivasFunciones.o" "../src/primitivas/PrimitivasFunciones.c"
+../src/primitivas/PrimitivasFunciones.c: In function ‘RETORNAR’:
+../src/primitivas/PrimitivasFunciones.c:176:2: warning: passing argument 1 of ‘ASIGNAR_VARIABLE’ makes integer from pointer without a cast [enabled by default]
+  ASIGNAR_VARIABLE((stackDeFuncion->retVar), variableRetorno);
+  ^
+../src/primitivas/PrimitivasFunciones.c:65:6: note: expected ‘t_puntero’ but argument is of type ‘struct ReturnVariable *’
+ void ASIGNAR_VARIABLE(t_puntero direccion_variable, t_valor_variable valor) {
+      ^
+../src/primitivas/PrimitivasFunciones.c: In function ‘LLAMAR_CON_RETORNO’:
+../src/primitivas/PrimitivasFunciones.c:199:25: warning: assignment makes pointer from integer without a cast [enabled by default]
+  stackDeFuncion->retVar = direccionRetorno;
+                         ^
+Finished building: ../src/primitivas/PrimitivasFunciones.c
+ 
+Building file: ../src/primitivas/Stack.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/primitivas/Stack.d" -MT"src/primitivas/Stack.d" -o "src/primitivas/Stack.o" "../src/primitivas/Stack.c"
+../src/primitivas/Stack.c: In function ‘asingar_espacio_memoria_variable’:
+../src/primitivas/Stack.c:192:2: warning: implicit declaration of function ‘string_itoa’ [-Wimplicit-function-declaration]
+  almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(byte_inicial), string_itoa(TAMANIO_VARIABLE_D), "    ");
+  ^
+../src/primitivas/Stack.c:192:2: warning: passing argument 1 of ‘almacenar_Bytes_de_Pagina’ makes pointer from integer without a cast [enabled by default]
+In file included from ../src/primitivas/Stack.c:6:0:
+../src/primitivas/../interfaz/InterfazMemoria.h:16:7: note: expected ‘char *’ but argument is of type ‘int’
+ char* almacenar_Bytes_de_Pagina(char* PID, char* pagina, char* byteInicial, char* longitud, char* texto);
+       ^
+../src/primitivas/Stack.c:192:2: warning: passing argument 2 of ‘almacenar_Bytes_de_Pagina’ makes pointer from integer without a cast [enabled by default]
+  almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(byte_inicial), string_itoa(TAMANIO_VARIABLE_D), "    ");
+  ^
+In file included from ../src/primitivas/Stack.c:6:0:
+../src/primitivas/../interfaz/InterfazMemoria.h:16:7: note: expected ‘char *’ but argument is of type ‘int’
+ char* almacenar_Bytes_de_Pagina(char* PID, char* pagina, char* byteInicial, char* longitud, char* texto);
+       ^
+../src/primitivas/Stack.c:192:2: warning: passing argument 3 of ‘almacenar_Bytes_de_Pagina’ makes pointer from integer without a cast [enabled by default]
+  almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(byte_inicial), string_itoa(TAMANIO_VARIABLE_D), "    ");
+  ^
+In file included from ../src/primitivas/Stack.c:6:0:
+../src/primitivas/../interfaz/InterfazMemoria.h:16:7: note: expected ‘char *’ but argument is of type ‘int’
+ char* almacenar_Bytes_de_Pagina(char* PID, char* pagina, char* byteInicial, char* longitud, char* texto);
+       ^
+../src/primitivas/Stack.c:192:2: warning: passing argument 4 of ‘almacenar_Bytes_de_Pagina’ makes pointer from integer without a cast [enabled by default]
+  almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(byte_inicial), string_itoa(TAMANIO_VARIABLE_D), "    ");
+  ^
+In file included from ../src/primitivas/Stack.c:6:0:
+../src/primitivas/../interfaz/InterfazMemoria.h:16:7: note: expected ‘char *’ but argument is of type ‘int’
+ char* almacenar_Bytes_de_Pagina(char* PID, char* pagina, char* byteInicial, char* longitud, char* texto);
+       ^
+../src/primitivas/Stack.c: In function ‘obtener_Ultima_variable_declarada’:
+../src/primitivas/Stack.c:95:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/primitivas/Stack.c
+ 
+Building file: ../src/interfaz/InterfazKernel.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/interfaz/InterfazKernel.d" -MT"src/interfaz/InterfazKernel.d" -o "src/interfaz/InterfazKernel.o" "../src/interfaz/InterfazKernel.c"
+../src/interfaz/InterfazKernel.c: In function ‘recibir_PCB_de_kernel’:
+../src/interfaz/InterfazKernel.c:28:2: warning: statement with no effect [-Wunused-value]
+  for (i; i < list_size(pcb->codigo); i++) {
+  ^
+../src/interfaz/InterfazKernel.c:42:3: warning: statement with no effect [-Wunused-value]
+   for (x; x < list_size(e->argumentos); x++) {
+   ^
+../src/interfaz/InterfazKernel.c: In function ‘enviar_PCB_a_kernel’:
+../src/interfaz/InterfazKernel.c:68:2: warning: passing argument 1 of ‘enviar_dato_serializado’ makes pointer from integer without a cast [enabled by default]
+  enviar_dato_serializado(servidor_kernel, modo);
+  ^
+In file included from ../src/interfaz/InterfazKernel.c:9:0:
+../src/interfaz/../general/Socket.h:15:6: note: expected ‘char *’ but argument is of type ‘int’
+ void enviar_dato_serializado(char * mensaje, int conexion);
+      ^
+../src/interfaz/InterfazKernel.c:68:2: warning: passing argument 2 of ‘enviar_dato_serializado’ makes integer from pointer without a cast [enabled by default]
+  enviar_dato_serializado(servidor_kernel, modo);
+  ^
+In file included from ../src/interfaz/InterfazKernel.c:9:0:
+../src/interfaz/../general/Socket.h:15:6: note: expected ‘int’ but argument is of type ‘char *’
+ void enviar_dato_serializado(char * mensaje, int conexion);
+      ^
+../src/interfaz/InterfazKernel.c: In function ‘enviar_SYSCALL_solicitar_memoria_dinamica_a_kernel’:
+../src/interfaz/InterfazKernel.c:93:9: warning: unused variable ‘PIDR’ [-Wunused-variable]
+   char* PIDR = recibir_dato_serializado(servidor_kernel);
+         ^
+Finished building: ../src/interfaz/InterfazKernel.c
+ 
+Building file: ../src/CPU.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/CPU.d" -MT"src/CPU.d" -o "src/CPU.o" "../src/CPU.c"
+../src/CPU.c: In function ‘main’:
+../src/CPU.c:57:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+  close(servidor_kernel);
+  ^
+Finished building: ../src/CPU.c
+ 
+Building target: SistemaCPU
+Invoking: GCC C Linker
+gcc  -o "SistemaCPU"  ./src/testing/testearPrimitivasFunciones.o ./src/testing/testingPCB.o  ./src/procesador/Ejecucion.o  ./src/primitivas/FuncionesAuxiliares.o ./src/primitivas/IndiceCodigo.o ./src/primitivas/PrimitivasFunciones.o ./src/primitivas/Stack.o  ./src/interfaz/InterfazKernel.o ./src/interfaz/InterfazMemoria.o  ./src/header/AppConfig.o ./src/header/PCB.o  ./src/general/Semaforo.o ./src/general/Socket.o ./src/general/funcionesUtiles.o  ./src/CPU.o   -lparser-ansisop -lpthread -lcommons
+Finished building target: SistemaCPU
+ 
 
-16:46:51 Build Finished (took 400ms)
-=======
-02:38:36 **** Incremental Build of configuration Debug for project SistemaCPU ****
-make all 
-make: No se hace nada para «all».
-
-02:38:36 Build Finished (took 72ms)
->>>>>>> 59bfcdef756a50cceec3fe44eb9e987455ca213e
+23:54:52 Build Finished (took 8s.893ms)
 

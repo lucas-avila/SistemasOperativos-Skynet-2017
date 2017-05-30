@@ -87,14 +87,18 @@ void inicializar_contexto_ejecucion() {
 	funciones->AnSISOP_asignarValorCompartida = ASIGNAR_VALOR_COMPARTIDA;
 	funciones->AnSISOP_obtenerValorCompartida=OBTENER_VALOR_COMPARTIDA;
 //	funciones->AnSISOP_irAlLabel = irAlLabel;
+	funciones->AnSISOP_llamarConRetorno = LLAMAR_CON_RETORNO;
+	funciones->AnSISOP_llamarSinRetorno = LLAMAR_SIN_RETORNO;
+	funciones->AnSISOP_retornar = RETORNAR;
+	funciones->AnSISOP_finalizar = FINALIZAR;
 
 	kernel->AnSISOP_reservar = ALOCAR;
 	kernel->AnSISOP_liberar = LIBERAR;
-//	kernel->AnSISOP_abrir = abrir;
-//	kernel->AnSISOP_borrar = borrar;
-//	kernel->AnSISOP_cerrar = cerrar;
-//	kernel->AnSISOP_moverCursor = moverCursor;
-//	kernel->AnSISOP_escribir = escribir;
-//	kernel->AnSISOP_leer = leer;
+	kernel->AnSISOP_abrir = abrir_archivo;
+	kernel->AnSISOP_borrar = borrar_archivo;
+	kernel->AnSISOP_cerrar = cerrar_archivo;
+	kernel->AnSISOP_moverCursor = mover_cursor_archivo;
+	kernel->AnSISOP_escribir = escribir_archivo;
+	kernel->AnSISOP_leer = leer_archivo;
 }
 

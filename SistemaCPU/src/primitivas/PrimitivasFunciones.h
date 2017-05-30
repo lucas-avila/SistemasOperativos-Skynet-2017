@@ -40,6 +40,12 @@ void LIBERAR(t_puntero puntero);
 
 void LLAMAR_SIN_RETORNO (t_nombre_etiqueta nombreEtiqueta );
 
+void LLAMAR_CON_RETORNO(t_nombre_etiqueta nombre_etiqueta, t_puntero direccionRetorno );
+
+void RETORNAR(t_valor_variable variableRetorno);
+
+void FINALIZAR();
+
 t_valor_variable OBTENER_VALOR_COMPARTIDA(t_nombre_compartida variable);
 
 t_valor_variable ASIGNAR_VALOR_COMPARTIDA(t_nombre_compartida variable, t_valor_variable valor);

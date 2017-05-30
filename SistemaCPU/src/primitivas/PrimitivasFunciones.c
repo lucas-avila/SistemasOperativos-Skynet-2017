@@ -173,13 +173,35 @@ void LIBERAR(t_puntero memoria_serializada) {
 }
 
 void RETORNAR(t_valor_variable variableRetorno){
-
-
+	ASIGNAR_VARIABLE((stackDeFuncion->retVar), variableRetorno);
 
 }
 
+void FINALIZAR(){
+	//FALTA DETERMINAR SI DEBE CAMBIAR EL EXIT_CODE DEL PCB (SI TERMINO EL PROCESO)
+	pcb->program_counter = stackDeFuncion->retPos;
+	list_remove(pcb->pila,(list_size(pcb->pila) - 1));
 
+}
 
+void LLAMAR_SIN_RETORNO(t_nombre_etiqueta nombre_etiqueta ){
+	list_add(pcb->pila, stackDeFuncion);
+	stackDeFuncion->retPos = pcb->program_counter;
+	// tiene que buscar la etiqueta en la lista de etiquetas y conseguir la direccion
+	// t_direccion_etiqueta direccionEtiqueta = buscar_direccion_etiqueta(nombre_etiqueta); (CODIGO INVENTADO!!)
+	//pcb->program_counter = direccionEtiqueta;
+
+}
+
+void LLAMAR_CON_RETORNO(t_nombre_etiqueta nombre_etiqueta, t_puntero direccionRetorno ){
+	list_add(pcb->pila, stackDeFuncion);
+	stackDeFuncion->retPos = pcb->program_counter;
+	stackDeFuncion->retVar = direccionRetorno;
+	// tiene que buscar la etiqueta en la lista de etiquetas y conseguir la direccion
+	// t_direccion_etiqueta direccionEtiqueta = buscar_direccion_etiqueta(nombre_etiqueta); (CODIGO INVENTADO!!)
+	//pcb->program_counter = direccionEtiqueta;
+
+}
 /**DireccionVariable* obtener_dir_variable(char* variable) {
  if (variable[0] == '!') {
  //ir a buscar variable Compartida

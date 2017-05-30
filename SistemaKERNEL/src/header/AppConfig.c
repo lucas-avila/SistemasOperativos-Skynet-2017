@@ -92,11 +92,10 @@ void inicializar_configuracion(char *PATH_ARCHIVO_CONFIGURACION) {
 
 		configuraciones.planificacion_activa = 1;
 	}
-<<<<<<< HEAD
+
 
 	inicializar_vec_variables_compartidas();
-=======
->>>>>>> 59bfcdef756a50cceec3fe44eb9e987455ca213e
+
 }
 
 /*void inicializar_vec_variables_compartidas() {
@@ -108,7 +107,7 @@ void inicializar_configuracion(char *PATH_ARCHIVO_CONFIGURACION) {
 void inicializar_vec_variables_compartidas(int** VECTOR_VAR_COMP) {
 	VECTOR_VAR_COMP = malloc(configuraciones.cantidad_var_comp);
 
-=======
+
 	int i = 0;
 	while ( i < configuraciones.cantidad_var_comp) {
 		VECTOR_VAR_COM[i] = 0;
@@ -118,7 +117,6 @@ void inicializar_vec_variables_compartidas(int** VECTOR_VAR_COMP) {
 
 void inicializar_dict_semaforos_ansisop(){
 	dict_semaforos_ansisop = dictionary_create();
->>>>>>> 59bfcdef756a50cceec3fe44eb9e987455ca213e
 	int i = 0;
 	while(i < configuraciones.cantidad_sem){
 		dictionary_put(dict_semaforos_ansisop, configuraciones.SEM_IDS[i], atoi(configuraciones.SEM_INIT[i]));
