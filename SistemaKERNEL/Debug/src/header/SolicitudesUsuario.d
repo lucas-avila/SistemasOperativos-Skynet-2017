@@ -4,7 +4,12 @@ src/header/SolicitudesUsuario.d: ../src/header/SolicitudesUsuario.c \
  ../src/header/../testing/TestingMenu.h ../src/header/PCB.h \
  ../src/header/../administrarProcesos/Proceso.h \
  ../src/header/../administrarProcesos/../header/Estructuras.h \
- ../src/header/../administrarProcesos/../header/PCB.h
+ ../src/header/../administrarProcesos/../header/PCB.h \
+ ../src/header/../administrarPCB/EstadisticaProceso.h \
+ ../src/header/../planificacion/Planificacion.h \
+ ../src/header/../planificacion/../administrarProcesos/Proceso.h \
+ ../src/header/../planificacion/../header/Estructuras.h \
+ ../src/header/../planificacion/../header/PCB.h
 
 ../src/header/../general/funcionesUtiles.h:
 
@@ -19,3 +24,13 @@ src/header/SolicitudesUsuario.d: ../src/header/SolicitudesUsuario.c \
 ../src/header/../administrarProcesos/../header/Estructuras.h:
 
 ../src/header/../administrarProcesos/../header/PCB.h:
+
+../src/header/../administrarPCB/EstadisticaProceso.h:
+
+../src/header/../planificacion/Planificacion.h:
+
+../src/header/../planificacion/../administrarProcesos/Proceso.h:
+
+../src/header/../planificacion/../header/Estructuras.h:
+
+../src/header/../planificacion/../header/PCB.h:

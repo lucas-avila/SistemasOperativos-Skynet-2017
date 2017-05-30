@@ -12,10 +12,12 @@
 #include "../testing/TestingMenu.h"
 #include "PCB.h"
 #include "../administrarProcesos/Proceso.h"
+#include "../administrarPCB/EstadisticaProceso.h"
+#include "../planificacion/Planificacion.h"
 
 //TODO: Actualizar este codigo con la nueva estructura de COLAS
 
-/*
+
 void mostrar_menu_usuario() {
 	printf("\n******* MENU KERNEL ******");
 	printf("\n 1 - Obtener listado de procesos del Sistema.");
@@ -57,17 +59,43 @@ void listar_procesos(){
 	atender_solicitudes_de_usuario();
 }
 
-void listar_procesos_por_cola(){
-	mostrar_menu_colas();
-	int opcion = 0;
-	scanf("%d", &opcion);
-	if(opcion != 6) {
-		int buscar_procesos_por_cola(Proceso * proceso){
-			return proceso->cola == opcion;
-		}
-		t_list * procesos_filtrados = list_filter(procesos, &buscar_procesos_por_cola);
-		mostrar_procesos(procesos_filtrados);
+char* devolver_cola(int opcion){
+
+	switch(opcion){
+
+	case 1:
+		return NEW;
+		break;
+	case 2:
+		return READY;
+		break;
+	case 3:
+		return EXEC;
+		break;
+	case 4:
+		return EXIT;
+		break;
+	case 5:
+		return EXIT;
 	}
+
+}
+
+void listar_procesos_por_cola(){
+	int opcion = 0;
+	do {
+		mostrar_menu_colas();
+		opcion = validarNumeroInput(1, 6);
+		system("clear");
+		char * cola_elegida = devolver_cola(opcion);
+		if(opcion != 6) {
+			int buscar_procesos_por_cola(Proceso * proceso){
+			return strcmp(proceso->cola, cola_elegida) == 0;
+			}
+			t_list * procesos_filtrados = list_filter(procesos, &buscar_procesos_por_cola);
+			mostrar_procesos(procesos_filtrados);
+		}
+	} while(opcion!= 6);
 }
 
 void mostrar_procesos(t_list * procesos_lista){
@@ -79,8 +107,7 @@ void mostrar_procesos(t_list * procesos_lista){
 		printf("⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛\n");
 		printf("Proceso ID: %d\n", proceso->PID);
 		printf("Su socket es: %d\n", proceso->socket);
-		proceso->cola = 1;
-		mostrar_cola(proceso->cola);
+		printf("Su cola actual es: %s\n", proceso->cola);
 		i++;
 	}
 	printf("---> Cantidad de procesos totales encontrados: %d\n", i);
@@ -98,27 +125,6 @@ void mostrar_menu_colas(){
 	printf("\n Opcion: ");
 }
 
-void mostrar_cola(COLA cola){
-
-	switch(cola){
-	case NEW:
-		printf("Su cola actual es: NEW\n");
-		break;
-	case READY:
-		printf("Su cola actual es: READY\n");
-		break;
-	case EXEC:
-		printf("Su cola actual es: RUNNING\n");
-		break;
-	case EXIT:
-		printf("Su cola actual es: EXIT\n");
-		break;
-	case WAITING:
-		printf("Su cola actual es: WAITING\n");
-		break;
-	}
-}
-
 void mostrar_menu_informacion_proceso(){
 	printf("\n******* Elija la informacion deseada: ******");
 	printf("\n 1 - Cantidad de rafagas ejecutadas.");
@@ -133,10 +139,10 @@ void mostrar_menu_informacion_proceso(){
 void obtener_informacion_proceso(){
 	int opcion = 0;
 	int pid;
-	Proceso * proceso;
+	EstadisticaProceso * estadistica_proceso;
 	printf("\nPor favor ingrese el PID del proceso del cual desea informacion: ");
 	scanf("%d", &pid);
-	proceso = buscar_proceso_by_PID(pid);
+	estadistica_proceso = buscar_registro_por_PID(pid);
 		do {
 			mostrar_menu_informacion_proceso();
 			opcion = validarNumeroInput(1, 6);
@@ -145,12 +151,12 @@ void obtener_informacion_proceso(){
 
 			case 1:
 				printf("⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛\n");
-				printf("Cantidad rafagas ejecutadas: %d.\n", proceso->pcb->cantidad_rafagas_ejecutadas);
+				printf("Cantidad rafagas ejecutadas: %d.\n", estadistica_proceso->cantidad_Rafagas_Ejecutadas);
 				printf("⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛\n");
 				break;
 			case 2:
 				printf("⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛\n");
-				printf("Cantidad operaciones privilegiadas ejecutadas: Movido a su correspondiente EstadisticaProceso.\n");
+				printf("Cantidad operaciones privilegiadas ejecutadas: %d\n", estadistica_proceso->cantidad_Operaciones_Privilegadas_Ejecutadas);
 				printf("⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛\n");
 				break;
 			case 3:
@@ -161,7 +167,7 @@ void obtener_informacion_proceso(){
 				break;
 			case 5:
 				printf("⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛\n");
-				printf("Cantidad syscalls ejecutadas: Movido a su correspondiente EstadisticaProceso d.\n");
+				printf("Cantidad syscalls ejecutadas: %d\n", estadistica_proceso->cantidad_SysCall_Ejecutadas);
 				printf("⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛\n");
 				break;
 			}
@@ -192,20 +198,18 @@ void detener_planificacion(){
 void verificar_estado(uint32_t pid){
 
 	Proceso * proceso_a_eliminar = buscar_proceso_by_PID(pid);
-	while(proceso_a_eliminar->cola == EXEC);
+	while(strcmp(proceso_a_eliminar->cola, "EXEC") == 0);
 
-	if(proceso_a_eliminar->cola == EXIT) {
+	if(strcmp(proceso_a_eliminar->cola, "EXIT") == 0) {
 		printf("El proceso ya ha finalizado.\n");
 	} else {
 		actualizar_exit_code(proceso_a_eliminar, -7);
 		finalizar_proceso(proceso_a_eliminar);
 	}
-
 }
-*/
+
 void atender_solicitudes_de_usuario() {
 	int opcion = 0;
-	/*
 	do {
 		//system("clear");
 		mostrar_menu_usuario();
@@ -243,6 +247,5 @@ void atender_solicitudes_de_usuario() {
 			break;
 		}
 	} while (opcion != 8);
-	*/
 }
 
