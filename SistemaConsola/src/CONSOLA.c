@@ -29,14 +29,10 @@ void recibir_mensajes(int pid, int kernel_programa);
 void finalizar_programa(int pid, int kernel_programa);
 void mostrar_info_proceso( pid);
 
-int kernel;
-
 int main(int argc, char *argv[]) {
 
 	inicializar_configuracion(argv[1]);
 	inicializar_lista_Info_procesos();
-	kernel = conectar_servidor(configuraciones.IP_KERNEL, configuraciones.PUERTO_KERNEL);
-	CU_handshake_consola(kernel);
 
 	pthread_t t_interfaz;
 	pthread_create(&t_interfaz, NULL, &atender_solicitudes_de_usuario, NULL);

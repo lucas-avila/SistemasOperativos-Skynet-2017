@@ -4,15 +4,6 @@
  *  Created on: 27/5/2017
  *      Author: utnso
  */
-
-<<<<<<< HEAD
-
-
-=======
-/*
-=======
->>>>>>> 947eb90b9b6dfbe642144eddb24a9cd741fa75a3
-
 #include <commons/collections/dictionary.h>
 #include <stdlib.h>
 
@@ -57,12 +48,3 @@ int semaforo_ansisop_index(char * nombre_sem){
 	}
 	return -1;
 }
-<<<<<<< HEAD
-
-
-
-=======
-<<<<<<< HEAD
-*/
-
->>>>>>> 947eb90b9b6dfbe642144eddb24a9cd741fa75a3

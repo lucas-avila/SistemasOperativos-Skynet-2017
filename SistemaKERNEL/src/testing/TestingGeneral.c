@@ -73,10 +73,6 @@ void mostrar_menu_testing_general() {
 			CPUInfo * cpu = list_get(lista_CPUs, 0);
 			printf("CPUInfo es %d, %d\n", cpu->numeroConexion, cpu->disponible);
 
-			agregar_consola_global(7);
-			ConsolaInfo * consola = list_get(lista_consolas, 0);
-			printf("ConsolaInfo es %d\n", consola->consola_ID);
-
 		}
 
 			break;

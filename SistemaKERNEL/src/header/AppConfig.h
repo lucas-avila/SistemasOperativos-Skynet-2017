@@ -36,7 +36,7 @@ typedef struct {
 //Lo declaro como variable global
 AppConfig configuraciones;
 
-int* VECTOR_VAR_COM;
+int VECTOR_VAR_COM[];
 t_dictionary * dict_semaforos_ansisop;
 
 void inicializar_configuracion(char *PATH_ARCHIVO_CONFIGURACION);
