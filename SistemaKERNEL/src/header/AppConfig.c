@@ -89,6 +89,10 @@ void inicializar_configuracion(char *PATH_ARCHIVO_CONFIGURACION) {
 
 			configuraciones.cantidad_var_comp = config_get_int_value(config, "CANT_VAR_COM");
 		}
+		if (config_has_property(config, "PATH_ARCHIVO_LOG") == true) {
+
+			configuraciones.PATH_ARCHIVO_LOG = config_get_string_value(config, "PATH_ARCHIVO_LOG");
+		}
 
 		configuraciones.planificacion_activa = 1;
 	}

@@ -5,18 +5,23 @@
  *      Author: utnso
  */
 
-#include<stdio.h>
-#include<stdlib.h>
-#include "../general/funcionesUtiles.h"
-#include "../header/AppConfig.h"
-#include "../testing/TestingMenu.h"
-#include "PCB.h"
-#include "../administrarProcesos/Proceso.h"
+#include <commons/collections/list.h>
+#include <commons/log.h>
+#include <commons/string.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 #include "../administrarPCB/EstadisticaProceso.h"
+#include "../administrarProcesos/Proceso.h"
+#include "../general/funcionesUtiles.h"
+#include "../general/Socket.h"
 #include "../planificacion/Planificacion.h"
+#include "../testing/TestingMenu.h"
+#include "AppConfig.h"
 
-//TODO: Actualizar este codigo con la nueva estructura de COLAS
-
+//char * info_log;
 
 void mostrar_menu_usuario() {
 	printf("\n******* MENU KERNEL ******");
@@ -136,6 +141,14 @@ void mostrar_menu_informacion_proceso(){
 	printf("\n Opcion: ");
 }
 
+/*void generar_log(){
+	string_append(&info_log, "------Fin del LOG------");
+	printf("\n%s", info_log);
+    t_log* logger = log_create(configuraciones.PATH_ARCHIVO_LOG, "KERNEL",false, LOG_LEVEL_INFO);
+    log_info(logger, "\nInfo logs del KERNEL: %s", info_log);
+    log_destroy(logger);
+}*/
+
 void obtener_informacion_proceso(){
 	int opcion = 0;
 	int pid;
@@ -147,17 +160,17 @@ void obtener_informacion_proceso(){
 			mostrar_menu_informacion_proceso();
 			opcion = validarNumeroInput(1, 6);
 			system("clear");
-			switch(opcion) {
+			/*switch(opcion) {
 
 			case 1:
-				printf("⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛\n");
-				printf("Cantidad rafagas ejecutadas: %d.\n", estadistica_proceso->cantidad_Rafagas_Ejecutadas);
-				printf("⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛\n");
+				string_append(&info_log, "Cantidad rafagas ejecutadas: ");
+				string_append(&info_log, string_itoa(estadistica_proceso->cantidad_Rafagas_Ejecutadas));
+				string_append(&info_log, "\n");
 				break;
 			case 2:
-				printf("⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛\n");
-				printf("Cantidad operaciones privilegiadas ejecutadas: %d\n", estadistica_proceso->cantidad_Operaciones_Privilegadas_Ejecutadas);
-				printf("⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛\n");
+				string_append(&info_log, "Cantidad operaciones privilegiadas ejecutadas: ");
+				string_append(&info_log, string_itoa(estadistica_proceso->cantidad_Operaciones_Privilegadas_Ejecutadas));
+				string_append(&info_log, "\n");
 				break;
 			case 3:
 				//mostrar_tabla_archivos(proceso); TODO
@@ -166,11 +179,12 @@ void obtener_informacion_proceso(){
 				//mostrar_paginas_heap(proceso); TODO
 				break;
 			case 5:
-				printf("⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛\n");
-				printf("Cantidad syscalls ejecutadas: %d\n", estadistica_proceso->cantidad_SysCall_Ejecutadas);
-				printf("⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛\n");
+				string_append(&info_log, "Cantidad syscalls ejecutadas: ");
+				string_append(&info_log, string_itoa(estadistica_proceso->cantidad_SysCall_Ejecutadas));
+				string_append(&info_log, "\n");
 				break;
-			}
+			}*/
+			//generar_log();
 		} while (opcion != 6);
 		system("clear");
 		atender_solicitudes_de_usuario();
