@@ -47,7 +47,8 @@ char* obtener_modo_apertura(bool flagCreate, bool flagRead, bool flagWrite) {
 }
 
 TablaProcesoArchivo* buscar_registro_TablaProcesoArchivo(char* PID, int FD) {
-	t_list* tabla = ((Proceso*) buscar_proceso_by_PID(PID))->tablaProcesoArchivo;
+
+	t_list* tabla = ((Proceso*) buscar_proceso_by_PID(atoi(PID)))->tablaProcesoArchivo;
 	if (tabla == NULL) {
 		return NULL;
 	}
@@ -56,7 +57,7 @@ TablaProcesoArchivo* buscar_registro_TablaProcesoArchivo(char* PID, int FD) {
 }
 
 char* getNombreArchivo(int FD) {
-	return ((TablaGlobalArchivo*) list_get(TABLA_GLOBAL_ARCHIVO, (FD - 3)))->file;
+	return ((TablaGlobalArchivo*) list_get(TABLA_GLOBAL_ARCHIVO, (FD)))->file;
 }
 
 bool verificarFlag(char* flags, char flagBuscado) {

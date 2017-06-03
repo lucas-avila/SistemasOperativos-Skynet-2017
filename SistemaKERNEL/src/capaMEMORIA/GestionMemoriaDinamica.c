@@ -60,7 +60,7 @@ void CU_Reservar_memoria_MALLOC(int conexionCPU) {
 		enviar_datos_respuesta(conexionCPU, ultima_pagina_asignada->nroPagina, ultima_pagina_asignada->PID, byteInicial);
 	}
 	//Lleno informacion estadistica
-	incrementar_MALLOC(PID, tamanioMALLOC);
+	incrementar_MALLOC(atoi(PID), tamanioMALLOC);
 }
 
 void CU_Liberar_memoria_FREE(int conexionCPU) {

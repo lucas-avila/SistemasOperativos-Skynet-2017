@@ -57,7 +57,7 @@ void CU_Recibir_Conexiones_CPU(int clienteCPU) {
 				recibir_PCB_de_CPU(clienteCPU, "TERMINADO");
 		} else if(strcmp(recibir_dato_serializado(clienteCPU), "WAIT_SEM") == 0){
 				recibir_PCB_de_CPU(clienteCPU, "WAIT_SEM");
-		} else if (strcmp(codigo_operacion, "SIGNAL_SEM")) {
+		} else if (strcmp(codigo_operacion, "SIGNAL_SEM")== 0) {
 			char * nombre_sem = recibir_dato_serializado(clienteCPU);
 			recepcion_SIGNAL_semaforo_ansisop(nombre_sem);
 		} else if (strcmp(codigo_operacion, "ASIGNAR_VAR_COMP") == 0) {
@@ -76,7 +76,7 @@ void CU_Recibir_Conexiones_CPU(int clienteCPU) {
 			escribir_archivo(clienteCPU);
 		}else if (strcmp(codigo_operacion, "BORRAR_ARCHIVO") == 0) {
 			borrar_archivo(clienteCPU);
-		} else if (strcmp(codigo_operacion, "IMPRIMIR_POR_PANTALLA")) {
+		} else if (strcmp(codigo_operacion, "IMPRIMIR_POR_PANTALLA") == 0) {
 			CU_Atender_Solicitud_Escritura_Por_Pantalla();
 		} else if (strcmp(codigo_operacion, "") == 0) {
 			close(clienteCPU);
