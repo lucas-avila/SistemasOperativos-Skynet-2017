@@ -1,12 +1,17 @@
 #include "Proceso.h"
 
 #include <commons/string.h>
-#include <stdint.h>
+#include <semaphore.h>
 #include <stdlib.h>
+#include "../general/Semaforo.h"
 
 
 void inicializar_lista_procesos() {
 	procesos = list_create();
+}
+
+void eliminar_todos_registros(){
+	list_clean(procesos);
 }
 
 Proceso* new_Proceso(PCB* pcb) {
@@ -21,20 +26,15 @@ Proceso* new_Proceso(PCB* pcb) {
 }
 
 void agregar_proceso(Proceso* proceso) {
+	sem_wait(&mutex_lista_PROCESOS);
 	list_add(procesos, proceso);
-}
-
-void eliminar_todos_registros() {
-	list_clean(procesos);
-}
-
-void eliminar_proceso(Proceso* proceso) {
-	list_remove(procesos, proceso);
+	sem_post(&mutex_lista_PROCESOS);
 }
 
 Proceso* buscar_proceso_by_PID(uint32_t PID) {
-	int tamanio = list_size(procesos);
 	int i = 0;
+	sem_wait(&mutex_lista_PROCESOS);
+	int tamanio = list_size(procesos);
 	Proceso* proceso;
 	for (i = 0; i < tamanio; i++) {
 		proceso = list_get(procesos, i);
@@ -42,6 +42,7 @@ Proceso* buscar_proceso_by_PID(uint32_t PID) {
 			return proceso;
 		}
 	}
+	sem_post(&mutex_lista_PROCESOS);
 	return NULL;
 }
 

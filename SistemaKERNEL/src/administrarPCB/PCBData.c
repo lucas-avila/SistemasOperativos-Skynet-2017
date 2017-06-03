@@ -41,15 +41,6 @@ void procesar_programa(char * programa, PCB * pcb){
 	if(cantidad_paginas >= 0)
 		pcb->cantidad_paginas_codigo = cantidad_paginas;
 
-	printf("LLego el programa de consola, prueba (si enviaste el completo.ansisop te tira la primera etiqueta): %s\n", meta->etiquetas);
-	//TODO enviar_programa_memoria deberia devolver algo que no sea 1 .-.
-		/* La variable RESULTADO es para saber si se le pudo
-		 * asignar memoria o no. En el caso de que SI el
-		 * resultado va a ser mayor a 0 y se utilizará para
-		 * actualizar el valor de cantidad_paginas del PCB.
-		 * En el caso de que NO, entonces su valor sera menor
-		 * a 0 y se empleara como EXIT_CODE.
-		 */
 }
 
 /* //ejemplo de busqueda de etiqueta espeficifica en la lista serializada

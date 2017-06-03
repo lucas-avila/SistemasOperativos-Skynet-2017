@@ -26,7 +26,6 @@ EstadisticaProceso* crear_Estadistica_Proceso(uint32_t PID, uint32_t cantidad_Ra
 void crear_Proceso_en_tabla(uint32_t PID) {
 	EstadisticaProceso* estadistica = crear_Estadistica_Proceso(PID, 0, 0, 0, 0, 0, 0, 0, 0);
 	guardar_registro_proceso(estadistica);
-	printf("TABLAAA\n");
 }
 
 void guardar_registro_proceso(EstadisticaProceso* estadisticaProceso) {

@@ -66,6 +66,8 @@ void mostrar_estado_colas() {
 void crear_PCB_y_ENVIAR() {
 	crear_PCB_TEST();
 	enviar_pcb(procesoPrueba, ((CPUInfo*) list_get(lista_CPUs, 0))->numeroConexion);
+	Proceso * proceso = new_Proceso(procesoPrueba);
+	agregar_proceso(proceso);
 	//enviar_pcb(procesoPrueba, 0);
 	free(procesoPrueba);
 }
@@ -79,7 +81,7 @@ IndiceCodigo* crearIndiceCodigo(int programCounter, int byteInicial, int tamanio
 	return indice1;
 }
 
-int numProceso = 1241;
+int numProceso = 1888;
 void crear_PCB_TEST() {
 	procesoPrueba = malloc(sizeof(PCB));
 	procesoPrueba->PID = numProceso++;

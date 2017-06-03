@@ -23,7 +23,9 @@ char* solicitar_sentencia_ejecutar() {
 	if (indiceCodigo == NULL) {
 		return "FIN";
 	} else {
-		return solicitar_bytes_memoria(string_itoa(pcbEjecutar->PID), string_itoa(indiceCodigo->pagina), string_itoa(indiceCodigo->byte_inicial_codigo), string_itoa((indiceCodigo->byte_final_codigo - indiceCodigo->byte_inicial_codigo)));
+
+		int longitud =indiceCodigo->byte_final_codigo - indiceCodigo->byte_inicial_codigo;
+		return solicitar_bytes_memoria(string_itoa(pcbEjecutar->PID), string_itoa(indiceCodigo->pagina), string_itoa(indiceCodigo->byte_inicial_codigo), string_itoa(longitud));
 	}
 }
 void ejecutar_Programa() {
@@ -38,8 +40,11 @@ void ejecutar_Programa() {
 
 void ejecutar_programa_por_FIFO() {
 	bool esFinPrograma = false;
+	printf("\n Comienzo de Ejecucion");
 	while (!esFinPrograma) {
+		printf("\n Comienzo de Solicitar sentencia...");
 		char* sentencia = solicitar_sentencia_ejecutar();
+		printf("\n Sentencia SOlicitada %s: ",sentencia );
 		esFinPrograma = (strcmp(sentencia, "FIN") == 0);
 		if (!esFinPrograma) { //Este if tiene que sacarse, es solo para probar ahora
 			analizadorLinea(sentencia, funciones, kernel);

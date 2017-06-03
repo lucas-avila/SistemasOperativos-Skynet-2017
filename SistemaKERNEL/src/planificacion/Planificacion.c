@@ -39,7 +39,7 @@ t_queue* cola(char * nombre) {
 }
 
 void proceso_a_NEW(Proceso * p){
-	strcpy(p->cola, NEW);
+	string_append(&p->cola, NEW);
 	queue_push(cola(NEW), p->pcb);
 }
 
@@ -55,8 +55,9 @@ void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 		pcb->exit_code = 0;
 		finalizar_proceso(pcb);
 	}
-
-	strcpy(proceso(pcb)->cola, destino);
+	free(proceso(pcb)->cola);
+	proceso(pcb)->cola = string_new();
+	string_append(&proceso(pcb)->cola, destino);
 }
 
 CPUInfo* obtener_CPU_Disponible() {

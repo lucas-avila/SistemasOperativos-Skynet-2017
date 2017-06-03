@@ -32,28 +32,12 @@ void inicializar_KERNEL();
 
 int main(int argc, char *argv[]) {
 	inicializar_configuracion(argv[1]);
-<<<<<<< HEAD
-
-
 	//inicializar_configuracion("..//resource//config.cfg");
-
-
-
-
-
-=======
-	//inicializar_configuracion("..//resource//config.cfg");
->>>>>>> 947eb90b9b6dfbe642144eddb24a9cd741fa75a3
 	inicializar_KERNEL();
-	iniciar_conexion_servidor_consola();
+	iniciar_conexion_servidor_programa();
 	iniciar_conexion_servidor_cpu();
 	iniciar_conexion_servidor_memoria();
-
 	inicializar();//sacar esto despues ESPARA PROBAR FILE SYSTEM
-
-
-
-
 //	iniciar_conexion_servidor_FS();
 	atender_solicitudes_de_usuario();
 	return EXIT_SUCCESS;
@@ -73,6 +57,7 @@ void inicializar_KERNEL() {
 
 void inicializar_semaforos(){
 	inicializar_semaforo(&mutex_pids);
+	inicializar_semaforo(&mutex_lista_PROCESOS);
 	//PLANIFICACION
 	inicializar_semaforo(&mutex_cola_READY);
 }
@@ -107,6 +92,7 @@ void finalizar_proceso(Proceso * proceso){
 
 		notificar_exit_code(proceso->pcb->exit_code, proceso->socket);
 		close(proceso->socket);
+		free(proceso);
 	} else {
 		printf("No se pudo finalizar el programa\n");
 		//TODO ver qué mierda hacemos acá...
@@ -126,7 +112,9 @@ void actualizar_exit_code(Proceso * proceso, int exit_code){
 	int buscar_proceso(Proceso * elem_proceso){
 		return elem_proceso->PID == proceso->PID;
 	}
+	sem_wait(&mutex_lista_PROCESOS);
 	list_remove_by_condition(procesos, &buscar_proceso);
+	sem_post(&mutex_lista_PROCESOS);
 	proceso->pcb->exit_code = exit_code;
 
 }

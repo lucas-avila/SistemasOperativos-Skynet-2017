@@ -62,7 +62,7 @@ char* CU_LEER_ARCHIVO(char* PID, int FD, int tamanio) {
 	if (verificarFlag(registro->flags, 'L')) {
 		//Informacion Estadistica
 		incrementar_SYSCALL(PID, 1);
-		return obtenerDatos(getNombreArchivo(FD), registro->cursor_bloque, tamanio);
+		return obtenerDatos(getNombreArchivo(registro->GlobalFD), registro->cursor_bloque, tamanio);
 	} else {
 		return "ERROR_FALTA_MODO_LECTURA";
 	}
@@ -76,7 +76,7 @@ char* CU_ESCRIBIR_ARCHIVO(char* PID, int FD, int tamanio, char* contenido) {
 	if (verificarFlag(registro->flags, 'E')) {
 		//Informacion Estadistica
 		incrementar_SYSCALL(PID, 1);
-		return guardarDatos(getNombreArchivo(FD), registro->cursor_bloque, tamanio, contenido);
+		return guardarDatos(getNombreArchivo(registro->GlobalFD), registro->cursor_bloque, tamanio, contenido);
 	} else {
 		return "ERROR_FALTA_MODO_ESCRITURA";
 	}
@@ -90,7 +90,7 @@ char* CU_CERRAR_ARCHIVO(char* PID, int FD) {
 	int IndiceGlobal= registro->GlobalFD;
 
 
-	eliminar_registro_Tabla_Proceso_Archivo(((Proceso*) buscar_proceso_by_PID(PID))->tablaProcesoArchivo, registro);
+	eliminar_registro_Tabla_Proceso_Archivo(((Proceso*) buscar_proceso_by_PID(atoi(PID)))->tablaProcesoArchivo, registro);
 	TablaGlobalArchivo* registroGlobal = list_get(TABLA_GLOBAL_ARCHIVO, IndiceGlobal);
 	registroGlobal->open -= 1;
 	if (registroGlobal->open == 0) {

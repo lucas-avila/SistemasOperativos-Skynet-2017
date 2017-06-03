@@ -89,18 +89,14 @@ void inicializar_configuracion(char *PATH_ARCHIVO_CONFIGURACION) {
 
 			configuraciones.cantidad_var_comp = config_get_int_value(config, "CANT_VAR_COM");
 		}
+		if (config_has_property(config, "PATH_ARCHIVO_LOG") == true) {
+
+			configuraciones.PATH_ARCHIVO_LOG = config_get_string_value(config, "PATH_ARCHIVO_LOG");
+		}
 
 		configuraciones.planificacion_activa = 1;
 	}
-<<<<<<< HEAD
-
-
 	inicializar_vec_variables_compartidas();
-
-=======
-
-	inicializar_vec_variables_compartidas();
->>>>>>> 947eb90b9b6dfbe642144eddb24a9cd741fa75a3
 }
 
 /*void inicializar_vec_variables_compartidas() {
@@ -109,13 +105,9 @@ void inicializar_configuracion(char *PATH_ARCHIVO_CONFIGURACION) {
 	inicializar_vec_variables_compartidas(VECTOR_VAR_COM);
 }*/
 
-void inicializar_vec_variables_compartidas(int** VECTOR_VAR_COMP) {
+void inicializar_vec_variables_compartidas(int VECTOR_VAR_COMP) {
 	VECTOR_VAR_COMP = malloc(configuraciones.cantidad_var_comp);
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 947eb90b9b6dfbe642144eddb24a9cd741fa75a3
 	int i = 0;
 	while ( i < configuraciones.cantidad_var_comp) {
 		VECTOR_VAR_COM[i] = 0;

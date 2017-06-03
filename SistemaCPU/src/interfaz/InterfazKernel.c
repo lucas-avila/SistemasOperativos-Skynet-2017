@@ -23,7 +23,7 @@ PCB* recibir_PCB_de_kernel() {
 	printf("cantidad paginas codigo : %d\n", pcb->cantidad_paginas_codigo);
 
 	printf("Lista de indices de codigo:\n\n");
-	IndiceCodigo * c = malloc(sizeof(IndiceCodigo));
+	IndiceCodigo* c; //= malloc(sizeof(IndiceCodigo));
 	int i = 0;
 	for (i; i < list_size(pcb->codigo); i++) {
 		c = list_get(pcb->codigo, i);
@@ -34,7 +34,7 @@ PCB* recibir_PCB_de_kernel() {
 	printf("cantidad codigo : %d\n", pcb->cantidad_codigo);
 
 	printf("Lista de indices de la pila:\n\n");
-	IndiceStack * e = malloc(sizeof(IndiceStack));
+	IndiceStack * e;// = malloc(sizeof(IndiceStack));
 	for (i = 0; i < list_size(pcb->pila); i++) {
 		e = list_get(pcb->pila, i);
 		printf("Elemento %d del stack:\n posicion: %d\n", i, e->posicion);
