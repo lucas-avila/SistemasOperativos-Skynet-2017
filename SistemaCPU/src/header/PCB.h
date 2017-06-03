@@ -6,6 +6,8 @@
 #include <stdint.h>
 #include <sys/types.h>
 
+#define valorEXIT -1
+
 typedef struct {
 	uint32_t program_counter;
 	uint32_t byte_inicial_codigo;

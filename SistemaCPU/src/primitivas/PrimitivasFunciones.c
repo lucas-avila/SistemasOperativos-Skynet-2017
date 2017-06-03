@@ -182,15 +182,24 @@ void IR_A_LABEL(t_nombre_etiqueta nombre_etiqueta){
 }
 
 void RETORNAR(t_valor_variable variableRetorno){
-	ASIGNAR_VARIABLE((stackDeFuncion->retVar), variableRetorno);
+
+	ASIGNAR_VARIABLE(serializarMemoriaDinamica(stackDeFuncion->retVar->pagina,stackDeFuncion->retVar->byte_inicial), variableRetorno);
 
 }
 
 void FINALIZAR(){
 	//FALTA DETERMINAR SI DEBE CAMBIAR EL EXIT_CODE DEL PCB (SI TERMINO EL PROCESO)
-	pcb->program_counter = stackDeFuncion->retPos;
-	list_remove(pcb->pila,(list_size(pcb->pila) - 1));
+	if(list_size(pcb->pila) == 1){
 
+		pcb->program_counter = stackDeFuncion->retPos;
+		list_remove(pcb->pila,(list_size(pcb->pila) - 1));
+
+	}
+	else{
+
+		pcb->exit_code = 0;
+
+	}
 }
 
 void LLAMAR_SIN_RETORNO(t_nombre_etiqueta nombre_etiqueta ){
