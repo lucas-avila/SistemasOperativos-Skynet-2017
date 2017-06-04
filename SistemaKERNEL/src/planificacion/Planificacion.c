@@ -1,9 +1,12 @@
 #include "Planificacion.h"
 
 #include <commons/collections/list.h>
+#include <commons/string.h>
 #include <semaphore.h>
+#include <stdlib.h>
 #include <string.h>
 
+#include "../capaMEMORIA/AdministrarSemaforos.h"
 #include "../general/Semaforo.h"
 #include "../general/Socket.h"
 #include "../header/AppConfig.h"
@@ -11,6 +14,7 @@
 #include "PlanificacionRR.h"
 
 void EJECUTAR_ALGORITMO_PLANIFICACION() {
+	atender_clientes(0, planificador_largo_plazo);
 	if (strcmp(configuraciones.ALGORITMO, "FIFO") == 0) {
 		dispatcher_FIFO();
 	} else if (strcmp(configuraciones.ALGORITMO, "RR") == 0) {
@@ -48,10 +52,10 @@ void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 	queue_push(cola(destino), pcb);
 
 	//Si va a algun waiting
-	if(destino >= 0){
+	if(obtener_valor_semaforo(destino) >= 0){
 		marcar_CPU_Disponible(proceso(pcb)->cpu);
 		proceso(pcb)->cpu = NULL;
-	}else if(destino == EXIT){
+	}else if(strcmp(destino, EXIT) == 0){
 		pcb->exit_code = 0;
 		finalizar_proceso(pcb);
 	}
@@ -79,16 +83,21 @@ int cantidad_en_WAITING(){
 	int res = 0;
 	while(i < configuraciones.cantidad_sem){
 		res += queue_size(dictionary_get(COLAS, configuraciones.SEM_IDS[i]));
+		i++;
 	}
 	return res;
 }
 
-void planificador_mediano_plazo() {
+int cantidad_procesos_en_memoria(){
+	return (queue_size(cola(READY)) + queue_size(cola(EXEC)) + cantidad_en_WAITING());
+}
+
+void planificador_largo_plazo() {
 	while (configuraciones.planificacion_activa == 1) {
 
-		if (configuraciones.GRADO_MULTIPROG > (queue_size(cola(READY)) + queue_size(cola(EXEC)) + cantidad_en_WAITING())) {
+		if (configuraciones.GRADO_MULTIPROG > cantidad_procesos_en_memoria()) {
 			if (!queue_is_empty(cola(NEW))) {
-				//mover_PCB_de_cola(queue_peek(COLA_NEW), NEW, READY);
+				mover_PCB_de_cola(queue_peek(cola(NEW)), NEW, READY);
 			}
 		}
 	}

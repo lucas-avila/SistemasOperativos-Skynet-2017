@@ -60,6 +60,7 @@ int main(int argc, char *argv[]) {
 
 void CU_Procesar_PCB_a_ejecutar() {
 	PCB* pcb = recibir_PCB_de_kernel();
+
 	setPCBEjecucion(pcb);
 	ejecutar_Programa();
 }

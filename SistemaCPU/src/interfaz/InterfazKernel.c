@@ -16,7 +16,6 @@
 PCB* recibir_PCB_de_kernel() {
 	int kernel = servidor_kernel;
 	PCB * pcb = recibir_pcb(kernel);
-
 	printf("El fucking PCB es :\n");
 	printf("PID : %d\n", pcb->PID);
 	printf("program counter : %d\n", pcb->program_counter);
@@ -65,7 +64,7 @@ PCB* recibir_PCB_de_kernel() {
 
 /* Se encarga de devolver al kernel el PCB con sus modificaciones por la ejecucion*/
 void enviar_PCB_a_kernel(PCB* pcb, char * modo) {
-	enviar_dato_serializado(servidor_kernel, modo);
+	enviar_dato_serializado(modo, servidor_kernel);
 	enviar_pcb(pcb, servidor_kernel);
 }
 

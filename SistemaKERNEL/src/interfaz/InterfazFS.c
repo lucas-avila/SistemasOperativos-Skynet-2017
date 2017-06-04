@@ -65,7 +65,9 @@ void inicializar() {
 	crear_Proceso_en_tabla(string_itoa(pcb_nuevo->PID));
 	Proceso* proc = new_Proceso(pcb_nuevo);
 	//JONY: esto lo agrego para probar la planificacion
-	proceso_a_NEW(proc);
+
+	//ESTO CAGA TODA LA PLANIFICACION LO COMENTO XD
+	//proceso_a_NEW(proc);
 	agregar_proceso(proc);
 }
 int buscarIndice(char* path) {
