@@ -48,6 +48,7 @@ void RETORNAR(t_valor_variable variableRetorno);
 
 void FINALIZAR();
 
+
 t_valor_variable OBTENER_VALOR_COMPARTIDA(t_nombre_compartida variable);
 
 t_valor_variable ASIGNAR_VALOR_COMPARTIDA(t_nombre_compartida variable, t_valor_variable valor);

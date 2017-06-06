@@ -1,6 +1,180 @@
-14:34:02 **** Build of configuration Debug for project SistemaConsola ****
+10:49:18 **** Build of configuration Debug for project SistemaConsola ****
 make all 
-make: No se hace nada para «all».
+Building file: ../src/header/AppConfig.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/AppConfig.d" -MT"src/header/AppConfig.d" -o "src/header/AppConfig.o" "../src/header/AppConfig.c"
+../src/header/AppConfig.c: In function ‘inicializar_configuracion’:
+../src/header/AppConfig.c:27:34: warning: assignment makes pointer from integer without a cast [enabled by default]
+    configuraciones.PUERTO_KERNEL = config_get_int_value(config, "PUERTO_KERNEL");
+                                  ^
+Finished building: ../src/header/AppConfig.c
+ 
+Building file: ../src/header/Estructuras.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/Estructuras.d" -MT"src/header/Estructuras.d" -o "src/header/Estructuras.o" "../src/header/Estructuras.c"
+../src/header/Estructuras.c: In function ‘new_Info_ejecucion’:
+../src/header/Estructuras.c:14:2: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]
+  Info_ejecucion * info_ejecucion = malloc(sizeof(Info_ejecucion));
+  ^
+../src/header/Estructuras.c:14:36: warning: incompatible implicit declaration of built-in function ‘malloc’ [enabled by default]
+  Info_ejecucion * info_ejecucion = malloc(sizeof(Info_ejecucion));
+                                    ^
+../src/header/Estructuras.c: In function ‘eliminar_info_proceso’:
+../src/header/Estructuras.c:32:2: warning: passing argument 2 of ‘list_remove’ makes integer from pointer without a cast [enabled by default]
+  list_remove(Info_procesos, info_ejecucion);
+  ^
+In file included from ../src/header/Estructuras.h:11:0,
+                 from ../src/header/Estructuras.c:7:
+/usr/include/commons/collections/list.h:120:8: note: expected ‘int’ but argument is of type ‘struct Info_ejecucion *’
+  void *list_remove(t_list *, int index);
+        ^
+Finished building: ../src/header/Estructuras.c
+ 
+Building file: ../src/header/ExitCodes.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/ExitCodes.d" -MT"src/header/ExitCodes.d" -o "src/header/ExitCodes.o" "../src/header/ExitCodes.c"
+../src/header/ExitCodes.c: In function ‘mostrar_exit_code’:
+../src/header/ExitCodes.c:12:4: warning: implicit declaration of function ‘printf’ [-Wimplicit-function-declaration]
+    printf("El programa finalizo correctamente.\n");
+    ^
+../src/header/ExitCodes.c:12:4: warning: incompatible implicit declaration of built-in function ‘printf’ [enabled by default]
+Finished building: ../src/header/ExitCodes.c
+ 
+Building file: ../src/header/InterfazKernel.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/InterfazKernel.d" -MT"src/header/InterfazKernel.d" -o "src/header/InterfazKernel.o" "../src/header/InterfazKernel.c"
+Finished building: ../src/header/InterfazKernel.c
+ 
+Building file: ../src/header/Semaforo.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/Semaforo.d" -MT"src/header/Semaforo.d" -o "src/header/Semaforo.o" "../src/header/Semaforo.c"
+Finished building: ../src/header/Semaforo.c
+ 
+Building file: ../src/header/Socket.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/Socket.d" -MT"src/header/Socket.d" -o "src/header/Socket.o" "../src/header/Socket.c"
+../src/header/Socket.c: In function ‘recibir_dato_serializado’:
+../src/header/Socket.c:63:2: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]
+  char* tamanio_dato = malloc(4);
+  ^
+../src/header/Socket.c:63:23: warning: incompatible implicit declaration of built-in function ‘malloc’ [enabled by default]
+  char* tamanio_dato = malloc(4);
+                       ^
+../src/header/Socket.c:67:2: warning: implicit declaration of function ‘atoi’ [-Wimplicit-function-declaration]
+  char* dato = malloc(atoi(tamanio_dato));
+  ^
+../src/header/Socket.c: In function ‘enviar_dato_serializado’:
+../src/header/Socket.c:76:19: warning: incompatible implicit declaration of built-in function ‘malloc’ [enabled by default]
+  char * tamanio = malloc(4);
+                   ^
+../src/header/Socket.c: In function ‘atender_clientes’:
+../src/header/Socket.c:85:2: warning: passing argument 3 of ‘pthread_create’ from incompatible pointer type [enabled by default]
+  pthread_create(&mihilo1, NULL, f, servidor);
+  ^
+In file included from ../src/header/Socket.c:12:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * (*)(void *)’ but argument is of type ‘void (*)(int)’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/header/Socket.c:85:2: warning: passing argument 4 of ‘pthread_create’ makes pointer from integer without a cast [enabled by default]
+  pthread_create(&mihilo1, NULL, f, servidor);
+  ^
+In file included from ../src/header/Socket.c:12:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * __restrict__’ but argument is of type ‘int’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/header/Socket.c:86:2: warning: passing argument 1 of ‘pthread_detach’ makes integer from pointer without a cast [enabled by default]
+  pthread_detach(&mihilo1);
+  ^
+In file included from ../src/header/Socket.c:12:0:
+/usr/include/pthread.h:282:12: note: expected ‘pthread_t’ but argument is of type ‘pthread_t *’
+ extern int pthread_detach (pthread_t __th) __THROW;
+            ^
+Finished building: ../src/header/Socket.c
+ 
+Building file: ../src/header/funcionesUtiles.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/funcionesUtiles.d" -MT"src/header/funcionesUtiles.d" -o "src/header/funcionesUtiles.o" "../src/header/funcionesUtiles.c"
+Finished building: ../src/header/funcionesUtiles.c
+ 
+Building file: ../src/CONSOLA.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/CONSOLA.d" -MT"src/CONSOLA.d" -o "src/CONSOLA.o" "../src/CONSOLA.c"
+../src/CONSOLA.c:30:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void mostrar_info_proceso( pid);
+ ^
+../src/CONSOLA.c: In function ‘main’:
+../src/CONSOLA.c:38:2: warning: passing argument 3 of ‘pthread_create’ from incompatible pointer type [enabled by default]
+  pthread_create(&t_interfaz, NULL, &atender_solicitudes_de_usuario, NULL);
+  ^
+In file included from ../src/CONSOLA.c:14:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * (*)(void *)’ but argument is of type ‘void (*)()’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/CONSOLA.c: In function ‘atender_solicitudes_de_usuario’:
+../src/CONSOLA.c:74:4: warning: implicit declaration of function ‘string_itoa’ [-Wimplicit-function-declaration]
+    enviar_dato_serializado(string_itoa(pid), programa->socket);
+    ^
+../src/CONSOLA.c:74:4: warning: passing argument 1 of ‘enviar_dato_serializado’ makes pointer from integer without a cast [enabled by default]
+In file included from ../src/CONSOLA.c:19:0:
+../src/header/Socket.h:15:6: note: expected ‘char *’ but argument is of type ‘int’
+ void enviar_dato_serializado(char * mensaje, int conexion);
+      ^
+../src/CONSOLA.c:83:4: warning: statement with no effect [-Wunused-value]
+    for (i; i < tamanio; i++) {
+    ^
+../src/CONSOLA.c: In function ‘iniciar_thread’:
+../src/CONSOLA.c:99:2: warning: passing argument 3 of ‘pthread_create’ from incompatible pointer type [enabled by default]
+  pthread_create(&t_programa, NULL, &CU_iniciar_programa, path_archivo_fuente);
+  ^
+In file included from ../src/CONSOLA.c:14:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * (*)(void *)’ but argument is of type ‘void (*)()’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/CONSOLA.c: In function ‘CU_iniciar_programa’:
+../src/CONSOLA.c:107:2: warning: passing argument 2 of ‘conectar_servidor’ makes integer from pointer without a cast [enabled by default]
+  int kernel_programa = conectar_servidor(configuraciones.IP_KERNEL, configuraciones.PUERTO_KERNEL);
+  ^
+In file included from ../src/CONSOLA.c:19:0:
+../src/header/Socket.h:17:5: note: expected ‘int’ but argument is of type ‘char *’
+ int conectar_servidor(char * ip_addr, int puerto);
+     ^
+../src/CONSOLA.c: In function ‘finalizar_programa’:
+../src/CONSOLA.c:136:2: warning: passing argument 1 of ‘enviar_dato_serializado’ makes pointer from integer without a cast [enabled by default]
+  enviar_dato_serializado(string_itoa(pid), kernel_programa);
+  ^
+In file included from ../src/CONSOLA.c:19:0:
+../src/header/Socket.h:15:6: note: expected ‘char *’ but argument is of type ‘int’
+ void enviar_dato_serializado(char * mensaje, int conexion);
+      ^
+../src/CONSOLA.c: In function ‘mostrar_info_proceso’:
+../src/CONSOLA.c:148:2: warning: passing argument 1 of ‘ctime’ makes pointer from integer without a cast [enabled by default]
+  char* textoInicio = ctime(info_proceso->fecha_inicio);
+  ^
+In file included from /usr/include/pthread.h:24:0,
+                 from ../src/CONSOLA.c:14:
+/usr/include/time.h:264:14: note: expected ‘const time_t *’ but argument is of type ‘time_t’
+ extern char *ctime (const time_t *__timer) __THROW;
+              ^
+../src/CONSOLA.c:150:2: warning: passing argument 1 of ‘ctime’ makes pointer from integer without a cast [enabled by default]
+  char* textoFin = ctime(fecha_fin);
+  ^
+In file included from /usr/include/pthread.h:24:0,
+                 from ../src/CONSOLA.c:14:
+/usr/include/time.h:264:14: note: expected ‘const time_t *’ but argument is of type ‘time_t’
+ extern char *ctime (const time_t *__timer) __THROW;
+              ^
+Finished building: ../src/CONSOLA.c
+ 
+Building file: ../src/InterfazKernel.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InterfazKernel.d" -MT"src/InterfazKernel.d" -o "src/InterfazKernel.o" "../src/InterfazKernel.c"
+Finished building: ../src/InterfazKernel.c
+ 
+Building target: SistemaConsola
+Invoking: GCC C Linker
+gcc  -o "SistemaConsola"  ./src/header/AppConfig.o ./src/header/Estructuras.o ./src/header/ExitCodes.o ./src/header/InterfazKernel.o ./src/header/Semaforo.o ./src/header/Socket.o ./src/header/funcionesUtiles.o  ./src/CONSOLA.o ./src/InterfazKernel.o   -lpthread -lcommons
+Finished building target: SistemaConsola
+ 
 
-14:34:02 Build Finished (took 404ms)
+10:49:25 Build Finished (took 7s.344ms)
 

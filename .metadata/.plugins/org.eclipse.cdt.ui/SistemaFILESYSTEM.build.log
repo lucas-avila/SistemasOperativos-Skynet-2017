@@ -1,6 +1,80 @@
-14:34:02 **** Build of configuration Debug for project SistemaFILESYSTEM ****
+10:49:25 **** Build of configuration Debug for project SistemaFILESYSTEM ****
 make all 
-make: No se hace nada para «all».
+Building file: ../src/header/AppConfig.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/AppConfig.d" -MT"src/header/AppConfig.d" -o "src/header/AppConfig.o" "../src/header/AppConfig.c"
+Finished building: ../src/header/AppConfig.c
+ 
+Building file: ../src/header/Socket.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/Socket.d" -MT"src/header/Socket.d" -o "src/header/Socket.o" "../src/header/Socket.c"
+../src/header/Socket.c: In function ‘recibir_dato_serializado’:
+../src/header/Socket.c:63:2: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]
+  char* tamanio_dato = malloc(4);
+  ^
+../src/header/Socket.c:63:23: warning: incompatible implicit declaration of built-in function ‘malloc’ [enabled by default]
+  char* tamanio_dato = malloc(4);
+                       ^
+../src/header/Socket.c:67:2: warning: implicit declaration of function ‘atoi’ [-Wimplicit-function-declaration]
+  char* dato = malloc(atoi(tamanio_dato));
+  ^
+../src/header/Socket.c: In function ‘enviar_dato_serializado’:
+../src/header/Socket.c:76:19: warning: incompatible implicit declaration of built-in function ‘malloc’ [enabled by default]
+  char * tamanio = malloc(4);
+                   ^
+../src/header/Socket.c: In function ‘atender_clientes’:
+../src/header/Socket.c:85:2: warning: passing argument 3 of ‘pthread_create’ from incompatible pointer type [enabled by default]
+  pthread_create(&mihilo1, NULL, f, servidor);
+  ^
+In file included from ../src/header/Socket.c:12:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * (*)(void *)’ but argument is of type ‘void (*)(int)’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/header/Socket.c:85:2: warning: passing argument 4 of ‘pthread_create’ makes pointer from integer without a cast [enabled by default]
+  pthread_create(&mihilo1, NULL, f, servidor);
+  ^
+In file included from ../src/header/Socket.c:12:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * __restrict__’ but argument is of type ‘int’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/header/Socket.c:86:2: warning: passing argument 1 of ‘pthread_detach’ makes integer from pointer without a cast [enabled by default]
+  pthread_detach(&mihilo1);
+  ^
+In file included from ../src/header/Socket.c:12:0:
+/usr/include/pthread.h:282:12: note: expected ‘pthread_t’ but argument is of type ‘pthread_t *’
+ extern int pthread_detach (pthread_t __th) __THROW;
+            ^
+Finished building: ../src/header/Socket.c
+ 
+Building file: ../src/FILE_SYSTEM.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FILE_SYSTEM.d" -MT"src/FILE_SYSTEM.d" -o "src/FILE_SYSTEM.o" "../src/FILE_SYSTEM.c"
+../src/FILE_SYSTEM.c: In function ‘main’:
+../src/FILE_SYSTEM.c:28:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+  close(servidor);
+  ^
+../src/FILE_SYSTEM.c: In function ‘escuchar_Conexiones_Kernel’:
+../src/FILE_SYSTEM.c:37:4: warning: implicit declaration of function ‘strcmp’ [-Wimplicit-function-declaration]
+    if (strcmp(codigo_IDENTIFICACION, "KERNEL") == 0) {
+    ^
+../src/FILE_SYSTEM.c:38:5: warning: implicit declaration of function ‘pthread_create’ [-Wimplicit-function-declaration]
+     pthread_create(&mihilo1, NULL, &CU_Recibir_Conexiones_Kernel, cliente);
+     ^
+../src/FILE_SYSTEM.c:39:5: warning: implicit declaration of function ‘pthread_detach’ [-Wimplicit-function-declaration]
+     pthread_detach(&mihilo1);
+     ^
+Finished building: ../src/FILE_SYSTEM.c
+ 
+Building file: ../src/InterfazKernel.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InterfazKernel.d" -MT"src/InterfazKernel.d" -o "src/InterfazKernel.o" "../src/InterfazKernel.c"
+Finished building: ../src/InterfazKernel.c
+ 
+Building target: SistemaFILESYSTEM
+Invoking: GCC C Linker
+gcc  -o "SistemaFILESYSTEM"  ./src/header/AppConfig.o ./src/header/Socket.o  ./src/FILE_SYSTEM.o ./src/InterfazKernel.o   -lpthread -lcommons
+Finished building target: SistemaFILESYSTEM
+ 
 
-14:34:03 Build Finished (took 210ms)
+10:49:29 Build Finished (took 3s.454ms)
 

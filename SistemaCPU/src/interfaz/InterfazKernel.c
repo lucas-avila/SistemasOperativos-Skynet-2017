@@ -12,6 +12,7 @@
 #include "../primitivas/EstructurasDeDatosPrimitivas.h"
 #include "../primitivas/FuncionesAuxiliares.h"
 
+
 /* se encarga de recibir y llenar toda la estructura struct PCB */
 PCB* recibir_PCB_de_kernel() {
 	int kernel = servidor_kernel;
@@ -192,13 +193,17 @@ char* leer_archivo(char* PID, int FD, int tamanio) {
 }
 
 char* escribir_archivo(char* PID, int FD, int tamanio, char* contenido) {
+	if (FD != 1){
+		enviar_dato_serializado("ESCRIBIR_ARCHIVO", servidor_kernel);
+		enviar_dato_serializado(PID, servidor_kernel);
+		enviar_dato_serializado(string_itoa(FD), servidor_kernel);
+		enviar_dato_serializado(string_itoa(tamanio), servidor_kernel);
+		enviar_dato_serializado(contenido, servidor_kernel);
 
-	enviar_dato_serializado("ESCRIBIR_ARCHIVO", servidor_kernel);
-	enviar_dato_serializado(PID, servidor_kernel);
-	enviar_dato_serializado(string_itoa(FD), servidor_kernel);
-	enviar_dato_serializado(string_itoa(tamanio), servidor_kernel);
-	enviar_dato_serializado(contenido, servidor_kernel);
-
+	}
+	else{
+		CU_Escribir_Pantalla_AnSISOP(contenido,PID);
+	}
 	char* respuesta = recibir_dato_serializado(servidor_kernel);
 
 	return respuesta;
@@ -224,4 +229,10 @@ char* borrar_archivo(char* PID, char* rutaArchivo) {
 
 	return respuesta;
 
+}
+void CU_Escribir_Pantalla_AnSISOP(char* mensaje,char* PID) {
+	enviar_dato_serializado("IMPRIMIR_POR_PANTALLA", servidor_kernel);
+
+	enviar_dato_serializado(PID, servidor_kernel);
+	enviar_dato_serializado(mensaje, servidor_kernel);
 }

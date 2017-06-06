@@ -101,7 +101,6 @@ void inicializar_configuracion(char *PATH_ARCHIVO_CONFIGURACION) {
 
 /*void inicializar_vec_variables_compartidas() {
 	VECTOR_VAR_COM = malloc(configuraciones.cantidad_var_comp);
-<<<<<<< HEAD
 	inicializar_vec_variables_compartidas(VECTOR_VAR_COM);
 }*/
 
