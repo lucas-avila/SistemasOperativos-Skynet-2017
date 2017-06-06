@@ -21,7 +21,7 @@
 #include "../testing/TestingMenu.h"
 #include "AppConfig.h"
 
-//char * info_log;
+char * info_log;
 
 void mostrar_menu_usuario() {
 	printf("\n******* MENU KERNEL ******");
@@ -141,13 +141,13 @@ void mostrar_menu_informacion_proceso(){
 	printf("\n Opcion: ");
 }
 
-/*void generar_log(){
-	string_append(&info_log, "------Fin del LOG------");
+void generar_log(){
+	string_append(&info_log, "------Fin del LOG------\n\0");
 	printf("\n%s", info_log);
     t_log* logger = log_create(configuraciones.PATH_ARCHIVO_LOG, "KERNEL",false, LOG_LEVEL_INFO);
     log_info(logger, "\nInfo logs del KERNEL: %s", info_log);
     log_destroy(logger);
-}*/
+}
 
 void obtener_informacion_proceso(){
 	int opcion = 0;
@@ -156,14 +156,15 @@ void obtener_informacion_proceso(){
 	printf("\nPor favor ingrese el PID del proceso del cual desea informacion: ");
 	scanf("%d", &pid);
 	estadistica_proceso = buscar_registro_por_PID(pid);
+	info_log = string_new();
 		do {
 			mostrar_menu_informacion_proceso();
 			opcion = validarNumeroInput(1, 6);
 			system("clear");
-			/*switch(opcion) {
+			switch(opcion) {
 
 			case 1:
-				string_append(&info_log, "Cantidad rafagas ejecutadas: ");
+				string_append(&info_log, "Cantidad de rafagas ejecutadas: ");
 				string_append(&info_log, string_itoa(estadistica_proceso->cantidad_Rafagas_Ejecutadas));
 				string_append(&info_log, "\n");
 				break;
@@ -183,9 +184,9 @@ void obtener_informacion_proceso(){
 				string_append(&info_log, string_itoa(estadistica_proceso->cantidad_SysCall_Ejecutadas));
 				string_append(&info_log, "\n");
 				break;
-			}*/
-			//generar_log();
+			}
 		} while (opcion != 6);
+		generar_log();
 		system("clear");
 		atender_solicitudes_de_usuario();
 }

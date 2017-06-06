@@ -39,7 +39,9 @@ CPUInfo* obtener_CPU_Disponible();
 
 int cantidad_en_WAITING();
 
-void planificador_mediano_plazo();
+int cantidad_procesos_en_memoria();
+
+void planificador_largo_plazo();
 
 PCB* obtener_proceso_de_cola_READY();
 

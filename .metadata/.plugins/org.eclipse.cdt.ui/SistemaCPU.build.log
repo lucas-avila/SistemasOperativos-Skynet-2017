@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 21:08:37 **** Incremental Build of configuration Debug for project SistemaCPU ****
+=======
+03:29:36 **** Incremental Build of configuration Debug for project SistemaCPU ****
+>>>>>>> 154688ec72c70cc12ca17c064d771a43a8c0f75f
 make all 
 Building file: ../src/procesador/Ejecucion.c
 Invoking: GCC C Compiler
@@ -205,5 +209,9 @@ gcc  -o "SistemaCPU"  ./src/testing/testearPrimitivasFunciones.o ./src/testing/t
 Finished building target: SistemaCPU
  
 
+<<<<<<< HEAD
 21:08:46 Build Finished (took 9s.332ms)
+=======
+03:29:36 Build Finished (took 168ms)
+>>>>>>> 154688ec72c70cc12ca17c064d771a43a8c0f75f
 

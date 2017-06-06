@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 10:50:03 **** Build of configuration Debug for project SistemaMEMORIA ****
+=======
+03:23:17 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+>>>>>>> 154688ec72c70cc12ca17c064d771a43a8c0f75f
 make all 
 Building file: ../src/testing/PruebasUnitarias.c
 Invoking: GCC C Compiler
@@ -205,5 +209,9 @@ gcc  -o "SistemaMEMORIA"  ./src/testing/PruebasUnitarias.o ./src/testing/Testing
 Finished building target: SistemaMEMORIA
  
 
+<<<<<<< HEAD
 10:50:13 Build Finished (took 10s.18ms)
+=======
+03:23:17 Build Finished (took 80ms)
+>>>>>>> 154688ec72c70cc12ca17c064d771a43a8c0f75f
 

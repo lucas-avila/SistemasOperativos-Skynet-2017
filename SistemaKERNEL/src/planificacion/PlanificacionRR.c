@@ -12,7 +12,6 @@
 void dispatcher_RR() {
 	PCB* pcb;
 	CPUInfo* cpu;
-	atender_clientes(0, planificador_mediano_plazo);
 	while (configuraciones.planificacion_activa == 1) {
 
 		pcb = obtener_proceso_de_cola_READY();

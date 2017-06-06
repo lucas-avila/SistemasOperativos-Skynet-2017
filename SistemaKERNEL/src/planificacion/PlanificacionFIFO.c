@@ -7,7 +7,6 @@
 void dispatcher_FIFO() {
 	PCB* pcb;
 	CPUInfo* cpu;
-	atender_clientes(0, planificador_mediano_plazo);
 	while (configuraciones.planificacion_activa == 1) {
 		pcb = obtener_proceso_de_cola_READY();
 		//Si pcb es NULL, se desactivo la planificacion, volvemos

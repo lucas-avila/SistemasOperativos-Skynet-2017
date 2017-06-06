@@ -29,9 +29,9 @@ typedef struct {
 	int cantidad_var_comp;
 	int STACK_SIZE;
 
+	char * PATH_ARCHIVO_LOG;
 	int CANTIDAD_MAXIMA_CONCURRENCIA;
 	int planificacion_activa;
-	char * PATH_ARCHIVO_LOG;
 } AppConfig;
 
 //Lo declaro como variable global

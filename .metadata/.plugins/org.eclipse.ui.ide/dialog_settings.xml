@@ -7,10 +7,17 @@
 		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;History&gt;&#x0A;&lt;historyRootNode&gt;&#x0A;&lt;infoNode path=&quot;/SistemaMEMORIA/src/header/AppConfig.c&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/SistemaKERNEL/src/interfaz/InterfazConsola.c&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;/historyRootNode&gt;&#x0A;&lt;/History&gt;" key="History"/>
 		<section name="DialogBoundsSettings">
 			<item value="553" key="DIALOG_WIDTH"/>
+<<<<<<< HEAD
 			<item value="37" key="DIALOG_Y_ORIGIN"/>
 			<item value="341" key="DIALOG_X_ORIGIN"/>
 			<item value="603" key="DIALOG_HEIGHT"/>
 			<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+=======
+			<item value="117" key="DIALOG_Y_ORIGIN"/>
+			<item value="341" key="DIALOG_X_ORIGIN"/>
+			<item value="603" key="DIALOG_HEIGHT"/>
+			<item value="1|Ubuntu|11.112245|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+>>>>>>> 154688ec72c70cc12ca17c064d771a43a8c0f75f
 		</section>
 	</section>
 	<section name="ExternalProjectImportWizard">
@@ -29,6 +36,10 @@
 		<item value="64" key="DIALOG_Y_ORIGIN"/>
 		<item value="390" key="DIALOG_HEIGHT"/>
 		<item value="402" key="DIALOG_X_ORIGIN"/>
+<<<<<<< HEAD
 		<item value="true" key="TOGGLE_SELECTED"/>
+=======
+		<item value="false" key="TOGGLE_SELECTED"/>
+>>>>>>> 154688ec72c70cc12ca17c064d771a43a8c0f75f
 	</section>
 </section>

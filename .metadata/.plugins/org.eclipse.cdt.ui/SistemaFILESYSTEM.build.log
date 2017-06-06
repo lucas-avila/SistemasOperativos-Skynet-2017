@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 10:49:25 **** Build of configuration Debug for project SistemaFILESYSTEM ****
+=======
+03:23:16 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
+>>>>>>> 154688ec72c70cc12ca17c064d771a43a8c0f75f
 make all 
 Building file: ../src/header/AppConfig.c
 Invoking: GCC C Compiler
@@ -76,5 +80,9 @@ gcc  -o "SistemaFILESYSTEM"  ./src/header/AppConfig.o ./src/header/Socket.o  ./s
 Finished building target: SistemaFILESYSTEM
  
 
+<<<<<<< HEAD
 10:49:29 Build Finished (took 3s.454ms)
+=======
+03:23:16 Build Finished (took 79ms)
+>>>>>>> 154688ec72c70cc12ca17c064d771a43a8c0f75f
 
