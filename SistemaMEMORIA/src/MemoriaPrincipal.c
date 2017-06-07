@@ -8,10 +8,10 @@
 #include "header/MemoriaCache.h"
 #include<commons/log.h>
 #include "general/Semaforo.h"
-
+#include <math.h>
 #include<commons/string.h>
 
-int indiceInicialPaginas = 0;
+//int indiceInicialPaginas = 0;
 Tabla_Pagina_Invertida* TABLA_MEMORY;
 
 int frame_lookup(char*PID, int pagina) {
@@ -99,11 +99,6 @@ char* solicitar_bytes_de_una_pagina(char* PID, int pagina, int byteInicial, int 
 	char *contenidoPaginaBuscada = buscar_valor_en_cache(PID, pagina);
 	if (strcmp(contenidoPaginaBuscada, "No existe en Cache") != 0) {
 
-		// Espera un tiempo configurable
-		printf("\n cantidad milisegundo %d", configuraciones.RETARDO_MEMORIA);
-		sleep(configuraciones.RETARDO_MEMORIA);
-		printf("\n fin cantidad milisegundo %d", configuraciones.RETARDO_MEMORIA);
-		//1 a. Existe en Memoria Cache
 		return string_substring(contenidoPaginaBuscada, byteInicial, longitud);
 	} else {
 		//1 b. No Existe en Memoria Cache
@@ -111,29 +106,24 @@ char* solicitar_bytes_de_una_pagina(char* PID, int pagina, int byteInicial, int 
 		if (numeroFrame < 0) {
 			return "PAGINA_NO_EXISTE"; //getframe retorna negativo cuando no encuentra
 		}
-		int numeroInicial = indiceInicialPaginas + configuraciones.MARCO_SIZE * numeroFrame + byteInicial;
+		int numeroInicial = configuraciones.MARCO_SIZE * numeroFrame + byteInicial;
 
 		contenidoPaginaBuscada = string_substring(MEMORIA_PRINCIPAL, numeroInicial, longitud);
 		// Almacenar pagina en memoria cache porque no existe
-		ingresar_valor_en_cache(PID, pagina, string_substring(MEMORIA_PRINCIPAL, indiceInicialPaginas + configuraciones.MARCO_SIZE * getFrame(PID, pagina) + byteInicial, configuraciones.MARCO_SIZE));
+		ingresar_valor_en_cache(PID, pagina, string_substring(MEMORIA_PRINCIPAL, configuraciones.MARCO_SIZE * getFrame(PID, pagina) + byteInicial, configuraciones.MARCO_SIZE));
+
+		printf("\n cantidad milisegundo %d", configuraciones.RETARDO_MEMORIA);
+		sleep(configuraciones.RETARDO_MEMORIA);
+		printf("\n fin cantidad milisegundo %d", configuraciones.RETARDO_MEMORIA);
+
 		return contenidoPaginaBuscada;
 	}
 }
 
-char* almacenar_bytes_de_una_pagina(char PID[4], int pagina, int byteInicial, int longitud, char* contenido) {
+char* almacenar_bytes_de_una_pagina(char PID[4], int pagina, int byteInicial, int longitud, char* contenido, bool cacheIr ) {
 
 	activar_semaforo(&semaforo_Tabla_MEMORY);
 
-	/**
-	 * el indiceInicialPaginas me indica desde que posición comienzan las paginas, ya que antes
-	 * se encuentran las estructuras de administracion de la memoria.
-	 * Se invoca getFrame, ya que me va devolver el numero de frame de la memoria donde se encuentra
-	 * el proceso asociado con su pagina.
-	 * El anterior resultado lo multiplico por la cantidad de bytes que ocupa cada frame en la memoria
-	 * obteniendo justo la posición inicial del frame a modificar.
-	 * por ultimo le sumo el byte inicial enviado por parametro, ya que es desde ahi que yo tengo
-	 * que empezar a escribir en la memoria.
-	 */
 	int numeroFrame = getFrame(PID, pagina);
 	if (numeroFrame < 0) {
 		desactivar_semaforo(&semaforo_Tabla_MEMORY);
@@ -142,7 +132,7 @@ char* almacenar_bytes_de_una_pagina(char PID[4], int pagina, int byteInicial, in
 		desactivar_semaforo(&semaforo_Tabla_MEMORY);
 		return "CONTENIDO_NO_ENTRA_EN_PAGINA";
 	}
-	int numeroInicial = indiceInicialPaginas + (numeroFrame * configuraciones.MARCO_SIZE) + byteInicial;
+	int numeroInicial = (numeroFrame * configuraciones.MARCO_SIZE) + byteInicial;
 
 	/**
 	 * Sumo la longitud que va ocupar el nuevo contenido al numero de byte obtenido antes.
@@ -159,8 +149,7 @@ char* almacenar_bytes_de_una_pagina(char PID[4], int pagina, int byteInicial, in
 	 * al final de espacio de memoria que voy a modificar hasta el final del string.
 	 */
 	char* segundaParte = string_substring_from(MEMORIA_PRINCIPAL, numeroFinal);
-	//string_capitalized(MEMORIA_PRINCIPAL);
-	//MEMORIA_PRINCIPAL = string_new();
+
 	/**
 	 * Concateno primero la primera parte
 	 * Luego el contenido a modificar
@@ -174,17 +163,33 @@ char* almacenar_bytes_de_una_pagina(char PID[4], int pagina, int byteInicial, in
 	strcat(MEMORIA_PRINCIPAL, textoMedio);
 	strcat(MEMORIA_PRINCIPAL, segundaParte);
 	free(primeraParte);
-	//free(textoMedio);
+
 	free(segundaParte);
-	//string_append(&MEMORIA_PRINCIPAL, primeraParte);
-	//string_append(&MEMORIA_PRINCIPAL, textoMedio);
-	//string_append(&MEMORIA_PRINCIPAL, segundaParte);
-	//string_capitalized(primeraParte);
-	//string_capitalized(segundaParte);
 
 	desactivar_semaforo(&semaforo_Tabla_MEMORY);
 	/**CACHE **/
-	ingresar_valor_en_cache(PID, pagina, solicitar_bytes_de_una_pagina(PID, pagina, 0, configuraciones.MARCO_SIZE));
+	if(cacheIr==true){
+		ingresar_valor_en_cache(PID, pagina, solicitar_bytes_de_una_pagina(PID, pagina, 0, configuraciones.MARCO_SIZE));
+
+	}
+	return "OK";
+}
+char* liberar_pagina(char PID[4], int pagina) {
+	almacenar_bytes_de_una_pagina(PID, pagina, 0, configuraciones.MARCO_SIZE, string_repeat('-', configuraciones.MARCO_SIZE),false);
+
+	int ind = 0;
+	for (ind = 0; ind < configuraciones.MARCOS; ind++) {
+		if (strcmp(TABLA_MEMORY[ind].PID, PID) == 0 && atoi(TABLA_MEMORY[ind].pagina) == pagina) {
+			actualizar_tabla_pagina(TABLA_MEMORY[ind]);
+			strcpy(TABLA_MEMORY[ind].pagina, VACIO);
+			strcpy(TABLA_MEMORY[ind].PID, VACIO);
+
+			ind = configuraciones.MARCOS;
+		}
+	}
+
+
+
 	return "OK";
 }
 
@@ -208,9 +213,9 @@ char* asignar_paginas_a_proceso(char *PID, int cantidad_paginas_requeridas) {
 		strcpy(registro.pagina, obtenerNumeroPaginaNew(PID));
 
 		if (cantidad_paginas_pedidas == 0) {
-			numero_pagina_inicial=malloc(strlen( registro.pagina)+1);
-			strcpy(numero_pagina_inicial,registro.pagina);
-		//	numero_pagina_inicial = registro.pagina;
+			numero_pagina_inicial = malloc(strlen(registro.pagina) + 1);
+			strcpy(numero_pagina_inicial, registro.pagina);
+
 		}
 
 		actualizar_tabla_pagina(registro);
@@ -223,9 +228,6 @@ char* asignar_paginas_a_proceso(char *PID, int cantidad_paginas_requeridas) {
 
 }
 
-/***
- * FUNCION DETONANTE
- */
 void actualizar_tabla_pagina(Tabla_Pagina_Invertida registro) {
 
 	activar_semaforo(&semaforo_Tabla_MEMORY);
@@ -239,7 +241,6 @@ void actualizar_tabla_pagina(Tabla_Pagina_Invertida registro) {
 	char* primeraParte = string_substring(MEMORIA_PRINCIPAL, 0, numeroInicial);
 	char* segundaParte = string_substring_from(MEMORIA_PRINCIPAL, numeroFinal);
 
-//	char* paginaAdministrativa = string_new();
 	char* paginaAdministrativa = malloc(bloqueAdmin + 1);
 	strcpy(paginaAdministrativa, "");
 	/**comienzo TODO: mejorar esta parte del codigo ya que tiene muchas cosas
@@ -253,7 +254,6 @@ void actualizar_tabla_pagina(Tabla_Pagina_Invertida registro) {
 	}
 	strcat(cerosLlenar, registro.frame);
 	strcat(paginaAdministrativa, cerosLlenar);
-	//string_capitalized(cerosLlenar);
 
 	strcpy(cerosLlenar, "");
 	for (j = 0; j < TAMANIO - strlen(registro.pagina) - 1; j++) {
@@ -261,7 +261,6 @@ void actualizar_tabla_pagina(Tabla_Pagina_Invertida registro) {
 	}
 	strcat(cerosLlenar, registro.pagina);
 	strcat(paginaAdministrativa, cerosLlenar);
-	//string_capitalized(cerosLlenar);
 
 	strcpy(cerosLlenar, "");
 	for (j = 0; j < TAMANIO - strlen(registro.PID) - 1; j++) {
@@ -269,22 +268,9 @@ void actualizar_tabla_pagina(Tabla_Pagina_Invertida registro) {
 	}
 	strcat(cerosLlenar, registro.PID);
 	strcat(paginaAdministrativa, cerosLlenar);
-	//string_capitalized(cerosLlenar);
 
 	free(cerosLlenar);
-	/**fin TODO: mejorar esta parte del codigo ya que tiene muchas cosas
-	 * que se pueden meter en una funcion **/
 
-	//string_capitalized(MEMORIA_PRINCIPAL);
-	//MEMORIA_PRINCIPAL = string_new();
-	//string_append(&MEMORIA_PRINCIPAL, primeraParte);
-	//string_append(&MEMORIA_PRINCIPAL, paginaAdministrativa);
-	//string_append(&MEMORIA_PRINCIPAL, segundaParte);
-	//string_capitalized(paginaAdministrativa);
-	//string_capitalized(primeraParte);
-	//string_capitalized(segundaParte);
-	//free()
-	//MEMORIA_PRINCIPAL = malloc(strlen(primeraParte)+strlen(paginaAdministrativa)+strlen(segundaParte) );
 	strcpy(MEMORIA_PRINCIPAL, "");
 	strcpy(MEMORIA_PRINCIPAL, primeraParte);
 	strcat(MEMORIA_PRINCIPAL, paginaAdministrativa);
@@ -339,7 +325,7 @@ void finalizar_programa(char *PID) {
 	for (i = 0; i < tope; i++) {
 		Tabla_Pagina_Invertida registro = TABLA_MEMORY[i];
 		if (strcmp(registro.PID, PID) == 0) {
-			almacenar_bytes_de_una_pagina(PID, atoi(registro.pagina), 0, configuraciones.MARCO_SIZE, pagina_Blanco);
+			almacenar_bytes_de_una_pagina(PID, atoi(registro.pagina), 0, configuraciones.MARCO_SIZE, pagina_Blanco,false);
 
 			strcpy(registro.PID, VACIO);
 			strcpy(registro.pagina, VACIO);
@@ -401,21 +387,45 @@ char* crear_tabla_memory_principal() {
 
 void crear_memoria_principal(char* bloqueMemoriaAdministrativa) {
 
-	int tamanio = configuraciones.MARCOS * configuraciones.MARCO_SIZE;
+	int tamanioEstructuraAdministrativo = strlen(bloqueMemoriaAdministrativa);
+	int tam = (int) (tamanioEstructuraAdministrativo / configuraciones.MARCO_SIZE);
+	float result = ((float) tamanioEstructuraAdministrativo / (float) configuraciones.MARCO_SIZE);
+	int cantidadPaginas = 0;
+	if (tam != result) {
+		cantidadPaginas = tam + 1;
+	} else {
+		cantidadPaginas = tam;
+	}
+
+	int cantidadEspacioVacio = cantidadPaginas * configuraciones.MARCO_SIZE - strlen(bloqueMemoriaAdministrativa);
+
+	int tamanio = (configuraciones.MARCOS - cantidadPaginas) * configuraciones.MARCO_SIZE;
 	char* bloqueMemoria = string_repeat('-', tamanio);
-	MEMORIA_PRINCIPAL = malloc(strlen(bloqueMemoriaAdministrativa) + strlen(bloqueMemoria));
+
+	string_append(&bloqueMemoriaAdministrativa, string_repeat('-', cantidadEspacioVacio));
+
+	MEMORIA_PRINCIPAL = malloc(strlen(bloqueMemoriaAdministrativa) + cantidadEspacioVacio + strlen(bloqueMemoria) + 1);
 	strcpy(MEMORIA_PRINCIPAL, bloqueMemoriaAdministrativa);
 	strcat(MEMORIA_PRINCIPAL, bloqueMemoria);
-	indiceInicialPaginas = (( TAMANIO - 1) * 3) * configuraciones.MARCOS;
+//indiceInicialPaginas = cantidadPaginas * configuraciones.MARCO_SIZE;
 
+	//configuraciones.FRAME_INICIAL = cantidadPaginas;
+
+	int i = 0;
+	for (i = 0; i < cantidadPaginas; i++) {
+		Tabla_Pagina_Invertida registro = buscar_pagina_disponible();
+		strcpy(registro.PID, "ADM");
+		strcpy(registro.pagina, "ADM");
+		actualizar_tabla_pagina(registro);
+	}
 }
 
 void reservar_memoria_principal() {
-	activar_semaforo(&semaforo_Tabla_MEMORY);
+	//activar_semaforo(&semaforo_Tabla_MEMORY);
 	char* bloqueMemoriaAdministrativa = crear_tabla_memory_principal();
 	crear_memoria_principal(bloqueMemoriaAdministrativa);
 	inicializar_memoria_cache(configuraciones.ENTRADAS_CACHE, configuraciones.MARCO_SIZE, configuraciones.CACHE_X_PROC);
-	desactivar_semaforo(&semaforo_Tabla_MEMORY);
+	//desactivar_semaforo(&semaforo_Tabla_MEMORY);
 }
 
 void generar_Reporte_Estructura_de_Memoria() {

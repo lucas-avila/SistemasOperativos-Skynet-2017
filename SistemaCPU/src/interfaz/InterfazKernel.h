@@ -47,4 +47,6 @@ char* cerrar_archivo(char* PID, int FD);
 
 char* borrar_archivo(char* PID, char* rutaArchivo);
 
+void CU_Escribir_Pantalla_AnSISOP(char* mensaje,char* PID);
+
 #endif /* HEADER_INTERFAZKERNEL_H_ */

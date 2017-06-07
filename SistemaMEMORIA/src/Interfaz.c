@@ -67,6 +67,8 @@ void CU_Recibir_Conexion_CPU(int cliente) {
 			CU_Almacenar_Bytes_de_Pagina(cliente);
 		} else if (strcmp(codigo_operacion, "ASIGNAR_PAGINAS_PROCESO") == 0) {
 			CU_Asignar_Paginas_Programa(cliente);
+		} else if (strcmp(codigo_operacion, "LIBERAR_PAGINAS_PROCESO") == 0) {
+			CU_Liberar_Pagina(cliente);
 		} else if (strcmp(codigo_operacion, "") == 0) {
 			//close(cliente);
 			//controlSeguir = 0;
@@ -119,7 +121,7 @@ void CU_Almacenar_Bytes_de_Pagina(int cliente) {
 	char* contenido;
 	contenido = recibir_dato_serializado(cliente);
 
-	texto = almacenar_bytes_de_una_pagina(PID, pagina, byteInicial, tamanio, contenido);
+	texto = almacenar_bytes_de_una_pagina(PID, pagina, byteInicial, tamanio, contenido,true);
 	enviar_dato_serializado(texto, cliente);
 	free(contenido);
 
@@ -154,6 +156,20 @@ void CU_Asignar_Paginas_Programa(int cliente) {
 	//enviar_dato_serializado("OK JONY", cliente);
 	free(PID);
 }
+
+void CU_Liberar_Pagina(int cliente) {
+	char* PID = recibir_dato_serializado(cliente); //PID
+	char* texto;
+	texto = recibir_dato_serializado(cliente);
+	int pagina = atoi(texto);
+	free(texto);
+	char texto2[4 + 1];
+	strcpy(texto2, liberar_pagina(PID, pagina));
+	enviar_dato_serializado(&texto2, cliente);
+
+	free(PID);
+}
+
 void CU_Finalizar_Programa(int cliente) {
 	char* PID = recibir_dato_serializado(cliente); //PID
 

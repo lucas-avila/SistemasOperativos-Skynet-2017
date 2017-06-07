@@ -183,14 +183,15 @@ void IR_A_LABEL(t_nombre_etiqueta nombre_etiqueta){
 
 void RETORNAR(t_valor_variable variableRetorno){
 
+	IndiceStack* stackDeFuncion = list_get(pcb->pila,(list_size(pcb->pila) - 1));
 	ASIGNAR_VARIABLE(serializarMemoriaDinamica(stackDeFuncion->retVar->pagina,stackDeFuncion->retVar->byte_inicial), variableRetorno);
 
 }
 
 void FINALIZAR(){
 	//FALTA DETERMINAR SI DEBE CAMBIAR EL EXIT_CODE DEL PCB (SI TERMINO EL PROCESO)
-	if(list_size(pcb->pila) == 1){
-
+	if(list_size(pcb->pila) != 1){
+		IndiceStack* stackDeFuncion = list_get(pcb->pila,(list_size(pcb->pila) - 1));
 		pcb->program_counter = stackDeFuncion->retPos;
 		list_remove(pcb->pila,(list_size(pcb->pila) - 1));
 
@@ -203,6 +204,7 @@ void FINALIZAR(){
 }
 
 void LLAMAR_SIN_RETORNO(t_nombre_etiqueta nombre_etiqueta ){
+	IndiceStack* stackDeFuncion = malloc(sizeof(IndiceStack));
 	list_add(pcb->pila, stackDeFuncion);
 	stackDeFuncion->retPos = pcb->program_counter;
 	// tiene que buscar la etiqueta en la lista de etiquetas y conseguir la direccion
@@ -212,7 +214,9 @@ void LLAMAR_SIN_RETORNO(t_nombre_etiqueta nombre_etiqueta ){
 }
 
 void LLAMAR_CON_RETORNO(t_nombre_etiqueta nombre_etiqueta, t_puntero direccionRetorno ){
-	list_add(pcb->pila, stackDeFuncion);
+
+	IndiceStack* stackDeFuncion = malloc(sizeof(IndiceStack));
+	list_add(pcb->pila,stackDeFuncion);
 	stackDeFuncion->retPos = pcb->program_counter;
 	stackDeFuncion->retVar = direccionRetorno;
 	// tiene que buscar la etiqueta en la lista de etiquetas y conseguir la direccion
@@ -255,6 +259,7 @@ t_valor_variable OBTENER_VALOR_COMPARTIDA(t_nombre_compartida variable){
 		return -1;
 		}
 }
+
 t_valor_variable ASIGNAR_VALOR_COMPARTIDA(t_nombre_compartida variable, t_valor_variable valor) {
 	if ((asignar_valor_a_variable_compartida_en_kernel(variable, valor)) == 0){
 		printf("Asignacion exitosa!!\n");

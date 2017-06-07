@@ -14,7 +14,7 @@ void cargar_paginas_de_proceso(char *PID, int cantidadPagina, char* contenidoQue
 		strcpy(contenidoDinamico, contenidoQueQuieras);
 		strcat(contenidoDinamico, " ");
 		strcat(contenidoDinamico, string_itoa(i));
-		almacenar_bytes_de_una_pagina(PID, string_itoa((i + paginaInicial)), "0", string_itoa(strlen(contenidoDinamico)), contenidoDinamico);
+		almacenar_bytes_de_una_pagina(PID, string_itoa((i + paginaInicial)), "0", string_itoa(strlen(contenidoDinamico)), contenidoDinamico,true);
 		free(contenidoDinamico);
 	}
 }

@@ -231,6 +231,15 @@ void aplicar_algoritmo_Desfragmentacion_Interna(TABLA_MEMORIA_PROCESO* pagina_Bu
 	strcat(paginaNueva, string_repeat('-', espacioContenidoNuevo));
 	almacenar_Bytes_de_Pagina(pagina_Buscada->PID, string_itoa(pagina_Buscada->nroPagina), string_itoa(indicePrimerLibre), string_itoa(5 + espacioContenidoNuevo), paginaNueva);
 
+	liberar_pagina(pagina_Buscada);
+
+}
+
+void liberar_pagina(TABLA_MEMORIA_PROCESO* pagina_Buscada) {
+	if(pagina_Buscada->espacioDisponible == (tamanio_pagina_memoria - 5)){
+		liberar_pagina_proceso(pagina_Buscada->PID,string_itoa(pagina_Buscada->nroPagina));
+	    eliminar_registro_tabla_memoria(pagina_Buscada);
+	}
 }
 
 int buscar_indice_elemento_tabla_memoria(char* PID, unsigned pagina) {

@@ -56,7 +56,7 @@ int liberar_pagina_encontrada(TABLA_MEMORIA_PROCESO* pagina_Buscada, unsigned by
 void aplicar_algoritmo_Desfragmentacion_Interna(TABLA_MEMORIA_PROCESO* pagina_Buscada);
 
 int buscar_indice_elemento_tabla_memoria(char* PID, unsigned pagina);
-
+void liberar_pagina(TABLA_MEMORIA_PROCESO* pagina_Buscada);
 void inicializar_tabla_proceso_memoria();
 
 Metadata_Memoria* analizar_espacio_pagina(TABLA_MEMORIA_PROCESO* registro, int espacioRequerido);

@@ -4,15 +4,13 @@
  *  Created on: 9/4/2017
  *      Author: utnso
  */
-#include<stdlib.h>
-#include<stdio.h>
-
-#include<stdbool.h>
 
 #include "AppConfig.h"
-#include <commons/config.h>
-#include <commons/string.h>
 
+#include <commons/config.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 void inicializar_configuracion(char *PATH_ARCHIVO_CONFIGURACION) {
@@ -89,10 +87,9 @@ void inicializar_configuracion(char *PATH_ARCHIVO_CONFIGURACION) {
 
 			configuraciones.cantidad_var_comp = config_get_int_value(config, "CANT_VAR_COM");
 		}
-		if (config_has_property(config, "PATH_ARCHIVO_LOG") == true) {
 
-			configuraciones.PATH_ARCHIVO_LOG = config_get_string_value(config, "PATH_ARCHIVO_LOG");
-		}
+		configuraciones.PATH_ARCHIVO_LOG = malloc(strlen(config_get_string_value(config,"PATH_ARCHIVO_LOG")) + 1);
+		configuraciones.PATH_ARCHIVO_LOG = config_get_string_value(config,"PATH_ARCHIVO_LOG");
 
 		configuraciones.planificacion_activa = 1;
 	}
@@ -101,7 +98,6 @@ void inicializar_configuracion(char *PATH_ARCHIVO_CONFIGURACION) {
 
 /*void inicializar_vec_variables_compartidas() {
 	VECTOR_VAR_COM = malloc(configuraciones.cantidad_var_comp);
-<<<<<<< HEAD
 	inicializar_vec_variables_compartidas(VECTOR_VAR_COM);
 }*/
 

@@ -22,7 +22,7 @@ void almacenarPaginas_Test();
 void solicitarBytesPagina_Test();
 void finalizarProceso_Test();
 void testIntegrador_1();
-
+void liberarPagina();
 void menu_pruebas() {
 	int opcion = 0;
 	do {
@@ -32,10 +32,11 @@ void menu_pruebas() {
 		printf("\n2 - Almacenar Bytes en Pagina");
 		printf("\n3 - Solicitar Bytes de Pagina");
 		printf("\n4 - Finalizar proceso (elimina paginas asignadas)");
+		printf("\n7 - Liberar Pagina");
 		printf("\n5 - Test Integrador 1 - Prueba de Concurrencia");
 		printf("\n6 - Salir del Menu de Pruebas");
 		printf("\nOpcion: ");
-		opcion = validarNumeroInput(1, 6);
+		opcion = validarNumeroInput(1, 7);
 
 		switch (opcion) {
 		case 1:
@@ -53,6 +54,9 @@ void menu_pruebas() {
 		case 5:
 			testIntegrador_1();
 			break;
+		case 7:
+					liberarPagina();
+					break;
 		}
 
 	} while (opcion != 6);
@@ -66,15 +70,15 @@ void pruebas_concurrencia() {
 void proceso_1241() {
 	asignar_paginas_a_proceso("1241", 5);
 	printf("\nTest 1 - Prueba Asignar 5 paginas a proceso 1241");
-	almacenar_bytes_de_una_pagina("1241", 0, 0, strlen("00000printf('Hola Mundo');00000a=a+1;00000printf('Resultado de a es' + a);00000"), "00000printf('Hola Mundo');00000a=a+1;00000printf('Resultado de a es' + a);00000");
+	almacenar_bytes_de_una_pagina("1241", 0, 0, strlen("00000printf('Hola Mundo');00000a=a+1;00000printf('Resultado de a es' + a);00000"), "00000printf('Hola Mundo');00000a=a+1;00000printf('Resultado de a es' + a);00000",true);
 	printf("\nTest 1 - Escribir pagina 1 proceso 1241");
-	almacenar_bytes_de_una_pagina("1241", 1, 0, strlen("00000printf('Hola Mundo');00000a=a+1;00000printf('Resultado de a es' + a);00000"), "00000printf('Hola Mundo');00000a=a+1;00000printf('Resultado de a es' + a);00000");
+	almacenar_bytes_de_una_pagina("1241", 1, 0, strlen("00000printf('Hola Mundo');00000a=a+1;00000printf('Resultado de a es' + a);00000"), "00000printf('Hola Mundo');00000a=a+1;00000printf('Resultado de a es' + a);00000",true);
 	printf("\nTest 1 - Escribir pagina 2 proceso 1241");
-	almacenar_bytes_de_una_pagina("1241", 2, 0, strlen("00000printf('Hola Mundo');00000a=a+1;00000printf('Resultado de a es' + a);00000"), "00000printf('Hola Mundo');00000a=a+1;00000printf('Resultado de a es' + a);00000");
+	almacenar_bytes_de_una_pagina("1241", 2, 0, strlen("00000printf('Hola Mundo');00000a=a+1;00000printf('Resultado de a es' + a);00000"), "00000printf('Hola Mundo');00000a=a+1;00000printf('Resultado de a es' + a);00000",true);
 	printf("\nTest 1 - Escribir pagina 3 proceso 1241");
-	almacenar_bytes_de_una_pagina("1241", 3, 0, strlen("00000printf('Hola Mundo');00000a=a+1;00000printf('Resultado de a es' + a);00000"), "00000printf('Hola Mundo');00000a=a+1;00000printf('Resultado de a es' + a);00000");
+	almacenar_bytes_de_una_pagina("1241", 3, 0, strlen("00000printf('Hola Mundo');00000a=a+1;00000printf('Resultado de a es' + a);00000"), "00000printf('Hola Mundo');00000a=a+1;00000printf('Resultado de a es' + a);00000",true);
 	printf("\nTest 1 - Escribir pagina 4 proceso 1241");
-	almacenar_bytes_de_una_pagina("1241", 4, 0, strlen("00000printf('Hola Mundo');00000a=a+1;00000printf('Resultado de a es' + a);00000"), "00000printf('Hola Mundo');00000a=a+1;00000printf('Resultado de a es' + a);00000");
+	almacenar_bytes_de_una_pagina("1241", 4, 0, strlen("00000printf('Hola Mundo');00000a=a+1;00000printf('Resultado de a es' + a);00000"), "00000printf('Hola Mundo');00000a=a+1;00000printf('Resultado de a es' + a);00000",true);
 
 	//int i = 0;
 	//for (i = 0; i < 20; i++) {
@@ -101,21 +105,21 @@ void pruebas_Basicas() {
 	asignar_paginas_a_proceso("1241", 5);
 	printf("\nTest 2 - Prueba Asignar 5 paginas a proceso 1241");
 
-	almacenar_bytes_de_una_pagina("1241", 1, 0, 10, "jonathan10");
+	almacenar_bytes_de_una_pagina("1241", 1, 0, 10, "jonathan10",true);
 	printf("\nTest 2 - Contenido PID: 1241 - pagina 1 - inicio 0 longitud 10: %s ", solicitar_bytes_de_una_pagina("1241", 1, 0, 10));
 
-	almacenar_bytes_de_una_pagina("1241", 3, 0, 10, "jonathan10");
+	almacenar_bytes_de_una_pagina("1241", 3, 0, 10, "jonathan10",true);
 	printf("\nTest 2 - Contenido PID: 1241 - pagina 3 - inicio 0 longitud 10: %s ", solicitar_bytes_de_una_pagina("1241", 3, 0, 10));
 
-	almacenar_bytes_de_una_pagina("1241", 5, 0, 10, "jonathan10");
+	almacenar_bytes_de_una_pagina("1241", 5, 0, 10, "jonathan10",true);
 	printf("\nTest 2 - Contenido PID: 1241 - pagina 5 - inicio 0 longitud 10: %s ", solicitar_bytes_de_una_pagina("1241", 5, 0, 10));
 
 	asignar_paginas_a_proceso("1371", 3);
-	almacenar_bytes_de_una_pagina("1371", 1, 0, 10, "jonathan20");
-	almacenar_bytes_de_una_pagina("1371", 2, 0, 10, "jonathan20");
+	almacenar_bytes_de_una_pagina("1371", 1, 0, 10, "jonathan20",true);
+	almacenar_bytes_de_una_pagina("1371", 2, 0, 10, "jonathan20",true);
 
 	asignar_paginas_a_proceso("1241", 2);
-	almacenar_bytes_de_una_pagina("1241", 6, 0, 10, "jonathan10");
+	almacenar_bytes_de_una_pagina("1241", 6, 0, 10, "jonathan10",true);
 
 	finalizar_programa("1241");
 	inicializar_programa("1189", 9);
@@ -154,7 +158,7 @@ void almacenarPaginas_Test() {
 	scanf("%d", &pagina);
 	printf("\n Byte Inicial: ");
 	scanf("%d", &byteInicial);
-	almacenar_bytes_de_una_pagina(proceso, pagina, byteInicial, strlen(contenido), contenido);
+	almacenar_bytes_de_una_pagina(proceso, pagina, byteInicial, strlen(contenido), contenido,true);
 }
 void solicitarBytesPagina_Test() {
 	char proceso[4];
@@ -179,4 +183,15 @@ void finalizarProceso_Test() {
 }
 void testIntegrador_1() {
 	atender_clientes(0, &pruebas_concurrencia);
+}
+
+void liberarPagina(){
+	char proceso[4];
+	int pagina;
+
+	printf("\n Proceso: ");
+	scanf("%*c%[^\n]s", proceso);
+	printf("\n Pagina: ");
+	scanf("%d", &pagina);
+	printf("\n Resultado: %s" , liberar_pagina(proceso,pagina));
 }

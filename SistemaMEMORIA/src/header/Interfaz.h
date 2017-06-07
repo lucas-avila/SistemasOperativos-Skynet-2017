@@ -19,5 +19,5 @@ void CU_Almacenar_Bytes_de_Pagina(int cliente);
 void CU_Inicializar_Programa(int cliente);
 void CU_Asignar_Paginas_Programa(int cliente);
 void CU_Finalizar_Programa(int cliente);
-
+void CU_Liberar_Pagina(int cliente);
 #endif /* HEADER_INTERFAZ_H_ */

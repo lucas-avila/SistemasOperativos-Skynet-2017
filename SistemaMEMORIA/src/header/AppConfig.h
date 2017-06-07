@@ -15,6 +15,7 @@ typedef struct {
 
 	int CANTIDAD_MAXIMA_CONCURRENCIA;
 	char* PATH_ARCHIVO_LOG;
+//	int FRAME_INICIAL;
 
 
 

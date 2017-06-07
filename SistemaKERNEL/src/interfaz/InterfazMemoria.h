@@ -25,6 +25,8 @@ char* inicializar_Programa_memoria(char* PID, char* cantidad_paginas);
 
 char* asignar_Paginas_Programa(char* PID, char* cantidad_paginas);
 
+char* liberar_pagina_proceso(char* PID, char* numeroPagina);
+
 char* finalizar_Programa_memoria(char* PID);
 
 IndiceCodigo* crear_IndiceCodigo(int programCounter, int byteInicial, int tamanio, int pagina);

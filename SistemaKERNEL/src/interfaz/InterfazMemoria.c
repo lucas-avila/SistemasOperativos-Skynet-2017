@@ -52,6 +52,14 @@ char* inicializar_Programa_memoria(char* PID, char* cantidad_paginas) {
 	enviar_dato_serializado(cantidad_paginas, servidor_Memoria);
 	return recibir_dato_serializado(servidor_Memoria);
 }
+
+char* liberar_pagina_proceso(char* PID, char* numeroPagina) {
+	enviar_dato_serializado("LIBERAR_PAGINAS_PROCESO", servidor_Memoria);
+	enviar_dato_serializado(PID, servidor_Memoria);
+	enviar_dato_serializado(numeroPagina, servidor_Memoria);
+	return recibir_dato_serializado(servidor_Memoria);
+}
+
 char* asignar_Paginas_Programa(char* PID, char* cantidad_paginas) {
 	enviar_dato_serializado("ASIGNAR_PAGINAS_PROCESO", servidor_Memoria);
 	enviar_dato_serializado(PID, servidor_Memoria);

@@ -9,7 +9,6 @@ typedef struct {
 	char* contenidoPagina;
 
 	//para implementar algoritmo LRU
-	int tiempoLlegada;
 	int vecesUsada;
 } MEMORIA_CACHE;
 

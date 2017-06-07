@@ -9,7 +9,7 @@
 #include "header/AppConfig.h"
 
 int cantidadEntradasCache = 0;
-int nroLlegada = 0;
+
 int cantidadMaximaEntradaPorProceso = 0;
 
 void inicializar_memoria_cache(int cantidadEntradas, int tamanioPagina, int cantMaximaPorProceso) {
@@ -19,7 +19,7 @@ void inicializar_memoria_cache(int cantidadEntradas, int tamanioPagina, int cant
 		strcpy(memoriaCacheGlobal[i].PID, "");
 		memoriaCacheGlobal[i].contenidoPagina = malloc(tamanioPagina);
 		memoriaCacheGlobal[i].nroPagina = -1;
-		memoriaCacheGlobal[i].tiempoLlegada = -1;
+
 		memoriaCacheGlobal[i].vecesUsada = -1;
 	}
 	cantidadEntradasCache = cantidadEntradas;
@@ -43,7 +43,7 @@ void ingresar_valor_en_cache(char* PID, int nroPagina, char* contenidoPagina) {
 	fila.contenidoPagina = malloc(strlen(contenidoPagina));
 	strcpy(fila.contenidoPagina, contenidoPagina);
 	fila.nroPagina = nroPagina;
-	fila.tiempoLlegada = nroLlegada;
+
 	fila.vecesUsada = 0;
 
 	int codigo_resultado = reemplazar_linea_aplicando_algoritmo(fila);
@@ -51,15 +51,9 @@ void ingresar_valor_en_cache(char* PID, int nroPagina, char* contenidoPagina) {
 
 		for (i = 0; i < cantidadEntradasCache; i++) {
 			if (strcmp(memoriaCacheGlobal[i].PID, "") == 0) {
-				/*strcpy(memoriaCacheGlobal[i].PID, PID);
-				 memoriaCacheGlobal[i].contenidoPagina = malloc(strlen(contenidoPagina));
-				 strcpy(memoriaCacheGlobal[i].contenidoPagina, contenidoPagina);
-				 memoriaCacheGlobal[i].nroPagina = nroPagina;
-				 memoriaCacheGlobal[i].tiempoLlegada = nroLlegada;
-				 memoriaCacheGlobal[i].vecesUsada = 0;
-				 */
+
 				memoriaCacheGlobal[i] = fila;
-				nroLlegada++;
+
 				return;
 			}
 		}
@@ -73,7 +67,7 @@ void ingresar_valor_en_cache(char* PID, int nroPagina, char* contenidoPagina) {
 }
 
 char* buscar_valor_en_cache(char* PID, int nroPagina) {
-	/*int i = 0;
+	int i = 0;
 	char* valorBuscado;
 	for (i = 0; i < cantidadEntradasCache; i++) {
 		if ((strcmp(memoriaCacheGlobal[i].PID, PID) == 0) && (memoriaCacheGlobal[i].nroPagina == nroPagina)) {
@@ -82,7 +76,7 @@ char* buscar_valor_en_cache(char* PID, int nroPagina) {
 			memoriaCacheGlobal[i].vecesUsada += 1;
 			return valorBuscado;
 		}
-	}*/
+	}
 	return "No existe en Cache";
 }
 
@@ -105,42 +99,26 @@ void eliminar_filas_de_procesos_en_cache(char* PID) {
 			strcpy(memoriaCacheGlobal[i].PID, "");
 			strcpy(memoriaCacheGlobal[i].contenidoPagina, "");
 			memoriaCacheGlobal[i].nroPagina = -1;
-			memoriaCacheGlobal[i].tiempoLlegada = -1;
+
 			memoriaCacheGlobal[i].vecesUsada = -1;
 
 		}
 	}
 }
 
-int obtener_mayor_edad() {
-	int i = 0;
-	int edadMaxima = 0;
-	for (i = 0; i < cantidadEntradasCache; i++) {
-		if (memoriaCacheGlobal[i].tiempoLlegada >= 0) {
-			if (i == 0) {
-				edadMaxima = memoriaCacheGlobal[i].tiempoLlegada;
-			}
-			if (edadMaxima >= memoriaCacheGlobal[i].tiempoLlegada) {
-				edadMaxima = memoriaCacheGlobal[i].tiempoLlegada;
-			}
-		}
-	}
-	return edadMaxima;
-}
-
-int obtener_indice_tabla_menos_usado_y_mas_viejo(int mayorEdad) {
+int obtener_indice_tabla_menos_usado(char* PID) {
 	int i = 0;
 	int minCantUso = 0;
 	int indice = -1;
 	int controlPrimeraVez = 0;
 	for (i = 0; i < cantidadEntradasCache; i++) {
-		if (mayorEdad == memoriaCacheGlobal[i].tiempoLlegada && memoriaCacheGlobal[i].tiempoLlegada > -1) {
+
+		if (strcmp(PID, "NO") == 0 || strcmp(PID, memoriaCacheGlobal[i].PID) == 0) {
 			if (controlPrimeraVez == 0) {
 				minCantUso = memoriaCacheGlobal[i].vecesUsada;
 				indice = i;
 				controlPrimeraVez = 1;
-			}
-			if (minCantUso >= memoriaCacheGlobal[i].vecesUsada) {
+			} else if (minCantUso >= memoriaCacheGlobal[i].vecesUsada) {
 				minCantUso = memoriaCacheGlobal[i].vecesUsada;
 				indice = i;
 			}
@@ -149,23 +127,52 @@ int obtener_indice_tabla_menos_usado_y_mas_viejo(int mayorEdad) {
 	return indice;
 
 }
+/*
+ * CACHE LLENA	PROCESO LLENO	RESULTADO
+ NO	NO	INSERTO
+ NO	SI	SACO MENOS USADO DE ESE PROCESO E INSERT
+ SI	NO	SACO PAGINA MENOS USADA E INSERTO
+ SI	SI	SACO MENOS USADO DE ESE PROCESO E INSERT
+ */
+
+bool cacheLlena() {
+	int i = 0;
+	for (i = 0; i < cantidadEntradasCache; i++) {
+		if (strcmp(memoriaCacheGlobal[i].PID, "") == 0) {
+
+			return 0;
+		}
+	}
+	return 1;
+}
+
+bool procesoLleno(char* pid) {
+	int cantidad = obtener_cantidad_registros_de_proceso(pid);
+	return cantidad == configuraciones.CACHE_X_PROC;
+}
 
 int reemplazar_linea_aplicando_algoritmo(MEMORIA_CACHE fila) {
-
-	// Validacion de que cada proceso no ocupe mas lineas de las necesarias
-	if (obtener_cantidad_registros_de_proceso(fila.PID) >= cantidadMaximaEntradaPorProceso) {
-
-		// Se busca la linea mas vieja y menos usada y se reemplaza por la enviada por parametro
-		int indiceReemplazo = obtener_indice_tabla_menos_usado_y_mas_viejo(obtener_mayor_edad());
-		if (indiceReemplazo == -1) {
-			return -1;
+	int indice = 0;
+	if (cacheLlena() == 1) {
+		if (procesoLleno(fila.PID) == 1) {
+			indice = obtener_indice_tabla_menos_usado(fila.PID);
+			strcpy(memoriaCacheGlobal[indice].PID, "");
+			return 0;
+		} else {
+			indice = obtener_indice_tabla_menos_usado(fila.PID);
+			strcpy(memoriaCacheGlobal[indice].PID, "NO");
+			return 0;
 		}
-		fila.tiempoLlegada = nroLlegada;
-		nroLlegada++;
-		fila.vecesUsada = 0;
-		memoriaCacheGlobal[indiceReemplazo] = fila;
-		return 1;
+	} else {
+		if (procesoLleno(fila.PID) == 1) {
+			indice = obtener_indice_tabla_menos_usado(fila.PID);
+			strcpy(memoriaCacheGlobal[indice].PID, "");
+			return 0;
+		} else {
+			return 0;
+		}
 	}
+
 	return 0;
 }
 
@@ -180,7 +187,7 @@ void mostrar_tabla_memoria_cache() {
 	string_append(&textoLoguear, "\n---------------------------");
 
 	printf("\n---------------------------");
-	printf("\n PID PAG EDAD VECES CONTENIDO");
+	printf("\n PID PAG CONTENIDO");
 	printf("\n---------------------------");
 	for (i = 0; i < cantidadEntradasCache; i++) {
 		if (strcmp(memoriaCacheGlobal[i].PID, "") != 0) {
@@ -202,7 +209,7 @@ void vaciar_tabla_memoria_cache(int tamanioPagina) {
 		strcpy(memoriaCacheGlobal[i].PID, "");
 		memoriaCacheGlobal[i].contenidoPagina = malloc(tamanioPagina);
 		memoriaCacheGlobal[i].nroPagina = -1;
-		memoriaCacheGlobal[i].tiempoLlegada = -1;
+
 		memoriaCacheGlobal[i].vecesUsada = -1;
 	}
 

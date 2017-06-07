@@ -6,7 +6,7 @@
  */
 #define TAMANIO 5
 #define VACIO "NNNN"
-
+#include <stdbool.h>
 #ifndef HEADER_FUNCIONESMEMORIA_H_
 #define HEADER_FUNCIONESMEMORIA_H_
 
@@ -14,6 +14,7 @@ typedef struct {
 	char frame[TAMANIO];
 	char PID[TAMANIO];
 	char pagina[TAMANIO];
+
 } Tabla_Pagina_Invertida;
 
 Tabla_Pagina_Invertida buscar_pagina_disponible();
@@ -22,9 +23,11 @@ char* inicializar_programa(char* PID, int cantidad_paginas_requeridas);
 
 char* solicitar_bytes_de_una_pagina(char* PID, int pagina, int byteInicial, int longitud);
 
-char* almacenar_bytes_de_una_pagina(char PID[4], int pagina, int byteInicial, int longitud, char* contenido);
+char* almacenar_bytes_de_una_pagina(char PID[4], int pagina, int byteInicial, int longitud, char* contenido, bool cacheIr );
 
 char* asignar_paginas_a_proceso(char *PID, int cantidad_paginas_requeridas);
+
+char* liberar_pagina(char PID[4], int pagina);
 
 void finalizar_programa(char *PID);
 

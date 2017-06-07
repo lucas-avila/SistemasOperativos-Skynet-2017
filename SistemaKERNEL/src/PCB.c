@@ -301,7 +301,9 @@ PCB * recibir_pcb(int s_origen) {
 	memcpy(&pcb->etiquetas_size, paquete + offset, sizeof(uint32_t));
 	offset += sizeof(uint32_t);
 
-	pcb->etiquetas = string_new();
+	//El \0 al final es para cuando lo hardcodeamos con un string cualquiera, en la realidad, cuando mandemos el buffer de etiquetas
+	//..no es un string, es un buffer de bytes entonces no importa el \0 al final, pero bueno.........yolo
+	pcb->etiquetas = malloc(pcb->etiquetas_size + 1);
 	memcpy(pcb->etiquetas, paquete + offset, pcb->etiquetas_size);
 	pcb->etiquetas[pcb->etiquetas_size] = '\0';
 	offset += pcb->etiquetas_size;
