@@ -4,31 +4,21 @@
  *  Created on: 1/4/2017
  *      Author: utnso
  */
-
 #include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-#include "header/Socket.h"
+static const char[] = "/Archivos/";
 
-static const char[] PATH_ARCHIVOS = "/Archivos/";
-
-void validar_archivo(char* path) {
+int validar_archivo(char* path) {
 	if(access(path, F_OK) == -1){
-		enviar_dato_serializado("ARCHIVO_NO_EXISTE", clienteKernel);
-	}
-	else {
-		enviar_dato_serializado("ARCHIVO_EXISTE", clienteKernel);
+
 	}
 }
 
-void crear_archivo(char* path) {
-	fopen(path, "w");
-}
-
-void borrar(char* path) {
+int crear_archivo(char* path) {
 
 }
-
-
 
 
 

@@ -13533,3 +13533,1523 @@ Finished building target: SistemaKERNEL
 01:12:15 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
 make all 
 make: No se hace nada para «all».
+19:49:10 **** Build of configuration Debug for project SistemaCPU ****
+make all 
+Building file: ../src/testing/testearPrimitivasFunciones.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/testearPrimitivasFunciones.d" -MT"src/testing/testearPrimitivasFunciones.d" -o "src/testing/testearPrimitivasFunciones.o" "../src/testing/testearPrimitivasFunciones.c"
+../src/testing/testearPrimitivasFunciones.c: In function ‘crear_PCB_TEST’:
+../src/testing/testearPrimitivasFunciones.c:45:391: warning: "/*" within comment [-Wcomment]
+   char sentencias[][40] = { "variables a, b, x,d,e,f,g,h,i,j,k,l", "a = 3", "b = 5", "a = b + 12", "alocar x 50 ", "liberar x", "alocar d 50 ", "liberar d", "alocar e 50 ", "liberar e", "alocar f 50 ", "liberar f", "alocar g 50 ", "liberar g", "alocar h 50 ", "liberar h", "alocar i 50 ", "liberar i", "alocar j 50 ", "liberar j", "alocar k 50 ", "liberar k", "alocar l 50 ", "liberar l" };/**
+ ^
+../src/testing/testearPrimitivasFunciones.c: In function ‘mostrar_menu_primitivas’:
+../src/testing/testearPrimitivasFunciones.c:184:5: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char * (*)[20]’ [-Wformat=]
+     scanf("%s", &nombVarComp);
+     ^
+../src/testing/testearPrimitivasFunciones.c:185:25: warning: comparison between pointer and integer [enabled by default]
+    } while (nombVarComp == '\n');
+                         ^
+../src/testing/testearPrimitivasFunciones.c:188:4: warning: passing argument 1 of ‘ASIGNAR_VALOR_COMPARTIDA’ from incompatible pointer type [enabled by default]
+    ASIGNAR_VALOR_COMPARTIDA(nombVarComp, valor);
+    ^
+In file included from ../src/testing/testearPrimitivasFunciones.c:7:0:
+../src/testing/../primitivas/PrimitivasFunciones.h:54:18: note: expected ‘t_nombre_compartida’ but argument is of type ‘char **’
+ t_valor_variable ASIGNAR_VALOR_COMPARTIDA(t_nombre_compartida variable, t_valor_variable valor);
+                  ^
+../src/testing/testearPrimitivasFunciones.c:194:5: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char * (*)[20]’ [-Wformat=]
+     scanf("%s", &nombVarComp);
+     ^
+../src/testing/testearPrimitivasFunciones.c:195:25: warning: comparison between pointer and integer [enabled by default]
+    } while (nombVarComp == '\n');
+                         ^
+../src/testing/testearPrimitivasFunciones.c:196:4: warning: passing argument 1 of ‘OBTENER_VALOR_COMPARTIDA’ from incompatible pointer type [enabled by default]
+    OBTENER_VALOR_COMPARTIDA(nombVarComp);
+    ^
+In file included from ../src/testing/testearPrimitivasFunciones.c:7:0:
+../src/testing/../primitivas/PrimitivasFunciones.h:52:18: note: expected ‘t_nombre_compartida’ but argument is of type ‘char **’
+ t_valor_variable OBTENER_VALOR_COMPARTIDA(t_nombre_compartida variable);
+                  ^
+../src/testing/testearPrimitivasFunciones.c:201:5: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char * (*)[50]’ [-Wformat=]
+     scanf("%s", &nombreArchivo);
+     ^
+../src/testing/testearPrimitivasFunciones.c:202:4: warning: passing argument 1 of ‘strcmp’ from incompatible pointer type [enabled by default]
+    } while (strcmp(nombreArchivo,"")==0);
+    ^
+In file included from ../src/testing/testearPrimitivasFunciones.c:4:0:
+/usr/include/string.h:144:12: note: expected ‘const char *’ but argument is of type ‘char **’
+ extern int strcmp (const char *__s1, const char *__s2)
+            ^
+../src/testing/testearPrimitivasFunciones.c:203:4: warning: implicit declaration of function ‘abrir_archivo’ [-Wimplicit-function-declaration]
+    abrir_archivo(string_itoa(procesoPrueba->PID), nombreArchivo, true, false, false);
+    ^
+../src/testing/testearPrimitivasFunciones.c:209:5: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char * (*)[50]’ [-Wformat=]
+     scanf("%s", &nombreArchivo);
+     ^
+../src/testing/testearPrimitivasFunciones.c:210:4: warning: passing argument 1 of ‘strcmp’ from incompatible pointer type [enabled by default]
+    } while (strcmp(nombreArchivo,"")==0);
+    ^
+In file included from ../src/testing/testearPrimitivasFunciones.c:4:0:
+/usr/include/string.h:144:12: note: expected ‘const char *’ but argument is of type ‘char **’
+ extern int strcmp (const char *__s1, const char *__s2)
+            ^
+../src/testing/testearPrimitivasFunciones.c:218:4: warning: implicit declaration of function ‘leer_archivo’ [-Wimplicit-function-declaration]
+    leer_archivo(string_itoa(procesoPrueba->PID), valor);
+    ^
+../src/testing/testearPrimitivasFunciones.c:225:5: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char * (*)[500]’ [-Wformat=]
+     scanf("%s", &filaArchivo);
+     ^
+../src/testing/testearPrimitivasFunciones.c:226:4: warning: passing argument 1 of ‘strcmp’ from incompatible pointer type [enabled by default]
+    } while (strcmp(filaArchivo,"")==0);
+    ^
+In file included from ../src/testing/testearPrimitivasFunciones.c:4:0:
+/usr/include/string.h:144:12: note: expected ‘const char *’ but argument is of type ‘char **’
+ extern int strcmp (const char *__s1, const char *__s2)
+            ^
+../src/testing/testearPrimitivasFunciones.c:227:4: warning: implicit declaration of function ‘escribir_archivo’ [-Wimplicit-function-declaration]
+    escribir_archivo(string_itoa(procesoPrueba->PID), FD, strlen(filaArchivo), filaArchivo);
+    ^
+../src/testing/testearPrimitivasFunciones.c:227:4: warning: passing argument 1 of ‘strlen’ from incompatible pointer type [enabled by default]
+In file included from ../src/testing/testearPrimitivasFunciones.c:4:0:
+/usr/include/string.h:399:15: note: expected ‘const char *’ but argument is of type ‘char **’
+ extern size_t strlen (const char *__s)
+               ^
+../src/testing/testearPrimitivasFunciones.c:236:4: warning: implicit declaration of function ‘mover_cursor_archivo’ [-Wimplicit-function-declaration]
+    mover_cursor_archivo(string_itoa(procesoPrueba->PID), nombreArchivo, valor);
+    ^
+../src/testing/testearPrimitivasFunciones.c:242:4: warning: implicit declaration of function ‘cerrar_archivo’ [-Wimplicit-function-declaration]
+    cerrar_archivo(string_itoa(procesoPrueba->PID), FD);
+    ^
+../src/testing/testearPrimitivasFunciones.c:233:8: warning: unused variable ‘tamanio’ [-Wunused-variable]
+    int tamanio;
+        ^
+../src/testing/testearPrimitivasFunciones.c:65:6: warning: unused variable ‘valor’ [-Wunused-variable]
+  int valor;
+      ^
+../src/testing/testearPrimitivasFunciones.c:64:7: warning: unused variable ‘nombreVariable’ [-Wunused-variable]
+  char nombreVariable[20];
+       ^
+Finished building: ../src/testing/testearPrimitivasFunciones.c
+ 
+Building file: ../src/testing/testingPCB.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/testingPCB.d" -MT"src/testing/testingPCB.d" -o "src/testing/testingPCB.o" "../src/testing/testingPCB.c"
+Finished building: ../src/testing/testingPCB.c
+ 
+Building file: ../src/procesador/Ejecucion.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/procesador/Ejecucion.d" -MT"src/procesador/Ejecucion.d" -o "src/procesador/Ejecucion.o" "../src/procesador/Ejecucion.c"
+../src/procesador/Ejecucion.c: In function ‘inicializar_contexto_ejecucion’:
+../src/procesador/Ejecucion.c:102:24: warning: assignment from incompatible pointer type [enabled by default]
+  kernel->AnSISOP_abrir = abrir_archivo;
+                        ^
+../src/procesador/Ejecucion.c:103:25: warning: assignment from incompatible pointer type [enabled by default]
+  kernel->AnSISOP_borrar = borrar_archivo;
+                         ^
+../src/procesador/Ejecucion.c:104:25: warning: assignment from incompatible pointer type [enabled by default]
+  kernel->AnSISOP_cerrar = cerrar_archivo;
+                         ^
+../src/procesador/Ejecucion.c:105:30: warning: assignment from incompatible pointer type [enabled by default]
+  kernel->AnSISOP_moverCursor = mover_cursor_archivo;
+                              ^
+../src/procesador/Ejecucion.c:106:27: warning: assignment from incompatible pointer type [enabled by default]
+  kernel->AnSISOP_escribir = escribir_archivo;
+                           ^
+../src/procesador/Ejecucion.c:107:23: warning: assignment from incompatible pointer type [enabled by default]
+  kernel->AnSISOP_leer = leer_archivo;
+                       ^
+Finished building: ../src/procesador/Ejecucion.c
+ 
+Building file: ../src/primitivas/FuncionesAuxiliares.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/primitivas/FuncionesAuxiliares.d" -MT"src/primitivas/FuncionesAuxiliares.d" -o "src/primitivas/FuncionesAuxiliares.o" "../src/primitivas/FuncionesAuxiliares.c"
+Finished building: ../src/primitivas/FuncionesAuxiliares.c
+ 
+Building file: ../src/primitivas/IndiceCodigo.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/primitivas/IndiceCodigo.d" -MT"src/primitivas/IndiceCodigo.d" -o "src/primitivas/IndiceCodigo.o" "../src/primitivas/IndiceCodigo.c"
+Finished building: ../src/primitivas/IndiceCodigo.c
+ 
+Building file: ../src/primitivas/PrimitivasFunciones.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/primitivas/PrimitivasFunciones.d" -MT"src/primitivas/PrimitivasFunciones.d" -o "src/primitivas/PrimitivasFunciones.o" "../src/primitivas/PrimitivasFunciones.c"
+../src/primitivas/PrimitivasFunciones.c: In function ‘RETORNAR’:
+../src/primitivas/PrimitivasFunciones.c:187:2: warning: passing argument 1 of ‘serializarMemoriaDinamica’ makes pointer from integer without a cast [enabled by default]
+  ASIGNAR_VARIABLE(serializarMemoriaDinamica(stackDeFuncion->retVar->pagina,stackDeFuncion->retVar->byte_inicial), variableRetorno);
+  ^
+In file included from ../src/primitivas/PrimitivasFunciones.c:14:0:
+../src/primitivas/FuncionesAuxiliares.h:15:11: note: expected ‘char *’ but argument is of type ‘uint32_t’
+ t_puntero serializarMemoriaDinamica(char* pagina, char* byteInicial);
+           ^
+../src/primitivas/PrimitivasFunciones.c:187:2: warning: passing argument 2 of ‘serializarMemoriaDinamica’ makes pointer from integer without a cast [enabled by default]
+  ASIGNAR_VARIABLE(serializarMemoriaDinamica(stackDeFuncion->retVar->pagina,stackDeFuncion->retVar->byte_inicial), variableRetorno);
+  ^
+In file included from ../src/primitivas/PrimitivasFunciones.c:14:0:
+../src/primitivas/FuncionesAuxiliares.h:15:11: note: expected ‘char *’ but argument is of type ‘uint32_t’
+ t_puntero serializarMemoriaDinamica(char* pagina, char* byteInicial);
+           ^
+../src/primitivas/PrimitivasFunciones.c: In function ‘LLAMAR_CON_RETORNO’:
+../src/primitivas/PrimitivasFunciones.c:221:25: warning: assignment makes pointer from integer without a cast [enabled by default]
+  stackDeFuncion->retVar = direccionRetorno;
+                         ^
+Finished building: ../src/primitivas/PrimitivasFunciones.c
+ 
+Building file: ../src/primitivas/Stack.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/primitivas/Stack.d" -MT"src/primitivas/Stack.d" -o "src/primitivas/Stack.o" "../src/primitivas/Stack.c"
+../src/primitivas/Stack.c: In function ‘asingar_espacio_memoria_variable’:
+../src/primitivas/Stack.c:192:2: warning: implicit declaration of function ‘string_itoa’ [-Wimplicit-function-declaration]
+  almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(byte_inicial), string_itoa(TAMANIO_VARIABLE_D), "    ");
+  ^
+../src/primitivas/Stack.c:192:2: warning: passing argument 1 of ‘almacenar_Bytes_de_Pagina’ makes pointer from integer without a cast [enabled by default]
+In file included from ../src/primitivas/Stack.c:6:0:
+../src/primitivas/../interfaz/InterfazMemoria.h:16:7: note: expected ‘char *’ but argument is of type ‘int’
+ char* almacenar_Bytes_de_Pagina(char* PID, char* pagina, char* byteInicial, char* longitud, char* texto);
+       ^
+../src/primitivas/Stack.c:192:2: warning: passing argument 2 of ‘almacenar_Bytes_de_Pagina’ makes pointer from integer without a cast [enabled by default]
+  almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(byte_inicial), string_itoa(TAMANIO_VARIABLE_D), "    ");
+  ^
+In file included from ../src/primitivas/Stack.c:6:0:
+../src/primitivas/../interfaz/InterfazMemoria.h:16:7: note: expected ‘char *’ but argument is of type ‘int’
+ char* almacenar_Bytes_de_Pagina(char* PID, char* pagina, char* byteInicial, char* longitud, char* texto);
+       ^
+../src/primitivas/Stack.c:192:2: warning: passing argument 3 of ‘almacenar_Bytes_de_Pagina’ makes pointer from integer without a cast [enabled by default]
+  almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(byte_inicial), string_itoa(TAMANIO_VARIABLE_D), "    ");
+  ^
+In file included from ../src/primitivas/Stack.c:6:0:
+../src/primitivas/../interfaz/InterfazMemoria.h:16:7: note: expected ‘char *’ but argument is of type ‘int’
+ char* almacenar_Bytes_de_Pagina(char* PID, char* pagina, char* byteInicial, char* longitud, char* texto);
+       ^
+../src/primitivas/Stack.c:192:2: warning: passing argument 4 of ‘almacenar_Bytes_de_Pagina’ makes pointer from integer without a cast [enabled by default]
+  almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(byte_inicial), string_itoa(TAMANIO_VARIABLE_D), "    ");
+  ^
+In file included from ../src/primitivas/Stack.c:6:0:
+../src/primitivas/../interfaz/InterfazMemoria.h:16:7: note: expected ‘char *’ but argument is of type ‘int’
+ char* almacenar_Bytes_de_Pagina(char* PID, char* pagina, char* byteInicial, char* longitud, char* texto);
+       ^
+../src/primitivas/Stack.c: In function ‘obtener_Ultima_variable_declarada’:
+../src/primitivas/Stack.c:95:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/primitivas/Stack.c
+ 
+Building file: ../src/interfaz/InterfazKernel.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/interfaz/InterfazKernel.d" -MT"src/interfaz/InterfazKernel.d" -o "src/interfaz/InterfazKernel.o" "../src/interfaz/InterfazKernel.c"
+../src/interfaz/InterfazKernel.c: In function ‘recibir_PCB_de_kernel’:
+../src/interfaz/InterfazKernel.c:32:2: warning: statement with no effect [-Wunused-value]
+  for (i; i < list_size(pcb->codigo); i++) {
+  ^
+../src/interfaz/InterfazKernel.c:46:3: warning: statement with no effect [-Wunused-value]
+   for (x; x < list_size(e->argumentos); x++) {
+   ^
+../src/interfaz/InterfazKernel.c: In function ‘enviar_SYSCALL_wait_semaforo_a_kernel’:
+../src/interfaz/InterfazKernel.c:80:2: warning: passing argument 1 of ‘sem_wait’ from incompatible pointer type [enabled by default]
+  sem_wait(&mutex_wait_semaforo);
+  ^
+In file included from ../src/interfaz/InterfazKernel.c:5:0:
+/usr/include/semaphore.h:54:12: note: expected ‘union sem_t *’ but argument is of type ‘union sem_t **’
+ extern int sem_wait (sem_t *__sem);
+            ^
+../src/interfaz/InterfazKernel.c: In function ‘enviar_SYSCALL_solicitar_memoria_dinamica_a_kernel’:
+../src/interfaz/InterfazKernel.c:107:9: warning: unused variable ‘PIDR’ [-Wunused-variable]
+   char* PIDR = recibir_dato_serializado(servidor_kernel);
+         ^
+../src/interfaz/InterfazKernel.c: In function ‘enviar_SYSCALL_signal_semaforo_a_kernel’:
+../src/interfaz/InterfazKernel.c:97:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/interfaz/InterfazKernel.c
+ 
+Building file: ../src/interfaz/InterfazMemoria.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/interfaz/InterfazMemoria.d" -MT"src/interfaz/InterfazMemoria.d" -o "src/interfaz/InterfazMemoria.o" "../src/interfaz/InterfazMemoria.c"
+Finished building: ../src/interfaz/InterfazMemoria.c
+ 
+Building file: ../src/header/AppConfig.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/AppConfig.d" -MT"src/header/AppConfig.d" -o "src/header/AppConfig.o" "../src/header/AppConfig.c"
+../src/header/AppConfig.c: In function ‘inicializar_configuracion’:
+../src/header/AppConfig.c:31:4: warning: implicit declaration of function ‘strlen’ [-Wimplicit-function-declaration]
+    configuraciones.IP_KERNEL = malloc(strlen(config_get_string_value(config, "IP_KERNEL")) + 1);
+    ^
+../src/header/AppConfig.c:31:39: warning: incompatible implicit declaration of built-in function ‘strlen’ [enabled by default]
+    configuraciones.IP_KERNEL = malloc(strlen(config_get_string_value(config, "IP_KERNEL")) + 1);
+                                       ^
+../src/header/AppConfig.c:32:4: warning: implicit declaration of function ‘strcpy’ [-Wimplicit-function-declaration]
+    strcpy(configuraciones.IP_KERNEL, config_get_string_value(config, "IP_KERNEL"));
+    ^
+../src/header/AppConfig.c:32:4: warning: incompatible implicit declaration of built-in function ‘strcpy’ [enabled by default]
+../src/header/AppConfig.c:37:40: warning: incompatible implicit declaration of built-in function ‘strlen’ [enabled by default]
+    configuraciones.IP_MEMORIA = malloc(strlen(config_get_string_value(config, "IP_MEMORIA")) + 1);
+                                        ^
+../src/header/AppConfig.c:38:4: warning: incompatible implicit declaration of built-in function ‘strcpy’ [enabled by default]
+    strcpy(configuraciones.IP_MEMORIA, config_get_string_value(config, "IP_MEMORIA"));
+    ^
+Finished building: ../src/header/AppConfig.c
+ 
+Building file: ../src/header/PCB.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/PCB.d" -MT"src/header/PCB.d" -o "src/header/PCB.o" "../src/header/PCB.c"
+../src/header/PCB.c: In function ‘enviar_estructura_serializada’:
+../src/header/PCB.c:18:2: warning: implicit declaration of function ‘send’ [-Wimplicit-function-declaration]
+  send(conexion, tamanio_dato, sizeof(uint32_t), 0);
+  ^
+../src/header/PCB.c: In function ‘recibir_estructura_serializada’:
+../src/header/PCB.c:24:2: warning: implicit declaration of function ‘recv’ [-Wimplicit-function-declaration]
+  int bytes_recibidos = recv(socket_conexion, tamanio_dato, sizeof(uint32_t), 0);
+  ^
+../src/header/PCB.c:24:6: warning: unused variable ‘bytes_recibidos’ [-Wunused-variable]
+  int bytes_recibidos = recv(socket_conexion, tamanio_dato, sizeof(uint32_t), 0);
+      ^
+../src/header/PCB.c: In function ‘serializar_con_header’:
+../src/header/PCB.c:165:3: warning: statement with no effect [-Wunused-value]
+   for(i; i < count_lista; i++){
+   ^
+../src/header/PCB.c:212:3: warning: statement with no effect [-Wunused-value]
+   for(i; i < count_lista; i++){
+   ^
+../src/header/PCB.c: In function ‘deserializar_con_header’:
+../src/header/PCB.c:274:3: warning: statement with no effect [-Wunused-value]
+   for(i; i < count_lista * sizeof(IndiceCodigo); i+=sizeof(IndiceCodigo)){
+   ^
+../src/header/PCB.c:311:9: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    for(i, j=0; j < length_argumentos * sizeof(Argumento);j+=sizeof(Argumento), i+=sizeof(Argumento)){
+         ^
+../src/header/PCB.c:320:9: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    for(i, j=0; j < length_variables * sizeof(Variable); j+=sizeof(Variable), i+=sizeof(Variable)){
+         ^
+../src/header/PCB.c: In function ‘enviar_pcb’:
+../src/header/PCB.c:88:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/header/PCB.c
+ 
+Building file: ../src/general/Semaforo.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/general/Semaforo.d" -MT"src/general/Semaforo.d" -o "src/general/Semaforo.o" "../src/general/Semaforo.c"
+../src/general/Semaforo.c: In function ‘inicializar_semaforo_en’:
+../src/general/Semaforo.c:9:6: warning: unused variable ‘r’ [-Wunused-variable]
+  int r = sem_init(variable_semaforo, 0, value); //-->Inicializo un semaforo
+      ^
+Finished building: ../src/general/Semaforo.c
+ 
+Building file: ../src/general/Socket.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/general/Socket.d" -MT"src/general/Socket.d" -o "src/general/Socket.o" "../src/general/Socket.c"
+../src/general/Socket.c: In function ‘recibir_dato_serializado’:
+../src/general/Socket.c:76:3: warning: implicit declaration of function ‘string_substring’ [-Wimplicit-function-declaration]
+   resultado= string_substring(datoNuevo,0,atoi(tamanio_dato));
+   ^
+../src/general/Socket.c:76:12: warning: assignment makes pointer from integer without a cast [enabled by default]
+   resultado= string_substring(datoNuevo,0,atoi(tamanio_dato));
+            ^
+../src/general/Socket.c:89:2: warning: return makes pointer from integer without a cast [enabled by default]
+  return string_substring(&dato,0,atoi(tamanio_dato));
+  ^
+../src/general/Socket.c: In function ‘atender_clientes’:
+../src/general/Socket.c:103:2: warning: passing argument 3 of ‘pthread_create’ from incompatible pointer type [enabled by default]
+  pthread_create(&mihilo1, NULL, f, servidor);
+  ^
+In file included from ../src/general/Socket.c:13:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * (*)(void *)’ but argument is of type ‘void (*)(int)’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/general/Socket.c:103:2: warning: passing argument 4 of ‘pthread_create’ makes pointer from integer without a cast [enabled by default]
+  pthread_create(&mihilo1, NULL, f, servidor);
+  ^
+In file included from ../src/general/Socket.c:13:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * __restrict__’ but argument is of type ‘int’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/general/Socket.c:104:2: warning: passing argument 1 of ‘pthread_detach’ makes integer from pointer without a cast [enabled by default]
+  pthread_detach(&mihilo1);
+  ^
+In file included from ../src/general/Socket.c:13:0:
+/usr/include/pthread.h:282:12: note: expected ‘pthread_t’ but argument is of type ‘pthread_t *’
+ extern int pthread_detach (pthread_t __th) __THROW;
+            ^
+Finished building: ../src/general/Socket.c
+ 
+Building file: ../src/general/funcionesUtiles.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/general/funcionesUtiles.d" -MT"src/general/funcionesUtiles.d" -o "src/general/funcionesUtiles.o" "../src/general/funcionesUtiles.c"
+Finished building: ../src/general/funcionesUtiles.c
+ 
+Building file: ../src/CPU.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/CPU.d" -MT"src/CPU.d" -o "src/CPU.o" "../src/CPU.c"
+../src/CPU.c:28:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void testear_planificacion(servidor_kernel); //borrame
+ ^
+../src/CPU.c: In function ‘main’:
+../src/CPU.c:32:2: warning: passing argument 1 of ‘inicializar_semaforo_en’ from incompatible pointer type [enabled by default]
+  inicializar_semaforo_en(&mutex_wait_semaforo, 0);
+  ^
+In file included from ../src/CPU.c:17:0:
+../src/general/Semaforo.h:15:6: note: expected ‘union sem_t *’ but argument is of type ‘union sem_t **’
+ void inicializar_semaforo_en(sem_t* variable_semaforo, int value);
+      ^
+../src/CPU.c:63:4: warning: passing argument 1 of ‘sem_post’ from incompatible pointer type [enabled by default]
+    sem_post(&mutex_wait_semaforo);
+    ^
+In file included from ../src/general/Semaforo.h:11:0,
+                 from ../src/CPU.c:17:
+/usr/include/semaphore.h:69:12: note: expected ‘union sem_t *’ but argument is of type ‘union sem_t **’
+ extern int sem_post (sem_t *__sem) __THROWNL;
+            ^
+../src/CPU.c:67:4: warning: passing argument 1 of ‘sem_post’ from incompatible pointer type [enabled by default]
+    sem_post(&mutex_wait_semaforo);
+    ^
+In file included from ../src/general/Semaforo.h:11:0,
+                 from ../src/CPU.c:17:
+/usr/include/semaphore.h:69:12: note: expected ‘union sem_t *’ but argument is of type ‘union sem_t **’
+ extern int sem_post (sem_t *__sem) __THROWNL;
+            ^
+../src/CPU.c: In function ‘testear_planificacion’:
+../src/CPU.c:89:2: warning: implicit declaration of function ‘enviar_SYSCALL_wait_semaforo_a_kernel’ [-Wimplicit-function-declaration]
+  int status = enviar_SYSCALL_wait_semaforo_a_kernel("mutex1", pcb);
+  ^
+../src/CPU.c:89:6: warning: unused variable ‘status’ [-Wunused-variable]
+  int status = enviar_SYSCALL_wait_semaforo_a_kernel("mutex1", pcb);
+      ^
+Finished building: ../src/CPU.c
+ 
+Building target: SistemaCPU
+Invoking: GCC C Linker
+gcc  -o "SistemaCPU"  ./src/testing/testearPrimitivasFunciones.o ./src/testing/testingPCB.o  ./src/procesador/Ejecucion.o  ./src/primitivas/FuncionesAuxiliares.o ./src/primitivas/IndiceCodigo.o ./src/primitivas/PrimitivasFunciones.o ./src/primitivas/Stack.o  ./src/interfaz/InterfazKernel.o ./src/interfaz/InterfazMemoria.o  ./src/header/AppConfig.o ./src/header/PCB.o  ./src/general/Semaforo.o ./src/general/Socket.o ./src/general/funcionesUtiles.o  ./src/CPU.o   -lparser-ansisop -lpthread -lcommons
+Finished building target: SistemaCPU
+ 
+19:49:13 **** Build of configuration Debug for project SistemaConsola ****
+make all 
+make: No se hace nada para «all».
+19:49:13 **** Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+Building file: ../src/header/AppConfig.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/AppConfig.d" -MT"src/header/AppConfig.d" -o "src/header/AppConfig.o" "../src/header/AppConfig.c"
+Finished building: ../src/header/AppConfig.c
+ 
+Building file: ../src/header/Socket.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/Socket.d" -MT"src/header/Socket.d" -o "src/header/Socket.o" "../src/header/Socket.c"
+../src/header/Socket.c: In function ‘recibir_dato_serializado’:
+../src/header/Socket.c:63:2: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]
+  char* tamanio_dato = malloc(4);
+  ^
+../src/header/Socket.c:63:23: warning: incompatible implicit declaration of built-in function ‘malloc’ [enabled by default]
+  char* tamanio_dato = malloc(4);
+                       ^
+../src/header/Socket.c:67:2: warning: implicit declaration of function ‘atoi’ [-Wimplicit-function-declaration]
+  char* dato = malloc(atoi(tamanio_dato));
+  ^
+../src/header/Socket.c: In function ‘enviar_dato_serializado’:
+../src/header/Socket.c:76:19: warning: incompatible implicit declaration of built-in function ‘malloc’ [enabled by default]
+  char * tamanio = malloc(4);
+                   ^
+../src/header/Socket.c: In function ‘atender_clientes’:
+../src/header/Socket.c:85:2: warning: passing argument 3 of ‘pthread_create’ from incompatible pointer type [enabled by default]
+  pthread_create(&mihilo1, NULL, f, servidor);
+  ^
+In file included from ../src/header/Socket.c:12:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * (*)(void *)’ but argument is of type ‘void (*)(int)’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/header/Socket.c:85:2: warning: passing argument 4 of ‘pthread_create’ makes pointer from integer without a cast [enabled by default]
+  pthread_create(&mihilo1, NULL, f, servidor);
+  ^
+In file included from ../src/header/Socket.c:12:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * __restrict__’ but argument is of type ‘int’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/header/Socket.c:86:2: warning: passing argument 1 of ‘pthread_detach’ makes integer from pointer without a cast [enabled by default]
+  pthread_detach(&mihilo1);
+  ^
+In file included from ../src/header/Socket.c:12:0:
+/usr/include/pthread.h:282:12: note: expected ‘pthread_t’ but argument is of type ‘pthread_t *’
+ extern int pthread_detach (pthread_t __th) __THROW;
+            ^
+Finished building: ../src/header/Socket.c
+ 
+Building file: ../src/FILE_SYSTEM.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FILE_SYSTEM.d" -MT"src/FILE_SYSTEM.d" -o "src/FILE_SYSTEM.o" "../src/FILE_SYSTEM.c"
+../src/FILE_SYSTEM.c: In function ‘main’:
+../src/FILE_SYSTEM.c:28:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+  close(servidor);
+  ^
+../src/FILE_SYSTEM.c: In function ‘escuchar_Conexiones_Kernel’:
+../src/FILE_SYSTEM.c:37:4: warning: implicit declaration of function ‘strcmp’ [-Wimplicit-function-declaration]
+    if (strcmp(codigo_IDENTIFICACION, "KERNEL") == 0) {
+    ^
+../src/FILE_SYSTEM.c:38:5: warning: implicit declaration of function ‘pthread_create’ [-Wimplicit-function-declaration]
+     pthread_create(&mihilo1, NULL, &CU_Recibir_Conexiones_Kernel, cliente);
+     ^
+../src/FILE_SYSTEM.c:39:5: warning: implicit declaration of function ‘pthread_detach’ [-Wimplicit-function-declaration]
+     pthread_detach(&mihilo1);
+     ^
+Finished building: ../src/FILE_SYSTEM.c
+ 
+Building file: ../src/InterfazKernel.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InterfazKernel.d" -MT"src/InterfazKernel.d" -o "src/InterfazKernel.o" "../src/InterfazKernel.c"
+../src/InterfazKernel.c:12:1: error: stray ‘\303’ in program
+ Parámetros: [Path]
+ ^
+../src/InterfazKernel.c:12:1: error: stray ‘\241’ in program
+../src/InterfazKernel.c:12:1: error: unknown type name ‘Par’
+../src/InterfazKernel.c:12:12: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘:’ token
+ Parámetros: [Path]
+            ^
+../src/InterfazKernel.c:13:1: error: stray ‘\303’ in program
+ Cuando el Proceso Kernel reciba la operación de abrir un archivo deberá validar que el
+ ^
+../src/InterfazKernel.c:13:1: error: stray ‘\263’ in program
+../src/InterfazKernel.c:13:1: error: stray ‘\303’ in program
+../src/InterfazKernel.c:13:1: error: stray ‘\241’ in program
+../src/InterfazKernel.c:16:1: error: stray ‘\303’ in program
+ Parámetros: [Path]
+ ^
+../src/InterfazKernel.c:16:1: error: stray ‘\241’ in program
+../src/InterfazKernel.c:17:1: error: stray ‘\303’ in program
+ Cuando el Proceso Kernel reciba la operación de abrir un archivo deberá, en caso que el
+ ^
+../src/InterfazKernel.c:17:1: error: stray ‘\263’ in program
+../src/InterfazKernel.c:17:1: error: stray ‘\303’ in program
+../src/InterfazKernel.c:17:1: error: stray ‘\241’ in program
+../src/InterfazKernel.c:18:1: error: stray ‘\303’ in program
+ archivo no exista y este sea abierto en modo de creación (“c”), llamar a esta operación que
+ ^
+../src/InterfazKernel.c:18:1: error: stray ‘\263’ in program
+../src/InterfazKernel.c:18:1: error: stray ‘\342’ in program
+../src/InterfazKernel.c:18:1: error: stray ‘\200’ in program
+../src/InterfazKernel.c:18:1: error: stray ‘\234’ in program
+../src/InterfazKernel.c:18:1: error: stray ‘\342’ in program
+../src/InterfazKernel.c:18:1: error: stray ‘\200’ in program
+../src/InterfazKernel.c:18:1: error: stray ‘\235’ in program
+../src/InterfazKernel.c:18:1: error: stray ‘\303’ in program
+../src/InterfazKernel.c:18:1: error: stray ‘\263’ in program
+../src/InterfazKernel.c:19:1: error: stray ‘\303’ in program
+ creará el archivo dentro del path solicitado. Por default todo archivo creado se le debe
+ ^
+../src/InterfazKernel.c:19:1: error: stray ‘\241’ in program
+../src/InterfazKernel.c:22:1: error: stray ‘\303’ in program
+ Parámetros: [Path]
+ ^
+../src/InterfazKernel.c:22:1: error: stray ‘\241’ in program
+../src/InterfazKernel.c:23:1: error: stray ‘\303’ in program
+ Borrará el archivo en el path indicado, eliminando su archivo de metadata y marcando los
+ ^
+../src/InterfazKernel.c:23:1: error: stray ‘\241’ in program
+../src/InterfazKernel.c:26:1: error: stray ‘\303’ in program
+ Parámetros: [Path, Offset, Size]
+ ^
+../src/InterfazKernel.c:26:1: error: stray ‘\241’ in program
+../src/InterfazKernel.c:27:1: error: stray ‘\303’ in program
+ Ante un pedido de datos el File System devolverá del path enviado por parámetro, la
+ ^
+../src/InterfazKernel.c:27:1: error: stray ‘\241’ in program
+../src/InterfazKernel.c:27:1: error: stray ‘\303’ in program
+../src/InterfazKernel.c:27:1: error: stray ‘\241’ in program
+../src/InterfazKernel.c:29:1: error: stray ‘\342’ in program
+ se encuentre abierto en modo lectura (“r”).
+ ^
+../src/InterfazKernel.c:29:1: error: stray ‘\200’ in program
+../src/InterfazKernel.c:29:1: error: stray ‘\234’ in program
+../src/InterfazKernel.c:29:1: error: stray ‘\342’ in program
+../src/InterfazKernel.c:29:1: error: stray ‘\200’ in program
+../src/InterfazKernel.c:29:1: error: stray ‘\235’ in program
+../src/InterfazKernel.c:31:1: error: stray ‘\303’ in program
+ Parámetros: [Path, Offset, Size, Buffer]
+ ^
+../src/InterfazKernel.c:31:1: error: stray ‘\241’ in program
+../src/InterfazKernel.c:32:1: error: stray ‘\303’ in program
+ Ante un pedido de escritura el File System almacenará en el path enviado por parámetro, los
+ ^
+../src/InterfazKernel.c:32:1: error: stray ‘\241’ in program
+../src/InterfazKernel.c:32:1: error: stray ‘\303’ in program
+../src/InterfazKernel.c:32:1: error: stray ‘\241’ in program
+../src/InterfazKernel.c:34:1: error: stray ‘\342’ in program
+ archivo se encuentre abierto en modo escritura (“w”).
+ ^
+../src/InterfazKernel.c:34:1: error: stray ‘\200’ in program
+../src/InterfazKernel.c:34:1: error: stray ‘\234’ in program
+../src/InterfazKernel.c:34:1: error: stray ‘\342’ in program
+../src/InterfazKernel.c:34:1: error: stray ‘\200’ in program
+../src/InterfazKernel.c:34:1: error: stray ‘\235’ in program
+../src/InterfazKernel.c: In function ‘validar_archivo’:
+../src/InterfazKernel.c:11:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/InterfazKernel.o] Error 1
+19:49:14 **** Build of configuration Debug for project SistemaKERNEL ****
+make all 
+Building file: ../src/testing/TestingCapaFileSystem.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/TestingCapaFileSystem.d" -MT"src/testing/TestingCapaFileSystem.d" -o "src/testing/TestingCapaFileSystem.o" "../src/testing/TestingCapaFileSystem.c"
+In file included from ../src/testing/TestingCapaFileSystem.c:8:0:
+../src/testing/../capaFILESYSTEM/GestionArchivoFuncAux.h:18:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void abrir_archivo(clienteCPU);
+ ^
+../src/testing/../capaFILESYSTEM/GestionArchivoFuncAux.h:19:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void cerrar_archivo(clienteCPU);
+ ^
+../src/testing/../capaFILESYSTEM/GestionArchivoFuncAux.h:20:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void leer_archivo(clienteCPU);
+ ^
+../src/testing/../capaFILESYSTEM/GestionArchivoFuncAux.h:21:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void borrar_archivo(clienteCPU);
+ ^
+../src/testing/../capaFILESYSTEM/GestionArchivoFuncAux.h:22:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void mover_cursor_archivo(clienteCPU);
+ ^
+../src/testing/TestingCapaFileSystem.c: In function ‘mostrar_menu_testing_filesystem’:
+../src/testing/TestingCapaFileSystem.c:65:3: warning: implicit declaration of function ‘validarNumeroInput’ [-Wimplicit-function-declaration]
+   opcion = validarNumeroInput(1, 14);
+   ^
+../src/testing/TestingCapaFileSystem.c:70:4: warning: implicit declaration of function ‘TEST_Manual_CU_ABRIR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Manual_CU_ABRIR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:73:4: warning: implicit declaration of function ‘TEST_Manual_CU_MOVER_CURSOR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Manual_CU_MOVER_CURSOR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:76:4: warning: implicit declaration of function ‘TEST_Manual_CU_LEER_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Manual_CU_LEER_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:79:4: warning: implicit declaration of function ‘TEST_Manual_CU_ESCRIBIR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Manual_CU_ESCRIBIR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:82:4: warning: implicit declaration of function ‘TEST_Manual_CU_CERRAR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Manual_CU_CERRAR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:85:4: warning: implicit declaration of function ‘TEST_Manual_CU_BORRAR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Manual_CU_BORRAR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:88:4: warning: implicit declaration of function ‘TEST_Auto_CU_ABRIR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Auto_CU_ABRIR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:91:4: warning: implicit declaration of function ‘TEST_Auto_CU_MOVER_CURSOR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Auto_CU_MOVER_CURSOR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:94:4: warning: implicit declaration of function ‘TEST_Auto_CU_LEER_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Auto_CU_LEER_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:97:4: warning: implicit declaration of function ‘TEST_Auto_CU_ESCRIBIR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Auto_CU_ESCRIBIR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:100:4: warning: implicit declaration of function ‘TEST_Auto_CU_CERRAR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Auto_CU_CERRAR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:103:4: warning: implicit declaration of function ‘TEST_Auto_CU_BORRAR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Auto_CU_BORRAR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:106:4: warning: implicit declaration of function ‘TEST_VER_TABLA_PROCESO’ [-Wimplicit-function-declaration]
+    TEST_VER_TABLA_PROCESO();
+    ^
+../src/testing/TestingCapaFileSystem.c: In function ‘recibir_INPUT’:
+../src/testing/TestingCapaFileSystem.c:119:3: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char (*)[250]’ [-Wformat=]
+   scanf("%s", &dato);
+   ^
+../src/testing/TestingCapaFileSystem.c: At top level:
+../src/testing/TestingCapaFileSystem.c:124:6: warning: conflicting types for ‘TEST_Manual_CU_ABRIR_ARCHIVO’ [enabled by default]
+ void TEST_Manual_CU_ABRIR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:70:4: note: previous implicit declaration of ‘TEST_Manual_CU_ABRIR_ARCHIVO’ was here
+    TEST_Manual_CU_ABRIR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:135:6: warning: conflicting types for ‘TEST_Manual_CU_MOVER_CURSOR_ARCHIVO’ [enabled by default]
+ void TEST_Manual_CU_MOVER_CURSOR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:73:4: note: previous implicit declaration of ‘TEST_Manual_CU_MOVER_CURSOR_ARCHIVO’ was here
+    TEST_Manual_CU_MOVER_CURSOR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:143:6: warning: conflicting types for ‘TEST_Manual_CU_LEER_ARCHIVO’ [enabled by default]
+ void TEST_Manual_CU_LEER_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:76:4: note: previous implicit declaration of ‘TEST_Manual_CU_LEER_ARCHIVO’ was here
+    TEST_Manual_CU_LEER_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:151:6: warning: conflicting types for ‘TEST_Manual_CU_ESCRIBIR_ARCHIVO’ [enabled by default]
+ void TEST_Manual_CU_ESCRIBIR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:79:4: note: previous implicit declaration of ‘TEST_Manual_CU_ESCRIBIR_ARCHIVO’ was here
+    TEST_Manual_CU_ESCRIBIR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:160:6: warning: conflicting types for ‘TEST_Manual_CU_CERRAR_ARCHIVO’ [enabled by default]
+ void TEST_Manual_CU_CERRAR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:82:4: note: previous implicit declaration of ‘TEST_Manual_CU_CERRAR_ARCHIVO’ was here
+    TEST_Manual_CU_CERRAR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:166:6: warning: conflicting types for ‘TEST_Manual_CU_BORRAR_ARCHIVO’ [enabled by default]
+ void TEST_Manual_CU_BORRAR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:85:4: note: previous implicit declaration of ‘TEST_Manual_CU_BORRAR_ARCHIVO’ was here
+    TEST_Manual_CU_BORRAR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:173:6: warning: conflicting types for ‘TEST_Auto_CU_ABRIR_ARCHIVO’ [enabled by default]
+ void TEST_Auto_CU_ABRIR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:88:4: note: previous implicit declaration of ‘TEST_Auto_CU_ABRIR_ARCHIVO’ was here
+    TEST_Auto_CU_ABRIR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:188:6: warning: conflicting types for ‘TEST_Auto_CU_MOVER_CURSOR_ARCHIVO’ [enabled by default]
+ void TEST_Auto_CU_MOVER_CURSOR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:91:4: note: previous implicit declaration of ‘TEST_Auto_CU_MOVER_CURSOR_ARCHIVO’ was here
+    TEST_Auto_CU_MOVER_CURSOR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:191:6: warning: conflicting types for ‘TEST_Auto_CU_LEER_ARCHIVO’ [enabled by default]
+ void TEST_Auto_CU_LEER_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:94:4: note: previous implicit declaration of ‘TEST_Auto_CU_LEER_ARCHIVO’ was here
+    TEST_Auto_CU_LEER_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:194:6: warning: conflicting types for ‘TEST_Auto_CU_ESCRIBIR_ARCHIVO’ [enabled by default]
+ void TEST_Auto_CU_ESCRIBIR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:97:4: note: previous implicit declaration of ‘TEST_Auto_CU_ESCRIBIR_ARCHIVO’ was here
+    TEST_Auto_CU_ESCRIBIR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:197:6: warning: conflicting types for ‘TEST_Auto_CU_CERRAR_ARCHIVO’ [enabled by default]
+ void TEST_Auto_CU_CERRAR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:100:4: note: previous implicit declaration of ‘TEST_Auto_CU_CERRAR_ARCHIVO’ was here
+    TEST_Auto_CU_CERRAR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:200:6: warning: conflicting types for ‘TEST_Auto_CU_BORRAR_ARCHIVO’ [enabled by default]
+ void TEST_Auto_CU_BORRAR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:103:4: note: previous implicit declaration of ‘TEST_Auto_CU_BORRAR_ARCHIVO’ was here
+    TEST_Auto_CU_BORRAR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:204:6: warning: conflicting types for ‘TEST_VER_TABLA_PROCESO’ [enabled by default]
+ void TEST_VER_TABLA_PROCESO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:106:4: note: previous implicit declaration of ‘TEST_VER_TABLA_PROCESO’ was here
+    TEST_VER_TABLA_PROCESO();
+    ^
+Finished building: ../src/testing/TestingCapaFileSystem.c
+ 
+Building file: ../src/testing/TestingGeneral.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/TestingGeneral.d" -MT"src/testing/TestingGeneral.d" -o "src/testing/TestingGeneral.o" "../src/testing/TestingGeneral.c"
+In file included from ../src/testing/TestingGeneral.c:15:0:
+../src/testing/../planificacion/Planificacion.h:23:1: error: expected ‘,’ or ‘;’ before ‘static’
+ static const char EXEC[] = "EXEC";
+ ^
+../src/testing/TestingGeneral.c: In function ‘mostrar_menu_testing_general’:
+../src/testing/TestingGeneral.c:37:4: warning: passing argument 1 of ‘crear_Proceso_en_tabla’ makes integer from pointer without a cast [enabled by default]
+    crear_Proceso_en_tabla(string_itoa(pcb_nuevo->PID));
+    ^
+In file included from ../src/testing/TestingGeneral.c:7:0:
+../src/testing/../administrarPCB/EstadisticaProceso.h:32:6: note: expected ‘uint32_t’ but argument is of type ‘char *’
+ void crear_Proceso_en_tabla(uint32_t PID);
+      ^
+../src/testing/TestingGeneral.c:62:4: warning: implicit declaration of function ‘serializar_con_header’ [-Wimplicit-function-declaration]
+    char * result = serializar_con_header(lista, "LISTA_CODIGO");
+    ^
+../src/testing/TestingGeneral.c:62:20: warning: initialization makes pointer from integer without a cast [enabled by default]
+    char * result = serializar_con_header(lista, "LISTA_CODIGO");
+                    ^
+../src/testing/TestingGeneral.c:64:4: warning: implicit declaration of function ‘deserializar_con_header’ [-Wimplicit-function-declaration]
+    deserializar_con_header(result, "LISTA_CODIGO");
+    ^
+../src/testing/TestingGeneral.c:86:4: warning: implicit declaration of function ‘hardcodear_pcb’ [-Wimplicit-function-declaration]
+    PCB * pcb = hardcodear_pcb();
+    ^
+../src/testing/TestingGeneral.c:86:16: warning: initialization makes pointer from integer without a cast [enabled by default]
+    PCB * pcb = hardcodear_pcb();
+                ^
+../src/testing/TestingGeneral.c:87:4: warning: implicit declaration of function ‘enviar_pcb_deb’ [-Wimplicit-function-declaration]
+    enviar_pcb_deb(pcb);
+    ^
+../src/testing/TestingGeneral.c:90:16: warning: initialization makes pointer from integer without a cast [enabled by default]
+    PCB * pcb = hardcodear_pcb();
+                ^
+../src/testing/TestingGeneral.c:99:8: warning: unused variable ‘debugeame’ [-Wunused-variable]
+    int debugeame = 111;
+        ^
+make: *** [src/testing/TestingGeneral.o] Error 1
+19:49:14 **** Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+Building file: ../src/testing/PruebasUnitarias.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/PruebasUnitarias.d" -MT"src/testing/PruebasUnitarias.d" -o "src/testing/PruebasUnitarias.o" "../src/testing/PruebasUnitarias.c"
+Finished building: ../src/testing/PruebasUnitarias.c
+ 
+Building file: ../src/testing/TestingMemoriaCache.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/TestingMemoriaCache.d" -MT"src/testing/TestingMemoriaCache.d" -o "src/testing/TestingMemoriaCache.o" "../src/testing/TestingMemoriaCache.c"
+../src/testing/TestingMemoriaCache.c: In function ‘cargar_paginas_de_proceso’:
+../src/testing/TestingMemoriaCache.c:17:3: warning: passing argument 2 of ‘almacenar_bytes_de_una_pagina’ makes integer from pointer without a cast [enabled by default]
+   almacenar_bytes_de_una_pagina(PID, string_itoa((i + paginaInicial)), "0", string_itoa(strlen(contenidoDinamico)), contenidoDinamico,true);
+   ^
+In file included from ../src/testing/TestingMemoriaCache.c:3:0:
+../src/testing/../header/MemoriaPrincipal.h:26:7: note: expected ‘int’ but argument is of type ‘char *’
+ char* almacenar_bytes_de_una_pagina(char PID[4], int pagina, int byteInicial, int longitud, char* contenido, bool cacheIr );
+       ^
+../src/testing/TestingMemoriaCache.c:17:3: warning: passing argument 3 of ‘almacenar_bytes_de_una_pagina’ makes integer from pointer without a cast [enabled by default]
+   almacenar_bytes_de_una_pagina(PID, string_itoa((i + paginaInicial)), "0", string_itoa(strlen(contenidoDinamico)), contenidoDinamico,true);
+   ^
+In file included from ../src/testing/TestingMemoriaCache.c:3:0:
+../src/testing/../header/MemoriaPrincipal.h:26:7: note: expected ‘int’ but argument is of type ‘char *’
+ char* almacenar_bytes_de_una_pagina(char PID[4], int pagina, int byteInicial, int longitud, char* contenido, bool cacheIr );
+       ^
+../src/testing/TestingMemoriaCache.c:17:3: warning: passing argument 4 of ‘almacenar_bytes_de_una_pagina’ makes integer from pointer without a cast [enabled by default]
+   almacenar_bytes_de_una_pagina(PID, string_itoa((i + paginaInicial)), "0", string_itoa(strlen(contenidoDinamico)), contenidoDinamico,true);
+   ^
+In file included from ../src/testing/TestingMemoriaCache.c:3:0:
+../src/testing/../header/MemoriaPrincipal.h:26:7: note: expected ‘int’ but argument is of type ‘char *’
+ char* almacenar_bytes_de_una_pagina(char PID[4], int pagina, int byteInicial, int longitud, char* contenido, bool cacheIr );
+       ^
+Finished building: ../src/testing/TestingMemoriaCache.c
+ 
+Building file: ../src/header/AppConfig.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/AppConfig.d" -MT"src/header/AppConfig.d" -o "src/header/AppConfig.o" "../src/header/AppConfig.c"
+Finished building: ../src/header/AppConfig.c
+ 
+Building file: ../src/general/Semaforo.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/general/Semaforo.d" -MT"src/general/Semaforo.d" -o "src/general/Semaforo.o" "../src/general/Semaforo.c"
+Finished building: ../src/general/Semaforo.c
+ 
+Building file: ../src/general/Socket.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/general/Socket.d" -MT"src/general/Socket.d" -o "src/general/Socket.o" "../src/general/Socket.c"
+../src/general/Socket.c: In function ‘recibir_dato_serializado’:
+../src/general/Socket.c:76:3: warning: implicit declaration of function ‘string_substring’ [-Wimplicit-function-declaration]
+   resultado = string_substring(datoNuevo, 0, tamanioFinal);
+   ^
+../src/general/Socket.c:76:13: warning: assignment makes pointer from integer without a cast [enabled by default]
+   resultado = string_substring(datoNuevo, 0, tamanioFinal);
+             ^
+../src/general/Socket.c:86:3: warning: return makes pointer from integer without a cast [enabled by default]
+   return string_substring(&dato, 0, atoi(tamanio_dato));
+   ^
+../src/general/Socket.c: In function ‘enviar_dato_serializado’:
+../src/general/Socket.c:96:3: warning: implicit declaration of function ‘string_length’ [-Wimplicit-function-declaration]
+   tamanio = string_length(mensaje);
+   ^
+../src/general/Socket.c: In function ‘atender_clientes’:
+../src/general/Socket.c:107:2: warning: passing argument 3 of ‘pthread_create’ from incompatible pointer type [enabled by default]
+  pthread_create(&mihilo1, NULL, f, servidor);
+  ^
+In file included from ../src/general/Socket.c:13:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * (*)(void *)’ but argument is of type ‘void (*)(int)’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/general/Socket.c:107:2: warning: passing argument 4 of ‘pthread_create’ makes pointer from integer without a cast [enabled by default]
+  pthread_create(&mihilo1, NULL, f, servidor);
+  ^
+In file included from ../src/general/Socket.c:13:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * __restrict__’ but argument is of type ‘int’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/general/Socket.c:108:2: warning: passing argument 1 of ‘pthread_detach’ makes integer from pointer without a cast [enabled by default]
+  pthread_detach(&mihilo1);
+  ^
+In file included from ../src/general/Socket.c:13:0:
+/usr/include/pthread.h:282:12: note: expected ‘pthread_t’ but argument is of type ‘pthread_t *’
+ extern int pthread_detach (pthread_t __th) __THROW;
+            ^
+Finished building: ../src/general/Socket.c
+ 
+Building file: ../src/general/funcionesUtiles.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/general/funcionesUtiles.d" -MT"src/general/funcionesUtiles.d" -o "src/general/funcionesUtiles.o" "../src/general/funcionesUtiles.c"
+Finished building: ../src/general/funcionesUtiles.c
+ 
+Building file: ../src/Interfaz.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Interfaz.d" -MT"src/Interfaz.d" -o "src/Interfaz.o" "../src/Interfaz.c"
+../src/Interfaz.c: In function ‘CU_Recibir_conexiones’:
+../src/Interfaz.c:20:4: warning: passing argument 3 of ‘pthread_create’ from incompatible pointer type [enabled by default]
+    pthread_create(&mihilo1, NULL, &CU_Recibir_Conexion_KERNEL, cliente);
+    ^
+In file included from ../src/Interfaz.c:8:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * (*)(void *)’ but argument is of type ‘void (*)(int)’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/Interfaz.c:20:4: warning: passing argument 4 of ‘pthread_create’ makes pointer from integer without a cast [enabled by default]
+    pthread_create(&mihilo1, NULL, &CU_Recibir_Conexion_KERNEL, cliente);
+    ^
+In file included from ../src/Interfaz.c:8:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * __restrict__’ but argument is of type ‘int’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/Interfaz.c:21:4: warning: passing argument 1 of ‘pthread_detach’ makes integer from pointer without a cast [enabled by default]
+    pthread_detach(&mihilo1);
+    ^
+In file included from ../src/Interfaz.c:8:0:
+/usr/include/pthread.h:282:12: note: expected ‘pthread_t’ but argument is of type ‘pthread_t *’
+ extern int pthread_detach (pthread_t __th) __THROW;
+            ^
+../src/Interfaz.c:23:4: warning: passing argument 3 of ‘pthread_create’ from incompatible pointer type [enabled by default]
+    pthread_create(&mihilo1, NULL, &CU_Recibir_Conexion_CPU, cliente);
+    ^
+In file included from ../src/Interfaz.c:8:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * (*)(void *)’ but argument is of type ‘void (*)(int)’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/Interfaz.c:23:4: warning: passing argument 4 of ‘pthread_create’ makes pointer from integer without a cast [enabled by default]
+    pthread_create(&mihilo1, NULL, &CU_Recibir_Conexion_CPU, cliente);
+    ^
+In file included from ../src/Interfaz.c:8:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * __restrict__’ but argument is of type ‘int’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/Interfaz.c:24:4: warning: passing argument 1 of ‘pthread_detach’ makes integer from pointer without a cast [enabled by default]
+    pthread_detach(&mihilo1);
+    ^
+In file included from ../src/Interfaz.c:8:0:
+/usr/include/pthread.h:282:12: note: expected ‘pthread_t’ but argument is of type ‘pthread_t *’
+ extern int pthread_detach (pthread_t __th) __THROW;
+            ^
+../src/Interfaz.c: In function ‘CU_Recibir_Conexion_KERNEL’:
+../src/Interfaz.c:33:2: warning: implicit declaration of function ‘string_itoa’ [-Wimplicit-function-declaration]
+  enviar_dato_serializado(string_itoa(configuraciones.MARCO_SIZE), cliente);
+  ^
+../src/Interfaz.c:33:2: warning: passing argument 1 of ‘enviar_dato_serializado’ makes pointer from integer without a cast [enabled by default]
+In file included from ../src/Interfaz.c:11:0:
+../src/general/Socket.h:15:6: note: expected ‘char *’ but argument is of type ‘int’
+ void enviar_dato_serializado(char * mensaje, int conexion);
+      ^
+../src/Interfaz.c:40:4: warning: implicit declaration of function ‘CU_Solicitar_Bytes_Memoria’ [-Wimplicit-function-declaration]
+    CU_Solicitar_Bytes_Memoria(cliente);
+    ^
+../src/Interfaz.c: At top level:
+../src/Interfaz.c:82:6: warning: conflicting types for ‘CU_Solicitar_Bytes_Memoria’ [enabled by default]
+ void CU_Solicitar_Bytes_Memoria(int cliente) {
+      ^
+../src/Interfaz.c:40:4: note: previous implicit declaration of ‘CU_Solicitar_Bytes_Memoria’ was here
+    CU_Solicitar_Bytes_Memoria(cliente);
+    ^
+../src/Interfaz.c: In function ‘CU_Asignar_Paginas_Programa’:
+../src/Interfaz.c:154:2: warning: passing argument 1 of ‘enviar_dato_serializado’ from incompatible pointer type [enabled by default]
+  enviar_dato_serializado(&texto2, cliente);
+  ^
+In file included from ../src/Interfaz.c:11:0:
+../src/general/Socket.h:15:6: note: expected ‘char *’ but argument is of type ‘char (*)[5]’
+ void enviar_dato_serializado(char * mensaje, int conexion);
+      ^
+../src/Interfaz.c: In function ‘CU_Liberar_Pagina’:
+../src/Interfaz.c:168:2: warning: passing argument 1 of ‘enviar_dato_serializado’ from incompatible pointer type [enabled by default]
+  enviar_dato_serializado(&texto2, cliente);
+  ^
+In file included from ../src/Interfaz.c:11:0:
+../src/general/Socket.h:15:6: note: expected ‘char *’ but argument is of type ‘char (*)[5]’
+ void enviar_dato_serializado(char * mensaje, int conexion);
+      ^
+Finished building: ../src/Interfaz.c
+ 
+Building file: ../src/Main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Main.d" -MT"src/Main.d" -o "src/Main.o" "../src/Main.c"
+../src/Main.c: In function ‘atender_solicitudes_de_usuario’:
+../src/Main.c:79:4: warning: implicit declaration of function ‘menu_pruebas’ [-Wimplicit-function-declaration]
+    menu_pruebas();
+    ^
+Finished building: ../src/Main.c
+ 
+Building file: ../src/MemoriaCache.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/MemoriaCache.d" -MT"src/MemoriaCache.d" -o "src/MemoriaCache.o" "../src/MemoriaCache.c"
+Finished building: ../src/MemoriaCache.c
+ 
+Building file: ../src/MemoriaPrincipal.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/MemoriaPrincipal.d" -MT"src/MemoriaPrincipal.d" -o "src/MemoriaPrincipal.o" "../src/MemoriaPrincipal.c"
+../src/MemoriaPrincipal.c: In function ‘frame_lookup’:
+../src/MemoriaPrincipal.c:20:25: warning: unused variable ‘registro’ [-Wunused-variable]
+  Tabla_Pagina_Invertida registro;
+                         ^
+../src/MemoriaPrincipal.c: In function ‘obtenerNumeroPaginaNew’:
+../src/MemoriaPrincipal.c:89:2: warning: function returns address of local variable [-Wreturn-local-addr]
+  return valorAux;
+  ^
+../src/MemoriaPrincipal.c: In function ‘mostrar_reporte_proceso’:
+../src/MemoriaPrincipal.c:487:2: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char (*)[5]’ [-Wformat=]
+  scanf("%s", &pidConsultar);
+  ^
+Finished building: ../src/MemoriaPrincipal.c
+ 
+Building file: ../src/SolicitudesUsuario.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolicitudesUsuario.d" -MT"src/SolicitudesUsuario.d" -o "src/SolicitudesUsuario.o" "../src/SolicitudesUsuario.c"
+Finished building: ../src/SolicitudesUsuario.c
+ 
+Building target: SistemaMEMORIA
+Invoking: GCC C Linker
+gcc  -o "SistemaMEMORIA"  ./src/testing/PruebasUnitarias.o ./src/testing/TestingMemoriaCache.o  ./src/header/AppConfig.o  ./src/general/Semaforo.o ./src/general/Socket.o ./src/general/funcionesUtiles.o  ./src/Interfaz.o ./src/Main.o ./src/MemoriaCache.o ./src/MemoriaPrincipal.o ./src/SolicitudesUsuario.o   -lcommons -lm -lpthread
+Finished building target: SistemaMEMORIA
+ 
+20:05:11 **** Incremental Build of configuration Debug for project SistemaCPU ****
+make all 
+make: No se hace nada para «all».
+20:05:12 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+make: No se hace nada para «all».
+20:05:12 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+Building file: ../src/header/AppConfig.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/AppConfig.d" -MT"src/header/AppConfig.d" -o "src/header/AppConfig.o" "../src/header/AppConfig.c"
+Finished building: ../src/header/AppConfig.c
+ 
+Building file: ../src/InterfazKernel.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InterfazKernel.d" -MT"src/InterfazKernel.d" -o "src/InterfazKernel.o" "../src/InterfazKernel.c"
+../src/InterfazKernel.c:12:1: error: stray ‘\303’ in program
+ Parámetros: [Path]
+ ^
+../src/InterfazKernel.c:12:1: error: stray ‘\241’ in program
+../src/InterfazKernel.c:12:1: error: unknown type name ‘Par’
+../src/InterfazKernel.c:12:12: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘:’ token
+ Parámetros: [Path]
+            ^
+../src/InterfazKernel.c:13:1: error: stray ‘\303’ in program
+ Cuando el Proceso Kernel reciba la operación de abrir un archivo deberá validar que el
+ ^
+../src/InterfazKernel.c:13:1: error: stray ‘\263’ in program
+../src/InterfazKernel.c:13:1: error: stray ‘\303’ in program
+../src/InterfazKernel.c:13:1: error: stray ‘\241’ in program
+../src/InterfazKernel.c:16:1: error: stray ‘\303’ in program
+ Parámetros: [Path]
+ ^
+../src/InterfazKernel.c:16:1: error: stray ‘\241’ in program
+../src/InterfazKernel.c:17:1: error: stray ‘\303’ in program
+ Cuando el Proceso Kernel reciba la operación de abrir un archivo deberá, en caso que el
+ ^
+../src/InterfazKernel.c:17:1: error: stray ‘\263’ in program
+../src/InterfazKernel.c:17:1: error: stray ‘\303’ in program
+../src/InterfazKernel.c:17:1: error: stray ‘\241’ in program
+../src/InterfazKernel.c:18:1: error: stray ‘\303’ in program
+ archivo no exista y este sea abierto en modo de creación (“c”), llamar a esta operación que
+ ^
+../src/InterfazKernel.c:18:1: error: stray ‘\263’ in program
+../src/InterfazKernel.c:18:1: error: stray ‘\342’ in program
+../src/InterfazKernel.c:18:1: error: stray ‘\200’ in program
+../src/InterfazKernel.c:18:1: error: stray ‘\234’ in program
+../src/InterfazKernel.c:18:1: error: stray ‘\342’ in program
+../src/InterfazKernel.c:18:1: error: stray ‘\200’ in program
+../src/InterfazKernel.c:18:1: error: stray ‘\235’ in program
+../src/InterfazKernel.c:18:1: error: stray ‘\303’ in program
+../src/InterfazKernel.c:18:1: error: stray ‘\263’ in program
+../src/InterfazKernel.c:19:1: error: stray ‘\303’ in program
+ creará el archivo dentro del path solicitado. Por default todo archivo creado se le debe
+ ^
+../src/InterfazKernel.c:19:1: error: stray ‘\241’ in program
+../src/InterfazKernel.c:22:1: error: stray ‘\303’ in program
+ Parámetros: [Path]
+ ^
+../src/InterfazKernel.c:22:1: error: stray ‘\241’ in program
+../src/InterfazKernel.c:23:1: error: stray ‘\303’ in program
+ Borrará el archivo en el path indicado, eliminando su archivo de metadata y marcando los
+ ^
+../src/InterfazKernel.c:23:1: error: stray ‘\241’ in program
+../src/InterfazKernel.c:26:1: error: stray ‘\303’ in program
+ Parámetros: [Path, Offset, Size]
+ ^
+../src/InterfazKernel.c:26:1: error: stray ‘\241’ in program
+../src/InterfazKernel.c:27:1: error: stray ‘\303’ in program
+ Ante un pedido de datos el File System devolverá del path enviado por parámetro, la
+ ^
+../src/InterfazKernel.c:27:1: error: stray ‘\241’ in program
+../src/InterfazKernel.c:27:1: error: stray ‘\303’ in program
+../src/InterfazKernel.c:27:1: error: stray ‘\241’ in program
+../src/InterfazKernel.c:29:1: error: stray ‘\342’ in program
+ se encuentre abierto en modo lectura (“r”).
+ ^
+../src/InterfazKernel.c:29:1: error: stray ‘\200’ in program
+../src/InterfazKernel.c:29:1: error: stray ‘\234’ in program
+../src/InterfazKernel.c:29:1: error: stray ‘\342’ in program
+../src/InterfazKernel.c:29:1: error: stray ‘\200’ in program
+../src/InterfazKernel.c:29:1: error: stray ‘\235’ in program
+../src/InterfazKernel.c:31:1: error: stray ‘\303’ in program
+ Parámetros: [Path, Offset, Size, Buffer]
+ ^
+../src/InterfazKernel.c:31:1: error: stray ‘\241’ in program
+../src/InterfazKernel.c:32:1: error: stray ‘\303’ in program
+ Ante un pedido de escritura el File System almacenará en el path enviado por parámetro, los
+ ^
+../src/InterfazKernel.c:32:1: error: stray ‘\241’ in program
+../src/InterfazKernel.c:32:1: error: stray ‘\303’ in program
+../src/InterfazKernel.c:32:1: error: stray ‘\241’ in program
+../src/InterfazKernel.c:34:1: error: stray ‘\342’ in program
+ archivo se encuentre abierto en modo escritura (“w”).
+ ^
+../src/InterfazKernel.c:34:1: error: stray ‘\200’ in program
+../src/InterfazKernel.c:34:1: error: stray ‘\234’ in program
+../src/InterfazKernel.c:34:1: error: stray ‘\342’ in program
+../src/InterfazKernel.c:34:1: error: stray ‘\200’ in program
+../src/InterfazKernel.c:34:1: error: stray ‘\235’ in program
+../src/InterfazKernel.c: In function ‘validar_archivo’:
+../src/InterfazKernel.c:11:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/InterfazKernel.o] Error 1
+20:05:13 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+Building file: ../src/testing/TestingGeneral.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/TestingGeneral.d" -MT"src/testing/TestingGeneral.d" -o "src/testing/TestingGeneral.o" "../src/testing/TestingGeneral.c"
+In file included from ../src/testing/TestingGeneral.c:15:0:
+../src/testing/../planificacion/Planificacion.h:23:1: error: expected ‘,’ or ‘;’ before ‘static’
+ static const char EXEC[] = "EXEC";
+ ^
+../src/testing/TestingGeneral.c: In function ‘mostrar_menu_testing_general’:
+../src/testing/TestingGeneral.c:37:4: warning: passing argument 1 of ‘crear_Proceso_en_tabla’ makes integer from pointer without a cast [enabled by default]
+    crear_Proceso_en_tabla(string_itoa(pcb_nuevo->PID));
+    ^
+In file included from ../src/testing/TestingGeneral.c:7:0:
+../src/testing/../administrarPCB/EstadisticaProceso.h:32:6: note: expected ‘uint32_t’ but argument is of type ‘char *’
+ void crear_Proceso_en_tabla(uint32_t PID);
+      ^
+../src/testing/TestingGeneral.c:62:4: warning: implicit declaration of function ‘serializar_con_header’ [-Wimplicit-function-declaration]
+    char * result = serializar_con_header(lista, "LISTA_CODIGO");
+    ^
+../src/testing/TestingGeneral.c:62:20: warning: initialization makes pointer from integer without a cast [enabled by default]
+    char * result = serializar_con_header(lista, "LISTA_CODIGO");
+                    ^
+../src/testing/TestingGeneral.c:64:4: warning: implicit declaration of function ‘deserializar_con_header’ [-Wimplicit-function-declaration]
+    deserializar_con_header(result, "LISTA_CODIGO");
+    ^
+../src/testing/TestingGeneral.c:86:4: warning: implicit declaration of function ‘hardcodear_pcb’ [-Wimplicit-function-declaration]
+    PCB * pcb = hardcodear_pcb();
+    ^
+../src/testing/TestingGeneral.c:86:16: warning: initialization makes pointer from integer without a cast [enabled by default]
+    PCB * pcb = hardcodear_pcb();
+                ^
+../src/testing/TestingGeneral.c:87:4: warning: implicit declaration of function ‘enviar_pcb_deb’ [-Wimplicit-function-declaration]
+    enviar_pcb_deb(pcb);
+    ^
+../src/testing/TestingGeneral.c:90:16: warning: initialization makes pointer from integer without a cast [enabled by default]
+    PCB * pcb = hardcodear_pcb();
+                ^
+../src/testing/TestingGeneral.c:99:8: warning: unused variable ‘debugeame’ [-Wunused-variable]
+    int debugeame = 111;
+        ^
+make: *** [src/testing/TestingGeneral.o] Error 1
+20:05:13 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+make: No se hace nada para «all».
+20:06:18 **** Incremental Build of configuration Debug for project SistemaCPU ****
+make all 
+make: No se hace nada para «all».
+20:06:18 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+make: No se hace nada para «all».
+20:06:18 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+Building file: ../src/InterfazKernel.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InterfazKernel.d" -MT"src/InterfazKernel.d" -o "src/InterfazKernel.o" "../src/InterfazKernel.c"
+../src/InterfazKernel.c:11:18: error: expected identifier or ‘(’ before ‘[’ token
+ static const char[] = "/Archivos/" ;
+                  ^
+../src/InterfazKernel.c: In function ‘validar_archivo’:
+../src/InterfazKernel.c:17:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../src/InterfazKernel.c: In function ‘crear_archivo’:
+../src/InterfazKernel.c:21:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/InterfazKernel.o] Error 1
+20:06:18 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+Building file: ../src/testing/TestingGeneral.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/TestingGeneral.d" -MT"src/testing/TestingGeneral.d" -o "src/testing/TestingGeneral.o" "../src/testing/TestingGeneral.c"
+In file included from ../src/testing/TestingGeneral.c:15:0:
+../src/testing/../planificacion/Planificacion.h:23:1: error: expected ‘,’ or ‘;’ before ‘static’
+ static const char EXEC[] = "EXEC";
+ ^
+../src/testing/TestingGeneral.c: In function ‘mostrar_menu_testing_general’:
+../src/testing/TestingGeneral.c:37:4: warning: passing argument 1 of ‘crear_Proceso_en_tabla’ makes integer from pointer without a cast [enabled by default]
+    crear_Proceso_en_tabla(string_itoa(pcb_nuevo->PID));
+    ^
+In file included from ../src/testing/TestingGeneral.c:7:0:
+../src/testing/../administrarPCB/EstadisticaProceso.h:32:6: note: expected ‘uint32_t’ but argument is of type ‘char *’
+ void crear_Proceso_en_tabla(uint32_t PID);
+      ^
+../src/testing/TestingGeneral.c:62:4: warning: implicit declaration of function ‘serializar_con_header’ [-Wimplicit-function-declaration]
+    char * result = serializar_con_header(lista, "LISTA_CODIGO");
+    ^
+../src/testing/TestingGeneral.c:62:20: warning: initialization makes pointer from integer without a cast [enabled by default]
+    char * result = serializar_con_header(lista, "LISTA_CODIGO");
+                    ^
+../src/testing/TestingGeneral.c:64:4: warning: implicit declaration of function ‘deserializar_con_header’ [-Wimplicit-function-declaration]
+    deserializar_con_header(result, "LISTA_CODIGO");
+    ^
+../src/testing/TestingGeneral.c:86:4: warning: implicit declaration of function ‘hardcodear_pcb’ [-Wimplicit-function-declaration]
+    PCB * pcb = hardcodear_pcb();
+    ^
+../src/testing/TestingGeneral.c:86:16: warning: initialization makes pointer from integer without a cast [enabled by default]
+    PCB * pcb = hardcodear_pcb();
+                ^
+../src/testing/TestingGeneral.c:87:4: warning: implicit declaration of function ‘enviar_pcb_deb’ [-Wimplicit-function-declaration]
+    enviar_pcb_deb(pcb);
+    ^
+../src/testing/TestingGeneral.c:90:16: warning: initialization makes pointer from integer without a cast [enabled by default]
+    PCB * pcb = hardcodear_pcb();
+                ^
+../src/testing/TestingGeneral.c:99:8: warning: unused variable ‘debugeame’ [-Wunused-variable]
+    int debugeame = 111;
+        ^
+make: *** [src/testing/TestingGeneral.o] Error 1
+20:06:19 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+make: No se hace nada para «all».
+20:06:51 **** Incremental Build of configuration Debug for project SistemaCPU ****
+make all 
+make: No se hace nada para «all».
+20:06:51 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+make: No se hace nada para «all».
+20:06:51 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+Building file: ../src/InterfazKernel.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InterfazKernel.d" -MT"src/InterfazKernel.d" -o "src/InterfazKernel.o" "../src/InterfazKernel.c"
+../src/InterfazKernel.c:11:18: error: expected identifier or ‘(’ before ‘[’ token
+ static const char[] = "/Archivos/" ;
+                  ^
+../src/InterfazKernel.c: In function ‘validar_archivo’:
+../src/InterfazKernel.c:17:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../src/InterfazKernel.c: In function ‘crear_archivo’:
+../src/InterfazKernel.c:21:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/InterfazKernel.o] Error 1
+20:06:52 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+Building file: ../src/testing/TestingGeneral.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/TestingGeneral.d" -MT"src/testing/TestingGeneral.d" -o "src/testing/TestingGeneral.o" "../src/testing/TestingGeneral.c"
+In file included from ../src/testing/TestingGeneral.c:15:0:
+../src/testing/../planificacion/Planificacion.h:23:1: error: expected ‘,’ or ‘;’ before ‘static’
+ static const char EXEC[] = "EXEC";
+ ^
+../src/testing/TestingGeneral.c: In function ‘mostrar_menu_testing_general’:
+../src/testing/TestingGeneral.c:37:4: warning: passing argument 1 of ‘crear_Proceso_en_tabla’ makes integer from pointer without a cast [enabled by default]
+    crear_Proceso_en_tabla(string_itoa(pcb_nuevo->PID));
+    ^
+In file included from ../src/testing/TestingGeneral.c:7:0:
+../src/testing/../administrarPCB/EstadisticaProceso.h:32:6: note: expected ‘uint32_t’ but argument is of type ‘char *’
+ void crear_Proceso_en_tabla(uint32_t PID);
+      ^
+../src/testing/TestingGeneral.c:62:4: warning: implicit declaration of function ‘serializar_con_header’ [-Wimplicit-function-declaration]
+    char * result = serializar_con_header(lista, "LISTA_CODIGO");
+    ^
+../src/testing/TestingGeneral.c:62:20: warning: initialization makes pointer from integer without a cast [enabled by default]
+    char * result = serializar_con_header(lista, "LISTA_CODIGO");
+                    ^
+../src/testing/TestingGeneral.c:64:4: warning: implicit declaration of function ‘deserializar_con_header’ [-Wimplicit-function-declaration]
+    deserializar_con_header(result, "LISTA_CODIGO");
+    ^
+../src/testing/TestingGeneral.c:86:4: warning: implicit declaration of function ‘hardcodear_pcb’ [-Wimplicit-function-declaration]
+    PCB * pcb = hardcodear_pcb();
+    ^
+../src/testing/TestingGeneral.c:86:16: warning: initialization makes pointer from integer without a cast [enabled by default]
+    PCB * pcb = hardcodear_pcb();
+                ^
+../src/testing/TestingGeneral.c:87:4: warning: implicit declaration of function ‘enviar_pcb_deb’ [-Wimplicit-function-declaration]
+    enviar_pcb_deb(pcb);
+    ^
+../src/testing/TestingGeneral.c:90:16: warning: initialization makes pointer from integer without a cast [enabled by default]
+    PCB * pcb = hardcodear_pcb();
+                ^
+../src/testing/TestingGeneral.c:99:8: warning: unused variable ‘debugeame’ [-Wunused-variable]
+    int debugeame = 111;
+        ^
+make: *** [src/testing/TestingGeneral.o] Error 1
+20:06:52 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+make: No se hace nada para «all».
+20:07:00 **** Incremental Build of configuration Debug for project SistemaCPU ****
+make all 
+make: No se hace nada para «all».
+20:07:00 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+make: No se hace nada para «all».
+20:07:01 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+Building file: ../src/InterfazKernel.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InterfazKernel.d" -MT"src/InterfazKernel.d" -o "src/InterfazKernel.o" "../src/InterfazKernel.c"
+../src/InterfazKernel.c:11:18: error: expected identifier or ‘(’ before ‘[’ token
+ static const char[] = "/Archivos/" ;
+                  ^
+../src/InterfazKernel.c: In function ‘validar_archivo’:
+../src/InterfazKernel.c:17:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../src/InterfazKernel.c: In function ‘crear_archivo’:
+../src/InterfazKernel.c:21:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/InterfazKernel.o] Error 1
+20:07:01 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+Building file: ../src/testing/TestingGeneral.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/TestingGeneral.d" -MT"src/testing/TestingGeneral.d" -o "src/testing/TestingGeneral.o" "../src/testing/TestingGeneral.c"
+In file included from ../src/testing/TestingGeneral.c:15:0:
+../src/testing/../planificacion/Planificacion.h:23:1: error: expected ‘,’ or ‘;’ before ‘static’
+ static const char EXEC[] = "EXEC";
+ ^
+../src/testing/TestingGeneral.c: In function ‘mostrar_menu_testing_general’:
+../src/testing/TestingGeneral.c:37:4: warning: passing argument 1 of ‘crear_Proceso_en_tabla’ makes integer from pointer without a cast [enabled by default]
+    crear_Proceso_en_tabla(string_itoa(pcb_nuevo->PID));
+    ^
+In file included from ../src/testing/TestingGeneral.c:7:0:
+../src/testing/../administrarPCB/EstadisticaProceso.h:32:6: note: expected ‘uint32_t’ but argument is of type ‘char *’
+ void crear_Proceso_en_tabla(uint32_t PID);
+      ^
+../src/testing/TestingGeneral.c:62:4: warning: implicit declaration of function ‘serializar_con_header’ [-Wimplicit-function-declaration]
+    char * result = serializar_con_header(lista, "LISTA_CODIGO");
+    ^
+../src/testing/TestingGeneral.c:62:20: warning: initialization makes pointer from integer without a cast [enabled by default]
+    char * result = serializar_con_header(lista, "LISTA_CODIGO");
+                    ^
+../src/testing/TestingGeneral.c:64:4: warning: implicit declaration of function ‘deserializar_con_header’ [-Wimplicit-function-declaration]
+    deserializar_con_header(result, "LISTA_CODIGO");
+    ^
+../src/testing/TestingGeneral.c:86:4: warning: implicit declaration of function ‘hardcodear_pcb’ [-Wimplicit-function-declaration]
+    PCB * pcb = hardcodear_pcb();
+    ^
+../src/testing/TestingGeneral.c:86:16: warning: initialization makes pointer from integer without a cast [enabled by default]
+    PCB * pcb = hardcodear_pcb();
+                ^
+../src/testing/TestingGeneral.c:87:4: warning: implicit declaration of function ‘enviar_pcb_deb’ [-Wimplicit-function-declaration]
+    enviar_pcb_deb(pcb);
+    ^
+../src/testing/TestingGeneral.c:90:16: warning: initialization makes pointer from integer without a cast [enabled by default]
+    PCB * pcb = hardcodear_pcb();
+                ^
+../src/testing/TestingGeneral.c:99:8: warning: unused variable ‘debugeame’ [-Wunused-variable]
+    int debugeame = 111;
+        ^
+make: *** [src/testing/TestingGeneral.o] Error 1
+20:07:01 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+make: No se hace nada para «all».
+20:07:05 **** Incremental Build of configuration Debug for project SistemaCPU ****
+make all 
+make: No se hace nada para «all».
+20:07:05 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+make: No se hace nada para «all».
+20:07:06 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+Building file: ../src/InterfazKernel.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InterfazKernel.d" -MT"src/InterfazKernel.d" -o "src/InterfazKernel.o" "../src/InterfazKernel.c"
+../src/InterfazKernel.c:11:18: error: expected identifier or ‘(’ before ‘[’ token
+ static const char[] = "/Archivos/";
+                  ^
+../src/InterfazKernel.c: In function ‘validar_archivo’:
+../src/InterfazKernel.c:17:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../src/InterfazKernel.c: In function ‘crear_archivo’:
+../src/InterfazKernel.c:21:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/InterfazKernel.o] Error 1
+20:07:06 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+Building file: ../src/testing/TestingGeneral.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/TestingGeneral.d" -MT"src/testing/TestingGeneral.d" -o "src/testing/TestingGeneral.o" "../src/testing/TestingGeneral.c"
+In file included from ../src/testing/TestingGeneral.c:15:0:
+../src/testing/../planificacion/Planificacion.h:23:1: error: expected ‘,’ or ‘;’ before ‘static’
+ static const char EXEC[] = "EXEC";
+ ^
+../src/testing/TestingGeneral.c: In function ‘mostrar_menu_testing_general’:
+../src/testing/TestingGeneral.c:37:4: warning: passing argument 1 of ‘crear_Proceso_en_tabla’ makes integer from pointer without a cast [enabled by default]
+    crear_Proceso_en_tabla(string_itoa(pcb_nuevo->PID));
+    ^
+In file included from ../src/testing/TestingGeneral.c:7:0:
+../src/testing/../administrarPCB/EstadisticaProceso.h:32:6: note: expected ‘uint32_t’ but argument is of type ‘char *’
+ void crear_Proceso_en_tabla(uint32_t PID);
+      ^
+../src/testing/TestingGeneral.c:62:4: warning: implicit declaration of function ‘serializar_con_header’ [-Wimplicit-function-declaration]
+    char * result = serializar_con_header(lista, "LISTA_CODIGO");
+    ^
+../src/testing/TestingGeneral.c:62:20: warning: initialization makes pointer from integer without a cast [enabled by default]
+    char * result = serializar_con_header(lista, "LISTA_CODIGO");
+                    ^
+../src/testing/TestingGeneral.c:64:4: warning: implicit declaration of function ‘deserializar_con_header’ [-Wimplicit-function-declaration]
+    deserializar_con_header(result, "LISTA_CODIGO");
+    ^
+../src/testing/TestingGeneral.c:86:4: warning: implicit declaration of function ‘hardcodear_pcb’ [-Wimplicit-function-declaration]
+    PCB * pcb = hardcodear_pcb();
+    ^
+../src/testing/TestingGeneral.c:86:16: warning: initialization makes pointer from integer without a cast [enabled by default]
+    PCB * pcb = hardcodear_pcb();
+                ^
+../src/testing/TestingGeneral.c:87:4: warning: implicit declaration of function ‘enviar_pcb_deb’ [-Wimplicit-function-declaration]
+    enviar_pcb_deb(pcb);
+    ^
+../src/testing/TestingGeneral.c:90:16: warning: initialization makes pointer from integer without a cast [enabled by default]
+    PCB * pcb = hardcodear_pcb();
+                ^
+../src/testing/TestingGeneral.c:99:8: warning: unused variable ‘debugeame’ [-Wunused-variable]
+    int debugeame = 111;
+        ^
+make: *** [src/testing/TestingGeneral.o] Error 1
+20:07:06 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+make: No se hace nada para «all».
+20:14:33 **** Incremental Build of configuration Debug for project SistemaCPU ****
+make all 
+make: No se hace nada para «all».
+20:14:33 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+make: No se hace nada para «all».
+20:14:33 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+Building file: ../src/InterfazKernel.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InterfazKernel.d" -MT"src/InterfazKernel.d" -o "src/InterfazKernel.o" "../src/InterfazKernel.c"
+../src/InterfazKernel.c:11:18: error: expected identifier or ‘(’ before ‘[’ token
+ static const char[] PATH_ARCHIVOS = "/Archivos/";
+                  ^
+../src/InterfazKernel.c: In function ‘validar_archivo’:
+../src/InterfazKernel.c:16:3: warning: implicit declaration of function ‘enviar_dato_serializado’ [-Wimplicit-function-declaration]
+   enviar_dato_serializado("ARCHIVO_NO_EXISTE", clienteKernel);
+   ^
+../src/InterfazKernel.c:16:48: error: ‘clienteKernel’ undeclared (first use in this function)
+   enviar_dato_serializado("ARCHIVO_NO_EXISTE", clienteKernel);
+                                                ^
+../src/InterfazKernel.c:16:48: note: each undeclared identifier is reported only once for each function it appears in
+../src/InterfazKernel.c:19:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../src/InterfazKernel.c: In function ‘crear_archivo’:
+../src/InterfazKernel.c:23:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/InterfazKernel.o] Error 1
+20:14:33 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+Building file: ../src/testing/TestingGeneral.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/TestingGeneral.d" -MT"src/testing/TestingGeneral.d" -o "src/testing/TestingGeneral.o" "../src/testing/TestingGeneral.c"
+In file included from ../src/testing/TestingGeneral.c:15:0:
+../src/testing/../planificacion/Planificacion.h:23:1: error: expected ‘,’ or ‘;’ before ‘static’
+ static const char EXEC[] = "EXEC";
+ ^
+../src/testing/TestingGeneral.c: In function ‘mostrar_menu_testing_general’:
+../src/testing/TestingGeneral.c:37:4: warning: passing argument 1 of ‘crear_Proceso_en_tabla’ makes integer from pointer without a cast [enabled by default]
+    crear_Proceso_en_tabla(string_itoa(pcb_nuevo->PID));
+    ^
+In file included from ../src/testing/TestingGeneral.c:7:0:
+../src/testing/../administrarPCB/EstadisticaProceso.h:32:6: note: expected ‘uint32_t’ but argument is of type ‘char *’
+ void crear_Proceso_en_tabla(uint32_t PID);
+      ^
+../src/testing/TestingGeneral.c:62:4: warning: implicit declaration of function ‘serializar_con_header’ [-Wimplicit-function-declaration]
+    char * result = serializar_con_header(lista, "LISTA_CODIGO");
+    ^
+../src/testing/TestingGeneral.c:62:20: warning: initialization makes pointer from integer without a cast [enabled by default]
+    char * result = serializar_con_header(lista, "LISTA_CODIGO");
+                    ^
+../src/testing/TestingGeneral.c:64:4: warning: implicit declaration of function ‘deserializar_con_header’ [-Wimplicit-function-declaration]
+    deserializar_con_header(result, "LISTA_CODIGO");
+    ^
+../src/testing/TestingGeneral.c:86:4: warning: implicit declaration of function ‘hardcodear_pcb’ [-Wimplicit-function-declaration]
+    PCB * pcb = hardcodear_pcb();
+    ^
+../src/testing/TestingGeneral.c:86:16: warning: initialization makes pointer from integer without a cast [enabled by default]
+    PCB * pcb = hardcodear_pcb();
+                ^
+../src/testing/TestingGeneral.c:87:4: warning: implicit declaration of function ‘enviar_pcb_deb’ [-Wimplicit-function-declaration]
+    enviar_pcb_deb(pcb);
+    ^
+../src/testing/TestingGeneral.c:90:16: warning: initialization makes pointer from integer without a cast [enabled by default]
+    PCB * pcb = hardcodear_pcb();
+                ^
+../src/testing/TestingGeneral.c:99:8: warning: unused variable ‘debugeame’ [-Wunused-variable]
+    int debugeame = 111;
+        ^
+make: *** [src/testing/TestingGeneral.o] Error 1
+20:14:34 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+make: No se hace nada para «all».
+20:14:50 **** Incremental Build of configuration Debug for project SistemaCPU ****
+make all 
+make: No se hace nada para «all».
+20:14:50 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+make: No se hace nada para «all».
+20:14:50 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+Building file: ../src/InterfazKernel.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InterfazKernel.d" -MT"src/InterfazKernel.d" -o "src/InterfazKernel.o" "../src/InterfazKernel.c"
+../src/InterfazKernel.c:12:18: error: expected identifier or ‘(’ before ‘[’ token
+ static const char[] PATH_ARCHIVOS = "/Archivos/";
+                  ^
+../src/InterfazKernel.c: In function ‘validar_archivo’:
+../src/InterfazKernel.c:17:48: error: ‘clienteKernel’ undeclared (first use in this function)
+   enviar_dato_serializado("ARCHIVO_NO_EXISTE", clienteKernel);
+                                                ^
+../src/InterfazKernel.c:17:48: note: each undeclared identifier is reported only once for each function it appears in
+../src/InterfazKernel.c:20:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../src/InterfazKernel.c: In function ‘crear_archivo’:
+../src/InterfazKernel.c:24:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/InterfazKernel.o] Error 1
+20:14:50 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+Building file: ../src/testing/TestingGeneral.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/TestingGeneral.d" -MT"src/testing/TestingGeneral.d" -o "src/testing/TestingGeneral.o" "../src/testing/TestingGeneral.c"
+In file included from ../src/testing/TestingGeneral.c:15:0:
+../src/testing/../planificacion/Planificacion.h:23:1: error: expected ‘,’ or ‘;’ before ‘static’
+ static const char EXEC[] = "EXEC";
+ ^
+../src/testing/TestingGeneral.c: In function ‘mostrar_menu_testing_general’:
+../src/testing/TestingGeneral.c:37:4: warning: passing argument 1 of ‘crear_Proceso_en_tabla’ makes integer from pointer without a cast [enabled by default]
+    crear_Proceso_en_tabla(string_itoa(pcb_nuevo->PID));
+    ^
+In file included from ../src/testing/TestingGeneral.c:7:0:
+../src/testing/../administrarPCB/EstadisticaProceso.h:32:6: note: expected ‘uint32_t’ but argument is of type ‘char *’
+ void crear_Proceso_en_tabla(uint32_t PID);
+      ^
+../src/testing/TestingGeneral.c:62:4: warning: implicit declaration of function ‘serializar_con_header’ [-Wimplicit-function-declaration]
+    char * result = serializar_con_header(lista, "LISTA_CODIGO");
+    ^
+../src/testing/TestingGeneral.c:62:20: warning: initialization makes pointer from integer without a cast [enabled by default]
+    char * result = serializar_con_header(lista, "LISTA_CODIGO");
+                    ^
+../src/testing/TestingGeneral.c:64:4: warning: implicit declaration of function ‘deserializar_con_header’ [-Wimplicit-function-declaration]
+    deserializar_con_header(result, "LISTA_CODIGO");
+    ^
+../src/testing/TestingGeneral.c:86:4: warning: implicit declaration of function ‘hardcodear_pcb’ [-Wimplicit-function-declaration]
+    PCB * pcb = hardcodear_pcb();
+    ^
+../src/testing/TestingGeneral.c:86:16: warning: initialization makes pointer from integer without a cast [enabled by default]
+    PCB * pcb = hardcodear_pcb();
+                ^
+../src/testing/TestingGeneral.c:87:4: warning: implicit declaration of function ‘enviar_pcb_deb’ [-Wimplicit-function-declaration]
+    enviar_pcb_deb(pcb);
+    ^
+../src/testing/TestingGeneral.c:90:16: warning: initialization makes pointer from integer without a cast [enabled by default]
+    PCB * pcb = hardcodear_pcb();
+                ^
+../src/testing/TestingGeneral.c:99:8: warning: unused variable ‘debugeame’ [-Wunused-variable]
+    int debugeame = 111;
+        ^
+make: *** [src/testing/TestingGeneral.o] Error 1
+20:14:51 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+make: No se hace nada para «all».

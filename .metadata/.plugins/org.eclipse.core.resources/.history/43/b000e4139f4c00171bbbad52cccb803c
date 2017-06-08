@@ -5,38 +5,10 @@
  *      Author: utnso
  */
 
-#include <unistd.h>
 
-#include "header/Socket.h"
-
-static const char[] PATH_ARCHIVOS = "/Archivos/";
-
-void validar_archivo(char* path) {
-	if(access(path, F_OK) == -1){
-		enviar_dato_serializado("ARCHIVO_NO_EXISTE", clienteKernel);
-	}
-	else {
-		enviar_dato_serializado("ARCHIVO_EXISTE", clienteKernel);
-	}
-}
-
-void crear_archivo(char* path) {
-	fopen(path, "w");
-}
-
-void borrar(char* path) {
+int validar_archivo() {
 
 }
-
-
-
-
-
-
-
-
-
-/*
 Parámetros: [Path]
 Cuando el Proceso Kernel reciba la operación de abrir un archivo deberá validar que el
 archivo exista.
