@@ -5,6 +5,11 @@
 #include <semaphore.h>
 #include <signal.h>
 
+void inicializar_semaforo_en(sem_t* variable_semaforo, int value) {
+	sem_init(variable_semaforo, 0, value); //-->Inicializo un semaforo
+	signal(SIGPIPE, SIG_IGN);
+}
+
 void inicializar_semaforo(sem_t* variable_semaforo) {
 	sem_init(variable_semaforo, 0, 1); //-->Inicializo un semaforo
 	signal(SIGPIPE, SIG_IGN);

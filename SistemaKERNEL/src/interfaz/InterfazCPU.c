@@ -55,7 +55,8 @@ void CU_Recibir_Conexiones_CPU(int clienteCPU) {
 		} else if (strcmp(codigo_operacion, "TERMINADO") == 0) {
 			if(strcmp(recibir_dato_serializado(clienteCPU), "RECIBIR_PCB") == 0)
 				recibir_PCB_de_CPU(clienteCPU, "TERMINADO");
-		} else if(strcmp(recibir_dato_serializado(clienteCPU), "WAIT_SEM") == 0){
+		} else if(strcmp(codigo_operacion, "WAIT_SEM") == 0){
+			if(strcmp(recibir_dato_serializado(clienteCPU), "RECIBIR_PCB") == 0)
 				recibir_PCB_de_CPU(clienteCPU, "WAIT_SEM");
 		} else if (strcmp(codigo_operacion, "SIGNAL_SEM")== 0) {
 			char * nombre_sem = recibir_dato_serializado(clienteCPU);

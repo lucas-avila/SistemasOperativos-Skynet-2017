@@ -27,6 +27,11 @@ PCB * crear_pcb() {
 	pcb->etiquetas_size = 0;
 	pcb->codigo = list_create();
 	pcb->pila = list_create();
+	IndiceStack * elemento_pila_inicial_vacio = malloc(sizeof(IndiceStack));
+	elemento_pila_inicial_vacio->argumentos = list_create();
+	elemento_pila_inicial_vacio->variables = list_create();
+
+	list_add(pcb->pila, elemento_pila_inicial_vacio);
 
 	return pcb;
 }

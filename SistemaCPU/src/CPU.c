@@ -8,20 +8,24 @@
  ============================================================================
  */
 
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdbool.h>
-#include "header/AppConfig.h"
-#include "general/Socket.h"
+#include <unistd.h>
 
-#include "interfaz/InterfazMemoria.h"
+#include "general/Semaforo.h"
+#include "general/Socket.h"
+#include "header/AppConfig.h"
+#include "header/PCB.h"
 #include "interfaz/InterfazKernel.h"
-#include "testing/testearPrimitivasFunciones.h"
+#include "interfaz/InterfazMemoria.h"
 #include "procesador/Ejecucion.h"
+#include "testing/testearPrimitivasFunciones.h"
 
 void CU_Procesar_PCB_a_ejecutar();
 
+void testear_planificacion(servidor_kernel); //borrame
 int main(int argc, char *argv[]) {
 
 	inicializar_configuracion(argv[1]);
@@ -33,6 +37,8 @@ int main(int argc, char *argv[]) {
 
 
 	 inicializar_contexto_ejecucion();
+
+	 inicializar_semaforo_en(&mutex_respuesta_wait_a_semaforo, 0);
 
 	//Parametro de Identificacion
 	enviar_dato_serializado("CPU", servidor_kernel);
@@ -50,6 +56,16 @@ int main(int argc, char *argv[]) {
 			controlSeguir = false;
 		} else if (strcmp(operacion, "RECIBIR_PCB") == 0) {
 			CU_Procesar_PCB_a_ejecutar();
+		} else if (strcmp(operacion, "BLOQUEADO") == 0) {
+			bloqueado = 1;
+			sem_post(&mutex_respuesta_wait_a_semaforo);
+		} else if (strcmp(operacion, "NO_BLOQUEADO") == 0){
+			bloqueado = 0;
+			sem_post(&mutex_respuesta_wait_a_semaforo);
+		}
+		else if (strcmp(operacion, "TESTEAR_PLANIFICACION") == 0){
+			recibir_dato_serializado(servidor_kernel);
+			testear_planificacion(servidor_kernel);
 		}
 	} while (controlSeguir);
 
@@ -62,6 +78,12 @@ void CU_Procesar_PCB_a_ejecutar() {
 
 	setPCBEjecucion(pcb);
 	ejecutar_Programa();
+}
+
+void testear_planificacion(servidor_kernel){
+	printf("Llego a testing\n");
+	PCB* pcb = recibir_PCB_de_kernel();
+	int status = enviar_SYSCALL_wait_semaforo_a_kernel("mutex1", pcb);
 }
 
 

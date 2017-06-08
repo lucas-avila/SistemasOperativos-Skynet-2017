@@ -2,15 +2,19 @@
 
 #include <commons/collections/list.h>
 #include <commons/string.h>
+#include <semaphore.h>
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
+#include "../general/Semaforo.h"
 #include "../general/Socket.h"
 #include "../header/AppConfig.h"
 #include "../header/PCB.h"
 #include "../primitivas/EstructurasDeDatosPrimitivas.h"
 #include "../primitivas/FuncionesAuxiliares.h"
+#include "../procesador/Ejecucion.h"
 
 
 /* se encarga de recibir y llenar toda la estructura struct PCB */
@@ -72,14 +76,22 @@ void enviar_PCB_a_kernel(PCB* pcb, char * modo) {
 int enviar_SYSCALL_wait_semaforo_a_kernel(char* nombre_semaforo, PCB * pcb){
 	enviar_PCB_a_kernel(pcb, "WAIT_SEM");
 	enviar_dato_serializado(nombre_semaforo, servidor_kernel);
-	char * respuesta = recibir_dato_serializado(servidor_kernel);
-	if(strcmp(respuesta, "BLOQUEAR") == 0){
+	sem_wait(&mutex_respuesta_wait_a_semaforo);
+	if(bloqueado){
 		//el semaforo quedo bloqueando el proceso, se libera esta cpu
+		printf("el semaforo quedo bloqueando el proceso, se libera esta cpu\n");
 		return 1;
 	}else{
 		//el semaforo no bloqueó el proceso, el proceso continua su ejecucion normal
+		printf("el semaforo no bloqueo el proceso");
 		return 0;
 	}
+}
+
+int enviar_SYSCALL_signal_semaforo_a_kernel(char* nombre_semaforo){
+	enviar_dato_serializado("SIGNAL_SEM", servidor_kernel);
+	enviar_dato_serializado(nombre_semaforo, servidor_kernel);
+	printf("Enviado signal a kernel \n");
 }
 
 char* enviar_SYSCALL_solicitar_memoria_dinamica_a_kernel(int PID, int espacio) {

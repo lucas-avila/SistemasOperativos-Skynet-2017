@@ -13,16 +13,16 @@
 
 int obtener_valor_semaforo(char * nombre_sem){
 	if(dictionary_has_key(dict_semaforos_ansisop, nombre_sem))
-		return *((int *) dictionary_get(dict_semaforos_ansisop, nombre_sem));
+		return dictionary_get(dict_semaforos_ansisop, nombre_sem);
 	return -1;
 }
 
 //Incrementa el semaforo ansisop y devuelve el valor, o -1 si no existe ese semaforo
 int signal_semaforo_ansisop(char * nombre_sem){
 	if(dictionary_has_key(dict_semaforos_ansisop, nombre_sem)){
-		int * sem_val = malloc(sizeof(int));
-		sem_val = dictionary_get(dict_semaforos_ansisop, nombre_sem);
-		return *sem_val += 1;
+		int * sem_pointer = dictionary_get(dict_semaforos_ansisop, nombre_sem);
+		(*sem_pointer)++;
+		return *sem_pointer;
 	}
 	return -1;
 }
@@ -31,10 +31,9 @@ int signal_semaforo_ansisop(char * nombre_sem){
 //Si ya es cero, no lo decrementa
 int wait_semaforo_ansisop(char * nombre_sem){
 	if(dictionary_has_key(dict_semaforos_ansisop, nombre_sem)){
-		int * sem_point = malloc(sizeof(int));
-		sem_point = (int *) dictionary_get(dict_semaforos_ansisop, nombre_sem);
-		int sem_val = *sem_point;
-		return (sem_val > 0)? sem_val-- : sem_val;
+		int * sem_pointer = dictionary_get(dict_semaforos_ansisop, nombre_sem);
+		(*sem_pointer >= 0)? (*sem_pointer)-- : *sem_pointer;
+		return *sem_pointer;
 	}
 	return -1;
 }

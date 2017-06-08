@@ -10,8 +10,9 @@
 
 #include <semaphore.h>
 
+sem_t * mutex_respuesta_wait_a_semaforo;
 
-
+void inicializar_semaforo_en(sem_t* variable_semaforo, int value);
 void inicializar_semaforo(sem_t* variable_semaforo);
 void destruir_semaforo(sem_t* variable_semaforo);
 void activar_semaforo(sem_t* variable_semaforo);

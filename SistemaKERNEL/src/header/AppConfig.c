@@ -115,7 +115,9 @@ void inicializar_dict_semaforos_ansisop(){
 	dict_semaforos_ansisop = dictionary_create();
 	int i = 0;
 	while(i < configuraciones.cantidad_sem){
-		dictionary_put(dict_semaforos_ansisop, configuraciones.SEM_IDS[i], atoi(configuraciones.SEM_INIT[i]));
+		int * sem_pointer = malloc(sizeof(int));
+		*sem_pointer = atoi(configuraciones.SEM_INIT[i]);
+		dictionary_put(dict_semaforos_ansisop, configuraciones.SEM_IDS[i], sem_pointer);
 		i++;
 	}
 }

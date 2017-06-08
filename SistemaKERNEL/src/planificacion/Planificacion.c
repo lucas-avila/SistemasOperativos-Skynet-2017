@@ -54,12 +54,13 @@ void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 	//Si va a algun waiting
 	if(obtener_valor_semaforo(destino) >= 0){
 		marcar_CPU_Disponible(proceso(pcb)->cpu);
+		enviar_dato_serializado("BLOQUEADO", proceso(pcb)->cpu->numeroConexion);
 		proceso(pcb)->cpu = NULL;
 	}else if(strcmp(destino, EXIT) == 0){
 		pcb->exit_code = 0;
 		finalizar_proceso(pcb);
 	}
-	free(proceso(pcb)->cola);
+	//free(proceso(pcb)->cola);
 	proceso(pcb)->cola = string_new();
 	string_append(&proceso(pcb)->cola, destino);
 }
@@ -118,6 +119,8 @@ PCB* obtener_proceso_de_cola_READY() {
 
 void enviar_PCB_Serializado_a_CPU(CPUInfo* cpu, PCB* pcb) {
 	//TODO: Haria falta chequear que haya llegado bien?
+	//para testear TODO: BORRAR ESTO
+	enviar_dato_serializado("TESTEAR_PLANIFICACION", cpu->numeroConexion);
 	enviar_pcb(pcb, cpu->numeroConexion);
 	proceso(pcb)->cpu = cpu;
 }
@@ -160,8 +163,10 @@ void recibir_PCB_de_CPU(int clienteCPU, char * modo) {
 	} else if(strcmp(modo, "WAIT_SEM") == 0){
 		char * nombre_sem = recibir_dato_serializado(clienteCPU);
 		int resultado_sem = wait_semaforo_ansisop(nombre_sem);
-		if(resultado_sem == 0)
+		if(resultado_sem == -1)
 			mover_PCB_de_cola(pcb, EXEC, nombre_sem);
+		else
+			enviar_dato_serializado("NO_BLOQUEADO", clienteCPU);
 	}
 
 }
