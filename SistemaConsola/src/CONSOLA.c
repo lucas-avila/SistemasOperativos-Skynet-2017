@@ -8,19 +8,21 @@
  ============================================================================
  */
 
+#include <commons/collections/list.h>
+#include <commons/string.h>
+#include <pthread.h>
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <pthread.h>
 #include <time.h>
 
-#include "commons/collections/list.h"
 #include "header/AppConfig.h"
-#include "header/Socket.h"
-#include "header/funcionesUtiles.h"
-#include "header/ExitCodes.h"
-#include "header/InterfazKernel.h"
 #include "header/Estructuras.h"
+#include "header/ExitCodes.h"
+#include "header/funcionesUtiles.h"
+#include "header/InterfazKernel.h"
+#include "header/Socket.h"
 
 void atender_solicitudes_de_usuario();
 void iniciar_thread();
@@ -149,9 +151,9 @@ void finalizar_programa(int pid, int kernel_programa) {
 // Fecha y hora de fin de ejecucion, fecha y hora de inicio de ejecucion, tiempo total de ejecucion, cantidad de impresiones por pantalla.
 void mostrar_info_proceso(uint32_t pid) {
 	Info_ejecucion* info_proceso = buscar_info_por_PID(pid);
-	char* textoInicio = ctime(info_proceso->fecha_inicio);
+	char * textoInicio = ctime(&(info_proceso->fecha_inicio));
 	time_t fecha_fin = time(NULL);
-	char* textoFin = ctime(fecha_fin);
+	char * textoFin = ctime(&fecha_fin);
 
 	unsigned int tiempoTotal = difftime(fecha_fin, info_proceso->fecha_inicio);
 	unsigned int horas = tiempoTotal / 3600;
@@ -159,11 +161,9 @@ void mostrar_info_proceso(uint32_t pid) {
 	unsigned int segundos = (tiempoTotal % 3600) % 60;
 
 	printf("El Proceso (%d) ha finalizado, los siguientes son sus datos estadisticos: \n", info_proceso->pid);
-	printf("Fecha de inicio de ejecucion: (%s)\n", textoInicio);
-	printf("Fecha de fin de ejecucion: (%s)\n", textoFin);
+	printf("Fecha de inicio de ejecucion: %s", textoInicio);
+	printf("Fecha de fin de ejecucion: %s", textoFin);
 	printf("Tiempo total de ejecucion: (%d) horas, (%d) minutos, (%d) segundos.\n", horas, minutos, segundos);
-	printf("Cantidad de impresiones por pantalla: (%d)", info_proceso->cant_impresiones);
-
-	return;
+	printf("Cantidad de impresiones por pantalla: (%d)\n", info_proceso->cant_impresiones);
 }
 
