@@ -33,7 +33,6 @@ void inicializar_colas_5_estados() {
 	COLAS = dictionary_create();
 	dictionary_put(COLAS, NEW, queue_create());
 	dictionary_put(COLAS, READY, queue_create());
-	dictionary_put(COLAS, WAITING, queue_create());
 	dictionary_put(COLAS, EXEC, queue_create());
 	dictionary_put(COLAS, EXIT, queue_create());
 	inicializar_colas_semaforos();
@@ -51,10 +50,6 @@ void proceso_a_NEW(Proceso * p){
 void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 	queue_pop(cola(origen));
 	queue_push(cola(destino), pcb);
-	//Si viene de algun waiting
-	if(es_semaforo(origen) == 0) {
-		queue_pop()
-	}
 
 	//Si va a algun waiting
 	if(obtener_valor_semaforo(destino) >= 0){

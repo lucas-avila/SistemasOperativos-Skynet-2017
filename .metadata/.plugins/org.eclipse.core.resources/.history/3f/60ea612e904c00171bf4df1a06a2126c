@@ -151,11 +151,9 @@ void mostrar_info_proceso(uint32_t pid) {
 
 	Info_ejecucion* info_proceso = malloc(sizeOf(Info_ejecucion));
 	info_proceso = buscar_info_por_PID(pid);
-	char* textoInicio = malloc(string_length(ctime(info_proceso->fecha_inicio)));
-	strcpy(textoInicio, ctime(info_proceso->fecha_inicio));
+	char* textoInicio = ctime(info_proceso->fecha_inicio);
 	time_t fecha_fin = time(NULL);
-	char* textoFin = malloc(string_length(ctime(fecha_fin)));
-	strcpy(textoFin, fecha_fin);
+	char* textoFin = ctime(fecha_fin);
 
 	unsigned int tiempoTotal = difftime(fecha_fin, info_proceso->fecha_inicio);
 	unsigned int horas = tiempoTotal / 3600;
@@ -167,9 +165,6 @@ void mostrar_info_proceso(uint32_t pid) {
 	printf("Fecha de fin de ejecucion: (%s)\n", textoFin);
 	printf("Tiempo total de ejecucion: (%d) horas, (%d) minutos, (%d) segundos.\n", horas, minutos, segundos);
 	printf("Cantidad de impresiones por pantalla: (%d)", info_proceso->cant_impresiones);
-
-	free(textoInicio);
-	free(textoFin);
 
 	return;
 }
