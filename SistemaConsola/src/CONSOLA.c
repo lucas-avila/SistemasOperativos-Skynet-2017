@@ -28,6 +28,7 @@ void CU_iniciar_programa();
 void recibir_mensajes(int pid, int kernel_programa);
 void finalizar_programa(int pid, int kernel_programa);
 void mostrar_info_proceso( pid);
+void solicitar_fin_programa(int pid, int kernel);
 
 int main(int argc, char *argv[]) {
 
@@ -54,6 +55,8 @@ void mostrar_menu_usuario() {
 void atender_solicitudes_de_usuario() {
 	int opcion = -1;
 	char path_archivo_fuente[100];
+	int kernel = conectar_servidor(configuraciones.IP_KERNEL, configuraciones.PUERTO_KERNEL);
+	enviar_dato_serializado("INICIAR_CONSOLA", kernel);
 	do {
 		mostrar_menu_usuario();
 		opcion = validarNumeroInput(0, 4);
@@ -70,8 +73,7 @@ void atender_solicitudes_de_usuario() {
 			printf("\nIngrese el PID del programa que desea terminar: ");
 			scanf("%d", &pid);
 			Info_ejecucion * programa = buscar_info_por_PID(pid);
-			enviar_dato_serializado("FINALIZAR_PROGRAMA", programa->socket);
-			enviar_dato_serializado(string_itoa(pid), programa->socket);
+			solicitar_fin_programa(programa->pid, kernel);
 		}
 			break;
 		case 3:
@@ -82,7 +84,7 @@ void atender_solicitudes_de_usuario() {
 			Info_ejecucion* info_ejecucion;
 			for (i; i < tamanio; i++) {
 				info_ejecucion = list_get(Info_procesos, i);
-				finalizar_programa(info_ejecucion->pid, info_ejecucion->socket);
+				solicitar_fin_programa(info_ejecucion->pid, kernel);
 			}
 			break;
 		case 4:
@@ -130,10 +132,12 @@ void recibir_mensajes(int pid, int kernel_programa) {
 	finalizar_programa(pid, kernel_programa);
 }
 
-void finalizar_programa(int pid, int kernel_programa) {
+void solicitar_fin_programa(int pid, int kernel){
+	enviar_dato_serializado("FINALIZAR_PROGRAMA", kernel);
+	enviar_dato_serializado(string_itoa(pid), kernel);
+}
 
-	enviar_dato_serializado("FINALIZAR_PROGRAMA", kernel_programa);
-	enviar_dato_serializado(string_itoa(pid), kernel_programa);
+void finalizar_programa(int pid, int kernel_programa) {
 
 	int exit_code = atoi(recibir_dato_serializado(kernel_programa));
 

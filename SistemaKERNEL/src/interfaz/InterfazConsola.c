@@ -29,22 +29,39 @@ void escuchar_Conexiones_Programa(int servidorPrograma) {
 			pthread_create(&thread_programa, NULL, &CU_Recibir_Conexiones_Programa, cliente);
 			pthread_detach(&thread_programa);
 			CU_iniciar_programa(cliente);
+		} else if (strcmp(codigo_IDENTIFICACION, "INICIAR_CONSOLA")){
+			CU_Recibir_Conexiones_Consola(cliente);
 		} else {
 			close(cliente);
 		}
 	} while (1);
 }
 
+void CU_Recibir_Conexiones_Consola(int consola) {
+	int controlSeguir = 1;
+		char* codigo_operacion;
+		do {
+			codigo_operacion = recibir_dato_serializado(consola);
+			if (strcmp(codigo_operacion, "FINALIZAR_PROGRAMA") == 0) {
+				int pid = atoi(recibir_dato_serializado(consola));
+				Proceso* Proceso_a_eliminar = buscar_proceso_by_PID(pid);
+				verificar_estado(pid);
+			} else if (strcmp(codigo_operacion, "") == 0) {
+				close(consola);
+				controlSeguir = 0;
+			} else {
+				enviar_dato_serializado("ERROR: CODIGO OPERACION INEXISTENTE", consola);
+			}
+		} while (controlSeguir == 1);
+		close(consola);
+	}
+
 void CU_Recibir_Conexiones_Programa(int clientePrograma) {
 	int controlSeguir = 1;
 	char* codigo_operacion;
 	do {
 		codigo_operacion = recibir_dato_serializado(clientePrograma);
-		if (strcmp(codigo_operacion, "FINALIZAR_PROGRAMA") == 0) {
-			int pid = atoi(recibir_dato_serializado(clientePrograma));
-			Proceso* Proceso_a_eliminar = buscar_proceso_by_PID(pid);
-			verificar_estado(pid);
-		} else if (strcmp(codigo_operacion, "") == 0) {
+		if(strcmp(codigo_operacion, "") == 0) {
 			close(clientePrograma);
 			controlSeguir = 0;
 		} else {
