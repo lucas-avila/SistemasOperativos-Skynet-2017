@@ -29,7 +29,11 @@ void eliminar_todas_infos() {
 }
 
 void eliminar_info_proceso(Info_ejecucion* info_ejecucion) {
-	list_remove(Info_procesos, info_ejecucion);
+	void my_free(Info_ejecucion * info_proceso){
+		free(info_proceso);
+	}
+	int indice = buscar_indice_Info_proceso(info_ejecucion->pid);
+	list_remove_and_destroy_element(Info_procesos, indice, &my_free);
 }
 
 int buscar_indice_Info_proceso(uint32_t PID) {

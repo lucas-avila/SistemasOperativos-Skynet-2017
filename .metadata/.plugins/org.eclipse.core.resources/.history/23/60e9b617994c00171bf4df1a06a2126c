@@ -150,11 +150,21 @@ void finalizar_programa(int pid, int kernel_programa) {
 
 // Fecha y hora de fin de ejecucion, fecha y hora de inicio de ejecucion, tiempo total de ejecucion, cantidad de impresiones por pantalla.
 void mostrar_info_proceso(uint32_t pid) {
+<<<<<<< HEAD
 
+	Info_ejecucion* info_proceso = malloc(sizeOf(Info_ejecucion));
+	info_proceso = buscar_info_por_PID(pid);
+	char* textoInicio = malloc(string_length(ctime(info_proceso->fecha_inicio)));
+	strcpy(textoInicio, ctime(info_proceso->fecha_inicio));
+	time_t fecha_fin = time(NULL);
+	char* textoFin = malloc(string_length(ctime(fecha_fin)));
+	strcpy(textoFin, fecha_fin);
+=======
 	Info_ejecucion* info_proceso = buscar_info_por_PID(pid);
 	char * textoInicio = ctime(&(info_proceso->fecha_inicio));
 	time_t fecha_fin = time(NULL);
 	char * textoFin = ctime(&fecha_fin);
+>>>>>>> fd7768ca1f18ec63c884a82ea8dbf5a3c90aa42a
 
 	unsigned int tiempoTotal = difftime(fecha_fin, info_proceso->fecha_inicio);
 	unsigned int horas = tiempoTotal / 3600;
@@ -165,6 +175,15 @@ void mostrar_info_proceso(uint32_t pid) {
 	printf("Fecha de inicio de ejecucion: %s", textoInicio);
 	printf("Fecha de fin de ejecucion: %s", textoFin);
 	printf("Tiempo total de ejecucion: (%d) horas, (%d) minutos, (%d) segundos.\n", horas, minutos, segundos);
+<<<<<<< HEAD
+	printf("Cantidad de impresiones por pantalla: (%d)", info_proceso->cant_impresiones);
+
+	free(textoInicio);
+	free(textoFin);
+
+	return;
+=======
 	printf("Cantidad de impresiones por pantalla: (%d)\n", info_proceso->cant_impresiones);
+>>>>>>> fd7768ca1f18ec63c884a82ea8dbf5a3c90aa42a
 }
 
