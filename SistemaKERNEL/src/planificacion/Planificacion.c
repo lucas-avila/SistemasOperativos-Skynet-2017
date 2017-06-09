@@ -3,7 +3,6 @@
 #include <commons/collections/list.h>
 #include <commons/string.h>
 #include <semaphore.h>
-#include <stdlib.h>
 #include <string.h>
 
 #include "../capaMEMORIA/AdministrarSemaforos.h"
@@ -50,7 +49,9 @@ void proceso_a_NEW(Proceso * p){
 
 void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 	queue_pop(cola(origen));
-	queue_push(cola(destino), pcb);
+
+	Proceso * p = proceso(pcb);
+
 	//Si viene de algun waiting
 	if(es_semaforo(origen)) {
 
@@ -58,16 +59,20 @@ void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 
 	//Si va a algun waiting
 	if(es_semaforo(destino)){
-		marcar_CPU_Disponible(proceso(pcb)->cpu);
-		enviar_dato_serializado("BLOQUEADO", proceso(pcb)->cpu->numeroConexion);
-		proceso(pcb)->cpu = NULL;
+		marcar_CPU_Disponible(p->cpu);
+		enviar_dato_serializado("BLOQUEADO", p->cpu->numeroConexion);
+		p->cpu = NULL;
 	}else if(strcmp(destino, EXIT) == 0){
 		pcb->exit_code = 0;
 		finalizar_proceso(pcb);
 	}
-	//free(proceso(pcb)->cola);
-	proceso(pcb)->cola = string_new();
-	string_append(&proceso(pcb)->cola, destino);
+
+	char * cola_guardada = p->cola;
+	strcpy(cola_guardada, "");
+	string_append(&cola_guardada, destino);
+
+	//Después de que se actualice el proceso lo metemos en la cola a la que iba
+	queue_push(cola(destino), pcb);
 }
 
 CPUInfo* obtener_CPU_Disponible() {
@@ -112,12 +117,14 @@ void planificador_largo_plazo() {
 PCB* obtener_proceso_de_cola_READY() {
 	while (configuraciones.planificacion_activa == 1) {
 		//SE CONTROLA LA MULTIPROGRAMACION DE ESTA MANERA
+		sem_wait(&mutex_cola_READY);
 		if (!queue_is_empty(cola(READY))) {
-			sem_wait(&mutex_cola_READY);
+
 			PCB* pcb = queue_peek(cola(READY));
 			sem_post(&mutex_cola_READY);
 			return pcb;
 		}
+		sem_post(&mutex_cola_READY);
 	}
 	return NULL;
 }

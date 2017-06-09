@@ -13,7 +13,7 @@
 
 #include "../procesador/Ejecucion.h"
 
-PCB* procesoPrueba;
+PCB* pcbDePrueba;
 IndiceCodigo* crearIndiceCodigo(int programCounter, int byteInicial, int tamanio, int pagina) {
 	IndiceCodigo* indice1 = malloc(sizeof(IndiceCodigo));
 	indice1->byte_inicial_codigo = byteInicial;
@@ -24,21 +24,21 @@ IndiceCodigo* crearIndiceCodigo(int programCounter, int byteInicial, int tamanio
 }
 
 void crear_PCB_TEST() {
-	procesoPrueba = malloc(sizeof(PCB));
-	procesoPrueba->PID = 1000;
-	procesoPrueba->program_counter = 0;
-	procesoPrueba->cantidad_paginas_codigo = 1;
+	pcbDePrueba = malloc(sizeof(PCB));
+	pcbDePrueba->PID = 1000;
+	pcbDePrueba->program_counter = 0;
+	pcbDePrueba->cantidad_paginas_codigo = 1;
 
-	procesoPrueba->pila = list_create();
+	pcbDePrueba->pila = list_create();
 
 	IndiceStack* filaInicial = malloc(sizeof(IndiceStack));
 	filaInicial->argumentos = list_create();
 	filaInicial->variables = list_create();
 	filaInicial->posicion = 0;
-	list_add(procesoPrueba->pila, filaInicial);
-	procesoPrueba->pagina_inicial_stack = atoi(asignar_Paginas_Programa(string_itoa(procesoPrueba->PID), "1"));
+	list_add(pcbDePrueba->pila, filaInicial);
+	pcbDePrueba->pagina_inicial_stack = atoi(asignar_Paginas_Programa(string_itoa(pcbDePrueba->PID), "1"));
 
-	procesoPrueba->RR = 0;
+	pcbDePrueba->RR = 0;
 	/**
 
 	 int paginaSentencia = atoi(asignar_Paginas_Programa(procesoPrueba->PID, "1"));
@@ -70,7 +70,7 @@ void mostrar_menu_primitivas() {
 	char nombre;
 	int punterosAlocar[3];
 	crear_PCB_TEST();
-	setearPCB(procesoPrueba);
+	setearPCB(pcbDePrueba);
 	int opcion_Salir = 0;
 	do {
 		printf("\n 1 - Probar DECLARAR VARIABLE");
@@ -157,15 +157,15 @@ void mostrar_menu_primitivas() {
 			ee = OBTENER_DIRECCION_DE_VARIABLE('t');
 			ASIGNAR_VARIABLE(ee, punterosAlocar[1]);
 
-			DireccionMemoriaDinamica* dir = deserializarMemoriaDinamica(string_itoa(procesoPrueba->PID), punterosAlocar[0]);
-			printf("\n\nMemoria Despues del MALLOC: \n %s", solicitar_bytes_memoria(string_itoa(procesoPrueba->PID), string_itoa(dir->pagina), string_itoa(dir->byteInicial), "512"));
+			DireccionMemoriaDinamica* dir = deserializarMemoriaDinamica(string_itoa(pcbDePrueba->PID), punterosAlocar[0]);
+			printf("\n\nMemoria Despues del MALLOC: \n %s", solicitar_bytes_memoria(string_itoa(pcbDePrueba->PID), string_itoa(dir->pagina), string_itoa(dir->byteInicial), "512"));
 
 			LIBERAR(OBTENER_DIRECCION_DE_VARIABLE('r'));
 			LIBERAR(OBTENER_DIRECCION_DE_VARIABLE('t'));
 			printf("\n Probando Fragmentacion... ");
 			sleep(5);
 			printf("\n Fragmentacion Realizada ");
-			printf("\n\nMemoria Despues del FREE: \n %s", solicitar_bytes_memoria(string_itoa(procesoPrueba->PID), string_itoa(dir->pagina), string_itoa(dir->byteInicial), "512"));
+			printf("\n\nMemoria Despues del FREE: \n %s", solicitar_bytes_memoria(string_itoa(pcbDePrueba->PID), string_itoa(dir->pagina), string_itoa(dir->byteInicial), "512"));
 
 			break;
 
@@ -173,7 +173,7 @@ void mostrar_menu_primitivas() {
 			casos_multiples_primitivas();
 			break;
 		case 9:
-			setPCBEjecucion(procesoPrueba);
+			setPCBEjecucion(pcbDePrueba);
 			ejecutar_Programa();
 			break;
 
@@ -200,7 +200,7 @@ void mostrar_menu_primitivas() {
 			do {
 				scanf("%s", &nombreArchivo);
 			} while (strcmp(nombreArchivo,"")==0);
-			abrir_archivo(string_itoa(procesoPrueba->PID), nombreArchivo, true, false, false);
+			abrir_archivo(string_itoa(pcbDePrueba->PID), nombreArchivo, true, false, false);
 
 			break;
 		case 13:
@@ -208,14 +208,14 @@ void mostrar_menu_primitivas() {
 			do {
 				scanf("%s", &nombreArchivo);
 			} while (strcmp(nombreArchivo,"")==0);
-			abrir_archivo(string_itoa(procesoPrueba->PID), nombreArchivo, false, true, true);
+			abrir_archivo(string_itoa(pcbDePrueba->PID), nombreArchivo, false, true, true);
 			break;
 		case 14:
 			printf("\n FD Archivo: ");
 			FD = validarNumeroInput(0, 5000);
 			printf("\n Tamanio de Lectura: ");
 			valor = validarNumeroInput(0, 5000);
-			leer_archivo(string_itoa(procesoPrueba->PID), valor);
+			leer_archivo(string_itoa(pcbDePrueba->PID), valor);
 			break;
 		case 15:
 			printf("\n FD Archivo: ");
@@ -224,7 +224,7 @@ void mostrar_menu_primitivas() {
 			do {
 				scanf("%s", &filaArchivo);
 			} while (strcmp(filaArchivo,"")==0);
-			escribir_archivo(string_itoa(procesoPrueba->PID), FD, strlen(filaArchivo), filaArchivo);
+			escribir_archivo(string_itoa(pcbDePrueba->PID), FD, strlen(filaArchivo), filaArchivo);
 			break;
 
 		case 16:
@@ -233,13 +233,13 @@ void mostrar_menu_primitivas() {
 			int tamanio;
 			printf("\n Cursor: ");
 			valor = validarNumeroInput(0, 5000);
-			mover_cursor_archivo(string_itoa(procesoPrueba->PID), nombreArchivo, valor);
+			mover_cursor_archivo(string_itoa(pcbDePrueba->PID), nombreArchivo, valor);
 			break;
 		case 17:
 			printf("\n FD Archivo: ");
 			FD = validarNumeroInput(0, 5000);
 
-			cerrar_archivo(string_itoa(procesoPrueba->PID), FD);
+			cerrar_archivo(string_itoa(pcbDePrueba->PID), FD);
 			break;
 		}
 

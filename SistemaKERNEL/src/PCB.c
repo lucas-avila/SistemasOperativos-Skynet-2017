@@ -182,6 +182,10 @@ int enviar_pcb(PCB * pcb, int s_destino) {
 
 	enviar_dato_serializado("RECIBIR_PCB", s_destino);
 	enviar_estructura_serializada(paquete, size, s_destino);
+
+	free(buffer_lista_codigo);
+	free(buffer_lista_pila);
+	free(paquete);
 }
 
 PCB * recibir_pcb_deb(char * paquete) {

@@ -77,13 +77,13 @@ int enviar_SYSCALL_wait_semaforo_a_kernel(char* nombre_semaforo, PCB * pcb){
 	enviar_PCB_a_kernel(pcb, "WAIT_SEM");
 	enviar_dato_serializado(nombre_semaforo, servidor_kernel);
 	printf("Frenando la cpu con el wait\n");
-	sem_wait(&mutex_wait_semaforo);
-	printf("COntinuenado la cpu con el signal\n");
-	if(bloqueado){
+	char * respuesta = recibir_dato_serializado(servidor_kernel);
+	printf("COntinuenado la cpu con el signal, dato recibido : %s\n", respuesta);
+	if(strcmp(respuesta, "BLOQUEADO") == 0){
 		//el semaforo quedo bloqueando el proceso, se libera esta cpu
 		printf("el semaforo quedo bloqueando el proceso, se libera esta cpu\n");
 		return 1;
-	}else{
+	}else if(strcmp(respuesta, "NO_BLOQUEADO") == 0){
 		//el semaforo no bloqueó el proceso, el proceso continua su ejecucion normal
 		printf("el semaforo no bloqueo el proceso");
 		return 0;

@@ -34,8 +34,6 @@ int main(int argc, char *argv[]) {
 	servidor_kernel = conectar_servidor(configuraciones.IP_KERNEL, configuraciones.PUERTO_KERNEL);
 	iniciar_conexion_servidor_memoria();
 
-	inicializar_semaforo_en(&mutex_wait_semaforo, 0);
-
 	inicializar_contexto_ejecucion();
 
 	//Parametro de Identificacion
@@ -55,16 +53,7 @@ int main(int argc, char *argv[]) {
 		} else if (strcmp(operacion, "RECIBIR_PCB") == 0) {
 			printf("RECIBIR_PCB\n");
 			CU_Procesar_PCB_a_ejecutar();
-		} else if (strcmp(operacion, "BLOQUEADO") == 0) {
-			printf("BLOQUEADO\n");
-			bloqueado = 1;
-			sem_post(&mutex_wait_semaforo);
-		} else if (strcmp(operacion, "NO_BLOQUEADO") == 0){
-			printf("NO BLOQUEADO\n");
-			bloqueado = 0;
-			sem_post(&mutex_wait_semaforo);
-		}
-		else if (strcmp(operacion, "TESTEAR_PLANIFICACION") == 0){
+		}else if (strcmp(operacion, "TESTEAR_PLANIFICACION") == 0){
 			recibir_dato_serializado(servidor_kernel);
 			testear_planificacion(servidor_kernel);
 		}
