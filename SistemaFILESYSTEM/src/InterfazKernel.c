@@ -9,14 +9,14 @@
 
 #include "header/Socket.h"
 
-static const char[] PATH_ARCHIVOS = "/Archivos/";
+static const char PATH_ARCHIVOS[] = "/Archivos/";
 
 void validar_archivo(char* path) {
 	if(access(path, F_OK) == -1){
-		enviar_dato_serializado("ARCHIVO_NO_EXISTE", clienteKernel);
+		//enviar_dato_serializado("ARCHIVO_NO_EXISTE", clienteKernel);
 	}
 	else {
-		enviar_dato_serializado("ARCHIVO_EXISTE", clienteKernel);
+		//enviar_dato_serializado("ARCHIVO_EXISTE", clienteKernel);
 	}
 }
 

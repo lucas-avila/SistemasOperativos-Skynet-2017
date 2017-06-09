@@ -5,9 +5,12 @@
  *      Author: utnso
  */
 
-#include <unistd.h>
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
+
+#include "Estructuras.h"
 
 int validarNumeroInput(int rangoMinimo, int rangoMaximo) {
 	int numero = 0;
@@ -47,8 +50,8 @@ char * obtener_codigo(char * path_archivo_fuente){
 	return literal;
 }
 
-/*int pid_identicos(Info_ejecucion info_proceso){
-
-	//FALTA terminar.
-	return 0;
-}*/
+int pertenece_a_la_consola(uint32_t pid) {
+	if(buscar_indice_Info_proceso(pid) == -1)
+		return 0;
+	return 1;
+}

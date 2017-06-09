@@ -16,6 +16,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <unistd.h>
 
 #include "header/AppConfig.h"
 #include "header/Estructuras.h"
@@ -46,11 +47,11 @@ int main(int argc, char *argv[]) {
 
 void mostrar_menu_usuario() {
 	printf("\n******* Bienvenido a Esther ******");
-	printf("\n 1 - Iniciar programa -> ruta al programa (Handshake Kernel)");
-	printf("\n 2 - Finalizar programa -> PID");
-	printf("\n 3 - Desconectar consola");
-	printf("\n 4 - Limpiar mensajes");
-	printf("\n 0 - Salir");
+	printf("\n 1 - Iniciar programa.");
+	printf("\n 2 - Finalizar programa.");
+	printf("\n 3 - Desconectar consola.");
+	printf("\n 4 - Limpiar mensajes.");
+	printf("\n 0 - Salir.");
 	printf("\n Opcion: ");
 }
 
@@ -74,13 +75,16 @@ void atender_solicitudes_de_usuario() {
 			int pid;
 			printf("\nIngrese el PID del programa que desea terminar: ");
 			scanf("%d", &pid);
-			Info_ejecucion * programa = buscar_info_por_PID(pid);
-			solicitar_fin_programa(programa->pid, kernel);
+			if(pertenece_a_la_consola(pid)){
+				Info_ejecucion * programa = buscar_info_por_PID(pid);
+				solicitar_fin_programa(programa->pid, kernel);
+			} else {
+				printf("El PID ingresado no pertenece a un proceso de esta consola.\n");
+			}
 		}
 			break;
 		case 3:
 			printf("Se finalizaran todos los programas activos.\n");
-
 			int tamanio = list_size(Info_procesos);
 			int i = 0;
 			Info_ejecucion* info_ejecucion;
@@ -94,6 +98,7 @@ void atender_solicitudes_de_usuario() {
 			break;
 		}
 	} while (opcion != 0);
+	close(kernel);
 }
 
 void iniciar_thread(char * path_archivo_fuente) {
@@ -118,6 +123,8 @@ void CU_iniciar_programa(char * path_archivo_fuente) {
 	agregar_proceso(info_proceso);
 
 	recibir_mensajes(pid, kernel_programa);
+	finalizar_programa(pid, kernel_programa);
+	close(kernel_programa);
 }
 
 void recibir_mensajes(int pid, int kernel_programa) {
@@ -131,7 +138,6 @@ void recibir_mensajes(int pid, int kernel_programa) {
 		mensaje = recibir_dato_serializado(kernel_programa);
 	}
 
-	finalizar_programa(pid, kernel_programa);
 }
 
 void solicitar_fin_programa(int pid, int kernel){
@@ -148,7 +154,8 @@ void finalizar_programa(int pid, int kernel_programa) {
 	eliminar_info_proceso(buscar_info_por_PID(pid));
 }
 
-// Fecha y hora de fin de ejecucion, fecha y hora de inicio de ejecucion, tiempo total de ejecucion, cantidad de impresiones por pantalla.
+// Fecha y hora de fin de ejecucion, fecha y hora de inicio de ejecucion,
+// tiempo total de ejecucion, cantidad de impresiones por pantalla.
 void mostrar_info_proceso(uint32_t pid) {
 
 	Info_ejecucion* info_proceso = buscar_info_por_PID(pid);
@@ -161,10 +168,12 @@ void mostrar_info_proceso(uint32_t pid) {
 	unsigned int minutos = (tiempoTotal % 3600) / 60;
 	unsigned int segundos = (tiempoTotal % 3600) % 60;
 
+	system("clear");
 	printf("El Proceso (%d) ha finalizado, los siguientes son sus datos estadisticos: \n", info_proceso->pid);
 	printf("Fecha de inicio de ejecucion: %s", textoInicio);
 	printf("Fecha de fin de ejecucion: %s", textoFin);
 	printf("Tiempo total de ejecucion: (%d) horas, (%d) minutos, (%d) segundos.\n", horas, minutos, segundos);
 	printf("Cantidad de impresiones por pantalla: (%d)\n", info_proceso->cant_impresiones);
+	mostrar_menu_usuario();
 }
 

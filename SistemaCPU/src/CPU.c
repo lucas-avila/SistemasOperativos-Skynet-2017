@@ -29,16 +29,13 @@ void testear_planificacion(servidor_kernel); //borrame
 int main(int argc, char *argv[]) {
 
 	inicializar_configuracion(argv[1]);
-	inicializar_semaforo_en(&mutex_wait_semaforo, 0);
 	//inicializar_configuracion("/home/utnso/Escritorio/tp-2017-1c-Skynet/SistemaCPU/resource/config.cfg");
 	controlEjecucionPrograma = false;
 	servidor_kernel = conectar_servidor(configuraciones.IP_KERNEL, configuraciones.PUERTO_KERNEL);
-	 iniciar_conexion_servidor_memoria();
+	iniciar_conexion_servidor_memoria();
 
-
-	 inicializar_contexto_ejecucion();
-
-
+	inicializar_semaforo_en(&mutex_wait_semaforo, 0);
+	inicializar_contexto_ejecucion();
 
 	//Parametro de Identificacion
 	enviar_dato_serializado("CPU", servidor_kernel);
