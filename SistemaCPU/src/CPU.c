@@ -35,6 +35,7 @@ int main(int argc, char *argv[]) {
 	iniciar_conexion_servidor_memoria();
 
 	inicializar_semaforo_en(&mutex_wait_semaforo, 0);
+
 	inicializar_contexto_ejecucion();
 
 	//Parametro de Identificacion
