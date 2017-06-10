@@ -23,3 +23,8 @@ char * enviar_programa_ANSISOP(char * path_archivo_fuente, int kernel_programa){
 
 	return recibir_dato_serializado(kernel_programa);
 }
+
+void solicitar_fin_programa(int pid, int socket){
+	enviar_dato_serializado("FINALIZAR_PROGRAMA", socket);
+	enviar_dato_serializado(string_itoa(pid), socket);
+}

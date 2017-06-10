@@ -60,6 +60,8 @@ void inicializar_semaforos(){
 	inicializar_semaforo(&mutex_lista_PROCESOS);
 	//PLANIFICACION
 	inicializar_semaforo(&mutex_cola_READY);
+	//OTROS
+	inicializar_semaforo(&mutex_memoria);
 }
 
 void inicializar_listas_globales() {
@@ -86,10 +88,17 @@ void CU_iniciar_programa(int programa_socket) {
 
 void finalizar_proceso(Proceso * proceso){
 
+	sem_wait(&mutex_memoria);
 	char * respuesta = finalizar_Programa_memoria(string_itoa(proceso->PID));
-	// TODO finalizar_programa_memoria no devuelve OK?
+	sem_post(&mutex_memoria);
 	if (strcmp(respuesta, "OK") == 0) {
 
+		int buscar_proceso(Proceso * elem_proceso){
+			return elem_proceso->PID == proceso->PID;
+		}
+		sem_wait(&mutex_lista_PROCESOS);
+		list_remove_by_condition(procesos, &buscar_proceso);
+		sem_post(&mutex_lista_PROCESOS);
 		notificar_exit_code(proceso->pcb->exit_code, proceso->socket);
 		close(proceso->socket);
 		free(proceso);
@@ -109,14 +118,7 @@ void finalizar_proceso(Proceso * proceso){
 
 void actualizar_exit_code(Proceso * proceso, int exit_code){
 
-	int buscar_proceso(Proceso * elem_proceso){
-		return elem_proceso->PID == proceso->PID;
-	}
-	sem_wait(&mutex_lista_PROCESOS);
-	list_remove_by_condition(procesos, &buscar_proceso);
-	sem_post(&mutex_lista_PROCESOS);
 	proceso->pcb->exit_code = exit_code;
-
 }
 
 void notificar_exit_code(int exit_code, int socket){

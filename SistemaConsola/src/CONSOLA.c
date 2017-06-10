@@ -9,7 +9,6 @@
  */
 
 #include <commons/collections/list.h>
-#include <commons/string.h>
 #include <pthread.h>
 #include <stdint.h>
 #include <stdio.h>
@@ -30,8 +29,7 @@ void iniciar_thread();
 void CU_iniciar_programa();
 void recibir_mensajes(int pid, int kernel_programa);
 void finalizar_programa(int pid, int kernel_programa);
-void mostrar_info_proceso( pid);
-void solicitar_fin_programa(int pid, int kernel);
+void mostrar_info_proceso(uint32_t pid);
 
 int main(int argc, char *argv[]) {
 
@@ -58,8 +56,6 @@ void mostrar_menu_usuario() {
 void atender_solicitudes_de_usuario() {
 	int opcion = -1;
 	char path_archivo_fuente[100];
-	int kernel = conectar_servidor(configuraciones.IP_KERNEL, configuraciones.PUERTO_KERNEL);
-	enviar_dato_serializado("INICIAR_CONSOLA", kernel);
 	do {
 		mostrar_menu_usuario();
 		opcion = validarNumeroInput(0, 4);
@@ -77,7 +73,7 @@ void atender_solicitudes_de_usuario() {
 			scanf("%d", &pid);
 			if(pertenece_a_la_consola(pid)){
 				Info_ejecucion * programa = buscar_info_por_PID(pid);
-				solicitar_fin_programa(programa->pid, kernel);
+				solicitar_fin_programa(programa->pid, programa->socket);
 			} else {
 				printf("El PID ingresado no pertenece a un proceso de esta consola.\n");
 			}
@@ -90,7 +86,7 @@ void atender_solicitudes_de_usuario() {
 			Info_ejecucion* info_ejecucion;
 			for (i; i < tamanio; i++) {
 				info_ejecucion = list_get(Info_procesos, i);
-				solicitar_fin_programa(info_ejecucion->pid, kernel);
+				solicitar_fin_programa(info_ejecucion->pid, info_ejecucion->socket);
 			}
 			break;
 		case 4:
@@ -98,7 +94,6 @@ void atender_solicitudes_de_usuario() {
 			break;
 		}
 	} while (opcion != 0);
-	close(kernel);
 }
 
 void iniciar_thread(char * path_archivo_fuente) {
@@ -138,11 +133,6 @@ void recibir_mensajes(int pid, int kernel_programa) {
 		mensaje = recibir_dato_serializado(kernel_programa);
 	}
 
-}
-
-void solicitar_fin_programa(int pid, int kernel){
-	enviar_dato_serializado("FINALIZAR_PROGRAMA", kernel);
-	enviar_dato_serializado(string_itoa(pid), kernel);
 }
 
 void finalizar_programa(int pid, int kernel_programa) {

@@ -17,6 +17,9 @@ sem_t mutex_pids;
 sem_t mutex_cola_READY;
 sem_t mutex_lista_PROCESOS;
 
+//OTROS
+sem_t mutex_memoria;
+
 void inicializar_semaforo(sem_t* variable_semaforo);
 void destruir_semaforo(sem_t* variable_semaforo);
 void activar_semaforo(sem_t* variable_semaforo);
