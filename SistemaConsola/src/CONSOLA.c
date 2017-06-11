@@ -88,7 +88,7 @@ void atender_solicitudes_de_usuario() {
 			Info_ejecucion* info_ejecucion;
 			for (i; i < tamanio; i++) {
 				info_ejecucion = list_get(Info_procesos, i);
-				solicitar_fin_programa(info_ejecucion->pid, info_ejecucion->socket);
+				solicitar_desconexion(info_ejecucion->pid, info_ejecucion->socket);
 			}
 			break;
 		case 4:
@@ -160,7 +160,6 @@ void mostrar_info_proceso(uint32_t pid) {
 	unsigned int minutos = (tiempoTotal % 3600) / 60;
 	unsigned int segundos = (tiempoTotal % 3600) % 60;
 
-	system("clear");
 	string_append(&info_log, "El Proceso(");
 	string_append(&info_log, string_itoa(info_proceso->pid));
 	string_append(&info_log, ") ha finalizado, los siguientes son sus datos estadisticos: \n");

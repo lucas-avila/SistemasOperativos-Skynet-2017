@@ -226,7 +226,7 @@ void detener_planificacion(){
 	generar_log();
 }
 
-void verificar_estado(uint32_t pid){
+void verificar_estado(uint32_t pid, int exit_code){
 
 	Proceso * proceso_a_eliminar = buscar_proceso_by_PID(pid);
 	while(strcmp(proceso_a_eliminar->cola, "EXEC") == 0);
@@ -234,7 +234,7 @@ void verificar_estado(uint32_t pid){
 	if(strcmp(proceso_a_eliminar->cola, "EXIT") == 0) {
 		printf("El proceso ya ha finalizado.\n");
 	} else {
-		actualizar_exit_code(proceso_a_eliminar, -7);
+		actualizar_exit_code(proceso_a_eliminar, exit_code);
 		finalizar_proceso(proceso_a_eliminar);
 	}
 }
@@ -280,7 +280,7 @@ void atender_solicitudes_de_usuario() {
 			Proceso * proceso_a_eliminar;
 			printf("\nPor favor ingrese el PID del proceso que desea MATAR: ");
 			scanf("%d", &pid);
-			verificar_estado(pid);
+			verificar_estado(pid, -7);
 		}
 			break;
 		case 6:
