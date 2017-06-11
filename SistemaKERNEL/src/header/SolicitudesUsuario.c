@@ -5,9 +5,12 @@
  *      Author: utnso
  */
 
+#include "SolicitudesUsuario.h"
+
 #include <commons/collections/list.h>
 #include <commons/log.h>
 #include <commons/string.h>
+#include <semaphore.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -16,12 +19,12 @@
 #include "../administrarPCB/EstadisticaProceso.h"
 #include "../administrarProcesos/Proceso.h"
 #include "../general/funcionesUtiles.h"
+#include "../general/Semaforo.h"
 #include "../general/Socket.h"
 #include "../planificacion/Planificacion.h"
 #include "../testing/TestingMenu.h"
+#include "../capaFILESYSTEM/TablaGlobalArchivo.h"
 #include "AppConfig.h"
-
-char * info_log;
 
 void mostrar_menu_usuario() {
 	printf("\n******* MENU KERNEL ******");
@@ -97,7 +100,9 @@ void listar_procesos_por_cola(){
 			int buscar_procesos_por_cola(Proceso * proceso){
 			return strcmp(proceso->cola, cola_elegida) == 0;
 			}
+			sem_wait(&mutex_lista_PROCESOS);
 			t_list * procesos_filtrados = list_filter(procesos, &buscar_procesos_por_cola);
+			sem_post(&mutex_lista_PROCESOS);
 			mostrar_procesos(procesos_filtrados);
 		}
 	} while(opcion!= 6);
@@ -109,14 +114,15 @@ void mostrar_procesos(t_list * procesos_lista){
 	Proceso * proceso;
 	while(i < size){
 		proceso = list_get(procesos_lista, i);
-		printf("⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛⚛\n");
-		printf("Proceso ID: %d\n", proceso->PID);
-		printf("Su socket es: %d\n", proceso->socket);
-		printf("Su cola actual es: %s\n", proceso->cola);
+		string_append(&info_log, "\n---------------------\n");
+		string_append(&info_log, "Proceso ID: ");
+		string_append(&info_log, string_itoa(proceso->PID));
+		string_append(&info_log, "\n");
 		i++;
 	}
-	printf("---> Cantidad de procesos totales encontrados: %d\n", i);
-	printf("⚛⚛⚛⚛⚛ Fin de busqueda ⚛⚛⚛⚛⚛\n");
+	string_append(&info_log, "\n---> Cantidad de procesos totales encontrados: ");
+	string_append(&info_log, string_itoa(i));
+	generar_log();
 }
 
 void mostrar_menu_colas(){
@@ -142,11 +148,17 @@ void mostrar_menu_informacion_proceso(){
 }
 
 void generar_log(){
-	string_append(&info_log, "------Fin del LOG------\n\0");
+	string_append(&info_log, "\n------Fin del LOG------\n\0");
 	printf("\n%s", info_log);
     t_log* logger = log_create(configuraciones.PATH_ARCHIVO_LOG, "KERNEL",false, LOG_LEVEL_INFO);
-    log_info(logger, "\nInfo logs del KERNEL: %s", info_log);
+    log_info(logger, "\n***LOGS del KERNEL***\n %s", info_log);
     log_destroy(logger);
+}
+
+void mencionar_proceso(int pid){
+	string_append(&info_log, "\n-->Logs del Proceso ");
+	string_append(&info_log, string_itoa(pid));
+	string_append(&info_log, ":\n");
 }
 
 void obtener_informacion_proceso(){
@@ -156,7 +168,7 @@ void obtener_informacion_proceso(){
 	printf("\nPor favor ingrese el PID del proceso del cual desea informacion: ");
 	scanf("%d", &pid);
 	estadistica_proceso = buscar_registro_por_PID(pid);
-	info_log = string_new();
+	mencionar_proceso(pid);
 		do {
 			mostrar_menu_informacion_proceso();
 			opcion = validarNumeroInput(1, 6);
@@ -202,12 +214,15 @@ void modificar_grado_multiprogramacion(){
 	} while (grado_multiprog < 0);
 
 	configuraciones.GRADO_MULTIPROG = grado_multiprog;
-	printf("--- Modificacion exitosa ---\n");
+	string_append(&info_log, "--> Cambio de grado de multiprogramacion a: ");
+	string_append(&info_log, string_itoa(grado_multiprog));
+	generar_log();
 }
 
 void detener_planificacion(){
 	configuraciones.planificacion_activa = 0;
-	printf("--- Se detuvo la planificacion ---\n");
+	string_append(&info_log, "--- Se detuvo la planificacion ---\n");
+	generar_log();
 }
 
 void verificar_estado(uint32_t pid){
@@ -221,6 +236,21 @@ void verificar_estado(uint32_t pid){
 		actualizar_exit_code(proceso_a_eliminar, -7);
 		finalizar_proceso(proceso_a_eliminar);
 	}
+}
+
+void mostrar_tabla_global_archivos(){
+	string_append(&info_log, "\n---TABLA GLOBAL DE ARCHIVOS---\n");
+	string_append(&info_log, "\n FILE \t\t\t OPEN\n");
+	int size = list_size(TABLA_GLOBAL_ARCHIVO);
+	int i = 0;
+	while(i<size){
+		TablaGlobalArchivo * elemento = list_get(TABLA_GLOBAL_ARCHIVO, i);
+		string_append(&info_log, elemento->file);
+		string_append(&info_log, " \t\t\t ");
+		string_append(&info_log, string_itoa(elemento->open));
+		string_append(&info_log, "\n");
+	}
+	generar_log();
 }
 
 void atender_solicitudes_de_usuario() {
@@ -239,9 +269,7 @@ void atender_solicitudes_de_usuario() {
 			obtener_informacion_proceso();
 			break;
 		case 3:
-			//mostrar_tabla_global_archivos(); TODO
-			enviar_dato_serializado("MENSAJE 1", 8);
-			enviar_dato_serializado("MENSAJE 2", 9);
+			mostrar_tabla_global_archivos();
 			break;
 		case 4:
 			modificar_grado_multiprogramacion();

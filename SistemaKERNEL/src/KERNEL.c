@@ -1,6 +1,6 @@
-#include <commons/collections/dictionary.h>
 #include <commons/collections/list.h>
 #include <commons/string.h>
+#include <semaphore.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -53,6 +53,8 @@ void inicializar_KERNEL() {
 	//   PLanificacion
 	inicializar_colas_5_estados();
 	atender_clientes(0, &EJECUTAR_ALGORITMO_PLANIFICACION);
+
+	info_log = string_new();
 }
 
 void inicializar_semaforos(){
