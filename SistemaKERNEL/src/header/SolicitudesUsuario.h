@@ -8,6 +8,11 @@
 #ifndef HEADER_SOLICITUDESUSUARIO_H_
 #define HEADER_SOLICITUDESUSUARIO_H_
 
+#include <commons/collections/list.h>
+#include <stdint.h>
+
+char * info_log;
+
 void atender_solicitudes_de_usuario();
 void mostrar_menu_usuario() ;
 void mostrar_cola(char * cola);
