@@ -105,18 +105,12 @@ void finalizar_proceso(Proceso * proceso){
 		close(proceso->socket);
 		free(proceso);
 	} else {
-		printf("No se pudo finalizar el programa\n");
-		//TODO ver qué mierda hacemos acá...
+		actualizar_exit_code(proceso, -10);
+		notificar_exit_code(proceso->pcb->exit_code, proceso->socket);
+		//TODO ver a dónde mandamos el proceso si sucede esto...aunque no debería suceder.
 	}
 
 }
-
-/* Se asume que cada vez que se quiera terminar un proceso se
- * actualizará previamente su exit_code y luego se llamará a
- * la función para finalizar el proceso. Al actualizar el exit_code
- * borraremos directamente el proceso de la lista de procesos
- * (donde se encuentran todos ellos) y retornaremos el Proceso.
- */
 
 void actualizar_exit_code(Proceso * proceso, int exit_code){
 

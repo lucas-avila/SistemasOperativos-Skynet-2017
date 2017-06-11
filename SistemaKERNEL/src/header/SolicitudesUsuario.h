@@ -22,7 +22,7 @@ void listar_procesos_por_cola();
 void listar_procesos();
 void mostrar_menu_listado_procesos();
 void mostrar_menu_informacion_proceso();
-void verificar_estado(uint32_t pid);
+void verificar_estado(uint32_t pid, int exit_code);
 void detener_planificacion();
 void modificar_grado_multiprogramacion();
 void obtener_informacion_proceso();

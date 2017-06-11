@@ -9,6 +9,7 @@
  */
 
 #include <commons/collections/list.h>
+#include <commons/string.h>
 #include <pthread.h>
 #include <stdint.h>
 #include <stdio.h>
@@ -35,6 +36,7 @@ int main(int argc, char *argv[]) {
 
 	inicializar_configuracion(argv[1]);
 	inicializar_lista_Info_procesos();
+	incializar_log();
 
 	pthread_t t_interfaz;
 	pthread_create(&t_interfaz, NULL, &atender_solicitudes_de_usuario, NULL);
@@ -86,7 +88,7 @@ void atender_solicitudes_de_usuario() {
 			Info_ejecucion* info_ejecucion;
 			for (i; i < tamanio; i++) {
 				info_ejecucion = list_get(Info_procesos, i);
-				solicitar_fin_programa(info_ejecucion->pid, info_ejecucion->socket);
+				solicitar_desconexion(info_ejecucion->pid, info_ejecucion->socket);
 			}
 			break;
 		case 4:
@@ -158,12 +160,23 @@ void mostrar_info_proceso(uint32_t pid) {
 	unsigned int minutos = (tiempoTotal % 3600) / 60;
 	unsigned int segundos = (tiempoTotal % 3600) % 60;
 
-	system("clear");
-	printf("El Proceso (%d) ha finalizado, los siguientes son sus datos estadisticos: \n", info_proceso->pid);
-	printf("Fecha de inicio de ejecucion: %s", textoInicio);
-	printf("Fecha de fin de ejecucion: %s", textoFin);
-	printf("Tiempo total de ejecucion: (%d) horas, (%d) minutos, (%d) segundos.\n", horas, minutos, segundos);
-	printf("Cantidad de impresiones por pantalla: (%d)\n", info_proceso->cant_impresiones);
+	string_append(&info_log, "El Proceso(");
+	string_append(&info_log, string_itoa(info_proceso->pid));
+	string_append(&info_log, ") ha finalizado, los siguientes son sus datos estadisticos: \n");
+	string_append(&info_log, "Fecha de inicio de ejecucion: ");
+	string_append(&info_log, textoInicio);
+	string_append(&info_log, "Fecha de fin de ejecucion: ");
+	string_append(&info_log, textoFin);
+	string_append(&info_log, "Tiempo total de ejecucion: (");
+	string_append(&info_log, string_itoa(horas));
+	string_append(&info_log, ") horas, (");
+	string_append(&info_log, string_itoa(minutos));
+	string_append(&info_log, ") minutos, (");
+	string_append(&info_log, string_itoa(segundos));
+	string_append(&info_log, ") segundos.\n");
+	string_append(&info_log, "Cantidad de impresiones por pantalla: ");
+	string_append(&info_log, string_itoa(info_proceso->cant_impresiones));
+	generar_log();
 	mostrar_menu_usuario();
 }
 

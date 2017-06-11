@@ -12,8 +12,9 @@ char * enviar_programa_ANSISOP(char * path_archivo_fuente, int kernel);
 
 void CU_handshake_consola(int kernel);
 void CU_handshake_programa(int kernel);
-void solicitar_fin_programa(int pid, int socket);
 void enviar_solicitud_cancelar_proceso();
 void recibir_mensajes_consola();
+void solicitar_fin_programa(int pid, int socket);
+void solicitar_fin_programa(int pid, int socket);
 
 #endif /* HEADER_INTERFAZKERNEL_H_ */

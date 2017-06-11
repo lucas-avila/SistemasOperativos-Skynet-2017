@@ -11,8 +11,9 @@
 #include <semaphore.h>
 
 typedef struct {
-     char *IP_KERNEL;
-     char *PUERTO_KERNEL;
+     char * IP_KERNEL;
+     char * PUERTO_KERNEL;
+     char * PATH_ARCHIVO_LOG;
 } AppConfig;
 
 //Lo declaro como variable global

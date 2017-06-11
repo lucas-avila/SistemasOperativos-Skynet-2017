@@ -5,41 +5,51 @@
  *      Author: utnso
  */
 
+#include <commons/string.h>
+#include <stdlib.h>
+
+#include "funcionesUtiles.h"
+
 void mostrar_exit_code(int exit_code){
 
+	system("clear");
+	string_append(&info_log, "EXIT CODE: ");
 	switch(exit_code){
 		case 0:
-			printf("\nEl programa finalizo correctamente.\n");
+			string_append(&info_log, "El programa finalizo correctamente.\n");
 			break;
 		case -1:
-			printf("\nNo se pudieron reservar recursos para ejecutar el programa.\n");
+			string_append(&info_log, "No se pudieron reservar recursos para ejecutar el programa.\n");
 			break;
 		case -2:
-			printf("\nEl programa intentó acceder a un archivo que no existe.\n");
+			string_append(&info_log, "El programa intentó acceder a un archivo que no existe.\n");
 			break;
 		case -3:
-			printf("\nEl programa intentó leer un archivo sin permisos.\n");
+			string_append(&info_log, "El programa intentó leer un archivo sin permisos.\n");
 			break;
 		case -4:
-			printf("\nEl programa intentó escribir un archivo sin permisos.\n");
+			string_append(&info_log, "El programa intentó escribir un archivo sin permisos.\n");
 			break;
 		case -5:
-			printf("\nExcepción de memoria.\n");
+			string_append(&info_log, "Excepción de memoria.\n");
 			break;
 		case -6:
-			printf("\nFinalizado a través de desconexión de consola.\n");
+			string_append(&info_log, "Finalizado a través de desconexión de consola.\n");
 			break;
 		case -7:
-			printf("\nFinalizado a través del comando Finalizar Programa de la consola.\n");
+			string_append(&info_log, "Finalizado a través del comando Finalizar Programa de la consola.\n");
 			break;
 		case -8:
-			printf("\nSe intentó reservar más memoria que el tamaño de una página.\n");
+			string_append(&info_log, "Se intentó reservar más memoria que el tamaño de una página.\n");
 			break;
 		case -9:
-			printf("\nNo se pueden asignar más páginas al proceso.\n");
+			string_append(&info_log, "No se pueden asignar más páginas al proceso.\n");
 			break;
-		// Se pueden agregar más.
+		// Adicionales
+		case -10:
+			string_append(&info_log, "No se pudo finalizar el proceso en memoria.\n");
+			break;
 		case -20:
-			printf("\nError sin definición.\n");
+			string_append(&info_log, "Error sin definición.\n");
 	}
 }

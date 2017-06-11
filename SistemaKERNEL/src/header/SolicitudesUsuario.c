@@ -117,9 +117,9 @@ void mostrar_procesos(t_list * procesos_lista){
 		string_append(&info_log, "\n---------------------\n");
 		string_append(&info_log, "Proceso ID: ");
 		string_append(&info_log, string_itoa(proceso->PID));
-		string_append(&info_log, "\n");
 		i++;
 	}
+	string_append(&info_log, "\n---------------------");
 	string_append(&info_log, "\n---> Cantidad de procesos totales encontrados: ");
 	string_append(&info_log, string_itoa(i));
 	generar_log();
@@ -153,6 +153,7 @@ void generar_log(){
     t_log* logger = log_create(configuraciones.PATH_ARCHIVO_LOG, "KERNEL",false, LOG_LEVEL_INFO);
     log_info(logger, "\n***LOGS del KERNEL***\n %s", info_log);
     log_destroy(logger);
+    strcpy(info_log, "");
 }
 
 void mencionar_proceso(int pid){
@@ -225,7 +226,7 @@ void detener_planificacion(){
 	generar_log();
 }
 
-void verificar_estado(uint32_t pid){
+void verificar_estado(uint32_t pid, int exit_code){
 
 	Proceso * proceso_a_eliminar = buscar_proceso_by_PID(pid);
 	while(strcmp(proceso_a_eliminar->cola, "EXEC") == 0);
@@ -233,7 +234,7 @@ void verificar_estado(uint32_t pid){
 	if(strcmp(proceso_a_eliminar->cola, "EXIT") == 0) {
 		printf("El proceso ya ha finalizado.\n");
 	} else {
-		actualizar_exit_code(proceso_a_eliminar, -7);
+		actualizar_exit_code(proceso_a_eliminar, exit_code);
 		finalizar_proceso(proceso_a_eliminar);
 	}
 }
@@ -279,7 +280,7 @@ void atender_solicitudes_de_usuario() {
 			Proceso * proceso_a_eliminar;
 			printf("\nPor favor ingrese el PID del proceso que desea MATAR: ");
 			scanf("%d", &pid);
-			verificar_estado(pid);
+			verificar_estado(pid, -7);
 		}
 			break;
 		case 6:
