@@ -6,15 +6,16 @@
 #include <string.h>
 #include <unistd.h>
 
+
 #include "../administrarPCB/EstadisticaProceso.h"
-#include "../administrarPCB/PCBData.h"
 #include "../administrarProcesos/Proceso.h"
 #include "../general/funcionesUtiles.h"
+#include "../header/AppConfig.h"
 #include "../header/PCB.h"
-#include "../interfaz/InterfazMemoria.h"
 #include "../planificacion/Planificacion.h"
 
 PCB * crear_PCB_TEST_2();
+void mostrar_estado_colas();
 
 void mostrar_menu_planificacion() {
 	int opcion = 0;
@@ -40,34 +41,59 @@ void mostrar_menu_planificacion() {
 
 void mostrar_datos_cola(t_queue* cola) {
 
+	if(queue_size(cola) <= 0) return;
+
 	t_list* elements = cola->elements;
 	int tamanio = list_size(elements);
 	int i = 0;
 	for (i = 0; i < tamanio; i++) {
 		PCB* pcb = list_get(elements, i);
-		printf(" %s ", pcb->PID);
+		printf("\n\t\t -> %d ", pcb->PID);
 
 	}
 }
 
+int continuar = 1;
+void esperar_tecla_async(){
+	continuar = 1;
+	void esperar_tecla(int * continuar){
+		while(getchar() != '0');
+		*continuar = 0;
+	}
+	pthread_t thread_ID;
+	pthread_create(&thread_ID, NULL, &esperar_tecla, &continuar);
+	pthread_detach(&thread_ID);
+}
+
 void mostrar_estado_colas() {
 	int tiempo = 0;
-	while (getchar() != '0') {
+	esperar_tecla_async();
+	while (continuar) {
 		system("clear");
 		tiempo++;
 		if (tiempo >= 99999) {
 			tiempo = 0;
 		}
-		printf("\n\n Tiempo: %d", tiempo);
+		printf("\n\n Tiempo: %ds - Ingrese 0 para terminar.", tiempo);
 		printf("\n\tCOLA NEW: ");
 		mostrar_datos_cola(cola(NEW));
+		printf("\n\t_______\n");
+		printf("\n\tCOLAS SEMAFOROS:");
+		int i;
+		for(i=0; i < configuraciones.cantidad_sem; i++){
+			printf("\n\t\tCOLA %s", configuraciones.SEM_IDS[i]);
+			mostrar_datos_cola(cola(configuraciones.SEM_IDS[i]));
+		}
+		printf("\n\t_______\n");
 		printf("\n\tCOLA READY: ");
 		mostrar_datos_cola(cola(READY));
+		printf("\n\t_______\n");
 		printf("\n\tCOLA EJECUTANDO: ");
 		mostrar_datos_cola(cola(EXEC));
+		printf("\n\t_______\n");
 		printf("\n\tCOLA EXIT: ");
 		mostrar_datos_cola(cola(EXIT));
-		printf("\n\n Presione 0 para terminar");
+		printf("\n\t_______\n");
 		sleep(1);
 
 	}

@@ -39,7 +39,7 @@ int signal_semaforo_ansisop(char * nombre_sem){
 int wait_semaforo_ansisop(char * nombre_sem){
 	if(dictionary_has_key(dict_semaforos_ansisop, nombre_sem)){
 		int * sem_pointer = dictionary_get(dict_semaforos_ansisop, nombre_sem);
-		(*sem_pointer >= 0)? (*sem_pointer)-- : *sem_pointer;
+		(*sem_pointer > 0)? (*sem_pointer)-- : (*sem_pointer = 0);
 		return *sem_pointer;
 	}
 	return -1;

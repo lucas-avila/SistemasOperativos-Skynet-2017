@@ -63,8 +63,9 @@ void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 		enviar_dato_serializado("BLOQUEADO", p->cpu->numeroConexion);
 		p->cpu = NULL;
 	}else if(strcmp(destino, EXIT) == 0){
+		marcar_CPU_Disponible(p->cpu);
 		pcb->exit_code = 0;
-		finalizar_proceso(pcb);
+		//finalizar_proceso(pcb);
 	}
 
 	char * cola_guardada = p->cola;
@@ -177,7 +178,7 @@ void recibir_PCB_de_CPU(int clienteCPU, char * modo) {
 		char * nombre_sem = recibir_dato_serializado(clienteCPU);
 		int resultado_sem = wait_semaforo_ansisop(nombre_sem);
 
-		if(resultado_sem == -1)
+		if(resultado_sem == 0)
 			mover_PCB_de_cola(pcb, EXEC, nombre_sem);
 		else
 			enviar_dato_serializado("NO_BLOQUEADO", clienteCPU);

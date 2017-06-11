@@ -69,11 +69,23 @@ void CU_Procesar_PCB_a_ejecutar() {
 	setPCBEjecucion(pcb);
 	ejecutar_Programa();
 }
-
+int n = 0;
 void testear_planificacion(servidor_kernel){
-	printf("\n\nLlego a testing\n");
+	printf("\nDEBUG ---> Llego a testing -->  ");
 	PCB* pcb = recibir_PCB_de_kernel();
-	int status = enviar_SYSCALL_wait_semaforo_a_kernel("mutex1", pcb);
+
+
+
+	if(n <= 3){
+		enviar_SYSCALL_wait_semaforo_a_kernel("mutex1", pcb);
+	}else{
+		printf("\n\nDEBUG ---> Se está por llegar al grado maximo de multiprogramacion, empezamos a hacer signals\n\n");
+		sleep(1);
+		enviar_SYSCALL_signal_semaforo_a_kernel("mutex1");
+		enviar_PCB_a_kernel(pcb, "TERMINADO");
+	}
+
+	n++;
 }
 
 
