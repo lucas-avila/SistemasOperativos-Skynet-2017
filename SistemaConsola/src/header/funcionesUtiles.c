@@ -5,11 +5,15 @@
  *      Author: utnso
  */
 
+#include <commons/log.h>
+#include <commons/string.h>
+#include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-
+#include "funcionesUtiles.h"
+#include "AppConfig.h"
 #include "Estructuras.h"
 
 int validarNumeroInput(int rangoMinimo, int rangoMaximo) {
@@ -54,4 +58,17 @@ int pertenece_a_la_consola(uint32_t pid) {
 	if(buscar_indice_Info_proceso(pid) == -1)
 		return 0;
 	return 1;
+}
+
+void incializar_log(){
+	info_log = string_new();
+}
+
+void generar_log(){
+	string_append(&info_log, "\n------Fin del LOG------\n\0");
+	printf("\n%s", info_log);
+    t_log* logger = log_create(configuraciones.PATH_ARCHIVO_LOG, "CONSOLA",false, LOG_LEVEL_INFO);
+    log_info(logger, "\n***LOGS de la CONSOLA***\n %s", info_log);
+    log_destroy(logger);
+    strcpy(info_log, "");
 }

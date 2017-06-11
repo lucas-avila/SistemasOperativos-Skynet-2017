@@ -30,7 +30,8 @@ void inicializar_configuracion(char *PATH_ARCHIVO_CONFIGURACION) {
 		if (config_has_property(config, "IP_KERNEL") == true) {
 			configuraciones.IP_KERNEL = config_get_string_value(config, "IP_KERNEL");
 		}
-
+		configuraciones.PATH_ARCHIVO_LOG = malloc(strlen(config_get_string_value(config,"PATH_ARCHIVO_LOG")) + 1);
+		configuraciones.PATH_ARCHIVO_LOG = config_get_string_value(config,"PATH_ARCHIVO_LOG");
 	}
 }
 

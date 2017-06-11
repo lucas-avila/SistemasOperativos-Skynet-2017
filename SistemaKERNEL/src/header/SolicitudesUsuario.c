@@ -117,9 +117,9 @@ void mostrar_procesos(t_list * procesos_lista){
 		string_append(&info_log, "\n---------------------\n");
 		string_append(&info_log, "Proceso ID: ");
 		string_append(&info_log, string_itoa(proceso->PID));
-		string_append(&info_log, "\n");
 		i++;
 	}
+	string_append(&info_log, "\n---------------------");
 	string_append(&info_log, "\n---> Cantidad de procesos totales encontrados: ");
 	string_append(&info_log, string_itoa(i));
 	generar_log();
@@ -153,6 +153,7 @@ void generar_log(){
     t_log* logger = log_create(configuraciones.PATH_ARCHIVO_LOG, "KERNEL",false, LOG_LEVEL_INFO);
     log_info(logger, "\n***LOGS del KERNEL***\n %s", info_log);
     log_destroy(logger);
+    strcpy(info_log, "");
 }
 
 void mencionar_proceso(int pid){
