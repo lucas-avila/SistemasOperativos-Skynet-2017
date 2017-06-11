@@ -71,7 +71,7 @@ void CU_Procesar_PCB_a_ejecutar() {
 }
 
 void testear_planificacion(servidor_kernel){
-	printf("Llego a testing\n");
+	printf("\n\nLlego a testing\n");
 	PCB* pcb = recibir_PCB_de_kernel();
 	int status = enviar_SYSCALL_wait_semaforo_a_kernel("mutex1", pcb);
 }

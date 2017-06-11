@@ -21,8 +21,9 @@
 PCB* recibir_PCB_de_kernel() {
 	int kernel = servidor_kernel;
 	PCB * pcb = recibir_pcb(kernel);
-	printf("El fucking PCB es :\n");
 	printf("PID : %d\n", pcb->PID);
+	/*
+	printf("El fucking PCB es :\n");
 	printf("program counter : %d\n", pcb->program_counter);
 	printf("cantidad paginas codigo : %d\n", pcb->cantidad_paginas_codigo);
 
@@ -64,6 +65,7 @@ PCB* recibir_PCB_de_kernel() {
 	printf("Cantidad de rafagas para RR: %d\n", pcb->cantidad_rafagas);
 	printf("Quantum sleep %d\n", pcb->quantum_sleep);
 	printf("Cantidad de rafagas ejecutadas: %d\n", pcb->cantidad_rafagas_ejecutadas);
+	*/
 	return pcb;
 }
 
@@ -80,11 +82,11 @@ int enviar_SYSCALL_wait_semaforo_a_kernel(char* nombre_semaforo, PCB * pcb){
 	char * respuesta = recibir_dato_serializado(servidor_kernel);
 	printf("COntinuenado la cpu con el signal, dato recibido : %s\n", respuesta);
 	if(strcmp(respuesta, "BLOQUEADO") == 0){
-		//el semaforo quedo bloqueando el proceso, se libera esta cpu
+		//TODO: el semaforo quedo bloqueando el proceso, se libera esta cpu
 		printf("el semaforo quedo bloqueando el proceso, se libera esta cpu\n");
 		return 1;
 	}else if(strcmp(respuesta, "NO_BLOQUEADO") == 0){
-		//el semaforo no bloqueó el proceso, el proceso continua su ejecucion normal
+		//TODO: el semaforo no bloqueó el proceso, el proceso continua su ejecucion normal
 		printf("el semaforo no bloqueo el proceso");
 		return 0;
 	}

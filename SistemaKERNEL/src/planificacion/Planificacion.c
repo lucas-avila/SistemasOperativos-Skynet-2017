@@ -132,9 +132,10 @@ PCB* obtener_proceso_de_cola_READY() {
 void enviar_PCB_Serializado_a_CPU(CPUInfo* cpu, PCB* pcb) {
 	//TODO: Haria falta chequear que haya llegado bien?
 	//para testear TODO: BORRAR ESTO
+
+	proceso(pcb)->cpu = cpu;
 	enviar_dato_serializado("TESTEAR_PLANIFICACION", cpu->numeroConexion);
 	enviar_pcb(pcb, cpu->numeroConexion);
-	proceso(pcb)->cpu = cpu;
 }
 
 //TODO: VOLVER A VERIFICAR SI ESTA FUNCION ANDA BIEN, Y SI NECESITA SEMAFOROS.
