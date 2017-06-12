@@ -34,11 +34,14 @@ endif
 # All Target
 all: SistemaKERNEL
 
+dependents:
+	-cd /home/utnso/UNIVERSIDAD/2017/OPERATIVOS/PROYECTOS/Sharedlib/Debug && $(MAKE) all
+
 # Tool invocations
-SistemaKERNEL: $(OBJS) $(USER_OBJS)
+SistemaKERNEL: $(OBJS) $(USER_OBJS) /home/utnso/UNIVERSIDAD/2017/OPERATIVOS/PROYECTOS/Sharedlib/Debug/libSharedlib.so
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C Linker'
-	gcc  -o "SistemaKERNEL" $(OBJS) $(USER_OBJS) $(LIBS)
+	gcc -L"/home/utnso/UNIVERSIDAD/2017/OPERATIVOS/PROYECTOS/Sharedlib/Debug" -o "SistemaKERNEL" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -49,5 +52,6 @@ clean:
 
 .PHONY: all clean dependents
 .SECONDARY:
+/home/utnso/UNIVERSIDAD/2017/OPERATIVOS/PROYECTOS/Sharedlib/Debug/libSharedlib.so:
 
 -include ../makefile.targets

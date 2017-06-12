@@ -3,6 +3,7 @@
 	<name>SistemaCPU</name>
 	<comment></comment>
 	<projects>
+		<project>Sharedlib</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

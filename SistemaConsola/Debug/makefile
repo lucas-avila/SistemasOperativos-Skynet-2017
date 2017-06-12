@@ -26,11 +26,14 @@ endif
 # All Target
 all: SistemaConsola
 
+dependents:
+	-cd /home/utnso/UNIVERSIDAD/2017/OPERATIVOS/PROYECTOS/Sharedlib/Debug && $(MAKE) clean all
+
 # Tool invocations
-SistemaConsola: $(OBJS) $(USER_OBJS)
+SistemaConsola: $(OBJS) $(USER_OBJS) /home/utnso/UNIVERSIDAD/2017/OPERATIVOS/PROYECTOS/Sharedlib/Debug/libSharedlib.so
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C Linker'
-	gcc  -o "SistemaConsola" $(OBJS) $(USER_OBJS) $(LIBS)
+	gcc -L"/home/utnso/UNIVERSIDAD/2017/OPERATIVOS/PROYECTOS/Sharedlib/Debug" -o "SistemaConsola" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -41,5 +44,6 @@ clean:
 
 .PHONY: all clean dependents
 .SECONDARY:
+/home/utnso/UNIVERSIDAD/2017/OPERATIVOS/PROYECTOS/Sharedlib/Debug/libSharedlib.so:
 
 -include ../makefile.targets

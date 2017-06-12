@@ -3,6 +3,7 @@
 	<name>SistemaFILESYSTEM</name>
 	<comment></comment>
 	<projects>
+		<project>Sharedlib</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
