@@ -5,10 +5,12 @@
 #include "../general/Socket.h"
 
 void dispatcher_FIFO() {
+	static int n = 1;
 	PCB* pcb;
 	CPUInfo* cpu;
 	while (configuraciones.planificacion_activa == 1) {
 		pcb = obtener_proceso_de_cola_READY();
+
 		//Si pcb es NULL, se desactivo la planificacion, volvemos
 		if(pcb == NULL) return;
 
@@ -22,8 +24,10 @@ void dispatcher_FIFO() {
 		if(cpu == NULL) return;
 
 		marcar_CPU_Ocupada(cpu);
+
 		mover_PCB_de_cola(pcb, READY, EXEC);
 		enviar_PCB_Serializado_a_CPU(cpu, pcb);
+		n++;
 	}
 }
 

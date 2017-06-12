@@ -1,7 +1,15 @@
+<<<<<<< HEAD
 14:34:33 **** Clean-only build of configuration Debug for project SistemaMEMORIA ****
 make clean 
 rm -rf  ./src/testing/PruebasUnitarias.o ./src/testing/TestingMemoriaCache.o  ./src/header/AppConfig.o  ./src/general/Semaforo.o ./src/general/Socket.o ./src/general/funcionesUtiles.o  ./src/Interfaz.o ./src/Main.o ./src/MemoriaCache.o ./src/MemoriaPrincipal.o ./src/SolicitudesUsuario.o  ./src/testing/PruebasUnitarias.d ./src/testing/TestingMemoriaCache.d  ./src/header/AppConfig.d  ./src/general/Semaforo.d ./src/general/Socket.d ./src/general/funcionesUtiles.d  ./src/Interfaz.d ./src/Main.d ./src/MemoriaCache.d ./src/MemoriaPrincipal.d ./src/SolicitudesUsuario.d  SistemaMEMORIA
  
 
 14:34:34 Build Finished (took 517ms)
+=======
+20:14:51 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+make: No se hace nada para «all».
+
+20:14:51 Build Finished (took 72ms)
+>>>>>>> 5eb549ef1cafafbfda68b6acbfc36d4e5652878d
 

@@ -30,8 +30,8 @@ void inicializar_configuracion(char * PATH_ARCHIVO_CONFIGURACION) {
 		}
 
 		if (config_has_property(config, "CANTIDAD_MAXIMA_CONCURRENCIA") == true) {
-					configuraciones.CANTIDAD_MAXIMA_CONCURRENCIA = config_get_int_value(config, "CANTIDAD_MAXIMA_CONCURRENCIA");
-				}
+			configuraciones.CANTIDAD_MAXIMA_CONCURRENCIA = config_get_int_value(config, "CANTIDAD_MAXIMA_CONCURRENCIA");
+		}
 
 	}
 }

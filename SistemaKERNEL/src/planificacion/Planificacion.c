@@ -3,7 +3,6 @@
 #include <commons/collections/list.h>
 #include <commons/string.h>
 #include <semaphore.h>
-#include <stdlib.h>
 #include <string.h>
 
 #include "../capaMEMORIA/AdministrarSemaforos.h"
@@ -33,6 +32,7 @@ void inicializar_colas_5_estados() {
 	COLAS = dictionary_create();
 	dictionary_put(COLAS, NEW, queue_create());
 	dictionary_put(COLAS, READY, queue_create());
+	dictionary_put(COLAS, WAITING, queue_create());
 	dictionary_put(COLAS, EXEC, queue_create());
 	dictionary_put(COLAS, EXIT, queue_create());
 	inicializar_colas_semaforos();
@@ -49,19 +49,31 @@ void proceso_a_NEW(Proceso * p){
 
 void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 	queue_pop(cola(origen));
-	queue_push(cola(destino), pcb);
+
+	Proceso * p = proceso(pcb);
+
+	//Si viene de algun waiting
+	if(es_semaforo(origen)) {
+
+	}
 
 	//Si va a algun waiting
-	if(obtener_valor_semaforo(destino) >= 0){
-		marcar_CPU_Disponible(proceso(pcb)->cpu);
-		proceso(pcb)->cpu = NULL;
+	if(es_semaforo(destino)){
+		marcar_CPU_Disponible(p->cpu);
+		enviar_dato_serializado("BLOQUEADO", p->cpu->numeroConexion);
+		p->cpu = NULL;
 	}else if(strcmp(destino, EXIT) == 0){
+		marcar_CPU_Disponible(p->cpu);
 		pcb->exit_code = 0;
-		finalizar_proceso(pcb);
+		//finalizar_proceso(pcb);
 	}
-	free(proceso(pcb)->cola);
-	proceso(pcb)->cola = string_new();
-	string_append(&proceso(pcb)->cola, destino);
+
+	char * cola_guardada = p->cola;
+	strcpy(cola_guardada, "");
+	string_append(&cola_guardada, destino);
+
+	//Después de que se actualice el proceso lo metemos en la cola a la que iba
+	queue_push(cola(destino), pcb);
 }
 
 CPUInfo* obtener_CPU_Disponible() {
@@ -106,20 +118,25 @@ void planificador_largo_plazo() {
 PCB* obtener_proceso_de_cola_READY() {
 	while (configuraciones.planificacion_activa == 1) {
 		//SE CONTROLA LA MULTIPROGRAMACION DE ESTA MANERA
+		sem_wait(&mutex_cola_READY);
 		if (!queue_is_empty(cola(READY))) {
-			sem_wait(&mutex_cola_READY);
+
 			PCB* pcb = queue_peek(cola(READY));
 			sem_post(&mutex_cola_READY);
 			return pcb;
 		}
+		sem_post(&mutex_cola_READY);
 	}
 	return NULL;
 }
 
 void enviar_PCB_Serializado_a_CPU(CPUInfo* cpu, PCB* pcb) {
 	//TODO: Haria falta chequear que haya llegado bien?
-	enviar_pcb(pcb, cpu->numeroConexion);
+	//para testear TODO: BORRAR ESTO
+
 	proceso(pcb)->cpu = cpu;
+	enviar_dato_serializado("TESTEAR_PLANIFICACION", cpu->numeroConexion);
+	enviar_pcb(pcb, cpu->numeroConexion);
 }
 
 //TODO: VOLVER A VERIFICAR SI ESTA FUNCION ANDA BIEN, Y SI NECESITA SEMAFOROS.
@@ -160,8 +177,11 @@ void recibir_PCB_de_CPU(int clienteCPU, char * modo) {
 	} else if(strcmp(modo, "WAIT_SEM") == 0){
 		char * nombre_sem = recibir_dato_serializado(clienteCPU);
 		int resultado_sem = wait_semaforo_ansisop(nombre_sem);
+
 		if(resultado_sem == 0)
 			mover_PCB_de_cola(pcb, EXEC, nombre_sem);
+		else
+			enviar_dato_serializado("NO_BLOQUEADO", clienteCPU);
 	}
 
 }

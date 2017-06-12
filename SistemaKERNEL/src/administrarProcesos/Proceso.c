@@ -39,6 +39,7 @@ Proceso* buscar_proceso_by_PID(uint32_t PID) {
 	for (i = 0; i < tamanio; i++) {
 		proceso = list_get(procesos, i);
 		if (proceso->PID == PID) {
+			sem_post(&mutex_lista_PROCESOS);
 			return proceso;
 		}
 	}

@@ -11,7 +11,7 @@
 #include <semaphore.h>
 
 
-
+void inicializar_semaforo_en(sem_t* variable_semaforo, int value);
 void inicializar_semaforo(sem_t* variable_semaforo);
 void destruir_semaforo(sem_t* variable_semaforo);
 void activar_semaforo(sem_t* variable_semaforo);

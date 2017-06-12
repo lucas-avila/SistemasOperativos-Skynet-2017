@@ -1,6 +1,5 @@
 #include "InterfazConsola.h"
 
-#include <commons/collections/list.h>
 #include <pthread.h>
 #include <stdlib.h>
 #include <string.h>
@@ -9,7 +8,6 @@
 #include "../administrarProcesos/Proceso.h"
 #include "../general/Socket.h"
 #include "../header/AppConfig.h"
-#include "../header/Estructuras.h"
 #include "../header/KERNEL.h"
 #include "../header/SolicitudesUsuario.h"
 
@@ -43,7 +41,11 @@ void CU_Recibir_Conexiones_Programa(int clientePrograma) {
 		if (strcmp(codigo_operacion, "FINALIZAR_PROGRAMA") == 0) {
 			int pid = atoi(recibir_dato_serializado(clientePrograma));
 			Proceso* Proceso_a_eliminar = buscar_proceso_by_PID(pid);
-			verificar_estado(pid);
+			verificar_estado(pid, -7);
+		} else if (strcmp(codigo_operacion, "DESCONEXION_CONSOLA") == 0){
+			int pid = atoi(recibir_dato_serializado(clientePrograma));
+			Proceso* Proceso_a_eliminar = buscar_proceso_by_PID(pid);
+			verificar_estado(pid, -6);
 		} else if (strcmp(codigo_operacion, "") == 0) {
 			close(clientePrograma);
 			controlSeguir = 0;
@@ -53,17 +55,3 @@ void CU_Recibir_Conexiones_Programa(int clientePrograma) {
 	} while (controlSeguir == 1);
 	close(clientePrograma);
 }
-
-int index_of_consola(int consola_ID) {
-	if (consola_ID < 0)
-		return -1;
-	int i = 0;
-	ConsolaInfo * aux = malloc(sizeof(ConsolaInfo));
-	while (aux = list_get(lista_consolas, i)) {
-		if (aux->consola_ID == consola_ID)
-			return i;
-		i++;
-	}
-}
-
-

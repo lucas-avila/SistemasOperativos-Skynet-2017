@@ -27,6 +27,11 @@ PCB * crear_pcb() {
 	pcb->etiquetas_size = 0;
 	pcb->codigo = list_create();
 	pcb->pila = list_create();
+	IndiceStack * elemento_pila_inicial_vacio = malloc(sizeof(IndiceStack));
+	elemento_pila_inicial_vacio->argumentos = list_create();
+	elemento_pila_inicial_vacio->variables = list_create();
+
+	list_add(pcb->pila, elemento_pila_inicial_vacio);
 
 	return pcb;
 }
@@ -177,6 +182,10 @@ int enviar_pcb(PCB * pcb, int s_destino) {
 
 	enviar_dato_serializado("RECIBIR_PCB", s_destino);
 	enviar_estructura_serializada(paquete, size, s_destino);
+
+	free(buffer_lista_codigo);
+	free(buffer_lista_pila);
+	free(paquete);
 }
 
 PCB * recibir_pcb_deb(char * paquete) {

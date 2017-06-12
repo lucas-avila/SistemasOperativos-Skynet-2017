@@ -19,6 +19,7 @@
 t_dictionary * COLAS;
 static const char NEW[] = "NEW";
 static const char READY[] = "READY";
+static const char WAITING[] = "WAITING";
 static const char EXEC[] = "EXEC";
 static const char EXIT[] = "EXIT";
 //t_queue* COLA_SUSPENDIDO;

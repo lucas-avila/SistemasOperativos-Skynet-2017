@@ -8,6 +8,11 @@
 #ifndef HEADER_SOLICITUDESUSUARIO_H_
 #define HEADER_SOLICITUDESUSUARIO_H_
 
+#include <commons/collections/list.h>
+#include <stdint.h>
+
+char * info_log;
+
 void atender_solicitudes_de_usuario();
 void mostrar_menu_usuario() ;
 void mostrar_cola(char * cola);
@@ -17,7 +22,7 @@ void listar_procesos_por_cola();
 void listar_procesos();
 void mostrar_menu_listado_procesos();
 void mostrar_menu_informacion_proceso();
-void verificar_estado(uint32_t pid);
+void verificar_estado(uint32_t pid, int exit_code);
 void detener_planificacion();
 void modificar_grado_multiprogramacion();
 void obtener_informacion_proceso();

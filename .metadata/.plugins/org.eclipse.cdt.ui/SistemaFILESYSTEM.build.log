@@ -1,7 +1,33 @@
+<<<<<<< HEAD
 14:34:32 **** Clean-only build of configuration Debug for project SistemaFILESYSTEM ****
 make clean 
 rm -rf  ./src/header/AppConfig.o ./src/header/Socket.o  ./src/FILE_SYSTEM.o ./src/InterfazKernel.o  ./src/header/AppConfig.d ./src/header/Socket.d  ./src/FILE_SYSTEM.d ./src/InterfazKernel.d  SistemaFILESYSTEM
  
 
 14:34:32 Build Finished (took 290ms)
+=======
+20:14:50 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+Building file: ../src/InterfazKernel.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InterfazKernel.d" -MT"src/InterfazKernel.d" -o "src/InterfazKernel.o" "../src/InterfazKernel.c"
+../src/InterfazKernel.c:12:18: error: expected identifier or ‘(’ before ‘[’ token
+ static const char[] PATH_ARCHIVOS = "/Archivos/";
+                  ^
+../src/InterfazKernel.c: In function ‘validar_archivo’:
+../src/InterfazKernel.c:17:48: error: ‘clienteKernel’ undeclared (first use in this function)
+   enviar_dato_serializado("ARCHIVO_NO_EXISTE", clienteKernel);
+                                                ^
+../src/InterfazKernel.c:17:48: note: each undeclared identifier is reported only once for each function it appears in
+../src/InterfazKernel.c:20:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../src/InterfazKernel.c: In function ‘crear_archivo’:
+../src/InterfazKernel.c:24:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/InterfazKernel.o] Error 1
+
+20:14:50 Build Finished (took 142ms)
+>>>>>>> 5eb549ef1cafafbfda68b6acbfc36d4e5652878d
 

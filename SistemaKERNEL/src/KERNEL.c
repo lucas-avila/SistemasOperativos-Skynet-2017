@@ -1,6 +1,6 @@
-#include <commons/collections/dictionary.h>
 #include <commons/collections/list.h>
 #include <commons/string.h>
+#include <semaphore.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -55,6 +55,8 @@ void inicializar_KERNEL() {
 	//   PLanificacion
 	inicializar_colas_5_estados();
 	atender_clientes(0, &EJECUTAR_ALGORITMO_PLANIFICACION);
+
+	info_log = string_new();
 }
 
 void inicializar_semaforos(){
@@ -62,6 +64,8 @@ void inicializar_semaforos(){
 	inicializar_semaforo(&mutex_lista_PROCESOS);
 	//PLANIFICACION
 	inicializar_semaforo(&mutex_cola_READY);
+	//OTROS
+	inicializar_semaforo(&mutex_memoria);
 }
 
 void inicializar_listas_globales() {
@@ -88,37 +92,31 @@ void CU_iniciar_programa(int programa_socket) {
 
 void finalizar_proceso(Proceso * proceso){
 
+	sem_wait(&mutex_memoria);
 	char * respuesta = finalizar_Programa_memoria(string_itoa(proceso->PID));
-	// TODO finalizar_programa_memoria no devuelve OK?
+	sem_post(&mutex_memoria);
 	if (strcmp(respuesta, "OK") == 0) {
 
+		int buscar_proceso(Proceso * elem_proceso){
+			return elem_proceso->PID == proceso->PID;
+		}
+		sem_wait(&mutex_lista_PROCESOS);
+		list_remove_by_condition(procesos, &buscar_proceso);
+		sem_post(&mutex_lista_PROCESOS);
 		notificar_exit_code(proceso->pcb->exit_code, proceso->socket);
 		close(proceso->socket);
 		free(proceso);
 	} else {
-		printf("No se pudo finalizar el programa\n");
-		//TODO ver qué mierda hacemos acá...
+		actualizar_exit_code(proceso, -10);
+		notificar_exit_code(proceso->pcb->exit_code, proceso->socket);
+		//TODO ver a dónde mandamos el proceso si sucede esto...aunque no debería suceder.
 	}
 
 }
 
-/* Se asume que cada vez que se quiera terminar un proceso se
- * actualizará previamente su exit_code y luego se llamará a
- * la función para finalizar el proceso. Al actualizar el exit_code
- * borraremos directamente el proceso de la lista de procesos
- * (donde se encuentran todos ellos) y retornaremos el Proceso.
- */
-
 void actualizar_exit_code(Proceso * proceso, int exit_code){
 
-	int buscar_proceso(Proceso * elem_proceso){
-		return elem_proceso->PID == proceso->PID;
-	}
-	sem_wait(&mutex_lista_PROCESOS);
-	list_remove_by_condition(procesos, &buscar_proceso);
-	sem_post(&mutex_lista_PROCESOS);
 	proceso->pcb->exit_code = exit_code;
-
 }
 
 void notificar_exit_code(int exit_code, int socket){

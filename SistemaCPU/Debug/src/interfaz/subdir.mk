@@ -5,15 +5,18 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../src/interfaz/InterfazKernel.c \
-../src/interfaz/InterfazMemoria.c 
+../src/interfaz/InterfazMemoria.c \
+../src/interfaz/signals.c 
 
 OBJS += \
 ./src/interfaz/InterfazKernel.o \
-./src/interfaz/InterfazMemoria.o 
+./src/interfaz/InterfazMemoria.o \
+./src/interfaz/signals.o 
 
 C_DEPS += \
 ./src/interfaz/InterfazKernel.d \
-./src/interfaz/InterfazMemoria.d 
+./src/interfaz/InterfazMemoria.d \
+./src/interfaz/signals.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
