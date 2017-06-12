@@ -8,18 +8,19 @@
  ============================================================================
  */
 
+#include <signal.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 
-#include "general/Semaforo.h"
 #include "general/Socket.h"
 #include "header/AppConfig.h"
 #include "header/PCB.h"
 #include "interfaz/InterfazKernel.h"
 #include "interfaz/InterfazMemoria.h"
+#include "interfaz/signals.h"
 #include "procesador/Ejecucion.h"
 #include "testing/testearPrimitivasFunciones.h"
 
@@ -27,6 +28,8 @@ void CU_Procesar_PCB_a_ejecutar();
 
 void testear_planificacion(servidor_kernel); //borrame
 int main(int argc, char *argv[]) {
+	//TODO: Agregar adentro de esta funcion, que espere a que termine de ejecutar, lo mande al kernel y DESPUES mandar el desconectar y finalizar el proceso
+	signal(SIGINT, recibir_seniales_de_linux);
 
 	inicializar_configuracion(argv[1]);
 	//inicializar_configuracion("/home/utnso/Escritorio/tp-2017-1c-Skynet/SistemaCPU/resource/config.cfg");

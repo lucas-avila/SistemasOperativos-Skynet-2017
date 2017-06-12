@@ -33,7 +33,6 @@ void escuchar_Conexiones_CPU(int servidorCPU) {
 			agregar_CPU_global(cliente, mihilo1);
 			pthread_create(&mihilo1, NULL, &CU_Recibir_Conexiones_CPU, cliente);
 			pthread_detach(&mihilo1);
-			//retirar_CPU_global(cliente);
 		} else {
 			close(cliente);
 		}
@@ -79,7 +78,8 @@ void CU_Recibir_Conexiones_CPU(int clienteCPU) {
 			borrar_archivo(clienteCPU);
 		} else if (strcmp(codigo_operacion, "IMPRIMIR_POR_PANTALLA") == 0) {
 			CU_Atender_Solicitud_Escritura_Por_Pantalla();
-		} else if (strcmp(codigo_operacion, "") == 0) {
+		} else if (strcmp(codigo_operacion, "") == 0 || strcmp(codigo_operacion, "DESCONECTAR") == 0) {
+			retirar_CPU_global(clienteCPU);
 			close(clienteCPU);
 			controlSeguir = 0;
 		} else {
