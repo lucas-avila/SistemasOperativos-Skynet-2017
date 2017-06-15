@@ -139,11 +139,10 @@ void mostrar_menu_colas(){
 void mostrar_menu_informacion_proceso(){
 	printf("\n******* Elija la informacion deseada: ******");
 	printf("\n 1 - Cantidad de rafagas ejecutadas.");
-	printf("\n 2 - Cantidad de operaciones privilegiadas ejecutadas.");
-	printf("\n 3 - Tabla de archivos abiertos por el proceso.");
-	printf("\n 4 - Cantidad de paginas de Heap utilizadas.");
-	printf("\n 5 - Cantidad de syscalls ejecutadas.");
-	printf("\n 6 - Volver.");
+	printf("\n 2 - Tabla de archivos abiertos por el proceso.");
+	printf("\n 3 - Cantidad de paginas de Heap utilizadas.");
+	printf("\n 4 - Cantidad de syscalls ejecutadas.");
+	printf("\n 5 - Volver.");
 	printf("\n Opcion: ");
 }
 
@@ -172,7 +171,7 @@ void obtener_informacion_proceso(){
 	mencionar_proceso(pid);
 		do {
 			mostrar_menu_informacion_proceso();
-			opcion = validarNumeroInput(1, 6);
+			opcion = validarNumeroInput(1, 5);
 			system("clear");
 			switch(opcion) {
 
@@ -182,23 +181,18 @@ void obtener_informacion_proceso(){
 				string_append(&info_log, "\n");
 				break;
 			case 2:
-				string_append(&info_log, "Cantidad operaciones privilegiadas ejecutadas: ");
-				string_append(&info_log, string_itoa(estadistica_proceso->cantidad_Operaciones_Privilegadas_Ejecutadas));
-				string_append(&info_log, "\n");
-				break;
-			case 3:
 				//mostrar_tabla_archivos(proceso); TODO
 				break;
-			case 4:
+			case 3:
 				//mostrar_paginas_heap(proceso); TODO
 				break;
-			case 5:
+			case 4:
 				string_append(&info_log, "Cantidad syscalls ejecutadas: ");
 				string_append(&info_log, string_itoa(estadistica_proceso->cantidad_SysCall_Ejecutadas));
 				string_append(&info_log, "\n");
 				break;
 			}
-		} while (opcion != 6);
+		} while (opcion != 5);
 		generar_log();
 		system("clear");
 		atender_solicitudes_de_usuario();

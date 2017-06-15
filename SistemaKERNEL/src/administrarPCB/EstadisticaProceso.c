@@ -9,11 +9,10 @@ void inicializar_tabla_proceso_estadistica() {
 	TABLA_PROCESO_ESTADISTICA = list_create();
 }
 
-EstadisticaProceso* crear_Estadistica_Proceso(uint32_t PID, uint32_t cantidad_Rafagas_Ejecutadas, uint32_t cantidad_Operaciones_Privilegadas_Ejecutadas, uint32_t cantidad_Paginas_HEAP_Utilizadas, uint32_t cantidad_Operaciones_Alocar, uint32_t tamanio_Total_Alocar, uint32_t cantidad_Operaciones_Liberar, uint32_t tamanio_Total_Liberar, uint32_t cantidad_SysCall_Ejecutadas) {
+EstadisticaProceso* crear_Estadistica_Proceso(uint32_t PID, uint32_t cantidad_Rafagas_Ejecutadas, uint32_t cantidad_Paginas_HEAP_Utilizadas, uint32_t cantidad_Operaciones_Alocar, uint32_t tamanio_Total_Alocar, uint32_t cantidad_Operaciones_Liberar, uint32_t tamanio_Total_Liberar, uint32_t cantidad_SysCall_Ejecutadas) {
 	EstadisticaProceso* estadistica = malloc(sizeof(EstadisticaProceso));
 	estadistica->PID = PID;
 	estadistica->cantidad_Rafagas_Ejecutadas = cantidad_Rafagas_Ejecutadas;
-	estadistica->cantidad_Operaciones_Privilegadas_Ejecutadas = cantidad_Operaciones_Privilegadas_Ejecutadas;
 	estadistica->cantidad_Paginas_HEAP_Utilizadas = cantidad_Paginas_HEAP_Utilizadas;
 	estadistica->cantidad_Operaciones_Alocar = cantidad_Operaciones_Alocar;
 	estadistica->tamanio_Total_Alocar = tamanio_Total_Alocar;
@@ -24,7 +23,7 @@ EstadisticaProceso* crear_Estadistica_Proceso(uint32_t PID, uint32_t cantidad_Ra
 }
 
 void crear_Proceso_en_tabla(uint32_t PID) {
-	EstadisticaProceso* estadistica = crear_Estadistica_Proceso(PID, 0, 0, 0, 0, 0, 0, 0, 0);
+	EstadisticaProceso* estadistica = crear_Estadistica_Proceso(PID, 0, 0, 0, 0, 0, 0, 0);
 	guardar_registro_proceso(estadistica);
 }
 

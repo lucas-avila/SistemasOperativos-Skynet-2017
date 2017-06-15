@@ -12,7 +12,6 @@
 typedef struct {
 	uint32_t PID;
 	uint32_t cantidad_Rafagas_Ejecutadas;
-	uint32_t cantidad_Operaciones_Privilegadas_Ejecutadas;
 	uint32_t cantidad_Paginas_HEAP_Utilizadas;
 	uint32_t cantidad_Operaciones_Alocar;
 	uint32_t tamanio_Total_Alocar;
@@ -33,7 +32,7 @@ void crear_Proceso_en_tabla(uint32_t PID);
 void guardar_registro_proceso(EstadisticaProceso* estadisticaProceso);
 void actualizar_registro_proceso(EstadisticaProceso* estadisticaProceso);
 
-EstadisticaProceso* crear_Estadistica_Proceso(uint32_t PID , uint32_t cantidad_Rafagas_Ejecutadas, uint32_t cantidad_Operaciones_Privilegadas_Ejecutadas, uint32_t cantidad_Paginas_HEAP_Utilizadas, uint32_t cantidad_Operaciones_Alocar, uint32_t tamanio_Total_Alocar, uint32_t cantidad_Operaciones_Liberar, uint32_t tamanio_Total_Liberar, uint32_t cantidad_SysCall_Ejecutadas);
+EstadisticaProceso* crear_Estadistica_Proceso(uint32_t PID , uint32_t cantidad_Rafagas_Ejecutadas, uint32_t cantidad_Paginas_HEAP_Utilizadas, uint32_t cantidad_Operaciones_Alocar, uint32_t tamanio_Total_Alocar, uint32_t cantidad_Operaciones_Liberar, uint32_t tamanio_Total_Liberar, uint32_t cantidad_SysCall_Ejecutadas);
 EstadisticaProceso* buscar_registro_por_PID(uint32_t PID);
 
 
