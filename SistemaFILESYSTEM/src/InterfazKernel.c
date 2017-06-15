@@ -5,8 +5,15 @@
  *      Author: utnso
  */
 
+#include "header/InterfazKernel.h"
+
+#include <commons/string.h>
+#include <stdio.h>
 #include <unistd.h>
 
+#include "header/AppConfig.h"
+#include "header/Archivo.h"
+#include "header/FileManager.h"
 #include "header/Socket.h"
 
 static const char PATH_ARCHIVOS[] = "/Archivos/";
@@ -21,7 +28,28 @@ void validar_archivo(char* path) {
 }
 
 void crear_archivo(char* path) {
-	fopen(path, "w");
+	char * path_abs = string_new();
+	string_append(&path_abs, configuraciones.PUNTO_MONTAJE);
+	string_append(&path_abs, PATH_ARCHIVOS);
+	string_append(&path_abs, path);
+
+	if(access(path_abs, F_OK) == -1){
+		//archivo no existe
+		FILE * f;
+		if((f = fopen("/home/utnso/Escritorio/tp-2017-1c-Skynet/mnt/SADICA_FS/Archivos/archivo_prueba.bin", "wb")) != NULL){
+			Archivo * archivo = crear_Archivo();
+			if(archivo->bloques[0] == -1){
+				enviar_dato_serializado("SIN_ESPACIO", servidor);
+				return;
+			}
+
+			char * serializado = serializar_archivo(archivo);
+
+			fwrite(serializado, sizeof(char), sizeof(archivo->tamanio) + obtener_cantidad_bloques(archivo) * sizeof(int), f);
+			//guardara ene le arhcivo
+			fclose(f);
+		}
+	}
 }
 
 void borrar(char* path) {

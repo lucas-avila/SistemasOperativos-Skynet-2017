@@ -8,6 +8,6 @@
 #ifndef HEADER_INTERFAZKERNEL_H_
 #define HEADER_INTERFAZKERNEL_H_
 
-
+int servidor;
 
 #endif /* HEADER_INTERFAZKERNEL_H_ */

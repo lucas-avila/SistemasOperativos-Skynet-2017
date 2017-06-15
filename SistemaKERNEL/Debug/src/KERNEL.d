@@ -14,7 +14,7 @@ src/KERNEL.d: ../src/KERNEL.c ../src/administrarPCB/EstadisticaProceso.h \
  ../src/planificacion/../administrarProcesos/Proceso.h \
  ../src/planificacion/../header/Estructuras.h \
  ../src/planificacion/../header/PCB.h \
- /home/utnso/UNIVERSIDAD/2017/OPERATIVOS/PROYECTOS/Sharedlib/../Sharedlib/Sharedlib/randomfun.h
+ /home/utnso/Escritorio/tp-2017-1c-Skynet/Sharedlib/../Sharedlib/Sharedlib/randomfun.h
 
 ../src/administrarPCB/EstadisticaProceso.h:
 
@@ -62,4 +62,4 @@ src/KERNEL.d: ../src/KERNEL.c ../src/administrarPCB/EstadisticaProceso.h \
 
 ../src/planificacion/../header/PCB.h:
 
-/home/utnso/UNIVERSIDAD/2017/OPERATIVOS/PROYECTOS/Sharedlib/../Sharedlib/Sharedlib/randomfun.h:
+/home/utnso/Escritorio/tp-2017-1c-Skynet/Sharedlib/../Sharedlib/Sharedlib/randomfun.h:
