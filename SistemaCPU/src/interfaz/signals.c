@@ -12,10 +12,7 @@
 
 void recibir_seniales_de_linux(int signum){
     //Terminar de ejecutar y salir
-
-	//Provisorio, necesito avisarle a la CPU que terminamos
-	enviar_dato_serializado("DESCONECTAR", servidor_kernel);
-    exit(0);
+	CU_Terminar_ejecucion_y_finalizar();
 }
 
 

@@ -27,6 +27,9 @@
 void CU_Procesar_PCB_a_ejecutar();
 
 void testear_planificacion(servidor_kernel); //borrame
+
+bool controlSeguir = true;
+
 int main(int argc, char *argv[]) {
 	//TODO: Agregar adentro de esta funcion, que espere a que termine de ejecutar, lo mande al kernel y DESPUES mandar el desconectar y finalizar el proceso
 	signal(SIGINT, recibir_seniales_de_linux);
@@ -41,19 +44,14 @@ int main(int argc, char *argv[]) {
 
 	//Parametro de Identificacion
 	enviar_dato_serializado("CPU", servidor_kernel);
-	bool controlSeguir = true;
+
 	//mostrar_menu_primitivas();
 	atender_clientes(0, mostrar_menu_primitivas);
 
 	char *operacion;
 	do {
 		operacion = recibir_dato_serializado(servidor_kernel);
-		//SEÑAL ENVIADA POR KERNEL PARA SALIR
-		if (strcmp(operacion, "SIGUSR1") == 0) {
-			while (controlEjecucionPrograma == true) {
-			}
-			controlSeguir = false;
-		} else if (strcmp(operacion, "RECIBIR_PCB") == 0) {
+		if (strcmp(operacion, "RECIBIR_PCB") == 0) {
 			printf("RECIBIR_PCB\n");
 			CU_Procesar_PCB_a_ejecutar();
 		}else if (strcmp(operacion, "TESTEAR_PLANIFICACION") == 0){
@@ -62,6 +60,7 @@ int main(int argc, char *argv[]) {
 		}
 	} while (controlSeguir);
 
+	enviar_dato_serializado("DESCONECTAR", servidor_kernel);
 	close(servidor_kernel);
 	return EXIT_SUCCESS;
 }
@@ -72,6 +71,20 @@ void CU_Procesar_PCB_a_ejecutar() {
 	setPCBEjecucion(pcb);
 	ejecutar_Programa();
 }
+
+void CU_Terminar_ejecucion_y_finalizar() {
+	controlSeguir = false;
+}
+
+
+
+
+
+
+
+
+
+
 int n = 0;
 void testear_planificacion(servidor_kernel){
 	printf("\nDEBUG ---> Llego a testing -->  ");
