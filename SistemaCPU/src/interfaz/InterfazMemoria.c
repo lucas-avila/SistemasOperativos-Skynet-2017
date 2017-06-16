@@ -3,7 +3,7 @@
 #include<string.h>
 #include<unistd.h>
 #include "../header/AppConfig.h"
-#include "../general/Socket.h"
+#include "../../../Sharedlib/Sharedlib/Socket.h"
 #include "InterfazMemoria.h"
 #include "../general/funcionesUtiles.h"
 

@@ -5,17 +5,14 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../src/general/Semaforo.c \
-../src/general/Socket.c \
 ../src/general/funcionesUtiles.c 
 
 OBJS += \
 ./src/general/Semaforo.o \
-./src/general/Socket.o \
 ./src/general/funcionesUtiles.o 
 
 C_DEPS += \
 ./src/general/Semaforo.d \
-./src/general/Socket.d \
 ./src/general/funcionesUtiles.d 
 
 

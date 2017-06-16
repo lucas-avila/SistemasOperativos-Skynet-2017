@@ -8,7 +8,7 @@
 #include <pthread.h>
 #include "header/AppConfig.h"
 #include "header/Interfaz.h"
-#include "general/Socket.h"
+#include "../../Sharedlib/Sharedlib/Socket.h"
 #include "header/MemoriaPrincipal.h"
 
 void CU_Recibir_conexiones(int servidor) {

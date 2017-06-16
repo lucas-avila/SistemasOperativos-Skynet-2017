@@ -15,7 +15,7 @@
 #include <string.h>
 #include <unistd.h>
 
-#include "general/Socket.h"
+#include "../../Sharedlib/Sharedlib/Socket.h"
 #include "header/AppConfig.h"
 #include "header/PCB.h"
 #include "interfaz/InterfazKernel.h"

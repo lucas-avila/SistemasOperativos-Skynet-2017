@@ -5,16 +5,15 @@ src/KERNEL.d: ../src/KERNEL.c ../src/administrarPCB/EstadisticaProceso.h \
  ../src/administrarProcesos/../header/PCB.h \
  ../src/capaFILESYSTEM/TablaGlobalArchivo.h \
  ../src/capaMEMORIA/GestMemoriaFuncionesAux.h ../src/general/Semaforo.h \
- ../src/general/Socket.h ../src/header/AppConfig.h \
- ../src/header/Estructuras.h ../src/header/PCB.h \
- ../src/header/SolicitudesUsuario.h ../src/interfaz/InterfazConsola.h \
- ../src/interfaz/InterfazCPU.h ../src/interfaz/InterfazFS.h \
- ../src/interfaz/InterfazMemoria.h ../src/interfaz/../header/PCB.h \
- ../src/planificacion/Planificacion.h \
+ /home/utnso/Escritorio/tp-2017-1c-Skynet/Sharedlib/../Sharedlib/Sharedlib/Socket.h \
+ ../src/header/AppConfig.h ../src/header/Estructuras.h \
+ ../src/header/PCB.h ../src/header/SolicitudesUsuario.h \
+ ../src/interfaz/InterfazConsola.h ../src/interfaz/InterfazCPU.h \
+ ../src/interfaz/InterfazFS.h ../src/interfaz/InterfazMemoria.h \
+ ../src/interfaz/../header/PCB.h ../src/planificacion/Planificacion.h \
  ../src/planificacion/../administrarProcesos/Proceso.h \
  ../src/planificacion/../header/Estructuras.h \
- ../src/planificacion/../header/PCB.h \
- /home/utnso/Escritorio/tp-2017-1c-Skynet/Sharedlib/../Sharedlib/Sharedlib/randomfun.h
+ ../src/planificacion/../header/PCB.h
 
 ../src/administrarPCB/EstadisticaProceso.h:
 
@@ -34,7 +33,7 @@ src/KERNEL.d: ../src/KERNEL.c ../src/administrarPCB/EstadisticaProceso.h \
 
 ../src/general/Semaforo.h:
 
-../src/general/Socket.h:
+/home/utnso/Escritorio/tp-2017-1c-Skynet/Sharedlib/../Sharedlib/Sharedlib/Socket.h:
 
 ../src/header/AppConfig.h:
 
@@ -61,5 +60,3 @@ src/KERNEL.d: ../src/KERNEL.c ../src/administrarPCB/EstadisticaProceso.h \
 ../src/planificacion/../header/Estructuras.h:
 
 ../src/planificacion/../header/PCB.h:
-
-/home/utnso/Escritorio/tp-2017-1c-Skynet/Sharedlib/../Sharedlib/Sharedlib/randomfun.h:

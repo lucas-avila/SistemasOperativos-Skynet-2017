@@ -4,7 +4,7 @@ src/planificacion/PlanificacionRR.d: \
  ../src/planificacion/../administrarProcesos/Proceso.h \
  ../src/planificacion/../administrarProcesos/../header/Estructuras.h \
  ../src/planificacion/../administrarProcesos/../header/PCB.h \
- ../src/planificacion/../general/Socket.h \
+ ../src/planificacion/../../../Sharedlib/Sharedlib/Socket.h \
  ../src/planificacion/../header/AppConfig.h \
  ../src/planificacion/../header/Estructuras.h \
  ../src/planificacion/../header/PCB.h \
@@ -18,7 +18,7 @@ src/planificacion/PlanificacionRR.d: \
 
 ../src/planificacion/../administrarProcesos/../header/PCB.h:
 
-../src/planificacion/../general/Socket.h:
+../src/planificacion/../../../Sharedlib/Sharedlib/Socket.h:
 
 ../src/planificacion/../header/AppConfig.h:
 

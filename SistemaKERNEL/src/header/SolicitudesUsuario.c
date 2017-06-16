@@ -20,7 +20,7 @@
 #include "../administrarProcesos/Proceso.h"
 #include "../general/funcionesUtiles.h"
 #include "../general/Semaforo.h"
-#include "../general/Socket.h"
+#include "../../../Sharedlib/Sharedlib/Socket.h"
 #include "../planificacion/Planificacion.h"
 #include "../testing/TestingMenu.h"
 #include "../capaFILESYSTEM/TablaGlobalArchivo.h"

@@ -7,7 +7,7 @@
 
 #include <stdlib.h>
 
-#include "../general/Socket.h"
+#include "../../../Sharedlib/Sharedlib/Socket.h"
 #include "../header/AppConfig.h"
 
 void recibir_seniales_de_linux(int signum){

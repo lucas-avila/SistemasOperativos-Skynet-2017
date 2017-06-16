@@ -12,7 +12,7 @@
 #include "capaFILESYSTEM/TablaGlobalArchivo.h"
 #include "capaMEMORIA/GestMemoriaFuncionesAux.h"
 #include "general/Semaforo.h"
-#include "general/Socket.h"
+#include "../Sharedlib/Sharedlib/Socket.h"
 #include "header/AppConfig.h"
 #include "header/Estructuras.h"
 #include "header/PCB.h"
@@ -22,7 +22,6 @@
 #include "interfaz/InterfazFS.h"
 #include "interfaz/InterfazMemoria.h"
 #include "planificacion/Planificacion.h"
-#include "../Sharedlib/Sharedlib/randomfun.h"
 
 void inicializar_listas_globales();
 void inicializar_semaforos();

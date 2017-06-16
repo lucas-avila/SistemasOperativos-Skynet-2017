@@ -7,7 +7,7 @@
 #include <sys/socket.h>
 
 #include "general/Semaforo.h"
-#include "general/Socket.h"
+#include "../Sharedlib/Sharedlib/Socket.h"
 
 #define MIN_PIDS 1000
 

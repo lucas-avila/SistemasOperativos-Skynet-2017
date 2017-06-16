@@ -11,7 +11,7 @@
 #include "../capaFILESYSTEM/GestionArchivoFuncAux.h"
 #include "../capaMEMORIA/AdministrarVarCompartidas.h"
 #include "../capaMEMORIA/GestionMemoriaDinamica.h"
-#include "../general/Socket.h"
+#include "../../../Sharedlib/Sharedlib/Socket.h"
 #include "../header/AppConfig.h"
 #include "../header/Estructuras.h"
 #include "../planificacion/Planificacion.h"

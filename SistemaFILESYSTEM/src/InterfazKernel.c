@@ -14,7 +14,7 @@
 #include "header/AppConfig.h"
 #include "header/Archivo.h"
 #include "header/FileManager.h"
-#include "header/Socket.h"
+#include "../../Sharedlib/Sharedlib/Socket.h"
 
 static const char PATH_ARCHIVOS[] = "/Archivos/";
 

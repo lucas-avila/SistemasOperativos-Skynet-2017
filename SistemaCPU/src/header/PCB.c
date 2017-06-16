@@ -5,7 +5,7 @@
 #include <commons/string.h>
 
 #include "PCB.h"
-#include "../general/Socket.h"
+#include "../../../Sharedlib/Sharedlib/Socket.h"
 #define MIN_PIDS 1000
 
 LISTA_SERIALIZADA * serializar_con_header(t_list * lista, char * tipo_lista);

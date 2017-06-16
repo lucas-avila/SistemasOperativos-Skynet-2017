@@ -8,7 +8,7 @@
 #include "../capaFILESYSTEM/TablaGlobalArchivo.h"
 #include "../capaMEMORIA/GestMemoriaFuncionesAux.h"
 #include "../general/funcionesUtiles.h"
-#include "../general/Socket.h"
+#include "../../../Sharedlib/Sharedlib/Socket.h"
 #include "../header/AppConfig.h"
 #include "../header/Estructuras.h"
 #include "../header/PCB.h"

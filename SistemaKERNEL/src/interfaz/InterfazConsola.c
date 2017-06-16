@@ -6,7 +6,7 @@
 #include <unistd.h>
 
 #include "../administrarProcesos/Proceso.h"
-#include "../general/Socket.h"
+#include "../../../Sharedlib/Sharedlib/Socket.h"
 #include "../header/AppConfig.h"
 #include "../header/KERNEL.h"
 #include "../header/SolicitudesUsuario.h"

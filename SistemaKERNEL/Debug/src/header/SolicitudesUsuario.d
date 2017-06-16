@@ -5,7 +5,8 @@ src/header/SolicitudesUsuario.d: ../src/header/SolicitudesUsuario.c \
  ../src/header/../administrarProcesos/../header/Estructuras.h \
  ../src/header/../administrarProcesos/../header/PCB.h \
  ../src/header/../general/funcionesUtiles.h \
- ../src/header/../general/Semaforo.h ../src/header/../general/Socket.h \
+ ../src/header/../general/Semaforo.h \
+ ../src/header/../../../Sharedlib/Sharedlib/Socket.h \
  ../src/header/../planificacion/Planificacion.h \
  ../src/header/../planificacion/../administrarProcesos/Proceso.h \
  ../src/header/../planificacion/../header/Estructuras.h \
@@ -28,7 +29,7 @@ src/header/SolicitudesUsuario.d: ../src/header/SolicitudesUsuario.c \
 
 ../src/header/../general/Semaforo.h:
 
-../src/header/../general/Socket.h:
+../src/header/../../../Sharedlib/Sharedlib/Socket.h:
 
 ../src/header/../planificacion/Planificacion.h:
 

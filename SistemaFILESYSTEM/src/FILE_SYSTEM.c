@@ -18,7 +18,7 @@
 #include "header/Archivo.h"
 #include "header/FileManager.h"
 #include "header/InterfazKernel.h"
-#include "header/Socket.h"
+#include "../../Sharedlib/Sharedlib/Socket.h"
 
 void escuchar_Conexiones_Kernel(int servidor);
 void CU_Recibir_Conexiones_Kernel(int clienteKernel);

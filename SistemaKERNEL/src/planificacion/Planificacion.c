@@ -7,7 +7,7 @@
 
 #include "../capaMEMORIA/AdministrarSemaforos.h"
 #include "../general/Semaforo.h"
-#include "../general/Socket.h"
+#include "../../../Sharedlib/Sharedlib/Socket.h"
 #include "../header/AppConfig.h"
 #include "PlanificacionFIFO.h"
 #include "PlanificacionRR.h"

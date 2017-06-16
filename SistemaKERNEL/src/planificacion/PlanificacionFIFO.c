@@ -2,7 +2,7 @@
 #include "PlanificacionFIFO.h"
 #include "../header/AppConfig.h"
 #include "../administrarPCB/EstadisticaProceso.h"
-#include "../general/Socket.h"
+#include "../../../Sharedlib/Sharedlib/Socket.h"
 
 void dispatcher_FIFO() {
 	static int n = 1;

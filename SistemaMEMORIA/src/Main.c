@@ -9,7 +9,7 @@
 
 #include <commons/string.h>
 
-#include "general/Socket.h"
+#include "../../Sharedlib/Sharedlib/Socket.h"
 #include "general/Semaforo.h"
 #include "general/funcionesUtiles.h"
 #include "header/Interfaz.h"

@@ -9,7 +9,7 @@
 #include <string.h>
 
 #include "../general/Semaforo.h"
-#include "../general/Socket.h"
+#include "../../../Sharedlib/Sharedlib/Socket.h"
 #include "../header/AppConfig.h"
 #include "../header/PCB.h"
 #include "../primitivas/EstructurasDeDatosPrimitivas.h"
@@ -89,6 +89,9 @@ int enviar_SYSCALL_wait_semaforo_a_kernel(char* nombre_semaforo, PCB * pcb){
 		//TODO: el semaforo no bloqueó el proceso, el proceso continua su ejecucion normal
 		printf("el semaforo no bloqueo el proceso");
 		return 0;
+	}else{
+		printf("Fallo en la comunicación con kernel\n");
+		return -1;
 	}
 }
 

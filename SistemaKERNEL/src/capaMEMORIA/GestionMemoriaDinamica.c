@@ -7,7 +7,7 @@
 
 #include "../header/AppConfig.h"
 
-#include "../general/Socket.h"
+#include "../../../Sharedlib/Sharedlib/Socket.h"
 
 #include <commons/config.h>
 #include "GestionMemoriaDinamica.h"

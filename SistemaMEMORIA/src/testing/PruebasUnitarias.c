@@ -7,7 +7,7 @@
 #include "../header/MemoriaCache.h"
 #include "../header/AppConfig.h"
 #include "../general/funcionesUtiles.h"
-#include "../general/Socket.h"
+#include "../../../Sharedlib/Sharedlib/Socket.h"
 
 #include "../header/MemoriaPrincipal.h"
 
