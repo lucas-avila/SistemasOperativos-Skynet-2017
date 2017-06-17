@@ -31,7 +31,7 @@ void ingresar_valor_en_cache(char* PID, int nroPagina, char* contenidoPagina) {
 	for (i = 0; i < cantidadEntradasCache; i++) {
 		if ((strcmp(memoriaCacheGlobal[i].PID, PID) == 0) && memoriaCacheGlobal[i].nroPagina == nroPagina) {
 			memoriaCacheGlobal[i].vecesUsada += 1;
-			memoriaCacheGlobal[i].contenidoPagina = malloc(strlen(contenidoPagina));
+			//memoriaCacheGlobal[i].contenidoPagina = malloc(strlen(contenidoPagina));
 			strcpy(memoriaCacheGlobal[i].contenidoPagina, contenidoPagina);
 			return;
 		}
