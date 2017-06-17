@@ -169,8 +169,10 @@ char* almacenar_bytes_de_una_pagina(char PID[4], int pagina, int byteInicial, in
 	desactivar_semaforo(&semaforo_Tabla_MEMORY);
 	/**CACHE **/
 	if(cacheIr==true){
-		ingresar_valor_en_cache(PID, pagina, solicitar_bytes_de_una_pagina(PID, pagina, 0, configuraciones.MARCO_SIZE));
+		//ingresar_valor_en_cache(PID, pagina, solicitar_bytes_de_una_pagina(PID, pagina, 0, configuraciones.MARCO_SIZE));
+                char* contenidoPaginaBuscada = string_substring(MEMORIA_PRINCIPAL, (configuraciones.MARCO_SIZE * numeroFrame), configuraciones.MARCO_SIZE);
 
+		ingresar_valor_en_cache(PID, pagina, contenidoPaginaBuscada);
 	}
 	return "OK";
 }
