@@ -29,6 +29,7 @@ void CU_Procesar_PCB_a_ejecutar();
 void testear_planificacion(servidor_kernel); //borrame
 
 bool controlSeguir = true;
+bool estaEjecutando = false;
 
 int main(int argc, char *argv[]) {
 	//TODO: Agregar adentro de esta funcion, que espere a que termine de ejecutar, lo mande al kernel y DESPUES mandar el desconectar y finalizar el proceso
@@ -53,10 +54,14 @@ int main(int argc, char *argv[]) {
 		operacion = recibir_dato_serializado(servidor_kernel);
 		if (strcmp(operacion, "RECIBIR_PCB") == 0) {
 			printf("\nPCB RECIBIDO:\n ");
+			estaEjecutando = true;
 			CU_Procesar_PCB_a_ejecutar();
+			estaEjecutando = false;
 		}else if (strcmp(operacion, "TESTEAR_PLANIFICACION") == 0){
+			estaEjecutando = true;
 			recibir_dato_serializado(servidor_kernel);
 			testear_planificacion(servidor_kernel);
+			estaEjecutando = false;
 		}
 	} while (controlSeguir);
 
@@ -74,16 +79,9 @@ void CU_Procesar_PCB_a_ejecutar() {
 
 void CU_Terminar_ejecucion_y_finalizar() {
 	controlSeguir = false;
+	if(!estaEjecutando)
+		exit(-1);
 }
-
-
-
-
-
-
-
-
-
 
 int n = 0;
 void testear_planificacion(servidor_kernel){
