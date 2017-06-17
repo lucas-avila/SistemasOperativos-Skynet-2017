@@ -52,7 +52,7 @@ int main(int argc, char *argv[]) {
 	do {
 		operacion = recibir_dato_serializado(servidor_kernel);
 		if (strcmp(operacion, "RECIBIR_PCB") == 0) {
-			printf("RECIBIR_PCB\n");
+			printf("\nPCB RECIBIDO:\n ");
 			CU_Procesar_PCB_a_ejecutar();
 		}else if (strcmp(operacion, "TESTEAR_PLANIFICACION") == 0){
 			recibir_dato_serializado(servidor_kernel);

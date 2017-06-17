@@ -75,12 +75,18 @@ void enviar_PCB_a_kernel(PCB* pcb, char * modo) {
 	enviar_pcb(pcb, servidor_kernel);
 }
 
-int enviar_SYSCALL_wait_semaforo_a_kernel(char* nombre_semaforo, PCB * pcb){
+int enviar_SYSCALL_wait_semaforo_a_kernel(char* nombre, PCB * pcb){
+	//le sacamos los espacios
+	char * nombre_semaforo = string_new();
+	string_append(&nombre_semaforo, nombre);
+	string_trim_left(&nombre_semaforo);
+	string_trim_right(&nombre_semaforo);
+
 	enviar_PCB_a_kernel(pcb, "WAIT_SEM");
 	enviar_dato_serializado(nombre_semaforo, servidor_kernel);
-	printf("Frenando la cpu con el wait\n");
+	printf("WAIT %s\n", nombre_semaforo);
 	char * respuesta = recibir_dato_serializado(servidor_kernel);
-	printf("COntinuenado la cpu con el signal, dato recibido : %s\n", respuesta);
+	printf("Continuando la cpu, respuesta recibida : %s\n", respuesta);
 	if(strcmp(respuesta, "BLOQUEADO") == 0){
 		//TODO: el semaforo quedo bloqueando el proceso, se libera esta cpu
 		printf("el semaforo quedo bloqueando el proceso, se libera esta cpu\n");
@@ -89,16 +95,26 @@ int enviar_SYSCALL_wait_semaforo_a_kernel(char* nombre_semaforo, PCB * pcb){
 		//TODO: el semaforo no bloqueó el proceso, el proceso continua su ejecucion normal
 		printf("el semaforo no bloqueo el proceso");
 		return 0;
-	}else{
-		printf("Fallo en la comunicación con kernel\n");
+	}else if(strcmp(respuesta, "SEMAFORO_NO_EXISTE") == 0){
+		printf("Error - El semaforo solicitado no existe\n");
 		return -1;
+	}else{
+		printf("Error - Fallo en la comunicación con kernel\n");
+		return -2;
 	}
 }
 
-int enviar_SYSCALL_signal_semaforo_a_kernel(char* nombre_semaforo){
+int enviar_SYSCALL_signal_semaforo_a_kernel(char* nombre){
+	//le sacamos los espacios
+	char * nombre_semaforo = string_new();
+	string_append(&nombre_semaforo, nombre);
+	string_trim_left(&nombre_semaforo);
+	string_trim_right(&nombre_semaforo);
+
 	enviar_dato_serializado("SIGNAL_SEM", servidor_kernel);
 	enviar_dato_serializado(nombre_semaforo, servidor_kernel);
-	printf("Enviado signal a kernel \n");
+	printf("SIGNAL %s\n", nombre_semaforo);
+	//TODO: que pasa si el nombre del semaforo no existe?
 }
 
 char* enviar_SYSCALL_solicitar_memoria_dinamica_a_kernel(int PID, int espacio) {

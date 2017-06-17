@@ -13,7 +13,6 @@ AnSISOP_funciones *funciones;
 AnSISOP_kernel *kernel ;
 
 PCB* pcbEjecutar;
-int bloqueado; //para el wait de los semaforos 1-bloqueado 0-no bloqueado
 
 void setPCBEjecucion(PCB* pcb);
 
@@ -26,5 +25,9 @@ void ejecutar_programa_por_FIFO() ;
 void ejecutar_programa_por_RR() ;
 
 char* solicitar_sentencia_ejecutar();
+
+void marcarFinDePrograma();
+
+void marcarBloqueado();
 
 #endif /* PROCESADOR_EJECUCION_H_ */

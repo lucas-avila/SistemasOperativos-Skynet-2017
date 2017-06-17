@@ -36,6 +36,10 @@ t_valor_variable DEREFERENCIAR(t_puntero puntero);
 
 t_puntero ALOCAR(t_valor_variable espacio);
 
+void WAIT(t_nombre_semaforo identificador_semaforo);
+
+void SIGNAL(t_nombre_semaforo identificador_semaforo);
+
 void LIBERAR(t_puntero puntero);
 
 void IR_A_LABEL (t_nombre_etiqueta nombreEtiqueta);

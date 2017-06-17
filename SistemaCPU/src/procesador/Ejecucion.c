@@ -14,6 +14,10 @@
 #include "../interfaz/InterfazKernel.h"
 #include "../interfaz/InterfazMemoria.h"
 
+
+bool esFinPrograma = false;
+bool programaBloqueado = false;
+
 void setPCBEjecucion(PCB* pcb) {
 	pcbEjecutar = pcb;
 	setearPCB(pcb);
@@ -39,14 +43,14 @@ void ejecutar_Programa() {
 }
 
 void ejecutar_programa_por_FIFO() {
-	bool esFinPrograma = false;
+
 	printf("\n Comienzo de Ejecucion");
-	while (!esFinPrograma) {
+	while (!esFinPrograma && !programaBloqueado) {
 		printf("\n Comienzo de Solicitar sentencia...");
 		char* sentencia = solicitar_sentencia_ejecutar();
 		printf("\n Sentencia SOlicitada %s: ",sentencia );
 		esFinPrograma = (strcmp(sentencia, "FIN") == 0);
-		if (!esFinPrograma) { //Este if tiene que sacarse, es solo para probar ahora
+		if (!esFinPrograma && !programaBloqueado) { //Este if tiene que sacarse, es solo para probar ahora
 			analizadorLinea(sentencia, funciones, kernel);
 
 			pcbEjecutar->program_counter++;
@@ -54,7 +58,11 @@ void ejecutar_programa_por_FIFO() {
 
 	}
 
-	enviar_PCB_a_kernel(pcbEjecutar, "TERMINADO");
+	if(esFinPrograma)
+		enviar_PCB_a_kernel(pcbEjecutar, "TERMINADO");
+
+	esFinPrograma = false;
+	programaBloqueado = false;
 
 }
 
@@ -97,6 +105,8 @@ void inicializar_contexto_ejecucion() {
 	funciones->AnSISOP_retornar = RETORNAR;
 	funciones->AnSISOP_finalizar = FINALIZAR;
 
+	kernel->AnSISOP_wait = WAIT;
+	kernel->AnSISOP_signal = SIGNAL;
 	kernel->AnSISOP_reservar = ALOCAR;
 	kernel->AnSISOP_liberar = LIBERAR;
 	kernel->AnSISOP_abrir = abrir_archivo;
@@ -105,5 +115,13 @@ void inicializar_contexto_ejecucion() {
 	kernel->AnSISOP_moverCursor = mover_cursor_archivo;
 	kernel->AnSISOP_escribir = escribir_archivo;
 	kernel->AnSISOP_leer = leer_archivo;
+}
+
+void marcarFinDePrograma(){
+	esFinPrograma = true;
+}
+
+void marcarBloqueado(){
+	programaBloqueado = true;
 }
 

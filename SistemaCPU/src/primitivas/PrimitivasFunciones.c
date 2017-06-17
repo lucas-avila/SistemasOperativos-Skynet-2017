@@ -3,6 +3,7 @@
 #include <commons/collections/list.h>
 #include <commons/string.h>
 #include <ctype.h>
+#include <parser/metadata_program.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -10,10 +11,10 @@
 #include "../header/PCB.h"
 #include "../interfaz/InterfazKernel.h"
 #include "../interfaz/InterfazMemoria.h"
+#include "../procesador/Ejecucion.h"
 #include "EstructurasDeDatosPrimitivas.h"
 #include "FuncionesAuxiliares.h"
 #include "Stack.h"
-#include <parser/metadata_program.h>
 
 PCB* pcb;
 const int TAMANIO_VARIABLE = 4;
@@ -133,6 +134,30 @@ void ASIGNAR_VARIABLE(t_puntero direccion_variable, t_valor_variable valor) {
 	 //TODO: PREGUNTAR AL AYUDANTE QUE PASA CUANDO ME QUEDO SIN PAGINA PARA ASIGNAR VARIABLES.
 	 }**/
 //	free(direccion_var);
+}
+
+void WAIT(t_nombre_semaforo identificador_semaforo){
+	//Incremento el program counter para pasar a la siguiente linea del wait
+	//Si se bloqueó, ya se mando al kernel con el program counter apuntando a la siguiente sentencia para que cuando vuelva
+	//A una cpu no ejecute de nuevo el wait
+	//Si resulta que no se bloqueó, retrocedemos el program counter y el ++ se hace en Ejecucion.c luego de analizarLinea
+	pcb->program_counter++;
+
+	int result = enviar_SYSCALL_wait_semaforo_a_kernel(identificador_semaforo, pcb);
+	if(result == 1)
+		marcarBloqueado();
+	else if(result == -1 || result == -2)
+		exit(result);
+	else
+		pcb->program_counter--;
+
+	//Si da error terminamos la cpu
+	//TODO: Chequear si esta bien finalizar cuando ocurren esos errores
+	//TODO: Chequear en el kernel tambien que esta cpu crasheó
+}
+
+void SIGNAL(t_nombre_semaforo identificador_semaforo){
+	enviar_SYSCALL_signal_semaforo_a_kernel(identificador_semaforo);
 }
 
 t_valor_variable DEREFERENCIAR(t_puntero puntero) {

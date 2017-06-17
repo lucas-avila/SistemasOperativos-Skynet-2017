@@ -5,7 +5,6 @@
 #include "../../../Sharedlib/Sharedlib/Socket.h"
 
 void dispatcher_FIFO() {
-	static int n = 1;
 	PCB* pcb;
 	CPUInfo* cpu;
 	while (configuraciones.planificacion_activa == 1) {
@@ -27,7 +26,6 @@ void dispatcher_FIFO() {
 
 		mover_PCB_de_cola(pcb, READY, EXEC);
 		enviar_PCB_Serializado_a_CPU(cpu, pcb);
-		n++;
 	}
 }
 
