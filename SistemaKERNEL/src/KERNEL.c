@@ -61,6 +61,7 @@ void inicializar_KERNEL() {
 void inicializar_semaforos(){
 	inicializar_semaforo(&mutex_pids);
 	inicializar_semaforo(&mutex_lista_PROCESOS);
+	inicializar_semaforo(&mutex_lista_CPUs);
 	//PLANIFICACION
 	inicializar_semaforo(&mutex_cola_READY);
 	//OTROS

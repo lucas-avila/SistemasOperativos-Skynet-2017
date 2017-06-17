@@ -78,15 +78,18 @@ void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 
 CPUInfo* obtener_CPU_Disponible() {
 	int i = 0;
+	sem_wait(&mutex_lista_CPUs);
 	while (configuraciones.planificacion_activa == 1) {
 		int tamanioLista = list_size(lista_CPUs);
 		for (i = 0; i < tamanioLista; i++) {
 			CPUInfo* cpu_element = list_get(lista_CPUs, i);
 			if (cpu_element->disponible == 1) {
+				sem_post(&mutex_lista_CPUs);
 				return cpu_element;
 			}
 		}
 	}
+	sem_post(&mutex_lista_CPUs);
 	return NULL;
 }
 

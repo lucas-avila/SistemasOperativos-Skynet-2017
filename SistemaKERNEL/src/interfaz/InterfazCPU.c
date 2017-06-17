@@ -2,6 +2,7 @@
 
 #include <commons/collections/list.h>
 #include <pthread.h>
+#include <semaphore.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -11,7 +12,7 @@
 #include "../capaFILESYSTEM/GestionArchivoFuncAux.h"
 #include "../capaMEMORIA/AdministrarVarCompartidas.h"
 #include "../capaMEMORIA/GestionMemoriaDinamica.h"
-#include "../../../Sharedlib/Sharedlib/Socket.h"
+#include "../general/Semaforo.h"
 #include "../header/AppConfig.h"
 #include "../header/Estructuras.h"
 #include "../planificacion/Planificacion.h"
@@ -95,11 +96,15 @@ int index_of_CPU(int numeroConexion) {
 		return -1;
 	int i = 0;
 	CPUInfo * aux = malloc(sizeof(CPUInfo));
+	sem_wait(&mutex_lista_CPUs);
 	while (aux = list_get(lista_CPUs, i)) {
-		if (aux->numeroConexion == numeroConexion)
+		if (aux->numeroConexion == numeroConexion){
+			sem_post(&mutex_lista_CPUs);
 			return i;
+		}
 		i++;
 	}
+	sem_post(&mutex_lista_CPUs);
 }
 
 void agregar_CPU_global(int numeroConexion, pthread_t hilo) {
@@ -111,8 +116,11 @@ void agregar_CPU_global(int numeroConexion, pthread_t hilo) {
 }
 
 void retirar_CPU_global(int numeroConexion) {
-	printf("Se elimino a CPU en posicion %d de la lista\n", index_of_CPU(numeroConexion));
-	list_remove(lista_CPUs, index_of_CPU(numeroConexion));
+	int index = index_of_CPU(numeroConexion);
+	printf("Se elimino a CPU en posicion %d de la lista\n", index);
+	sem_wait(&mutex_lista_CPUs);
+	list_remove(lista_CPUs, index);
+	sem_post(&mutex_lista_CPUs);
 }
 
 // En esta funcion se usan funciones de Proceso.c. Tal vez falte incluir acceso. Revisar funcion atoi.
