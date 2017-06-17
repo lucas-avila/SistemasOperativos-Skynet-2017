@@ -79,8 +79,10 @@ void CU_Procesar_PCB_a_ejecutar() {
 
 void CU_Terminar_ejecucion_y_finalizar() {
 	controlSeguir = false;
-	if(!estaEjecutando)
+	if(!estaEjecutando){
+		enviar_dato_serializado("DESCONECTAR", servidor_kernel);
 		exit(-1);
+	}
 }
 
 int n = 0;
