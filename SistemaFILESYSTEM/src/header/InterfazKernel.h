@@ -10,4 +10,7 @@
 
 int servidor;
 
+void crear_archivo(char* path);
+void obtener_datos(char * path, int offset, int size);
+
 #endif /* HEADER_INTERFAZKERNEL_H_ */

@@ -12,13 +12,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <Sharedlib/Socket.h>
 #include <unistd.h>
 
 #include "header/AppConfig.h"
-#include "header/Archivo.h"
-#include "header/FileManager.h"
 #include "header/InterfazKernel.h"
-#include "../../Sharedlib/Sharedlib/Socket.h"
+#include "testing/testing.h"
 
 void escuchar_Conexiones_Kernel(int servidor);
 void CU_Recibir_Conexiones_Kernel(int clienteKernel);
@@ -31,32 +30,14 @@ inicializar_configuracion(argv[1]);
 	atender_clientes(servidor, &escuchar_Conexiones_Kernel);
 	*/
 	inicializar_estructuras_administrativas();
+	mostrar_menu_testing();
 
-	/*FILE * f = fopen("/home/utnso/Escritorio/tp-2017-1c-Skynet/mnt/SADICA_FS/Archivos/archivo_prueba.bin", "rb");
-	char *buffer;
-	int filelen;
-
-	fseek(f, 0, SEEK_END);          // Jump to the end of the file
-	filelen = ftell(f);             // Get the current byte offset in the file
-	rewind(f);                      // Jump back to the beginning of the file
-
-	buffer = (char *)malloc((filelen+1)*sizeof(char)); // Enough memory for file + \0
-	fread(buffer, filelen, 1, f); // Read in the entire file
-
-	Archivo * arch = deserializar_archivo(buffer);
-
-	printf("El tamanio es : %d\n", arch->tamanio);
-	printf("El primer bloque es : %d\n", arch->bloques[0]);
-
-	fclose(f); // Close the file
-		*/
 
 	/*crear_archivo("archivo_prueba.bin");
 	crear_archivo("archi_hijo.bin");
 	crear_archivo("");
 	*/
 	//while Provisorio...
-	while(1);
 
 	close(servidor);
 	return EXIT_SUCCESS;

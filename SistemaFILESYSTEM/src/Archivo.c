@@ -11,9 +11,10 @@
 
 
 
-Archivo * new_Archivo(uint32_t tamanio){
+Archivo * new_Archivo(){
 	Archivo * archivo = malloc(sizeof(Archivo));
 	archivo->tamanio = 0;
-	archivo->bloques[0] = malloc(sizeof(uint32_t));
+	archivo->bloques = (int *)malloc(sizeof(int));
+	archivo->bloques[0] = -1;
 	return archivo;
 }

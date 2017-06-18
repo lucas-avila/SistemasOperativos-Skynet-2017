@@ -15,17 +15,11 @@
 #include "header/AppConfig.h"
 
 void inicializar_estructuras_administrativas(){
-	//hardcodeado para probar
-	metadata = malloc(sizeof(Metadata));
-	metadata->cantidad_bloques = 16;
-	metadata->magic_number = string_new();
-	string_append(&metadata->magic_number, "SADICA");
-	metadata->tamanio_bloques = 64;
 
+	restaurar_metadata();
 	restaurar_bitmap();
 	/*char data[] = { 0b11110000, 0, 0 };
 	bitmap = bitarray_create_with_mode(data, 3, MSB_FIRST); --> ESTO NO VA...*/
-	//wipe_data(metadata->tamanio_bloques, metadata->cantidad_bloques);
 }
 
 int obtener_BLOQUE_libre(){
@@ -36,6 +30,7 @@ int obtener_BLOQUE_libre(){
 			bitarray_set_bit(bitmap, i);
 			guardar_bitmap();
 			return i;
+			//empiezan desde 1.bin
 		}
 	}
 	return -1;
@@ -45,7 +40,7 @@ int obtener_cantidad_bloques(Archivo * archivo){
 	if(archivo->tamanio == 0){
 		return 1;
 	}else{
-		return (archivo->tamanio / metadata->tamanio_bloques) + 1;
+		return (archivo->tamanio / metadata->tamanio_bloques);
 	}
 }
 
@@ -77,6 +72,20 @@ Archivo * deserializar_archivo(char * serializado){
 	return archivo;
 }
 
+void restaurar_metadata(){
+	metadata = malloc(sizeof(Metadata));
+	metadata->magic_number = malloc(50);
+
+	FILE * f_metadata;
+	char * path_metadata = generar_path_absoluto(PATH_METADATA, ARCHIVO_METADATA);
+	if((f_metadata = fopen(path_metadata, "r")) != NULL){
+		fscanf(f_metadata, "TAMANIO_BLOQUES=%d\nCANTIDAD_BLOQUES=%d\nMAGIC_NUMBER=%s", &metadata->tamanio_bloques, &metadata->cantidad_bloques, metadata->magic_number);
+		fclose(f_metadata);
+	}
+	free(path_metadata);
+
+}
+
 void guardar_bitmap(){
 
 	char * path = generar_path_absoluto(PATH_METADATA, ARCHIVO_BITMAP);
@@ -91,12 +100,12 @@ void guardar_bitmap(){
 void restaurar_bitmap(){
 	char * path = generar_path_absoluto(PATH_METADATA, ARCHIVO_BITMAP);
 	char * buffer;
-	int filelen = -1;
+	int filelen = 0;
 	FILE * f_bitmap;
 
 	if((f_bitmap = fopen(path, "rb")) != NULL) {
 		fseek(f_bitmap, 0, SEEK_END);
-		filelen += ftell(f_bitmap);
+		filelen = ftell(f_bitmap);
 		rewind(f_bitmap);
 		buffer = malloc(filelen*sizeof(char));
 		fread(buffer, filelen, 1, f_bitmap);
@@ -124,19 +133,21 @@ void wipe_data(int block_size, int block_quantity){
 		exit(-1);
 	}
 
-	int i = 1;
+	int i = 0;
 	char * block;
 	char * path;
 	char * bitarray;
 	FILE * f_block;
-	while(i <= block_quantity){
+	while(i < block_quantity){
 
 		block = string_new();
-		string_append(&block, string_itoa(i));
+		char * num = string_itoa(i);
+		string_append(&block, num);
 		string_append(&block, ".bin");
 		path = generar_path_absoluto(PATH_BLOQUES, block);
-		f_block = fopen(path, "wb");
+		f_block = fopen(path, "w");
 		fclose(f_block);
+		free(num);
 		free(block);
 		free(path);
 		i++;
@@ -151,6 +162,19 @@ void wipe_data(int block_size, int block_quantity){
 	free(bitmap);
 	bitmap = bitarray_create_with_mode(bitarray, size, MSB_FIRST);
 	guardar_bitmap();
+
+	FILE * f_metadata;
+	char * path_metadata = generar_path_absoluto(PATH_METADATA, ARCHIVO_METADATA);
+
+	//La abrimos para volverla a crear
+	f_metadata = fopen(path_metadata, "w");
+	fclose(f_metadata);
+
+	if((f_metadata = fopen(path_metadata, "a")) != NULL){
+		fprintf(f_metadata, "TAMANIO_BLOQUES=%d\nCANTIDAD_BLOQUES=%d\nMAGIC_NUMBER=%s", block_size, block_quantity, MAGIC_NUMBER);
+		fclose(f_metadata);
+	}
+	free(path_metadata);
 }
 
 

@@ -28,11 +28,18 @@ static const char ARCHIVO_METADATA[] = "Metadata.bin";
 Metadata * metadata;
 t_bitarray * bitmap;
 
+static const char MAGIC_NUMBER[] = "SADICA";
+
 int obtener_BLOQUE_libre();
 int obtener_cantidad_bloques(Archivo * archivo);
 char * serializar_archivo(Archivo * archivo);
 char * generar_path_absoluto(char * intermedio, char * path);
 Archivo * deserializar_archivo(char * serializado);
+void restaurar_metadata();
+void guardar_bitmap();
+void restaurar_bitmap();
+char * generar_path_absoluto(char * intermedio, char * path);
+void wipe_data(int block_size, int block_quantity);
 
 
 

@@ -24,27 +24,92 @@ void validar_archivo(char* path) {
 }
 
 void crear_archivo(char* path) {
-
 	char * path_abs = generar_path_absoluto(PATH_ARCHIVOS, path);
-	if(access(path_abs, F_OK) == -1){
-		//archivo no existe
+	FILE * f;
+	if((f = fopen(path_abs, "wb")) != NULL){
+		Archivo * archivo = new_Archivo();
+		archivo->bloques[0] = obtener_BLOQUE_libre();
+		if(archivo->bloques[0] == -1){
+			enviar_dato_serializado("SIN_ESPACIO", servidor);
+			return;
+		}
+
+		char * serializado = serializar_archivo(archivo);
+
+		fwrite(serializado, sizeof(char), sizeof(archivo->tamanio) + obtener_cantidad_bloques(archivo) * sizeof(int), f);
+		//guardar en el archivo
+		free(archivo);
+		fclose(f);
+	}
+	free(path_abs);
+}
+
+void obtener_datos(char * path, int offset, int size){
+	/* Ante un pedido de datos el File System devolverá del path enviado por parámetro,
+	 * la cantidad de bytes definidos por el Size a partir del offset solicitado.
+	 * Requiere que el archivo se encuentre abierto en modo lectura (“r”).
+	 */
+	char * path_abs = generar_path_absoluto(PATH_ARCHIVOS, path);
+	char * texto_leido = malloc(size);
+	if(access(path_abs, F_OK) != -1){
 		FILE * f;
-		if((f = fopen(path_abs, "wb")) != NULL){
-			Archivo * archivo = new_Archivo();
-			archivo->bloques[0] = obtener_BLOQUE_libre();
-			if(archivo->bloques[0] == -1){
-				enviar_dato_serializado("SIN_ESPACIO", servidor);
-				return;
+		if((f = fopen(path_abs, "rb")) != NULL){
+			char *buffer;
+			int filelen;
+
+			fseek(f, 0, SEEK_END);
+			filelen = ftell(f);
+			rewind(f);
+
+			buffer = malloc((filelen + 1) * sizeof(char));
+			fread(buffer, filelen, 1, f);
+
+			Archivo * archivo = deserializar_archivo(buffer);
+
+			int cantidad_bloques = obtener_cantidad_bloques(archivo);
+			int offset_en_bloques = offset / metadata->tamanio_bloques;
+			int offset_final = offset - offset_en_bloques * metadata->tamanio_bloques;
+			FILE * f_bloque;
+			char * block_path;
+			int bloques_leidos = 0;
+			int ultimos_bytes_leidos = 0;
+
+			int i,x=0;
+			for(i = offset_en_bloques; i < cantidad_bloques + offset_en_bloques; i++){
+				ultimos_bytes_leidos = x;
+				char * block = string_new();
+				string_append(&block, string_itoa(i));
+				string_append(&block, ".bin");
+
+				block_path = generar_path_absoluto(PATH_BLOQUES, block);
+
+				char c;
+				if((f_bloque = fopen(block_path, "r")) != NULL){
+
+					//Si es el primer bloque leido posicionamos el cursor en el offset (si es que tiene)
+					if(i == offset_en_bloques && offset_final > 0)
+						fseek(f_bloque, offset_final, SEEK_SET);
+
+					while ((c = getc(f_bloque)) != EOF && x < size && (x + offset_final - ultimos_bytes_leidos) < metadata->tamanio_bloques){
+						texto_leido[x] = c;
+						x++;
+					}
+					bloques_leidos++;
+					offset_final = 0;
+					fclose(f_bloque);
+				}
+
+				free(block);
 			}
-
-			char * serializado = serializar_archivo(archivo);
-
-			fwrite(serializado, sizeof(char), sizeof(archivo->tamanio) + obtener_cantidad_bloques(archivo) * sizeof(int), f);
-			//guardar en el archivo
+			texto_leido[x] = '\0';
+			free(archivo);
+			free(buffer);
 			fclose(f);
 		}
 	}
-	free(path_abs);
+
+	printf("El texto leido es %s\n", texto_leido);
+	free(texto_leido);
 }
 
 void borrar(char* path) {

@@ -5,7 +5,7 @@ src/KERNEL.d: ../src/KERNEL.c ../src/administrarPCB/EstadisticaProceso.h \
  ../src/administrarProcesos/../header/PCB.h \
  ../src/capaFILESYSTEM/TablaGlobalArchivo.h \
  ../src/capaMEMORIA/GestMemoriaFuncionesAux.h ../src/general/Semaforo.h \
- /home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/../Sharedlib/Sharedlib/Socket.h \
+ /home/utnso/Escritorio/tp-2017-1c-Skynet/Sharedlib/../Sharedlib/Sharedlib/Socket.h \
  ../src/header/AppConfig.h ../src/header/Estructuras.h \
  ../src/header/PCB.h ../src/header/SolicitudesUsuario.h \
  ../src/interfaz/InterfazConsola.h ../src/interfaz/InterfazCPU.h \
@@ -33,7 +33,7 @@ src/KERNEL.d: ../src/KERNEL.c ../src/administrarPCB/EstadisticaProceso.h \
 
 ../src/general/Semaforo.h:
 
-/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/../Sharedlib/Sharedlib/Socket.h:
+/home/utnso/Escritorio/tp-2017-1c-Skynet/Sharedlib/../Sharedlib/Sharedlib/Socket.h:
 
 ../src/header/AppConfig.h:
 
