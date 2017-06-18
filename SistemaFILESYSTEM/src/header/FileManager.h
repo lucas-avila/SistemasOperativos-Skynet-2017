@@ -19,12 +19,19 @@ typedef struct {
 	char * magic_number;
 } Metadata;
 
+static const char PATH_ARCHIVOS[] = "/Archivos/";
+static const char PATH_METADATA[] = "/Metadata/";
+static const char PATH_BLOQUES[] = "/Bloques/";
+static const char ARCHIVO_BITMAP[] = "Bitmap.bin";
+static const char ARCHIVO_METADATA[] = "Metadata.bin";
+
 Metadata * metadata;
 t_bitarray * bitmap;
 
 int obtener_BLOQUE_libre();
 int obtener_cantidad_bloques(Archivo * archivo);
 char * serializar_archivo(Archivo * archivo);
+char * generar_path_absoluto(char * intermedio, char * path);
 Archivo * deserializar_archivo(char * serializado);
 
 

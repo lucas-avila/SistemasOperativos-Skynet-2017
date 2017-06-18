@@ -32,13 +32,13 @@ endif
 all: SistemaCPU
 
 dependents:
-	-cd /home/utnso/Escritorio/tp-2017-1c-Skynet/Sharedlib/Debug && $(MAKE) all
+	-cd /home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug && $(MAKE) all
 
 # Tool invocations
-SistemaCPU: $(OBJS) $(USER_OBJS) /home/utnso/Escritorio/tp-2017-1c-Skynet/Sharedlib/Debug/libSharedlib.so
+SistemaCPU: $(OBJS) $(USER_OBJS) /home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug/libSharedlib.so
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C Linker'
-	gcc -L"/home/utnso/Escritorio/tp-2017-1c-Skynet/Sharedlib/Debug" -o "SistemaCPU" $(OBJS) $(USER_OBJS) $(LIBS)
+	gcc -L"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug" -o "SistemaCPU" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -49,6 +49,6 @@ clean:
 
 .PHONY: all clean dependents
 .SECONDARY:
-/home/utnso/Escritorio/tp-2017-1c-Skynet/Sharedlib/Debug/libSharedlib.so:
+/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug/libSharedlib.so:
 
 -include ../makefile.targets

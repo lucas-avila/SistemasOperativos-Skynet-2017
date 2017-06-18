@@ -31,7 +31,6 @@ void CU_iniciar_programa(int consola);
 void inicializar_KERNEL();
 
 int main(int argc, char *argv[]) {
-	imprimiralgo();
 	inicializar_configuracion(argv[1]);
 	//inicializar_configuracion("..//resource//config.cfg");
 	inicializar_KERNEL();

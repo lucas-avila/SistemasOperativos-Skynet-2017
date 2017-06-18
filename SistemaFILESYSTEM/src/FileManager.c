@@ -8,22 +8,24 @@
 #include "header/FileManager.h"
 
 #include <commons/string.h>
-#include <stdbool.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+#include "header/AppConfig.h"
 
 void inicializar_estructuras_administrativas(){
 	//hardcodeado para probar
 	metadata = malloc(sizeof(Metadata));
-	metadata->cantidad_bloques = 10;
+	metadata->cantidad_bloques = 16;
 	metadata->magic_number = string_new();
 	string_append(&metadata->magic_number, "SADICA");
 	metadata->tamanio_bloques = 64;
 
-	/*  char data[] = { 0b10000000, 0, 0b00000001 };
-            bitarray = bitarray_create_with_mode(data, sizeof(data), LSB_FIRST); */
-	char data[] = { 0b11110000, 0, 0 };
-	bitmap = bitarray_create_with_mode(data, 3, MSB_FIRST);
+	restaurar_bitmap();
+	/*char data[] = { 0b11110000, 0, 0 };
+	bitmap = bitarray_create_with_mode(data, 3, MSB_FIRST); --> ESTO NO VA...*/
+	//wipe_data(metadata->tamanio_bloques, metadata->cantidad_bloques);
 }
 
 int obtener_BLOQUE_libre(){
@@ -32,6 +34,7 @@ int obtener_BLOQUE_libre(){
 	for(i; i < size; i++){
 		if(!bitarray_test_bit(bitmap, i)){
 			bitarray_set_bit(bitmap, i);
+			guardar_bitmap();
 			return i;
 		}
 	}
@@ -74,15 +77,81 @@ Archivo * deserializar_archivo(char * serializado){
 	return archivo;
 }
 
+void guardar_bitmap(){
 
+	char * path = generar_path_absoluto(PATH_METADATA, ARCHIVO_BITMAP);
+	FILE * f_bitmap;
+	if((f_bitmap = fopen(path, "wb")) != NULL) {
+		fwrite(bitmap->bitarray, sizeof(char), bitmap->size, f_bitmap);
+		fclose(f_bitmap);
+	}
+	free(path);
+}
 
+void restaurar_bitmap(){
+	char * path = generar_path_absoluto(PATH_METADATA, ARCHIVO_BITMAP);
+	char * buffer;
+	int filelen = -1;
+	FILE * f_bitmap;
 
+	if((f_bitmap = fopen(path, "rb")) != NULL) {
+		fseek(f_bitmap, 0, SEEK_END);
+		filelen += ftell(f_bitmap);
+		rewind(f_bitmap);
+		buffer = malloc(filelen*sizeof(char));
+		fread(buffer, filelen, 1, f_bitmap);
+		fclose(f_bitmap);
+	}
 
+	bitmap = bitarray_create_with_mode(buffer, filelen, MSB_FIRST);
+	free(path);
+}
 
+char * generar_path_absoluto(char * intermedio, char * path){
+	char * path_abs = string_new();
 
+	string_append(&path_abs, configuraciones.PUNTO_MONTAJE);
+	string_append(&path_abs, intermedio);
+	string_append(&path_abs, path);
 
+	return path_abs;
+}
 
+void wipe_data(int block_size, int block_quantity){
 
+	if(block_quantity % 8 != 0){
+		perror("La cantidad de bloques debe ser multiplo de 8.\n");
+		exit(-1);
+	}
+
+	int i = 1;
+	char * block;
+	char * path;
+	char * bitarray;
+	FILE * f_block;
+	while(i <= block_quantity){
+
+		block = string_new();
+		string_append(&block, string_itoa(i));
+		string_append(&block, ".bin");
+		path = generar_path_absoluto(PATH_BLOQUES, block);
+		f_block = fopen(path, "wb");
+		fclose(f_block);
+		free(block);
+		free(path);
+		i++;
+	}
+
+	int size = block_quantity / 8;
+	bitarray = malloc(size);
+	for(i = 0; i < size; i++){
+		memcpy(bitarray+i, "\0",1);
+	}
+
+	free(bitmap);
+	bitmap = bitarray_create_with_mode(bitarray, size, MSB_FIRST);
+	guardar_bitmap();
+}
 
 
 

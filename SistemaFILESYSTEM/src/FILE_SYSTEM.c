@@ -32,7 +32,7 @@ inicializar_configuracion(argv[1]);
 	*/
 	inicializar_estructuras_administrativas();
 
-	FILE * f = fopen("/home/utnso/Escritorio/tp-2017-1c-Skynet/mnt/SADICA_FS/Archivos/archivo_prueba.bin", "rb");
+	/*FILE * f = fopen("/home/utnso/Escritorio/tp-2017-1c-Skynet/mnt/SADICA_FS/Archivos/archivo_prueba.bin", "rb");
 	char *buffer;
 	int filelen;
 
@@ -49,10 +49,12 @@ inicializar_configuracion(argv[1]);
 	printf("El primer bloque es : %d\n", arch->bloques[0]);
 
 	fclose(f); // Close the file
+		*/
 
-
-	//crear_archivo("archivo_prueba.bin");
-
+	/*crear_archivo("archivo_prueba.bin");
+	crear_archivo("archi_hijo.bin");
+	crear_archivo("");
+	*/
 	//while Provisorio...
 	while(1);
 
