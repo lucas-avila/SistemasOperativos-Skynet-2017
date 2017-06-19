@@ -7,7 +7,9 @@
 
 #include "header/InterfazKernel.h"
 
+#include <commons/string.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <Sharedlib/Socket.h>
 #include <unistd.h>
 
@@ -112,7 +114,32 @@ void obtener_datos(char * path, int offset, int size){
 	free(texto_leido);
 }
 
-void borrar(char* path) {
+void borrar(char * path) {
+	/*Borrará el archivo en el path indicado, eliminando
+	 * su archivo de metadata y marcando los
+	 * bloques como libres dentro del bitmap.
+	 */
+	int cant_bloques_archivo;
+	char * buffer;
+	char * path_abs = generar_path_absoluto(PATH_ARCHIVOS, path);
+	FILE * file;
+	Archivo * arch;
+
+	if(access(path_abs, F_OK) == -1){
+		perror("No se pudo acceder al archivo");
+		exit(-1);
+	}
+
+	if((file = fopen(path_abs, "rb")) == NULL)
+		exit(-1);
+
+	buffer = read_Archivo(file);
+	arch = deserializar_archivo(buffer);
+	cant_bloques_archivo = obtener_cantidad_bloques(arch);
+	release_blocks(arch->bloques, cant_bloques_archivo);
+	remove(path_abs);
+	free(buffer);
+
 }
 
 

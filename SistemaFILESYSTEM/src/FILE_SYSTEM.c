@@ -32,13 +32,6 @@ inicializar_configuracion(argv[1]);
 	inicializar_estructuras_administrativas();
 	mostrar_menu_testing();
 
-
-	/*crear_archivo("archivo_prueba.bin");
-	crear_archivo("archi_hijo.bin");
-	crear_archivo("");
-	*/
-	//while Provisorio...
-
 	close(servidor);
 	return EXIT_SUCCESS;
 }

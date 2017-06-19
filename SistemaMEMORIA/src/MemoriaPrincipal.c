@@ -46,6 +46,18 @@ int frame_lookup(char*PID, int pagina) {
  */
 int getFrame(char*PID, int pagina) {
 
+	/*int frame_buscado;
+	int frame = buscar_frame(PID, pagina);
+	Tabla_Pagina_Invertida registro = busqueda_secuencial(frame, configuraciones.MARCOS, PID);
+
+	while(strcmp(registro.PID, PID) != 0 || strcmp(registro.pagina, string_itoa(pagina)) != 0){
+		frame_buscado = atoi(registro.frame) + 1;
+		if(frame_buscado >= configuraciones.MARCOS)
+			frame_buscado = 0;
+		registro = busqueda_secuencial(frame_buscado, configuraciones.MARCOS, PID);
+	}
+
+	return frame_buscado;*/
 	int i = 0;
 	int tope = configuraciones.MARCOS;
 	char valorAux[4];
@@ -195,9 +207,24 @@ char* liberar_pagina(char PID[4], int pagina) {
 	return "OK";
 }
 
+int obtener_cantidad_paginas_proceso(char * PID){
+	int i = 0;
+	int cant_frames = configuraciones.MARCOS;
+	int cant_paginas_asignadas = 0;
+	for (i = 0; i < cant_frames; i++) {
+		Tabla_Pagina_Invertida registro = TABLA_MEMORY[i];
+		if (strcmp(registro.PID, PID) == 0)
+			cant_paginas_asignadas++;
+	}
+
+	return cant_paginas_asignadas;
+}
+
 char* asignar_paginas_a_proceso(char *PID, int cantidad_paginas_requeridas) {
 	int cantidad_paginas_pedidas = 0;
+	int numero_pagina_a_asignar = obtener_cantidad_paginas_proceso(PID) + 1;
 	char* numero_pagina_inicial;
+	int frame;
 	/**
 	 * Voy recorriendo toda la tabla de administracion de la memoria
 	 * en busca de registros que esten vacios. Cuando los encuentra
@@ -206,7 +233,8 @@ char* asignar_paginas_a_proceso(char *PID, int cantidad_paginas_requeridas) {
 	while (cantidad_paginas_pedidas < cantidad_paginas_requeridas) {
 		activar_semaforo(&semaforo_Proceso_Asignar_Pagina);
 
-		Tabla_Pagina_Invertida registro = buscar_pagina_disponible();
+		frame = buscar_frame(PID, numero_pagina_a_asignar);
+		Tabla_Pagina_Invertida registro = evitar_colisiones(frame);
 		if (strcmp(registro.frame, VACIO) == 0) {
 			desactivar_semaforo(&semaforo_Proceso_Asignar_Pagina);
 			return "FALTA ESPACIO";
@@ -223,7 +251,7 @@ char* asignar_paginas_a_proceso(char *PID, int cantidad_paginas_requeridas) {
 		actualizar_tabla_pagina(registro);
 
 		cantidad_paginas_pedidas++;
-
+		numero_pagina_a_asignar++;
 		desactivar_semaforo(&semaforo_Proceso_Asignar_Pagina);
 	}
 	return numero_pagina_inicial;
@@ -294,26 +322,66 @@ void actualizar_tabla_pagina(Tabla_Pagina_Invertida registro) {
  * DE PAGINA DISPONIBLE puede ser un numero random del 0 al numero tope, y preguntar
  * si esa pagina esta ocupada.
  */
-Tabla_Pagina_Invertida buscar_pagina_disponible() {
 
-	activar_semaforo(&semaforo_Tabla_MEMORY);
-
+int aplicar_hashing(char * PID, int numero_pagina){
 	int i = 0;
-	int tope = configuraciones.MARCOS;
+	int hash_code = 0;
+	int limit = string_length(PID);
+
+	for(i; i < limit; i++){
+		hash_code += PID[i];
+		hash_code += (hash_code << 10);
+		hash_code ^= (hash_code >> 6);
+	}
+
+	if(numero_pagina > 0)
+		hash_code *= numero_pagina;
+
+	return hash_code;
+}
+
+Tabla_Pagina_Invertida evitar_colisiones(int frame){
+
+	Tabla_Pagina_Invertida registro = busqueda_secuencial(frame, configuraciones.MARCOS, VACIO);
+
+	if(strcmp(registro.PID, VACIO) == 0)
+		return registro;
+	// else...
+	registro = busqueda_secuencial(0, frame, VACIO);
+
+	return registro;
+}
+
+Tabla_Pagina_Invertida busqueda_secuencial(int frame_start, int frame_finish, char * comparar_con){
+	int i = 0;
 	Tabla_Pagina_Invertida registro;
 
-	for (i = 0; i < tope; i++) {
+	activar_semaforo(&semaforo_Tabla_MEMORY);
+	for (i = frame_start; i < frame_finish; i++) {
 		registro = TABLA_MEMORY[i];
-		if (strcmp(registro.PID, VACIO) == 0) {
+		if (strcmp(registro.PID, comparar_con) == 0) {
 			desactivar_semaforo(&semaforo_Tabla_MEMORY);
 			return registro;
 		}
 	}
 	strcpy(registro.frame, VACIO);
-
 	desactivar_semaforo(&semaforo_Tabla_MEMORY);
 	return registro;
 }
+
+int buscar_frame(char * PID, int numero_pagina) {
+
+	int hash_code;
+	int frame;
+	hash_code = aplicar_hashing(PID, numero_pagina);
+	frame = hash_code % configuraciones.MARCOS;
+
+	if(frame < 0)
+		frame += configuraciones.MARCOS;
+
+	return frame;
+}
+
 char* pagina_Blanco = NULL;
 void finalizar_programa(char *PID) {
 
@@ -415,7 +483,7 @@ void crear_memoria_principal(char* bloqueMemoriaAdministrativa) {
 
 	int i = 0;
 	for (i = 0; i < cantidadPaginas; i++) {
-		Tabla_Pagina_Invertida registro = buscar_pagina_disponible();
+		Tabla_Pagina_Invertida registro = evitar_colisiones(0);
 		strcpy(registro.PID, "ADM");
 		strcpy(registro.pagina, "ADM");
 		actualizar_tabla_pagina(registro);

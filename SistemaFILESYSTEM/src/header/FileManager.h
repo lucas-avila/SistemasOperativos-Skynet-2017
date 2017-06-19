@@ -10,6 +10,7 @@
 
 #include <commons/bitarray.h>
 #include <stdint.h>
+#include <stdio.h>
 
 #include "Archivo.h"
 
@@ -40,6 +41,9 @@ void guardar_bitmap();
 void restaurar_bitmap();
 char * generar_path_absoluto(char * intermedio, char * path);
 void wipe_data(int block_size, int block_quantity);
+void release_blocks(int * blocks, int cant_blocks_archivo);
+void actualizar_bitmap(int * blocks, int cant_blocks_archivo);
+char * read_Archivo(FILE * file);
 
 
 

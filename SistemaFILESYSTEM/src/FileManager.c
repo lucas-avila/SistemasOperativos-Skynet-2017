@@ -177,8 +177,54 @@ void wipe_data(int block_size, int block_quantity){
 	free(path_metadata);
 }
 
+char * read_Archivo(FILE * file){
+	char * buffer;
+	int filelen;
 
+	fseek(file, 0, SEEK_END);
+	filelen = ftell(file);
+	rewind(file);
 
+	buffer = malloc((filelen + 1) * sizeof(char));
+	fread(buffer, filelen, 1, file);
+
+	return buffer;
+}
+
+void actualizar_bitmap(int * blocks, int cant_blocks_archivo){
+	int i = 0;
+
+	while(i < cant_blocks_archivo){
+		bitarray_clean_bit(bitmap, blocks[i]);
+		i++;
+	}
+}
+
+void release_blocks(int * blocks, int cant_blocks_archivo){
+
+	char * path_block;
+	char * block = string_new();
+	int i = 0;
+	int block_number;
+	FILE * f_block;
+
+	while(i < cant_blocks_archivo){
+
+		block_number = blocks[i];
+		string_append(&block, string_itoa(i));
+		string_append(&block, ".bin");
+		path_block = generar_path_absoluto(PATH_BLOQUES, block);
+		if((f_block = fopen(path_block, "w")) == NULL){
+			perror("No se pudo abrir el archivo");
+			exit(-1);
+		}
+		close(f_block);
+		i++;
+	}
+	actualizar_bitmap(blocks, cant_blocks_archivo);
+	free(block);
+	free(path_block);
+}
 
 
 

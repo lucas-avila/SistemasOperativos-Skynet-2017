@@ -22,9 +22,10 @@ void mostrar_menu_testing(){
 			printf("\n2- Leer archivo");
 			printf("\n3- Mostrar bitmap");
 			printf("\n4- Wipe data");
+			printf("\n5- Borrar Archivo.");
 			printf("\n0- Salir\n");
 			printf("Opcion: \n");
-			opcion = validarNumeroInput(0, 4);
+			opcion = validarNumeroInput(0, 5);
 
 			switch (opcion) {
 			case 1:
@@ -66,6 +67,19 @@ void mostrar_menu_testing(){
 				wipe_data(*block_size, *block_cant);
 				free(block_size);
 				free(block_cant);
+				break;
+			case 5:
+				mostrar_bitmap();
+				printf("\n");
+				crear_archivo("pepe.bin");
+				crear_archivo("manuela.bin");
+				mostrar_bitmap();
+				printf("\n");
+				borrar("pepe.bin");
+				mostrar_bitmap();
+				printf("\n");
+				borrar("manuela.bin");
+				mostrar_bitmap();
 				break;
 			}
 		} while (opcion != 0);
