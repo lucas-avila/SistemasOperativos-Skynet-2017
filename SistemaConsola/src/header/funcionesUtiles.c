@@ -50,7 +50,7 @@ char * obtener_codigo(char * path_archivo_fuente){
 	//Para evitar segmentation fault allocamos memoria.
 	literal = malloc(sizeof(char) * size_buffer);
 	fread(literal, sizeof(char), size_buffer, archivo_fuente);
-
+	fclose(archivo_fuente);
 	return literal;
 }
 

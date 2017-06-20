@@ -142,14 +142,6 @@ void borrar(char * path) {
 
 }
 
-
-
-
-
-
-
-
-
 /*
 Parámetros: [Path]
 Cuando el Proceso Kernel reciba la operación de abrir un archivo deberá validar que el

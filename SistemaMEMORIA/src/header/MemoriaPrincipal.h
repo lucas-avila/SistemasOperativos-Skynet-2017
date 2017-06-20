@@ -43,7 +43,7 @@ void mostrar_reporte_proceso();
 
 void mostrar_reporte_memoria();
 
-Tabla_Pagina_Invertida busqueda_secuencial(int frame_start, int frame_finish, char * comparar_con);
+Tabla_Pagina_Invertida busqueda_secuencial(int frame_start, int frame_finish);
 
 Tabla_Pagina_Invertida evitar_colisiones(int frame);
 
