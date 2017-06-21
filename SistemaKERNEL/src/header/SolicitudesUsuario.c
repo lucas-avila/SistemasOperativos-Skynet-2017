@@ -188,7 +188,7 @@ void obtener_informacion_proceso(){
 				break;
 			case 4:
 				string_append(&info_log, "Cantidad syscalls ejecutadas: ");
-				string_append(&info_log, string_itoa(estadistica_proceso->cantidad_SysCall_Ejecutadas));
+				string_append(&info_log, string_itoa(estadistica_proceso->cantidad_SYSCALL_Ejecutadas));
 				string_append(&info_log, "\n");
 				break;
 			}

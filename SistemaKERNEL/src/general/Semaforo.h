@@ -21,6 +21,7 @@ sem_t mutex_cola_READY;
 
 //OTROS
 sem_t mutex_memoria;
+sem_t mutex_tabla_estadistica;
 
 void inicializar_semaforo(sem_t* variable_semaforo);
 void destruir_semaforo(sem_t* variable_semaforo);

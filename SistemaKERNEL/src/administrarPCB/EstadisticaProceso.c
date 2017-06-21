@@ -1,8 +1,12 @@
-#include<stdio.h>
-#include<string.h>
-#include<stdlib.h>
 #include "EstadisticaProceso.h"
-#include "commons/collections/list.h"
+
+#include <commons/collections/list.h>
+#include <semaphore.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "../general/Semaforo.h"
+
 t_list* TABLA_PROCESO_ESTADISTICA;
 
 void inicializar_tabla_proceso_estadistica() {
@@ -18,7 +22,7 @@ EstadisticaProceso* crear_Estadistica_Proceso(uint32_t PID, uint32_t cantidad_Ra
 	estadistica->tamanio_Total_Alocar = tamanio_Total_Alocar;
 	estadistica->cantidad_Operaciones_Liberar = cantidad_Operaciones_Liberar;
 	estadistica->tamanio_Total_Liberar = tamanio_Total_Liberar;
-	estadistica->cantidad_SysCall_Ejecutadas = cantidad_SysCall_Ejecutadas;
+	estadistica->cantidad_SYSCALL_Ejecutadas = cantidad_SysCall_Ejecutadas;
 	return estadistica;
 }
 
@@ -28,34 +32,44 @@ void crear_Proceso_en_tabla(uint32_t PID) {
 }
 
 void guardar_registro_proceso(EstadisticaProceso* estadisticaProceso) {
+	sem_wait(&mutex_tabla_estadistica);
 	list_add(TABLA_PROCESO_ESTADISTICA, estadisticaProceso);
+	sem_post(&mutex_tabla_estadistica);
 }
 
 EstadisticaProceso* buscar_registro_por_PID(uint32_t PID) {
+	sem_wait(&mutex_tabla_estadistica);
 	int tamanio = list_size(TABLA_PROCESO_ESTADISTICA);
 	int i = 0;
 	for (i = 0; i < tamanio; i++) {
 		EstadisticaProceso* element = list_get(TABLA_PROCESO_ESTADISTICA, i);
 		if (element->PID == PID) {
+			sem_post(&mutex_tabla_estadistica);
 			return element;
 		}
 	}
+	sem_post(&mutex_tabla_estadistica);
 	return NULL;
 }
 
 void actualizar_registro_proceso(EstadisticaProceso* estadisticaProceso) {
+	sem_wait(&mutex_tabla_estadistica);
 	list_replace(TABLA_PROCESO_ESTADISTICA, buscar_indice_tabla_estadistica_proceso(estadisticaProceso->PID), estadisticaProceso);
+	sem_post(&mutex_tabla_estadistica);
 }
 
 int buscar_indice_tabla_estadistica_proceso(uint32_t PID) {
+	sem_wait(&mutex_tabla_estadistica);
 	int tamanio = list_size(TABLA_PROCESO_ESTADISTICA);
 	int i = 0;
 	for (i = 0; i < tamanio; i++) {
 		EstadisticaProceso* element = list_get(TABLA_PROCESO_ESTADISTICA, i);
 		if (element->PID == PID) {
+			sem_post(&mutex_tabla_estadistica);
 			return i;
 		}
 	}
+	sem_post(&mutex_tabla_estadistica);
 	return -1;
 }
 
@@ -84,7 +98,7 @@ void incrementar_MALLOC(uint32_t PID, uint32_t tamanioMalloc) {
 		crear_Proceso_en_tabla(PID);
 		elemento = buscar_registro_por_PID(PID);
 	}
-	elemento->cantidad_SysCall_Ejecutadas += 1;
+	elemento->cantidad_SYSCALL_Ejecutadas += 1;
 	elemento->cantidad_Operaciones_Alocar += 1;
 	elemento->tamanio_Total_Alocar += tamanioMalloc;
 	actualizar_registro_proceso(elemento);
@@ -95,7 +109,7 @@ void incrementar_FREE(uint32_t PID, uint32_t tamanioFREE) {
 		crear_Proceso_en_tabla(PID);
 		elemento = buscar_registro_por_PID(PID);
 	}
-	elemento->cantidad_SysCall_Ejecutadas += 1;
+	elemento->cantidad_SYSCALL_Ejecutadas += 1;
 	elemento->cantidad_Operaciones_Liberar += 1;
 	elemento->tamanio_Total_Liberar += tamanioFREE;
 	actualizar_registro_proceso(elemento);
@@ -106,6 +120,6 @@ void incrementar_SYSCALL(uint32_t PID, uint32_t cantidadSysCall) {
 		crear_Proceso_en_tabla(PID);
 		elemento = buscar_registro_por_PID(PID);
 	}
-	elemento->cantidad_SysCall_Ejecutadas += cantidadSysCall;
+	elemento->cantidad_SYSCALL_Ejecutadas += cantidadSysCall;
 	actualizar_registro_proceso(elemento);
 }

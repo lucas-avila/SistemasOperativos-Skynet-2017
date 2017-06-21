@@ -4,4 +4,13 @@ begin
 	a = 3
 	b = 5
 	a = b + 12
+	a = 3
+	b = 5
+	a = b + 12
+	a = 3
+	b = 5
+	a = b + 12
+	a = 3
+	b = 5
+	a = b + 12
 end
