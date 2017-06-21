@@ -9778,3 +9778,631 @@ make: *** [src/testing/TestingGeneral.o] Error 1
 make all 
 make: No se hace nada para «all».
 >>>>>>> 5eb549ef1cafafbfda68b6acbfc36d4e5652878d
+11:07:49 **** Build of configuration Debug for project Sharedlib ****
+make all 
+make: No se hace nada para «all».
+11:07:49 **** Build of configuration Debug for project SistemaCPU ****
+make all 
+make: No se hace nada para «all».
+11:07:50 **** Build of configuration Debug for project SistemaConsola ****
+make all 
+Building file: ../src/header/funcionesUtiles.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/funcionesUtiles.d" -MT"src/header/funcionesUtiles.d" -o "src/header/funcionesUtiles.o" "../src/header/funcionesUtiles.c"
+../src/header/funcionesUtiles.c: In function ‘generar_log’:
+../src/header/funcionesUtiles.c:73:5: warning: implicit declaration of function ‘strcpy’ [-Wimplicit-function-declaration]
+     strcpy(info_log, "");
+     ^
+../src/header/funcionesUtiles.c:73:5: warning: incompatible implicit declaration of built-in function ‘strcpy’ [enabled by default]
+Finished building: ../src/header/funcionesUtiles.c
+ 
+Building target: SistemaConsola
+Invoking: GCC C Linker
+gcc -L"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug" -o "SistemaConsola"  ./src/header/AppConfig.o ./src/header/Estructuras.o ./src/header/ExitCodes.o ./src/header/InterfazKernel.o ./src/header/Semaforo.o ./src/header/Socket.o ./src/header/funcionesUtiles.o  ./src/CONSOLA.o ./src/InterfazKernel.o   -lSharedlib -lpthread -lcommons
+Finished building target: SistemaConsola
+ 
+11:07:50 **** Clean-only build of configuration Debug for project SistemaFILESYSTEM ****
+make clean 
+rm -rf  ./src/testing/testing.o  ./src/header/AppConfig.o  ./src/Archivo.o ./src/FILE_SYSTEM.o ./src/FileManager.o ./src/InterfazKernel.o  ./src/testing/testing.d  ./src/header/AppConfig.d  ./src/Archivo.d ./src/FILE_SYSTEM.d ./src/FileManager.d ./src/InterfazKernel.d  SistemaFILESYSTEM
+ 
+11:07:51 **** Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+Building file: ../src/testing/testing.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/testing.d" -MT"src/testing/testing.d" -o "src/testing/testing.o" "../src/testing/testing.c"
+../src/testing/testing.c: In function ‘mostrar_menu_testing’:
+../src/testing/testing.c:78:5: warning: implicit declaration of function ‘borrar’ [-Wimplicit-function-declaration]
+     borrar("pepe.bin");
+     ^
+Finished building: ../src/testing/testing.c
+ 
+Building file: ../src/header/AppConfig.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/AppConfig.d" -MT"src/header/AppConfig.d" -o "src/header/AppConfig.o" "../src/header/AppConfig.c"
+Finished building: ../src/header/AppConfig.c
+ 
+Building file: ../src/Archivo.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Archivo.d" -MT"src/Archivo.d" -o "src/Archivo.o" "../src/Archivo.c"
+Finished building: ../src/Archivo.c
+ 
+Building file: ../src/FILE_SYSTEM.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FILE_SYSTEM.d" -MT"src/FILE_SYSTEM.d" -o "src/FILE_SYSTEM.o" "../src/FILE_SYSTEM.c"
+../src/FILE_SYSTEM.c: In function ‘main’:
+../src/FILE_SYSTEM.c:32:2: warning: implicit declaration of function ‘inicializar_estructuras_administrativas’ [-Wimplicit-function-declaration]
+  inicializar_estructuras_administrativas();
+  ^
+../src/FILE_SYSTEM.c: In function ‘escuchar_Conexiones_Kernel’:
+../src/FILE_SYSTEM.c:45:5: warning: passing argument 3 of ‘pthread_create’ from incompatible pointer type [enabled by default]
+     pthread_create(&mihilo1, NULL, &CU_Recibir_Conexiones_Kernel, cliente);
+     ^
+In file included from ../src/FILE_SYSTEM.c:11:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * (*)(void *)’ but argument is of type ‘void (*)(int)’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/FILE_SYSTEM.c:45:5: warning: passing argument 4 of ‘pthread_create’ makes pointer from integer without a cast [enabled by default]
+     pthread_create(&mihilo1, NULL, &CU_Recibir_Conexiones_Kernel, cliente);
+     ^
+In file included from ../src/FILE_SYSTEM.c:11:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * __restrict__’ but argument is of type ‘int’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/FILE_SYSTEM.c:46:5: warning: passing argument 1 of ‘pthread_detach’ makes integer from pointer without a cast [enabled by default]
+     pthread_detach(&mihilo1);
+     ^
+In file included from ../src/FILE_SYSTEM.c:11:0:
+/usr/include/pthread.h:282:12: note: expected ‘pthread_t’ but argument is of type ‘pthread_t *’
+ extern int pthread_detach (pthread_t __th) __THROW;
+            ^
+Finished building: ../src/FILE_SYSTEM.c
+ 
+Building file: ../src/FileManager.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FileManager.d" -MT"src/FileManager.d" -o "src/FileManager.o" "../src/FileManager.c"
+../src/FileManager.c: In function ‘obtener_BLOQUE_libre’:
+../src/FileManager.c:28:2: warning: statement with no effect [-Wunused-value]
+  for(i; i < size; i++){
+  ^
+../src/FileManager.c: In function ‘serializar_archivo’:
+../src/FileManager.c:53:2: warning: statement with no effect [-Wunused-value]
+  for(i; i < cant_bloques; i++){
+  ^
+../src/FileManager.c: In function ‘deserializar_archivo’:
+../src/FileManager.c:68:2: warning: statement with no effect [-Wunused-value]
+  for(i; i < cant_bloques; i++){
+  ^
+../src/FileManager.c: In function ‘restaurar_metadata’:
+../src/FileManager.c:80:2: warning: passing argument 1 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  char * path_metadata = generar_path_absoluto(PATH_METADATA, ARCHIVO_METADATA);
+  ^
+In file included from ../src/FileManager.c:8:0:
+../src/header/FileManager.h:42:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path);
+        ^
+../src/FileManager.c:80:2: warning: passing argument 2 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  char * path_metadata = generar_path_absoluto(PATH_METADATA, ARCHIVO_METADATA);
+  ^
+In file included from ../src/FileManager.c:8:0:
+../src/header/FileManager.h:42:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path);
+        ^
+../src/FileManager.c: In function ‘guardar_bitmap’:
+../src/FileManager.c:91:2: warning: passing argument 1 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  char * path = generar_path_absoluto(PATH_METADATA, ARCHIVO_BITMAP);
+  ^
+In file included from ../src/FileManager.c:8:0:
+../src/header/FileManager.h:42:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path);
+        ^
+../src/FileManager.c:91:2: warning: passing argument 2 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  char * path = generar_path_absoluto(PATH_METADATA, ARCHIVO_BITMAP);
+  ^
+In file included from ../src/FileManager.c:8:0:
+../src/header/FileManager.h:42:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path);
+        ^
+../src/FileManager.c: In function ‘restaurar_bitmap’:
+../src/FileManager.c:101:2: warning: passing argument 1 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  char * path = generar_path_absoluto(PATH_METADATA, ARCHIVO_BITMAP);
+  ^
+In file included from ../src/FileManager.c:8:0:
+../src/header/FileManager.h:42:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path);
+        ^
+../src/FileManager.c:101:2: warning: passing argument 2 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  char * path = generar_path_absoluto(PATH_METADATA, ARCHIVO_BITMAP);
+  ^
+In file included from ../src/FileManager.c:8:0:
+../src/header/FileManager.h:42:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path);
+        ^
+../src/FileManager.c: In function ‘wipe_data’:
+../src/FileManager.c:147:3: warning: passing argument 1 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+   path = generar_path_absoluto(PATH_BLOQUES, block);
+   ^
+../src/FileManager.c:119:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path){
+        ^
+../src/FileManager.c:167:2: warning: passing argument 1 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  char * path_metadata = generar_path_absoluto(PATH_METADATA, ARCHIVO_METADATA);
+  ^
+../src/FileManager.c:119:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path){
+        ^
+../src/FileManager.c:167:2: warning: passing argument 2 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  char * path_metadata = generar_path_absoluto(PATH_METADATA, ARCHIVO_METADATA);
+  ^
+../src/FileManager.c:119:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path){
+        ^
+../src/FileManager.c: In function ‘release_blocks’:
+../src/FileManager.c:216:3: warning: passing argument 1 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+   path_block = generar_path_absoluto(PATH_BLOQUES, block);
+   ^
+../src/FileManager.c:119:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path){
+        ^
+../src/FileManager.c:221:3: warning: passing argument 1 of ‘close’ makes integer from pointer without a cast [enabled by default]
+   close(f_block);
+   ^
+In file included from /usr/include/commons/bitarray.h:22:0,
+                 from ../src/header/FileManager.h:11,
+                 from ../src/FileManager.c:8:
+/usr/include/unistd.h:353:12: note: expected ‘int’ but argument is of type ‘struct FILE *’
+ extern int close (int __fd);
+            ^
+../src/FileManager.c:208:6: warning: variable ‘block_number’ set but not used [-Wunused-but-set-variable]
+  int block_number;
+      ^
+Finished building: ../src/FileManager.c
+ 
+Building file: ../src/InterfazKernel.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InterfazKernel.d" -MT"src/InterfazKernel.d" -o "src/InterfazKernel.o" "../src/InterfazKernel.c"
+../src/InterfazKernel.c: In function ‘crear_archivo’:
+../src/InterfazKernel.c:29:2: warning: passing argument 1 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  char * path_abs = generar_path_absoluto(PATH_ARCHIVOS, path);
+  ^
+In file included from ../src/InterfazKernel.c:17:0:
+../src/header/FileManager.h:42:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path);
+        ^
+../src/InterfazKernel.c:32:3: warning: implicit declaration of function ‘new_Archivo’ [-Wimplicit-function-declaration]
+   Archivo * archivo = new_Archivo();
+   ^
+../src/InterfazKernel.c:32:23: warning: initialization makes pointer from integer without a cast [enabled by default]
+   Archivo * archivo = new_Archivo();
+                       ^
+../src/InterfazKernel.c: In function ‘obtener_datos’:
+../src/InterfazKernel.c:54:2: warning: passing argument 1 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  char * path_abs = generar_path_absoluto(PATH_ARCHIVOS, path);
+  ^
+In file included from ../src/InterfazKernel.c:17:0:
+../src/header/FileManager.h:42:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path);
+        ^
+../src/InterfazKernel.c:86:5: warning: passing argument 1 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+     block_path = generar_path_absoluto(PATH_BLOQUES, block);
+     ^
+In file included from ../src/InterfazKernel.c:17:0:
+../src/header/FileManager.h:42:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path);
+        ^
+../src/InterfazKernel.c: In function ‘borrar’:
+../src/InterfazKernel.c:124:2: warning: passing argument 1 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  char * path_abs = generar_path_absoluto(PATH_ARCHIVOS, path);
+  ^
+In file included from ../src/InterfazKernel.c:17:0:
+../src/header/FileManager.h:42:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path);
+        ^
+Finished building: ../src/InterfazKernel.c
+ 
+Building target: SistemaFILESYSTEM
+Invoking: GCC C Linker
+gcc -L"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug" -o "SistemaFILESYSTEM"  ./src/testing/testing.o  ./src/header/AppConfig.o  ./src/Archivo.o ./src/FILE_SYSTEM.o ./src/FileManager.o ./src/InterfazKernel.o   -lSharedlib -lpthread -lcommons
+Finished building target: SistemaFILESYSTEM
+ 
+11:07:52 **** Build of configuration Debug for project SistemaKERNEL ****
+make all 
+make: No se hace nada para «all».
+11:07:52 **** Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+Building file: ../src/MemoriaPrincipal.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/MemoriaPrincipal.d" -MT"src/MemoriaPrincipal.d" -o "src/MemoriaPrincipal.o" "../src/MemoriaPrincipal.c"
+../src/MemoriaPrincipal.c: In function ‘frame_lookup’:
+../src/MemoriaPrincipal.c:20:25: warning: unused variable ‘registro’ [-Wunused-variable]
+  Tabla_Pagina_Invertida registro;
+                         ^
+../src/MemoriaPrincipal.c: In function ‘obtenerNumeroPaginaNew’:
+../src/MemoriaPrincipal.c:112:2: warning: function returns address of local variable [-Wreturn-local-addr]
+  return valorAux;
+  ^
+../src/MemoriaPrincipal.c: In function ‘aplicar_hashing’:
+../src/MemoriaPrincipal.c:342:2: warning: statement with no effect [-Wunused-value]
+  for(i; i < limit; i++){
+  ^
+../src/MemoriaPrincipal.c: In function ‘mostrar_reporte_proceso’:
+../src/MemoriaPrincipal.c:568:2: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char (*)[5]’ [-Wformat=]
+  scanf("%s", &pidConsultar);
+  ^
+Finished building: ../src/MemoriaPrincipal.c
+ 
+Building target: SistemaMEMORIA
+Invoking: GCC C Linker
+gcc -L"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug" -o "SistemaMEMORIA"  ./src/testing/PruebasUnitarias.o ./src/testing/TestingMemoriaCache.o  ./src/header/AppConfig.o  ./src/general/Semaforo.o ./src/general/funcionesUtiles.o  ./src/Interfaz.o ./src/Main.o ./src/MemoriaCache.o ./src/MemoriaPrincipal.o ./src/SolicitudesUsuario.o   -lSharedlib -lcommons -lm -lpthread
+Finished building target: SistemaMEMORIA
+ 
+11:08:06 **** Incremental Build of configuration Debug for project Sharedlib ****
+make all 
+make: No se hace nada para «all».
+11:08:06 **** Incremental Build of configuration Debug for project SistemaCPU ****
+make all 
+make: No se hace nada para «all».
+11:08:06 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+make: No se hace nada para «all».
+11:08:06 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+make: No se hace nada para «all».
+11:08:07 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+make: No se hace nada para «all».
+11:08:07 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+make: No se hace nada para «all».
+23:24:17 **** Incremental Build of configuration Debug for project Sharedlib ****
+make all 
+make: No se hace nada para «all».
+23:24:22 **** Incremental Build of configuration Debug for project SistemaCPU ****
+make all 
+make: No se hace nada para «all».
+23:24:28 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+make: No se hace nada para «all».
+23:24:28 **** Clean-only build of configuration Debug for project SistemaFILESYSTEM ****
+make clean 
+rm -rf  ./src/testing/testing.o  ./src/header/AppConfig.o  ./src/Archivo.o ./src/FILE_SYSTEM.o ./src/FileManager.o ./src/InterfazKernel.o  ./src/testing/testing.d  ./src/header/AppConfig.d  ./src/Archivo.d ./src/FILE_SYSTEM.d ./src/FileManager.d ./src/InterfazKernel.d  SistemaFILESYSTEM
+ 
+23:24:28 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+Building file: ../src/testing/testing.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/testing.d" -MT"src/testing/testing.d" -o "src/testing/testing.o" "../src/testing/testing.c"
+../src/testing/testing.c: In function ‘mostrar_menu_testing’:
+../src/testing/testing.c:78:5: warning: implicit declaration of function ‘borrar’ [-Wimplicit-function-declaration]
+     borrar("pepe.bin");
+     ^
+Finished building: ../src/testing/testing.c
+ 
+Building file: ../src/header/AppConfig.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/AppConfig.d" -MT"src/header/AppConfig.d" -o "src/header/AppConfig.o" "../src/header/AppConfig.c"
+Finished building: ../src/header/AppConfig.c
+ 
+Building file: ../src/Archivo.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Archivo.d" -MT"src/Archivo.d" -o "src/Archivo.o" "../src/Archivo.c"
+Finished building: ../src/Archivo.c
+ 
+Building file: ../src/FILE_SYSTEM.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FILE_SYSTEM.d" -MT"src/FILE_SYSTEM.d" -o "src/FILE_SYSTEM.o" "../src/FILE_SYSTEM.c"
+../src/FILE_SYSTEM.c: In function ‘main’:
+../src/FILE_SYSTEM.c:32:2: warning: implicit declaration of function ‘inicializar_estructuras_administrativas’ [-Wimplicit-function-declaration]
+  inicializar_estructuras_administrativas();
+  ^
+../src/FILE_SYSTEM.c: In function ‘escuchar_Conexiones_Kernel’:
+../src/FILE_SYSTEM.c:45:5: warning: passing argument 3 of ‘pthread_create’ from incompatible pointer type [enabled by default]
+     pthread_create(&mihilo1, NULL, &CU_Recibir_Conexiones_Kernel, cliente);
+     ^
+In file included from ../src/FILE_SYSTEM.c:11:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * (*)(void *)’ but argument is of type ‘void (*)(int)’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/FILE_SYSTEM.c:45:5: warning: passing argument 4 of ‘pthread_create’ makes pointer from integer without a cast [enabled by default]
+     pthread_create(&mihilo1, NULL, &CU_Recibir_Conexiones_Kernel, cliente);
+     ^
+In file included from ../src/FILE_SYSTEM.c:11:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * __restrict__’ but argument is of type ‘int’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/FILE_SYSTEM.c:46:5: warning: passing argument 1 of ‘pthread_detach’ makes integer from pointer without a cast [enabled by default]
+     pthread_detach(&mihilo1);
+     ^
+In file included from ../src/FILE_SYSTEM.c:11:0:
+/usr/include/pthread.h:282:12: note: expected ‘pthread_t’ but argument is of type ‘pthread_t *’
+ extern int pthread_detach (pthread_t __th) __THROW;
+            ^
+Finished building: ../src/FILE_SYSTEM.c
+ 
+Building file: ../src/FileManager.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FileManager.d" -MT"src/FileManager.d" -o "src/FileManager.o" "../src/FileManager.c"
+../src/FileManager.c: In function ‘obtener_BLOQUE_libre’:
+../src/FileManager.c:28:2: warning: statement with no effect [-Wunused-value]
+  for(i; i < size; i++){
+  ^
+../src/FileManager.c: In function ‘serializar_archivo’:
+../src/FileManager.c:53:2: warning: statement with no effect [-Wunused-value]
+  for(i; i < cant_bloques; i++){
+  ^
+../src/FileManager.c: In function ‘deserializar_archivo’:
+../src/FileManager.c:68:2: warning: statement with no effect [-Wunused-value]
+  for(i; i < cant_bloques; i++){
+  ^
+../src/FileManager.c: In function ‘restaurar_metadata’:
+../src/FileManager.c:80:2: warning: passing argument 1 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  char * path_metadata = generar_path_absoluto(PATH_METADATA, ARCHIVO_METADATA);
+  ^
+In file included from ../src/FileManager.c:8:0:
+../src/header/FileManager.h:42:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path);
+        ^
+../src/FileManager.c:80:2: warning: passing argument 2 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  char * path_metadata = generar_path_absoluto(PATH_METADATA, ARCHIVO_METADATA);
+  ^
+In file included from ../src/FileManager.c:8:0:
+../src/header/FileManager.h:42:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path);
+        ^
+../src/FileManager.c: In function ‘guardar_bitmap’:
+../src/FileManager.c:91:2: warning: passing argument 1 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  char * path = generar_path_absoluto(PATH_METADATA, ARCHIVO_BITMAP);
+  ^
+In file included from ../src/FileManager.c:8:0:
+../src/header/FileManager.h:42:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path);
+        ^
+../src/FileManager.c:91:2: warning: passing argument 2 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  char * path = generar_path_absoluto(PATH_METADATA, ARCHIVO_BITMAP);
+  ^
+In file included from ../src/FileManager.c:8:0:
+../src/header/FileManager.h:42:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path);
+        ^
+../src/FileManager.c: In function ‘restaurar_bitmap’:
+../src/FileManager.c:101:2: warning: passing argument 1 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  char * path = generar_path_absoluto(PATH_METADATA, ARCHIVO_BITMAP);
+  ^
+In file included from ../src/FileManager.c:8:0:
+../src/header/FileManager.h:42:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path);
+        ^
+../src/FileManager.c:101:2: warning: passing argument 2 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  char * path = generar_path_absoluto(PATH_METADATA, ARCHIVO_BITMAP);
+  ^
+In file included from ../src/FileManager.c:8:0:
+../src/header/FileManager.h:42:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path);
+        ^
+../src/FileManager.c: In function ‘wipe_data’:
+../src/FileManager.c:147:3: warning: passing argument 1 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+   path = generar_path_absoluto(PATH_BLOQUES, block);
+   ^
+../src/FileManager.c:119:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path){
+        ^
+../src/FileManager.c:167:2: warning: passing argument 1 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  char * path_metadata = generar_path_absoluto(PATH_METADATA, ARCHIVO_METADATA);
+  ^
+../src/FileManager.c:119:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path){
+        ^
+../src/FileManager.c:167:2: warning: passing argument 2 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  char * path_metadata = generar_path_absoluto(PATH_METADATA, ARCHIVO_METADATA);
+  ^
+../src/FileManager.c:119:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path){
+        ^
+../src/FileManager.c: In function ‘release_blocks’:
+../src/FileManager.c:216:3: warning: passing argument 1 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+   path_block = generar_path_absoluto(PATH_BLOQUES, block);
+   ^
+../src/FileManager.c:119:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path){
+        ^
+../src/FileManager.c:221:3: warning: passing argument 1 of ‘close’ makes integer from pointer without a cast [enabled by default]
+   close(f_block);
+   ^
+In file included from /usr/include/commons/bitarray.h:22:0,
+                 from ../src/header/FileManager.h:11,
+                 from ../src/FileManager.c:8:
+/usr/include/unistd.h:353:12: note: expected ‘int’ but argument is of type ‘struct FILE *’
+ extern int close (int __fd);
+            ^
+../src/FileManager.c:208:6: warning: variable ‘block_number’ set but not used [-Wunused-but-set-variable]
+  int block_number;
+      ^
+Finished building: ../src/FileManager.c
+ 
+Building file: ../src/InterfazKernel.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InterfazKernel.d" -MT"src/InterfazKernel.d" -o "src/InterfazKernel.o" "../src/InterfazKernel.c"
+../src/InterfazKernel.c: In function ‘crear_archivo’:
+../src/InterfazKernel.c:29:2: warning: passing argument 1 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  char * path_abs = generar_path_absoluto(PATH_ARCHIVOS, path);
+  ^
+In file included from ../src/InterfazKernel.c:17:0:
+../src/header/FileManager.h:42:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path);
+        ^
+../src/InterfazKernel.c:32:3: warning: implicit declaration of function ‘new_Archivo’ [-Wimplicit-function-declaration]
+   Archivo * archivo = new_Archivo();
+   ^
+../src/InterfazKernel.c:32:23: warning: initialization makes pointer from integer without a cast [enabled by default]
+   Archivo * archivo = new_Archivo();
+                       ^
+../src/InterfazKernel.c: In function ‘obtener_datos’:
+../src/InterfazKernel.c:54:2: warning: passing argument 1 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  char * path_abs = generar_path_absoluto(PATH_ARCHIVOS, path);
+  ^
+In file included from ../src/InterfazKernel.c:17:0:
+../src/header/FileManager.h:42:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path);
+        ^
+../src/InterfazKernel.c:88:5: warning: passing argument 1 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+     block_path = generar_path_absoluto(PATH_BLOQUES, block);
+     ^
+In file included from ../src/InterfazKernel.c:17:0:
+../src/header/FileManager.h:42:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path);
+        ^
+../src/InterfazKernel.c: In function ‘guardar_datos’:
+../src/InterfazKernel.c:125:2: warning: passing argument 1 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  char * path_abs = generar_path_absoluto(PATH_ARCHIVOS, path);
+  ^
+In file included from ../src/InterfazKernel.c:17:0:
+../src/header/FileManager.h:42:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path);
+        ^
+../src/InterfazKernel.c:133:4: warning: implicit declaration of function ‘read_archivo’ [-Wimplicit-function-declaration]
+    buffer_auxiliar = read_archivo(file);
+    ^
+../src/InterfazKernel.c:133:20: warning: assignment makes pointer from integer without a cast [enabled by default]
+    buffer_auxiliar = read_archivo(file);
+                    ^
+../src/InterfazKernel.c:171:5: warning: passing argument 1 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+     path_bloque = generar_path_absoluto(PATH_BLOQUES, path_bloque_parcial);
+     ^
+In file included from ../src/InterfazKernel.c:17:0:
+../src/header/FileManager.h:42:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path);
+        ^
+../src/InterfazKernel.c:161:8: warning: unused variable ‘contador_bloques’ [-Wunused-variable]
+    int contador_bloques = 0;
+        ^
+../src/InterfazKernel.c:131:11: warning: unused variable ‘buffer_total’ [-Wunused-variable]
+    char * buffer_total;
+           ^
+../src/InterfazKernel.c: In function ‘borrar’:
+../src/InterfazKernel.c:210:2: warning: passing argument 1 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  char * path_abs = generar_path_absoluto(PATH_ARCHIVOS, path);
+  ^
+In file included from ../src/InterfazKernel.c:17:0:
+../src/header/FileManager.h:42:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path);
+        ^
+Finished building: ../src/InterfazKernel.c
+ 
+Building target: SistemaFILESYSTEM
+Invoking: GCC C Linker
+gcc -L"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug" -o "SistemaFILESYSTEM"  ./src/testing/testing.o  ./src/header/AppConfig.o  ./src/Archivo.o ./src/FILE_SYSTEM.o ./src/FileManager.o ./src/InterfazKernel.o   -lSharedlib -lpthread -lcommons
+./src/InterfazKernel.o: En la función `guardar_datos':
+/home/utnso/workspace/tp-2017-1c-Skynet/SistemaFILESYSTEM/Debug/../src/InterfazKernel.c:133: referencia a `read_archivo' sin definir
+collect2: error: ld returned 1 exit status
+make: *** [SistemaFILESYSTEM] Error 1
+23:24:36 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+make: No se hace nada para «all».
+23:24:41 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+make: No se hace nada para «all».
+23:25:27 **** Incremental Build of configuration Debug for project Sharedlib ****
+make all 
+make: No se hace nada para «all».
+23:25:28 **** Incremental Build of configuration Debug for project SistemaCPU ****
+make all 
+make: No se hace nada para «all».
+23:25:28 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+make: No se hace nada para «all».
+23:25:28 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+Building target: SistemaFILESYSTEM
+Invoking: GCC C Linker
+gcc -L"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug" -o "SistemaFILESYSTEM"  ./src/testing/testing.o  ./src/header/AppConfig.o  ./src/Archivo.o ./src/FILE_SYSTEM.o ./src/FileManager.o ./src/InterfazKernel.o   -lSharedlib -lpthread -lcommons
+./src/InterfazKernel.o: En la función `guardar_datos':
+/home/utnso/workspace/tp-2017-1c-Skynet/SistemaFILESYSTEM/Debug/../src/InterfazKernel.c:133: referencia a `read_archivo' sin definir
+collect2: error: ld returned 1 exit status
+make: *** [SistemaFILESYSTEM] Error 1
+23:25:28 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+make: No se hace nada para «all».
+23:25:29 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+make: No se hace nada para «all».
+23:27:16 **** Incremental Build of configuration Debug for project Sharedlib ****
+make all 
+make: No se hace nada para «all».
+23:27:16 **** Incremental Build of configuration Debug for project SistemaCPU ****
+make all 
+make: No se hace nada para «all».
+23:27:16 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+make: No se hace nada para «all».
+23:27:16 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+Building file: ../src/InterfazKernel.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InterfazKernel.d" -MT"src/InterfazKernel.d" -o "src/InterfazKernel.o" "../src/InterfazKernel.c"
+../src/InterfazKernel.c: In function ‘crear_archivo’:
+../src/InterfazKernel.c:29:2: warning: passing argument 1 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  char * path_abs = generar_path_absoluto(PATH_ARCHIVOS, path);
+  ^
+In file included from ../src/InterfazKernel.c:17:0:
+../src/header/FileManager.h:42:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path);
+        ^
+../src/InterfazKernel.c:32:3: warning: implicit declaration of function ‘new_Archivo’ [-Wimplicit-function-declaration]
+   Archivo * archivo = new_Archivo();
+   ^
+../src/InterfazKernel.c:32:23: warning: initialization makes pointer from integer without a cast [enabled by default]
+   Archivo * archivo = new_Archivo();
+                       ^
+../src/InterfazKernel.c: In function ‘obtener_datos’:
+../src/InterfazKernel.c:54:2: warning: passing argument 1 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  char * path_abs = generar_path_absoluto(PATH_ARCHIVOS, path);
+  ^
+In file included from ../src/InterfazKernel.c:17:0:
+../src/header/FileManager.h:42:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path);
+        ^
+../src/InterfazKernel.c:88:5: warning: passing argument 1 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+     block_path = generar_path_absoluto(PATH_BLOQUES, block);
+     ^
+In file included from ../src/InterfazKernel.c:17:0:
+../src/header/FileManager.h:42:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path);
+        ^
+../src/InterfazKernel.c: In function ‘guardar_datos’:
+../src/InterfazKernel.c:125:2: warning: passing argument 1 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  char * path_abs = generar_path_absoluto(PATH_ARCHIVOS, path);
+  ^
+In file included from ../src/InterfazKernel.c:17:0:
+../src/header/FileManager.h:42:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path);
+        ^
+../src/InterfazKernel.c:170:5: warning: passing argument 1 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+     path_bloque = generar_path_absoluto(PATH_BLOQUES, path_bloque_parcial);
+     ^
+In file included from ../src/InterfazKernel.c:17:0:
+../src/header/FileManager.h:42:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path);
+        ^
+../src/InterfazKernel.c:160:8: warning: unused variable ‘contador_bloques’ [-Wunused-variable]
+    int contador_bloques = 0;
+        ^
+../src/InterfazKernel.c: In function ‘borrar’:
+../src/InterfazKernel.c:210:2: warning: passing argument 1 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  char * path_abs = generar_path_absoluto(PATH_ARCHIVOS, path);
+  ^
+In file included from ../src/InterfazKernel.c:17:0:
+../src/header/FileManager.h:42:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path);
+        ^
+Finished building: ../src/InterfazKernel.c
+ 
+Building target: SistemaFILESYSTEM
+Invoking: GCC C Linker
+gcc -L"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug" -o "SistemaFILESYSTEM"  ./src/testing/testing.o  ./src/header/AppConfig.o  ./src/Archivo.o ./src/FILE_SYSTEM.o ./src/FileManager.o ./src/InterfazKernel.o   -lSharedlib -lpthread -lcommons
+Finished building target: SistemaFILESYSTEM
+ 
+23:27:17 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+make: No se hace nada para «all».
+23:27:17 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+make: No se hace nada para «all».

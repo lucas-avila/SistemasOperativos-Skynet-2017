@@ -1,53 +1,6 @@
-<<<<<<< HEAD
-14:38:24 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+23:27:17 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
 make all 
 make: No se hace nada para «all».
 
-14:38:24 Build Finished (took 629ms)
-=======
-20:14:50 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
-make all 
-Building file: ../src/testing/TestingGeneral.c
-Invoking: GCC C Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/TestingGeneral.d" -MT"src/testing/TestingGeneral.d" -o "src/testing/TestingGeneral.o" "../src/testing/TestingGeneral.c"
-In file included from ../src/testing/TestingGeneral.c:15:0:
-../src/testing/../planificacion/Planificacion.h:23:1: error: expected ‘,’ or ‘;’ before ‘static’
- static const char EXEC[] = "EXEC";
- ^
-../src/testing/TestingGeneral.c: In function ‘mostrar_menu_testing_general’:
-../src/testing/TestingGeneral.c:37:4: warning: passing argument 1 of ‘crear_Proceso_en_tabla’ makes integer from pointer without a cast [enabled by default]
-    crear_Proceso_en_tabla(string_itoa(pcb_nuevo->PID));
-    ^
-In file included from ../src/testing/TestingGeneral.c:7:0:
-../src/testing/../administrarPCB/EstadisticaProceso.h:32:6: note: expected ‘uint32_t’ but argument is of type ‘char *’
- void crear_Proceso_en_tabla(uint32_t PID);
-      ^
-../src/testing/TestingGeneral.c:62:4: warning: implicit declaration of function ‘serializar_con_header’ [-Wimplicit-function-declaration]
-    char * result = serializar_con_header(lista, "LISTA_CODIGO");
-    ^
-../src/testing/TestingGeneral.c:62:20: warning: initialization makes pointer from integer without a cast [enabled by default]
-    char * result = serializar_con_header(lista, "LISTA_CODIGO");
-                    ^
-../src/testing/TestingGeneral.c:64:4: warning: implicit declaration of function ‘deserializar_con_header’ [-Wimplicit-function-declaration]
-    deserializar_con_header(result, "LISTA_CODIGO");
-    ^
-../src/testing/TestingGeneral.c:86:4: warning: implicit declaration of function ‘hardcodear_pcb’ [-Wimplicit-function-declaration]
-    PCB * pcb = hardcodear_pcb();
-    ^
-../src/testing/TestingGeneral.c:86:16: warning: initialization makes pointer from integer without a cast [enabled by default]
-    PCB * pcb = hardcodear_pcb();
-                ^
-../src/testing/TestingGeneral.c:87:4: warning: implicit declaration of function ‘enviar_pcb_deb’ [-Wimplicit-function-declaration]
-    enviar_pcb_deb(pcb);
-    ^
-../src/testing/TestingGeneral.c:90:16: warning: initialization makes pointer from integer without a cast [enabled by default]
-    PCB * pcb = hardcodear_pcb();
-                ^
-../src/testing/TestingGeneral.c:99:8: warning: unused variable ‘debugeame’ [-Wunused-variable]
-    int debugeame = 111;
-        ^
-make: *** [src/testing/TestingGeneral.o] Error 1
-
-20:14:51 Build Finished (took 177ms)
->>>>>>> 5eb549ef1cafafbfda68b6acbfc36d4e5652878d
+23:27:17 Build Finished (took 121ms)
 

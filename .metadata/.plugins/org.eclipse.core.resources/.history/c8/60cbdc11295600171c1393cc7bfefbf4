@@ -128,6 +128,7 @@ void guardar_datos(char * path, int offset, int size, char * buffer) {
 		FILE * file;
 		if((file = fopen(path_abs, "wb")) != NULL) {
 			char * buffer_auxiliar;
+			char * buffer_total;
 
 			buffer_auxiliar = read_Archivo(file);
 
@@ -190,7 +191,6 @@ void guardar_datos(char * path, int offset, int size, char * buffer) {
 			char * serializado = serializar_archivo(archivo);
 			fwrite(serializado, sizeof(char), sizeof(archivo->tamanio) + obtener_cantidad_bloques(archivo) * sizeof(int), file);
 			free(archivo);
-			free(buffer_auxiliar);
 			fclose(file);
 		}
 	}
