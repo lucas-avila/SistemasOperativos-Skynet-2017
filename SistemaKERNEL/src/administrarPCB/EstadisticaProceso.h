@@ -17,7 +17,7 @@ typedef struct {
 	uint32_t tamanio_Total_Alocar;
 	uint32_t cantidad_Operaciones_Liberar;
 	uint32_t tamanio_Total_Liberar;
-	uint32_t cantidad_SysCall_Ejecutadas;
+	uint32_t cantidad_SYSCALL_Ejecutadas;
 } EstadisticaProceso;
 
 int buscar_indice_tabla_estadistica_proceso(uint32_t PID);
