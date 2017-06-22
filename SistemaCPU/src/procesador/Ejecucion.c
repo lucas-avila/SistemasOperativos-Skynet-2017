@@ -67,14 +67,13 @@ void ejecutar_programa_por_FIFO() {
 }
 
 void ejecutar_programa_por_RR() {
-	bool esFinPrograma = false;
 	int topeEjecucion = pcbEjecutar->cantidad_rafagas;
 	int cantidadEjecutada = 0;
 
-	while (!esFinPrograma && cantidadEjecutada < topeEjecucion) {
+	while (!esFinPrograma && cantidadEjecutada < topeEjecucion && !programaBloqueado) {
 		char* sentencia = solicitar_sentencia_ejecutar();
 		esFinPrograma = (strcmp(sentencia, "FIN") == 0);
-		if (!esFinPrograma) { //Este if tiene que sacarse, es solo para probar ahora
+		if (!esFinPrograma && !programaBloqueado) { //Este if tiene que sacarse, es solo para probar ahora
 			analizadorLinea(sentencia, funciones, kernel);
 
 			pcbEjecutar->program_counter++;
@@ -84,9 +83,13 @@ void ejecutar_programa_por_RR() {
 
 	if(esFinPrograma)
 		enviar_PCB_a_kernel(pcbEjecutar, "TERMINADO");
-	else
+	else if(!programaBloqueado){
+		pcbEjecutar->cantidad_rafagas_ejecutadas++;
 		enviar_PCB_a_kernel(pcbEjecutar, "QUANTUM");
+	}
 
+	esFinPrograma = false;
+	programaBloqueado = false;
 }
 
 void inicializar_contexto_ejecucion() {

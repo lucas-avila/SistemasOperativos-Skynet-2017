@@ -62,8 +62,11 @@ void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 		marcar_CPU_Disponible(p->cpu);
 		enviar_dato_serializado("BLOQUEADO", p->cpu->numeroConexion);
 		p->cpu = NULL;
-	}else if(strcmp(destino, EXIT) == 0){
+	}else if(strcmp(origen, EXEC) == 0){
 		marcar_CPU_Disponible(p->cpu);
+		p->cpu = NULL;
+	}
+	if(strcmp(destino, EXIT) == 0){
 		pcb->exit_code = 0;
 		//finalizar_proceso(pcb);
 	}

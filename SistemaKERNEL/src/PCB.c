@@ -28,10 +28,17 @@ PCB * crear_pcb() {
 	pcb->codigo = list_create();
 	pcb->pila = list_create();
 	IndiceStack * elemento_pila_inicial_vacio = malloc(sizeof(IndiceStack));
+	elemento_pila_inicial_vacio->posicion = 0;
 	elemento_pila_inicial_vacio->argumentos = list_create();
 	elemento_pila_inicial_vacio->variables = list_create();
+	elemento_pila_inicial_vacio->retVar = malloc(sizeof(ReturnVariable));
+	elemento_pila_inicial_vacio->retVar->byte_inicial= 9999;
+	elemento_pila_inicial_vacio->retVar->pagina = 9999;
+	elemento_pila_inicial_vacio->retVar->tamanio = 9999;
 
 	list_add(pcb->pila, elemento_pila_inicial_vacio);
+
+	pcb->cantidad_rafagas_ejecutadas = 0;
 
 	return pcb;
 }

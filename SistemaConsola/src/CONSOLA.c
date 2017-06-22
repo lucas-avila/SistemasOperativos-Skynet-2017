@@ -23,7 +23,7 @@
 #include "header/ExitCodes.h"
 #include "header/funcionesUtiles.h"
 #include "header/InterfazKernel.h"
-#include "header/Socket.h"
+#include "../Sharedlib/Sharedlib/Socket.h"
 
 void atender_solicitudes_de_usuario();
 void iniciar_thread();

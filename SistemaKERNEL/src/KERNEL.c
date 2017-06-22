@@ -37,7 +37,7 @@ int main(int argc, char *argv[]) {
 	iniciar_conexion_servidor_programa();
 	iniciar_conexion_servidor_cpu();
 	iniciar_conexion_servidor_memoria();
-	inicializar();//sacar esto despues ESPARA PROBAR FILE SYSTEM
+	//inicializar();//sacar esto despues ESPARA PROBAR FILE SYSTEM
 //	iniciar_conexion_servidor_FS();
 	atender_solicitudes_de_usuario();
 	return EXIT_SUCCESS;
@@ -65,6 +65,7 @@ void inicializar_semaforos(){
 	inicializar_semaforo(&mutex_cola_READY);
 	//OTROS
 	inicializar_semaforo(&mutex_memoria);
+	inicializar_semaforo(&mutex_tabla_estadistica);
 }
 
 void inicializar_listas_globales() {
