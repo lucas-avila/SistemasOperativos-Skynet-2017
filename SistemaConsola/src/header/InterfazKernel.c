@@ -20,6 +20,8 @@ char * enviar_programa_ANSISOP(char * path_archivo_fuente, int kernel_programa){
 
 	literal = obtener_codigo(path_archivo_fuente);
 	enviar_dato_serializado(literal, kernel_programa);
+
+	free(literal);
 	return recibir_dato_serializado(kernel_programa);
 }
 
