@@ -62,7 +62,11 @@ void inicializar_semaforos(){
 	inicializar_semaforo(&mutex_lista_PROCESOS);
 	inicializar_semaforo(&mutex_lista_CPUs);
 	//PLANIFICACION
+	inicializar_semaforo(&mutex_cola_NEW);
 	inicializar_semaforo(&mutex_cola_READY);
+	inicializar_semaforo(&mutex_cola_EXEC);
+	inicializar_semaforo(&mutex_cola_WAITING);
+	inicializar_semaforo(&mutex_cola_EXIT);
 	//OTROS
 	inicializar_semaforo(&mutex_memoria);
 	inicializar_semaforo(&mutex_tabla_estadistica);

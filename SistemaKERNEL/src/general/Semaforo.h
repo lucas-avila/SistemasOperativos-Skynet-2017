@@ -17,7 +17,11 @@ sem_t mutex_lista_PROCESOS;
 sem_t mutex_lista_CPUs;
 
 //PLANIFICACION
+sem_t mutex_cola_NEW;
 sem_t mutex_cola_READY;
+sem_t mutex_cola_EXEC;
+sem_t mutex_cola_WAITING;
+sem_t mutex_cola_EXIT;
 
 //OTROS
 sem_t mutex_memoria;

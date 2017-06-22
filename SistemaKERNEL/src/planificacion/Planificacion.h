@@ -58,4 +58,10 @@ void recepcion_SIGNAL_semaforo_ansisop(char * nombre_sem);
 
 void recibir_PCB_de_CPU(int clienteCPU, char * modo);
 
+void wait_cola(char * cola);
+
+void signal_cola(char * cola);
+
+bool es_exec_cpu(char * cpuID);
+
 #endif /* HEADER_PLANIFICACION_H_ */

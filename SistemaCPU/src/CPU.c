@@ -90,13 +90,13 @@ void testear_planificacion(servidor_kernel){
 	printf("\nDEBUG ---> Llego a testing -->  ");
 	PCB* pcb = recibir_PCB_de_kernel();
 
+	sleep(1);
 
-
-	if(n <= 3){
+	if(n < 1){
 		enviar_SYSCALL_wait_semaforo_a_kernel("mutex1", pcb);
 	}else{
 		printf("\n\nDEBUG ---> Se está por llegar al grado maximo de multiprogramacion, empezamos a hacer signals\n\n");
-		sleep(1);
+
 		enviar_SYSCALL_signal_semaforo_a_kernel("mutex1");
 		enviar_PCB_a_kernel(pcb, "TERMINADO");
 	}
