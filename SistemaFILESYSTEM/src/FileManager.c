@@ -39,11 +39,15 @@ int obtener_BLOQUE_libre(){
 int obtener_cantidad_bloques(Archivo * archivo){
 	if(archivo->tamanio == 0){
 		return 1;
-	}else{
+	}
+	else if (archivo->tamanio % metadata->tamanio_bloques > 0){
 		return ((archivo->tamanio / metadata->tamanio_bloques) + 1);
 		/*Agregué + 1 en el return ya que si dividis 361 en 60 te dá 6, pero debería haber un bloque más
 		* para el resto de la división que no completa un bloque. Así; (A/B)*B != A, A = (A/B)*B + A%B
 		*/
+	}
+	else {
+		return archivo->tamanio / metadata->tamanio_bloques;
 	}
 }
 
