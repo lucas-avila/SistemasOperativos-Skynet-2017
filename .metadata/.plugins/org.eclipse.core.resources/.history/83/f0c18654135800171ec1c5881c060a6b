@@ -50,20 +50,17 @@ void proceso_a_NEW(Proceso * p){
 	signal_cola(NEW);
 }
 
-
 void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 
 	Proceso * p = proceso(pcb);
 
 	wait_cola(origen);
 	if(strcmp(origen, EXEC) == 0){
-
 		bool es_pcb_buscado(PCB * otro){
 			return otro->PID == pcb->PID;
 		}
-
 		free(list_remove_by_condition((t_list*)cola(origen), &es_pcb_buscado));
-		//Marcamos el CPU que estaba usando como disponible
+
 		marcar_CPU_Disponible(p->cpu);
 		//Si va a algun waiting
 		if(es_semaforo(destino))
@@ -77,8 +74,10 @@ void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 
 	//Si viene de algun waiting
 	if(es_semaforo(origen)) {
-		free(list_remove_by_condition((t_list*)cola(origen), &es_pcb_buscado));
+
 	}
+
+
 
 	if(strcmp(destino, EXIT) == 0){
 		pcb->exit_code = 0;
@@ -93,12 +92,6 @@ void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 	wait_cola(destino);
 	if(strcmp(destino, EXEC) == 0)
 		list_add((t_list*)cola(destino), pcb);
-	else if(es_semaforo(destino)) {
-		queue_push(cola(destino), pcb);
-		wait_cola(WAITING);
-		list_add((t_list*)cola(WAITING), pcb);
-		signal_cola(WAITING);
-	}
 	else
 		queue_push(cola(destino), pcb);
 	signal_cola(destino);
@@ -220,17 +213,13 @@ void recibir_PCB_de_CPU(int clienteCPU, char * modo) {
 void wait_cola(char * cola){
 	if(strcmp(cola, NEW) == 0){
 		sem_wait(&mutex_cola_NEW);
-	}
-	else if(strcmp(cola, READY) == 0){
+	}else if(strcmp(cola, READY) == 0){
 		sem_wait(&mutex_cola_READY);
-	}
-	else if(strcmp(cola, EXEC) == 0){
+	}else if(strcmp(cola, EXEC) == 0){
 		sem_wait(&mutex_cola_EXEC);
-	}
-	else if(strcmp(cola, WAITING) == 0 || es_semaforo(cola)){
+	}else if(strcmp(cola, WAITING) == 0 || es_semaforo(cola)){
 		sem_wait(&mutex_cola_WAITING);
-	}
-	else if(strcmp(cola, EXIT) == 0){
+	}else if(strcmp(cola, EXIT) == 0){
 		sem_wait(&mutex_cola_EXIT);
 	}
 }
@@ -238,17 +227,13 @@ void wait_cola(char * cola){
 void signal_cola(char * cola){
 	if(strcmp(cola, NEW) == 0){
 		sem_post(&mutex_cola_NEW);
-	}
-	else if(strcmp(cola, READY) == 0){
+	}else if(strcmp(cola, READY) == 0){
 		sem_post(&mutex_cola_READY);
-	}
-	else if(strcmp(cola, EXEC) == 0){
+	}else if(strcmp(cola, EXEC) == 0){
 		sem_post(&mutex_cola_EXEC);
-	}
-	else if(strcmp(cola, WAITING) == 0 || es_semaforo(cola)){
+	}else if(strcmp(cola, WAITING) == 0 || es_semaforo(cola)){
 		sem_post(&mutex_cola_WAITING);
-	}
-	else if(strcmp(cola, EXIT) == 0){
+	}else if(strcmp(cola, EXIT) == 0){
 		sem_post(&mutex_cola_EXIT);
 	}
 }
