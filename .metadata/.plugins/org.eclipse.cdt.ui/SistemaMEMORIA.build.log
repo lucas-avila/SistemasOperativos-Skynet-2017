@@ -1,6 +1,6 @@
-10:13:19 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+10:19:03 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
 make all 
 make: No se hace nada para «all».
 
-10:13:19 Build Finished (took 71ms)
+10:19:03 Build Finished (took 83ms)
 

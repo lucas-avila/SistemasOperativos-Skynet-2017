@@ -56,12 +56,11 @@ void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 	Proceso * p = proceso(pcb);
 
 	wait_cola(origen);
-
-	bool es_pcb_buscado(PCB * otro){
-				return otro->PID == pcb->PID;
-	}
-
 	if(strcmp(origen, EXEC) == 0){
+
+		bool es_pcb_buscado(PCB * otro){
+			return otro->PID == pcb->PID;
+		}
 
 		free(list_remove_by_condition((t_list*)cola(origen), &es_pcb_buscado));
 		//Marcamos el CPU que estaba usando como disponible
@@ -71,17 +70,15 @@ void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 			enviar_dato_serializado("BLOQUEADO", p->cpu->numeroConexion);
 
 		p->cpu = NULL;
-	} //Si viene de algun waiting
-	else if(es_semaforo(origen)) {
-		free(list_remove_by_condition((t_list*)cola(WAITING), &es_pcb_buscado));
-		queue_pop(cola(origen));
-	}
-	else
+	}else
 		queue_pop(cola(origen));
 
 	signal_cola(origen);
 
-
+	//Si viene de algun waiting
+	if(es_semaforo(origen)) {
+		free(list_remove_by_condition((t_list*)cola(WAITING), &es_pcb_buscado));
+	}
 
 	if(strcmp(destino, EXIT) == 0){
 		pcb->exit_code = 0;

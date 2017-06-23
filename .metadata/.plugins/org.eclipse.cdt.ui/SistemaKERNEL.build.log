@@ -1,4 +1,4 @@
-10:13:19 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+10:19:02 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
 make all 
 Building file: ../src/planificacion/Planificacion.c
 Invoking: GCC C Compiler
@@ -77,41 +77,50 @@ In file included from ../src/planificacion/Planificacion.c:1:0:
  void signal_cola(char * cola);
       ^
 ../src/planificacion/Planificacion.c: In function ‘mover_PCB_de_cola’:
-../src/planificacion/Planificacion.c:65:3: warning: implicit declaration of function ‘free’ [-Wimplicit-function-declaration]
+../src/planificacion/Planificacion.c:66:3: warning: implicit declaration of function ‘free’ [-Wimplicit-function-declaration]
    free(list_remove_by_condition((t_list*)cola(origen), &es_pcb_buscado));
    ^
-../src/planificacion/Planificacion.c:65:3: warning: incompatible implicit declaration of built-in function ‘free’ [enabled by default]
-../src/planificacion/Planificacion.c:65:3: warning: passing argument 2 of ‘list_remove_by_condition’ from incompatible pointer type [enabled by default]
+../src/planificacion/Planificacion.c:66:3: warning: incompatible implicit declaration of built-in function ‘free’ [enabled by default]
+../src/planificacion/Planificacion.c:66:3: warning: passing argument 2 of ‘list_remove_by_condition’ from incompatible pointer type [enabled by default]
 In file included from /usr/include/commons/collections/queue.h:20:0,
                  from ../src/planificacion/Planificacion.h:12,
                  from ../src/planificacion/Planificacion.c:1:
 /usr/include/commons/collections/list.h:134:8: note: expected ‘_Bool (*)(void *)’ but argument is of type ‘_Bool (*)(struct PCB *)’
   void *list_remove_by_condition(t_list *, bool(*condition)(void*));
         ^
-../src/planificacion/Planificacion.c:69:3: warning: implicit declaration of function ‘es_semaforo’ [-Wimplicit-function-declaration]
+../src/planificacion/Planificacion.c:70:3: warning: implicit declaration of function ‘es_semaforo’ [-Wimplicit-function-declaration]
    if(es_semaforo(destino))
    ^
-../src/planificacion/Planificacion.c:80:3: warning: incompatible implicit declaration of built-in function ‘free’ [enabled by default]
-   free(list_remove_by_condition((t_list*)cola(origen), &es_pcb_buscado));
+../src/planificacion/Planificacion.c:76:3: warning: incompatible implicit declaration of built-in function ‘free’ [enabled by default]
+   free(list_remove_by_condition((t_list*)cola(WAITING), &es_pcb_buscado));
    ^
-../src/planificacion/Planificacion.c:80:57: error: ‘es_pcb_buscado’ undeclared (first use in this function)
-   free(list_remove_by_condition((t_list*)cola(origen), &es_pcb_buscado));
-                                                         ^
-../src/planificacion/Planificacion.c:80:57: note: each undeclared identifier is reported only once for each function it appears in
-../src/planificacion/Planificacion.c:98:3: warning: passing argument 1 of ‘wait_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+../src/planificacion/Planificacion.c:76:3: warning: passing argument 1 of ‘cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+../src/planificacion/Planificacion.c:42:10: note: expected ‘char *’ but argument is of type ‘const char *’
+ t_queue* cola(char * nombre) {
+          ^
+../src/planificacion/Planificacion.c:76:3: warning: passing argument 2 of ‘list_remove_by_condition’ from incompatible pointer type [enabled by default]
+   free(list_remove_by_condition((t_list*)cola(WAITING), &es_pcb_buscado));
+   ^
+In file included from /usr/include/commons/collections/queue.h:20:0,
+                 from ../src/planificacion/Planificacion.h:12,
+                 from ../src/planificacion/Planificacion.c:1:
+/usr/include/commons/collections/list.h:134:8: note: expected ‘_Bool (*)(void *)’ but argument is of type ‘_Bool (*)(struct PCB *)’
+  void *list_remove_by_condition(t_list *, bool(*condition)(void*));
+        ^
+../src/planificacion/Planificacion.c:101:3: warning: passing argument 1 of ‘wait_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
    wait_cola(WAITING);
    ^
 In file included from ../src/planificacion/Planificacion.c:1:0:
 ../src/planificacion/Planificacion.h:62:6: note: expected ‘char *’ but argument is of type ‘const char *’
  void wait_cola(char * cola);
       ^
-../src/planificacion/Planificacion.c:99:3: warning: passing argument 1 of ‘cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+../src/planificacion/Planificacion.c:102:3: warning: passing argument 1 of ‘cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
    list_add((t_list*)cola(WAITING), pcb);
    ^
 ../src/planificacion/Planificacion.c:42:10: note: expected ‘char *’ but argument is of type ‘const char *’
  t_queue* cola(char * nombre) {
           ^
-../src/planificacion/Planificacion.c:100:3: warning: passing argument 1 of ‘signal_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+../src/planificacion/Planificacion.c:103:3: warning: passing argument 1 of ‘signal_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
    signal_cola(WAITING);
    ^
 In file included from ../src/planificacion/Planificacion.c:1:0:
@@ -119,19 +128,19 @@ In file included from ../src/planificacion/Planificacion.c:1:0:
  void signal_cola(char * cola);
       ^
 ../src/planificacion/Planificacion.c: In function ‘cantidad_procesos_en_memoria’:
-../src/planificacion/Planificacion.c:135:2: warning: passing argument 1 of ‘cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+../src/planificacion/Planificacion.c:138:2: warning: passing argument 1 of ‘cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
   return (queue_size(cola(READY)) + list_size(cola(EXEC)) + cantidad_en_WAITING());
   ^
 ../src/planificacion/Planificacion.c:42:10: note: expected ‘char *’ but argument is of type ‘const char *’
  t_queue* cola(char * nombre) {
           ^
-../src/planificacion/Planificacion.c:135:2: warning: passing argument 1 of ‘cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+../src/planificacion/Planificacion.c:138:2: warning: passing argument 1 of ‘cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
   return (queue_size(cola(READY)) + list_size(cola(EXEC)) + cantidad_en_WAITING());
   ^
 ../src/planificacion/Planificacion.c:42:10: note: expected ‘char *’ but argument is of type ‘const char *’
  t_queue* cola(char * nombre) {
           ^
-../src/planificacion/Planificacion.c:135:2: warning: passing argument 1 of ‘list_size’ from incompatible pointer type [enabled by default]
+../src/planificacion/Planificacion.c:138:2: warning: passing argument 1 of ‘list_size’ from incompatible pointer type [enabled by default]
   return (queue_size(cola(READY)) + list_size(cola(EXEC)) + cantidad_en_WAITING());
   ^
 In file included from /usr/include/commons/collections/queue.h:20:0,
@@ -141,58 +150,58 @@ In file included from /usr/include/commons/collections/queue.h:20:0,
   int list_size(t_list *);
       ^
 ../src/planificacion/Planificacion.c: In function ‘planificador_largo_plazo’:
-../src/planificacion/Planificacion.c:142:4: warning: passing argument 1 of ‘cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+../src/planificacion/Planificacion.c:145:4: warning: passing argument 1 of ‘cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
     if (!queue_is_empty(cola(NEW))) {
     ^
 ../src/planificacion/Planificacion.c:42:10: note: expected ‘char *’ but argument is of type ‘const char *’
  t_queue* cola(char * nombre) {
           ^
-../src/planificacion/Planificacion.c:143:5: warning: passing argument 1 of ‘cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+../src/planificacion/Planificacion.c:146:5: warning: passing argument 1 of ‘cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
      mover_PCB_de_cola(queue_peek(cola(NEW)), NEW, READY);
      ^
 ../src/planificacion/Planificacion.c:42:10: note: expected ‘char *’ but argument is of type ‘const char *’
  t_queue* cola(char * nombre) {
           ^
-../src/planificacion/Planificacion.c:143:5: warning: passing argument 2 of ‘mover_PCB_de_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+../src/planificacion/Planificacion.c:146:5: warning: passing argument 2 of ‘mover_PCB_de_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
      mover_PCB_de_cola(queue_peek(cola(NEW)), NEW, READY);
      ^
 ../src/planificacion/Planificacion.c:54:6: note: expected ‘char *’ but argument is of type ‘const char *’
  void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
       ^
-../src/planificacion/Planificacion.c:143:5: warning: passing argument 3 of ‘mover_PCB_de_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+../src/planificacion/Planificacion.c:146:5: warning: passing argument 3 of ‘mover_PCB_de_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
      mover_PCB_de_cola(queue_peek(cola(NEW)), NEW, READY);
      ^
 ../src/planificacion/Planificacion.c:54:6: note: expected ‘char *’ but argument is of type ‘const char *’
  void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
       ^
 ../src/planificacion/Planificacion.c: In function ‘obtener_proceso_de_cola_READY’:
-../src/planificacion/Planificacion.c:152:3: warning: passing argument 1 of ‘wait_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+../src/planificacion/Planificacion.c:155:3: warning: passing argument 1 of ‘wait_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
    wait_cola(READY);
    ^
 In file included from ../src/planificacion/Planificacion.c:1:0:
 ../src/planificacion/Planificacion.h:62:6: note: expected ‘char *’ but argument is of type ‘const char *’
  void wait_cola(char * cola);
       ^
-../src/planificacion/Planificacion.c:153:3: warning: passing argument 1 of ‘cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+../src/planificacion/Planificacion.c:156:3: warning: passing argument 1 of ‘cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
    if (!queue_is_empty(cola(READY))) {
    ^
 ../src/planificacion/Planificacion.c:42:10: note: expected ‘char *’ but argument is of type ‘const char *’
  t_queue* cola(char * nombre) {
           ^
-../src/planificacion/Planificacion.c:155:4: warning: passing argument 1 of ‘cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+../src/planificacion/Planificacion.c:158:4: warning: passing argument 1 of ‘cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
     PCB* pcb = queue_peek(cola(READY));
     ^
 ../src/planificacion/Planificacion.c:42:10: note: expected ‘char *’ but argument is of type ‘const char *’
  t_queue* cola(char * nombre) {
           ^
-../src/planificacion/Planificacion.c:156:4: warning: passing argument 1 of ‘signal_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+../src/planificacion/Planificacion.c:159:4: warning: passing argument 1 of ‘signal_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
     signal_cola(READY);
     ^
 In file included from ../src/planificacion/Planificacion.c:1:0:
 ../src/planificacion/Planificacion.h:64:6: note: expected ‘char *’ but argument is of type ‘const char *’
  void signal_cola(char * cola);
       ^
-../src/planificacion/Planificacion.c:159:3: warning: passing argument 1 of ‘signal_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+../src/planificacion/Planificacion.c:162:3: warning: passing argument 1 of ‘signal_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
    signal_cola(READY);
    ^
 In file included from ../src/planificacion/Planificacion.c:1:0:
@@ -200,48 +209,48 @@ In file included from ../src/planificacion/Planificacion.c:1:0:
  void signal_cola(char * cola);
       ^
 ../src/planificacion/Planificacion.c: In function ‘enviar_PCB_Serializado_a_CPU’:
-../src/planificacion/Planificacion.c:170:2: warning: implicit declaration of function ‘enviar_pcb’ [-Wimplicit-function-declaration]
+../src/planificacion/Planificacion.c:173:2: warning: implicit declaration of function ‘enviar_pcb’ [-Wimplicit-function-declaration]
   enviar_pcb(pcb, cpu->numeroConexion);
   ^
 ../src/planificacion/Planificacion.c: In function ‘recepcion_SIGNAL_semaforo_ansisop’:
-../src/planificacion/Planificacion.c:198:3: warning: passing argument 3 of ‘mover_PCB_de_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+../src/planificacion/Planificacion.c:201:3: warning: passing argument 3 of ‘mover_PCB_de_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
    mover_PCB_de_cola(pcb, nombre_sem, READY);
    ^
 ../src/planificacion/Planificacion.c:54:6: note: expected ‘char *’ but argument is of type ‘const char *’
  void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
       ^
 ../src/planificacion/Planificacion.c: In function ‘recibir_PCB_de_CPU’:
-../src/planificacion/Planificacion.c:202:2: warning: implicit declaration of function ‘recibir_pcb’ [-Wimplicit-function-declaration]
+../src/planificacion/Planificacion.c:205:2: warning: implicit declaration of function ‘recibir_pcb’ [-Wimplicit-function-declaration]
   PCB* pcb = recibir_pcb(clienteCPU);
   ^
-../src/planificacion/Planificacion.c:202:13: warning: initialization makes pointer from integer without a cast [enabled by default]
+../src/planificacion/Planificacion.c:205:13: warning: initialization makes pointer from integer without a cast [enabled by default]
   PCB* pcb = recibir_pcb(clienteCPU);
              ^
-../src/planificacion/Planificacion.c:205:3: warning: passing argument 2 of ‘mover_PCB_de_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+../src/planificacion/Planificacion.c:208:3: warning: passing argument 2 of ‘mover_PCB_de_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
    mover_PCB_de_cola(pcb, EXEC, EXIT);
    ^
 ../src/planificacion/Planificacion.c:54:6: note: expected ‘char *’ but argument is of type ‘const char *’
  void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
       ^
-../src/planificacion/Planificacion.c:205:3: warning: passing argument 3 of ‘mover_PCB_de_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+../src/planificacion/Planificacion.c:208:3: warning: passing argument 3 of ‘mover_PCB_de_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
    mover_PCB_de_cola(pcb, EXEC, EXIT);
    ^
 ../src/planificacion/Planificacion.c:54:6: note: expected ‘char *’ but argument is of type ‘const char *’
  void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
       ^
-../src/planificacion/Planificacion.c:207:3: warning: passing argument 2 of ‘mover_PCB_de_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+../src/planificacion/Planificacion.c:210:3: warning: passing argument 2 of ‘mover_PCB_de_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
    mover_PCB_de_cola(pcb, EXEC, READY);
    ^
 ../src/planificacion/Planificacion.c:54:6: note: expected ‘char *’ but argument is of type ‘const char *’
  void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
       ^
-../src/planificacion/Planificacion.c:207:3: warning: passing argument 3 of ‘mover_PCB_de_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+../src/planificacion/Planificacion.c:210:3: warning: passing argument 3 of ‘mover_PCB_de_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
    mover_PCB_de_cola(pcb, EXEC, READY);
    ^
 ../src/planificacion/Planificacion.c:54:6: note: expected ‘char *’ but argument is of type ‘const char *’
  void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
       ^
-../src/planificacion/Planificacion.c:213:4: warning: passing argument 2 of ‘mover_PCB_de_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+../src/planificacion/Planificacion.c:216:4: warning: passing argument 2 of ‘mover_PCB_de_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
     mover_PCB_de_cola(pcb, EXEC, nombre_sem);
     ^
 ../src/planificacion/Planificacion.c:54:6: note: expected ‘char *’ but argument is of type ‘const char *’
@@ -252,7 +261,13 @@ In file included from ../src/planificacion/Planificacion.c:11:0:
 ../src/planificacion/../header/AppConfig.h:40:5: warning: array ‘VECTOR_VAR_COM’ assumed to have one element [enabled by default]
  int VECTOR_VAR_COM[];
      ^
-make: *** [src/planificacion/Planificacion.o] Error 1
+Finished building: ../src/planificacion/Planificacion.c
+ 
+Building target: SistemaKERNEL
+Invoking: GCC C Linker
+gcc -L"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug" -o "SistemaKERNEL"  ./src/testing/TestingCapaFileSystem.o ./src/testing/TestingGeneral.o ./src/testing/TestingInterfazMemoria.o ./src/testing/TestingMenu.o ./src/testing/TestingPlanificacion.o  ./src/planificacion/Planificacion.o ./src/planificacion/PlanificacionFIFO.o ./src/planificacion/PlanificacionRR.o  ./src/interfaz/InterfazCPU.o ./src/interfaz/InterfazConsola.o ./src/interfaz/InterfazFS.o ./src/interfaz/InterfazMemoria.o  ./src/header/AppConfig.o ./src/header/SolicitudesUsuario.o  ./src/general/Semaforo.o ./src/general/funcionesUtiles.o  ./src/capaMEMORIA/AdministrarSemaforos.o ./src/capaMEMORIA/AdministrarVarCompartidas.o ./src/capaMEMORIA/GestMemoriaFuncionesAux.o ./src/capaMEMORIA/GestionMemoriaDinamica.o  ./src/capaFILESYSTEM/GestionArchivoFuncAux.o ./src/capaFILESYSTEM/GestionArchivos.o ./src/capaFILESYSTEM/TablaGlobalArchivo.o ./src/capaFILESYSTEM/TablaProcesoArchivo.o  ./src/administrarProcesos/Proceso.o  ./src/administrarPCB/EstadisticaProceso.o ./src/administrarPCB/PCBData.o  ./src/KERNEL.o ./src/SolicitudesUsuario.o   -lSharedlib -lcommons -lpthread -lparser-ansisop
+Finished building target: SistemaKERNEL
+ 
 
-10:13:19 Build Finished (took 276ms)
+10:19:03 Build Finished (took 582ms)
 
