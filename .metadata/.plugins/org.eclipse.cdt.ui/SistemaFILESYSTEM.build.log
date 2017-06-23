@@ -1,10 +1,6 @@
-09:10:02 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
+10:13:18 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
 make all 
-Building target: SistemaFILESYSTEM
-Invoking: GCC C Linker
-gcc -L"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug" -o "SistemaFILESYSTEM"  ./src/testing/testing.o  ./src/header/AppConfig.o  ./src/Archivo.o ./src/FILE_SYSTEM.o ./src/FileManager.o ./src/InterfazKernel.o   -lSharedlib -lpthread -lcommons
-Finished building target: SistemaFILESYSTEM
- 
+make: No se hace nada para «all».
 
-09:10:02 Build Finished (took 121ms)
+10:13:18 Build Finished (took 80ms)
 

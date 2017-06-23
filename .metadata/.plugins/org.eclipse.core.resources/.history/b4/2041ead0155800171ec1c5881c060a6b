@@ -77,7 +77,7 @@ void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 
 	//Si viene de algun waiting
 	if(es_semaforo(origen)) {
-		free(list_remove_by_condition((t_list*)cola(WAITING), &es_pcb_buscado));
+		free(list_remove_by_condition((t_list*)cola(origen), &es_pcb_buscado));
 	}
 
 	if(strcmp(destino, EXIT) == 0){
