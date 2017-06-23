@@ -11,7 +11,7 @@
 #include "../administrarProcesos/Proceso.h"
 #include "../general/funcionesUtiles.h"
 #include "../header/AppConfig.h"
-#include "../header/PCB.h"
+#include "../../../Sharedlib/Sharedlib/PCB.h"
 #include "../planificacion/Planificacion.h"
 
 PCB * crear_PCB_TEST_2();

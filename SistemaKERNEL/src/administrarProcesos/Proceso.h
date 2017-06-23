@@ -12,7 +12,8 @@
 #include <stdint.h>
 
 #include "../header/Estructuras.h"
-#include "../header/PCB.h"
+#include "../../../Sharedlib/Sharedlib/PCB.h"
+
 
 typedef struct {
 	uint32_t PID;

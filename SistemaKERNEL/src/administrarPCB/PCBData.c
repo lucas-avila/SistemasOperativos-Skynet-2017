@@ -3,33 +3,42 @@
 #include <commons/collections/list.h>
 #include <commons/string.h>
 #include <parser/metadata_program.h>
-#include <parser/parser.h>
-#include <stdio.h>
+#include <semaphore.h>
 #include <stdlib.h>
-#include <string.h>
 
-#include "../header/PCB.h"
+#include "../general/Semaforo.h"
+#include "../../../Sharedlib/Sharedlib/PCB.h"
 #include "../interfaz/InterfazMemoria.h"
 
+#define MIN_PIDS 1000
+int pids_reg = MIN_PIDS;
 
-/*
-	typedef struct {
-		t_puntero_instruccion	start;
-		t_size		offset;
-	} t_intructions;
+PCB * crear_pcb() {
+	PCB * pcb = malloc(sizeof(PCB));
 
-	typedef struct {
-		t_puntero_instruccion	instruccion_inicio;	//El numero de la primera instruccion (Begin)
-		t_size			instrucciones_size;				// Cantidad de instrucciones
-		t_intructions*	instrucciones_serializado; 		// Instrucciones del programa
+	sem_wait(&mutex_pids);
+	pcb->PID = pids_reg;
+	pids_reg++;
+	sem_post(&mutex_pids);
+	pcb->etiquetas = string_new();
+	pcb->etiquetas_size = 0;
+	pcb->codigo = list_create();
+	pcb->pila = list_create();
+	IndiceStack * elemento_pila_inicial_vacio = malloc(sizeof(IndiceStack));
+	elemento_pila_inicial_vacio->posicion = 0;
+	elemento_pila_inicial_vacio->argumentos = list_create();
+	elemento_pila_inicial_vacio->variables = list_create();
+	elemento_pila_inicial_vacio->retVar = malloc(sizeof(ReturnVariable));
+	elemento_pila_inicial_vacio->retVar->byte_inicial= 9999;
+	elemento_pila_inicial_vacio->retVar->pagina = 9999;
+	elemento_pila_inicial_vacio->retVar->tamanio = 9999;
 
-		t_size			etiquetas_size;					// Tamaño del mapa serializado de etiquetas
-		char*			etiquetas;							// La serializacion de las etiquetas
+	list_add(pcb->pila, elemento_pila_inicial_vacio);
 
-		int				cantidad_de_funciones;
-		int				cantidad_de_etiquetas;
-	} t_metadata_program;
- */
+	pcb->cantidad_rafagas_ejecutadas = 0;
+
+	return pcb;
+}
 
 void procesar_programa(char * programa, PCB * pcb){
 	t_metadata_program * meta = metadata_desde_literal(programa);
@@ -51,4 +60,25 @@ void procesar_programa(char * programa, PCB * pcb){
 	printf("Instruccion correspondiente a la etiqueta imprimir es %s\n", string_substring(programa, meta->instrucciones_serializado[instruccion_obtenida].start, meta->instrucciones_serializado[instruccion_obtenida].offset));
  *
  */
+
+
+/*
+	typedef struct {
+		t_puntero_instruccion	start;
+		t_size		offset;
+	} t_intructions;
+
+	typedef struct {
+		t_puntero_instruccion	instruccion_inicio;	//El numero de la primera instruccion (Begin)
+		t_size			instrucciones_size;				// Cantidad de instrucciones
+		t_intructions*	instrucciones_serializado; 		// Instrucciones del programa
+
+		t_size			etiquetas_size;					// Tamaño del mapa serializado de etiquetas
+		char*			etiquetas;							// La serializacion de las etiquetas
+
+		int				cantidad_de_funciones;
+		int				cantidad_de_etiquetas;
+	} t_metadata_program;
+ */
+
 

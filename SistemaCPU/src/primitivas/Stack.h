@@ -8,7 +8,7 @@
 #ifndef PRIMITIVAS_STACK_H_
 #define PRIMITIVAS_STACK_H_
 
-#include "../header/PCB.h"
+#include "../../../Sharedlib/Sharedlib/PCB.h"
 #include "commons/collections/list.h"
 #include "PrimitivasFunciones.h"
 void insertar_nueva_fila_Indice_Stack(PCB* pcb);

@@ -1,7 +1,6 @@
 #ifndef HEADER_PCB_H_
 #define HEADER_PCB_H_
 
-
 #include <commons/collections/list.h>
 #include <stdint.h>
 #include <sys/types.h>
@@ -67,6 +66,7 @@ typedef struct {
 	int32_t exit_code;  //Modificado porque puede ser valor negativo
 
 	int32_t pagina_inicial_stack;
+	int32_t posicion_pagina_stack;
 
 	//Agregados PARA EJECUCION
 	int32_t RR; //0 - FIFO , 1  -RR
@@ -76,25 +76,20 @@ typedef struct {
 }__attribute__((packed))
 PCB;
 
-/**typedef struct{
-   int pid;
-   unsigned int cantidad_paginas;
-   t_metadata_program * info_codigo;
-} PCB; **/
-
-int enviar_pcb(PCB * pcb, int s_destino);
-PCB * recibir_pcb(int s_origen);
-
 /* estructuras auxiliares */
 
-typedef struct{
+typedef struct {
 	char * buffer;
 	int size;
 } LISTA_SERIALIZADA;
 
-typedef struct{
+typedef struct {
 	t_list * lista;
 	int size;
 } LISTA_DESERIALIZADA;
+
+LISTA_SERIALIZADA * serializar_con_header(t_list * lista, char * tipo_lista);
+LISTA_DESERIALIZADA * deserializar_con_header(char * cadena, char * tipo_lista);
+
 
 #endif /* HEADER_PCB_H_ */

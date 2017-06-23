@@ -159,7 +159,7 @@ void enviar_PCB_Serializado_a_CPU(CPUInfo* cpu, PCB* pcb) {
 	//para testear TODO: BORRAR ESTO
 
 	proceso(pcb)->cpu = cpu;
-	enviar_dato_serializado("TESTEAR_PLANIFICACION", cpu->numeroConexion);
+	//enviar_dato_serializado("TESTEAR_PLANIFICACION", cpu->numeroConexion);
 	enviar_pcb(pcb, cpu->numeroConexion);
 }
 

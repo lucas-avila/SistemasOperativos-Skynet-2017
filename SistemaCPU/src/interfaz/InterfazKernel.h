@@ -8,7 +8,7 @@
 #ifndef HEADER_INTERFAZKERNEL_H_
 #define HEADER_INTERFAZKERNEL_H_
 
-#include "../header/PCB.h"
+#include "../../../Sharedlib/Sharedlib/Socket.h"
 #include "../primitivas/PrimitivasFunciones.h"
 
 /* se encarga de recibir y llenar toda la estructura struct PCB */

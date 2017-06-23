@@ -17,7 +17,7 @@
 #include "../general/funcionesUtiles.h"
 #include "../../../Sharedlib/Sharedlib/Socket.h"
 #include "../header/AppConfig.h"
-#include "../header/PCB.h"
+#include "../../../Sharedlib/Sharedlib/PCB.h"
 
 
 

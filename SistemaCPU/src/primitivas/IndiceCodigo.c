@@ -1,4 +1,4 @@
-#include "../header/PCB.h"
+#include "../../../Sharedlib/Sharedlib/PCB.h"
 #include "commons/collections/list.h"
 #include "IndiceCodigo.h"
 #include<stdio.h>

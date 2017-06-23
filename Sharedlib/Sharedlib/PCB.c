@@ -1,4 +1,10 @@
-#include "header/PCB.h"
+/*
+ * PCB.c
+ *
+ *  Created on: 23/6/2017
+ *      Author: utnso
+ */
+#include "PCB.h"
 
 #include <commons/string.h>
 #include <semaphore.h>
@@ -6,113 +12,7 @@
 #include <string.h>
 #include <sys/socket.h>
 
-#include "general/Semaforo.h"
-#include "../Sharedlib/Sharedlib/Socket.h"
-
-#define MIN_PIDS 1000
-
-LISTA_SERIALIZADA * serializar_con_header(t_list * lista, char * tipo_lista);
-LISTA_DESERIALIZADA * deserializar_con_header(char * cadena, char * tipo_lista);
-
-int pids_reg = MIN_PIDS;
-
-PCB * crear_pcb() {
-	PCB * pcb = malloc(sizeof(PCB));
-
-	sem_wait(&mutex_pids);
-	pcb->PID = pids_reg;
-	pids_reg++;
-	sem_post(&mutex_pids);
-	pcb->etiquetas = string_new();
-	pcb->etiquetas_size = 0;
-	pcb->codigo = list_create();
-	pcb->pila = list_create();
-	IndiceStack * elemento_pila_inicial_vacio = malloc(sizeof(IndiceStack));
-	elemento_pila_inicial_vacio->posicion = 0;
-	elemento_pila_inicial_vacio->argumentos = list_create();
-	elemento_pila_inicial_vacio->variables = list_create();
-	elemento_pila_inicial_vacio->retVar = malloc(sizeof(ReturnVariable));
-	elemento_pila_inicial_vacio->retVar->byte_inicial= 9999;
-	elemento_pila_inicial_vacio->retVar->pagina = 9999;
-	elemento_pila_inicial_vacio->retVar->tamanio = 9999;
-
-	list_add(pcb->pila, elemento_pila_inicial_vacio);
-
-	pcb->cantidad_rafagas_ejecutadas = 0;
-
-	return pcb;
-}
-
-PCB * hardcodear_pcb(){
-	PCB * pcb = crear_pcb();
-				pcb->RR = 22;
-				pcb->cantidad_codigo = 9;
-
-				pcb->cantidad_paginas_codigo = 567;
-				pcb->cantidad_rafagas = 30;
-				pcb->cantidad_rafagas_ejecutadas = 20;
-				pcb->exit_code = -20;
-				pcb->pagina_inicial_stack = 0;
-				pcb->quantum_sleep = 5;
-				pcb->program_counter = 23;
-
-				pcb->etiquetas = string_new();
-				string_append(&pcb->etiquetas, "holachaunorevimos");
-				pcb->etiquetas_size = strlen(pcb->etiquetas);
-
-				IndiceCodigo * in1 = malloc(sizeof(IndiceCodigo));
-				IndiceCodigo * in2 = malloc(sizeof(IndiceCodigo));
-				in1->program_counter = 15;
-				in1->byte_inicial_codigo = 2;
-				in1->byte_final_codigo = 355;
-				in1->pagina = 4;
-				in2->program_counter = 14;
-				in2->byte_inicial_codigo = 3;
-				in2->byte_final_codigo = 356;
-				in2->pagina = 5;
-				t_list * lista = list_create();
-				list_add(lista, in1);
-				list_add(lista, in2);
-
-				pcb->codigo = lista;
-
-				ReturnVariable * retVar = malloc(sizeof(ReturnVariable));
-				retVar->byte_inicial = 2;
-				retVar->pagina = 9;
-				retVar->tamanio = 80;
-
-				t_list * l_args = list_create();
-				Argumento * arg1 = malloc(sizeof(Argumento));
-				arg1->id = 1;
-				arg1->pagina = 2;
-				arg1->byte_inicial = 3;
-				arg1->tamanio = 4;
-				list_add(l_args, arg1);
-
-				t_list * l_vars = list_create();
-				Variable * var1 = malloc(sizeof(Variable));
-				var1->id = 1;
-				var1->pagina = 2;
-				var1->byte_inicial = 3;
-				var1->tamanio = 4;
-				var1->dinamica = 0;
-				list_add(l_vars, var1);
-
-				IndiceStack * in = malloc(sizeof(IndiceStack));
-				in->posicion = 5;
-				in->argumentos = l_args;
-				in->variables = l_vars;
-				in->retPos = 6;
-				in->retVar = retVar;
-
-				t_list * lista1 = list_create();
-				list_add(lista1, in);
-				list_add(lista1, in);
-				list_add(lista1, in);
-
-				pcb->pila = lista1;
-	return pcb;
-}
+#include "Socket.h"
 
 //modificaciones a las funciones de enviar y recibir por sockets
 void enviar_estructura_serializada(char* mensaje, uint32_t size, int conexion) {
@@ -178,6 +78,8 @@ int enviar_pcb(PCB * pcb, int s_destino) {
 	offset += sizeof(int32_t);
 	memcpy(paquete + offset, &pcb->pagina_inicial_stack, sizeof(int32_t));
 	offset += sizeof(int32_t);
+	memcpy(paquete + offset, &pcb->posicion_pagina_stack, sizeof(int32_t));
+	offset += sizeof(int32_t);
 	memcpy(paquete + offset, &pcb->RR, sizeof(int32_t));
 	offset += sizeof(int32_t);
 	memcpy(paquete + offset, &pcb->cantidad_rafagas, sizeof(int32_t));
@@ -193,100 +95,6 @@ int enviar_pcb(PCB * pcb, int s_destino) {
 	free(buffer_lista_codigo);
 	free(buffer_lista_pila);
 	free(paquete);
-}
-
-PCB * recibir_pcb_deb(char * paquete) {
-	PCB * pcb = malloc(sizeof(PCB));
-
-	memcpy(&pcb->PID, paquete, sizeof(uint32_t));
-	int offset = sizeof(uint32_t);
-	memcpy(&pcb->program_counter, paquete + offset, sizeof(uint32_t));
-	offset += sizeof(uint32_t);
-	memcpy(&pcb->cantidad_paginas_codigo, paquete + offset, sizeof(uint32_t));
-	offset += sizeof(uint32_t);
-
-	LISTA_DESERIALIZADA * lista_codigo = deserializar_con_header(paquete + offset, "LISTA_CODIGO");
-	pcb->codigo = lista_codigo->lista;
-	offset += lista_codigo->size;
-
-	memcpy(&pcb->cantidad_codigo, paquete + offset, sizeof(uint32_t));
-	offset += sizeof(uint32_t);
-
-	LISTA_DESERIALIZADA * lista_pila = deserializar_con_header(paquete + offset, "LISTA_STACK");
-	pcb->pila = lista_pila->lista;
-	offset += lista_pila->size;
-
-	memcpy(&pcb->etiquetas_size, paquete + offset, sizeof(uint32_t));
-	offset += sizeof(uint32_t);
-
-	pcb->etiquetas = string_new();
-	memcpy(pcb->etiquetas, paquete + offset, pcb->etiquetas_size);
-	pcb->etiquetas[pcb->etiquetas_size] = '\0';
-	offset += pcb->etiquetas_size;
-
-	memcpy(&pcb->exit_code, paquete + offset, sizeof(int32_t));
-	offset += sizeof(int32_t);
-	memcpy(&pcb->pagina_inicial_stack, paquete + offset, sizeof(int32_t));
-	offset += sizeof(int32_t);
-	memcpy(&pcb->RR, paquete + offset, sizeof(int32_t));
-	offset += sizeof(int32_t);
-	memcpy(&pcb->cantidad_rafagas, paquete + offset, sizeof(int32_t));
-	offset += sizeof(int32_t);
-	memcpy(&pcb->quantum_sleep, paquete + offset, sizeof(int32_t));
-	offset += sizeof(int32_t);
-	memcpy(&pcb->cantidad_rafagas_ejecutadas, paquete + offset, sizeof(int32_t));
-	offset += sizeof(int32_t);
-
-	return pcb;
-}
-
-PCB * enviar_pcb_deb(PCB * pcb){
-	int offset = 0;
-
-
-	LISTA_SERIALIZADA * buffer_lista_codigo = serializar_con_header(pcb->codigo, "LISTA_CODIGO");
-	LISTA_SERIALIZADA * buffer_lista_pila = serializar_con_header(pcb->pila, "LISTA_PILA");
-
-
-	int size =  (sizeof(PCB) - 2 * sizeof(t_list *) - sizeof(char *))  + buffer_lista_codigo->size + buffer_lista_pila->size + pcb->etiquetas_size;
-	char * paquete = malloc(size);
-
-	memcpy(paquete + offset, &pcb->PID, sizeof(uint32_t));
-	offset += sizeof(uint32_t);
-	memcpy(paquete + offset, &pcb->program_counter, sizeof(uint32_t));
-	offset += sizeof(uint32_t);
-	memcpy(paquete + offset, &pcb->cantidad_paginas_codigo, sizeof(uint32_t));
-	offset += sizeof(uint32_t);
-
-	memcpy(paquete + offset, buffer_lista_codigo->buffer, buffer_lista_codigo->size);
-	offset += buffer_lista_codigo->size;
-
-	memcpy(paquete + offset, &pcb->cantidad_codigo, sizeof(uint32_t));
-	offset += sizeof(uint32_t);
-
-	memcpy(paquete + offset, buffer_lista_pila->buffer, buffer_lista_pila->size);
-	offset += buffer_lista_pila->size;
-
-	memcpy(paquete + offset, &pcb->etiquetas_size, sizeof(uint32_t));
-	offset += sizeof(uint32_t);
-
-	memcpy(paquete + offset, pcb->etiquetas, pcb->etiquetas_size);
-	offset += pcb->etiquetas_size;
-
-	memcpy(paquete + offset, &pcb->exit_code, sizeof(int32_t));
-	offset += sizeof(int32_t);
-	memcpy(paquete + offset, &pcb->pagina_inicial_stack, sizeof(int32_t));
-	offset += sizeof(int32_t);
-	memcpy(paquete + offset, &pcb->RR, sizeof(int32_t));
-	offset += sizeof(int32_t);
-	memcpy(paquete + offset, &pcb->cantidad_rafagas, sizeof(int32_t));
-	offset += sizeof(int32_t);
-	memcpy(paquete + offset, &pcb->quantum_sleep, sizeof(int32_t));
-	offset += sizeof(int32_t);
-	memcpy(paquete + offset, &pcb->cantidad_rafagas_ejecutadas, sizeof(int32_t));
-	offset += sizeof(int32_t);
-
-		PCB * pcb2 = recibir_pcb_deb(paquete);
 }
 
 PCB * recibir_pcb(int s_origen) {
@@ -327,6 +135,8 @@ PCB * recibir_pcb(int s_origen) {
 	memcpy(&pcb->exit_code, paquete + offset, sizeof(int32_t));
 	offset += sizeof(int32_t);
 	memcpy(&pcb->pagina_inicial_stack, paquete + offset, sizeof(int32_t));
+	offset += sizeof(int32_t);
+	memcpy(&pcb->posicion_pagina_stack, paquete + offset, sizeof(int32_t));
 	offset += sizeof(int32_t);
 	memcpy(&pcb->RR, paquete + offset, sizeof(int32_t));
 	offset += sizeof(int32_t);
@@ -546,3 +356,5 @@ LISTA_DESERIALIZADA * deserializar_con_header(char * cadena, char * tipo_lista){
 	l->size = size;
 	return l;
 }
+
+

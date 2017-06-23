@@ -7,7 +7,7 @@
 #include "../primitivas/PrimitivasFunciones.h"
 #include "../general/funcionesUtiles.h"
 #include "../interfaz/InterfazMemoria.h"
-#include "../header/PCB.h"
+#include "../../../Sharedlib/Sharedlib/PCB.h"
 #include "../primitivas/EstructurasDeDatosPrimitivas.h"
 #include "../primitivas/FuncionesAuxiliares.h"
 

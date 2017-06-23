@@ -8,7 +8,7 @@
 #ifndef PRIMITIVAS_PRIMITIVASFUNCIONES_H_
 #define PRIMITIVAS_PRIMITIVASFUNCIONES_H_
 
-#include "../header/PCB.h"
+#include "../../../Sharedlib/Sharedlib/PCB.h"
 #include "EstructurasDeDatosPrimitivas.h"
 
 void setearPCB(PCB* pcbEnviado);

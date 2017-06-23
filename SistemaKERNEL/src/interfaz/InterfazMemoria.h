@@ -10,7 +10,7 @@
 
 #include <parser/metadata_program.h>
 
-#include "../header/PCB.h"
+#include "../../../Sharedlib/Sharedlib/PCB.h"
 
 int servidor_Memoria;
 int tamanio_pagina_memoria;

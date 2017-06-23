@@ -8,7 +8,7 @@
 
 #include "Ejecucion.h"
 
-#include "../header/PCB.h"
+#include "../../../Sharedlib/Sharedlib/PCB.h"
 #include "../primitivas/PrimitivasFunciones.h"
 #include "../primitivas/IndiceCodigo.h"
 #include "../interfaz/InterfazKernel.h"

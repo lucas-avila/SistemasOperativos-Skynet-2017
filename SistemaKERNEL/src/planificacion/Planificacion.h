@@ -13,7 +13,8 @@
 
 #include "../administrarProcesos/Proceso.h"
 #include "../header/Estructuras.h"
-#include "../header/PCB.h"
+#include "../../../Sharedlib/Sharedlib/PCB.h"
+
 
 
 t_dictionary * COLAS;

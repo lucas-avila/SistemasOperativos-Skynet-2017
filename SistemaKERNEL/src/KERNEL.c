@@ -15,7 +15,7 @@
 #include "../Sharedlib/Sharedlib/Socket.h"
 #include "header/AppConfig.h"
 #include "header/Estructuras.h"
-#include "header/PCB.h"
+#include "../Sharedlib/Sharedlib/PCB.h"
 #include "header/SolicitudesUsuario.h"
 #include "interfaz/InterfazConsola.h"
 #include "interfaz/InterfazCPU.h"

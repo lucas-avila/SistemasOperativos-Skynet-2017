@@ -9,7 +9,8 @@
 #include "../administrarProcesos/Proceso.h"
 #include "../general/funcionesUtiles.h"
 #include "../header/Estructuras.h"
-#include "../header/PCB.h"
+#include "../../../Sharedlib/Sharedlib/PCB.h"
+
 #include "../interfaz/InterfazConsola.h"
 #include "../interfaz/InterfazCPU.h"
 #include "../planificacion/Planificacion.h"
@@ -83,13 +84,13 @@ void mostrar_menu_testing_general() {
 
 			break;
 		case 5: {
-			PCB * pcb = hardcodear_pcb();
-			enviar_pcb_deb(pcb);
+			//PCB * pcb = hardcodear_pcb();
+			//enviar_pcb_deb(pcb);
 		}
 		case 6: {
-			PCB * pcb = hardcodear_pcb();
+			//PCB * pcb = hardcodear_pcb();
 			CPUInfo * cpu0 = list_get(lista_CPUs, 0);
-			enviar_pcb(pcb, cpu0->numeroConexion);
+			//enviar_pcb(pcb, cpu0->numeroConexion);
 		}
 			break;
 		case 7: {

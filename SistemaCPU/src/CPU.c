@@ -17,7 +17,7 @@
 
 #include "../../Sharedlib/Sharedlib/Socket.h"
 #include "header/AppConfig.h"
-#include "header/PCB.h"
+#include "../../Sharedlib/Sharedlib/PCB.h"
 #include "interfaz/InterfazKernel.h"
 #include "interfaz/InterfazMemoria.h"
 #include "interfaz/signals.h"

@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "../header/PCB.h"
+#include "../../../Sharedlib/Sharedlib/PCB.h"
 #include "../interfaz/InterfazKernel.h"
 #include "../interfaz/InterfazMemoria.h"
 #include "../procesador/Ejecucion.h"
@@ -28,7 +28,7 @@ t_puntero DEFINIR_VARIABLE(t_nombre_variable variable) {
 	IndiceStack* pila = obtener_Ultima_fila_Indice_Stack(pcb);
 	if(isalpha(variable)){
 	// 3. Creo la variable
-	Variable* var_new = crear_variable(variable, -1, -1, sizeof(variable), 0);
+	Variable* var_new = crear_variable(variable, -1, -1, sizeof(int), 0);
 
 	// 4. Almaceno la variable en la ultima fila de la tabla variable de la pila
 	crear_variable_en_Indice_Stack(pila, var_new);
@@ -42,7 +42,7 @@ t_puntero DEFINIR_VARIABLE(t_nombre_variable variable) {
 	return generarPunteroStack(string_itoa(direccionPuntero->filaStack), string_itoa(direccionPuntero->esVariable), string_itoa(direccionPuntero->filaTabla));
 	}
 	else{
-		Argumento* arg_new = crear_argumento(variable,-1,-1,sizeof(variable));
+		Argumento* arg_new = crear_argumento(variable,-1,-1,sizeof(int));
 
 		crear_argumento_en_Indice_Stack(pila, arg_new);
 
@@ -201,7 +201,9 @@ void LIBERAR(t_puntero memoria_serializada) {
 
 }
 void IR_A_LABEL(t_nombre_etiqueta nombre_etiqueta){
-
+	if(nombre_etiqueta[strlen(nombre_etiqueta)-1]=='\n'){
+		nombre_etiqueta[strlen(nombre_etiqueta)-1]='\0';//esto es porque las etiquetas vienen con el \n al final
+	}
 	pcb->program_counter = metadata_buscar_etiqueta(nombre_etiqueta, pcb->etiquetas, pcb->etiquetas_size);
 
 }
@@ -229,9 +231,9 @@ void FINALIZAR(){
 }
 
 void LLAMAR_SIN_RETORNO(t_nombre_etiqueta nombre_etiqueta ){
-	IndiceStack* stackDeFuncion = malloc(sizeof(IndiceStack));
-	list_add(pcb->pila, stackDeFuncion);
-	stackDeFuncion->retPos = pcb->program_counter;
+	insertar_nueva_fila_Indice_Stack(pcb);
+	IndiceStack * pila = obtener_Ultima_fila_Indice_Stack(pcb);
+	pila->retPos = pcb->program_counter;
 	// tiene que buscar la etiqueta en la lista de etiquetas y conseguir la direccion
 	t_puntero_instruccion direccionEtiqueta = metadata_buscar_etiqueta(nombre_etiqueta, pcb->etiquetas, pcb->etiquetas_size);
 	pcb->program_counter = direccionEtiqueta;
@@ -240,10 +242,11 @@ void LLAMAR_SIN_RETORNO(t_nombre_etiqueta nombre_etiqueta ){
 
 void LLAMAR_CON_RETORNO(t_nombre_etiqueta nombre_etiqueta, t_puntero direccionRetorno ){
 
-	IndiceStack* stackDeFuncion = malloc(sizeof(IndiceStack));
-	list_add(pcb->pila,stackDeFuncion);
-	stackDeFuncion->retPos = pcb->program_counter;
-	stackDeFuncion->retVar = direccionRetorno;
+	insertar_nueva_fila_Indice_Stack(pcb);
+	IndiceStack * pila = obtener_Ultima_fila_Indice_Stack(pcb);
+	pila->retPos = pcb->program_counter;
+	//pila->retVar
+	//TODO:Aca hay que poner la fucking RETVAR
 	// tiene que buscar la etiqueta en la lista de etiquetas y conseguir la direccion
 	t_puntero_instruccion direccionEtiqueta = metadata_buscar_etiqueta(nombre_etiqueta, pcb->etiquetas, pcb->etiquetas_size);
 		pcb->program_counter = direccionEtiqueta;

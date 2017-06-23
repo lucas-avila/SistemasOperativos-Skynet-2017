@@ -2,9 +2,9 @@ src/planificacion/Planificacion.d: ../src/planificacion/Planificacion.c \
  ../src/planificacion/Planificacion.h \
  ../src/planificacion/../administrarProcesos/Proceso.h \
  ../src/planificacion/../administrarProcesos/../header/Estructuras.h \
- ../src/planificacion/../administrarProcesos/../header/PCB.h \
+ ../src/planificacion/../administrarProcesos/../../../Sharedlib/Sharedlib/PCB.h \
  ../src/planificacion/../header/Estructuras.h \
- ../src/planificacion/../header/PCB.h \
+ ../src/planificacion/../../../Sharedlib/Sharedlib/PCB.h \
  ../src/planificacion/../capaMEMORIA/AdministrarSemaforos.h \
  ../src/planificacion/../general/Semaforo.h \
  ../src/planificacion/../../../Sharedlib/Sharedlib/Socket.h \
@@ -18,11 +18,11 @@ src/planificacion/Planificacion.d: ../src/planificacion/Planificacion.c \
 
 ../src/planificacion/../administrarProcesos/../header/Estructuras.h:
 
-../src/planificacion/../administrarProcesos/../header/PCB.h:
+../src/planificacion/../administrarProcesos/../../../Sharedlib/Sharedlib/PCB.h:
 
 ../src/planificacion/../header/Estructuras.h:
 
-../src/planificacion/../header/PCB.h:
+../src/planificacion/../../../Sharedlib/Sharedlib/PCB.h:
 
 ../src/planificacion/../capaMEMORIA/AdministrarSemaforos.h:
 
