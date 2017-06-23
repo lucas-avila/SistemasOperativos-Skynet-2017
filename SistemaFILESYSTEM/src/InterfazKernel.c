@@ -7,6 +7,8 @@
 
 #include "header/InterfazKernel.h"
 
+#include <commons/collections/dictionary.h>
+#include <commons/config.h>
 #include <commons/string.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -16,7 +18,9 @@
 #include "header/Archivo.h"
 #include "header/FileManager.h"
 
-void validar_archivo(char* path) {
+void validar_archivo(char * path) {
+	/*Cuando el Proceso Kernel reciba la operación de abrir
+	 * un archivo deberá validar que el archivo exista.*/
 	if(access(path, F_OK) == -1){
 		//enviar_dato_serializado("ARCHIVO_NO_EXISTE", clienteKernel);
 	}
@@ -25,24 +29,54 @@ void validar_archivo(char* path) {
 	}
 }
 
-void crear_archivo(char* path) {
+void crear_archivo(char * path) {
+	/*Cuando el Proceso Kernel reciba la operación de abrir un archivo deberá, en caso que el
+	 * archivo no exista y este sea abierto en modo de creación (“c”), llamar a esta operación que
+	 * creará el archivo dentro del path solicitado. Por default todo archivo creado se le debe
+	 * asignar al menos 1 bloque de datos.*/
 	char * path_abs = generar_path_absoluto(PATH_ARCHIVOS, path);
 	FILE * f;
-	if((f = fopen(path_abs, "wb")) != NULL){
-		Archivo * archivo = new_Archivo();
-		archivo->bloques[0] = obtener_BLOQUE_libre();
-		if(archivo->bloques[0] == -1){
-			enviar_dato_serializado("SIN_ESPACIO", servidor);
-			return;
-		}
-
-		char * serializado = serializar_archivo(archivo);
-
-		fwrite(serializado, sizeof(char), sizeof(archivo->tamanio) + obtener_cantidad_bloques(archivo) * sizeof(int), f);
-		//guardar en el archivo
-		free(archivo);
-		fclose(f);
+	//Validaciones...
+	if(access(path_abs, F_OK) != -1){
+		perror("El archivo ya existe.\n");
+		exit(-1);
 	}
+	if((f = fopen(path_abs, "w")) == NULL){
+		perror("No se pudo crear el archivo.");
+		exit(-1);
+	}
+
+	fclose(f);
+	t_config * file = config_create(path_abs);
+
+	if(file == NULL){
+		perror("No se pudo configurar el archivo.");
+		exit(-1);
+	}
+
+	// Asignación de bloque + print en el archivo:
+
+	Archivo * archivo = new_Archivo();
+	archivo->bloques[0] = obtener_BLOQUE_libre();
+	if(archivo->bloques[0] == -1){
+		enviar_dato_serializado("SIN_ESPACIO", servidor);
+		return;
+	}
+	char * bloques_string = bloques_a_chars(archivo->bloques, obtener_cantidad_bloques(archivo));
+	dictionary_put(file->properties, "TAMANIO", string_itoa(archivo->tamanio));
+	dictionary_put(file->properties, "BLOQUES", bloques_string);
+	config_save_in_file(file, path_abs);
+
+	//Testeo...sacar después:
+
+	char ** prueba = config_get_array_value(file, "BLOQUES");
+	printf("El bloque asignado es: %c\n", *prueba[0]);
+	/*char * serializado = serializar_archivo(archivo);
+
+	fwrite(serializado, sizeof(char), sizeof(archivo->tamanio) + obtener_cantidad_bloques(archivo) * sizeof(int), file);
+	guardar en el archivo*/
+	free(bloques_string);
+	free(archivo);
 	free(path_abs);
 }
 
@@ -200,58 +234,45 @@ void guardar_datos(char * path, int offset, int size, char * buffer) {
 	}
 }
 
+int * chars_a_int(char ** bloques, int cant_bloques){
+
+	int * array_bloques = malloc(sizeof(int) * cant_bloques);
+	int i = 0;
+	while(*&bloques[i] != NULL){
+		int numero = *bloques[i];
+		numero -= 48;
+		array_bloques[i] = numero;
+		i++;
+	}
+
+	return array_bloques;
+}
+
 void borrar(char * path) {
 	/*Borrará el archivo en el path indicado, eliminando
 	 * su archivo de metadata y marcando los
 	 * bloques como libres dentro del bitmap.
 	 */
 	int cant_bloques_archivo;
-	char * buffer;
 	char * path_abs = generar_path_absoluto(PATH_ARCHIVOS, path);
 	FILE * file;
 	Archivo * arch;
+	t_config * config;
 
 	if(access(path_abs, F_OK) == -1){
-		perror("No se pudo acceder al archivo");
+		perror("No se pudo acceder al archivo.\n");
 		exit(-1);
 	}
 
-	if((file = fopen(path_abs, "rb")) == NULL)
+	config = config_create(path_abs);
+	if(config == NULL){
+		perror("No se pudo restaurar la configuracion del archivo.\n");
 		exit(-1);
+	}
 
-	buffer = read_Archivo(file);
-	arch = deserializar_archivo(buffer);
+	arch = restaurar_archivo(config);
 	cant_bloques_archivo = obtener_cantidad_bloques(arch);
 	release_blocks(arch->bloques, cant_bloques_archivo);
 	remove(path_abs);
-	free(buffer);
-
+	free(arch);
 }
-
-
-
-/*
-Parámetros: [Path]
-Cuando el Proceso Kernel reciba la operación de abrir un archivo deberá validar que el
-archivo exista.
-Crear Archivo
-Parámetros: [Path]
-Cuando el Proceso Kernel reciba la operación de abrir un archivo deberá, en caso que el
-archivo no exista y este sea abierto en modo de creación (“c”), llamar a esta operación que
-creará el archivo dentro del path solicitado. Por default todo archivo creado se le debe
-asignar al menos 1 bloque de datos.
-Borrar
-Parámetros: [Path]
-Borrará el archivo en el path indicado, eliminando su archivo de metadata y marcando los
-bloques como libres dentro del bitmap.
-Obtener Datos
-Parámetros: [Path, Offset, Size]
-Ante un pedido de datos el File System devolverá del path enviado por parámetro, la
-cantidad de bytes definidos por el Size a partir del offset solicitado. Requiere que el archivo
-se encuentre abierto en modo lectura (“r”).
-Guardar Datos
-Parámetros: [Path, Offset, Size, Buffer]
-Ante un pedido de escritura el File System almacenará en el path enviado por parámetro, los
-bytes del buffer, definidos por el valor del Size y a partir del offset solicitado. Requiere que el
-archivo se encuentre abierto en modo escritura (“w”).
- */

@@ -10,6 +10,7 @@
 
 int servidor;
 
+char * bloques_a_chars(int * bloques, int size);
 void crear_archivo(char* path);
 void obtener_datos(char * path, int offset, int size);
 

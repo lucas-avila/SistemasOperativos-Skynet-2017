@@ -9,6 +9,7 @@
 #define HEADER_FILEMANAGER_H_
 
 #include <commons/bitarray.h>
+#include <commons/config.h>
 #include <stdint.h>
 #include <stdio.h>
 
@@ -44,7 +45,7 @@ void wipe_data(int block_size, int block_quantity);
 void release_blocks(int * blocks, int cant_blocks_archivo);
 void actualizar_bitmap(int * blocks, int cant_blocks_archivo);
 char * read_Archivo(FILE * file);
-
+Archivo * restaurar_archivo(t_config * config);
 
 
 #endif /* HEADER_FILEMANAGER_H_ */

@@ -8,9 +8,9 @@
 #include "header/FileManager.h"
 
 #include <commons/string.h>
-#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 
 #include "header/AppConfig.h"
 
@@ -233,8 +233,33 @@ void release_blocks(int * blocks, int cant_blocks_archivo){
 	free(path_block);
 }
 
+char * bloques_a_chars(int * bloques, int size){
+	char * string = string_new();
+	int i = 0;
 
+	string_append(&string, "[");
+	while(i < size){
+		string_append(&string, string_itoa(bloques[i]));
+		string_append(&string, ",");
+		i++;
+	}
+	i++;
+	string[i] = ']';
+	return string;
+}
 
+Archivo * restaurar_archivo(t_config * config){
+
+	Archivo * archivo = malloc(sizeof(Archivo));
+	int cant_bloques;
+
+	archivo->tamanio = config_get_int_value(config, "TAMANIO");
+	cant_bloques = obtener_cantidad_bloques(archivo);
+
+	archivo->bloques = chars_a_int(config_get_array_value(config, "BLOQUES"), cant_bloques);
+
+	return archivo;
+}
 
 
 
