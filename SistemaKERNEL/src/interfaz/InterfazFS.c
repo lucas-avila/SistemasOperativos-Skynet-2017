@@ -1,23 +1,14 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-#include "commons/collections/list.h"
+#include "InterfazFS.h"
+
+#include <commons/collections/list.h>
+#include <commons/string.h>
+#include <string.h>
+#include <Sharedlib/PCB.h>
+#include <Sharedlib/Socket.h>
 
 #include "../administrarPCB/EstadisticaProceso.h"
-#include "../administrarPCB/PCBData.h"
-#include "../capaFILESYSTEM/TablaGlobalArchivo.h"
-#include "../capaMEMORIA/GestMemoriaFuncionesAux.h"
-#include "../general/funcionesUtiles.h"
-#include "../../../Sharedlib/Sharedlib/Socket.h"
-#include "../header/AppConfig.h"
-#include "../header/Estructuras.h"
-#include "../../../Sharedlib/Sharedlib/PCB.h"
-#include "../interfaz/InterfazConsola.h"
-#include "../interfaz/InterfazCPU.h"
-#include "../interfaz/InterfazMemoria.h"
-#include "../planificacion/Planificacion.h"
-
 #include "../administrarProcesos/Proceso.h"
+#include "../header/AppConfig.h"
 
 
 

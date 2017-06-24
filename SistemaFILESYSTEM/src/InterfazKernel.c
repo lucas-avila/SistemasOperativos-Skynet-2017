@@ -62,19 +62,10 @@ void crear_archivo(char * path) {
 		enviar_dato_serializado("ERROR - SIN_ESPACIO", clienteKernel);
 		return;
 	}
-	char * bloques_string = bloques_a_chars(archivo->bloques, obtener_cantidad_bloques(archivo));
+	char * bloques_string = convertir_bloques_a_array_chars(archivo->bloques, obtener_cantidad_bloques(archivo));
 	dictionary_put(file->properties, "TAMANIO", string_itoa(archivo->tamanio));
 	dictionary_put(file->properties, "BLOQUES", bloques_string);
 	config_save_in_file(file, path_abs);
-
-	//Testeo...sacar después:
-
-	char ** prueba = config_get_array_value(file, "BLOQUES");
-	printf("El bloque asignado es: %c\n", *prueba[0]);
-	/*char * serializado = serializar_archivo(archivo);
-
-	fwrite(serializado, sizeof(char), sizeof(archivo->tamanio) + obtener_cantidad_bloques(archivo) * sizeof(int), file);
-	guardar en el archivo*/
 
 	enviar_dato_serializado("OK", clienteKernel);
 
@@ -91,62 +82,45 @@ void obtener_datos(char * path, int offset, int size){
 	char * path_abs = generar_path_absoluto(PATH_ARCHIVOS, path);
 	char * texto_leido = malloc(size);
 	if(access(path_abs, F_OK) != -1){
-		FILE * f;
-		if((f = fopen(path_abs, "rb")) != NULL){
-			char *buffer;
-			int filelen;
+		Archivo * archivo = restaurar_archivo(path_abs);
 
-			fseek(f, 0, SEEK_END);
-			filelen = ftell(f);
-			rewind(f);
+		int cantidad_bloques = obtener_cantidad_bloques(archivo);
+		int offset_en_bloques = offset / metadata->tamanio_bloques;
+		int offset_final = offset - offset_en_bloques * metadata->tamanio_bloques;
+		FILE * f_bloque;
+		char * block_path;
+		int bloques_leidos = 0;
+		int ultimos_bytes_leidos = 0;
 
-			buffer = malloc((filelen + 1) * sizeof(char));
-			fread(buffer, filelen, 1, f);
+		int i,x=0;
+		for(i = offset_en_bloques; i < cantidad_bloques + offset_en_bloques; i++){
+			ultimos_bytes_leidos = x;
+			char * block = string_new();
+			string_append(&block, string_itoa(i));
+			string_append(&block, ".bin");
 
-			//buffer = read_Archivo(f);
+			block_path = generar_path_absoluto(PATH_BLOQUES, block);
 
-			Archivo * archivo = deserializar_archivo(buffer);
+			char c;
+			if((f_bloque = fopen(block_path, "r")) != NULL){
 
-			int cantidad_bloques = obtener_cantidad_bloques(archivo);
-			int offset_en_bloques = offset / metadata->tamanio_bloques;
-			int offset_final = offset - offset_en_bloques * metadata->tamanio_bloques;
-			FILE * f_bloque;
-			char * block_path;
-			int bloques_leidos = 0;
-			int ultimos_bytes_leidos = 0;
+				//Si es el primer bloque leido posicionamos el cursor en el offset (si es que tiene)
+				if(i == offset_en_bloques && offset_final > 0)
+					fseek(f_bloque, offset_final, SEEK_SET);
 
-			int i,x=0;
-			for(i = offset_en_bloques; i < cantidad_bloques + offset_en_bloques; i++){
-				ultimos_bytes_leidos = x;
-				char * block = string_new();
-				string_append(&block, string_itoa(i));
-				string_append(&block, ".bin");
-
-				block_path = generar_path_absoluto(PATH_BLOQUES, block);
-
-				char c;
-				if((f_bloque = fopen(block_path, "r")) != NULL){
-
-					//Si es el primer bloque leido posicionamos el cursor en el offset (si es que tiene)
-					if(i == offset_en_bloques && offset_final > 0)
-						fseek(f_bloque, offset_final, SEEK_SET);
-
-					while ((c = getc(f_bloque)) != EOF && x < size && (x + offset_final - ultimos_bytes_leidos) < metadata->tamanio_bloques){
-						texto_leido[x] = c;
-						x++;
-					}
-					bloques_leidos++;
-					offset_final = 0;
-					fclose(f_bloque);
+				while ((c = getc(f_bloque)) != EOF && x < size && (x + offset_final - ultimos_bytes_leidos) < metadata->tamanio_bloques){
+					texto_leido[x] = c;
+					x++;
 				}
-
-				free(block);
+				bloques_leidos++;
+				offset_final = 0;
+				fclose(f_bloque);
 			}
-			texto_leido[x] = '\0';
-			free(archivo);
-			free(buffer);
-			fclose(f);
+
+			free(block);
 		}
+		texto_leido[x] = '\0';
+		free(archivo);
 	}
 
 	enviar_dato_serializado(texto_leido, clienteKernel);
@@ -234,20 +208,6 @@ void guardar_datos(char * path, int offset, int size, char * buffer) {
 	enviar_dato_serializado(clienteKernel, "OK");
 }
 
-int * chars_a_int(char ** bloques, int cant_bloques){
-
-	int * array_bloques = malloc(sizeof(int) * cant_bloques);
-	int i = 0;
-	while(*&bloques[i] != NULL){
-		int numero = *bloques[i];
-		numero -= 48;
-		array_bloques[i] = numero;
-		i++;
-	}
-
-	return array_bloques;
-}
-
 void borrar(char * path) {
 	/*Borrará el archivo en el path indicado, eliminando
 	 * su archivo de metadata y marcando los
@@ -255,18 +215,11 @@ void borrar(char * path) {
 	 */
 	int cant_bloques_archivo;
 	char * path_abs = generar_path_absoluto(PATH_ARCHIVOS, path);
-	FILE * file;
 	Archivo * arch;
 	t_config * config;
 
 	if(access(path_abs, F_OK) == -1){
 		perror("No se pudo acceder al archivo.\n");
-		exit(-1);
-	}
-
-	config = config_create(path_abs);
-	if(config == NULL){
-		perror("No se pudo restaurar la configuracion del archivo.\n");
 		exit(-1);
 	}
 

@@ -37,8 +37,7 @@ void CU_Recibir_Conexion_KERNEL(int cliente) {
 		codigo_operacion = recibir_dato_serializado(cliente);
 
 		if (strcmp(codigo_operacion, "SOLICITAR_BYTE_MEMORIA") == 0) {
-			char * path = recibir_dato_serializado(cliente);
-			validar_archivo(path);
+			CU_Solicitar_Bytes_Memoria(cliente);
 		} else if (strcmp(codigo_operacion, "ALMACENAR_BYTE_MEMORIA") == 0) {
 			CU_Almacenar_Bytes_de_Pagina(cliente);
 		} else if (strcmp(codigo_operacion, "INICIALIZAR_PROGRAMA") == 0) {

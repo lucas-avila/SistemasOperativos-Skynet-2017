@@ -8,14 +8,13 @@
  ============================================================================
  */
 
-#include <pthread.h>
-#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <Sharedlib/Socket.h>
 #include <unistd.h>
 
 #include "header/AppConfig.h"
+#include "header/FileManager.h"
 #include "header/InterfazKernel.h"
 #include "testing/testing.h"
 
