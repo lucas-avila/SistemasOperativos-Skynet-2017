@@ -96,7 +96,7 @@ void obtener_datos(char * path, int offset, int size){
 		for(i = offset_en_bloques; i < cantidad_bloques + offset_en_bloques; i++){
 			ultimos_bytes_leidos = x;
 			char * block = string_new();
-			string_append(&block, string_itoa(i));
+			string_append(&block, string_itoa(archivo->bloques[i]));
 			string_append(&block, ".bin");
 
 			block_path = generar_path_absoluto(PATH_BLOQUES, block);
@@ -122,7 +122,7 @@ void obtener_datos(char * path, int offset, int size){
 		texto_leido[x] = '\0';
 		free(archivo);
 	}
-
+	printf("El texto leido es : %s\n", texto_leido);
 	enviar_dato_serializado(texto_leido, clienteKernel);
 	free(texto_leido);
 }
