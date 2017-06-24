@@ -23,9 +23,10 @@ void mostrar_menu_testing(){
 			printf("\n3- Mostrar bitmap");
 			printf("\n4- Wipe data");
 			printf("\n5- Borrar Archivo.");
+			printf("\n6- Guardar datos.");
 			printf("\n0- Salir\n");
 			printf("Opcion: \n");
-			opcion = validarNumeroInput(0, 5);
+			opcion = validarNumeroInput(0, 6);
 
 			switch (opcion) {
 			case 1:
@@ -81,6 +82,9 @@ void mostrar_menu_testing(){
 				borrar("manuela.bin");
 				mostrar_bitmap();
 				break;
+			case 6:{
+					//TEST de GUARDAR DATOS.
+			}
 			}
 		} while (opcion != 0);
 }

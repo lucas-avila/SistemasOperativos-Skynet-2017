@@ -233,7 +233,7 @@ void release_blocks(int * blocks, int cant_blocks_archivo){
 	free(path_block);
 }
 
-char * bloques_a_chars(int * bloques, int size){
+char * convertir_bloques_a_array_chars(int * bloques, int size){
 	char * string = string_new();
 	int i = 0;
 
@@ -248,7 +248,28 @@ char * bloques_a_chars(int * bloques, int size){
 	return string;
 }
 
-Archivo * restaurar_archivo(t_config * config){
+int * obtener_bloques_de_config(char ** bloques, int cant_bloques){
+
+	int * array_bloques = malloc(sizeof(int) * cant_bloques);
+	int i = 0;
+	char * numero = string_new();
+
+	while(i < cant_bloques){
+		*array_bloques = atoi(bloques[i]);
+		i++;
+	}
+
+	return array_bloques;
+}
+
+Archivo * restaurar_archivo(char * path){
+
+	t_config * config = config_create(path);
+
+	if(config == NULL){
+		perror("No se pudo restaurar la configuracion del archivo.\n");
+		exit(-1);
+	}
 
 	Archivo * archivo = malloc(sizeof(Archivo));
 	int cant_bloques;
@@ -256,7 +277,7 @@ Archivo * restaurar_archivo(t_config * config){
 	archivo->tamanio = config_get_int_value(config, "TAMANIO");
 	cant_bloques = obtener_cantidad_bloques(archivo);
 
-	archivo->bloques = chars_a_int(config_get_array_value(config, "BLOQUES"), cant_bloques);
+	archivo->bloques = obtener_bloques_de_config(config_get_array_value(config, "BLOQUES"), cant_bloques);
 
 	return archivo;
 }
