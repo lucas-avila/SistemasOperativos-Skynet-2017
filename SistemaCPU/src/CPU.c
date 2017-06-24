@@ -47,7 +47,7 @@ int main(int argc, char *argv[]) {
 	enviar_dato_serializado("CPU", servidor_kernel);
 
 	//mostrar_menu_primitivas();
-	atender_clientes(0, mostrar_menu_primitivas);
+	//atender_clientes(0, mostrar_menu_primitivas);
 
 	char *operacion;
 	do {
@@ -67,11 +67,17 @@ int main(int argc, char *argv[]) {
 
 	enviar_dato_serializado("DESCONECTAR", servidor_kernel);
 	close(servidor_kernel);
+
 	return EXIT_SUCCESS;
 }
 
 void CU_Procesar_PCB_a_ejecutar() {
 	PCB* pcb = recibir_PCB_de_kernel();
+
+	//SACAR ESTO YAAAAAAA
+	pcb->pagina_inicial_stack =0;
+	pcb->posicionPaginaStack=0;
+	//SACAR ESTO YAAAAAAA
 
 	setPCBEjecucion(pcb);
 	ejecutar_Programa();

@@ -42,11 +42,10 @@ IndiceStack* crear_variable_retorno_en_Indice_Stack(IndiceStack* pila, ReturnVar
 Variable* crear_variable(char id, unsigned int pagina, unsigned int byte_inicial, unsigned int tamanio, int dinamica) {
 	Variable* varNueva = malloc(sizeof(Variable));
 	varNueva->id = id;
-	//strcpy(varNueva->id, id);
 	varNueva->pagina = pagina;
 	varNueva->byte_inicial = byte_inicial;
 	varNueva->tamanio = tamanio;
-	varNueva->dinamica = dinamica;
+
 	return varNueva;
 }
 
@@ -109,7 +108,6 @@ Variable* obtener_Ultima_variable_declarada(t_list* pila) {
  }
  return NULL;
  }
-
  DireccionVariable* buscar_argumento_por_nombre(IndiceStack* pila, t_nombre_variable nombre_argumento) {
  t_list* listaArgumentos = pila->argumentos;
  Argumento* argument;
@@ -159,8 +157,6 @@ PunteroVariable* buscar_posicion_variable_por_nombre(IndiceStack* pila, t_nombre
  void actualizar_variable_stack(PCB* pcb,Variable *variable){
  PunteroVariable* punt= buscar_posicion_variable_por_nombre(variable->id);
  punt->filaStack
-
-
  } */
 
 Variable* buscar_variable_por_stack_y_fila(PCB* pcb, unsigned int stack, unsigned int filaTabla) {
@@ -195,4 +191,31 @@ void asingar_espacio_memoria_variable(PCB* pcb, Variable* var, int filaStack, in
 	var->tamanio = sizeof(var);
 	var->byte_inicial = byte_inicial;
 
+}
+
+Variable* buscar_variable_stack_por_nombre(PCB* pcb, char nombre) {
+	IndiceStack* pila = list_get(pcb->pila, list_size(pcb->pila) - 1);
+	int tamanio = list_size(pila->variables);
+	int indice = 0;
+	for (indice = 0; indice < tamanio; indice++) {
+		Variable* variable = list_get(pila->variables, indice);
+		if (variable->id == nombre) {
+			return variable;
+		}
+	}
+	return NULL;
+
+}
+
+Argumento* buscar_argumento_stack_por_nombre(PCB* pcb, char nombre)  {
+	    IndiceStack* pila = list_get(pcb->pila, list_size(pcb->pila) - 1);
+		int tamanio = list_size(pila->argumentos);
+		int indice = 0;
+		for (indice = 0; indice < tamanio; indice++) {
+			Argumento* argument = list_get(pila->argumentos, indice);
+			if (argument->id == nombre) {
+				return argument;
+			}
+		}
+		return NULL;
 }

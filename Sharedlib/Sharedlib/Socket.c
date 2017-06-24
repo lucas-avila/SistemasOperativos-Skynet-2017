@@ -74,6 +74,7 @@ char* recibir_dato_serializado(int socket_conexion) {
 		datoNuevo[tamanioFinal] = '\0';
 		char* resultado;
 		resultado = string_substring(datoNuevo, 0, tamanioFinal);
+		//printf("\n Recibi: %s, conexion : %d \n", resultado, socket_conexion);
 		free(datoNuevo);
 		return resultado;
 	} else {

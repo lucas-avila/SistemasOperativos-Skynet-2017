@@ -9,6 +9,7 @@
 #include <string.h>
 
 #include "../general/Semaforo.h"
+//#include "../general/Socket.h"
 #include "../../../Sharedlib/Sharedlib/Socket.h"
 #include "../header/AppConfig.h"
 #include "../header/PCB.h"
@@ -16,56 +17,55 @@
 #include "../primitivas/FuncionesAuxiliares.h"
 #include "../procesador/Ejecucion.h"
 
-
 /* se encarga de recibir y llenar toda la estructura struct PCB */
 PCB* recibir_PCB_de_kernel() {
 	int kernel = servidor_kernel;
 	PCB * pcb = recibir_pcb(kernel);
 	printf("PID : %d\n", pcb->PID);
 	/*
-	printf("El fucking PCB es :\n");
-	printf("program counter : %d\n", pcb->program_counter);
-	printf("cantidad paginas codigo : %d\n", pcb->cantidad_paginas_codigo);
+	 printf("El fucking PCB es :\n");
+	 printf("program counter : %d\n", pcb->program_counter);
+	 printf("cantidad paginas codigo : %d\n", pcb->cantidad_paginas_codigo);
 
-	printf("Lista de indices de codigo:\n\n");
-	IndiceCodigo* c; //= malloc(sizeof(IndiceCodigo));
-	int i = 0;
-	for (i; i < list_size(pcb->codigo); i++) {
-		c = list_get(pcb->codigo, i);
-		printf("Indice %d\n", i);
-		printf("--program counter:%d\n--byte inicial:%d\n--byte final:%d\n--pagina:%d\n", c->program_counter, c->byte_inicial_codigo, c->byte_final_codigo, c->pagina);
-	}
+	 printf("Lista de indices de codigo:\n\n");
+	 IndiceCodigo* c; //= malloc(sizeof(IndiceCodigo));
+	 int i = 0;
+	 for (i; i < list_size(pcb->codigo); i++) {
+	 c = list_get(pcb->codigo, i);
+	 printf("Indice %d\n", i);
+	 printf("--program counter:%d\n--byte inicial:%d\n--byte final:%d\n--pagina:%d\n", c->program_counter, c->byte_inicial_codigo, c->byte_final_codigo, c->pagina);
+	 }
 
-	printf("cantidad codigo : %d\n", pcb->cantidad_codigo);
+	 printf("cantidad codigo : %d\n", pcb->cantidad_codigo);
 
-	printf("Lista de indices de la pila:\n\n");
-	IndiceStack * e;// = malloc(sizeof(IndiceStack));
-	for (i = 0; i < list_size(pcb->pila); i++) {
-		e = list_get(pcb->pila, i);
-		printf("Elemento %d del stack:\n posicion: %d\n", i, e->posicion);
-		int x = 0;
-		for (x; x < list_size(e->argumentos); x++) {
-			Argumento * a = list_get(e->argumentos, x);
-			printf("argumentos:\n--id:%d\n--pagina:%d\n--byte_inicial:%d\n--tamanio:%d\n", a->id, a->pagina, a->byte_inicial, a->tamanio);
-		}
-		for (x = 0; x < list_size(e->variables); x++) {
-			Variable * v = list_get(e->variables, x);
-			printf("variables:\n--id:%d\n--pagina:%d\n--byte_inicial:%d\n--tamanio:%d\n--dinamica:%d\n", v->id, v->pagina, v->byte_inicial, v->tamanio, v->dinamica);
-		}
-		printf("retPos: %d\nretVar:\n--byte_inicial:%d\n--pagina:%d\n--tamanio:%d\n", e->retPos, e->retVar->byte_inicial, e->retVar->pagina, e->retVar->tamanio);
-	}
+	 printf("Lista de indices de la pila:\n\n");
+	 IndiceStack * e;// = malloc(sizeof(IndiceStack));
+	 for (i = 0; i < list_size(pcb->pila); i++) {
+	 e = list_get(pcb->pila, i);
+	 printf("Elemento %d del stack:\n posicion: %d\n", i, e->posicion);
+	 int x = 0;
+	 for (x; x < list_size(e->argumentos); x++) {
+	 Argumento * a = list_get(e->argumentos, x);
+	 printf("argumentos:\n--id:%d\n--pagina:%d\n--byte_inicial:%d\n--tamanio:%d\n", a->id, a->pagina, a->byte_inicial, a->tamanio);
+	 }
+	 for (x = 0; x < list_size(e->variables); x++) {
+	 Variable * v = list_get(e->variables, x);
+	 printf("variables:\n--id:%d\n--pagina:%d\n--byte_inicial:%d\n--tamanio:%d\n--dinamica:%d\n", v->id, v->pagina, v->byte_inicial, v->tamanio, v->dinamica);
+	 }
+	 printf("retPos: %d\nretVar:\n--byte_inicial:%d\n--pagina:%d\n--tamanio:%d\n", e->retPos, e->retVar->byte_inicial, e->retVar->pagina, e->retVar->tamanio);
+	 }
 
-	printf("Indice etiqueta:\n");
-	printf("--no voy a hacer una funcion que devuelva todas las etiquetas dame el nombre de una etiqueta y te tiro el PC correspondiente, asi funcionan las cosas mostro\n");
-	printf("Exit code: %d\n", pcb->exit_code);
-	printf("Pagina inicial de la pila: %d\n", pcb->pagina_inicial_stack);
+	 printf("Indice etiqueta:\n");
+	 printf("--no voy a hacer una funcion que devuelva todas las etiquetas dame el nombre de una etiqueta y te tiro el PC correspondiente, asi funcionan las cosas mostro\n");
+	 printf("Exit code: %d\n", pcb->exit_code);
+	 printf("Pagina inicial de la pila: %d\n", pcb->pagina_inicial_stack);
 
-	printf("Cosas de planificacion\n");
-	printf("RR (0->fifo, 1->RR): %d\n", pcb->RR);
-	printf("Cantidad de rafagas para RR: %d\n", pcb->cantidad_rafagas);
-	printf("Quantum sleep %d\n", pcb->quantum_sleep);
-	printf("Cantidad de rafagas ejecutadas: %d\n", pcb->cantidad_rafagas_ejecutadas);
-	*/
+	 printf("Cosas de planificacion\n");
+	 printf("RR (0->fifo, 1->RR): %d\n", pcb->RR);
+	 printf("Cantidad de rafagas para RR: %d\n", pcb->cantidad_rafagas);
+	 printf("Quantum sleep %d\n", pcb->quantum_sleep);
+	 printf("Cantidad de rafagas ejecutadas: %d\n", pcb->cantidad_rafagas_ejecutadas);
+	 */
 	return pcb;
 }
 
@@ -75,7 +75,7 @@ void enviar_PCB_a_kernel(PCB* pcb, char * modo) {
 	enviar_pcb(pcb, servidor_kernel);
 }
 
-int enviar_SYSCALL_wait_semaforo_a_kernel(char* nombre, PCB * pcb){
+int enviar_SYSCALL_wait_semaforo_a_kernel(char* nombre, PCB * pcb) {
 	//le sacamos los espacios
 	char * nombre_semaforo = string_new();
 	string_append(&nombre_semaforo, nombre);
@@ -87,24 +87,24 @@ int enviar_SYSCALL_wait_semaforo_a_kernel(char* nombre, PCB * pcb){
 	printf("WAIT %s\n", nombre_semaforo);
 	char * respuesta = recibir_dato_serializado(servidor_kernel);
 	printf("Continuando la cpu, respuesta recibida : %s\n", respuesta);
-	if(strcmp(respuesta, "BLOQUEADO") == 0){
+	if (strcmp(respuesta, "BLOQUEADO") == 0) {
 		//TODO: el semaforo quedo bloqueando el proceso, se libera esta cpu
 		printf("el semaforo quedo bloqueando el proceso, se libera esta cpu\n");
 		return 1;
-	}else if(strcmp(respuesta, "NO_BLOQUEADO") == 0){
+	} else if (strcmp(respuesta, "NO_BLOQUEADO") == 0) {
 		//TODO: el semaforo no bloqueó el proceso, el proceso continua su ejecucion normal
 		printf("el semaforo no bloqueo el proceso");
 		return 0;
-	}else if(strcmp(respuesta, "SEMAFORO_NO_EXISTE") == 0){
+	} else if (strcmp(respuesta, "SEMAFORO_NO_EXISTE") == 0) {
 		printf("Error - El semaforo solicitado no existe\n");
 		return -1;
-	}else{
+	} else {
 		printf("Error - Fallo en la comunicación con kernel\n");
 		return -2;
 	}
 }
 
-int enviar_SYSCALL_signal_semaforo_a_kernel(char* nombre){
+int enviar_SYSCALL_signal_semaforo_a_kernel(char* nombre) {
 	//le sacamos los espacios
 	char * nombre_semaforo = string_new();
 	string_append(&nombre_semaforo, nombre);
@@ -117,7 +117,7 @@ int enviar_SYSCALL_signal_semaforo_a_kernel(char* nombre){
 	//TODO: que pasa si el nombre del semaforo no existe?
 }
 
-char* enviar_SYSCALL_solicitar_memoria_dinamica_a_kernel(int PID, int espacio) {
+char* enviar_SYSCALL_solicitar_memoria_dinamica_a_kernel(int PID, int espacio, int* pagina, int* byteIncial) {
 	enviar_dato_serializado("GESTION_MEMORIA", servidor_kernel);
 	enviar_dato_serializado("MALLOC_MEMORIA", servidor_kernel);
 	enviar_dato_serializado(string_itoa(PID), servidor_kernel);
@@ -125,12 +125,16 @@ char* enviar_SYSCALL_solicitar_memoria_dinamica_a_kernel(int PID, int espacio) {
 
 	char* resultado = recibir_dato_serializado(servidor_kernel);
 	if (strcmp(resultado, "OK") == 0) {
-		char* PIDR = recibir_dato_serializado(servidor_kernel);
-		char* pagina = recibir_dato_serializado(servidor_kernel);
-		char* byteInicial = recibir_dato_serializado(servidor_kernel);
+		//char* PIDR = recibir_dato_serializado(servidor_kernel);
+		char* pagM = recibir_dato_serializado(servidor_kernel);
+		char* byteIncialM = recibir_dato_serializado(servidor_kernel);
+		*pagina = atoi(pagM);
+		*byteIncial = atoi(byteIncialM);
+		//char* pagina = recibir_dato_serializado(servidor_kernel);
+		//	char* byteInicial = recibir_dato_serializado(servidor_kernel);
 
-		t_puntero memoria_serializada = serializarMemoriaDinamica(pagina, byteInicial);
-		return string_itoa(memoria_serializada);
+		//	t_puntero memoria_serializada = serializarMemoriaDinamica(pagina, byteInicial);
+		return "OK";
 		//return "0001";
 	} else {
 
@@ -227,16 +231,15 @@ char* leer_archivo(char* PID, int FD, int tamanio) {
 }
 
 char* escribir_archivo(char* PID, int FD, int tamanio, char* contenido) {
-	if (FD != 1){
+	if (FD != 1) {
 		enviar_dato_serializado("ESCRIBIR_ARCHIVO", servidor_kernel);
 		enviar_dato_serializado(PID, servidor_kernel);
 		enviar_dato_serializado(string_itoa(FD), servidor_kernel);
 		enviar_dato_serializado(string_itoa(tamanio), servidor_kernel);
 		enviar_dato_serializado(contenido, servidor_kernel);
 
-	}
-	else{
-		CU_Escribir_Pantalla_AnSISOP(contenido,PID);
+	} else {
+		CU_Escribir_Pantalla_AnSISOP(contenido, PID);
 	}
 	char* respuesta = recibir_dato_serializado(servidor_kernel);
 
@@ -264,7 +267,7 @@ char* borrar_archivo(char* PID, char* rutaArchivo) {
 	return respuesta;
 
 }
-void CU_Escribir_Pantalla_AnSISOP(char* mensaje,char* PID) {
+void CU_Escribir_Pantalla_AnSISOP(char* mensaje, char* PID) {
 	enviar_dato_serializado("IMPRIMIR_POR_PANTALLA", servidor_kernel);
 
 	enviar_dato_serializado(PID, servidor_kernel);

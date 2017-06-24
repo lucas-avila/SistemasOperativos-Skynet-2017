@@ -10,7 +10,7 @@
 void iniciar_conexion_servidor_memoria() {
 	servidor_Memoria = conectar_servidor(configuraciones.IP_MEMORIA, configuraciones.PUERTO_MEMORIA);
 	enviar_dato_serializado("CPU", servidor_Memoria);
-	//tamanio_pagina_memoria = atoi(recibir_dato_serializado(servidor_Memoria));
+    tamanio_pagina_memoria = atoi(recibir_dato_serializado(servidor_Memoria));
 
 }
 

@@ -23,7 +23,7 @@ void guardar_Tabla_Global_Archivo(TablaGlobalArchivo* registro) {
 
 }
 void eliminar_Tabla_Global_Archivo(TablaGlobalArchivo* registro) {
-	list_remove(TABLA_GLOBAL_ARCHIVO, buscar_indice_TablaGlobalArchivo(registro->file)-3);
+	list_remove(TABLA_GLOBAL_ARCHIVO, buscar_indice_TablaGlobalArchivo(registro->file) - 3);
 }
 int buscar_indice_TablaGlobalArchivo(char* file) {
 	int tamanio = list_size(TABLA_GLOBAL_ARCHIVO);
@@ -48,6 +48,17 @@ TablaGlobalArchivo* buscar_TablaGlobalArchivo_por_FILE(char* file) {
 	}
 
 	return NULL;
+}
+
+int contar_Cantidad_FD_ABIERTO( IndiceGlobal) {
+
+	TablaGlobalArchivo* registro = list_get(TABLA_GLOBAL_ARCHIVO, IndiceGlobal - 3);
+	if (registro != NULL) {
+		return registro->open;
+	} else {
+
+		return NULL;
+	}
 }
 
 void mostrar_tabla_Global_archivos() {

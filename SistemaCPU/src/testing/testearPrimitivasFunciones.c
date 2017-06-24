@@ -36,26 +36,26 @@ void crear_PCB_TEST() {
 	filaInicial->variables = list_create();
 	filaInicial->posicion = 0;
 	list_add(pcbDePrueba->pila, filaInicial);
-	pcbDePrueba->pagina_inicial_stack = atoi(asignar_Paginas_Programa(string_itoa(pcbDePrueba->PID), "1"));
-
+	pcbDePrueba->pagina_inicial_stack = atoi(asignar_Paginas_Programa(string_itoa(pcbDePrueba->PID), "2"));
+	pcbDePrueba->posicionPaginaStack=0;
 	pcbDePrueba->RR = 0;
-	/**
 
-	 int paginaSentencia = atoi(asignar_Paginas_Programa(procesoPrueba->PID, "1"));
-	 char sentencias[][40] = { "variables a, b, x,d,e,f,g,h,i,j,k,l", "a = 3", "b = 5", "a = b + 12", "alocar x 50 ", "liberar x", "alocar d 50 ", "liberar d", "alocar e 50 ", "liberar e", "alocar f 50 ", "liberar f", "alocar g 50 ", "liberar g", "alocar h 50 ", "liberar h", "alocar i 50 ", "liberar i", "alocar j 50 ", "liberar j", "alocar k 50 ", "liberar k", "alocar l 50 ", "liberar l" };/**
+	int paginaSentencia = atoi(asignar_Paginas_Programa(string_itoa(pcbDePrueba->PID), "1"));
+	char sentencias[][40] = { "variables a, b, x,d,e,f,g,h,i,j,k,l", "a = 3", "b = 5", "a = b + 12", "alocar x 50 ", "liberar x", "alocar d 50 ", "liberar d", "alocar e 50 ", "liberar e", "alocar f 50 ", "liberar f", "alocar g 50 ", "liberar g", "alocar h 50 ", "liberar h", "alocar i 50 ", "liberar i", "alocar j 50 ", "liberar j", "alocar k 50 ", "liberar k", "alocar l 50 ", "liberar l" };
 
-	 int cantidadSentencias = 11;
-	 int i = 0;
-	 int indiceInicial = 0;
-	 procesoPrueba->codigo = list_create();
-	 for (i = 0; i < cantidadSentencias; i++) {
-	 IndiceCodigo* indiceNuevo = crearIndiceCodigo(i, indiceInicial, strlen(sentencias[i]), paginaSentencia);
-	 indiceInicial = indiceInicial + strlen(sentencias[i]);
-	 list_add(procesoPrueba->codigo, indiceNuevo);
+	int cantidadSentencias = 11;
+	int i = 0;
+	int indiceInicial = 0;
 
-	 almacenar_Bytes_de_Pagina(procesoPrueba->PID, string_itoa(indiceNuevo->pagina), string_itoa(indiceNuevo->byte_inicial_codigo), string_itoa(indiceNuevo->byte_final_codigo - indiceNuevo->byte_inicial_codigo), sentencias[i]);
-	 }
-	 */
+	pcbDePrueba->codigo = list_create();
+	for (i = 0; i < cantidadSentencias; i++) {
+		IndiceCodigo* indiceNuevo = crearIndiceCodigo(i, indiceInicial, strlen(sentencias[i]), paginaSentencia);
+		indiceInicial = indiceInicial + strlen(sentencias[i]);
+		list_add(pcbDePrueba->codigo, indiceNuevo);
+
+		almacenar_Bytes_de_Pagina(string_itoa(pcbDePrueba->PID), string_itoa(indiceNuevo->pagina), string_itoa(indiceNuevo->byte_inicial_codigo), string_itoa(indiceNuevo->byte_final_codigo - indiceNuevo->byte_inicial_codigo), sentencias[i]);
+	}
+
 }
 
 void casos_multiples_primitivas();
@@ -199,7 +199,7 @@ void mostrar_menu_primitivas() {
 			printf("\n Nombre Archivo: ");
 			do {
 				scanf("%s", &nombreArchivo);
-			} while (strcmp(nombreArchivo,"")==0);
+			} while (strcmp(nombreArchivo, "") == 0);
 			abrir_archivo(string_itoa(pcbDePrueba->PID), nombreArchivo, true, false, false);
 
 			break;
@@ -207,7 +207,7 @@ void mostrar_menu_primitivas() {
 			printf("\n Nombre Archivo: ");
 			do {
 				scanf("%s", &nombreArchivo);
-			} while (strcmp(nombreArchivo,"")==0);
+			} while (strcmp(nombreArchivo, "") == 0);
 			abrir_archivo(string_itoa(pcbDePrueba->PID), nombreArchivo, false, true, true);
 			break;
 		case 14:
@@ -223,7 +223,7 @@ void mostrar_menu_primitivas() {
 			printf("\n Contenido Fila Archivo: ");
 			do {
 				scanf("%s", &filaArchivo);
-			} while (strcmp(filaArchivo,"")==0);
+			} while (strcmp(filaArchivo, "") == 0);
 			escribir_archivo(string_itoa(pcbDePrueba->PID), FD, strlen(filaArchivo), filaArchivo);
 			break;
 

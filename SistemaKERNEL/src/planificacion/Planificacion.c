@@ -43,7 +43,7 @@ t_queue* cola(char * nombre) {
 }
 
 void proceso_a_NEW(Proceso * p){
-	string_append(&p->cola, NEW);
+	strcpy(p->cola, NEW);
 	queue_push(cola(NEW), p->pcb);
 }
 

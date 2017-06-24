@@ -47,17 +47,17 @@ int frame_lookup(char*PID, int pagina) {
 int getFrame(char*PID, int pagina) {
 
 	/*int frame_buscado;
-	int frame = buscar_frame(PID, pagina);
-	Tabla_Pagina_Invertida registro = busqueda_secuencial(frame, configuraciones.MARCOS, PID);
+	 int frame = buscar_frame(PID, pagina);
+	 Tabla_Pagina_Invertida registro = busqueda_secuencial(frame, configuraciones.MARCOS, PID);
 
-	while(strcmp(registro.PID, PID) != 0 || strcmp(registro.pagina, string_itoa(pagina)) != 0){
-		frame_buscado = atoi(registro.frame) + 1;
-		if(frame_buscado >= configuraciones.MARCOS)
-			frame_buscado = 0;
-		registro = busqueda_secuencial(frame_buscado, configuraciones.MARCOS, PID);
-	}
+	 while(strcmp(registro.PID, PID) != 0 || strcmp(registro.pagina, string_itoa(pagina)) != 0){
+	 frame_buscado = atoi(registro.frame) + 1;
+	 if(frame_buscado >= configuraciones.MARCOS)
+	 frame_buscado = 0;
+	 registro = busqueda_secuencial(frame_buscado, configuraciones.MARCOS, PID);
+	 }
 
-	return frame_buscado;*/
+	 return frame_buscado;*/
 	int i = 0;
 	int tope = configuraciones.MARCOS;
 	char valorAux[4];
@@ -132,7 +132,7 @@ char* solicitar_bytes_de_una_pagina(char* PID, int pagina, int byteInicial, int 
 	}
 }
 
-char* almacenar_bytes_de_una_pagina(char PID[4], int pagina, int byteInicial, int longitud, char* contenido, bool cacheIr ) {
+char* almacenar_bytes_de_una_pagina(char PID[4], int pagina, int byteInicial, int longitud, char* contenido, bool cacheIr) {
 
 	activar_semaforo(&semaforo_Tabla_MEMORY);
 
@@ -155,7 +155,20 @@ char* almacenar_bytes_de_una_pagina(char PID[4], int pagina, int byteInicial, in
 	 * hasta la posición donde voy a comenzar a modificar.
 	 */
 	char* primeraParte = string_substring(MEMORIA_PRINCIPAL, 0, numeroInicial);
-	char* textoMedio = contenido;
+	char* textoMedio;
+	if (longitud > strlen(contenido)) {
+		char* cerosLlenar = malloc(longitud + 1);
+		strcpy(cerosLlenar, "");
+		int j;
+		for (j = 0; j < longitud - strlen(contenido) ; j++) {
+			strcat(cerosLlenar, " ");
+		}
+		strcat(cerosLlenar, contenido);
+		textoMedio = cerosLlenar;
+	} else {
+		textoMedio = contenido;
+	}
+
 	/***
 	 * Obtengo la segunda parte del bloque de memoria, desde la posición que corresponde
 	 * al final de espacio de memoria que voy a modificar hasta el final del string.
@@ -180,16 +193,16 @@ char* almacenar_bytes_de_una_pagina(char PID[4], int pagina, int byteInicial, in
 
 	desactivar_semaforo(&semaforo_Tabla_MEMORY);
 	/**CACHE **/
-	if(cacheIr==true){
+	if (cacheIr == true) {
 		//ingresar_valor_en_cache(PID, pagina, solicitar_bytes_de_una_pagina(PID, pagina, 0, configuraciones.MARCO_SIZE));
-                char* contenidoPaginaBuscada = string_substring(MEMORIA_PRINCIPAL, (configuraciones.MARCO_SIZE * numeroFrame), configuraciones.MARCO_SIZE);
+		char* contenidoPaginaBuscada = string_substring(MEMORIA_PRINCIPAL, (configuraciones.MARCO_SIZE * numeroFrame), configuraciones.MARCO_SIZE);
 
 		ingresar_valor_en_cache(PID, pagina, contenidoPaginaBuscada);
 	}
 	return "OK";
 }
 char* liberar_pagina(char PID[4], int pagina) {
-	almacenar_bytes_de_una_pagina(PID, pagina, 0, configuraciones.MARCO_SIZE, string_repeat('-', configuraciones.MARCO_SIZE),false);
+	almacenar_bytes_de_una_pagina(PID, pagina, 0, configuraciones.MARCO_SIZE, string_repeat('-', configuraciones.MARCO_SIZE), false);
 
 	int ind = 0;
 	for (ind = 0; ind < configuraciones.MARCOS; ind++) {
@@ -202,12 +215,10 @@ char* liberar_pagina(char PID[4], int pagina) {
 		}
 	}
 
-
-
 	return "OK";
 }
 
-int obtener_cantidad_paginas_proceso(char * PID){
+int obtener_cantidad_paginas_proceso(char * PID) {
 	int i = 0;
 	int cant_frames = configuraciones.MARCOS;
 	int cant_paginas_asignadas = 0;
@@ -323,28 +334,28 @@ void actualizar_tabla_pagina(Tabla_Pagina_Invertida registro) {
  * si esa pagina esta ocupada.
  */
 
-int aplicar_hashing(char * PID, int numero_pagina){
+int aplicar_hashing(char * PID, int numero_pagina) {
 	int i = 0;
 	int hash_code = 0;
 	int limit = string_length(PID);
 
-	for(i; i < limit; i++){
+	for (i; i < limit; i++) {
 		hash_code += PID[i];
 		hash_code += (hash_code << 10);
 		hash_code ^= (hash_code >> 6);
 	}
 
-	if(numero_pagina > 0)
+	if (numero_pagina > 0)
 		hash_code *= numero_pagina;
 
 	return hash_code;
 }
 
-Tabla_Pagina_Invertida evitar_colisiones(int frame){
+Tabla_Pagina_Invertida evitar_colisiones(int frame) {
 
 	Tabla_Pagina_Invertida registro = busqueda_secuencial(frame, configuraciones.MARCOS, VACIO);
 
-	if(strcmp(registro.PID, VACIO) == 0)
+	if (strcmp(registro.PID, VACIO) == 0)
 		return registro;
 	// else...
 	registro = busqueda_secuencial(0, frame, VACIO);
@@ -352,7 +363,7 @@ Tabla_Pagina_Invertida evitar_colisiones(int frame){
 	return registro;
 }
 
-Tabla_Pagina_Invertida busqueda_secuencial(int frame_start, int frame_finish, char * comparar_con){
+Tabla_Pagina_Invertida busqueda_secuencial(int frame_start, int frame_finish, char * comparar_con) {
 	int i = 0;
 	Tabla_Pagina_Invertida registro;
 
@@ -376,7 +387,7 @@ int buscar_frame(char * PID, int numero_pagina) {
 	hash_code = aplicar_hashing(PID, numero_pagina);
 	frame = hash_code % configuraciones.MARCOS;
 
-	if(frame < 0)
+	if (frame < 0)
 		frame += configuraciones.MARCOS;
 
 	return frame;
@@ -395,7 +406,7 @@ void finalizar_programa(char *PID) {
 	for (i = 0; i < tope; i++) {
 		Tabla_Pagina_Invertida registro = TABLA_MEMORY[i];
 		if (strcmp(registro.PID, PID) == 0) {
-			almacenar_bytes_de_una_pagina(PID, atoi(registro.pagina), 0, configuraciones.MARCO_SIZE, pagina_Blanco,false);
+			almacenar_bytes_de_una_pagina(PID, atoi(registro.pagina), 0, configuraciones.MARCO_SIZE, pagina_Blanco, false);
 
 			strcpy(registro.PID, VACIO);
 			strcpy(registro.pagina, VACIO);

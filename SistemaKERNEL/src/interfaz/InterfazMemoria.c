@@ -19,8 +19,6 @@
 #include "../header/AppConfig.h"
 #include "../header/PCB.h"
 
-
-
 void iniciar_conexion_servidor_memoria() {
 	servidor_Memoria = conectar_servidor(configuraciones.IP_MEMORIA, configuraciones.PUERTO_MEMORIA);
 	enviar_dato_serializado("KERNEL", servidor_Memoria);
@@ -72,26 +70,35 @@ char* finalizar_Programa_memoria(char* PID) {
 	return recibir_dato_serializado(servidor_Memoria);
 }
 
-int is_valid_line(char* line){
-	if(is_white_line(line) || first_char(line) == '#')
+int is_valid_line(char* line) {
+	if (is_white_line(line) || first_char(line) == '#')
 		return 0;
 	return 1;
 }
 
-int enviar_programa_memoria(t_metadata_program * meta, PCB * pcb, char * programa){
+int enviar_programa_memoria(t_metadata_program * meta, PCB * pcb, char * programa) {
+	char * numeroPagina;
+	int cantidadSentencias = meta->instrucciones_size;
+	int i = 0;
+	int indiceInicial = 0;
+	//Para el stack
+	numeroPagina = asignar_Paginas_Programa(string_itoa(pcb->PID), "2");
+	if (strcmp(numeroPagina, "FALTA ESPACIO") == 0) {
+		finalizar_Programa_memoria(string_itoa(pcb->PID));
+		printf("ERROR no hay espacio suficiente");
+		return -1;
+	}
+	pcb->paginaStack = atoi(numeroPagina);
+	pcb->posicionPaginaStack = 0;
 
 	int cantidad_paginas = 0;
-	char * numeroPagina = asignar_Paginas_Programa(string_itoa(pcb->PID), "1");
+	numeroPagina = asignar_Paginas_Programa(string_itoa(pcb->PID), "1");
 	if (strcmp(numeroPagina, "FALTA ESPACIO") == 0) {
 		finalizar_Programa_memoria(string_itoa(pcb->PID));
 		printf("ERROR no hay espacio suficiente");
 		return -1;
 	}
 	cantidad_paginas++;
-
-	int cantidadSentencias = meta->instrucciones_size;
-	int i = 0;
-	int indiceInicial = 0;
 
 	for (i = 0; i < cantidadSentencias; i++) {
 		char * instruccion = string_substring(programa, meta->instrucciones_serializado[i].start, meta->instrucciones_serializado[i].offset);
@@ -104,7 +111,7 @@ int enviar_programa_memoria(t_metadata_program * meta, PCB * pcb, char * program
 		char * respuesta = almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(indiceNuevo->pagina), string_itoa(indiceNuevo->byte_inicial_codigo), string_itoa(indiceNuevo->byte_final_codigo - indiceNuevo->byte_inicial_codigo), instruccion);
 
 		//Si no queda mas espacio en esa pagina pedimos una nueva y seguimos
-		if(strcmp(respuesta, "CONTENIDO_NO_ENTRA_EN_PAGINA") == 0){
+		if (strcmp(respuesta, "CONTENIDO_NO_ENTRA_EN_PAGINA") == 0) {
 			numeroPagina = asignar_Paginas_Programa(string_itoa(pcb->PID), "1");
 			if (strcmp(numeroPagina, "FALTA ESPACIO") == 0) {
 				finalizar_Programa_memoria(string_itoa(pcb->PID));
@@ -136,48 +143,48 @@ IndiceCodigo* crear_IndiceCodigo(int programCounter, int byteInicial, int tamani
  *
  * GUARDO LA FUNCION ANTERIOR PORQUE TIENE COSAS UTILES
  *
-int enviar_programa_memoria(char * codigo, char *  pid) {
-	char line[256];
+ int enviar_programa_memoria(char * codigo, char *  pid) {
+ char line[256];
 
-	char* numeroPagina;
-	int tamanioPagina = 100;
-	int contadorTamanioPagina = 0;
+ char* numeroPagina;
+ int tamanioPagina = 100;
+ int contadorTamanioPagina = 0;
 
-	char* processID = malloc(5);
-	strcpy(processID, string_itoa(pid));
+ char* processID = malloc(5);
+ strcpy(processID, string_itoa(pid));
 
-	numeroPagina = asignar_Paginas_Programa(processID, "1");
-	if (strcmp(numeroPagina, "FALTA ESPACIO") == 0) {
-		finalizar_Programa_memoria(processID);
-		printf("ERROR no hay espacio suficiente");
-		return -1;
-	}
-	char* contenidoPagina = malloc(tamanioPagina + 1);
-	strcpy(contenidoPagina, "");
-	while (get_line(codigo, line, 1)) {
-		if (is_valid_line(line)) {
-			if ( (contadorTamanioPagina + strlen(line)) <= tamanioPagina) {
-				strcat(contenidoPagina, line);
-				contadorTamanioPagina += strlen(line);
-			} else {
-				almacenar_Bytes_de_Pagina(processID, numeroPagina, "0", string_itoa(strlen(contenidoPagina)), contenidoPagina);
-				numeroPagina = asignar_Paginas_Programa(processID, "1");
-				if (strcmp(numeroPagina, "FALTA ESPACIO") == 0) {
-					//TODO: handlear error cuando no hay mas memoria para reservar paginas
-					finalizar_Programa_memoria(processID);
-					printf("ERROR no hay espacio suficiente");
-					return -2;
-				}
-				strcpy(contenidoPagina, line);
-				contadorTamanioPagina = strlen(line);
-			}
-		}
-	}
-	char * resul = almacenar_Bytes_de_Pagina(processID, numeroPagina, "0", string_itoa(strlen(contenidoPagina)), contenidoPagina);
-	printf("resultado es %s\n", resul);
-	printf("contenidoPagina : %s\n", contenidoPagina);
-	//free(contenidoPagina);
-	return 1;
-}
+ numeroPagina = asignar_Paginas_Programa(processID, "1");
+ if (strcmp(numeroPagina, "FALTA ESPACIO") == 0) {
+ finalizar_Programa_memoria(processID);
+ printf("ERROR no hay espacio suficiente");
+ return -1;
+ }
+ char* contenidoPagina = malloc(tamanioPagina + 1);
+ strcpy(contenidoPagina, "");
+ while (get_line(codigo, line, 1)) {
+ if (is_valid_line(line)) {
+ if ( (contadorTamanioPagina + strlen(line)) <= tamanioPagina) {
+ strcat(contenidoPagina, line);
+ contadorTamanioPagina += strlen(line);
+ } else {
+ almacenar_Bytes_de_Pagina(processID, numeroPagina, "0", string_itoa(strlen(contenidoPagina)), contenidoPagina);
+ numeroPagina = asignar_Paginas_Programa(processID, "1");
+ if (strcmp(numeroPagina, "FALTA ESPACIO") == 0) {
+ //TODO: handlear error cuando no hay mas memoria para reservar paginas
+ finalizar_Programa_memoria(processID);
+ printf("ERROR no hay espacio suficiente");
+ return -2;
+ }
+ strcpy(contenidoPagina, line);
+ contadorTamanioPagina = strlen(line);
+ }
+ }
+ }
+ char * resul = almacenar_Bytes_de_Pagina(processID, numeroPagina, "0", string_itoa(strlen(contenidoPagina)), contenidoPagina);
+ printf("resultado es %s\n", resul);
+ printf("contenidoPagina : %s\n", contenidoPagina);
+ //free(contenidoPagina);
+ return 1;
+ }
 
-*/
+ */

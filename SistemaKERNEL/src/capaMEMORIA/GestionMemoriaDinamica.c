@@ -6,7 +6,7 @@
 #include <commons/string.h>
 
 #include "../header/AppConfig.h"
-
+//#include "../general/Socket.h"
 #include "../../../Sharedlib/Sharedlib/Socket.h"
 
 #include <commons/config.h>
@@ -83,9 +83,9 @@ void CU_Liberar_memoria_FREE(int conexionCPU) {
 
 }
 
-void enviar_datos_respuesta(int conexionCPU, unsigned pagina, char*PID, int byteInicial) {
+void enviar_datos_respuesta(int conexionCPU, unsigned pagina, char *PID, int byteInicial) {
 	enviar_dato_serializado("OK", conexionCPU);
-	enviar_dato_serializado(PID, conexionCPU);
+	//enviar_dato_serializado(PID, conexionCPU);
 	enviar_dato_serializado(string_itoa(pagina), conexionCPU);
 	enviar_dato_serializado(string_itoa(byteInicial), conexionCPU);
 }

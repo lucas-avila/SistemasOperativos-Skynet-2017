@@ -13,7 +13,7 @@
 #include "../administrarPCB/EstadisticaProceso.h"
 char* CU_ABRIR_ARCHIVO(char* PID, char* pathArchivo, bool flagCreate, bool flagRead, bool flagWrite) {
 	Proceso* proc = buscar_proceso_by_PID(atoi(PID));
-	if(proc==NULL){
+	if (proc == NULL) {
 		return "ERROR_PROCESO_NO_EXISTE";
 	}
 
@@ -87,8 +87,7 @@ char* CU_CERRAR_ARCHIVO(char* PID, int FD) {
 		return "ERROR_ARCHIVO_NO_ABIERTO";
 	}
 
-	int IndiceGlobal= registro->GlobalFD;
-
+	int IndiceGlobal = registro->GlobalFD;
 
 	eliminar_registro_Tabla_Proceso_Archivo(((Proceso*) buscar_proceso_by_PID(atoi(PID)))->tablaProcesoArchivo, registro);
 	TablaGlobalArchivo* registroGlobal = list_get(TABLA_GLOBAL_ARCHIVO, IndiceGlobal);
@@ -101,6 +100,7 @@ char* CU_CERRAR_ARCHIVO(char* PID, int FD) {
 	return "OK";
 }
 char* CU_BORRAR_ARCHIVO(char* PID, char* rutaArchivo) {
+
 	//1. Valido si el archivo existe
 	bool existeArchivoFS = (strcmp(validar_archivo(rutaArchivo), "OK") == 0);
 	if (!existeArchivoFS) {
@@ -110,6 +110,31 @@ char* CU_BORRAR_ARCHIVO(char* PID, char* rutaArchivo) {
 	if (existeArchivoTablaGlobal) {
 		return "ERROR_ARCHIVO_ABIERTO";
 	}
+
+	TablaProcesoArchivo* registro = buscar_registro_TablaProcesoArchivo(PID, atoi(rutaArchivo));
+	int IndiceGlobal = registro->GlobalFD;
+	if (registro == NULL) {
+		return "ERROR_ARCHIVO_NO_ABIERTO";
+	}
+
+	existeArchivoFS = (strcmp(validar_archivo(rutaArchivo), "OK") == 0);
+	if (!existeArchivoFS) {
+		return "ERROR_ARCHIVO_NO_EXISTE";
+	}
+	existeArchivoTablaGlobal = (contar_Cantidad_FD_ABIERTO(IndiceGlobal) > 1);
+	if (existeArchivoTablaGlobal) {
+		return "ERROR_ARCHIVO_ABIERTO";
+	}
+
+	eliminar_registro_Tabla_Proceso_Archivo(((Proceso*) buscar_proceso_by_PID(atoi(PID)))->tablaProcesoArchivo, registro);
+	TablaGlobalArchivo* registroGlobal = list_get(TABLA_GLOBAL_ARCHIVO, IndiceGlobal);
+	registroGlobal->open -= 1;
+	if (registroGlobal->open == 0) {
+		//Informacion Estadistica
+		incrementar_SYSCALL(PID, 1);
+		eliminar_Tabla_Global_Archivo(registroGlobal);
+	}
+
 	borrar(rutaArchivo);
 
 	//Informacion Estadistica

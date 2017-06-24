@@ -109,12 +109,12 @@ void inicializar_contexto_ejecucion() {
 	kernel->AnSISOP_signal = SIGNAL;
 	kernel->AnSISOP_reservar = ALOCAR;
 	kernel->AnSISOP_liberar = LIBERAR;
-	kernel->AnSISOP_abrir = abrir_archivo;
-	kernel->AnSISOP_borrar = borrar_archivo;
-	kernel->AnSISOP_cerrar = cerrar_archivo;
-	kernel->AnSISOP_moverCursor = mover_cursor_archivo;
-	kernel->AnSISOP_escribir = escribir_archivo;
-	kernel->AnSISOP_leer = leer_archivo;
+	kernel->AnSISOP_abrir = ABRIR_ARCHIVO_PRIM;
+	kernel->AnSISOP_borrar = BORRAR_ARCHIVO_PRIM;
+	kernel->AnSISOP_cerrar = CERRAR_ARCHIVO_PRIM;
+	kernel->AnSISOP_moverCursor = MOVER_CURSOR_PRIM;
+	kernel->AnSISOP_escribir = ESCRIBIR_ARCHIVO_PRIM;
+	kernel->AnSISOP_leer = LEER_ARCHIVO_PRIM;
 }
 
 void marcarFinDePrograma(){

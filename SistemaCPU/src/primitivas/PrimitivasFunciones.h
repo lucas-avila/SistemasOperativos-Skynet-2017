@@ -10,7 +10,7 @@
 
 #include "../header/PCB.h"
 #include "EstructurasDeDatosPrimitivas.h"
-
+#include "parser/parser.h"
 void setearPCB(PCB* pcbEnviado);
 /**
  - Reservar espacio para Int (4bytes) en el stack del pcb.
@@ -42,18 +42,23 @@ void SIGNAL(t_nombre_semaforo identificador_semaforo);
 
 void LIBERAR(t_puntero puntero);
 
-void IR_A_LABEL (t_nombre_etiqueta nombreEtiqueta);
+void IR_A_LABEL(t_nombre_etiqueta nombreEtiqueta);
 
-void LLAMAR_SIN_RETORNO (t_nombre_etiqueta nombreEtiqueta );
+void LLAMAR_SIN_RETORNO(t_nombre_etiqueta nombreEtiqueta);
 
-void LLAMAR_CON_RETORNO(t_nombre_etiqueta nombre_etiqueta, t_puntero direccionRetorno );
+void LLAMAR_CON_RETORNO(t_nombre_etiqueta nombre_etiqueta, t_puntero direccionRetorno);
 
 void RETORNAR(t_valor_variable variableRetorno);
 
 void FINALIZAR();
 
-
 t_valor_variable OBTENER_VALOR_COMPARTIDA(t_nombre_compartida variable);
 
 t_valor_variable ASIGNAR_VALOR_COMPARTIDA(t_nombre_compartida variable, t_valor_variable valor);
+t_descriptor_archivo ABRIR_ARCHIVO_PRIM(t_direccion_archivo direccion, t_banderas flags);
+void BORRAR_ARCHIVO_PRIM(t_descriptor_archivo descriptor_archivo);
+void CERRAR_ARCHIVO_PRIM(t_descriptor_archivo descriptor_archivo);
+void ESCRIBIR_ARCHIVO_PRIM(t_descriptor_archivo descriptor_archivo, void* informacion, t_valor_variable tamanio);
+void LEER_ARCHIVO_PRIM(t_descriptor_archivo descriptor_archivo, t_puntero informacion, t_valor_variable tamanio);
+void MOVER_CURSOR_PRIM(t_descriptor_archivo descriptor_archivo, t_valor_variable posicion);
 #endif /* PRIMITIVAS_PRIMITIVASFUNCIONES_H_ */

@@ -106,7 +106,7 @@ void inicializar_vec_variables_compartidas(int VECTOR_VAR_COMP) {
 
 	int i = 0;
 	while ( i < configuraciones.cantidad_var_comp) {
-		VECTOR_VAR_COM[i] = 0;
+		VECTOR_VAR_COM[i] = 110;
 		i++;
 	}
 }

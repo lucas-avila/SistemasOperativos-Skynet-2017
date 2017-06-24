@@ -41,5 +41,8 @@ Argumento* buscar_argumento_por_stack_y_fila(PCB* pcb, unsigned int stack, unsig
 
 void asingar_espacio_memoria_variable(PCB* pcb, Variable* var, int filaStack, int filaTabla);
 
+Variable* buscar_variable_stack_por_nombre(PCB* pcb, char nombre);
+Argumento* buscar_argumento_stack_por_nombre(PCB* pcb, char nombre);
+
 
 #endif /* PRIMITIVAS_STACK_H_ */

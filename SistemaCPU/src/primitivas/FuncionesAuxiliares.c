@@ -9,35 +9,31 @@
 const int TAMANIO_VAR = 4;
 int TAMANIO_MAXIMO = 2;
 
-/**t_puntero generarPunteroMemoria(char* proceso, char*pagina, char* byteInicial) {
- char puntero[(4 * 3) + 1];
- strcpy(puntero, "");
+t_puntero serializarPuntero(int pagina, int byte_inicial, int tamanioPagina) {
+	return pagina * tamanioPagina + byte_inicial;
+}
 
- char* completaVacio;
+void deserializar_puntero(t_puntero direccion_variable, int* pagina, int* offset, int tamanioPagina) {
+	if (direccion_variable <= tamanioPagina) {
+		*pagina = 0;
+		*offset=direccion_variable;
+	} else {
 
- char contenido_Formateado[4 + 1];
+		int tam = (int) (direccion_variable / tamanioPagina);
+		float result = ((float) direccion_variable / (float) tamanioPagina);
+		pagina = 0;
+		if (tam != result) {
+			*pagina = tam + 1;
+		} else {
+			*pagina = tam;
+		}
 
- completaVacio = string_repeat('0', (int) (TAMANIO_VAR - strlen(proceso)));
- strcpy(contenido_Formateado, completaVacio);
- strcat(contenido_Formateado, proceso);
-
- strcat(puntero, contenido_Formateado);
-
- completaVacio = string_repeat('0', (int) (TAMANIO_VAR - strlen(pagina)));
- strcpy(contenido_Formateado, completaVacio);
- strcat(contenido_Formateado, pagina);
-
- strcat(puntero, contenido_Formateado);
-
- completaVacio = string_repeat('0', (int) (TAMANIO_VAR - strlen(byteInicial)));
- strcpy(contenido_Formateado, completaVacio);
- strcat(contenido_Formateado, byteInicial);
-
- strcat(puntero, contenido_Formateado);
-
- return atoi(puntero);
-
- } **/
+		*offset = pagina - direccion_variable;
+		if (offset < 0) {
+			*offset = (int) offset * (-1);
+		}
+	}
+}
 
 t_puntero generarPunteroStack(char* filaStack, char*tipoVariable, char* filaTabla) {
 
@@ -89,8 +85,8 @@ PunteroVariable* deserializarPunteroStack(t_puntero punteroDireccion) {
 
 t_puntero serializarMemoriaDinamica(char* pagina, char* byteInicial) {
 
-	char puntero[2 + 2+ 3 + 1];
-       //PROCESO + PAGINA + BYTEINICIAL
+	char puntero[2 + 2 + 3 + 1];
+	//PROCESO + PAGINA + BYTEINICIAL
 	strcpy(puntero, "");
 
 	char* completaVacio;
