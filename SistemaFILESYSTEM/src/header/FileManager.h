@@ -15,6 +15,8 @@
 
 #include "Archivo.h"
 
+int clienteKernel;
+
 typedef struct {
 	uint32_t tamanio_bloques;
 	uint32_t cantidad_bloques;

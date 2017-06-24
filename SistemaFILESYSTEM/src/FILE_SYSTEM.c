@@ -24,34 +24,62 @@ void CU_Recibir_Conexiones_Kernel(int clienteKernel);
 
 int main(int argc, char * argv[]) {
 
-inicializar_configuracion(argv[1]);
+	inicializar_configuracion(argv[1]);
 	/*
-	servidor = crear_servidor(configuraciones.PUERTO, configuraciones.CANTIDAD_MAXIMA_CONCURRENCIA);
-	atender_clientes(servidor, &escuchar_Conexiones_Kernel);
-	*/
+	 servidor = crear_servidor(configuraciones.PUERTO, configuraciones.CANTIDAD_MAXIMA_CONCURRENCIA);
+	 atender_clientes(servidor, &escuchar_Conexiones_Kernel);
+	 */
 	inicializar_estructuras_administrativas();
 	mostrar_menu_testing();
 
+	escuchar_Conexiones_Kernel(servidor);
 	close(servidor);
+
 	return EXIT_SUCCESS;
 }
 
-void escuchar_Conexiones_Kernel(int servidor){
-	do {
-			int cliente = aceptar_conexion_cliente(servidor);
-			char* codigo_IDENTIFICACION = recibir_dato_serializado(cliente);
-			pthread_t mihilo1;
-			if (strcmp(codigo_IDENTIFICACION, "KERNEL") == 0) {
-				pthread_create(&mihilo1, NULL, &CU_Recibir_Conexiones_Kernel, cliente);
-				pthread_detach(&mihilo1);
-			} else {
-				close(cliente);
-			}
-		} while (1);
+void escuchar_Conexiones_Kernel(int servidor) {
+	int cliente = aceptar_conexion_cliente(servidor);
+	char* codigo_IDENTIFICACION = recibir_dato_serializado(cliente);
+
+	if (strcmp(codigo_IDENTIFICACION, "KERNEL") == 0) {
+		clienteKernel = cliente;
+		CU_Recibir_Conexiones_Kernel(cliente);
+	}else{
+		close(cliente);
+	}
 }
 
-void CU_Recibir_Conexiones_Kernel(int clienteKernel){
-	printf("Se conecto KERNEL\n");
-	enviar_dato_serializado("FILESYSTEM", clienteKernel);
-	close(clienteKernel);
+void CU_Recibir_Conexiones_Kernel(int cliente) {
+	enviar_dato_serializado("FILESYSTEM", cliente);
+	char * codigo_operacion;
+	int controlSeguir = 1;
+	do {
+		codigo_operacion = recibir_dato_serializado(cliente);
+		char * path = recibir_dato_serializado(cliente);
+
+		if (strcmp(codigo_operacion, "VALIDAR_ARCHIVO") == 0) {
+			validar_archivo(path);
+		} else if (strcmp(codigo_operacion, "CREAR_ARCHIVO") == 0) {
+			crear_archivo(path);
+		} else if (strcmp(codigo_operacion, "OBTENER_DATOS") == 0) {
+			int offset = atoi(recibir_dato_serializado(cliente));
+			int size = atoi(recibir_dato_serializado(cliente));
+			obtener_datos(path, offset, size);
+		} else if (strcmp(codigo_operacion, "GUARDAR_DATOS") == 0) {
+			int offset = atoi(recibir_dato_serializado(cliente));
+			int size = atoi(recibir_dato_serializado(cliente));
+			char * buffer = recibir_dato_serializado(cliente);
+			guardar_datos(path, offset, size,buffer);
+		} else if (strcmp(codigo_operacion, "BORRAR_ARCHIVO") == 0) {
+			borrar(path);
+		} else if (strcmp(codigo_operacion, "") == 0) {
+			close(cliente);
+			controlSeguir = 0;
+		} else {
+			enviar_dato_serializado("ERROR: CODIGO OPERACION INEXISTENTE", cliente);
+		}
+	} while (controlSeguir == 1);
+	free(codigo_operacion);
+	close(cliente);
 }

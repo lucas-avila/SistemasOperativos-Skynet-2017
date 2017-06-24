@@ -22,10 +22,10 @@ void validar_archivo(char * path) {
 	/*Cuando el Proceso Kernel reciba la operación de abrir
 	 * un archivo deberá validar que el archivo exista.*/
 	if(access(path, F_OK) == -1){
-		//enviar_dato_serializado("ARCHIVO_NO_EXISTE", clienteKernel);
+		enviar_dato_serializado("ARCHIVO_NO_EXISTE", clienteKernel);
 	}
 	else {
-		//enviar_dato_serializado("ARCHIVO_EXISTE", clienteKernel);
+		enviar_dato_serializado("OK", clienteKernel);
 	}
 }
 
@@ -59,7 +59,7 @@ void crear_archivo(char * path) {
 	Archivo * archivo = new_Archivo();
 	archivo->bloques[0] = obtener_BLOQUE_libre();
 	if(archivo->bloques[0] == -1){
-		enviar_dato_serializado("SIN_ESPACIO", servidor);
+		enviar_dato_serializado("ERROR - SIN_ESPACIO", clienteKernel);
 		return;
 	}
 	char * bloques_string = bloques_a_chars(archivo->bloques, obtener_cantidad_bloques(archivo));
@@ -75,6 +75,9 @@ void crear_archivo(char * path) {
 
 	fwrite(serializado, sizeof(char), sizeof(archivo->tamanio) + obtener_cantidad_bloques(archivo) * sizeof(int), file);
 	guardar en el archivo*/
+
+	enviar_dato_serializado("OK", clienteKernel);
+
 	free(bloques_string);
 	free(archivo);
 	free(path_abs);
@@ -146,7 +149,7 @@ void obtener_datos(char * path, int offset, int size){
 		}
 	}
 
-	printf("El texto leido es %s\n", texto_leido);
+	enviar_dato_serializado(texto_leido, clienteKernel);
 	free(texto_leido);
 }
 
@@ -180,8 +183,8 @@ void guardar_datos(char * path, int offset, int size, char * buffer) {
 						k++;
 					}
 					else {
-						perror("No hay espacio suficiente para escribir el archivo.");
-						exit(-1);
+						enviar_dato_serializado(clienteKernel, "ERROR - SIN_ESPACIO");
+						return;
 					}
 				}
 			}
@@ -228,10 +231,7 @@ void guardar_datos(char * path, int offset, int size, char * buffer) {
 			fclose(file);
 		}
 	}
-	else {
-		perror("No se pudo acceder al archivo solicitado");
-		exit(-1);
-	}
+	enviar_dato_serializado(clienteKernel, "OK");
 }
 
 int * chars_a_int(char ** bloques, int cant_bloques){
@@ -273,6 +273,7 @@ void borrar(char * path) {
 	arch = restaurar_archivo(config);
 	cant_bloques_archivo = obtener_cantidad_bloques(arch);
 	release_blocks(arch->bloques, cant_bloques_archivo);
+	enviar_dato_serializado(clienteKernel, "OK");
 	remove(path_abs);
 	free(arch);
 }
