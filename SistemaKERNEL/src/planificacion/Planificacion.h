@@ -13,7 +13,8 @@
 
 #include "../administrarProcesos/Proceso.h"
 #include "../header/Estructuras.h"
-#include "../header/PCB.h"
+#include "../../../Sharedlib/Sharedlib/PCB.h"
+
 
 
 t_dictionary * COLAS;
@@ -57,5 +58,11 @@ void recepcion_PCB_en_COLA_EXIT();
 void recepcion_SIGNAL_semaforo_ansisop(char * nombre_sem);
 
 void recibir_PCB_de_CPU(int clienteCPU, char * modo);
+
+void wait_cola(char * cola);
+
+void signal_cola(char * cola);
+
+bool es_exec_cpu(char * cpuID);
 
 #endif /* HEADER_PLANIFICACION_H_ */

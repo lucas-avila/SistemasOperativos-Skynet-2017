@@ -1,0 +1,18 @@
+#!/usr/bin/ansisop
+
+function imprimir
+        print $0+1
+end
+
+begin
+    variables A
+    A = 	0
+    imprimir A    
+    
+    sinParam
+    
+end
+
+function sinParam
+	textPrint Bye
+end

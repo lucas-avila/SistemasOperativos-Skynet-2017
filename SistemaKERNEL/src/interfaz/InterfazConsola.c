@@ -24,9 +24,11 @@ void escuchar_Conexiones_Programa(int servidorPrograma) {
 		char* codigo_IDENTIFICACION = recibir_dato_serializado(cliente);
 		pthread_t thread_programa;
 		if (strcmp(codigo_IDENTIFICACION, "INICIAR_PROGRAMA") == 0) {
+			CU_iniciar_programa(cliente);
 			pthread_create(&thread_programa, NULL, &CU_Recibir_Conexiones_Programa, cliente);
 			pthread_detach(&thread_programa);
-			CU_iniciar_programa(cliente);
+
+
 		} else {
 			close(cliente);
 		}

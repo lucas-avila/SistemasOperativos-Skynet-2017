@@ -1,23 +1,14 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-#include "commons/collections/list.h"
+#include "InterfazFS.h"
+
+#include <commons/collections/list.h>
+#include <commons/string.h>
+#include <string.h>
+#include <Sharedlib/PCB.h>
+#include <Sharedlib/Socket.h>
 
 #include "../administrarPCB/EstadisticaProceso.h"
-#include "../administrarPCB/PCBData.h"
-#include "../capaFILESYSTEM/TablaGlobalArchivo.h"
-#include "../capaMEMORIA/GestMemoriaFuncionesAux.h"
-#include "../general/funcionesUtiles.h"
-#include "../../../Sharedlib/Sharedlib/Socket.h"
-#include "../header/AppConfig.h"
-#include "../header/Estructuras.h"
-#include "../header/PCB.h"
-#include "../interfaz/InterfazConsola.h"
-#include "../interfaz/InterfazCPU.h"
-#include "../interfaz/InterfazMemoria.h"
-#include "../planificacion/Planificacion.h"
-
 #include "../administrarProcesos/Proceso.h"
+#include "../header/AppConfig.h"
 
 
 
@@ -70,6 +61,12 @@ void inicializar() {
 	//proceso_a_NEW(proc);
 	agregar_proceso(proc);
 }
+
+void iniciar_conexion_servidor_FS(){
+	servidor_filesystem = conectar_servidor(configuraciones.IP_FS, configuraciones.PUERTO_FS);
+	enviar_dato_serializado("KERNEL", servidor_filesystem);
+}
+
 int buscarIndice(char* path) {
 	int tam = list_size(listaArchivos);
 	int i = 0;
@@ -83,32 +80,48 @@ int buscarIndice(char* path) {
 }
 
 char* validar_archivo(char *path) {
-
-	return buscarIndice(path) == -1 ? "ERROR_NO_EXISTE" : "OK";
+	enviar_dato_serializado("VALIDAR_ARCHIVO", servidor_filesystem);
+	enviar_dato_serializado(path, servidor_filesystem);
+	return recibir_dato_serializado(servidor_filesystem);
 }
 char* crear_archivo(char *path) {
-	list_add(listaArchivos, path);
+	/*list_add(listaArchivos, path);
 	t_list* contenido3 = list_create();
 	list_add(contenido3, "contenido nuevo 1");
 	list_add(contenido3, "contenido nuevo 2");
 	list_add(contenido3, "contenido nuevo 3");
 	list_add(contenido3, "contenido nuevo 4");
 	list_add(contenidoArchivo, contenido3);
-
-	return "OK";
+	*/
+	enviar_dato_serializado("CREAR_ARCHIVO", servidor_filesystem);
+	enviar_dato_serializado(path, servidor_filesystem);
+	return recibir_dato_serializado(servidor_filesystem);
 }
 char* borrar(char* path) {
-
+	enviar_dato_serializado("BORRAR_ARCHIVO", servidor_filesystem);
+	enviar_dato_serializado(path, servidor_filesystem);
+	/*
 	list_remove(contenidoArchivo, buscarIndice(path));
 	list_remove(listaArchivos, buscarIndice(path));
-	return "OK";
+	*/
+	return recibir_dato_serializado(servidor_filesystem);
 }
-char* obtenerDatos(char* path, int bloqueInicial, int size) {
-	t_list* contenido = list_get(contenidoArchivo, buscarIndice(path));
-	return string_substring(((char*) list_get(contenido, bloqueInicial)), 0, size);
+char* obtenerDatos(char* path, int offset, int size) {
+	enviar_dato_serializado("OBTENER_DATOS", servidor_filesystem);
+	enviar_dato_serializado(path, servidor_filesystem);
+	enviar_dato_serializado(string_itoa(offset), servidor_filesystem);
+	enviar_dato_serializado(string_itoa(size), servidor_filesystem);
+	/*t_list* contenido = list_get(contenidoArchivo, buscarIndice(path));
+	return string_substring(((char*) list_get(contenido, offset)), 0, size);*/
+	return recibir_dato_serializado(servidor_filesystem);
 }
-char* guardarDatos(char* path, int bloqueInicial, int size, char* contenido) {
+char* guardarDatos(char* path, int offset, int size, char* contenido) {
+	enviar_dato_serializado("GUARDAR_DATOS", servidor_filesystem);
+	enviar_dato_serializado(path, servidor_filesystem);
+	enviar_dato_serializado(string_itoa(offset), servidor_filesystem);
+	enviar_dato_serializado(string_itoa(size), servidor_filesystem);
+	enviar_dato_serializado(contenido, servidor_filesystem);
 	//t_list* contenidoe = list_get(contenidoArchivo, buscarIndice(path));
-	list_replace(list_get(contenidoArchivo, buscarIndice(path)), bloqueInicial, contenido);
-	return "OK";
+	//list_replace(list_get(contenidoArchivo, buscarIndice(path)), bloqueInicial, contenido);
+	return recibir_dato_serializado(servidor_filesystem);
 }

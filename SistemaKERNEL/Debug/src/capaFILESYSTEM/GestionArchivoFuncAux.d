@@ -6,7 +6,7 @@ src/capaFILESYSTEM/GestionArchivoFuncAux.d: \
  ../src/capaFILESYSTEM/../capaFILESYSTEM/TablaProcesoArchivo.h \
  ../src/capaFILESYSTEM/../administrarProcesos/Proceso.h \
  ../src/capaFILESYSTEM/../administrarProcesos/../header/Estructuras.h \
- ../src/capaFILESYSTEM/../administrarProcesos/../header/PCB.h
+ ../src/capaFILESYSTEM/../administrarProcesos/../../../Sharedlib/Sharedlib/PCB.h
 
 ../src/capaFILESYSTEM/../capaFILESYSTEM/TablaGlobalArchivo.h:
 
@@ -20,4 +20,4 @@ src/capaFILESYSTEM/GestionArchivoFuncAux.d: \
 
 ../src/capaFILESYSTEM/../administrarProcesos/../header/Estructuras.h:
 
-../src/capaFILESYSTEM/../administrarProcesos/../header/PCB.h:
+../src/capaFILESYSTEM/../administrarProcesos/../../../Sharedlib/Sharedlib/PCB.h:

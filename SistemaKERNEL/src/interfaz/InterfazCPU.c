@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <Sharedlib/Socket.h>
 #include <unistd.h>
 
 #include "../administrarProcesos/Proceso.h"

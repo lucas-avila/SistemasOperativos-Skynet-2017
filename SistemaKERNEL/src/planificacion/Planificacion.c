@@ -23,7 +23,7 @@ void EJECUTAR_ALGORITMO_PLANIFICACION() {
 
 void inicializar_colas_semaforos() {
 	int i = 0;
-	for(i; i < configuraciones.cantidad_sem; i++){
+	for (i; i < configuraciones.cantidad_sem; i++) {
 		dictionary_put(COLAS, configuraciones.SEM_IDS[i], queue_create());
 	}
 }
@@ -32,9 +32,10 @@ void inicializar_colas_5_estados() {
 	COLAS = dictionary_create();
 	dictionary_put(COLAS, NEW, queue_create());
 	dictionary_put(COLAS, READY, queue_create());
-	dictionary_put(COLAS, WAITING, queue_create());
-	dictionary_put(COLAS, EXEC, queue_create());
+	dictionary_put(COLAS, EXEC, list_create());
+	dictionary_put(COLAS, WAITING, list_create());
 	dictionary_put(COLAS, EXIT, queue_create());
+
 	inicializar_colas_semaforos();
 }
 
@@ -42,28 +43,43 @@ t_queue* cola(char * nombre) {
 	return dictionary_get(COLAS, nombre);
 }
 
-void proceso_a_NEW(Proceso * p){
-	strcpy(p->cola, NEW);
+void proceso_a_NEW(Proceso * p) {
+	string_append(&p->cola, NEW);
+	wait_cola(NEW);
 	queue_push(cola(NEW), p->pcb);
+	signal_cola(NEW);
 }
 
 void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
-	queue_pop(cola(origen));
 
 	Proceso * p = proceso(pcb);
 
-	//Si viene de algun waiting
-	if(es_semaforo(origen)) {
+	wait_cola(origen);
 
+	bool es_pcb_buscado(PCB * otro) {
+		return otro->PID == pcb->PID;
 	}
 
-	//Si va a algun waiting
-	if(es_semaforo(destino)){
+	if (strcmp(origen, EXEC) == 0) {
+
+		free(list_remove_by_condition((t_list*) cola(origen), &es_pcb_buscado));
+		//Marcamos el CPU que estaba usando como disponible
 		marcar_CPU_Disponible(p->cpu);
-		enviar_dato_serializado("BLOQUEADO", p->cpu->numeroConexion);
+		//Si va a algun waiting
+		if (es_semaforo(destino))
+			enviar_dato_serializado("BLOQUEADO", p->cpu->numeroConexion);
+
 		p->cpu = NULL;
-	}else if(strcmp(destino, EXIT) == 0){
-		marcar_CPU_Disponible(p->cpu);
+	} //Si viene de algun waiting
+	else if (es_semaforo(origen)) {
+		free(list_remove_by_condition((t_list*) cola(WAITING), &es_pcb_buscado));
+		queue_pop(cola(origen));
+	} else
+		queue_pop(cola(origen));
+
+	signal_cola(origen);
+
+	if (strcmp(destino, EXIT) == 0) {
 		pcb->exit_code = 0;
 		//finalizar_proceso(pcb);
 	}
@@ -73,7 +89,17 @@ void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 	string_append(&cola_guardada, destino);
 
 	//Después de que se actualice el proceso lo metemos en la cola a la que iba
-	queue_push(cola(destino), pcb);
+	wait_cola(destino);
+	if (strcmp(destino, EXEC) == 0)
+		list_add((t_list*) cola(destino), pcb);
+	else if (es_semaforo(destino)) {
+		queue_push(cola(destino), pcb);
+		wait_cola(WAITING);
+		list_add((t_list*) cola(WAITING), pcb);
+		signal_cola(WAITING);
+	} else
+		queue_push(cola(destino), pcb);
+	signal_cola(destino);
 }
 
 CPUInfo* obtener_CPU_Disponible() {
@@ -93,18 +119,18 @@ CPUInfo* obtener_CPU_Disponible() {
 	return NULL;
 }
 
-int cantidad_en_WAITING(){
+int cantidad_en_WAITING() {
 	int i = 0;
 	int res = 0;
-	while(i < configuraciones.cantidad_sem){
+	while (i < configuraciones.cantidad_sem) {
 		res += queue_size(dictionary_get(COLAS, configuraciones.SEM_IDS[i]));
 		i++;
 	}
 	return res;
 }
 
-int cantidad_procesos_en_memoria(){
-	return (queue_size(cola(READY)) + queue_size(cola(EXEC)) + cantidad_en_WAITING());
+int cantidad_procesos_en_memoria() {
+	return (queue_size(cola(READY)) + list_size(cola(EXEC)) + cantidad_en_WAITING());
 }
 
 void planificador_largo_plazo() {
@@ -121,14 +147,14 @@ void planificador_largo_plazo() {
 PCB* obtener_proceso_de_cola_READY() {
 	while (configuraciones.planificacion_activa == 1) {
 		//SE CONTROLA LA MULTIPROGRAMACION DE ESTA MANERA
-		sem_wait(&mutex_cola_READY);
+		wait_cola(READY);
 		if (!queue_is_empty(cola(READY))) {
 
 			PCB* pcb = queue_peek(cola(READY));
-			sem_post(&mutex_cola_READY);
+			signal_cola(READY);
 			return pcb;
 		}
-		sem_post(&mutex_cola_READY);
+		signal_cola(READY);
 	}
 	return NULL;
 }
@@ -148,7 +174,7 @@ void marcar_CPU_Ocupada(CPUInfo* cpu) {
 	return;
 }
 
-void marcar_CPU_Disponible(CPUInfo* cpu){
+void marcar_CPU_Disponible(CPUInfo* cpu) {
 	cpu->disponible = 1;
 	return;
 }
@@ -156,36 +182,64 @@ void marcar_CPU_Disponible(CPUInfo* cpu){
 void recepcion_PCB_en_COLA_EXIT() {
 	if (strcmp(configuraciones.ALGORITMO, "FIFO") == 0) {
 		recepcion_PCB_en_COLA_EXIT_FIFO();
-	}else {
+	} else {
 		recepcion_PCB_en_COLA_EXIT_RR();
 	}
 }
 
-void recepcion_SIGNAL_semaforo_ansisop(char * nombre_sem){
+void recepcion_SIGNAL_semaforo_ansisop(char * nombre_sem) {
 	signal_semaforo_ansisop(nombre_sem);
 
 	PCB * pcb = queue_peek(cola(nombre_sem));
 
-	if(pcb != NULL)
+	if (pcb != NULL)
 		mover_PCB_de_cola(pcb, nombre_sem, READY);
 }
 
 void recibir_PCB_de_CPU(int clienteCPU, char * modo) {
 	PCB* pcb = recibir_pcb(clienteCPU);
 
-	if(strcmp(modo, "TERMINADO") == 0){
+	if (strcmp(modo, "TERMINADO") == 0) {
 		mover_PCB_de_cola(pcb, EXEC, EXIT);
-	} else if(strcmp(modo, "QUANTUM") == 0){
+	} else if (strcmp(modo, "QUANTUM") == 0) {
 		mover_PCB_de_cola(pcb, EXEC, READY);
-	} else if(strcmp(modo, "WAIT_SEM") == 0){
+	} else if (strcmp(modo, "WAIT_SEM") == 0) {
 		char * nombre_sem = recibir_dato_serializado(clienteCPU);
 		int resultado_sem = wait_semaforo_ansisop(nombre_sem);
 
-		if(resultado_sem == 0)
+		if (resultado_sem == 0)
 			mover_PCB_de_cola(pcb, EXEC, nombre_sem);
 		else
 			enviar_dato_serializado("NO_BLOQUEADO", clienteCPU);
 	}
 
+}
+
+void wait_cola(char * cola) {
+	if (strcmp(cola, NEW) == 0) {
+		sem_wait(&mutex_cola_NEW);
+	} else if (strcmp(cola, READY) == 0) {
+		sem_wait(&mutex_cola_READY);
+	} else if (strcmp(cola, EXEC) == 0) {
+		sem_wait(&mutex_cola_EXEC);
+	} else if (strcmp(cola, WAITING) == 0 || es_semaforo(cola)) {
+		sem_wait(&mutex_cola_WAITING);
+	} else if (strcmp(cola, EXIT) == 0) {
+		sem_wait(&mutex_cola_EXIT);
+	}
+}
+
+void signal_cola(char * cola) {
+	if (strcmp(cola, NEW) == 0) {
+		sem_post(&mutex_cola_NEW);
+	} else if (strcmp(cola, READY) == 0) {
+		sem_post(&mutex_cola_READY);
+	} else if (strcmp(cola, EXEC) == 0) {
+		sem_post(&mutex_cola_EXEC);
+	} else if (strcmp(cola, WAITING) == 0 || es_semaforo(cola)) {
+		sem_post(&mutex_cola_WAITING);
+	} else if (strcmp(cola, EXIT) == 0) {
+		sem_post(&mutex_cola_EXIT);
+	}
 }
 

@@ -17,7 +17,7 @@
 
 #include "../../Sharedlib/Sharedlib/Socket.h"
 #include "header/AppConfig.h"
-#include "header/PCB.h"
+#include "../../Sharedlib/Sharedlib/PCB.h"
 #include "interfaz/InterfazKernel.h"
 #include "interfaz/InterfazMemoria.h"
 #include "interfaz/signals.h"
@@ -33,7 +33,7 @@ bool estaEjecutando = false;
 
 int main(int argc, char *argv[]) {
 	//TODO: Agregar adentro de esta funcion, que espere a que termine de ejecutar, lo mande al kernel y DESPUES mandar el desconectar y finalizar el proceso
-	signal(SIGINT, recibir_seniales_de_linux);
+signal(SIGINT, recibir_seniales_de_linux);
 
 	inicializar_configuracion(argv[1]);
 	//inicializar_configuracion("/home/utnso/Escritorio/tp-2017-1c-Skynet/SistemaCPU/resource/config.cfg");
@@ -96,13 +96,13 @@ void testear_planificacion(servidor_kernel){
 	printf("\nDEBUG ---> Llego a testing -->  ");
 	PCB* pcb = recibir_PCB_de_kernel();
 
+	sleep(1);
 
-
-	if(n <= 3){
+	if(n < 1){
 		enviar_SYSCALL_wait_semaforo_a_kernel("mutex1", pcb);
 	}else{
 		printf("\n\nDEBUG ---> Se está por llegar al grado maximo de multiprogramacion, empezamos a hacer signals\n\n");
-		sleep(1);
+
 		enviar_SYSCALL_signal_semaforo_a_kernel("mutex1");
 		enviar_PCB_a_kernel(pcb, "TERMINADO");
 	}

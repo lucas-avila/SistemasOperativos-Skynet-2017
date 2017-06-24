@@ -7,7 +7,7 @@
 
 #ifndef PROCESADOR_EJECUCION_H_
 #define PROCESADOR_EJECUCION_H_
-#include "../header/PCB.h"
+#include "../../../Sharedlib/Sharedlib/PCB.h"
 #include "parser/parser.h"
 AnSISOP_funciones *funciones;
 AnSISOP_kernel *kernel ;

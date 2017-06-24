@@ -11,11 +11,12 @@
 #include "../administrarProcesos/Proceso.h"
 #include "../general/funcionesUtiles.h"
 #include "../header/AppConfig.h"
-#include "../header/PCB.h"
+#include "../../../Sharedlib/Sharedlib/PCB.h"
 #include "../planificacion/Planificacion.h"
 
 PCB * crear_PCB_TEST_2();
 void mostrar_estado_colas();
+void mostrar_datos_lista(t_list* elements);
 
 void mostrar_menu_planificacion() {
 	int opcion = 0;
@@ -44,7 +45,15 @@ void mostrar_datos_cola(t_queue* cola) {
 	if(queue_size(cola) <= 0) return;
 
 	t_list* elements = cola->elements;
+
+	mostrar_datos_lista(elements);
+}
+
+void mostrar_datos_lista(t_list* elements) {
 	int tamanio = list_size(elements);
+
+	if(tamanio <= 0) return;
+
 	int i = 0;
 	for (i = 0; i < tamanio; i++) {
 		PCB* pcb = list_get(elements, i);
@@ -75,7 +84,7 @@ void mostrar_estado_colas() {
 			tiempo = 0;
 		}
 		printf("\n\n Tiempo: %ds - Ingrese 0 para terminar.", tiempo);
-		printf("\n\tCOLA NEW: ");
+		printf("\n\tCOLA NEW (%d): ", queue_size(cola(NEW)));
 		mostrar_datos_cola(cola(NEW));
 		printf("\n\t_______\n");
 		printf("\n\tCOLAS SEMAFOROS:");
@@ -85,13 +94,13 @@ void mostrar_estado_colas() {
 			mostrar_datos_cola(cola(configuraciones.SEM_IDS[i]));
 		}
 		printf("\n\t_______\n");
-		printf("\n\tCOLA READY: ");
+		printf("\n\tCOLA READY (%d): ", queue_size(cola(READY)));
 		mostrar_datos_cola(cola(READY));
 		printf("\n\t_______\n");
-		printf("\n\tCOLA EJECUTANDO: ");
-		mostrar_datos_cola(cola(EXEC));
+		printf("\n\tCOLA EJECUTANDO (%d): ", list_size((t_list*) cola(EXEC)));
+		mostrar_datos_lista((t_list*)cola(EXEC));
 		printf("\n\t_______\n");
-		printf("\n\tCOLA EXIT: ");
+		printf("\n\tCOLA EXIT (%d): ", queue_size(cola(EXIT)));
 		mostrar_datos_cola(cola(EXIT));
 		printf("\n\t_______\n");
 		sleep(1);

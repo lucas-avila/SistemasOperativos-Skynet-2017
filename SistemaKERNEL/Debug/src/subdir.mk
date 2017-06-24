@@ -5,17 +5,14 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../src/KERNEL.c \
-../src/PCB.c \
 ../src/SolicitudesUsuario.c 
 
 OBJS += \
 ./src/KERNEL.o \
-./src/PCB.o \
 ./src/SolicitudesUsuario.o 
 
 C_DEPS += \
 ./src/KERNEL.d \
-./src/PCB.d \
 ./src/SolicitudesUsuario.d 
 
 

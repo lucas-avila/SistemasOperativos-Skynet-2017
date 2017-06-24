@@ -8,9 +8,10 @@
 #include "header/FileManager.h"
 
 #include <commons/string.h>
-#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/stat.h>
+#include <unistd.h>
 
 #include "header/AppConfig.h"
 
@@ -39,8 +40,15 @@ int obtener_BLOQUE_libre(){
 int obtener_cantidad_bloques(Archivo * archivo){
 	if(archivo->tamanio == 0){
 		return 1;
-	}else{
-		return (archivo->tamanio / metadata->tamanio_bloques);
+	}
+	else if (archivo->tamanio % metadata->tamanio_bloques > 0){
+		return ((archivo->tamanio / metadata->tamanio_bloques) + 1);
+		/*Agregué + 1 en el return ya que si dividis 361 en 60 te dá 6, pero debería haber un bloque más
+		* para el resto de la división que no completa un bloque. Así; (A/B)*B != A, A = (A/B)*B + A%B
+		*/
+	}
+	else {
+		return archivo->tamanio / metadata->tamanio_bloques;
 	}
 }
 
@@ -126,57 +134,6 @@ char * generar_path_absoluto(char * intermedio, char * path){
 	return path_abs;
 }
 
-void wipe_data(int block_size, int block_quantity){
-
-	if(block_quantity % 8 != 0){
-		perror("La cantidad de bloques debe ser multiplo de 8.\n");
-		exit(-1);
-	}
-
-	int i = 0;
-	char * block;
-	char * path;
-	char * bitarray;
-	FILE * f_block;
-	while(i < block_quantity){
-
-		block = string_new();
-		char * num = string_itoa(i);
-		string_append(&block, num);
-		string_append(&block, ".bin");
-		path = generar_path_absoluto(PATH_BLOQUES, block);
-		f_block = fopen(path, "w");
-		fclose(f_block);
-		free(num);
-		free(block);
-		free(path);
-		i++;
-	}
-
-	int size = block_quantity / 8;
-	bitarray = malloc(size);
-	for(i = 0; i < size; i++){
-		memcpy(bitarray+i, "\0",1);
-	}
-
-	free(bitmap);
-	bitmap = bitarray_create_with_mode(bitarray, size, MSB_FIRST);
-	guardar_bitmap();
-
-	FILE * f_metadata;
-	char * path_metadata = generar_path_absoluto(PATH_METADATA, ARCHIVO_METADATA);
-
-	//La abrimos para volverla a crear
-	f_metadata = fopen(path_metadata, "w");
-	fclose(f_metadata);
-
-	if((f_metadata = fopen(path_metadata, "a")) != NULL){
-		fprintf(f_metadata, "TAMANIO_BLOQUES=%d\nCANTIDAD_BLOQUES=%d\nMAGIC_NUMBER=%s", block_size, block_quantity, MAGIC_NUMBER);
-		fclose(f_metadata);
-	}
-	free(path_metadata);
-}
-
 char * read_Archivo(FILE * file){
 	char * buffer;
 	int filelen;
@@ -226,8 +183,114 @@ void release_blocks(int * blocks, int cant_blocks_archivo){
 	free(path_block);
 }
 
+char * convertir_bloques_a_array_chars(int * bloques, int size){
+	char * string = string_new();
+	int i = 0;
 
+	string_append(&string, "[");
+	while(i < size){
+		string_append(&string, string_itoa(bloques[i]));
+		string_append(&string, ",");
+		i++;
+	}
+	i++;
+	string[i] = ']';
+	return string;
+}
 
+int * obtener_bloques_de_config(char ** bloques, int cant_bloques){
+
+	int * array_bloques = malloc(sizeof(int) * cant_bloques);
+	int i = 0;
+	char * numero = string_new();
+
+	while(i < cant_bloques){
+		*array_bloques = atoi(bloques[i]);
+		i++;
+	}
+
+	return array_bloques;
+}
+
+Archivo * restaurar_archivo(char * path){
+
+	t_config * config = config_create(path);
+
+	if(config == NULL){
+		perror("No se pudo restaurar la configuracion del archivo.\n");
+		exit(-1);
+	}
+
+	Archivo * archivo = malloc(sizeof(Archivo));
+	int cant_bloques;
+
+	archivo->tamanio = config_get_int_value(config, "TAMANIO");
+	cant_bloques = obtener_cantidad_bloques(archivo);
+
+	archivo->bloques = obtener_bloques_de_config(config_get_array_value(config, "BLOQUES"), cant_bloques);
+
+	return archivo;
+}
+
+void wipe_data(int block_size, int block_quantity){
+
+	if(block_quantity % 8 != 0){
+		perror("La cantidad de bloques debe ser multiplo de 8.\n");
+		exit(-1);
+	}
+
+	int i = 0;
+	char * block;
+	char * path;
+	char * bitarray;
+	FILE * f_block;
+	while(i < block_quantity){
+
+		block = string_new();
+		char * num = string_itoa(i);
+		string_append(&block, num);
+		string_append(&block, ".bin");
+		path = generar_path_absoluto(PATH_BLOQUES, block);
+		f_block = fopen(path, "w");
+		fclose(f_block);
+		free(num);
+		free(block);
+		free(path);
+		i++;
+	}
+
+	int size = block_quantity / 8;
+	bitarray = malloc(size);
+	for(i = 0; i < size; i++){
+		memcpy(bitarray+i, "\0",1);
+	}
+
+	free(bitmap);
+	bitmap = bitarray_create_with_mode(bitarray, size, MSB_FIRST);
+	guardar_bitmap();
+
+	FILE * f_metadata;
+	char * path_metadata = generar_path_absoluto(PATH_METADATA, ARCHIVO_METADATA);
+
+	//La abrimos para volverla a crear
+	f_metadata = fopen(path_metadata, "w");
+	fclose(f_metadata);
+
+	if((f_metadata = fopen(path_metadata, "a")) != NULL){
+		fprintf(f_metadata, "TAMANIO_BLOQUES=%d\nCANTIDAD_BLOQUES=%d\nMAGIC_NUMBER=%s", block_size, block_quantity, MAGIC_NUMBER);
+		fclose(f_metadata);
+	}
+
+	struct stat st = {0};
+	char * path_archivos = generar_path_absoluto(PATH_ARCHIVOS, "");
+	if (stat(path_archivos, &st) == -1) {
+	    mkdir(path_archivos, 0700);
+	}else
+		printf("\nBorrar manualmente todo en /Archivos\n");
+
+	free(path_archivos);
+	free(path_metadata);
+}
 
 
 

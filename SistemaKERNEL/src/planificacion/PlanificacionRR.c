@@ -6,7 +6,6 @@
 #include "../../../Sharedlib/Sharedlib/Socket.h"
 #include "../header/AppConfig.h"
 #include "../header/Estructuras.h"
-#include "../header/PCB.h"
 #include "Planificacion.h"
 
 void dispatcher_RR() {

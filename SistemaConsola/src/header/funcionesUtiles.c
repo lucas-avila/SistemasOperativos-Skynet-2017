@@ -48,9 +48,10 @@ char * obtener_codigo(char * path_archivo_fuente){
 	fseek(archivo_fuente, 0, SEEK_SET);
 
 	//Para evitar segmentation fault allocamos memoria.
-	literal = malloc(sizeof(char) * size_buffer);
+	literal = malloc(sizeof(char) * size_buffer + 1);
 	fread(literal, sizeof(char), size_buffer, archivo_fuente);
-
+	literal[size_buffer] = '\0';
+	fclose(archivo_fuente);
 	return literal;
 }
 

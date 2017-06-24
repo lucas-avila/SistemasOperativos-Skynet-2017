@@ -5,9 +5,12 @@ begin
 	a = 3
 	b = 5
 	a = b + 12
-	abrir archivo.c C	
-	cerrar archivo.c
+
+	
 	A = 0
     !var1 = 1+A
-    print !var1
+  
+    a = alocar 10
+   
 end
+

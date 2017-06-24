@@ -9,7 +9,6 @@ C_SRCS += \
 ../src/header/ExitCodes.c \
 ../src/header/InterfazKernel.c \
 ../src/header/Semaforo.c \
-../src/header/Socket.c \
 ../src/header/funcionesUtiles.c 
 
 OBJS += \
@@ -18,7 +17,6 @@ OBJS += \
 ./src/header/ExitCodes.o \
 ./src/header/InterfazKernel.o \
 ./src/header/Semaforo.o \
-./src/header/Socket.o \
 ./src/header/funcionesUtiles.o 
 
 C_DEPS += \
@@ -27,7 +25,6 @@ C_DEPS += \
 ./src/header/ExitCodes.d \
 ./src/header/InterfazKernel.d \
 ./src/header/Semaforo.d \
-./src/header/Socket.d \
 ./src/header/funcionesUtiles.d 
 
 

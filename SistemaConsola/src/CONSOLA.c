@@ -23,7 +23,7 @@
 #include "header/ExitCodes.h"
 #include "header/funcionesUtiles.h"
 #include "header/InterfazKernel.h"
-#include "header/Socket.h"
+#include "../Sharedlib/Sharedlib/Socket.h"
 
 void atender_solicitudes_de_usuario();
 void iniciar_thread();
@@ -132,9 +132,11 @@ void recibir_mensajes(int pid, int kernel_programa) {
 		printf("El mensaje del Proceso (%d) es: %s\n", pid, mensaje);
 		Info_ejecucion* info_proceso = buscar_info_por_PID(pid);
 		info_proceso->cant_impresiones = info_proceso->cant_impresiones + 1;
+		free(mensaje);
 		mensaje = recibir_dato_serializado(kernel_programa);
 	}
 
+	free(mensaje);
 }
 
 void finalizar_programa(int pid, int kernel_programa) {

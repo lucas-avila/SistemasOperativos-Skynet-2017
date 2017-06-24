@@ -1,15 +1,6 @@
-<<<<<<< HEAD
-14:34:32 **** Clean-only build of configuration Debug for project SistemaConsola ****
-make clean 
-rm -rf  ./src/header/AppConfig.o ./src/header/Estructuras.o ./src/header/ExitCodes.o ./src/header/InterfazKernel.o ./src/header/Semaforo.o ./src/header/Socket.o ./src/header/funcionesUtiles.o  ./src/CONSOLA.o ./src/InterfazKernel.o  ./src/header/AppConfig.d ./src/header/Estructuras.d ./src/header/ExitCodes.d ./src/header/InterfazKernel.d ./src/header/Semaforo.d ./src/header/Socket.d ./src/header/funcionesUtiles.d  ./src/CONSOLA.d ./src/InterfazKernel.d  SistemaConsola
- 
-
-14:34:32 Build Finished (took 342ms)
-=======
-20:14:50 **** Incremental Build of configuration Debug for project SistemaConsola ****
+10:19:02 **** Incremental Build of configuration Debug for project SistemaConsola ****
 make all 
 make: No se hace nada para «all».
 
-20:14:50 Build Finished (took 68ms)
->>>>>>> 5eb549ef1cafafbfda68b6acbfc36d4e5652878d
+10:19:02 Build Finished (took 68ms)
 

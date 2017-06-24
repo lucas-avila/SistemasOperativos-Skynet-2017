@@ -17,7 +17,7 @@
 #include "../general/funcionesUtiles.h"
 #include "../../../Sharedlib/Sharedlib/Socket.h"
 #include "../header/AppConfig.h"
-#include "../header/PCB.h"
+#include "../../../Sharedlib/Sharedlib/PCB.h"
 
 void iniciar_conexion_servidor_memoria() {
 	servidor_Memoria = conectar_servidor(configuraciones.IP_MEMORIA, configuraciones.PUERTO_MEMORIA);

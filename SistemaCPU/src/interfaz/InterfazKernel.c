@@ -12,7 +12,7 @@
 //#include "../general/Socket.h"
 #include "../../../Sharedlib/Sharedlib/Socket.h"
 #include "../header/AppConfig.h"
-#include "../header/PCB.h"
+#include "../../../Sharedlib/Sharedlib/Socket.h"
 #include "../primitivas/EstructurasDeDatosPrimitivas.h"
 #include "../primitivas/FuncionesAuxiliares.h"
 #include "../procesador/Ejecucion.h"

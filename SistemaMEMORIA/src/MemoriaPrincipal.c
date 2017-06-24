@@ -46,19 +46,30 @@ int frame_lookup(char*PID, int pagina) {
  */
 int getFrame(char*PID, int pagina) {
 
-	/*int frame_buscado;
-	 int frame = buscar_frame(PID, pagina);
-	 Tabla_Pagina_Invertida registro = busqueda_secuencial(frame, configuraciones.MARCOS, PID);
+	int frame = buscar_frame(PID, pagina);
+	int tope_repetido = frame;
+	int frame_buscado = 0;
+	int continuar = 1;
+	Tabla_Pagina_Invertida registro;
 
-	 while(strcmp(registro.PID, PID) != 0 || strcmp(registro.pagina, string_itoa(pagina)) != 0){
-	 frame_buscado = atoi(registro.frame) + 1;
-	 if(frame_buscado >= configuraciones.MARCOS)
-	 frame_buscado = 0;
-	 registro = busqueda_secuencial(frame_buscado, configuraciones.MARCOS, PID);
-	 }
+	do {
+		registro = TABLA_MEMORY[frame];
+		if(atoi(registro.pagina) == pagina && strcmp(PID,registro.PID) == 0){
+			frame_buscado = frame;
+			continuar = 0;
+		}
+		frame++;
+		if(frame >= configuraciones.MARCOS)
+			frame = 0;
+		if(frame == tope_repetido){
+			frame_buscado = -1;
+			continuar = 0;
+		}
 
-	 return frame_buscado;*/
-	int i = 0;
+	} while(continuar);
+
+	return frame_buscado;
+	/*int i = 0;
 	int tope = configuraciones.MARCOS;
 	char valorAux[4];
 	for (i = 0; i < tope; i++) {
@@ -69,7 +80,7 @@ int getFrame(char*PID, int pagina) {
 			return atoi(registro.frame);
 		}
 	}
-	return -1;
+	return -1;*/
 
 	//return frame_lookup(PID, pagina);
 }
@@ -353,24 +364,28 @@ int aplicar_hashing(char * PID, int numero_pagina) {
 
 Tabla_Pagina_Invertida evitar_colisiones(int frame) {
 
-	Tabla_Pagina_Invertida registro = busqueda_secuencial(frame, configuraciones.MARCOS, VACIO);
+	Tabla_Pagina_Invertida registro = busqueda_secuencial(frame, configuraciones.MARCOS);
 
 	if (strcmp(registro.PID, VACIO) == 0)
 		return registro;
 	// else...
-	registro = busqueda_secuencial(0, frame, VACIO);
+	registro = busqueda_secuencial(0, frame);
 
 	return registro;
 }
 
-Tabla_Pagina_Invertida busqueda_secuencial(int frame_start, int frame_finish, char * comparar_con) {
+//<<<<<<< HEAD
+//Tabla_Pagina_Invertida busqueda_secuencial(int frame_start, int frame_finish, char * comparar_con) {
+//=======
+Tabla_Pagina_Invertida busqueda_secuencial(int frame_start, int frame_finish){
+//>>>>>>> 209f10db685b6b964604a8fa205fd8b9d0716931
 	int i = 0;
 	Tabla_Pagina_Invertida registro;
 
 	activar_semaforo(&semaforo_Tabla_MEMORY);
 	for (i = frame_start; i < frame_finish; i++) {
 		registro = TABLA_MEMORY[i];
-		if (strcmp(registro.PID, comparar_con) == 0) {
+		if (strcmp(registro.PID, VACIO) == 0) {
 			desactivar_semaforo(&semaforo_Tabla_MEMORY);
 			return registro;
 		}

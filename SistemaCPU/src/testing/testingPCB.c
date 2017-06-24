@@ -2,7 +2,7 @@
 #include<stdio.h>
 #include<unistd.h>
 #include<string.h>
-#include "../header/PCB.h"
+#include "../../../Sharedlib/Sharedlib/PCB.h"
 #include "commons/collections/list.h"
 
 

@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "../header/PCB.h"
+#include "../../../Sharedlib/Sharedlib/PCB.h"
 #include "../interfaz/InterfazKernel.h"
 #include "../interfaz/InterfazMemoria.h"
 #include "../procesador/Ejecucion.h"
@@ -146,6 +146,8 @@ void ASIGNAR_VARIABLE(t_puntero direccion_variable, t_valor_variable valor) {
 //	free(direccion_var);
 }
 
+
+
 void WAIT(t_nombre_semaforo identificador_semaforo) {
 	//Incremento el program counter para pasar a la siguiente linea del wait
 	//Si se bloqueó, ya se mando al kernel con el program counter apuntando a la siguiente sentencia para que cuando vuelva
@@ -223,7 +225,11 @@ void LIBERAR(t_puntero memoria_serializada) {
 	printf("\nResultado de LIBERAR el puntero %d: %s", memoria_serializada, resultado);
 
 }
-void IR_A_LABEL(t_nombre_etiqueta nombre_etiqueta) {
+
+void IR_A_LABEL(t_nombre_etiqueta nombre_etiqueta){
+	if(nombre_etiqueta[strlen(nombre_etiqueta)-1]=='\n'){
+		nombre_etiqueta[strlen(nombre_etiqueta)-1]='\0';//esto es porque las etiquetas vienen con el \n al final
+	}
 
 	pcb->program_counter = metadata_buscar_etiqueta(nombre_etiqueta, pcb->etiquetas, pcb->etiquetas_size);
 
@@ -250,10 +256,12 @@ void FINALIZAR() {
 	}
 }
 
-void LLAMAR_SIN_RETORNO(t_nombre_etiqueta nombre_etiqueta) {
-	IndiceStack* stackDeFuncion = malloc(sizeof(IndiceStack));
-	list_add(pcb->pila, stackDeFuncion);
-	stackDeFuncion->retPos = pcb->program_counter;
+
+void LLAMAR_SIN_RETORNO(t_nombre_etiqueta nombre_etiqueta ){
+	insertar_nueva_fila_Indice_Stack(pcb);
+	IndiceStack * pila = obtener_Ultima_fila_Indice_Stack(pcb);
+	pila->retPos = pcb->program_counter;
+
 	// tiene que buscar la etiqueta en la lista de etiquetas y conseguir la direccion
 	t_puntero_instruccion direccionEtiqueta = metadata_buscar_etiqueta(nombre_etiqueta, pcb->etiquetas, pcb->etiquetas_size);
 	pcb->program_counter = direccionEtiqueta;
@@ -262,10 +270,13 @@ void LLAMAR_SIN_RETORNO(t_nombre_etiqueta nombre_etiqueta) {
 
 void LLAMAR_CON_RETORNO(t_nombre_etiqueta nombre_etiqueta, t_puntero direccionRetorno) {
 
-	IndiceStack* stackDeFuncion = malloc(sizeof(IndiceStack));
-	list_add(pcb->pila, stackDeFuncion);
-	stackDeFuncion->retPos = pcb->program_counter;
-	stackDeFuncion->retVar = direccionRetorno;
+
+	insertar_nueva_fila_Indice_Stack(pcb);
+	IndiceStack * pila = obtener_Ultima_fila_Indice_Stack(pcb);
+	pila->retPos = pcb->program_counter;
+	//pila->retVar
+	//TODO:Aca hay que poner la fucking RETVAR
+
 	// tiene que buscar la etiqueta en la lista de etiquetas y conseguir la direccion
 	t_puntero_instruccion direccionEtiqueta = metadata_buscar_etiqueta(nombre_etiqueta, pcb->etiquetas, pcb->etiquetas_size);
 	pcb->program_counter = direccionEtiqueta;
@@ -273,6 +284,7 @@ void LLAMAR_CON_RETORNO(t_nombre_etiqueta nombre_etiqueta, t_puntero direccionRe
 }
 
 t_valor_variable OBTENER_VALOR_COMPARTIDA(t_nombre_compartida variable) {
+	string_substring(variable,0,strlen(variable)-2);
 	t_valor_variable valorVariable;
 	if ((obtener_valor_de_variable_compartida_en_kernel(variable, &valorVariable)) == 0) {
 		return valorVariable;
@@ -294,7 +306,7 @@ t_valor_variable ASIGNAR_VALOR_COMPARTIDA(t_nombre_compartida variable, t_valor_
 
 t_descriptor_archivo ABRIR_ARCHIVO_PRIM(t_direccion_archivo direccion, t_banderas flags) {
 	char* mensaje = abrir_archivo(string_itoa(pcb->PID), direccion, flags.creacion, flags.lectura, flags.escritura);
-	if (isdigit(mensaje)) {
+	if (isdigit(mensaje[0])) {
 
 		return atoi(mensaje);
 	}
