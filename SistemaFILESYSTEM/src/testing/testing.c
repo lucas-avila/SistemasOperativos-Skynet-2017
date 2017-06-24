@@ -24,9 +24,10 @@ void mostrar_menu_testing(){
 			printf("\n4- Wipe data");
 			printf("\n5- Borrar Archivo.");
 			printf("\n6- Guardar datos.");
+			printf("\n7- Test lectura de bloques.");
 			printf("\n0- Salir\n");
 			printf("Opcion: \n");
-			opcion = validarNumeroInput(0, 6);
+			opcion = validarNumeroInput(0, 7);
 
 			switch (opcion) {
 			case 1:
@@ -84,6 +85,12 @@ void mostrar_menu_testing(){
 				break;
 			case 6:{
 					//TEST de GUARDAR DATOS.
+			}
+			case 7:{
+				char * path = generar_path_absoluto(PATH_ARCHIVOS, "pepe.bin");
+				t_config * config = config_create(path);
+				char ** bloques = config_get_array_value(config, "BLOQUES");
+				obtener_bloques_de_config(bloques, 2);
 			}
 			}
 		} while (opcion != 0);

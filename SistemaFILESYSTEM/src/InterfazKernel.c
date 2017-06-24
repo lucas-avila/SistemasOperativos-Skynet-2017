@@ -223,7 +223,7 @@ void borrar(char * path) {
 		exit(-1);
 	}
 
-	arch = restaurar_archivo(config);
+	arch = restaurar_archivo(path_abs);
 	cant_bloques_archivo = obtener_cantidad_bloques(arch);
 	release_blocks(arch->bloques, cant_bloques_archivo);
 	enviar_dato_serializado(clienteKernel, "OK");

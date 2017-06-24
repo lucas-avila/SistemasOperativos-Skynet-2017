@@ -205,7 +205,7 @@ int * obtener_bloques_de_config(char ** bloques, int cant_bloques){
 	char * numero = string_new();
 
 	while(i < cant_bloques){
-		*array_bloques = atoi(bloques[i]);
+		array_bloques[i] = atoi(bloques[i]);
 		i++;
 	}
 
