@@ -24,7 +24,8 @@ char* CU_ABRIR_ARCHIVO(char* PID, char* pathArchivo, bool flagCreate, bool flagR
 		return "ERROR - ARCHIVO EXISTE";
 	} else if (!existeArchivoFS && !flagCreate) {
 		//2. B El archivo no existe, y desea operar con el, sino lo crea no va a poder hacer nada.
-		return "ERROR - ARCHIVO NO EXISTE";
+		return "ERROR_ARCHIVO_NO_EXISTE";
+
 	} else if (!existeArchivoFS && flagCreate) {
 
 		//Informacion Estadistica

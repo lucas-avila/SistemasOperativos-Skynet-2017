@@ -80,7 +80,7 @@ void crear_archivo(char * path) {
 	Archivo * archivo = new_Archivo();
 	archivo->bloques[0] = obtener_BLOQUE_libre();
 	if(archivo->bloques[0] == -1){
-		enviar_dato_serializado("ERROR - SIN_ESPACIO", clienteKernel);
+		enviar_dato_serializado("ERROR - SIN_ESPACIO EN FS", clienteKernel);
 		return;
 	}
 	char * bloques_string = convertir_bloques_a_array_chars(archivo->bloques, obtener_cantidad_bloques(archivo));
@@ -181,7 +181,7 @@ void guardar_datos(char * path, int offset, int size, char * buffer) {
 						k++;
 					}
 					else {
-						enviar_dato_serializado(clienteKernel, "ERROR - SIN_ESPACIO");
+						enviar_dato_serializado(clienteKernel, "ERROR - SIN_ESPACIO EN FS");
 						return;
 					}
 				}

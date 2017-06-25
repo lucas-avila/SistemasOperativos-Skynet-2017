@@ -33,7 +33,7 @@ void CU_Reservar_memoria_MALLOC(int conexionCPU) {
 		ultima_pagina_asignada = solicitar_nueva_pagina_memoria(PID);
 		// Si ya no me asigna otra pagina, la memoria se quedo sin espacio.
 		if (ultima_pagina_asignada == NULL) {
-			enviar_dato_serializado("NO_HAY_ESPACIO_SUFICIENTE", conexionCPU);
+			enviar_dato_serializado("FALTA ESPACIO", conexionCPU);
 			return;
 		}
 		guardar_registro_tabla_memoria(ultima_pagina_asignada);
@@ -47,7 +47,7 @@ void CU_Reservar_memoria_MALLOC(int conexionCPU) {
 		ultima_pagina_asignada = solicitar_nueva_pagina_memoria(PID);
 		// Si ya no me asigna otra pagina, la memoria se quedo sin espacio.
 		if (ultima_pagina_asignada == NULL) {
-			enviar_dato_serializado("NO_HAY_ESPACIO_SUFICIENTE", conexionCPU);
+			enviar_dato_serializado("FALTA ESPACIO", conexionCPU);
 			return;
 		}
 		guardar_registro_tabla_memoria(ultima_pagina_asignada);

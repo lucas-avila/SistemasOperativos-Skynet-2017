@@ -43,6 +43,6 @@ void asignar_valor_var_comp (int conexionCPU){
 			i++;
 
 	}
-	enviar_dato_serializado("No existe la variable compartida indicada\n",conexionCPU);
+	enviar_dato_serializado("No existe la variable compartida solicitada\n",conexionCPU);
 	return;
 }
