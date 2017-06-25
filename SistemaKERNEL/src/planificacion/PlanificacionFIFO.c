@@ -27,8 +27,8 @@ void dispatcher_FIFO() {
 		mover_PCB_de_cola(pcb, READY, EXEC);
 
 
+		pcb->quantum_sleep= configuraciones.QUANTUM_SLEEP;
 
-		pcb->quantum_sleep = 1000000 * configuraciones.QUANTUM_SLEEP;
 
 		enviar_PCB_Serializado_a_CPU(cpu, pcb);
 	}

@@ -28,10 +28,13 @@ char* solicitar_sentencia_ejecutar() {
 		return solicitar_bytes_memoria(string_itoa(pcbEjecutar->PID), string_itoa(indiceCodigo->pagina), string_itoa(indiceCodigo->byte_inicial_codigo), string_itoa(longitud));
 	}
 }
+
+
+long retardo;
 void ejecutar_Programa() {
 	esFinPrograma = false;
 	programaBloqueado = false;
-
+	retardo= 	pcbEjecutar->quantum_sleep * 1000000 ;
 	bool esRoundRobin = (pcbEjecutar->RR == 1);
 	if (!esRoundRobin) {
 		ejecutar_programa_por_FIFO();
@@ -55,7 +58,7 @@ void ejecutar_programa_por_FIFO() {
 
 
 			pcbEjecutar->program_counter++;
-			nanosleep(pcbEjecutar->quantum_sleep); //Retardo en tiempo de ejecucion
+			nanosleep(retardo); //Retardo en tiempo de ejecucion
 
 		}
 
@@ -83,7 +86,7 @@ void ejecutar_programa_por_RR() {
 
 			pcbEjecutar->program_counter++;
 			cantidadEjecutada++;
-			nanosleep(pcbEjecutar->quantum_sleep); //Retardo en tiempo de ejecucion
+			nanosleep(retardo); //Retardo en tiempo de ejecucion
 		}
 	}
 
