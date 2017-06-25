@@ -106,6 +106,7 @@ int index_of_CPU(int numeroConexion) {
 		i++;
 	}
 	sem_post(&mutex_lista_CPUs);
+	return -1;
 }
 
 void agregar_CPU_global(int numeroConexion, pthread_t hilo) {

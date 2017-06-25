@@ -115,6 +115,7 @@ void incrementar_FREE(uint32_t PID, uint32_t tamanioFREE) {
 	actualizar_registro_proceso(elemento);
 }
 void incrementar_SYSCALL(uint32_t PID, uint32_t cantidadSysCall) {
+
 	EstadisticaProceso* elemento = buscar_registro_por_PID(PID);
 	if (elemento == NULL) {
 		crear_Proceso_en_tabla(PID);

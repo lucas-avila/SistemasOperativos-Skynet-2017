@@ -115,6 +115,8 @@ int enviar_SYSCALL_signal_semaforo_a_kernel(char* nombre) {
 	enviar_dato_serializado(nombre_semaforo, servidor_kernel);
 	printf("SIGNAL %s\n", nombre_semaforo);
 	//TODO: que pasa si el nombre del semaforo no existe?
+
+	return -1;
 }
 
 char* enviar_SYSCALL_solicitar_memoria_dinamica_a_kernel(int PID, int espacio, int* pagina, int* byteIncial) {

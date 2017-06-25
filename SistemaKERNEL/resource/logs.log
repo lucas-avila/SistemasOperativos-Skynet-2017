@@ -1,0 +1,81 @@
+[INFO] 12:24:52:579 KERNEL/(5875:5875): 
+***LOGS del KERNEL***
+ 
+---------------------
+Proceso ID: 1001
+---------------------
+---> Cantidad de procesos totales encontrados: 1
+------Fin del LOG------
+
+[INFO] 12:48:40:50 KERNEL/(6717:6717): 
+***LOGS del KERNEL***
+ 
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+
+[INFO] 12:48:48:491 KERNEL/(6717:6717): 
+***LOGS del KERNEL***
+ 
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+
+[INFO] 12:50:48:586 KERNEL/(6717:6717): 
+***LOGS del KERNEL***
+ 
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+
+[INFO] 12:51:21:849 KERNEL/(6717:6717): 
+***LOGS del KERNEL***
+ 
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+
+[INFO] 12:51:22:995 KERNEL/(6717:6717): 
+***LOGS del KERNEL***
+ 
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+
+[INFO] 12:51:23:722 KERNEL/(6717:6717): 
+***LOGS del KERNEL***
+ 
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+
+[INFO] 12:51:32:826 KERNEL/(6717:6717): 
+***LOGS del KERNEL***
+ 
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+
+[INFO] 12:53:57:712 KERNEL/(6917:6917): 
+***LOGS del KERNEL***
+ 
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+
+[INFO] 12:54:05:606 KERNEL/(6917:6917): 
+***LOGS del KERNEL***
+ 
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+
+[INFO] 12:59:54:601 KERNEL/(7315:7315): 
+***LOGS del KERNEL***
+ 
+---------------------
+Proceso ID: 0
+---------------------
+---> Cantidad de procesos totales encontrados: 1
+------Fin del LOG------
+

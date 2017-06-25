@@ -105,12 +105,16 @@ int verificar_si_malloc_entra_en_pagina(TABLA_MEMORIA_PROCESO* registro, unsigne
 int reservar_espacio_memoria_en_pagina(TABLA_MEMORIA_PROCESO* registro, unsigned espacioSolicitado) {
 	//1. Solicitar a la memoria la pagina que resta disponible
 
-	int tamanioSolicitar = espacioSolicitado + 5 + 5;
 	//10 para el metadata inicial.
 
 	Metadata_Memoria* metadataMemoria = analizar_espacio_pagina(registro, espacioSolicitado);
 	if (metadataMemoria == NULL) {
 		return -1;
+	}
+
+	int tamanioSolicitar = espacioSolicitado + 5 + 5;
+	if (metadataMemoria->reservarBloqueFinal == 0) {
+		tamanioSolicitar -= 5;
 	}
 
 	metadataMemoria->espacioDisponible -= (espacioSolicitado + 5);
@@ -130,14 +134,16 @@ int reservar_espacio_memoria_en_pagina(TABLA_MEMORIA_PROCESO* registro, unsigned
 
 	strcat(paginaMemoria, string_repeat(' ', espacioSolicitado));
 
-	strcat(paginaMemoria, "1");
-	registro->espacioDisponible -= tamanioSolicitar;
+	if (metadataMemoria->reservarBloqueFinal == 1) {
 
-	strcpy(numeroBytesOcupados, string_repeat('0', (4 - strlen(string_itoa(metadataMemoria->espacioDisponible)))));
-	strcat(numeroBytesOcupados, string_itoa(metadataMemoria->espacioDisponible));
+		strcat(paginaMemoria, "1");
+		registro->espacioDisponible -= tamanioSolicitar;
 
-	strcat(paginaMemoria, numeroBytesOcupados);
+		strcpy(numeroBytesOcupados, string_repeat('0', (4 - strlen(string_itoa(metadataMemoria->espacioDisponible)))));
+		strcat(numeroBytesOcupados, string_itoa(metadataMemoria->espacioDisponible));
 
+		strcat(paginaMemoria, numeroBytesOcupados);
+	}
 	almacenar_Bytes_de_Pagina(registro->PID, string_itoa(registro->nroPagina), string_itoa(metadataMemoria->byteInicial), string_itoa(tamanioSolicitar), paginaMemoria);
 
 	modificar_registro_tabla_memoria(registro);
@@ -190,9 +196,12 @@ void aplicar_algoritmo_Desfragmentacion_Interna(TABLA_MEMORIA_PROCESO* pagina_Bu
 	int tamanioPrimerLibre = 0;
 	int tamanioSegundoLibre = 0;
 
+	int espacioDisponible = 0;
+
 	while (contadorIndice < tamanio_pagina_memoria) {
 		tamanioBloque = atoi(string_substring(paginaMemoria, (contadorIndice + 1), 4));
 		if (paginaMemoria[contadorIndice] == '1') {
+			espacioDisponible += tamanioBloque;
 			if (indicePrimerLibre == -1) {
 				indicePrimerLibre = contadorIndice;
 				tamanioPrimerLibre = tamanioBloque;
@@ -208,7 +217,7 @@ void aplicar_algoritmo_Desfragmentacion_Interna(TABLA_MEMORIA_PROCESO* pagina_Bu
 		}
 		contadorIndice = contadorIndice + tamanioBloque + 4 + 1;
 	}
-
+	pagina_Buscada->espacioDisponible = espacioDisponible;
 	if (indiceSegundoLibre == -1) {
 		return;
 	}
@@ -216,6 +225,9 @@ void aplicar_algoritmo_Desfragmentacion_Interna(TABLA_MEMORIA_PROCESO* pagina_Bu
 	//Metadata Segundo Bloque
 	//Tamanio Primer Bloque
 	//Tamanio Segundo Bloque
+
+	pagina_Buscada->espacioDisponible += 5;
+
 	int espacioContenidoNuevo = 5 + tamanioPrimerLibre + tamanioSegundoLibre;
 	char* paginaNueva = malloc(5 + espacioContenidoNuevo + 1);
 
@@ -236,9 +248,9 @@ void aplicar_algoritmo_Desfragmentacion_Interna(TABLA_MEMORIA_PROCESO* pagina_Bu
 }
 
 void liberar_pagina(TABLA_MEMORIA_PROCESO* pagina_Buscada) {
-	if(pagina_Buscada->espacioDisponible == (tamanio_pagina_memoria - 5)){
-		liberar_pagina_proceso(pagina_Buscada->PID,string_itoa(pagina_Buscada->nroPagina));
-	    eliminar_registro_tabla_memoria(pagina_Buscada);
+	if (pagina_Buscada->espacioDisponible == (tamanio_pagina_memoria - 5)) {
+		liberar_pagina_proceso(pagina_Buscada->PID, string_itoa(pagina_Buscada->nroPagina));
+		eliminar_registro_tabla_memoria(pagina_Buscada);
 	}
 }
 
@@ -262,10 +274,19 @@ Metadata_Memoria* analizar_espacio_pagina(TABLA_MEMORIA_PROCESO* registro, int e
 	while (contadorIndice < tamanio_pagina_memoria) {
 		tamanioBloque = atoi(string_substring(paginaMemoria, (contadorIndice + 1), 4));
 		if (paginaMemoria[contadorIndice] == '1') {
-			if (espacioRequerido <= (tamanioBloque - 5)) {
+			if (espacioRequerido < (tamanioBloque - 5)) {
 				Metadata_Memoria* metadata = malloc(sizeof(Metadata_Memoria));
 				metadata->byteInicial = contadorIndice;
 				metadata->espacioDisponible = tamanioBloque;
+				metadata->reservarBloqueFinal = 1;
+				//return contadorIndice;
+				return metadata;
+			} else if (espacioRequerido == tamanioBloque) {
+
+				Metadata_Memoria* metadata = malloc(sizeof(Metadata_Memoria));
+				metadata->byteInicial = contadorIndice;
+				metadata->espacioDisponible = tamanioBloque;
+				metadata->reservarBloqueFinal = 0;
 				//return contadorIndice;
 				return metadata;
 			}

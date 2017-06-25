@@ -350,7 +350,7 @@ int aplicar_hashing(char * PID, int numero_pagina) {
 	int hash_code = 0;
 	int limit = string_length(PID);
 
-	for (i; i < limit; i++) {
+	for (i=0; i < limit; i++) {
 		hash_code += PID[i];
 		hash_code += (hash_code << 10);
 		hash_code ^= (hash_code >> 6);

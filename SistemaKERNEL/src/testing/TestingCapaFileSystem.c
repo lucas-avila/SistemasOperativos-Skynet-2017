@@ -205,6 +205,7 @@ void TEST_VER_TABLA_PROCESO() {
 	char* PID = recibir_INPUT("Ingrese PID: ", 4);
 	mostrar_tabla_Global_archivos();
 	t_list* listaArchivos = buscar_proceso_by_PID(atoi(PID))->tablaProcesoArchivo;
-	mostrar_tabla_proceso_archivos(listaArchivos);
+	char* info= string_new();
+	mostrar_tabla_proceso_archivos(listaArchivos,&info);
 
 }

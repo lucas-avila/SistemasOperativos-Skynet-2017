@@ -30,4 +30,7 @@ void marcarFinDePrograma();
 
 void marcarBloqueado();
 
+bool esFinPrograma ;
+bool programaBloqueado ;
+
 #endif /* PROCESADOR_EJECUCION_H_ */

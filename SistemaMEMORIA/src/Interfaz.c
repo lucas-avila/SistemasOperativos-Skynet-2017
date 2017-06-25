@@ -46,6 +46,8 @@ void CU_Recibir_Conexion_KERNEL(int cliente) {
 			CU_Asignar_Paginas_Programa(cliente);
 		} else if (strcmp(codigo_operacion, "FINALIZAR_PROGRAMA") == 0) {
 			CU_Finalizar_Programa(cliente);
+		} else if (strcmp(codigo_operacion, "LIBERAR_PAGINAS_PROCESO") == 0) {
+			CU_Liberar_Pagina(cliente);
 		} else if (strcmp(codigo_operacion, "") == 0) {
 			close(cliente);
 			controlSeguir = 0;
@@ -68,8 +70,6 @@ void CU_Recibir_Conexion_CPU(int cliente) {
 			CU_Almacenar_Bytes_de_Pagina(cliente);
 		} else if (strcmp(codigo_operacion, "ASIGNAR_PAGINAS_PROCESO") == 0) {
 			CU_Asignar_Paginas_Programa(cliente);
-		} else if (strcmp(codigo_operacion, "LIBERAR_PAGINAS_PROCESO") == 0) {
-			CU_Liberar_Pagina(cliente);
 		} else if (strcmp(codigo_operacion, "") == 0) {
 			//close(cliente);
 			//controlSeguir = 0;
@@ -122,7 +122,7 @@ void CU_Almacenar_Bytes_de_Pagina(int cliente) {
 	char* contenido;
 	contenido = recibir_dato_serializado(cliente);
 
-	texto = almacenar_bytes_de_una_pagina(PID, pagina, byteInicial, tamanio, contenido,true);
+	texto = almacenar_bytes_de_una_pagina(PID, pagina, byteInicial, tamanio, contenido, true);
 	enviar_dato_serializado(texto, cliente);
 	free(contenido);
 

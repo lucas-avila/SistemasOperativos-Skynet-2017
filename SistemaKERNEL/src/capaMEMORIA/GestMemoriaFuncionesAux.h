@@ -24,6 +24,8 @@ typedef struct {
 typedef struct {
 	int espacioDisponible;
 	int byteInicial;
+
+	int reservarBloqueFinal ;
 } Metadata_Memoria;
 
 t_list* TABLA_PROCESS_MEMORY;

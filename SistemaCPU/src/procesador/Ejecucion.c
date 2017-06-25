@@ -15,8 +15,6 @@
 #include "../interfaz/InterfazMemoria.h"
 
 
-bool esFinPrograma = false;
-bool programaBloqueado = false;
 
 void setPCBEjecucion(PCB* pcb) {
 	pcbEjecutar = pcb;
@@ -28,11 +26,13 @@ char* solicitar_sentencia_ejecutar() {
 		return "FIN";
 	} else {
 
-		int longitud =indiceCodigo->byte_final_codigo - indiceCodigo->byte_inicial_codigo;
+		int longitud = indiceCodigo->byte_final_codigo - indiceCodigo->byte_inicial_codigo;
 		return solicitar_bytes_memoria(string_itoa(pcbEjecutar->PID), string_itoa(indiceCodigo->pagina), string_itoa(indiceCodigo->byte_inicial_codigo), string_itoa(longitud));
 	}
 }
 void ejecutar_Programa() {
+	esFinPrograma = false;
+	programaBloqueado = false;
 	bool esRoundRobin = (pcbEjecutar->RR == 1);
 	if (!esRoundRobin) {
 		ejecutar_programa_por_FIFO();
@@ -48,17 +48,22 @@ void ejecutar_programa_por_FIFO() {
 	while (!esFinPrograma && !programaBloqueado) {
 		printf("\n Comienzo de Solicitar sentencia...");
 		char* sentencia = solicitar_sentencia_ejecutar();
-		printf("\n Sentencia SOlicitada %s: ",sentencia );
+		printf("\n Sentencia SOlicitada %s: ", sentencia);
 		esFinPrograma = (strcmp(sentencia, "FIN") == 0);
 		if (!esFinPrograma && !programaBloqueado) { //Este if tiene que sacarse, es solo para probar ahora
+
 			analizadorLinea(sentencia, funciones, kernel);
+			//TODO: Agregar aca el tema del retardo de ejecucion de cada funcion
+
+
 
 			pcbEjecutar->program_counter++;
+
 		}
 
 	}
 
-	if(esFinPrograma)
+	if (esFinPrograma)
 		enviar_PCB_a_kernel(pcbEjecutar, "TERMINADO");
 
 	esFinPrograma = false;
@@ -69,9 +74,11 @@ void ejecutar_programa_por_FIFO() {
 void ejecutar_programa_por_RR() {
 	int topeEjecucion = pcbEjecutar->cantidad_rafagas;
 	int cantidadEjecutada = 0;
-
+	printf("\n Comienzo de Ejecucion");
 	while (!esFinPrograma && cantidadEjecutada < topeEjecucion && !programaBloqueado) {
+		printf("\n Comienzo de Solicitar sentencia...");
 		char* sentencia = solicitar_sentencia_ejecutar();
+		printf("\n Sentencia SOlicitada %s: ", sentencia);
 		esFinPrograma = (strcmp(sentencia, "FIN") == 0);
 		if (!esFinPrograma && !programaBloqueado) { //Este if tiene que sacarse, es solo para probar ahora
 			analizadorLinea(sentencia, funciones, kernel);
@@ -81,9 +88,9 @@ void ejecutar_programa_por_RR() {
 		}
 	}
 
-	if(esFinPrograma)
+	if (esFinPrograma)
 		enviar_PCB_a_kernel(pcbEjecutar, "TERMINADO");
-	else if(!programaBloqueado){
+	else if (!programaBloqueado) {
 		pcbEjecutar->cantidad_rafagas_ejecutadas++;
 		enviar_PCB_a_kernel(pcbEjecutar, "QUANTUM");
 	}
@@ -101,7 +108,7 @@ void inicializar_contexto_ejecucion() {
 	funciones->AnSISOP_dereferenciar = DEREFERENCIAR;
 	funciones->AnSISOP_asignar = ASIGNAR_VARIABLE;
 	funciones->AnSISOP_asignarValorCompartida = ASIGNAR_VALOR_COMPARTIDA;
-	funciones->AnSISOP_obtenerValorCompartida=OBTENER_VALOR_COMPARTIDA;
+	funciones->AnSISOP_obtenerValorCompartida = OBTENER_VALOR_COMPARTIDA;
 	funciones->AnSISOP_irAlLabel = IR_A_LABEL;
 	funciones->AnSISOP_llamarConRetorno = LLAMAR_CON_RETORNO;
 	funciones->AnSISOP_llamarSinRetorno = LLAMAR_SIN_RETORNO;
@@ -120,11 +127,11 @@ void inicializar_contexto_ejecucion() {
 	kernel->AnSISOP_leer = LEER_ARCHIVO_PRIM;
 }
 
-void marcarFinDePrograma(){
+void marcarFinDePrograma() {
 	esFinPrograma = true;
 }
 
-void marcarBloqueado(){
+void marcarBloqueado() {
 	programaBloqueado = true;
 }
 

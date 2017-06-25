@@ -23,7 +23,7 @@ void EJECUTAR_ALGORITMO_PLANIFICACION() {
 
 void inicializar_colas_semaforos() {
 	int i = 0;
-	for (i; i < configuraciones.cantidad_sem; i++) {
+	for (i=0; i < configuraciones.cantidad_sem; i++) {
 		dictionary_put(COLAS, configuraciones.SEM_IDS[i], queue_create());
 	}
 }
@@ -81,7 +81,7 @@ void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 
 	if (strcmp(destino, EXIT) == 0) {
 		pcb->exit_code = 0;
-		//finalizar_proceso(pcb);
+		finalizar_proceso(p);
 	}
 
 	char * cola_guardada = p->cola;
@@ -101,7 +101,6 @@ void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 		queue_push(cola(destino), pcb);
 	signal_cola(destino);
 }
-
 CPUInfo* obtener_CPU_Disponible() {
 	int i = 0;
 	sem_wait(&mutex_lista_CPUs);

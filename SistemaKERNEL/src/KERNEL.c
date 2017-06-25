@@ -70,6 +70,7 @@ void inicializar_semaforos(){
 	//OTROS
 	inicializar_semaforo(&mutex_memoria);
 	inicializar_semaforo(&mutex_tabla_estadistica);
+	inicializar_semaforo(&mutex_tabla_estadistica_busqueda);
 }
 
 void inicializar_listas_globales() {
@@ -84,7 +85,12 @@ void CU_iniciar_programa(int programa_socket) {
 	PCB * pcb_nuevo = crear_pcb();
 	procesar_programa(codigo, pcb_nuevo); //aca adentro se llena el pcb y se envia el programa a memoria
 
+
+
 	Proceso * proceso_nuevo = new_Proceso(pcb_nuevo);
+
+
+
 	crear_Proceso_en_tabla(proceso_nuevo->PID);
 	proceso_nuevo->socket = programa_socket;
 	agregar_proceso(proceso_nuevo);
@@ -94,22 +100,42 @@ void CU_iniciar_programa(int programa_socket) {
 	enviar_dato_serializado(string_itoa(pcb_nuevo->PID), programa_socket);
 }
 
+void 	mostrar_por_pantalla_memory_leaks(uint32_t PID){
+	EstadisticaProceso* estadistica = buscar_registro_por_PID(PID);
+	printf("\n Ha finalizado el proceso PID %d ",PID);
+	int diferencia = estadistica->tamanio_Total_Alocar == estadistica->tamanio_Total_Liberar;
+
+	if(estadistica->tamanio_Total_Alocar==0){
+		return;
+	}
+
+	if(diferencia==0){
+		printf("\n El proceso ha liberado toda la memoria alocada.");
+	}else{
+		printf("\n El proceso no ha liberado toda la memoria alocada.");
+	}
+}
+
 void finalizar_proceso(Proceso * proceso){
 
 	sem_wait(&mutex_memoria);
 	char * respuesta = finalizar_Programa_memoria(string_itoa(proceso->PID));
 	sem_post(&mutex_memoria);
+
+	mostrar_por_pantalla_memory_leaks(proceso->PID);
+
 	if (strcmp(respuesta, "OK") == 0) {
 
-		int buscar_proceso(Proceso * elem_proceso){
-			return elem_proceso->PID == proceso->PID;
-		}
-		sem_wait(&mutex_lista_PROCESOS);
-		list_remove_by_condition(procesos, &buscar_proceso);
-		sem_post(&mutex_lista_PROCESOS);
+		//int buscar_proceso(Proceso * elem_proceso){
+		//	return elem_proceso->PID == proceso->PID;
+		//}
+		//sem_wait(&mutex_lista_PROCESOS);
+		proceso->activo = 0;
+		//list_remove_by_condition(procesos, &buscar_proceso);
+		//sem_post(&mutex_lista_PROCESOS);
 		notificar_exit_code(proceso->pcb->exit_code, proceso->socket);
 		close(proceso->socket);
-		free(proceso);
+		//free(proceso);
 	} else {
 		actualizar_exit_code(proceso, -10);
 		notificar_exit_code(proceso->pcb->exit_code, proceso->socket);

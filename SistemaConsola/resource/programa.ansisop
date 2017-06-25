@@ -1,16 +1,38 @@
 #!/usr/bin/ansisop
 begin
-	variables a, b, A
-
-	a = 3
-	b = 5
-	a = b + 12
-
-	
-	A = 0
-    !var1 = 1+A
+	variables a, b, A, z
   
-    a = alocar 10
+	a = 3
+	b = 5+20000
+	# mutex mutex1
+	a = b+20000
+    b = a
+    # mutex mutex1
+	# b <- doble b
+	# A = 500000
+    # !var1 = 1+A
+  
+    # alocar z 105
+    
+    # liberar z
+    
+    # alocar z 200
+    # liberar z
+    
+    # alocar z 300
+    # liberar z
    
 end
 
+
+function sinParam
+	variables c ,d ,e
+	c = 3
+	d = 5+20000
+end
+
+function doble
+    variables f
+    f = $0 + $0
+    return f
+end

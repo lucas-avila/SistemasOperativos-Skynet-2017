@@ -21,16 +21,16 @@ void deserializar_puntero(t_puntero direccion_variable, int* pagina, int* offset
 
 		int tam = (int) (direccion_variable / tamanioPagina);
 		float result = ((float) direccion_variable / (float) tamanioPagina);
-		pagina = 0;
+		*pagina = 0;
 		if (tam != result) {
 			*pagina = tam + 1;
 		} else {
 			*pagina = tam;
 		}
 
-		*offset = pagina - direccion_variable;
-		if (offset < 0) {
-			*offset = (int) offset * (-1);
+		*offset = *pagina * tamanioPagina  - direccion_variable;
+		if (*offset < 0) {
+			*offset = (int) *offset * (-1);
 		}
 	}
 }

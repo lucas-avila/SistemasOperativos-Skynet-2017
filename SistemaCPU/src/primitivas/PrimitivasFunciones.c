@@ -58,17 +58,6 @@ t_puntero DEFINIR_VARIABLE(t_nombre_variable variable) {
 }
 
 t_puntero OBTENER_DIRECCION_DE_VARIABLE(t_nombre_variable variable) {
-	//IndiceStack* pila = obtener_Ultima_fila_Indice_Stack(pcb);
-	/*PunteroVariable* direccionPuntero = buscar_posicion_variable_por_nombre(pila, variable);
-	 if (direccionPuntero != NULL) {
-	 return generarPunteroStack(string_itoa(direccionPuntero->filaStack), string_itoa(direccionPuntero->esVariable), string_itoa(direccionPuntero->filaTabla));
-	 }
-
-	 direccionPuntero = buscar_posicion_variable_por_nombre(pila, variable);
-	 if (direccionPuntero != NULL) {
-	 return generarPunteroStack(string_itoa(direccionPuntero->filaStack), string_itoa(direccionPuntero->esVariable), string_itoa(direccionPuntero->filaTabla));
-	 }
-	 return -1;*/
 
 	if (isalpha(variable)) {
 
@@ -81,72 +70,40 @@ t_puntero OBTENER_DIRECCION_DE_VARIABLE(t_nombre_variable variable) {
 
 }
 
+char* n_char;
+
+char* intToChar4(int num) {
+	//RECORDAR: liberar el puntero con free()
+	if (n_char == NULL) {
+		n_char = malloc(4 + 1);
+	}
+
+	//num = 1537;
+	int *pb; // pb deklariert als pointer auf int
+	pb = &num; // & ist Adress operator, liefert Adresse von b
+	strcpy(n_char, "");
+
+	memcpy(n_char, pb, sizeof(int));
+	return n_char;
+}
+
+int char4ToInt(char* chars) {
+	int a;
+	if (strcmp(chars, " ") != 0) {
+		string_trim(&chars);
+	}
+
+	memcpy(&a, chars, sizeof(int));
+	return a;
+}
+
 void ASIGNAR_VARIABLE(t_puntero direccion_variable, t_valor_variable valor) {
 	int pagina = 0, offset = 0;
 	deserializar_puntero(direccion_variable, &pagina, &offset, tamanio_pagina_memoria);
-	almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(offset), string_itoa(sizeof(uint32_t)), string_itoa(valor));
 
-	/*PunteroVariable* punteroVariable = deserializarPunteroStack(direccion_variable);
-	 if (strlen(string_itoa(valor)) > 4) {
-	 Variable* var = buscar_variable_por_stack_y_fila(pcb, punteroVariable->filaStack, punteroVariable->filaTabla);
-	 DireccionMemoriaDinamica* variableDiamica = deserializarMemoriaDinamica(string_itoa(pcb->PID), valor);
-	 var->byte_inicial = variableDiamica->byteInicial;
-	 var->pagina = variableDiamica->pagina;
+	almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(offset), string_itoa(sizeof(uint32_t)), intToChar4(valor));
 
-	 int tamanio = atoi(solicitar_bytes_memoria(string_itoa(pcb->PID), string_itoa(var->pagina), string_itoa(var->byte_inicial + 1), string_itoa(4)));
-
-	 var->tamanio = tamanio;
-	 var->dinamica = 1;
-	 return;
-	 }
-
-	 if (punteroVariable->esVariable == 1) {
-	 Variable* var = buscar_variable_por_stack_y_fila(pcb, punteroVariable->filaStack, punteroVariable->filaTabla);
-
-	 if (var->byte_inicial == -1) {
-	 //No tiene espacio de memoria asginado, se lo asignamos.
-	 asingar_espacio_memoria_variable(pcb, var, punteroVariable->filaStack, punteroVariable->filaTabla);
-	 }
-
-	 char* contenido_variable = malloc(var->tamanio + 1);
-	 char* varComplete = string_repeat(' ', (int) (var->tamanio - strlen(string_itoa(valor))));
-	 strcpy(contenido_variable, varComplete);
-	 strcat(contenido_variable, string_itoa(valor));
-
-	 almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(var->pagina), string_itoa(var->byte_inicial), string_itoa(strlen(contenido_variable)), contenido_variable);
-	 } else {
-	 Argumento* arg = buscar_argumento_por_stack_y_fila(pcb, punteroVariable->filaStack, punteroVariable->filaTabla);
-
-	 char* contenido_variable = malloc(arg->tamanio + 1);
-	 char* varComplete = string_repeat(' ', (int) (arg->tamanio - strlen(string_itoa(valor))));
-	 strcpy(contenido_variable, varComplete);
-	 strcat(contenido_variable, string_itoa(valor));
-
-	 almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(arg->pagina), string_itoa(arg->byte_inicial), string_itoa(strlen(contenido_variable)), contenido_variable);
-
-	 }*/
-
-//IndiceStack* pila = obtener_Ultima_fila_Indice_Stack(pcb);
-//	DireccionVariable* direccion_var = buscar_variable_por_nombre(pila, variable);
-	/**DireccionVariable* direccion_var = OBTENER_DIRECCION_DE_VARIABLE(pcb, variable);
-	 if (direccion_var == NULL) {
-	 return;
-	 }
-	 char contenido_variable[5];
-	 if (strlen(constante) > 4) {
-	 return;
-	 } else {
-	 char* varComplete = string_repeat(' ', (int) (TAMANIO_VARIABLE - strlen(constante)));
-	 strcpy(contenido_variable, varComplete);
-	 strcat(contenido_variable, constante);
-	 }
-	 if (strcmp(almacenar_Bytes_de_Pagina( string_itoa(pcb->PID), string_itoa(direccion_var->pagina), string_itoa(direccion_var->byteInicial), string_itoa(TAMANIO_VARIABLE), contenido_variable), "OK") != 0) {
-	 //TODO: PREGUNTAR AL AYUDANTE QUE PASA CUANDO ME QUEDO SIN PAGINA PARA ASIGNAR VARIABLES.
-	 }**/
-//	free(direccion_var);
 }
-
-
 
 void WAIT(t_nombre_semaforo identificador_semaforo) {
 	//Incremento el program counter para pasar a la siguiente linea del wait
@@ -175,18 +132,10 @@ void SIGNAL(t_nombre_semaforo identificador_semaforo) {
 t_valor_variable DEREFERENCIAR(t_puntero puntero) {
 	int pagina = 0, offset = 0;
 	deserializar_puntero(puntero, &pagina, &offset, tamanio_pagina_memoria);
-	return atoi(solicitar_bytes_memoria(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(offset), string_itoa(sizeof(uint32_t))));
-	/*PunteroVariable* punteroVariable = deserializarPunteroStack(puntero);
-	 int valor = 0;
-	 if (punteroVariable->esVariable == 1) {
-	 Variable* var = buscar_variable_por_stack_y_fila(pcb, punteroVariable->filaStack, punteroVariable->filaTabla);
+	char* resultado = solicitar_bytes_memoria(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(offset), string_itoa(sizeof(uint32_t)));
 
-	 valor = atoi(solicitar_bytes_memoria(string_itoa(pcb->PID), string_itoa(var->pagina), string_itoa(var->byte_inicial), string_itoa(4)));
-	 } else {
-	 Argumento* arg = buscar_argumento_por_stack_y_fila(pcb, punteroVariable->filaStack, punteroVariable->filaTabla);
-	 valor = atoi(solicitar_bytes_memoria(string_itoa(pcb->PID), string_itoa(arg->pagina), string_itoa(arg->byte_inicial), string_itoa(4)));
-	 }
-	 return valor;*/
+	return char4ToInt(resultado);
+
 }
 t_puntero ALOCAR(t_valor_variable espacio) {
 	int pagina, offset;
@@ -197,25 +146,20 @@ t_puntero ALOCAR(t_valor_variable espacio) {
 	}
 
 	//TODO: aca se tendria que bloquear el programa y lanzar excepcion
-	int numero = atoi(mensaje);
-	return numero;
+
+	return 0;
 
 }
 
 void LIBERAR(t_puntero memoria_serializada) {
 
-	//DireccionMemoriaDinamica* variableLiberar = deserializarMemoriaDinamica( string_itoa(pcb->PID), memoria_serializada);
-	//PunteroVariable* punteroVariable = deserializarPunteroStack(memoria_serializada);
-	//Variable* var = buscar_variable_por_stack_y_fila(pcb, punteroVariable->filaStack, punteroVariable->filaTabla);
-
-	//DireccionMemoriaDinamica* variableLiberar = malloc(sizeof(DireccionMemoriaDinamica));
-	//variableLiberar->pid = pcb->PID;
-	//variableLiberar->pagina = var->pagina;
-	//variableLiberar->byteInicial = var->byte_inicial;
-
 	int punteroLiberar = DEREFERENCIAR(memoria_serializada);
 	int pagina = 0, offset = 0;
-	deserializar_puntero(punteroLiberar, &pagina, &offset, tamanio_pagina_memoria);
+	int* ptPagina =&pagina;
+	int* ptoffset =&offset;
+
+	// punteroLiberar = 1536;
+	deserializar_puntero(punteroLiberar, ptPagina, ptoffset, tamanio_pagina_memoria);
 	DireccionMemoriaDinamica* varDinamica = malloc(sizeof(DireccionMemoriaDinamica));
 	varDinamica->pid = pcb->PID;
 	varDinamica->pagina = pagina;
@@ -226,9 +170,9 @@ void LIBERAR(t_puntero memoria_serializada) {
 
 }
 
-void IR_A_LABEL(t_nombre_etiqueta nombre_etiqueta){
-	if(nombre_etiqueta[strlen(nombre_etiqueta)-1]=='\n'){
-		nombre_etiqueta[strlen(nombre_etiqueta)-1]='\0';//esto es porque las etiquetas vienen con el \n al final
+void IR_A_LABEL(t_nombre_etiqueta nombre_etiqueta) {
+	if (nombre_etiqueta[strlen(nombre_etiqueta) - 1] == '\n') {
+		nombre_etiqueta[strlen(nombre_etiqueta) - 1] = '\0';	//esto es porque las etiquetas vienen con el \n al final
 	}
 
 	pcb->program_counter = metadata_buscar_etiqueta(nombre_etiqueta, pcb->etiquetas, pcb->etiquetas_size);
@@ -238,7 +182,8 @@ void IR_A_LABEL(t_nombre_etiqueta nombre_etiqueta){
 void RETORNAR(t_valor_variable variableRetorno) {
 
 	IndiceStack* stackDeFuncion = list_get(pcb->pila, (list_size(pcb->pila) - 1));
-	ASIGNAR_VARIABLE(serializarMemoriaDinamica(stackDeFuncion->retVar->pagina, stackDeFuncion->retVar->byte_inicial), variableRetorno);
+	int punteroVariableRetorno = serializarPuntero(stackDeFuncion->retVar->pagina, stackDeFuncion->retVar->byte_inicial, tamanio_pagina_memoria);
+	ASIGNAR_VARIABLE(punteroVariableRetorno, variableRetorno);
 
 }
 
@@ -250,14 +195,14 @@ void FINALIZAR() {
 		list_remove(pcb->pila, (list_size(pcb->pila) - 1));
 
 	} else {
+		esFinPrograma = true;
 
 		pcb->exit_code = 0;
 
 	}
 }
 
-
-void LLAMAR_SIN_RETORNO(t_nombre_etiqueta nombre_etiqueta ){
+void LLAMAR_SIN_RETORNO(t_nombre_etiqueta nombre_etiqueta) {
 	insertar_nueva_fila_Indice_Stack(pcb);
 	IndiceStack * pila = obtener_Ultima_fila_Indice_Stack(pcb);
 	pila->retPos = pcb->program_counter;
@@ -270,21 +215,29 @@ void LLAMAR_SIN_RETORNO(t_nombre_etiqueta nombre_etiqueta ){
 
 void LLAMAR_CON_RETORNO(t_nombre_etiqueta nombre_etiqueta, t_puntero direccionRetorno) {
 
-
 	insertar_nueva_fila_Indice_Stack(pcb);
 	IndiceStack * pila = obtener_Ultima_fila_Indice_Stack(pcb);
 	pila->retPos = pcb->program_counter;
 	//pila->retVar
 	//TODO:Aca hay que poner la fucking RETVAR
-
 	// tiene que buscar la etiqueta en la lista de etiquetas y conseguir la direccion
 	t_puntero_instruccion direccionEtiqueta = metadata_buscar_etiqueta(nombre_etiqueta, pcb->etiquetas, pcb->etiquetas_size);
-	pcb->program_counter = direccionEtiqueta;
+	IndiceCodigo* indiceCodigo = list_get(pcbEjecutar->codigo, direccionEtiqueta);
+
+	pcb->program_counter = indiceCodigo->program_counter - 1;
+
+	int pagina = 0, offset = 0;
+	deserializar_puntero(direccionRetorno, &pagina, &offset, tamanio_pagina_memoria);
+
+	pila->retVar = malloc(sizeof(ReturnVariable));
+	pila->retVar->byte_inicial = offset;
+	pila->retVar->pagina = pagina;
+	pila->retVar->tamanio = 4;
 
 }
 
 t_valor_variable OBTENER_VALOR_COMPARTIDA(t_nombre_compartida variable) {
-	string_substring(variable,0,strlen(variable)-2);
+	string_substring(variable, 0, strlen(variable) - 2);
 	t_valor_variable valorVariable;
 	if ((obtener_valor_de_variable_compartida_en_kernel(variable, &valorVariable)) == 0) {
 		return valorVariable;
@@ -306,13 +259,13 @@ t_valor_variable ASIGNAR_VALOR_COMPARTIDA(t_nombre_compartida variable, t_valor_
 
 t_descriptor_archivo ABRIR_ARCHIVO_PRIM(t_direccion_archivo direccion, t_banderas flags) {
 	char* mensaje = abrir_archivo(string_itoa(pcb->PID), direccion, flags.creacion, flags.lectura, flags.escritura);
-	if (isdigit(mensaje[0])) {
+	if (strcmp("OK", mensaje) != 0) {
 
 		return atoi(mensaje);
 	}
+	return 0;
 	//TODO: Genera error
 }
-
 
 void BORRAR_ARCHIVO_PRIM(t_descriptor_archivo descriptor_archivo) {
 	char* mensaje = borrar_archivo(string_itoa(pcb->PID), string_itoa(descriptor_archivo));

@@ -52,17 +52,20 @@ TablaProcesoArchivo* buscar_TablaProcesoArchivo_por_FD(t_list* tabla, int FD) {
 	return NULL;
 }
 
-void mostrar_tabla_proceso_archivos(t_list* tablaProceso) {
-	printf("\n -----------------------------------------------------");
-	printf("\n TABLA PROCESO DE ARCHIVOS");
-	printf("\n -----------------------------------------------------");
-	printf("\n FD \t\t GlobalFD \t CursorBloque \t   FLAGS");
-	printf("\n -----------------------------------------------------");
+void mostrar_tabla_proceso_archivos(t_list* tablaProceso, char* info_log) {
+
+	string_append(&info_log, "\n -----------------------------------------------------");
+	string_append(&info_log, "\n TABLA PROCESO DE ARCHIVOS");
+	string_append(&info_log, "\n -----------------------------------------------------");
+	string_append(&info_log, "\n FD \t\t GlobalFD \t CursorBloque \t   FLAGS");
+	string_append(&info_log, "\n -----------------------------------------------------");
 	int tamanio = list_size(tablaProceso);
 	int i = 0;
+	char* informacion;
 	for (i = 0; i < tamanio; i++) {
 		TablaProcesoArchivo* registro = list_get(tablaProceso, i);
-		printf("\n %d \t\t %d  \t\t %d \t\t %s", registro->FD, registro->GlobalFD,registro->cursor_bloque,registro->flags);
+		informacion = string_from_format("\n %d \t\t %d  \t\t %d \t\t %s", registro->FD, registro->GlobalFD, registro->cursor_bloque, registro->flags);
+		string_append(&info_log, informacion);
 
 	}
 
