@@ -30,10 +30,7 @@ ReturnVariable* crear_return_variable(unsigned int pagina, unsigned int byte_ini
 Argumento* crear_argumento(char id, unsigned int pagina, unsigned int byte_inicial, unsigned int tamanio);
 
 Variable* obtener_Ultima_variable_declarada(t_list* pila);
-/**
-DireccionVariable* buscar_variable_por_nombre(IndiceStack* pila, t_nombre_variable nombre_variable);
-DireccionVariable* buscar_argumento_por_nombre(IndiceStack* pila, t_nombre_variable nombre_argumento);
-**/
+
 PunteroVariable* buscar_posicion_variable_por_nombre(IndiceStack* pila, t_nombre_variable variable);
 
 Variable* buscar_variable_por_stack_y_fila(PCB* pcb, unsigned int stack, unsigned int filaTabla);

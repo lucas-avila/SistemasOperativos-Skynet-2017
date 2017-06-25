@@ -14,8 +14,6 @@
 #include "../interfaz/InterfazKernel.h"
 #include "../interfaz/InterfazMemoria.h"
 
-
-
 void setPCBEjecucion(PCB* pcb) {
 	pcbEjecutar = pcb;
 	setearPCB(pcb);
@@ -33,6 +31,7 @@ char* solicitar_sentencia_ejecutar() {
 void ejecutar_Programa() {
 	esFinPrograma = false;
 	programaBloqueado = false;
+
 	bool esRoundRobin = (pcbEjecutar->RR == 1);
 	if (!esRoundRobin) {
 		ejecutar_programa_por_FIFO();
@@ -53,11 +52,10 @@ void ejecutar_programa_por_FIFO() {
 		if (!esFinPrograma && !programaBloqueado) { //Este if tiene que sacarse, es solo para probar ahora
 
 			analizadorLinea(sentencia, funciones, kernel);
-			//TODO: Agregar aca el tema del retardo de ejecucion de cada funcion
-
 
 
 			pcbEjecutar->program_counter++;
+			nanosleep(pcbEjecutar->quantum_sleep); //Retardo en tiempo de ejecucion
 
 		}
 
@@ -85,6 +83,7 @@ void ejecutar_programa_por_RR() {
 
 			pcbEjecutar->program_counter++;
 			cantidadEjecutada++;
+			nanosleep(pcbEjecutar->quantum_sleep); //Retardo en tiempo de ejecucion
 		}
 	}
 

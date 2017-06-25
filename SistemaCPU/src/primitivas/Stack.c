@@ -12,12 +12,7 @@ void insertar_nueva_fila_Indice_Stack(PCB* pcb) {
 	list_add(pcb->pila, filaInicial);
 }
 
-void eliminar_fila_Indice_Stack(PCB* pcb, IndiceStack* pila) {
 
-	/**
-	 * Funcion que  elimina la fila recibida por parametro de la pila del pcb
-	 */
-}
 
 IndiceStack* obtener_Ultima_fila_Indice_Stack(PCB* pcb) {
 	return list_get(pcb->pila, list_size(pcb->pila) - 1);
@@ -92,38 +87,6 @@ Variable* obtener_Ultima_variable_declarada(t_list* pila) {
 	}
 
 }
-/**
- DireccionVariable* buscar_variable_por_nombre(IndiceStack* pila, t_nombre_variable nombre_variable) {
- t_list* listaVariables = pila->variables;
- Variable* var;
- int i = 0;
- for (i = list_size(listaVariables) - 1; i >= 0; i--) {
- var = list_get(listaVariables, i);
- if (var->id == nombre_variable) {
- DireccionVariable* dirVariable = malloc(sizeof(DireccionVariable));
- dirVariable->pagina = var->pagina;
- dirVariable->byteInicial = var->byte_inicial;
- return dirVariable;
- }
- }
- return NULL;
- }
- DireccionVariable* buscar_argumento_por_nombre(IndiceStack* pila, t_nombre_variable nombre_argumento) {
- t_list* listaArgumentos = pila->argumentos;
- Argumento* argument;
- int i = 0;
- for (i = list_size(listaArgumentos) - 1; i >= 0; i--) {
- argument = list_get(listaArgumentos, i);
- if (argument->id == nombre_argumento) {
- DireccionVariable* dirVariable = malloc(sizeof(DireccionVariable));
- dirVariable->pagina = argument->pagina;
- dirVariable->byteInicial = argument->byte_inicial;
- return dirVariable;
- }
- }
- return NULL;
- }
- **/
 PunteroVariable* buscar_posicion_variable_por_nombre(IndiceStack* pila, t_nombre_variable variable) {
 	PunteroVariable* punteroVariable = malloc(sizeof(PunteroVariable));
 	punteroVariable->filaStack = pila->posicion;
@@ -153,11 +116,7 @@ PunteroVariable* buscar_posicion_variable_por_nombre(IndiceStack* pila, t_nombre
 
 	return NULL;
 }
-/*
- void actualizar_variable_stack(PCB* pcb,Variable *variable){
- PunteroVariable* punt= buscar_posicion_variable_por_nombre(variable->id);
- punt->filaStack
- } */
+
 
 Variable* buscar_variable_por_stack_y_fila(PCB* pcb, unsigned int stack, unsigned int filaTabla) {
 	IndiceStack* pila = list_get(pcb->pila, stack);

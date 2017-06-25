@@ -9,8 +9,8 @@
 #define PRIMITIVAS_FUNCIONESAUXILIARES_H_
 
 //t_puntero generarPunteroMemoria(char* proceso, char*pagina, char* byteInicial) ;
-t_puntero generarPunteroStack(char* filaStack, char*tipoVariable, char* filaTabla);
-PunteroVariable* deserializarPunteroStack(t_puntero punteroDireccion);
+
+
 
 t_puntero serializarMemoriaDinamica(char* pagina, char* byteInicial);
 DireccionMemoriaDinamica* deserializarMemoriaDinamica(char* proceso, t_puntero memoria_serializada);

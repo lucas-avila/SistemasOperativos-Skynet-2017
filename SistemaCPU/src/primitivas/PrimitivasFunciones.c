@@ -44,7 +44,7 @@ t_puntero DEFINIR_VARIABLE(t_nombre_variable variable) {
 		Variable* var_new = crear_variable(variable, pcb->pagina_inicial_stack, pcb->posicionPaginaStack - sizeof(uint32_t), sizeof(uint32_t), 0);
 		crear_variable_en_Indice_Stack(pila, var_new);
 
-		//PunteroVariable* direccionPuntero = buscar_posicion_variable_por_nombre(pila, variable);
+
 
 		return serializarPuntero(var_new->pagina, var_new->byte_inicial, tamanio_pagina_memoria);
 	} else {
