@@ -125,6 +125,10 @@ void restaurar_bitmap(){
 }
 
 char * generar_path_absoluto(char * intermedio, char * path){
+	//Para que se pueda llamar con / al principio o no
+	if(strcmp(intermedio, PATH_ARCHIVOS) == 0 && path[0] == '/')
+		path = &path[1];
+
 	char * path_abs = string_new();
 
 	string_append(&path_abs, configuraciones.PUNTO_MONTAJE);

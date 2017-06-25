@@ -14,6 +14,7 @@
 #include <stdlib.h>
 #include <Sharedlib/Socket.h>
 #include <unistd.h>
+#include <sys/stat.h>
 
 #include "header/Archivo.h"
 #include "header/FileManager.h"
@@ -21,12 +22,14 @@
 void validar_archivo(char * path) {
 	/*Cuando el Proceso Kernel reciba la operación de abrir
 	 * un archivo deberá validar que el archivo exista.*/
-	if(access(path, F_OK) == -1){
+	char * path_abs = generar_path_absoluto(PATH_ARCHIVOS, path);
+	if(access(path_abs, F_OK) == -1){
 		enviar_dato_serializado("ARCHIVO_NO_EXISTE", clienteKernel);
 	}
 	else {
 		enviar_dato_serializado("OK", clienteKernel);
 	}
+	free(path_abs);
 }
 
 void crear_archivo(char * path) {
@@ -34,7 +37,25 @@ void crear_archivo(char * path) {
 	 * archivo no exista y este sea abierto en modo de creación (“c”), llamar a esta operación que
 	 * creará el archivo dentro del path solicitado. Por default todo archivo creado se le debe
 	 * asignar al menos 1 bloque de datos.*/
-	char * path_abs = generar_path_absoluto(PATH_ARCHIVOS, path);
+
+	char * path_abs = generar_path_absoluto(PATH_ARCHIVOS, "");
+	char ** directorios = string_split(path, "/");
+	int i = 0;
+	while(directorios[i+1] != NULL){
+		string_append(&path_abs, directorios[i]);
+		string_append(&path_abs, "/");
+		printf("\n %s \n", path_abs);
+		struct stat st = {0};
+		if (stat(path_abs, &st) == -1) {
+		    mkdir(path_abs, 0700);
+		}
+		i++;
+	}
+
+	string_append(&path_abs, directorios[i]);
+
+	printf("%s\n", path_abs);
+
 	FILE * f;
 	//Validaciones...
 	if(access(path_abs, F_OK) != -1){
@@ -69,6 +90,7 @@ void crear_archivo(char * path) {
 
 	enviar_dato_serializado("OK", clienteKernel);
 
+	free(directorios);
 	free(bloques_string);
 	free(archivo);
 	free(path_abs);
@@ -118,6 +140,7 @@ void obtener_datos(char * path, int offset, int size){
 			}
 
 			free(block);
+			free(block_path);
 		}
 		texto_leido[x] = '\0';
 		free(archivo);
@@ -125,6 +148,7 @@ void obtener_datos(char * path, int offset, int size){
 	printf("El texto leido es : %s\n", texto_leido);
 	enviar_dato_serializado(texto_leido, clienteKernel);
 	free(texto_leido);
+	free(path_abs);
 }
 
 void guardar_datos(char * path, int offset, int size, char * buffer) {

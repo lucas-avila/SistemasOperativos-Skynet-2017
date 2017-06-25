@@ -29,7 +29,7 @@ int main(int argc, char * argv[]) {
 	 atender_clientes(servidor, &escuchar_Conexiones_Kernel);
 	 */
 	inicializar_estructuras_administrativas();
-	mostrar_menu_testing();
+	atender_clientes(-1, &mostrar_menu_testing);
 
 	escuchar_Conexiones_Kernel(servidor);
 	close(servidor);
@@ -38,7 +38,9 @@ int main(int argc, char * argv[]) {
 }
 
 void escuchar_Conexiones_Kernel(int servidor) {
-	int cliente = aceptar_conexion_cliente(servidor);
+
+	int cliente = -1;
+	while((cliente = aceptar_conexion_cliente(servidor)) == -1);
 	char* codigo_IDENTIFICACION = recibir_dato_serializado(cliente);
 
 	if (strcmp(codigo_IDENTIFICACION, "KERNEL") == 0) {
@@ -47,6 +49,7 @@ void escuchar_Conexiones_Kernel(int servidor) {
 	}else{
 		close(cliente);
 	}
+
 }
 
 void CU_Recibir_Conexiones_Kernel(int cliente) {
@@ -78,6 +81,7 @@ void CU_Recibir_Conexiones_Kernel(int cliente) {
 		} else {
 			enviar_dato_serializado("ERROR: CODIGO OPERACION INEXISTENTE", cliente);
 		}
+		free(path);
 	} while (controlSeguir == 1);
 	free(codigo_operacion);
 	close(cliente);

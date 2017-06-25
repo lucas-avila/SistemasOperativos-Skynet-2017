@@ -94,6 +94,9 @@ void mostrar_menu_testing(){
 			}
 			}
 		} while (opcion != 0);
+
+		exit(0);
+
 }
 
 void mostrar_bitmap(){
