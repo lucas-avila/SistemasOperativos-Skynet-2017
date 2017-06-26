@@ -74,10 +74,6 @@ typedef struct {
 	int32_t quantum_sleep;
 	int32_t cantidad_rafagas_ejecutadas;
 
-
-	//Agregado
-	int32_t paginaStack;  //guarda la pagina actual del stack
-	int32_t posicionPaginaStack; // posicion de la pagina
 }__attribute__((packed))
 PCB;
 

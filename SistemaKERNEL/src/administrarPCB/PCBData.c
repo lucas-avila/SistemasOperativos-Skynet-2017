@@ -24,6 +24,8 @@ PCB * crear_pcb() {
 	pcb->etiquetas_size = 0;
 	pcb->codigo = list_create();
 	pcb->pila = list_create();
+	pcb->pagina_inicial_stack = 0;
+	pcb->posicion_pagina_stack = 0;
 	IndiceStack * elemento_pila_inicial_vacio = malloc(sizeof(IndiceStack));
 	elemento_pila_inicial_vacio->posicion = 0;
 	elemento_pila_inicial_vacio->argumentos = list_create();
@@ -36,6 +38,8 @@ PCB * crear_pcb() {
 	list_add(pcb->pila, elemento_pila_inicial_vacio);
 
 	pcb->cantidad_rafagas_ejecutadas = 0;
+
+	pcb->exit_code = 0;
 
 	return pcb;
 }

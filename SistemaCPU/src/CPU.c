@@ -33,7 +33,8 @@ bool estaEjecutando = false;
 
 int main(int argc, char *argv[]) {
 	//TODO: Agregar adentro de esta funcion, que espere a que termine de ejecutar, lo mande al kernel y DESPUES mandar el desconectar y finalizar el proceso
-signal(SIGINT, recibir_seniales_de_linux);
+	signal(SIGINT, recibir_seniales_de_linux);
+	signal(SIGUSR1, recibir_seniales_de_linux);
 
 	inicializar_configuracion(argv[1]);
 	//inicializar_configuracion("/home/utnso/Escritorio/tp-2017-1c-Skynet/SistemaCPU/resource/config.cfg");
@@ -73,11 +74,6 @@ signal(SIGINT, recibir_seniales_de_linux);
 
 void CU_Procesar_PCB_a_ejecutar() {
 	PCB* pcb = recibir_PCB_de_kernel();
-
-	//SACAR ESTO YAAAAAAA
-	pcb->pagina_inicial_stack =0;
-	pcb->posicionPaginaStack=0;
-	//SACAR ESTO YAAAAAAA
 
 	setPCBEjecucion(pcb);
 	ejecutar_Programa();
