@@ -1,5 +1,3 @@
-#include "PrimitivasFunciones.h"
-
 #include <commons/collections/list.h>
 #include <commons/string.h>
 #include <ctype.h>
@@ -15,6 +13,7 @@
 #include "EstructurasDeDatosPrimitivas.h"
 #include "FuncionesAuxiliares.h"
 #include "Stack.h"
+#include "PrimitivasFunciones.h"
 
 PCB* pcb;
 const int TAMANIO_VARIABLE = 4;

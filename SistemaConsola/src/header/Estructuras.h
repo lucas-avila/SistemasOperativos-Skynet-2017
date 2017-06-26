@@ -16,7 +16,7 @@ typedef struct {
 
 	int pid;
 	int socket;
-	time_t fecha_inicio;
+	char * fecha_inicio;
 	int cant_impresiones;
 
 } Info_ejecucion;

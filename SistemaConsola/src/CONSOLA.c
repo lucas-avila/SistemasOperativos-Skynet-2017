@@ -10,6 +10,7 @@
 
 #include <commons/collections/list.h>
 #include <commons/string.h>
+#include <commons/temporal.h>
 #include <pthread.h>
 #include <stdint.h>
 #include <stdio.h>
@@ -152,30 +153,26 @@ void finalizar_programa(int pid, int kernel_programa) {
 // tiempo total de ejecucion, cantidad de impresiones por pantalla.
 void mostrar_info_proceso(uint32_t pid) {
 
-	Info_ejecucion* info_proceso = buscar_info_por_PID(pid);
-	char * textoInicio = ctime(&(info_proceso->fecha_inicio));
-	time_t fecha_fin = time(NULL);
-	char * textoFin = ctime(&fecha_fin);
+	Info_ejecucion * info_proceso = buscar_info_por_PID(pid);
 
-	unsigned int tiempoTotal = difftime(fecha_fin, info_proceso->fecha_inicio);
-	unsigned int horas = tiempoTotal / 3600;
-	unsigned int minutos = (tiempoTotal % 3600) / 60;
-	unsigned int segundos = (tiempoTotal % 3600) % 60;
+	char * textoInicio = malloc(sizeof(info_proceso->fecha_inicio));
+	strcpy(textoInicio, info_proceso->fecha_inicio);
 
-	string_append(&info_log, "El Proceso(");
+	char * textoFin = malloc(sizeof(textoInicio));
+	strcpy(textoFin, temporal_get_string_time());
+
+	unsigned int tiempoTranscurrido = malloc(sizeof(textoFin));
+	strcpy(tiempoTranscurrido, diferencia_entre_tiempos(textoInicio, textoFin));
+
+	string_append(&info_log, "El Proceso (");
 	string_append(&info_log, string_itoa(info_proceso->pid));
 	string_append(&info_log, ") ha finalizado, los siguientes son sus datos estadisticos: \n");
 	string_append(&info_log, "Fecha de inicio de ejecucion: ");
 	string_append(&info_log, textoInicio);
 	string_append(&info_log, "Fecha de fin de ejecucion: ");
 	string_append(&info_log, textoFin);
-	string_append(&info_log, "Tiempo total de ejecucion: (");
-	string_append(&info_log, string_itoa(horas));
-	string_append(&info_log, ") horas, (");
-	string_append(&info_log, string_itoa(minutos));
-	string_append(&info_log, ") minutos, (");
-	string_append(&info_log, string_itoa(segundos));
-	string_append(&info_log, ") segundos.\n");
+	string_append(&info_log, "Tiempo total de ejecucion: ");
+	string_append(&info_log, string_itoa(diferencia_entre_tiempos));
 	string_append(&info_log, "Cantidad de impresiones por pantalla: ");
 	string_append(&info_log, string_itoa(info_proceso->cant_impresiones));
 	generar_log();
