@@ -161,7 +161,7 @@ void mostrar_info_proceso(uint32_t pid) {
 	char * textoFin = malloc(sizeof(textoInicio));
 	strcpy(textoFin, temporal_get_string_time());
 
-	char * tiempoTranscurrido = malloc(sizeof(textoFin));
+	unsigned int tiempoTranscurrido = malloc(sizeof(textoFin));
 	strcpy(tiempoTranscurrido, diferencia_entre_tiempos(textoInicio, textoFin));
 
 	string_append(&info_log, "El Proceso (");

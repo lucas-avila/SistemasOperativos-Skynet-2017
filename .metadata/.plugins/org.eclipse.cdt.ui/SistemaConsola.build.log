@@ -1,4 +1,4 @@
-00:22:38 **** Incremental Build of configuration Debug for project SistemaConsola ****
+11:20:55 **** Incremental Build of configuration Debug for project SistemaConsola ****
 make all 
 Building file: ../src/CONSOLA.c
 Invoking: GCC C Compiler
@@ -35,74 +35,20 @@ In file included from ../src/CONSOLA.c:27:0:
  int conectar_servidor(char * ip_addr, int puerto);
      ^
 ../src/CONSOLA.c: In function ‘mostrar_info_proceso’:
-../src/CONSOLA.c:164:36: warning: initialization makes integer from pointer without a cast [enabled by default]
-  unsigned int tiempoTranscurrido = malloc(sizeof(textoFin));
-                                    ^
-../src/CONSOLA.c:165:2: warning: passing argument 1 of ‘strcpy’ makes pointer from integer without a cast [enabled by default]
-  strcpy(tiempoTranscurrido, diferencia_entre_tiempos(textoInicio, textoFin));
-  ^
-In file included from ../src/CONSOLA.c:18:0:
-/usr/include/string.h:129:14: note: expected ‘char * __restrict__’ but argument is of type ‘unsigned int’
- extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
-              ^
 ../src/CONSOLA.c:175:2: warning: passing argument 1 of ‘string_itoa’ makes integer from pointer without a cast [enabled by default]
-  string_append(&info_log, string_itoa(diferencia_entre_tiempos));
+  string_append(&info_log, string_itoa(tiempoTranscurrido));
   ^
 In file included from ../src/CONSOLA.c:12:0:
-/usr/include/commons/string.h:33:8: note: expected ‘int’ but argument is of type ‘char * (*)(char *, char *)’
+/usr/include/commons/string.h:33:8: note: expected ‘int’ but argument is of type ‘char *’
   char* string_itoa(int number);
         ^
-../src/CONSOLA.c:178:2: warning: implicit declaration of function ‘generar_log’ [-Wimplicit-function-declaration]
-  generar_log();
-  ^
 Finished building: ../src/CONSOLA.c
- 
-Building file: ../src/Estructuras.c
-Invoking: GCC C Compiler
-gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Estructuras.d" -MT"src/Estructuras.d" -o "src/Estructuras.o" "../src/Estructuras.c"
-../src/Estructuras.c: In function ‘new_Info_ejecucion’:
-../src/Estructuras.c:19:31: warning: assignment makes pointer from integer without a cast [enabled by default]
-  info_ejecucion->fecha_inicio = time(NULL);
-                               ^
-../src/Estructuras.c: In function ‘eliminar_info_proceso’:
-../src/Estructuras.c:39:2: warning: passing argument 3 of ‘list_remove_and_destroy_element’ from incompatible pointer type [enabled by default]
-  list_remove_and_destroy_element(Info_procesos, indice, &my_free);
-  ^
-In file included from ../src/header/Estructuras.h:11:0,
-                 from ../src/Estructuras.c:8:
-/usr/include/commons/collections/list.h:127:7: note: expected ‘void (*)(void *)’ but argument is of type ‘void (*)(struct Info_ejecucion *)’
-  void list_remove_and_destroy_element(t_list *, int index, void(*element_destroyer)(void*));
-       ^
-Finished building: ../src/Estructuras.c
- 
-Building file: ../src/ExitCodes.c
-Invoking: GCC C Compiler
-gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/ExitCodes.d" -MT"src/ExitCodes.d" -o "src/ExitCodes.o" "../src/ExitCodes.c"
-Finished building: ../src/ExitCodes.c
- 
-Building file: ../src/InterfazKernel.c
-Invoking: GCC C Compiler
-gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InterfazKernel.d" -MT"src/InterfazKernel.d" -o "src/InterfazKernel.o" "../src/InterfazKernel.c"
-Finished building: ../src/InterfazKernel.c
- 
-Building file: ../src/Semaforo.c
-Invoking: GCC C Compiler
-gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Semaforo.d" -MT"src/Semaforo.d" -o "src/Semaforo.o" "../src/Semaforo.c"
-Finished building: ../src/Semaforo.c
- 
-Building file: ../src/funcionesUtiles.c
-Invoking: GCC C Compiler
-gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/funcionesUtiles.d" -MT"src/funcionesUtiles.d" -o "src/funcionesUtiles.o" "../src/funcionesUtiles.c"
-Finished building: ../src/funcionesUtiles.c
  
 Building target: SistemaConsola
 Invoking: GCC C Linker
 gcc -L"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug" -o "SistemaConsola"  ./src/header/AppConfig.o  ./src/CONSOLA.o ./src/Estructuras.o ./src/ExitCodes.o ./src/InterfazKernel.o ./src/Semaforo.o ./src/funcionesUtiles.o   -lSharedlib -lpthread -lcommons
-./src/CONSOLA.o: En la función `mostrar_info_proceso':
-/home/utnso/workspace/tp-2017-1c-Skynet/SistemaConsola/Debug/../src/CONSOLA.c:165: referencia a `diferencia_entre_tiempos' sin definir
-/home/utnso/workspace/tp-2017-1c-Skynet/SistemaConsola/Debug/../src/CONSOLA.c:175: referencia a `diferencia_entre_tiempos' sin definir
-collect2: error: ld returned 1 exit status
-make: *** [SistemaConsola] Error 1
+Finished building target: SistemaConsola
+ 
 
-00:22:39 Build Finished (took 728ms)
+11:20:55 Build Finished (took 328ms)
 

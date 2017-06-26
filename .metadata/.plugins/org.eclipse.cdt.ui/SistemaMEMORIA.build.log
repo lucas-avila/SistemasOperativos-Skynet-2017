@@ -1,10 +1,6 @@
-00:22:41 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+11:20:56 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
 make all 
-Building target: SistemaMEMORIA
-Invoking: GCC C Linker
-gcc -L"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug" -o "SistemaMEMORIA"  ./src/testing/PruebasUnitarias.o ./src/testing/TestingMemoriaCache.o  ./src/header/AppConfig.o  ./src/general/Semaforo.o ./src/general/funcionesUtiles.o  ./src/Interfaz.o ./src/Main.o ./src/MemoriaCache.o ./src/MemoriaPrincipal.o ./src/SolicitudesUsuario.o   -lSharedlib -lcommons -lm -lpthread
-Finished building target: SistemaMEMORIA
- 
+make: No se hace nada para «all».
 
-00:22:41 Build Finished (took 127ms)
+11:20:56 Build Finished (took 71ms)
 

@@ -161,7 +161,7 @@ void mostrar_info_proceso(uint32_t pid) {
 	char * textoFin = malloc(sizeof(textoInicio));
 	strcpy(textoFin, temporal_get_string_time());
 
-	char * tiempoTranscurrido = malloc(sizeof(textoFin));
+	unsigned int tiempoTranscurrido = malloc(sizeof(textoFin));
 	strcpy(tiempoTranscurrido, diferencia_entre_tiempos(textoInicio, textoFin));
 
 	string_append(&info_log, "El Proceso (");
@@ -172,7 +172,7 @@ void mostrar_info_proceso(uint32_t pid) {
 	string_append(&info_log, "Fecha de fin de ejecucion: ");
 	string_append(&info_log, textoFin);
 	string_append(&info_log, "Tiempo total de ejecucion: ");
-	string_append(&info_log, string_itoa(tiempoTranscurrido));
+	string_append(&info_log, string_itoa(diferencia_entre_tiempos));
 	string_append(&info_log, "Cantidad de impresiones por pantalla: ");
 	string_append(&info_log, string_itoa(info_proceso->cant_impresiones));
 	generar_log();
