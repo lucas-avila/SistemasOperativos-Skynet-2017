@@ -17,6 +17,5 @@ void validarArchivo(char * path);
 char * obtener_codigo(char * path_archivo_fuente);
 int pertenece_a_la_consola(uint32_t pid);
 void incializar_log();
-char * diferencia_entre_tiempos(char * tiempo_A, char * tiempo_B);
 
 #endif /* HEADER_FUNCIONESUTILES_H_ */

@@ -1,6 +1,40 @@
-10:19:02 **** Incremental Build of configuration Debug for project Sharedlib ****
+00:22:36 **** Incremental Build of configuration Debug for project Sharedlib ****
 make all 
-make: No se hace nada para «all».
+Building file: ../Sharedlib/PCB.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -fPIC -MMD -MP -MF"Sharedlib/PCB.d" -MT"Sharedlib/PCB.d" -o "Sharedlib/PCB.o" "../Sharedlib/PCB.c"
+../Sharedlib/PCB.c: In function ‘recibir_estructura_serializada’:
+../Sharedlib/PCB.c:27:6: warning: unused variable ‘bytes_recibidos’ [-Wunused-variable]
+  int bytes_recibidos = recv(socket_conexion, tamanio_dato, sizeof(uint32_t), 0);
+      ^
+../Sharedlib/PCB.c: In function ‘serializar_con_header’:
+../Sharedlib/PCB.c:175:3: warning: statement with no effect [-Wunused-value]
+   for(i; i < count_lista; i++){
+   ^
+../Sharedlib/PCB.c:222:3: warning: statement with no effect [-Wunused-value]
+   for(i; i < count_lista; i++){
+   ^
+../Sharedlib/PCB.c: In function ‘deserializar_con_header’:
+../Sharedlib/PCB.c:286:3: warning: statement with no effect [-Wunused-value]
+   for(i; i < count_lista * sizeof(IndiceCodigo); i+=sizeof(IndiceCodigo)){
+   ^
+../Sharedlib/PCB.c:323:9: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    for(i, j=0; j < length_argumentos * sizeof(Argumento);j+=sizeof(Argumento), i+=sizeof(Argumento)){
+         ^
+../Sharedlib/PCB.c:332:9: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    for(i, j=0; j < length_variables * sizeof(Variable); j+=sizeof(Variable), i+=sizeof(Variable)){
+         ^
+../Sharedlib/PCB.c: In function ‘enviar_pcb’:
+../Sharedlib/PCB.c:98:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../Sharedlib/PCB.c
+ 
+Building target: libSharedlib.so
+Invoking: GCC C Linker
+gcc -shared -o "libSharedlib.so"  ./Sharedlib/PCB.o ./Sharedlib/Socket.o   
+Finished building target: libSharedlib.so
+ 
 
-10:19:02 Build Finished (took 75ms)
+00:22:37 Build Finished (took 239ms)
 
