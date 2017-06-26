@@ -56,8 +56,7 @@ void ejecutar_programa_por_FIFO() {
 
 			analizadorLinea(sentencia, funciones, kernel);
 			if(hubo_excepcion == true) {
-				pcbEjecutar =
-				enviar_PCB_a_kernel(pcbEjecutar, "ERROR");
+
 			}
 
 			pcbEjecutar->program_counter++;

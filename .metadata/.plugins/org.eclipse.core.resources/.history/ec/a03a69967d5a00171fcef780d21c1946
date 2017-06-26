@@ -19,8 +19,8 @@ typedef struct {
 typedef struct {
 	int numeroConexion;
 	pthread_t hilo;
-	int disponible; //0 no disponible, 1 disponible
-					//esto se modifica cada vez que se le manda a ejecutar algo
+	int disponible; //0 no disponible, 1 disponible esto se modifica cada vez que se le manda
+//a ejecutar algo
 } CPUInfo;
 
 

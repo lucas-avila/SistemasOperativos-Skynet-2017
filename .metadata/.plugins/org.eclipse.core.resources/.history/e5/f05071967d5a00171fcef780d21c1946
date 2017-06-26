@@ -55,10 +55,7 @@ void ejecutar_programa_por_FIFO() {
 		if (!esFinPrograma && !programaBloqueado) { //Este if tiene que sacarse, es solo para probar ahora
 
 			analizadorLinea(sentencia, funciones, kernel);
-			if(hubo_excepcion == true) {
-				pcbEjecutar =
-				enviar_PCB_a_kernel(pcbEjecutar, "ERROR");
-			}
+
 
 			pcbEjecutar->program_counter++;
 			nanosleep(retardo); //Retardo en tiempo de ejecucion

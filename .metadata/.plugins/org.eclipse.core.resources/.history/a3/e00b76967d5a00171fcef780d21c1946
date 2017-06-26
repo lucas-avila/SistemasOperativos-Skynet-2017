@@ -143,10 +143,7 @@ t_puntero ALOCAR(t_valor_variable espacio) {
 	if (strcmp(mensaje, "OK") == 0) {
 		return serializarPuntero(pagina, offset, tamanio_pagina_memoria);
 	}
-	else {
-		hubo_excepcion = true;
 
-	}
 	//TODO: aca se tendria que bloquear el programa y lanzar excepcion
 
 	return 0;
@@ -262,10 +259,8 @@ t_valor_variable ASIGNAR_VALOR_COMPARTIDA(t_nombre_compartida variable, t_valor_
 t_descriptor_archivo ABRIR_ARCHIVO_PRIM(t_direccion_archivo direccion, t_banderas flags) {
 	char* mensaje = abrir_archivo(string_itoa(pcb->PID), direccion, flags.creacion, flags.lectura, flags.escritura);
 	if (strcmp("OK", mensaje) != 0) {
-		return atoi(mensaje);
-	}
-	else {
 
+		return atoi(mensaje);
 	}
 	return 0;
 	//TODO: Genera error

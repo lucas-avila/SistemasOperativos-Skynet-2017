@@ -50,54 +50,37 @@ void CU_Recibir_Conexiones_CPU(int clienteCPU) {
 		codigo_operacion = recibir_dato_serializado(clienteCPU);
 		if (strcmp(codigo_operacion, "GESTION_MEMORIA") == 0) {
 			CU_Gestionar_HEAP(clienteCPU);
-		}
-		else if (strcmp(codigo_operacion, "QUANTUM") == 0) {
+		} else if (strcmp(codigo_operacion, "QUANTUM") == 0) {
 			if(strcmp(recibir_dato_serializado(clienteCPU), "RECIBIR_PCB") == 0)
 				recibir_PCB_de_CPU(clienteCPU, "QUANTUM");
-		}
-		else if (strcmp(codigo_operacion, "TERMINADO") == 0) {
+		} else if (strcmp(codigo_operacion, "TERMINADO") == 0) {
 			if(strcmp(recibir_dato_serializado(clienteCPU), "RECIBIR_PCB") == 0)
 				recibir_PCB_de_CPU(clienteCPU, "TERMINADO");
-		}
-		else if(strcmp(codigo_operacion, "ERROR") == 0) {
-
-		}
-		else if(strcmp(codigo_operacion, "WAIT_SEM") == 0){
+		} else if(strcmp(codigo_operacion, "WAIT_SEM") == 0){
 			if(strcmp(recibir_dato_serializado(clienteCPU), "RECIBIR_PCB") == 0)
 				recibir_PCB_de_CPU(clienteCPU, "WAIT_SEM");
-		}
-		else if (strcmp(codigo_operacion, "SIGNAL_SEM")== 0) {
+		} else if (strcmp(codigo_operacion, "SIGNAL_SEM")== 0) {
 			char * nombre_sem = recibir_dato_serializado(clienteCPU);
 			recepcion_SIGNAL_semaforo_ansisop(nombre_sem);
-		}
-		else if (strcmp(codigo_operacion, "ASIGNAR_VAR_COMP") == 0) {
+		} else if (strcmp(codigo_operacion, "ASIGNAR_VAR_COMP") == 0) {
 			asignar_valor_var_comp(clienteCPU);
-		}
-		else if (strcmp(codigo_operacion, "BUSCAR_VAL_VAR_COMP") == 0) {
+		} else if (strcmp(codigo_operacion, "BUSCAR_VAL_VAR_COMP") == 0) {
 			obtener_valor_var_comp(clienteCPU);
-		}
-		else if (strcmp(codigo_operacion, "ABRIR_ARCHIVO") == 0) {
+		}else if (strcmp(codigo_operacion, "ABRIR_ARCHIVO") == 0) {
 			abrir_archivo(clienteCPU);
-		}
-		else if (strcmp(codigo_operacion, "MOVER_CURSOR_ARCHIVO") == 0) {
+		}else if (strcmp(codigo_operacion, "MOVER_CURSOR_ARCHIVO") == 0) {
 			mover_cursor_archivo(clienteCPU);
-		}
-		else if (strcmp(codigo_operacion, "LEER_ARCHIVO") == 0) {
+		}else if (strcmp(codigo_operacion, "LEER_ARCHIVO") == 0) {
 			leer_archivo(clienteCPU);
-		}
-		else if (strcmp(codigo_operacion, "LEER_ARCHIVO") == 0) {
+		}else if (strcmp(codigo_operacion, "LEER_ARCHIVO") == 0) {
 			leer_archivo(clienteCPU);
-		}
-		else if (strcmp(codigo_operacion, "ESCRIBIR_ARCHIVO") == 0) {
+		}else if (strcmp(codigo_operacion, "ESCRIBIR_ARCHIVO") == 0) {
 			escribir_archivo(clienteCPU);
-		}
-		else if (strcmp(codigo_operacion, "BORRAR_ARCHIVO") == 0) {
+		}else if (strcmp(codigo_operacion, "BORRAR_ARCHIVO") == 0) {
 			borrar_archivo(clienteCPU);
-		}
-		else if (strcmp(codigo_operacion, "IMPRIMIR_POR_PANTALLA") == 0) {
+		} else if (strcmp(codigo_operacion, "IMPRIMIR_POR_PANTALLA") == 0) {
 			CU_Atender_Solicitud_Escritura_Por_Pantalla();
-		}
-		else if (strcmp(codigo_operacion, "") == 0 || strcmp(codigo_operacion, "DESCONECTAR") == 0) {
+		} else if (strcmp(codigo_operacion, "") == 0 || strcmp(codigo_operacion, "DESCONECTAR") == 0) {
 			retirar_CPU_global(clienteCPU);
 			close(clienteCPU);
 			controlSeguir = 0;
