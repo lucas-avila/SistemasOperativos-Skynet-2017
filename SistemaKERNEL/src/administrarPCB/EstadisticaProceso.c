@@ -53,8 +53,9 @@ EstadisticaProceso* buscar_registro_por_PID(uint32_t PID) {
 }
 
 void actualizar_registro_proceso(EstadisticaProceso* estadisticaProceso) {
+	int indice = buscar_indice_tabla_estadistica_proceso(estadisticaProceso->PID);
 	sem_wait(&mutex_tabla_estadistica);
-	list_replace(TABLA_PROCESO_ESTADISTICA, buscar_indice_tabla_estadistica_proceso(estadisticaProceso->PID), estadisticaProceso);
+	list_replace(TABLA_PROCESO_ESTADISTICA, indice, estadisticaProceso);
 	sem_post(&mutex_tabla_estadistica);
 }
 

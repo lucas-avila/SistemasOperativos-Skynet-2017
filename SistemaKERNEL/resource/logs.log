@@ -7,3 +7,25 @@
 
 ------Fin del LOG------
 
+[INFO] 15:34:33:761 KERNEL/(15414:15414): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 READY
+---------------------
+---> Cantidad de procesos totales encontrados: 1
+------Fin del LOG------
+
+[INFO] 16:00:00:280 KERNEL/(16365:16365): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXIT
+---------------------
+---> Cantidad de procesos totales encontrados: 1
+------Fin del LOG------
+

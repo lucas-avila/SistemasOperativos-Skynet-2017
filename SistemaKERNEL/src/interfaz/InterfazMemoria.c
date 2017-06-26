@@ -88,8 +88,10 @@ int enviar_programa_memoria(t_metadata_program * meta, PCB * pcb, char * program
 		printf("ERROR no hay espacio suficiente");
 		return -1;
 	}
-	pcb->paginaStack = atoi(numeroPagina);
-	pcb->posicionPaginaStack = 0;
+	// TODO: Fijarse que esta bien esto, porque habia un error antes del
+	// nombre de variables.
+	pcb->pagina_inicial_stack = atoi(numeroPagina);
+	pcb->posicion_pagina_stack = 0;
 
 	int cantidad_paginas = 0;
 	numeroPagina = asignar_Paginas_Programa(string_itoa(pcb->PID), "1");

@@ -16,7 +16,7 @@ void inicializar_lista_Info_procesos() {
 Info_ejecucion* new_Info_ejecucion(int pid, int socket) {
 	Info_ejecucion * info_ejecucion = malloc(sizeof(Info_ejecucion));
 	info_ejecucion->pid = pid;
-	info_ejecucion->fecha_inicio = time(NULL);
+	info_ejecucion->fecha_inicio = temporal_get_string_time();
 	info_ejecucion->cant_impresiones = 0;
 	info_ejecucion->socket = socket;
 

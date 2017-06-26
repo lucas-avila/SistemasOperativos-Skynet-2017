@@ -16,7 +16,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <time.h>
+#include <Sharedlib/Socket.h>
 #include <unistd.h>
 
 #include "header/AppConfig.h"
@@ -24,7 +24,6 @@
 #include "header/ExitCodes.h"
 #include "header/funcionesUtiles.h"
 #include "header/InterfazKernel.h"
-#include "../Sharedlib/Sharedlib/Socket.h"
 
 void atender_solicitudes_de_usuario();
 void iniciar_thread();
@@ -156,21 +155,23 @@ void mostrar_info_proceso(uint32_t pid) {
 	Info_ejecucion * info_proceso = buscar_info_por_PID(pid);
 
 	char * textoInicio = malloc(sizeof(info_proceso->fecha_inicio));
-	strcpy(textoInicio, info_proceso->fecha_inicio);
+	textoInicio = info_proceso->fecha_inicio;
 
-	char * textoFin = malloc(sizeof(textoInicio));
-	strcpy(textoFin, temporal_get_string_time());
+	char * textoFin;
+	textoFin = temporal_get_string_time();
 
-	char * tiempoTranscurrido = malloc(sizeof(textoFin));
-	strcpy(tiempoTranscurrido, diferencia_entre_tiempos(textoInicio, textoFin));
+	char * tiempoTranscurrido;
+	tiempoTranscurrido = diferencia_entre_tiempos(textoInicio, textoFin);
 
 	string_append(&info_log, "El Proceso (");
 	string_append(&info_log, string_itoa(info_proceso->pid));
 	string_append(&info_log, ") ha finalizado, los siguientes son sus datos estadisticos: \n");
 	string_append(&info_log, "Fecha de inicio de ejecucion: ");
 	string_append(&info_log, textoInicio);
+	string_append(&info_log, "\n");
 	string_append(&info_log, "Fecha de fin de ejecucion: ");
 	string_append(&info_log, textoFin);
+	string_append(&info_log, "\n");
 	string_append(&info_log, "Tiempo total de ejecucion: ");
 	string_append(&info_log, string_itoa(tiempoTranscurrido));
 	string_append(&info_log, "Cantidad de impresiones por pantalla: ");
