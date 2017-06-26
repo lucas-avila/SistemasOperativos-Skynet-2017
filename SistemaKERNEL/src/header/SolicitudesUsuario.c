@@ -47,6 +47,27 @@ void mostrar_menu_listado_procesos() {
 	printf("\n Opcion: ");
 }
 
+void mostrar_menu_colas() {
+	printf("\n******* Elija una cola de procesos: ******");
+	printf("\n 1 - New.");
+	printf("\n 2 - Ready.");
+	printf("\n 3 - Running.");
+	printf("\n 4 - Finished.");
+	printf("\n 5 - Waiting.");
+	printf("\n 6 - Volver.");
+	printf("\n Opcion: ");
+}
+
+void mostrar_menu_informacion_proceso() {
+	printf("\n******* Elija la informacion deseada: ******");
+	printf("\n 1 - Cantidad de rafagas ejecutadas.");
+	printf("\n 2 - Tabla de archivos abiertos por el proceso.");
+	printf("\n 3 - Cantidad de paginas de Heap utilizadas.");
+	printf("\n 4 - Cantidad de syscalls ejecutadas.");
+	printf("\n 5 - Volver.");
+	printf("\n Opcion: ");
+}
+
 void listar_procesos() {
 	int opcion = 0;
 	do {
@@ -112,38 +133,21 @@ void mostrar_procesos(t_list * procesos_lista) {
 	int size = list_size(procesos_lista);
 	int i = 0;
 	Proceso * proceso;
+		string_append(&info_log, "\n---------------------\n");
+		string_append(&info_log, "PID \t\t COLA\n");
 	while (i < size) {
 		proceso = list_get(procesos_lista, i);
-		string_append(&info_log, "\n---------------------\n");
-		string_append(&info_log, "Proceso ID: ");
+		string_append(&info_log, "- - - - - - - - - - - - - - - - - - -\n");
 		string_append(&info_log, string_itoa(proceso->PID));
+		string_append(&info_log, " \t\t ");
+		string_append(&info_log, proceso->cola);
+		string_append(&info_log, "\n");
 		i++;
 	}
-	string_append(&info_log, "\n---------------------");
+	string_append(&info_log, "---------------------");
 	string_append(&info_log, "\n---> Cantidad de procesos totales encontrados: ");
 	string_append(&info_log, string_itoa(i));
 	generar_log();
-}
-
-void mostrar_menu_colas() {
-	printf("\n******* Elija una cola de procesos: ******");
-	printf("\n 1 - New.");
-	printf("\n 2 - Ready.");
-	printf("\n 3 - Running.");
-	printf("\n 4 - Finished.");
-	printf("\n 5 - Waiting.");
-	printf("\n 6 - Volver.");
-	printf("\n Opcion: ");
-}
-
-void mostrar_menu_informacion_proceso() {
-	printf("\n******* Elija la informacion deseada: ******");
-	printf("\n 1 - Cantidad de rafagas ejecutadas.");
-	printf("\n 2 - Tabla de archivos abiertos por el proceso.");
-	printf("\n 3 - Cantidad de paginas de Heap utilizadas.");
-	printf("\n 4 - Cantidad de syscalls ejecutadas.");
-	printf("\n 5 - Volver.");
-	printf("\n Opcion: ");
 }
 
 void generar_log() {
@@ -169,20 +173,19 @@ void obtener_informacion_proceso() {
 	scanf("%d", &pid);
 	Proceso* proceso ;
 	proceso = buscar_proceso_by_PID(pid);
+
 	if(proceso==NULL){
-		printf("\n el Proceso ingresado no existe.");
+		printf("\n El Proceso ingresado no existe.");
 		return;
 	}
 	estadistica_proceso = buscar_registro_por_PID(pid);
-	mencionar_proceso(pid);
 
-	strcpy(info_log, "");
 	do {
 		mostrar_menu_informacion_proceso();
 		opcion = validarNumeroInput(1, 5);
 		system("clear");
+		mencionar_proceso(pid);
 		switch (opcion) {
-
 		case 1:
 			string_append(&info_log, "Cantidad de rafagas ejecutadas: ");
 			string_append(&info_log, string_itoa(estadistica_proceso->cantidad_Rafagas_Ejecutadas));
@@ -190,11 +193,11 @@ void obtener_informacion_proceso() {
 			generar_log();
 			break;
 		case 2:
-			mostrar_tabla_proceso_archivos(proceso->tablaProcesoArchivo,info_log);
+			mostrar_tabla_proceso_archivos(proceso->tablaProcesoArchivo);
 			generar_log();
 			break;
 		case 3:
-			string_append(&info_log, "Cantidad de rafagas ejecutadas: ");
+			string_append(&info_log, "Cantidad de páginas de HEAP utilizadas: ");
 			string_append(&info_log, string_itoa(estadistica_proceso->cantidad_Paginas_HEAP_Utilizadas));
 			string_append(&info_log, "\n");
 			generar_log();

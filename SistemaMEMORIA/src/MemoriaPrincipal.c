@@ -69,20 +69,6 @@ int getFrame(char*PID, int pagina) {
 	} while(continuar);
 
 	return frame_buscado;
-	/*int i = 0;
-	int tope = configuraciones.MARCOS;
-	char valorAux[4];
-	for (i = 0; i < tope; i++) {
-		Tabla_Pagina_Invertida registro = TABLA_MEMORY[i];
-		strcpy(valorAux, "");
-		sprintf(valorAux, "%d", pagina);
-		if ((strcmp(registro.PID, PID) == 0) && (strcmp(registro.pagina, valorAux) == 0)) {
-			return atoi(registro.frame);
-		}
-	}
-	return -1;*/
-
-	//return frame_lookup(PID, pagina);
 }
 
 /**

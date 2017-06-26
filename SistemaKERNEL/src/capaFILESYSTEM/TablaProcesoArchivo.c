@@ -1,13 +1,10 @@
-#include<stdlib.h>
-#include<stdio.h>
-#include <string.h>
-#include<stdbool.h>
-#include <commons/collections/list.h>
-#include <commons/string.h>
-
-#include "../header/AppConfig.h"
-
 #include "TablaProcesoArchivo.h"
+
+#include <commons/string.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "../header/SolicitudesUsuario.h"
 
 TablaProcesoArchivo* new_TablaProcesoArchivo(int FD, char* flags, int ProcesoFD) {
 	TablaProcesoArchivo* nuevo = malloc(sizeof(TablaProcesoArchivo));
@@ -52,7 +49,7 @@ TablaProcesoArchivo* buscar_TablaProcesoArchivo_por_FD(t_list* tabla, int FD) {
 	return NULL;
 }
 
-void mostrar_tabla_proceso_archivos(t_list* tablaProceso, char* info_log) {
+void mostrar_tabla_proceso_archivos(t_list* tablaProceso) {
 
 	string_append(&info_log, "\n -----------------------------------------------------");
 	string_append(&info_log, "\n TABLA PROCESO DE ARCHIVOS");
@@ -64,6 +61,7 @@ void mostrar_tabla_proceso_archivos(t_list* tablaProceso, char* info_log) {
 	char* informacion;
 	for (i = 0; i < tamanio; i++) {
 		TablaProcesoArchivo* registro = list_get(tablaProceso, i);
+		informacion = malloc(string_from_format("\n %d \t\t %d  \t\t %d \t\t %s", registro->FD, registro->GlobalFD, registro->cursor_bloque, registro->flags));
 		informacion = string_from_format("\n %d \t\t %d  \t\t %d \t\t %s", registro->FD, registro->GlobalFD, registro->cursor_bloque, registro->flags);
 		string_append(&info_log, informacion);
 

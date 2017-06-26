@@ -680,3 +680,20 @@ Contenido Administrativo de la Memoria:
 ---------------------
    19 	 2 	 1000 
 ---------------------
+[INFO] 00:08:43:922 MEMORIA/(11108:11108): 
+
+Contenido Administrativo de la Memoria: 
+ Estructura de Memoria 
+
+ FRAME 	 PAGINA PID 
+---------------------
+    0 	 ADM 	 ADM 
+---------------------
+    1 	 ADM 	 ADM 
+---------------------
+    5 	 0 	 1000 
+---------------------
+   14 	 1 	 1000 
+---------------------
+   19 	 2 	 1000 
+---------------------

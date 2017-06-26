@@ -1,9 +1,12 @@
 #include <commons/collections/list.h>
 #include <commons/string.h>
 #include <semaphore.h>
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <Sharedlib/PCB.h>
+#include <Sharedlib/Socket.h>
 #include <unistd.h>
 
 #include "administrarPCB/EstadisticaProceso.h"
@@ -12,21 +15,14 @@
 #include "capaFILESYSTEM/TablaGlobalArchivo.h"
 #include "capaMEMORIA/GestMemoriaFuncionesAux.h"
 #include "general/Semaforo.h"
-#include "../Sharedlib/Sharedlib/Socket.h"
 #include "header/AppConfig.h"
 #include "header/Estructuras.h"
-#include "../Sharedlib/Sharedlib/PCB.h"
 #include "header/SolicitudesUsuario.h"
 #include "interfaz/InterfazConsola.h"
 #include "interfaz/InterfazCPU.h"
 #include "interfaz/InterfazFS.h"
 #include "interfaz/InterfazMemoria.h"
 #include "planificacion/Planificacion.h"
-
-void inicializar_listas_globales();
-void inicializar_semaforos();
-
-void CU_iniciar_programa(int consola);
 
 void inicializar_KERNEL();
 
@@ -125,24 +121,13 @@ void finalizar_proceso(Proceso * proceso){
 	mostrar_por_pantalla_memory_leaks(proceso->PID);
 
 	if (strcmp(respuesta, "OK") == 0) {
-
 		proceso->activo = 0;
 		notificar_exit_code(proceso->pcb->exit_code, proceso->socket);
 		close(proceso->socket);
-	} else {
-		actualizar_exit_code(proceso, -10);
-		notificar_exit_code(proceso->pcb->exit_code, proceso->socket);
-		//TODO ver a dónde mandamos el proceso si sucede esto...aunque no debería suceder.
 	}
 
 }
 
 void actualizar_exit_code(Proceso * proceso, int exit_code){
-
 	proceso->pcb->exit_code = exit_code;
-}
-
-void notificar_exit_code(int exit_code, int socket){
-	enviar_dato_serializado("FIN_PROGRAMA", socket);
-	enviar_dato_serializado(string_itoa(exit_code), socket);
 }

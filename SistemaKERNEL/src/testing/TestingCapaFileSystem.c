@@ -206,6 +206,6 @@ void TEST_VER_TABLA_PROCESO() {
 	mostrar_tabla_Global_archivos();
 	t_list* listaArchivos = buscar_proceso_by_PID(atoi(PID))->tablaProcesoArchivo;
 	char* info= string_new();
-	mostrar_tabla_proceso_archivos(listaArchivos,&info);
+	mostrar_tabla_proceso_archivos(listaArchivos);
 
 }

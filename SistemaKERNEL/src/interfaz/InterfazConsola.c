@@ -57,3 +57,8 @@ void CU_Recibir_Conexiones_Programa(int clientePrograma) {
 	} while (controlSeguir == 1);
 	close(clientePrograma);
 }
+
+void notificar_exit_code(int exit_code, int socket){
+	enviar_dato_serializado("FIN_PROGRAMA", socket);
+	enviar_dato_serializado(string_itoa(exit_code), socket);
+}
