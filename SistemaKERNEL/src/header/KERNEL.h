@@ -12,5 +12,6 @@ void mostrar_menu_usuario();
 void atender_solicitudes_de_usuario();
 void inicializar_listas_globales();
 void CU_iniciar_programa(int consola);
+void finalizar_proceso(Proceso * proceso);
 
 #endif /* HEADER_KERNEL_H_ */

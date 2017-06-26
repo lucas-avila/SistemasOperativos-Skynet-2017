@@ -5,10 +5,11 @@ src/planificacion/Planificacion.d: ../src/planificacion/Planificacion.c \
  ../src/planificacion/../administrarProcesos/../../../Sharedlib/Sharedlib/PCB.h \
  ../src/planificacion/../header/Estructuras.h \
  ../src/planificacion/../../../Sharedlib/Sharedlib/PCB.h \
+ /home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Sharedlib/Socket.h \
  ../src/planificacion/../capaMEMORIA/AdministrarSemaforos.h \
  ../src/planificacion/../general/Semaforo.h \
- ../src/planificacion/../../../Sharedlib/Sharedlib/Socket.h \
  ../src/planificacion/../header/AppConfig.h \
+ ../src/planificacion/../header/KERNEL.h \
  ../src/planificacion/PlanificacionFIFO.h \
  ../src/planificacion/PlanificacionRR.h
 
@@ -24,13 +25,15 @@ src/planificacion/Planificacion.d: ../src/planificacion/Planificacion.c \
 
 ../src/planificacion/../../../Sharedlib/Sharedlib/PCB.h:
 
+/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Sharedlib/Socket.h:
+
 ../src/planificacion/../capaMEMORIA/AdministrarSemaforos.h:
 
 ../src/planificacion/../general/Semaforo.h:
 
-../src/planificacion/../../../Sharedlib/Sharedlib/Socket.h:
-
 ../src/planificacion/../header/AppConfig.h:
+
+../src/planificacion/../header/KERNEL.h:
 
 ../src/planificacion/PlanificacionFIFO.h:
 

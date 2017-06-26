@@ -3,12 +3,15 @@
 #include <commons/collections/list.h>
 #include <commons/string.h>
 #include <semaphore.h>
+#include <stdbool.h>
+#include <stdlib.h>
 #include <string.h>
+#include <Sharedlib/Socket.h>
 
 #include "../capaMEMORIA/AdministrarSemaforos.h"
 #include "../general/Semaforo.h"
-#include "../../../Sharedlib/Sharedlib/Socket.h"
 #include "../header/AppConfig.h"
+#include "../header/KERNEL.h"
 #include "PlanificacionFIFO.h"
 #include "PlanificacionRR.h"
 
@@ -79,8 +82,8 @@ void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 
 	signal_cola(origen);
 
-	if (strcmp(destino, EXIT) == 0) {
-		pcb->exit_code = 0;
+	if (strcmp(destino, EXIT) == 0){
+		if(pcb->RR) incrementar_rafagas_ejecutadas(pcb->PID, 1);
 		finalizar_proceso(p);
 	}
 
@@ -178,14 +181,6 @@ void marcar_CPU_Disponible(CPUInfo* cpu) {
 	return;
 }
 
-void recepcion_PCB_en_COLA_EXIT() {
-	if (strcmp(configuraciones.ALGORITMO, "FIFO") == 0) {
-		recepcion_PCB_en_COLA_EXIT_FIFO();
-	} else {
-		recepcion_PCB_en_COLA_EXIT_RR();
-	}
-}
-
 void recepcion_SIGNAL_semaforo_ansisop(char * nombre_sem) {
 	signal_semaforo_ansisop(nombre_sem);
 
@@ -201,6 +196,7 @@ void recibir_PCB_de_CPU(int clienteCPU, char * modo) {
 	if (strcmp(modo, "TERMINADO") == 0) {
 		mover_PCB_de_cola(pcb, EXEC, EXIT);
 	} else if (strcmp(modo, "QUANTUM") == 0) {
+		incrementar_rafagas_ejecutadas(pcb->PID, 1);
 		mover_PCB_de_cola(pcb, EXEC, READY);
 	} else if (strcmp(modo, "WAIT_SEM") == 0) {
 		char * nombre_sem = recibir_dato_serializado(clienteCPU);

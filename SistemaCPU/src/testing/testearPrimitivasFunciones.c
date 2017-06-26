@@ -37,7 +37,7 @@ void crear_PCB_TEST() {
 	filaInicial->posicion = 0;
 	list_add(pcbDePrueba->pila, filaInicial);
 	pcbDePrueba->pagina_inicial_stack = atoi(asignar_Paginas_Programa(string_itoa(pcbDePrueba->PID), "2"));
-	pcbDePrueba->posicionPaginaStack=0;
+	pcbDePrueba->posicion_pagina_stack=0;
 	pcbDePrueba->RR = 0;
 
 	int paginaSentencia = atoi(asignar_Paginas_Programa(string_itoa(pcbDePrueba->PID), "1"));

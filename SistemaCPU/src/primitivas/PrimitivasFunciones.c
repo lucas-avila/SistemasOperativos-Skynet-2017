@@ -24,11 +24,11 @@ void setearPCB(PCB* pcbEnviado) {
 }
 
 void buscarPaginaDisponibleStack(PCB* pcbRecibido) {
-	if (pcb->posicionPaginaStack + sizeof(uint32_t) > tamanio_pagina_memoria) {
-		pcb->posicionPaginaStack = sizeof(uint32_t);
+	if (pcb->posicion_pagina_stack + sizeof(uint32_t) > tamanio_pagina_memoria) {
+		pcb->posicion_pagina_stack = sizeof(uint32_t);
 		pcb->pagina_inicial_stack++;
 	} else {
-		pcb->posicionPaginaStack += sizeof(uint32_t);
+		pcb->posicion_pagina_stack += sizeof(uint32_t);
 	}
 
 }
@@ -41,14 +41,14 @@ t_puntero DEFINIR_VARIABLE(t_nombre_variable variable) {
 
 	if (isalpha(variable)) {
 
-		Variable* var_new = crear_variable(variable, pcb->pagina_inicial_stack, pcb->posicionPaginaStack - sizeof(uint32_t), sizeof(uint32_t), 0);
+		Variable* var_new = crear_variable(variable, pcb->pagina_inicial_stack, pcb->posicion_pagina_stack - sizeof(uint32_t), sizeof(uint32_t), 0);
 		crear_variable_en_Indice_Stack(pila, var_new);
 
 
 
 		return serializarPuntero(var_new->pagina, var_new->byte_inicial, tamanio_pagina_memoria);
 	} else {
-		Argumento* arg_new = crear_argumento(variable, pcb->pagina_inicial_stack, pcb->posicionPaginaStack - sizeof(uint32_t), sizeof(uint32_t));
+		Argumento* arg_new = crear_argumento(variable, pcb->pagina_inicial_stack, pcb->posicion_pagina_stack - sizeof(uint32_t), sizeof(uint32_t));
 
 		crear_argumento_en_Indice_Stack(pila, arg_new);
 

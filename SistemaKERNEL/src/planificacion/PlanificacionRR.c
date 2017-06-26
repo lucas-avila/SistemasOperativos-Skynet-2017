@@ -37,11 +37,3 @@ void dispatcher_RR() {
 
 	}
 }
-
-void recepcion_PCB_en_COLA_EXIT_RR(){
-	PCB* pcb;
-	pcb = queue_pop(cola(EXIT));
-	//INFORMACION ESTADISTICA
-	//incrementar_rafagas_ejecutadas();
-	queue_push(cola(EXIT), pcb);
-}
