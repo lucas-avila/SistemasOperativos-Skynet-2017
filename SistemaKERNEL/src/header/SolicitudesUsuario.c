@@ -187,28 +187,26 @@ void obtener_informacion_proceso() {
 			string_append(&info_log, "Cantidad de rafagas ejecutadas: ");
 			string_append(&info_log, string_itoa(estadistica_proceso->cantidad_Rafagas_Ejecutadas));
 			string_append(&info_log, "\n");
+			generar_log();
 			break;
 		case 2:
-
 			mostrar_tabla_proceso_archivos(proceso->tablaProcesoArchivo,info_log);
+			generar_log();
 			break;
 		case 3:
 			string_append(&info_log, "Cantidad de rafagas ejecutadas: ");
 			string_append(&info_log, string_itoa(estadistica_proceso->cantidad_Paginas_HEAP_Utilizadas));
 			string_append(&info_log, "\n");
-
+			generar_log();
 			break;
 		case 4:
 			string_append(&info_log, "Cantidad syscalls ejecutadas: ");
 			string_append(&info_log, string_itoa(estadistica_proceso->cantidad_SYSCALL_Ejecutadas));
 			string_append(&info_log, "\n");
+			generar_log();
 			break;
 		}
-		//printf("\n Presione 0 para continuar");
-	//	while (getchar() != '0')
-		//	;
 	} while (opcion != 5);
-	generar_log();
 	system("clear");
 	printf("\n Se ha generado los logs en archivo.");
 	printf("\n Presione 0 para continuar");
@@ -250,7 +248,7 @@ void verificar_estado(uint32_t pid, int exit_code) {
 		printf("El proceso ya ha finalizado.\n");
 	} else {
 		actualizar_exit_code(proceso_a_eliminar, exit_code);
-		finalizar_proceso(proceso_a_eliminar);
+		mover_PCB_de_cola(proceso_a_eliminar->pcb, proceso_a_eliminar->cola, EXIT);
 	}
 }
 

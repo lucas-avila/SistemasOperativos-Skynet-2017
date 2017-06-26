@@ -5,16 +5,17 @@
  *      Author: utnso
  */
 
+#include "header/funcionesUtiles.h"
+
 #include <commons/log.h>
 #include <commons/string.h>
 #include <stdbool.h>
-#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "funcionesUtiles.h"
-#include "AppConfig.h"
-#include "Estructuras.h"
+
+#include "header/AppConfig.h"
+#include "header/Estructuras.h"
 
 int validarNumeroInput(int rangoMinimo, int rangoMaximo) {
 	int numero = 0;

@@ -169,3 +169,157 @@ Tiempo total de ejecucion: (0) horas, (0) minutos, (2) segundos.
 Cantidad de impresiones por pantalla: 0
 ------Fin del LOG------
 
+[INFO] 21:42:26:652 CONSOLA/(7955:7965): 
+***LOGS de la CONSOLA***
+ EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
+El Proceso(1002) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: Sun Jun 25 21:42:26 2017
+Fecha de fin de ejecucion: Sun Jun 25 21:42:26 2017
+Tiempo total de ejecucion: (0) horas, (0) minutos, (48) segundos.
+Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+
+[INFO] 21:54:14:756 CONSOLA/(8342:8344): 
+***LOGS de la CONSOLA***
+ EXIT CODE: El programa intentó crear un archivo que ya existe.
+El Proceso(1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: Sun Jun 25 21:54:14 2017
+Fecha de fin de ejecucion: Sun Jun 25 21:54:14 2017
+Tiempo total de ejecucion: (0) horas, (1) minutos, (16) segundos.
+Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+
+[INFO] 22:05:39:316 CONSOLA/(8766:8768): 
+***LOGS de la CONSOLA***
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso(1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: Sun Jun 25 22:05:39 2017
+Fecha de fin de ejecucion: Sun Jun 25 22:05:39 2017
+Tiempo total de ejecucion: (0) horas, (0) minutos, (15) segundos.
+Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+
+[INFO] 22:24:48:728 CONSOLA/(9217:9219): 
+***LOGS de la CONSOLA***
+ EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
+El Proceso(1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: Sun Jun 25 22:24:48 2017
+Fecha de fin de ejecucion: Sun Jun 25 22:24:48 2017
+Tiempo total de ejecucion: (0) horas, (0) minutos, (3) segundos.
+Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+
+[INFO] 22:25:21:736 CONSOLA/(9217:9233): 
+***LOGS de la CONSOLA***
+ EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
+El Proceso(1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: Sun Jun 25 22:24:48 2017
+Fecha de fin de ejecucion: Sun Jun 25 22:24:48 2017
+Tiempo total de ejecucion: (0) horas, (0) minutos, (3) segundos.
+Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
+El Proceso(1001) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: Sun Jun 25 22:25:21 2017
+Fecha de fin de ejecucion: Sun Jun 25 22:25:21 2017
+Tiempo total de ejecucion: (0) horas, (0) minutos, (2) segundos.
+Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+
+[INFO] 22:26:45:276 CONSOLA/(9311:9313): 
+***LOGS de la CONSOLA***
+ EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
+El Proceso(1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: Sun Jun 25 22:26:45 2017
+Fecha de fin de ejecucion: Sun Jun 25 22:26:45 2017
+Tiempo total de ejecucion: (0) horas, (0) minutos, (14) segundos.
+Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+
+[INFO] 22:33:22:968 CONSOLA/(9562:9564): 
+***LOGS de la CONSOLA***
+ EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
+El Proceso(1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: Sun Jun 25 22:33:22 2017
+Fecha de fin de ejecucion: Sun Jun 25 22:33:22 2017
+Tiempo total de ejecucion: (0) horas, (0) minutos, (5) segundos.
+Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+
+[INFO] 22:37:25:572 CONSOLA/(9728:9730): 
+***LOGS de la CONSOLA***
+ EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
+El Proceso(1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: Sun Jun 25 22:37:25 2017
+Fecha de fin de ejecucion: Sun Jun 25 22:37:25 2017
+Tiempo total de ejecucion: (0) horas, (0) minutos, (6) segundos.
+Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+
+[INFO] 23:35:42:64 CONSOLA/(9840:9842): 
+***LOGS de la CONSOLA***
+ EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
+El Proceso(1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: Sun Jun 25 23:35:42 2017
+Fecha de fin de ejecucion: Sun Jun 25 23:35:42 2017
+Tiempo total de ejecucion: (0) horas, (0) minutos, (2) segundos.
+Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+
+[INFO] 23:39:42:12 CONSOLA/(9934:9936): 
+***LOGS de la CONSOLA***
+ EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
+El Proceso(1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: Sun Jun 25 23:39:42 2017
+Fecha de fin de ejecucion: Sun Jun 25 23:39:42 2017
+Tiempo total de ejecucion: (0) horas, (0) minutos, (7) segundos.
+Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+
+[INFO] 23:42:41:992 CONSOLA/(10027:10029): 
+***LOGS de la CONSOLA***
+ EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
+El Proceso(1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: Sun Jun 25 23:42:41 2017
+Fecha de fin de ejecucion: Sun Jun 25 23:42:41 2017
+Tiempo total de ejecucion: (0) horas, (1) minutos, (38) segundos.
+Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+
+[INFO] 23:48:36:757 CONSOLA/(10361:10363): 
+***LOGS de la CONSOLA***
+ EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
+El Proceso(1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: Sun Jun 25 23:48:36 2017
+Fecha de fin de ejecucion: Sun Jun 25 23:48:36 2017
+Tiempo total de ejecucion: (0) horas, (1) minutos, (15) segundos.
+Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+
+[INFO] 23:49:19:532 CONSOLA/(10480:10486): 
+***LOGS de la CONSOLA***
+ EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
+El Proceso(1001) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: Sun Jun 25 23:49:19 2017
+Fecha de fin de ejecucion: Sun Jun 25 23:49:19 2017
+Tiempo total de ejecucion: (0) horas, (0) minutos, (7) segundos.
+Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+
+[INFO] 23:49:42:201 CONSOLA/(10480:10482): 
+***LOGS de la CONSOLA***
+ EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
+El Proceso(1001) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: Sun Jun 25 23:49:19 2017
+Fecha de fin de ejecucion: Sun Jun 25 23:49:19 2017
+Tiempo total de ejecucion: (0) horas, (0) minutos, (7) segundos.
+Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
+El Proceso(1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: Sun Jun 25 23:49:42 2017
+Fecha de fin de ejecucion: Sun Jun 25 23:49:42 2017
+Tiempo total de ejecucion: (0) horas, (0) minutos, (35) segundos.
+Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+

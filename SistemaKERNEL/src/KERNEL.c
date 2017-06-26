@@ -126,16 +126,9 @@ void finalizar_proceso(Proceso * proceso){
 
 	if (strcmp(respuesta, "OK") == 0) {
 
-		//int buscar_proceso(Proceso * elem_proceso){
-		//	return elem_proceso->PID == proceso->PID;
-		//}
-		//sem_wait(&mutex_lista_PROCESOS);
 		proceso->activo = 0;
-		//list_remove_by_condition(procesos, &buscar_proceso);
-		//sem_post(&mutex_lista_PROCESOS);
 		notificar_exit_code(proceso->pcb->exit_code, proceso->socket);
 		close(proceso->socket);
-		//free(proceso);
 	} else {
 		actualizar_exit_code(proceso, -10);
 		notificar_exit_code(proceso->pcb->exit_code, proceso->socket);

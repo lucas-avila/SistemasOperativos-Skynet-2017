@@ -4,7 +4,10 @@
  *  Created on: 20/5/2017
  *      Author: utnso
  */
-#include "Estructuras.h"
+
+#include "header/Estructuras.h"
+
+#include <stdlib.h>
 
 void inicializar_lista_Info_procesos() {
 	Info_procesos = list_create();
