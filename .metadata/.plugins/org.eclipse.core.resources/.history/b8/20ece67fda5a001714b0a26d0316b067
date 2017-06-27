@@ -56,8 +56,8 @@ void ejecutar_programa_por_FIFO() {
 
 			analizadorLinea(sentencia, funciones, kernel);
 			if(hubo_excepcion == true) {
-				hubo_excepcion = false;
-				enviar_PCB_a_kernel(pcbEjecutar, "TERMINADO");
+				pcbEjecutar =
+				enviar_PCB_a_kernel(pcbEjecutar, "ERROR");
 			}
 
 			pcbEjecutar->program_counter++;
@@ -86,10 +86,6 @@ void ejecutar_programa_por_RR() {
 		esFinPrograma = (strcmp(sentencia, "FIN") == 0);
 		if (!esFinPrograma && !programaBloqueado) { //Este if tiene que sacarse, es solo para probar ahora
 			analizadorLinea(sentencia, funciones, kernel);
-			if(hubo_excepcion == true) {
-				hubo_excepcion = false;
-				enviar_PCB_a_kernel(pcbEjecutar, "TERMINADO");
-			}
 
 			pcbEjecutar->program_counter++;
 			cantidadEjecutada++;

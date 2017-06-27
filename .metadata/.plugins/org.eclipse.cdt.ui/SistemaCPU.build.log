@@ -1,16 +1,150 @@
-21:19:13 **** Incremental Build of configuration Debug for project SistemaCPU ****
+22:47:19 **** Incremental Build of configuration Debug for project SistemaCPU ****
 make all 
 Building file: ../src/procesador/Ejecucion.c
 Invoking: GCC C Compiler
 gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/procesador/Ejecucion.d" -MT"src/procesador/Ejecucion.d" -o "src/procesador/Ejecucion.o" "../src/procesador/Ejecucion.c"
 ../src/procesador/Ejecucion.c: In function ‘ejecutar_programa_por_FIFO’:
-../src/procesador/Ejecucion.c:59:17: error: void value not ignored as it ought to be
-     pcbEjecutar =
-                 ^
 ../src/procesador/Ejecucion.c:64:4: warning: implicit declaration of function ‘nanosleep’ [-Wimplicit-function-declaration]
     nanosleep(retardo); //Retardo en tiempo de ejecucion
     ^
-make: *** [src/procesador/Ejecucion.o] Error 1
+Finished building: ../src/procesador/Ejecucion.c
+ 
+Building file: ../src/primitivas/FuncionesAuxiliares.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/primitivas/FuncionesAuxiliares.d" -MT"src/primitivas/FuncionesAuxiliares.d" -o "src/primitivas/FuncionesAuxiliares.o" "../src/primitivas/FuncionesAuxiliares.c"
+Finished building: ../src/primitivas/FuncionesAuxiliares.c
+ 
+Building file: ../src/primitivas/IndiceCodigo.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/primitivas/IndiceCodigo.d" -MT"src/primitivas/IndiceCodigo.d" -o "src/primitivas/IndiceCodigo.o" "../src/primitivas/IndiceCodigo.c"
+Finished building: ../src/primitivas/IndiceCodigo.c
+ 
+Building file: ../src/primitivas/PrimitivasFunciones.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/primitivas/PrimitivasFunciones.d" -MT"src/primitivas/PrimitivasFunciones.d" -o "src/primitivas/PrimitivasFunciones.o" "../src/primitivas/PrimitivasFunciones.c"
+../src/primitivas/PrimitivasFunciones.c: In function ‘DEFINIR_VARIABLE’:
+../src/primitivas/PrimitivasFunciones.c:46:3: warning: implicit declaration of function ‘serializarPuntero’ [-Wimplicit-function-declaration]
+   return serializarPuntero(var_new->pagina, var_new->byte_inicial, tamanio_pagina_memoria);
+   ^
+../src/primitivas/PrimitivasFunciones.c:38:27: warning: unused variable ‘offsetDisp’ [-Wunused-variable]
+  int paginaDiponible = 0, offsetDisp = 0;
+                           ^
+../src/primitivas/PrimitivasFunciones.c:38:6: warning: unused variable ‘paginaDiponible’ [-Wunused-variable]
+  int paginaDiponible = 0, offsetDisp = 0;
+      ^
+../src/primitivas/PrimitivasFunciones.c: In function ‘ASIGNAR_VARIABLE’:
+../src/primitivas/PrimitivasFunciones.c:99:2: warning: implicit declaration of function ‘deserializar_puntero’ [-Wimplicit-function-declaration]
+  deserializar_puntero(direccion_variable, &pagina, &offset, tamanio_pagina_memoria);
+  ^
+../src/primitivas/PrimitivasFunciones.c: In function ‘WAIT’:
+../src/primitivas/PrimitivasFunciones.c:112:2: warning: implicit declaration of function ‘enviar_SYSCALL_wait_semaforo_a_kernel’ [-Wimplicit-function-declaration]
+  int result = enviar_SYSCALL_wait_semaforo_a_kernel(identificador_semaforo, pcb);
+  ^
+../src/primitivas/PrimitivasFunciones.c: In function ‘SIGNAL’:
+../src/primitivas/PrimitivasFunciones.c:126:2: warning: implicit declaration of function ‘enviar_SYSCALL_signal_semaforo_a_kernel’ [-Wimplicit-function-declaration]
+  enviar_SYSCALL_signal_semaforo_a_kernel(identificador_semaforo);
+  ^
+Finished building: ../src/primitivas/PrimitivasFunciones.c
+ 
+Building file: ../src/primitivas/Stack.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/primitivas/Stack.d" -MT"src/primitivas/Stack.d" -o "src/primitivas/Stack.o" "../src/primitivas/Stack.c"
+../src/primitivas/Stack.c: In function ‘obtener_Ultima_variable_declarada’:
+../src/primitivas/Stack.c:89:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/primitivas/Stack.c
+ 
+Building file: ../src/interfaz/InterfazKernel.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/interfaz/InterfazKernel.d" -MT"src/interfaz/InterfazKernel.d" -o "src/interfaz/InterfazKernel.o" "../src/interfaz/InterfazKernel.c"
+../src/interfaz/InterfazKernel.c: In function ‘recibir_PCB_de_kernel’:
+../src/interfaz/InterfazKernel.c:23:2: warning: implicit declaration of function ‘recibir_pcb’ [-Wimplicit-function-declaration]
+  PCB * pcb = recibir_pcb(kernel);
+  ^
+../src/interfaz/InterfazKernel.c:23:14: warning: initialization makes pointer from integer without a cast [enabled by default]
+  PCB * pcb = recibir_pcb(kernel);
+              ^
+../src/interfaz/InterfazKernel.c: In function ‘enviar_PCB_a_kernel’:
+../src/interfaz/InterfazKernel.c:75:2: warning: implicit declaration of function ‘enviar_pcb’ [-Wimplicit-function-declaration]
+  enviar_pcb(pcb, servidor_kernel);
+  ^
+Finished building: ../src/interfaz/InterfazKernel.c
+ 
+Building file: ../src/interfaz/InterfazMemoria.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/interfaz/InterfazMemoria.d" -MT"src/interfaz/InterfazMemoria.d" -o "src/interfaz/InterfazMemoria.o" "../src/interfaz/InterfazMemoria.c"
+Finished building: ../src/interfaz/InterfazMemoria.c
+ 
+Building file: ../src/interfaz/signals.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/interfaz/signals.d" -MT"src/interfaz/signals.d" -o "src/interfaz/signals.o" "../src/interfaz/signals.c"
+../src/interfaz/signals.c: In function ‘recibir_seniales_de_linux’:
+../src/interfaz/signals.c:15:2: warning: implicit declaration of function ‘printf’ [-Wimplicit-function-declaration]
+  printf("\na\n");
+  ^
+../src/interfaz/signals.c:15:2: warning: incompatible implicit declaration of built-in function ‘printf’ [enabled by default]
+../src/interfaz/signals.c:16:2: warning: implicit declaration of function ‘CU_Terminar_ejecucion_y_finalizar’ [-Wimplicit-function-declaration]
+  CU_Terminar_ejecucion_y_finalizar();
+  ^
+Finished building: ../src/interfaz/signals.c
+ 
+Building file: ../src/header/AppConfig.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/AppConfig.d" -MT"src/header/AppConfig.d" -o "src/header/AppConfig.o" "../src/header/AppConfig.c"
+../src/header/AppConfig.c: In function ‘inicializar_configuracion’:
+../src/header/AppConfig.c:31:4: warning: implicit declaration of function ‘strlen’ [-Wimplicit-function-declaration]
+    configuraciones.IP_KERNEL = malloc(strlen(config_get_string_value(config, "IP_KERNEL")) + 1);
+    ^
+../src/header/AppConfig.c:31:39: warning: incompatible implicit declaration of built-in function ‘strlen’ [enabled by default]
+    configuraciones.IP_KERNEL = malloc(strlen(config_get_string_value(config, "IP_KERNEL")) + 1);
+                                       ^
+../src/header/AppConfig.c:32:4: warning: implicit declaration of function ‘strcpy’ [-Wimplicit-function-declaration]
+    strcpy(configuraciones.IP_KERNEL, config_get_string_value(config, "IP_KERNEL"));
+    ^
+../src/header/AppConfig.c:32:4: warning: incompatible implicit declaration of built-in function ‘strcpy’ [enabled by default]
+../src/header/AppConfig.c:37:40: warning: incompatible implicit declaration of built-in function ‘strlen’ [enabled by default]
+    configuraciones.IP_MEMORIA = malloc(strlen(config_get_string_value(config, "IP_MEMORIA")) + 1);
+                                        ^
+../src/header/AppConfig.c:38:4: warning: incompatible implicit declaration of built-in function ‘strcpy’ [enabled by default]
+    strcpy(configuraciones.IP_MEMORIA, config_get_string_value(config, "IP_MEMORIA"));
+    ^
+Finished building: ../src/header/AppConfig.c
+ 
+Building file: ../src/general/Semaforo.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/general/Semaforo.d" -MT"src/general/Semaforo.d" -o "src/general/Semaforo.o" "../src/general/Semaforo.c"
+../src/general/Semaforo.c: In function ‘inicializar_semaforo_en’:
+../src/general/Semaforo.c:9:6: warning: unused variable ‘r’ [-Wunused-variable]
+  int r = sem_init(variable_semaforo, 0, value); //-->Inicializo un semaforo
+      ^
+Finished building: ../src/general/Semaforo.c
+ 
+Building file: ../src/general/funcionesUtiles.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/general/funcionesUtiles.d" -MT"src/general/funcionesUtiles.d" -o "src/general/funcionesUtiles.o" "../src/general/funcionesUtiles.c"
+Finished building: ../src/general/funcionesUtiles.c
+ 
+Building file: ../src/CPU.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/CPU.d" -MT"src/CPU.d" -o "src/CPU.o" "../src/CPU.c"
+../src/CPU.c:29:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void testear_planificacion(servidor_kernel); //borrame
+ ^
+../src/CPU.c: In function ‘testear_planificacion’:
+../src/CPU.c:98:3: warning: implicit declaration of function ‘enviar_SYSCALL_wait_semaforo_a_kernel’ [-Wimplicit-function-declaration]
+   enviar_SYSCALL_wait_semaforo_a_kernel("mutex1", pcb);
+   ^
+../src/CPU.c:102:3: warning: implicit declaration of function ‘enviar_SYSCALL_signal_semaforo_a_kernel’ [-Wimplicit-function-declaration]
+   enviar_SYSCALL_signal_semaforo_a_kernel("mutex1");
+   ^
+Finished building: ../src/CPU.c
+ 
+Building target: SistemaCPU
+Invoking: GCC C Linker
+gcc -L"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug" -o "SistemaCPU"  ./src/testing/testearPrimitivasFunciones.o ./src/testing/testingPCB.o  ./src/procesador/Ejecucion.o  ./src/primitivas/FuncionesAuxiliares.o ./src/primitivas/IndiceCodigo.o ./src/primitivas/PrimitivasFunciones.o ./src/primitivas/Stack.o  ./src/interfaz/InterfazKernel.o ./src/interfaz/InterfazMemoria.o ./src/interfaz/signals.o  ./src/header/AppConfig.o  ./src/general/Semaforo.o ./src/general/funcionesUtiles.o  ./src/CPU.o   -lSharedlib -lparser-ansisop -lpthread -lcommons
+Finished building target: SistemaCPU
+ 
 
-21:19:13 Build Finished (took 137ms)
+22:47:20 Build Finished (took 1s.914ms)
 
