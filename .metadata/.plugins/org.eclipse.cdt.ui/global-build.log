@@ -17653,3 +17653,372 @@ make: *** [src/interfaz/InterfazMemoria.o] Error 1
 11:20:56 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
 make all 
 make: No se hace nada para «all».
+21:15:06 **** Incremental Build of configuration Debug for project Sharedlib ****
+make all 
+make: No se hace nada para «all».
+21:15:06 **** Incremental Build of configuration Debug for project SistemaCPU ****
+make all 
+Building file: ../src/procesador/Ejecucion.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/procesador/Ejecucion.d" -MT"src/procesador/Ejecucion.d" -o "src/procesador/Ejecucion.o" "../src/procesador/Ejecucion.c"
+../src/procesador/Ejecucion.c: In function ‘ejecutar_programa_por_FIFO’:
+../src/procesador/Ejecucion.c:59:17: error: void value not ignored as it ought to be
+     pcbEjecutar =
+                 ^
+../src/procesador/Ejecucion.c:64:4: warning: implicit declaration of function ‘nanosleep’ [-Wimplicit-function-declaration]
+    nanosleep(retardo); //Retardo en tiempo de ejecucion
+    ^
+make: *** [src/procesador/Ejecucion.o] Error 1
+21:15:07 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+make: No se hace nada para «all».
+21:15:07 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+make: No se hace nada para «all».
+21:15:07 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+Building file: ../src/interfaz/InterfazCPU.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/interfaz/InterfazCPU.d" -MT"src/interfaz/InterfazCPU.d" -o "src/interfaz/InterfazCPU.o" "../src/interfaz/InterfazCPU.c"
+In file included from ../src/interfaz/InterfazCPU.c:13:0:
+../src/interfaz/../capaFILESYSTEM/GestionArchivoFuncAux.h:18:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void abrir_archivo(clienteCPU);
+ ^
+../src/interfaz/../capaFILESYSTEM/GestionArchivoFuncAux.h:19:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void cerrar_archivo(clienteCPU);
+ ^
+../src/interfaz/../capaFILESYSTEM/GestionArchivoFuncAux.h:20:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void leer_archivo(clienteCPU);
+ ^
+../src/interfaz/../capaFILESYSTEM/GestionArchivoFuncAux.h:21:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void borrar_archivo(clienteCPU);
+ ^
+../src/interfaz/../capaFILESYSTEM/GestionArchivoFuncAux.h:22:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void mover_cursor_archivo(clienteCPU);
+ ^
+../src/interfaz/InterfazCPU.c: In function ‘escuchar_Conexiones_CPU’:
+../src/interfaz/InterfazCPU.c:36:4: warning: passing argument 3 of ‘pthread_create’ from incompatible pointer type [enabled by default]
+    pthread_create(&mihilo1, NULL, &CU_Recibir_Conexiones_CPU, cliente);
+    ^
+In file included from ../src/interfaz/InterfazCPU.h:11:0,
+                 from ../src/interfaz/InterfazCPU.c:1:
+/usr/include/pthread.h:244:12: note: expected ‘void * (*)(void *)’ but argument is of type ‘void (*)(int)’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/interfaz/InterfazCPU.c:36:4: warning: passing argument 4 of ‘pthread_create’ makes pointer from integer without a cast [enabled by default]
+    pthread_create(&mihilo1, NULL, &CU_Recibir_Conexiones_CPU, cliente);
+    ^
+In file included from ../src/interfaz/InterfazCPU.h:11:0,
+                 from ../src/interfaz/InterfazCPU.c:1:
+/usr/include/pthread.h:244:12: note: expected ‘void * __restrict__’ but argument is of type ‘int’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/interfaz/InterfazCPU.c:37:4: warning: passing argument 1 of ‘pthread_detach’ makes integer from pointer without a cast [enabled by default]
+    pthread_detach(&mihilo1);
+    ^
+In file included from ../src/interfaz/InterfazCPU.h:11:0,
+                 from ../src/interfaz/InterfazCPU.c:1:
+/usr/include/pthread.h:282:12: note: expected ‘pthread_t’ but argument is of type ‘pthread_t *’
+ extern int pthread_detach (pthread_t __th) __THROW;
+            ^
+../src/interfaz/InterfazCPU.c: In function ‘CU_Recibir_Conexiones_CPU’:
+../src/interfaz/InterfazCPU.c:92:4: warning: implicit declaration of function ‘escribir_archivo’ [-Wimplicit-function-declaration]
+    escribir_archivo(clienteCPU);
+    ^
+../src/interfaz/InterfazCPU.c:98:4: warning: implicit declaration of function ‘CU_Atender_Solicitud_Escritura_Por_Pantalla’ [-Wimplicit-function-declaration]
+    CU_Atender_Solicitud_Escritura_Por_Pantalla();
+    ^
+../src/interfaz/InterfazCPU.c: In function ‘index_of_CPU’:
+../src/interfaz/InterfazCPU.c:118:2: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  while (aux = list_get(lista_CPUs, i)) {
+  ^
+../src/interfaz/InterfazCPU.c: At top level:
+../src/interfaz/InterfazCPU.c:146:6: warning: conflicting types for ‘CU_Atender_Solicitud_Escritura_Por_Pantalla’ [enabled by default]
+ void CU_Atender_Solicitud_Escritura_Por_Pantalla(int clienteCPU) {
+      ^
+../src/interfaz/InterfazCPU.c:98:4: note: previous implicit declaration of ‘CU_Atender_Solicitud_Escritura_Por_Pantalla’ was here
+    CU_Atender_Solicitud_Escritura_Por_Pantalla();
+    ^
+In file included from ../src/interfaz/InterfazCPU.c:17:0:
+../src/interfaz/../header/AppConfig.h:40:5: warning: array ‘VECTOR_VAR_COM’ assumed to have one element [enabled by default]
+ int VECTOR_VAR_COM[];
+     ^
+Finished building: ../src/interfaz/InterfazCPU.c
+ 
+Building file: ../src/interfaz/InterfazMemoria.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/interfaz/InterfazMemoria.d" -MT"src/interfaz/InterfazMemoria.d" -o "src/interfaz/InterfazMemoria.o" "../src/interfaz/InterfazMemoria.c"
+../src/interfaz/InterfazMemoria.c: In function ‘enviar_programa_memoria’:
+../src/interfaz/InterfazMemoria.c:91:5: error: ‘PCB’ has no member named ‘paginaStack’
+  pcb->paginaStack = atoi(numeroPagina);
+     ^
+../src/interfaz/InterfazMemoria.c:92:5: error: ‘PCB’ has no member named ‘posicionPaginaStack’
+  pcb->posicionPaginaStack = 0;
+     ^
+In file included from ../src/interfaz/InterfazMemoria.c:19:0:
+../src/interfaz/InterfazMemoria.c: At top level:
+../src/interfaz/../header/AppConfig.h:40:5: warning: array ‘VECTOR_VAR_COM’ assumed to have one element [enabled by default]
+ int VECTOR_VAR_COM[];
+     ^
+make: *** [src/interfaz/InterfazMemoria.o] Error 1
+21:15:08 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+make: No se hace nada para «all».
+21:16:30 **** Incremental Build of configuration Debug for project Sharedlib ****
+make all 
+make: No se hace nada para «all».
+21:16:30 **** Incremental Build of configuration Debug for project SistemaCPU ****
+make all 
+Building file: ../src/procesador/Ejecucion.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/procesador/Ejecucion.d" -MT"src/procesador/Ejecucion.d" -o "src/procesador/Ejecucion.o" "../src/procesador/Ejecucion.c"
+../src/procesador/Ejecucion.c: In function ‘ejecutar_programa_por_FIFO’:
+../src/procesador/Ejecucion.c:59:17: error: void value not ignored as it ought to be
+     pcbEjecutar =
+                 ^
+../src/procesador/Ejecucion.c:64:4: warning: implicit declaration of function ‘nanosleep’ [-Wimplicit-function-declaration]
+    nanosleep(retardo); //Retardo en tiempo de ejecucion
+    ^
+make: *** [src/procesador/Ejecucion.o] Error 1
+21:16:30 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+Building file: ../src/CONSOLA.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/CONSOLA.d" -MT"src/CONSOLA.d" -o "src/CONSOLA.o" "../src/CONSOLA.c"
+../src/CONSOLA.c: In function ‘main’:
+../src/CONSOLA.c:42:2: warning: passing argument 3 of ‘pthread_create’ from incompatible pointer type [enabled by default]
+  pthread_create(&t_interfaz, NULL, &atender_solicitudes_de_usuario, NULL);
+  ^
+In file included from ../src/CONSOLA.c:14:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * (*)(void *)’ but argument is of type ‘void (*)()’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/CONSOLA.c: In function ‘atender_solicitudes_de_usuario’:
+../src/CONSOLA.c:89:4: warning: statement with no effect [-Wunused-value]
+    for (i; i < tamanio; i++) {
+    ^
+../src/CONSOLA.c:91:5: warning: implicit declaration of function ‘solicitar_desconexion’ [-Wimplicit-function-declaration]
+     solicitar_desconexion(info_ejecucion->pid, info_ejecucion->socket);
+     ^
+../src/CONSOLA.c: In function ‘iniciar_thread’:
+../src/CONSOLA.c:105:2: warning: passing argument 3 of ‘pthread_create’ from incompatible pointer type [enabled by default]
+  pthread_create(&t_programa, NULL, &CU_iniciar_programa, path_archivo_fuente);
+  ^
+In file included from ../src/CONSOLA.c:14:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * (*)(void *)’ but argument is of type ‘void (*)()’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/CONSOLA.c: In function ‘CU_iniciar_programa’:
+../src/CONSOLA.c:113:2: warning: passing argument 2 of ‘conectar_servidor’ makes integer from pointer without a cast [enabled by default]
+  int kernel_programa = conectar_servidor(configuraciones.IP_KERNEL, configuraciones.PUERTO_KERNEL);
+  ^
+In file included from ../src/CONSOLA.c:19:0:
+/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Sharedlib/Socket.h:17:5: note: expected ‘int’ but argument is of type ‘char *’
+ int conectar_servidor(char * ip_addr, int puerto);
+     ^
+../src/CONSOLA.c: In function ‘mostrar_info_proceso’:
+../src/CONSOLA.c:176:2: warning: passing argument 1 of ‘string_itoa’ makes integer from pointer without a cast [enabled by default]
+  string_append(&info_log, string_itoa(tiempoTranscurrido));
+  ^
+In file included from ../src/CONSOLA.c:12:0:
+/usr/include/commons/string.h:33:8: note: expected ‘int’ but argument is of type ‘char *’
+  char* string_itoa(int number);
+        ^
+Finished building: ../src/CONSOLA.c
+ 
+Building file: ../src/Estructuras.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Estructuras.d" -MT"src/Estructuras.d" -o "src/Estructuras.o" "../src/Estructuras.c"
+../src/Estructuras.c: In function ‘new_Info_ejecucion’:
+../src/Estructuras.c:19:2: warning: implicit declaration of function ‘temporal_get_string_time’ [-Wimplicit-function-declaration]
+  info_ejecucion->fecha_inicio = temporal_get_string_time();
+  ^
+../src/Estructuras.c:19:31: warning: assignment makes pointer from integer without a cast [enabled by default]
+  info_ejecucion->fecha_inicio = temporal_get_string_time();
+                               ^
+../src/Estructuras.c: In function ‘eliminar_info_proceso’:
+../src/Estructuras.c:39:2: warning: passing argument 3 of ‘list_remove_and_destroy_element’ from incompatible pointer type [enabled by default]
+  list_remove_and_destroy_element(Info_procesos, indice, &my_free);
+  ^
+In file included from ../src/header/Estructuras.h:11:0,
+                 from ../src/Estructuras.c:8:
+/usr/include/commons/collections/list.h:127:7: note: expected ‘void (*)(void *)’ but argument is of type ‘void (*)(struct Info_ejecucion *)’
+  void list_remove_and_destroy_element(t_list *, int index, void(*element_destroyer)(void*));
+       ^
+Finished building: ../src/Estructuras.c
+ 
+Building target: SistemaConsola
+Invoking: GCC C Linker
+gcc -L"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug" -o "SistemaConsola"  ./src/header/AppConfig.o  ./src/CONSOLA.o ./src/Estructuras.o ./src/ExitCodes.o ./src/InterfazKernel.o ./src/Semaforo.o ./src/funcionesUtiles.o   -lSharedlib -lpthread -lcommons
+Finished building target: SistemaConsola
+ 
+21:16:31 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+Building target: SistemaFILESYSTEM
+Invoking: GCC C Linker
+gcc -L"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug" -o "SistemaFILESYSTEM"  ./src/testing/testing.o  ./src/header/AppConfig.o  ./src/Archivo.o ./src/FILE_SYSTEM.o ./src/FileManager.o ./src/InterfazKernel.o   -lSharedlib -lpthread -lcommons
+Finished building target: SistemaFILESYSTEM
+ 
+21:16:31 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+Building file: ../src/interfaz/InterfazMemoria.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/interfaz/InterfazMemoria.d" -MT"src/interfaz/InterfazMemoria.d" -o "src/interfaz/InterfazMemoria.o" "../src/interfaz/InterfazMemoria.c"
+In file included from ../src/interfaz/InterfazMemoria.c:19:0:
+../src/interfaz/../header/AppConfig.h:40:5: warning: array ‘VECTOR_VAR_COM’ assumed to have one element [enabled by default]
+ int VECTOR_VAR_COM[];
+     ^
+Finished building: ../src/interfaz/InterfazMemoria.c
+ 
+Building file: ../src/capaFILESYSTEM/GestionArchivos.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/capaFILESYSTEM/GestionArchivos.d" -MT"src/capaFILESYSTEM/GestionArchivos.d" -o "src/capaFILESYSTEM/GestionArchivos.o" "../src/capaFILESYSTEM/GestionArchivos.c"
+../src/capaFILESYSTEM/GestionArchivos.c: In function ‘CU_ABRIR_ARCHIVO’:
+../src/capaFILESYSTEM/GestionArchivos.c:32:3: warning: passing argument 1 of ‘incrementar_SYSCALL’ makes integer from pointer without a cast [enabled by default]
+   incrementar_SYSCALL(PID, 1);
+   ^
+In file included from ../src/capaFILESYSTEM/GestionArchivos.c:13:0:
+../src/capaFILESYSTEM/../administrarPCB/EstadisticaProceso.h:29:6: note: expected ‘uint32_t’ but argument is of type ‘char *’
+ void incrementar_SYSCALL(uint32_t PID, uint32_t cantidadSysCall);
+      ^
+../src/capaFILESYSTEM/GestionArchivos.c:35:3: warning: implicit declaration of function ‘grabar_apertura_en_tablas_archivos’ [-Wimplicit-function-declaration]
+   return grabar_apertura_en_tablas_archivos(pathArchivo, proc, flagCreate, flagRead, flagWrite);
+   ^
+../src/capaFILESYSTEM/GestionArchivos.c:35:3: warning: return makes pointer from integer without a cast [enabled by default]
+../src/capaFILESYSTEM/GestionArchivos.c:37:3: warning: return makes pointer from integer without a cast [enabled by default]
+   return grabar_apertura_en_tablas_archivos(pathArchivo, proc, flagCreate, flagRead, flagWrite);
+   ^
+../src/capaFILESYSTEM/GestionArchivos.c: In function ‘CU_MOVER_CURSOR_ARCHIVO’:
+../src/capaFILESYSTEM/GestionArchivos.c:46:2: warning: implicit declaration of function ‘buscar_registro_TablaProcesoArchivo’ [-Wimplicit-function-declaration]
+  TablaProcesoArchivo* registro = buscar_registro_TablaProcesoArchivo(PID, FD);
+  ^
+../src/capaFILESYSTEM/GestionArchivos.c:46:34: warning: initialization makes pointer from integer without a cast [enabled by default]
+  TablaProcesoArchivo* registro = buscar_registro_TablaProcesoArchivo(PID, FD);
+                                  ^
+../src/capaFILESYSTEM/GestionArchivos.c:53:2: warning: passing argument 1 of ‘incrementar_SYSCALL’ makes integer from pointer without a cast [enabled by default]
+  incrementar_SYSCALL(PID, 1);
+  ^
+In file included from ../src/capaFILESYSTEM/GestionArchivos.c:13:0:
+../src/capaFILESYSTEM/../administrarPCB/EstadisticaProceso.h:29:6: note: expected ‘uint32_t’ but argument is of type ‘char *’
+ void incrementar_SYSCALL(uint32_t PID, uint32_t cantidadSysCall);
+      ^
+../src/capaFILESYSTEM/GestionArchivos.c: In function ‘CU_LEER_ARCHIVO’:
+../src/capaFILESYSTEM/GestionArchivos.c:59:34: warning: initialization makes pointer from integer without a cast [enabled by default]
+  TablaProcesoArchivo* registro = buscar_registro_TablaProcesoArchivo(PID, FD);
+                                  ^
+../src/capaFILESYSTEM/GestionArchivos.c:63:2: warning: implicit declaration of function ‘verificarFlag’ [-Wimplicit-function-declaration]
+  if (verificarFlag(registro->flags, 'L')) {
+  ^
+../src/capaFILESYSTEM/GestionArchivos.c:65:3: warning: passing argument 1 of ‘incrementar_SYSCALL’ makes integer from pointer without a cast [enabled by default]
+   incrementar_SYSCALL(PID, 1);
+   ^
+In file included from ../src/capaFILESYSTEM/GestionArchivos.c:13:0:
+../src/capaFILESYSTEM/../administrarPCB/EstadisticaProceso.h:29:6: note: expected ‘uint32_t’ but argument is of type ‘char *’
+ void incrementar_SYSCALL(uint32_t PID, uint32_t cantidadSysCall);
+      ^
+../src/capaFILESYSTEM/GestionArchivos.c:66:3: warning: implicit declaration of function ‘getNombreArchivo’ [-Wimplicit-function-declaration]
+   return obtenerDatos(getNombreArchivo(registro->GlobalFD), registro->cursor_bloque, tamanio);
+   ^
+../src/capaFILESYSTEM/GestionArchivos.c:66:3: warning: passing argument 1 of ‘obtenerDatos’ makes pointer from integer without a cast [enabled by default]
+In file included from ../src/capaFILESYSTEM/GestionArchivos.c:8:0:
+../src/capaFILESYSTEM/../interfaz/InterfazFS.h:18:7: note: expected ‘char *’ but argument is of type ‘int’
+ char* obtenerDatos(char* path,int bloqueInicial,int size);
+       ^
+../src/capaFILESYSTEM/GestionArchivos.c: In function ‘CU_ESCRIBIR_ARCHIVO’:
+../src/capaFILESYSTEM/GestionArchivos.c:73:34: warning: initialization makes pointer from integer without a cast [enabled by default]
+  TablaProcesoArchivo* registro = buscar_registro_TablaProcesoArchivo(PID, FD);
+                                  ^
+../src/capaFILESYSTEM/GestionArchivos.c:79:3: warning: passing argument 1 of ‘incrementar_SYSCALL’ makes integer from pointer without a cast [enabled by default]
+   incrementar_SYSCALL(PID, 1);
+   ^
+In file included from ../src/capaFILESYSTEM/GestionArchivos.c:13:0:
+../src/capaFILESYSTEM/../administrarPCB/EstadisticaProceso.h:29:6: note: expected ‘uint32_t’ but argument is of type ‘char *’
+ void incrementar_SYSCALL(uint32_t PID, uint32_t cantidadSysCall);
+      ^
+../src/capaFILESYSTEM/GestionArchivos.c:80:3: warning: passing argument 1 of ‘guardarDatos’ makes pointer from integer without a cast [enabled by default]
+   return guardarDatos(getNombreArchivo(registro->GlobalFD), registro->cursor_bloque, tamanio, contenido);
+   ^
+In file included from ../src/capaFILESYSTEM/GestionArchivos.c:8:0:
+../src/capaFILESYSTEM/../interfaz/InterfazFS.h:19:7: note: expected ‘char *’ but argument is of type ‘int’
+ char* guardarDatos(char* path,int bloqueInicial,int size,char* contenido);
+       ^
+../src/capaFILESYSTEM/GestionArchivos.c: In function ‘CU_CERRAR_ARCHIVO’:
+../src/capaFILESYSTEM/GestionArchivos.c:86:34: warning: initialization makes pointer from integer without a cast [enabled by default]
+  TablaProcesoArchivo* registro = buscar_registro_TablaProcesoArchivo(PID, FD);
+                                  ^
+../src/capaFILESYSTEM/GestionArchivos.c:98:3: warning: passing argument 1 of ‘incrementar_SYSCALL’ makes integer from pointer without a cast [enabled by default]
+   incrementar_SYSCALL(PID, 1);
+   ^
+In file included from ../src/capaFILESYSTEM/GestionArchivos.c:13:0:
+../src/capaFILESYSTEM/../administrarPCB/EstadisticaProceso.h:29:6: note: expected ‘uint32_t’ but argument is of type ‘char *’
+ void incrementar_SYSCALL(uint32_t PID, uint32_t cantidadSysCall);
+      ^
+../src/capaFILESYSTEM/GestionArchivos.c: In function ‘CU_BORRAR_ARCHIVO’:
+../src/capaFILESYSTEM/GestionArchivos.c:115:34: warning: initialization makes pointer from integer without a cast [enabled by default]
+  TablaProcesoArchivo* registro = buscar_registro_TablaProcesoArchivo(PID, atoi(rutaArchivo));
+                                  ^
+../src/capaFILESYSTEM/GestionArchivos.c:125:2: warning: implicit declaration of function ‘contar_Cantidad_FD_ABIERTO’ [-Wimplicit-function-declaration]
+  existeArchivoTablaGlobal = (contar_Cantidad_FD_ABIERTO(IndiceGlobal) > 1);
+  ^
+../src/capaFILESYSTEM/GestionArchivos.c:135:3: warning: passing argument 1 of ‘incrementar_SYSCALL’ makes integer from pointer without a cast [enabled by default]
+   incrementar_SYSCALL(PID, 1);
+   ^
+In file included from ../src/capaFILESYSTEM/GestionArchivos.c:13:0:
+../src/capaFILESYSTEM/../administrarPCB/EstadisticaProceso.h:29:6: note: expected ‘uint32_t’ but argument is of type ‘char *’
+ void incrementar_SYSCALL(uint32_t PID, uint32_t cantidadSysCall);
+      ^
+../src/capaFILESYSTEM/GestionArchivos.c:142:2: warning: passing argument 1 of ‘incrementar_SYSCALL’ makes integer from pointer without a cast [enabled by default]
+  incrementar_SYSCALL(PID, 1);
+  ^
+In file included from ../src/capaFILESYSTEM/GestionArchivos.c:13:0:
+../src/capaFILESYSTEM/../administrarPCB/EstadisticaProceso.h:29:6: note: expected ‘uint32_t’ but argument is of type ‘char *’
+ void incrementar_SYSCALL(uint32_t PID, uint32_t cantidadSysCall);
+      ^
+In file included from ../src/capaFILESYSTEM/GestionArchivos.c:7:0:
+../src/capaFILESYSTEM/GestionArchivos.c: At top level:
+../src/capaFILESYSTEM/../header/AppConfig.h:40:5: warning: array ‘VECTOR_VAR_COM’ assumed to have one element [enabled by default]
+ int VECTOR_VAR_COM[];
+     ^
+Finished building: ../src/capaFILESYSTEM/GestionArchivos.c
+ 
+Building file: ../src/administrarPCB/EstadisticaProceso.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/administrarPCB/EstadisticaProceso.d" -MT"src/administrarPCB/EstadisticaProceso.d" -o "src/administrarPCB/EstadisticaProceso.o" "../src/administrarPCB/EstadisticaProceso.c"
+Finished building: ../src/administrarPCB/EstadisticaProceso.c
+ 
+Building target: SistemaKERNEL
+Invoking: GCC C Linker
+gcc -L"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug" -o "SistemaKERNEL"  ./src/testing/TestingCapaFileSystem.o ./src/testing/TestingGeneral.o ./src/testing/TestingInterfazMemoria.o ./src/testing/TestingMenu.o ./src/testing/TestingPlanificacion.o  ./src/planificacion/Planificacion.o ./src/planificacion/PlanificacionFIFO.o ./src/planificacion/PlanificacionRR.o  ./src/interfaz/InterfazCPU.o ./src/interfaz/InterfazConsola.o ./src/interfaz/InterfazFS.o ./src/interfaz/InterfazMemoria.o  ./src/header/AppConfig.o ./src/header/SolicitudesUsuario.o  ./src/general/Semaforo.o ./src/general/funcionesUtiles.o  ./src/capaMEMORIA/AdministrarSemaforos.o ./src/capaMEMORIA/AdministrarVarCompartidas.o ./src/capaMEMORIA/GestMemoriaFuncionesAux.o ./src/capaMEMORIA/GestionMemoriaDinamica.o  ./src/capaFILESYSTEM/GestionArchivoFuncAux.o ./src/capaFILESYSTEM/GestionArchivos.o ./src/capaFILESYSTEM/TablaGlobalArchivo.o ./src/capaFILESYSTEM/TablaProcesoArchivo.o  ./src/administrarProcesos/Proceso.o  ./src/administrarPCB/EstadisticaProceso.o ./src/administrarPCB/PCBData.o  ./src/KERNEL.o   -lcommons -lpthread -lparser-ansisop -lSharedlib
+Finished building target: SistemaKERNEL
+ 
+21:16:32 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+make: No se hace nada para «all».
+21:19:12 **** Incremental Build of configuration Debug for project Sharedlib ****
+make all 
+make: No se hace nada para «all».
+21:19:13 **** Incremental Build of configuration Debug for project SistemaCPU ****
+make all 
+Building file: ../src/procesador/Ejecucion.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/procesador/Ejecucion.d" -MT"src/procesador/Ejecucion.d" -o "src/procesador/Ejecucion.o" "../src/procesador/Ejecucion.c"
+../src/procesador/Ejecucion.c: In function ‘ejecutar_programa_por_FIFO’:
+../src/procesador/Ejecucion.c:59:17: error: void value not ignored as it ought to be
+     pcbEjecutar =
+                 ^
+../src/procesador/Ejecucion.c:64:4: warning: implicit declaration of function ‘nanosleep’ [-Wimplicit-function-declaration]
+    nanosleep(retardo); //Retardo en tiempo de ejecucion
+    ^
+make: *** [src/procesador/Ejecucion.o] Error 1
+21:19:13 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+make: No se hace nada para «all».
+21:19:13 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+make: No se hace nada para «all».
+21:19:13 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+make: No se hace nada para «all».
+21:19:14 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+make: No se hace nada para «all».

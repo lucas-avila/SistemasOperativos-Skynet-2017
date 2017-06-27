@@ -1,6 +1,16 @@
-11:20:54 **** Incremental Build of configuration Debug for project SistemaCPU ****
+21:19:13 **** Incremental Build of configuration Debug for project SistemaCPU ****
 make all 
-make: No se hace nada para «all».
+Building file: ../src/procesador/Ejecucion.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/procesador/Ejecucion.d" -MT"src/procesador/Ejecucion.d" -o "src/procesador/Ejecucion.o" "../src/procesador/Ejecucion.c"
+../src/procesador/Ejecucion.c: In function ‘ejecutar_programa_por_FIFO’:
+../src/procesador/Ejecucion.c:59:17: error: void value not ignored as it ought to be
+     pcbEjecutar =
+                 ^
+../src/procesador/Ejecucion.c:64:4: warning: implicit declaration of function ‘nanosleep’ [-Wimplicit-function-declaration]
+    nanosleep(retardo); //Retardo en tiempo de ejecucion
+    ^
+make: *** [src/procesador/Ejecucion.o] Error 1
 
-11:20:54 Build Finished (took 64ms)
+21:19:13 Build Finished (took 137ms)
 

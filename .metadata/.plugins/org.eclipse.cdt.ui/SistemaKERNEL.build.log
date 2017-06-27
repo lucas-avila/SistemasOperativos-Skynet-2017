@@ -1,21 +1,6 @@
-11:20:55 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+21:19:13 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
 make all 
-Building file: ../src/interfaz/InterfazMemoria.c
-Invoking: GCC C Compiler
-gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/interfaz/InterfazMemoria.d" -MT"src/interfaz/InterfazMemoria.d" -o "src/interfaz/InterfazMemoria.o" "../src/interfaz/InterfazMemoria.c"
-../src/interfaz/InterfazMemoria.c: In function ‘enviar_programa_memoria’:
-../src/interfaz/InterfazMemoria.c:91:5: error: ‘PCB’ has no member named ‘paginaStack’
-  pcb->paginaStack = atoi(numeroPagina);
-     ^
-../src/interfaz/InterfazMemoria.c:92:5: error: ‘PCB’ has no member named ‘posicionPaginaStack’
-  pcb->posicionPaginaStack = 0;
-     ^
-In file included from ../src/interfaz/InterfazMemoria.c:19:0:
-../src/interfaz/InterfazMemoria.c: At top level:
-../src/interfaz/../header/AppConfig.h:40:5: warning: array ‘VECTOR_VAR_COM’ assumed to have one element [enabled by default]
- int VECTOR_VAR_COM[];
-     ^
-make: *** [src/interfaz/InterfazMemoria.o] Error 1
+make: No se hace nada para «all».
 
-11:20:55 Build Finished (took 176ms)
+21:19:14 Build Finished (took 127ms)
 
