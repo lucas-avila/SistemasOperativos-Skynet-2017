@@ -12,6 +12,7 @@
 #include <sys/socket.h>
 #include <pthread.h>
 #include <netinet/in.h>
+#include <signal.h>
 
 //FUNCIONES DEL LADO DEL SERVER
 int crear_servidor(int puerto, int max_conexiones) {
@@ -63,7 +64,7 @@ int recibir_dato_generico(int socket_conexion, char * buffer, int tam_bytes) {
 
 char* recibir_dato_serializado(int socket_conexion) {
 	char tamanio_dato[4];
-	int bytes_recibidos = recv(socket_conexion, &tamanio_dato, 4, 0);
+	int bytes_recibidos = recv(socket_conexion, &tamanio_dato, 4, MSG_NOSIGNAL);
 	tamanio_dato[bytes_recibidos] = '\0';
 	char dato[40];
 	int tamanioFinal = atoi(tamanio_dato);
@@ -80,7 +81,7 @@ char* recibir_dato_serializado(int socket_conexion) {
 	} else {
 
 		//dato =  malloc(atoi(tamanio_dato));
-		recv(socket_conexion, &dato, atoi(tamanio_dato), 0);
+		recv(socket_conexion, &dato, atoi(tamanio_dato), MSG_NOSIGNAL);
 		dato[atoi(tamanio_dato)] = '\0';
 
 		//printf("\n Recibi: %s, conexion : %d \n", dato, socket_conexion);
@@ -98,8 +99,9 @@ void enviar_dato_serializado(char* mensaje, int conexion) {
 	}
 	//int tamanio= string_length(mensaje);
 	sprintf(tamanio_dato, "%d", tamanio);
-	send(conexion, tamanio_dato, 4, 0);
-	send(conexion, mensaje, tamanio, 0);
+	//msg_nosignal para que no tire SIGPIPE y handlear nosotros las desconexiones
+	send(conexion, tamanio_dato, 4, MSG_NOSIGNAL);
+	send(conexion, mensaje, tamanio, MSG_NOSIGNAL);
 	//printf("\n Envie: %s, conexion : %d", mensaje, conexion);
 }
 

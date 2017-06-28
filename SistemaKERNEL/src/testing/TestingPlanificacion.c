@@ -87,7 +87,8 @@ void mostrar_estado_colas() {
 		printf("\n\tCOLA NEW (%d): ", queue_size(cola(NEW)));
 		mostrar_datos_cola(cola(NEW));
 		printf("\n\t_______\n");
-		printf("\n\tCOLAS SEMAFOROS:");
+		printf("\n\tCOLA WAITING (%d):", list_size((t_list*)cola(WAITING)));
+		printf("\n\t\tSEMAFOROS:");
 		int i;
 		for(i=0; i < configuraciones.cantidad_sem; i++){
 			printf("\n\t\tCOLA %s", configuraciones.SEM_IDS[i]);

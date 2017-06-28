@@ -65,7 +65,7 @@ void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 
 	if (strcmp(origen, EXEC) == 0) {
 
-		free(list_remove_by_condition((t_list*) cola(origen), &es_pcb_buscado));
+		list_remove_by_condition((t_list*) cola(EXEC), &es_pcb_buscado);
 		//Marcamos el CPU que estaba usando como disponible
 		marcar_CPU_Disponible(p->cpu);
 		//Si va a algun waiting
@@ -75,7 +75,7 @@ void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 		p->cpu = NULL;
 	} //Si viene de algun waiting
 	else if (es_semaforo(origen)) {
-		free(list_remove_by_condition((t_list*) cola(WAITING), &es_pcb_buscado));
+		list_remove_by_condition((t_list*) cola(WAITING), &es_pcb_buscado);
 		queue_pop(cola(origen));
 	} else
 		queue_pop(cola(origen));
@@ -97,9 +97,7 @@ void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 		list_add((t_list*) cola(destino), pcb);
 	else if (es_semaforo(destino)) {
 		queue_push(cola(destino), pcb);
-		wait_cola(WAITING);
 		list_add((t_list*) cola(WAITING), pcb);
-		signal_cola(WAITING);
 	} else
 		queue_push(cola(destino), pcb);
 	signal_cola(destino);
@@ -107,8 +105,8 @@ void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 
 CPUInfo* obtener_CPU_Disponible() {
 	int i = 0;
-	sem_wait(&mutex_lista_CPUs);
 	while (configuraciones.planificacion_activa == 1) {
+		sem_wait(&mutex_lista_CPUs);
 		int tamanioLista = list_size(lista_CPUs);
 		for (i = 0; i < tamanioLista; i++) {
 			CPUInfo* cpu_element = list_get(lista_CPUs, i);
@@ -117,8 +115,9 @@ CPUInfo* obtener_CPU_Disponible() {
 				return cpu_element;
 			}
 		}
+		sem_post(&mutex_lista_CPUs);
 	}
-	sem_post(&mutex_lista_CPUs);
+
 	return NULL;
 }
 
@@ -165,30 +164,38 @@ PCB* obtener_proceso_de_cola_READY() {
 void enviar_PCB_Serializado_a_CPU(CPUInfo* cpu, PCB* pcb) {
 	//TODO: Haria falta chequear que haya llegado bien?
 	//para testear TODO: BORRAR ESTO
-
+	if(cpu == NULL) return;
 	proceso(pcb)->cpu = cpu;
-	//enviar_dato_serializado("TESTEAR_PLANIFICACION", cpu->numeroConexion);
+	enviar_dato_serializado("TESTEAR_PLANIFICACION", cpu->numeroConexion);
 	enviar_pcb(pcb, cpu->numeroConexion);
 }
 
 //TODO: VOLVER A VERIFICAR SI ESTA FUNCION ANDA BIEN, Y SI NECESITA SEMAFOROS.
 void marcar_CPU_Ocupada(CPUInfo* cpu) {
+	if(cpu == NULL) return;
 	cpu->disponible = 0;
 	return;
 }
 
 void marcar_CPU_Disponible(CPUInfo* cpu) {
+	if(cpu == NULL) return;
 	cpu->disponible = 1;
 	return;
 }
 
-void recepcion_SIGNAL_semaforo_ansisop(char * nombre_sem) {
-	signal_semaforo_ansisop(nombre_sem);
+int recepcion_SIGNAL_semaforo_ansisop(char * nombre_sem) {
+	int res = signal_semaforo_ansisop(nombre_sem);
+
+	if(res == -2)
+		return res;
+
 
 	PCB * pcb = queue_peek(cola(nombre_sem));
 
 	if (pcb != NULL)
 		mover_PCB_de_cola(pcb, nombre_sem, READY);
+
+	return res;
 }
 
 void recibir_PCB_de_CPU(int clienteCPU, char * modo) {
@@ -209,6 +216,28 @@ void recibir_PCB_de_CPU(int clienteCPU, char * modo) {
 			enviar_dato_serializado("NO_BLOQUEADO", clienteCPU);
 	}
 
+}
+
+void limpiar_procesos_CPU(int clienteCPU, char * modo){
+	bool buscar_procesos_por_cola(Proceso * proceso) {
+		if(proceso->cpu == NULL) return false;
+		return (proceso->cpu->numeroConexion == clienteCPU);
+	}
+	sem_wait(&mutex_lista_PROCESOS);
+	t_list * procesos_filtrados = list_filter(procesos, &buscar_procesos_por_cola);
+	sem_post(&mutex_lista_PROCESOS);
+	Proceso * buscado = list_get(procesos_filtrados, 0);
+	if(buscado != NULL){
+		if(strcmp(modo, "REPLANIFICAR") == 0){
+			mover_PCB_de_cola(buscado->pcb, EXEC, READY);
+			printf("\n%d a READY\n", buscado->pcb->PID);
+		}
+		else{
+			buscado->pcb->exit_code = -19; // CPU_HEAVY_METAL
+			mover_PCB_de_cola(buscado->pcb, EXEC, EXIT);
+		}
+	}
+	printf("Posta no encontre nada\n");
 }
 
 void wait_cola(char * cola) {

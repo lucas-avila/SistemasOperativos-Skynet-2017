@@ -74,6 +74,16 @@ char* intToChar4(int num) {
 	if (n_char == NULL) {
 		n_char = malloc(4 + 1);
 	}
+/*
+	char * byte = &num;
+
+	int i = 0;
+	for(i; i < 4; i++){
+		n_char[i] = *(string_itoa(byte[i]));
+	}
+	n_char[i] = '\0';
+	int resultado=0;
+	memcpy(&resultado, n_char, sizeof(int));*/
 
 	//num = 1537;
 	int *pb; // pb deklariert als pointer auf int

@@ -18,19 +18,19 @@
 void enviar_estructura_serializada(char* mensaje, uint32_t size, int conexion) {
 	char * tamanio_dato = malloc(sizeof(uint32_t));
 	memcpy(tamanio_dato, &size, sizeof(uint32_t));
-	send(conexion, tamanio_dato, sizeof(uint32_t), 0);
-	send(conexion, mensaje, size, 0);
+	send(conexion, tamanio_dato, sizeof(uint32_t), MSG_NOSIGNAL);
+	send(conexion, mensaje, size, MSG_NOSIGNAL);
 }
 
 LISTA_SERIALIZADA * recibir_estructura_serializada(int socket_conexion) {
 	char * tamanio_dato = malloc(sizeof(uint32_t));
-	int bytes_recibidos = recv(socket_conexion, tamanio_dato, sizeof(uint32_t), 0);
+	int bytes_recibidos = recv(socket_conexion, tamanio_dato, sizeof(uint32_t), MSG_NOSIGNAL);
 
 	int size = 0;
 	memcpy(&size, tamanio_dato, sizeof(uint32_t));
 
 	char * buffer = malloc(size);
-	recv(socket_conexion, buffer, size, 0);
+	recv(socket_conexion, buffer, size, MSG_NOSIGNAL);
 
 	LISTA_SERIALIZADA * l = malloc(sizeof(LISTA_SERIALIZADA));
 	l->buffer = buffer;

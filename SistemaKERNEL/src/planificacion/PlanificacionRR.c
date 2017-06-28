@@ -29,6 +29,7 @@ void dispatcher_RR() {
 		if(cpu == NULL) return;
 
 		marcar_CPU_Ocupada(cpu);
+		printf("\n%d A EXEC\n", pcb->PID);
 		mover_PCB_de_cola(pcb, READY, EXEC);
 
 		pcb->quantum_sleep= configuraciones.QUANTUM_SLEEP;

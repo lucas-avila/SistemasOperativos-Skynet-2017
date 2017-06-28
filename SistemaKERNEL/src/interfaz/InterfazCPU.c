@@ -68,7 +68,9 @@ void CU_Recibir_Conexiones_CPU(int clienteCPU) {
 		}
 		else if (strcmp(codigo_operacion, "SIGNAL_SEM")== 0) {
 			char * nombre_sem = recibir_dato_serializado(clienteCPU);
-			recepcion_SIGNAL_semaforo_ansisop(nombre_sem);
+			int res = recepcion_SIGNAL_semaforo_ansisop(nombre_sem);
+			if(res == -2)
+				enviar_dato_serializado("SEMAFORO_NO_EXISTE", clienteCPU);
 		}
 		else if (strcmp(codigo_operacion, "ASIGNAR_VAR_COMP") == 0) {
 			asignar_valor_var_comp(clienteCPU);
@@ -97,11 +99,16 @@ void CU_Recibir_Conexiones_CPU(int clienteCPU) {
 		else if (strcmp(codigo_operacion, "IMPRIMIR_POR_PANTALLA") == 0) {
 			CU_Atender_Solicitud_Escritura_Por_Pantalla();
 		}
-		else if (strcmp(codigo_operacion, "") == 0 || strcmp(codigo_operacion, "DESCONECTAR") == 0) {
+		else if(strcmp(codigo_operacion, "DESCONEXION_PROXIMA") == 0){
 			retirar_CPU_global(clienteCPU);
-			close(clienteCPU);
+		}else if(strcmp(codigo_operacion, "DESCONECTAR") == 0) {
+			limpiar_procesos_CPU(clienteCPU, "REPLANIFICAR");
 			controlSeguir = 0;
-		} else {
+		}else if(strcmp(codigo_operacion, "") == 0) {
+			limpiar_procesos_CPU(clienteCPU, "ELIMINAR");
+			retirar_CPU_global(clienteCPU);
+			controlSeguir = 0;
+		}else {
 			enviar_dato_serializado("ERROR: CODIGO OPERACION INEXISTENTE", clienteCPU);
 		}
 	} while (controlSeguir == 1);
@@ -131,15 +138,26 @@ void agregar_CPU_global(int numeroConexion, pthread_t hilo) {
 	cpu->numeroConexion = numeroConexion;
 	cpu->hilo = hilo;
 	cpu->disponible = 1;
+	sem_wait(&mutex_lista_CPUs);
 	list_add(lista_CPUs, cpu);
+	sem_post(&mutex_lista_CPUs);
 }
 
 void retirar_CPU_global(int numeroConexion) {
 	int index = index_of_CPU(numeroConexion);
+	if(index == -1) return;
 	printf("Se elimino a CPU en posicion %d de la lista\n", index);
 	sem_wait(&mutex_lista_CPUs);
 	list_remove(lista_CPUs, index);
 	sem_post(&mutex_lista_CPUs);
+}
+
+CPUInfo * obtener_CPU(int numeroConexion){
+	int index = index_of_CPU(numeroConexion);
+	sem_wait(&mutex_lista_CPUs);
+	CPUInfo * cpu = list_get(lista_CPUs, index);
+	sem_post(&mutex_lista_CPUs);
+	return cpu;
 }
 
 // En esta funcion se usan funciones de Proceso.c. Tal vez falte incluir acceso. Revisar funcion atoi.

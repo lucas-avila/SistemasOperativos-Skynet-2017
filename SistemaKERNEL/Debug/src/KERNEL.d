@@ -11,8 +11,8 @@ src/KERNEL.d: ../src/KERNEL.c \
  ../src/capaMEMORIA/GestMemoriaFuncionesAux.h ../src/general/Semaforo.h \
  ../src/header/AppConfig.h ../src/header/Estructuras.h \
  ../src/header/SolicitudesUsuario.h ../src/interfaz/InterfazConsola.h \
- ../src/interfaz/InterfazCPU.h ../src/interfaz/InterfazFS.h \
- ../src/interfaz/InterfazMemoria.h \
+ ../src/interfaz/InterfazCPU.h ../src/interfaz/../header/Estructuras.h \
+ ../src/interfaz/InterfazFS.h ../src/interfaz/InterfazMemoria.h \
  ../src/interfaz/../../../Sharedlib/Sharedlib/PCB.h \
  ../src/planificacion/Planificacion.h \
  ../src/planificacion/../administrarProcesos/Proceso.h \
@@ -50,6 +50,8 @@ src/KERNEL.d: ../src/KERNEL.c \
 ../src/interfaz/InterfazConsola.h:
 
 ../src/interfaz/InterfazCPU.h:
+
+../src/interfaz/../header/Estructuras.h:
 
 ../src/interfaz/InterfazFS.h:
 

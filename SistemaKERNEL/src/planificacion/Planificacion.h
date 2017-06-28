@@ -55,7 +55,7 @@ void marcar_CPU_Disponible(CPUInfo* cpu);
 
 void recepcion_PCB_en_COLA_EXIT();
 
-void recepcion_SIGNAL_semaforo_ansisop(char * nombre_sem);
+int recepcion_SIGNAL_semaforo_ansisop(char * nombre_sem);
 
 void recibir_PCB_de_CPU(int clienteCPU, char * modo);
 
@@ -63,6 +63,6 @@ void wait_cola(char * cola);
 
 void signal_cola(char * cola);
 
-bool es_exec_cpu(char * cpuID);
+void limpiar_procesos_CPU(int clienteCPU, char * modo);
 
 #endif /* HEADER_PLANIFICACION_H_ */

@@ -13,16 +13,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <Sharedlib/PCB.h>
+#include <Sharedlib/Socket.h>
 #include <unistd.h>
 
-#include "../../Sharedlib/Sharedlib/Socket.h"
 #include "header/AppConfig.h"
-#include "../../Sharedlib/Sharedlib/PCB.h"
 #include "interfaz/InterfazKernel.h"
 #include "interfaz/InterfazMemoria.h"
 #include "interfaz/signals.h"
+#include "primitivas/PrimitivasFunciones.h"
 #include "procesador/Ejecucion.h"
-#include "testing/testearPrimitivasFunciones.h"
 
 void CU_Procesar_PCB_a_ejecutar();
 
@@ -32,6 +32,7 @@ bool controlSeguir = true;
 bool estaEjecutando = false;
 
 int main(int argc, char *argv[]) {
+	intToChar4(15040);
 	//TODO: Agregar adentro de esta funcion, que espere a que termine de ejecutar, lo mande al kernel y DESPUES mandar el desconectar y finalizar el proceso
 	signal(SIGINT, recibir_seniales_de_linux);
 	signal(SIGUSR1, recibir_seniales_de_linux);
@@ -84,6 +85,8 @@ void CU_Terminar_ejecucion_y_finalizar() {
 	if(!estaEjecutando){
 		enviar_dato_serializado("DESCONECTAR", servidor_kernel);
 		exit(-1);
+	}else{
+		enviar_dato_serializado("DESCONEXION_PROXIMA", servidor_kernel);
 	}
 }
 
@@ -94,8 +97,10 @@ void testear_planificacion(servidor_kernel){
 
 	sleep(1);
 
-	if(n < 1){
-		enviar_SYSCALL_wait_semaforo_a_kernel("mutex1", pcb);
+	if(n < 2){
+		int res = enviar_SYSCALL_wait_semaforo_a_kernel("mutex1", pcb);
+		if(!res)
+			enviar_PCB_a_kernel(pcb, "TERMINADO");
 	}else{
 		printf("\n\nDEBUG ---> Se está por llegar al grado maximo de multiprogramacion, empezamos a hacer signals\n\n");
 

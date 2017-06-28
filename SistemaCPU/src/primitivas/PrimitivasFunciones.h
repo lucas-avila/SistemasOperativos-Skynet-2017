@@ -61,4 +61,5 @@ void CERRAR_ARCHIVO_PRIM(t_descriptor_archivo descriptor_archivo);
 void ESCRIBIR_ARCHIVO_PRIM(t_descriptor_archivo descriptor_archivo, void* informacion, t_valor_variable tamanio);
 void LEER_ARCHIVO_PRIM(t_descriptor_archivo descriptor_archivo, t_puntero informacion, t_valor_variable tamanio);
 void MOVER_CURSOR_PRIM(t_descriptor_archivo descriptor_archivo, t_valor_variable posicion);
+char * intToChar4(int num);
 #endif /* PRIMITIVAS_PRIMITIVASFUNCIONES_H_ */
