@@ -55,7 +55,7 @@ void ejecutar_programa_por_FIFO() {
 		if (!esFinPrograma && !programaBloqueado) { //Este if tiene que sacarse, es solo para probar ahora
 
 			analizadorLinea(sentencia, funciones, kernel);
-			if(hubo_excepcion == true) {
+			if(hubo_excepcion) {
 				hubo_excepcion = false;
 				enviar_PCB_a_kernel(pcbEjecutar, "TERMINADO");
 			}
@@ -86,7 +86,7 @@ void ejecutar_programa_por_RR() {
 		esFinPrograma = (strcmp(sentencia, "FIN") == 0);
 		if (!esFinPrograma && !programaBloqueado) { //Este if tiene que sacarse, es solo para probar ahora
 			analizadorLinea(sentencia, funciones, kernel);
-			if(hubo_excepcion == true) {
+			if(hubo_excepcion) {
 				hubo_excepcion = false;
 				enviar_PCB_a_kernel(pcbEjecutar, "TERMINADO");
 			}
@@ -142,5 +142,30 @@ void marcarFinDePrograma() {
 
 void marcarBloqueado() {
 	programaBloqueado = true;
+}
+
+void lanzar_excepcion(char * mensaje){
+	if(strcmp(mensaje, "SEMAFORO_NO_EXISTE") == 0){
+		pcbEjecutar->exit_code = -16;
+	}else if (strcmp("ERROR_ARCHIVO_NO_ABIERTO", mensaje)) {
+		pcbEjecutar->exit_code = -12;
+	}else if (strcmp("ERROR_FALTA_MODO_LECTURA", mensaje)) {
+		pcbEjecutar->exit_code = -3;
+	}else if (strcmp("ERROR_FALTA_MODO_ESCRITURA", mensaje)) {
+		pcbEjecutar->exit_code = -4;
+	}else if (strcmp("ERROR_ARCHIVO_NO_EXISTE", mensaje)) {
+		pcbEjecutar->exit_code = -2;
+	}else if (strcmp("ERROR_ARCHIVO_ABIERTO", mensaje)) {
+		pcbEjecutar->exit_code = -19;
+	}else if (strcmp("ERROR - FALTA MODO APERTURA", mensaje)) {
+		pcbEjecutar->exit_code = -11;
+	}else if (strcmp("ERROR_PROCESO_NO_EXISTE", mensaje)) {
+		pcbEjecutar->exit_code = -5;
+	}else if (strcmp("ERROR - ARCHIVO EXISTE", mensaje)) {
+		pcbEjecutar->exit_code = -10;
+	}
+
+	if(pcbEjecutar->exit_code != 0)
+		hubo_excepcion = true;
 }
 

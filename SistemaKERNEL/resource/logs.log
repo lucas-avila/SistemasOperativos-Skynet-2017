@@ -29,3 +29,69 @@ PID 		 COLA
 ---> Cantidad de procesos totales encontrados: 1
 ------Fin del LOG------
 
+[INFO] 23:10:13:754 KERNEL/(21828:21828): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXIT
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXIT
+- - - - - - - - - - - - - - - - - - -
+1002 		 EXIT
+- - - - - - - - - - - - - - - - - - -
+1003 		 EXIT
+- - - - - - - - - - - - - - - - - - -
+1004 		 EXIT
+- - - - - - - - - - - - - - - - - - -
+1005 		 EXIT
+- - - - - - - - - - - - - - - - - - -
+1006 		 EXIT
+- - - - - - - - - - - - - - - - - - -
+1007 		 EXIT
+- - - - - - - - - - - - - - - - - - -
+1008 		 EXIT
+- - - - - - - - - - - - - - - - - - -
+1009 		 EXIT
+---------------------
+---> Cantidad de procesos totales encontrados: 10
+------Fin del LOG------
+
+[INFO] 23:10:30:810 KERNEL/(21828:21828): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXIT
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXIT
+- - - - - - - - - - - - - - - - - - -
+1002 		 EXIT
+- - - - - - - - - - - - - - - - - - -
+1003 		 EXIT
+- - - - - - - - - - - - - - - - - - -
+1004 		 EXIT
+- - - - - - - - - - - - - - - - - - -
+1005 		 EXIT
+- - - - - - - - - - - - - - - - - - -
+1006 		 EXIT
+- - - - - - - - - - - - - - - - - - -
+1007 		 EXIT
+- - - - - - - - - - - - - - - - - - -
+1008 		 EXIT
+- - - - - - - - - - - - - - - - - - -
+1009 		 EXIT
+---------------------
+---> Cantidad de procesos totales encontrados: 10
+------Fin del LOG------
+
+[INFO] 23:10:48:616 KERNEL/(21828:21828): 
+***LOGS del KERNEL***
+ 
+-->Logs del Proceso 1004:
+Cantidad de rafagas ejecutadas: 1
+
+------Fin del LOG------
+

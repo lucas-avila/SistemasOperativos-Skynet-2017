@@ -122,8 +122,8 @@ void WAIT(t_nombre_semaforo identificador_semaforo) {
 	int result = enviar_SYSCALL_wait_semaforo_a_kernel(identificador_semaforo, pcb);
 	if (result == 1)
 		marcarBloqueado();
-	else if (result == -1 || result == -2)
-		exit(result);
+	else if (result == -1)
+		return;
 	else
 		pcb->program_counter--;
 
@@ -267,94 +267,37 @@ t_valor_variable ASIGNAR_VALOR_COMPARTIDA(t_nombre_compartida variable, t_valor_
 
 t_descriptor_archivo ABRIR_ARCHIVO_PRIM(t_direccion_archivo direccion, t_banderas flags) {
 	char* mensaje = abrir_archivo(string_itoa(pcb->PID), direccion, flags.creacion, flags.lectura, flags.escritura);
-	if (strcmp("OK", mensaje) != 0) {
-		return atoi(mensaje);
-	} else if (strcmp("ERROR_PROCESO_NO_EXISTE", mensaje)) {
-		hubo_excepcion = true;
-		pcb->exit_code = -5;
-	} else if (strcmp("ERROR - ARCHIVO EXISTE", mensaje)) {
-		hubo_excepcion = true;
-		pcb->exit_code = -10;
-	} else if (strcmp("ERROR_ARCHIVO_NO_EXISTE", mensaje)) {
-		hubo_excepcion = true;
-		pcb->exit_code = -2;
-	} else if (strcmp("ERROR - FALTA MODO APERTURA", mensaje)) {
-		hubo_excepcion = true;
-		pcb->exit_code = -11;
-	}
-	return 0;
-	//TODO: Genera error
+	lanzar_excepcion(mensaje);
+	return atoi(mensaje);
 }
 
 void BORRAR_ARCHIVO_PRIM(t_descriptor_archivo descriptor_archivo) {
 	char* mensaje = borrar_archivo(string_itoa(pcb->PID), string_itoa(descriptor_archivo));
-	if (strcmp("OK", mensaje) != 0) {
-		//TODO: Genera error
-		if (strcmp("ERROR_ARCHIVO_NO_EXISTE", mensaje)) {
-			hubo_excepcion = true;
-			pcb->exit_code = -2;
-		}
-		if (strcmp("ERROR_ARCHIVO_ABIERTO", mensaje)) {
-			hubo_excepcion = true;
-			pcb->exit_code = -19;
-		}
-		if (strcmp("ERROR_ARCHIVO_NO_ABIERTO", mensaje)) {
-			hubo_excepcion = true;
-			pcb->exit_code = -12;
-		}
-
-	}
+	if (strcmp("OK", mensaje) != 0)
+		lanzar_excepcion(mensaje);
 
 }
 
 void CERRAR_ARCHIVO_PRIM(t_descriptor_archivo descriptor_archivo) {
 	char* mensaje = cerrar_archivo(string_itoa(pcb->PID), descriptor_archivo);
-	if (strcmp("OK", mensaje) != 0) {
-
-		if (strcmp("ERROR_ARCHIVO_NO_ABIERTO", mensaje)) {
-			hubo_excepcion = true;
-			pcb->exit_code = -12;
-		}
-	}
+	if (strcmp("OK", mensaje) != 0)
+		lanzar_excepcion(mensaje);
 }
 
 void MOVER_CURSOR_PRIM(t_descriptor_archivo descriptor_archivo, t_valor_variable posicion) {
 	char* mensaje = mover_cursor_archivo(string_itoa(pcb->PID), descriptor_archivo, posicion);
-	if (strcmp("OK", mensaje) != 0) {
-
-		if (strcmp("ERROR_ARCHIVO_NO_ABIERTO", mensaje)) {
-			hubo_excepcion = true;
-			pcb->exit_code = -12;
-		}
-	}
+	if (strcmp("OK", mensaje) != 0)
+		lanzar_excepcion(mensaje);
 }
 
 void ESCRIBIR_ARCHIVO_PRIM(t_descriptor_archivo descriptor_archivo, void* informacion, t_valor_variable tamanio) {
 	char* mensaje = escribir_archivo(string_itoa(pcb->PID), descriptor_archivo, tamanio, informacion);
-	if (strcmp("OK", mensaje) != 0) {
-
-		if (strcmp("ERROR_ARCHIVO_NO_ABIERTO", mensaje)) {
-			hubo_excepcion = true;
-			pcb->exit_code = -12;
-		}
-		if (strcmp("ERROR_FALTA_MODO_ESCRITURA", mensaje)) {
-			hubo_excepcion = true;
-			pcb->exit_code = -4;
-		}
-	}
+	if (strcmp("OK", mensaje) != 0)
+		lanzar_excepcion(mensaje);
 }
 
 void LEER_ARCHIVO_PRIM(t_descriptor_archivo descriptor_archivo, t_puntero informacion, t_valor_variable tamanio) {
 	char* mensaje = leer_archivo(string_itoa(pcb->PID), descriptor_archivo, tamanio);
-	if (strcmp("OK", mensaje) != 0) {
-
-		if (strcmp("ERROR_ARCHIVO_NO_ABIERTO", mensaje)) {
-			hubo_excepcion = true;
-			pcb->exit_code = -12;
-		}
-		if (strcmp("ERROR_FALTA_MODO_LECTURA", mensaje)) {
-			hubo_excepcion = true;
-			pcb->exit_code = -3;
-		}
-	}
+	if (strcmp("OK", mensaje) != 0)
+		lanzar_excepcion(mensaje);
 }

@@ -30,6 +30,8 @@ void marcarFinDePrograma();
 
 void marcarBloqueado();
 
+void lanzar_excepcion(char * mensaje);
+
 bool esFinPrograma;
 bool programaBloqueado;
 bool hubo_excepcion;

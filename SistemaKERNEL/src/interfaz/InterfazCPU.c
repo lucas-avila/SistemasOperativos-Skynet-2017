@@ -71,6 +71,8 @@ void CU_Recibir_Conexiones_CPU(int clienteCPU) {
 			int res = recepcion_SIGNAL_semaforo_ansisop(nombre_sem);
 			if(res == -2)
 				enviar_dato_serializado("SEMAFORO_NO_EXISTE", clienteCPU);
+			else
+				enviar_dato_serializado("SEMAFORO_OK", clienteCPU);
 		}
 		else if (strcmp(codigo_operacion, "ASIGNAR_VAR_COMP") == 0) {
 			asignar_valor_var_comp(clienteCPU);

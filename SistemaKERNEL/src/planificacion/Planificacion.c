@@ -237,7 +237,6 @@ void limpiar_procesos_CPU(int clienteCPU, char * modo){
 			mover_PCB_de_cola(buscado->pcb, EXEC, EXIT);
 		}
 	}
-	printf("Posta no encontre nada\n");
 }
 
 void wait_cola(char * cola) {

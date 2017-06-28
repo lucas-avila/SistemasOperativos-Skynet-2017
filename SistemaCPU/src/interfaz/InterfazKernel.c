@@ -95,13 +95,10 @@ int enviar_SYSCALL_wait_semaforo_a_kernel(char* nombre, PCB * pcb) {
 		//TODO: el semaforo no bloqueó el proceso, el proceso continua su ejecucion normal
 		printf("el semaforo no bloqueo el proceso");
 		return 0;
-	} else if (strcmp(respuesta, "SEMAFORO_NO_EXISTE") == 0) {
-		printf("Error - El semaforo solicitado no existe\n");
-		return -1;
-	} else {
-		printf("Error - Fallo en la comunicación con kernel\n");
-		return -2;
-	}
+	} else if (strcmp(respuesta, "SEMAFORO_NO_EXISTE") == 0)
+		lanzar_excepcion(respuesta);
+
+	return 0;
 }
 
 int enviar_SYSCALL_signal_semaforo_a_kernel(char* nombre) {
@@ -115,6 +112,9 @@ int enviar_SYSCALL_signal_semaforo_a_kernel(char* nombre) {
 	enviar_dato_serializado(nombre_semaforo, servidor_kernel);
 	printf("SIGNAL %s\n", nombre_semaforo);
 	//TODO: que pasa si el nombre del semaforo no existe?
+	char * respuesta = recibir_dato_serializado(servidor_kernel);
+	if (strcmp(respuesta, "SEMAFORO_NO_EXISTE") == 0)
+		lanzar_excepcion(respuesta);
 
 	return -1;
 }
