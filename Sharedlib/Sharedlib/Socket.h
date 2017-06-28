@@ -12,7 +12,7 @@ int crear_servidor(int puerto, int max_conexiones);
 int aceptar_conexion_cliente(int socket_servidor);
 int recibir_dato_generico(int socket_conexion, char * buffer, int tam_bytes);
 char * recibir_dato_serializado(int socket_conexion);
-void enviar_dato_serializado(char * mensaje, int conexion);
+int enviar_dato_serializado(char * mensaje, int conexion);
 void atender_clientes(int servidor, void (*f)(int));
 int conectar_servidor(char * ip_addr, int puerto);
 

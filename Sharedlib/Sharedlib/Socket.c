@@ -63,46 +63,41 @@ int recibir_dato_generico(int socket_conexion, char * buffer, int tam_bytes) {
 }
 
 char* recibir_dato_serializado(int socket_conexion) {
-	char tamanio_dato[4];
-	int bytes_recibidos = recv(socket_conexion, &tamanio_dato, 4, MSG_NOSIGNAL);
-	tamanio_dato[bytes_recibidos] = '\0';
-	char dato[40];
-	int tamanioFinal = atoi(tamanio_dato);
-	if (atoi(tamanio_dato) > 40) {
-		char* datoNuevo;
-		datoNuevo = malloc(tamanioFinal);
-		recv(socket_conexion, datoNuevo, tamanioFinal, 0);
-		datoNuevo[tamanioFinal] = '\0';
-		char* resultado;
-		resultado = string_substring(datoNuevo, 0, tamanioFinal);
-		//printf("\n Recibi: %s, conexion : %d \n", resultado, socket_conexion);
-		free(datoNuevo);
-		return resultado;
-	} else {
 
-		//dato =  malloc(atoi(tamanio_dato));
-		recv(socket_conexion, &dato, atoi(tamanio_dato), MSG_NOSIGNAL);
-		dato[atoi(tamanio_dato)] = '\0';
+	uint32_t tamanio_dato = 0;
+	int bytes_recibidos = recv(socket_conexion, &tamanio_dato, sizeof(uint32_t), MSG_NOSIGNAL);
 
-		//printf("\n Recibi: %s, conexion : %d \n", dato, socket_conexion);
-		return string_substring(&dato, 0, atoi(tamanio_dato));
+	char * dato = calloc(tamanio_dato, sizeof(char));
+	bytes_recibidos = recv(socket_conexion, dato, tamanio_dato, MSG_NOSIGNAL);
+
+	int nuevos = 0;
+	while(bytes_recibidos < tamanio_dato){
+		nuevos = recv(socket_conexion, dato + bytes_recibidos, tamanio_dato - bytes_recibidos, MSG_NOSIGNAL);
+		if(nuevos == -1) return -1;
+		bytes_recibidos += nuevos;
 	}
+
+	return dato;
 }
 
-void enviar_dato_serializado(char* mensaje, int conexion) {
-	char tamanio_dato[4];
-	int tamanio = 0;
-	if (mensaje[1] == '\0') {
-		tamanio = 1;
-	} else {
-		tamanio = string_length(mensaje);
-	}
-	//int tamanio= string_length(mensaje);
-	sprintf(tamanio_dato, "%d", tamanio);
+int enviar_dato_serializado(char* mensaje, int conexion) {
+	if(conexion == -1)
+			return -1;
+
+	uint32_t tamanio = (strlen(mensaje) == 0)?0:strlen(mensaje) + 1;
+
 	//msg_nosignal para que no tire SIGPIPE y handlear nosotros las desconexiones
-	send(conexion, tamanio_dato, 4, MSG_NOSIGNAL);
-	send(conexion, mensaje, tamanio, MSG_NOSIGNAL);
-	//printf("\n Envie: %s, conexion : %d", mensaje, conexion);
+	int bytes_enviados = send(conexion, &tamanio, sizeof(uint32_t), MSG_NOSIGNAL);
+
+	bytes_enviados = send(conexion, mensaje, 4, MSG_NOSIGNAL);
+
+	int nuevos = 0;
+	while(bytes_enviados < tamanio){
+		nuevos = send(conexion, mensaje + bytes_enviados, tamanio - bytes_enviados, MSG_NOSIGNAL);
+		if(nuevos == -1) return -1;
+		bytes_enviados += nuevos;
+	}
+
 }
 
 void atender_clientes(int servidor, void (*f)(int)) {
