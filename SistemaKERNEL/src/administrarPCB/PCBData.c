@@ -5,10 +5,11 @@
 #include <parser/metadata_program.h>
 #include <semaphore.h>
 #include <stdlib.h>
+#include <Sharedlib/PCB.h>
 
 #include "../general/Semaforo.h"
-#include "../../../Sharedlib/Sharedlib/PCB.h"
 #include "../interfaz/InterfazMemoria.h"
+#include "../planificacion/Planificacion.h"
 
 #define MIN_PIDS 1000
 int pids_reg = MIN_PIDS;
@@ -52,37 +53,14 @@ void procesar_programa(char * programa, PCB * pcb){
 
 	pcb->program_counter = meta->instruccion_inicio;
 
-	int cantidad_paginas = enviar_programa_memoria(meta, pcb, programa);
-	if(cantidad_paginas >= 0)
-		pcb->cantidad_paginas_codigo = cantidad_paginas;
-	// TODO HANDLEAR EXIT_CODE
+	int resultado = enviar_programa_memoria(meta, pcb, programa);
+	/* Si el Resultado es >= 0 son las páginas asignadas.
+	 * Si el Resultado es < 0 es un exit_code.
+	 */
+	if(resultado >= 0)
+		pcb->cantidad_paginas_codigo = resultado;
+	else {
+		pcb->exit_code = resultado;
+		mover_PCB_de_cola(pcb, NEW, EXIT);
+	}
 }
-
-/* //ejemplo de busqueda de etiqueta espeficifica en la lista serializada
-	char etiqueta[] = "Proximo";
-	t_puntero_instruccion instruccion_obtenida = metadata_buscar_etiqueta(etiqueta, meta->etiquetas, meta->etiquetas_size);
-	printf("Instruccion correspondiente a la etiqueta imprimir es %s\n", string_substring(programa, meta->instrucciones_serializado[instruccion_obtenida].start, meta->instrucciones_serializado[instruccion_obtenida].offset));
- *
- */
-
-
-/*
-	typedef struct {
-		t_puntero_instruccion	start;
-		t_size		offset;
-	} t_intructions;
-
-	typedef struct {
-		t_puntero_instruccion	instruccion_inicio;	//El numero de la primera instruccion (Begin)
-		t_size			instrucciones_size;				// Cantidad de instrucciones
-		t_intructions*	instrucciones_serializado; 		// Instrucciones del programa
-
-		t_size			etiquetas_size;					// Tamaño del mapa serializado de etiquetas
-		char*			etiquetas;							// La serializacion de las etiquetas
-
-		int				cantidad_de_funciones;
-		int				cantidad_de_etiquetas;
-	} t_metadata_program;
- */
-
-

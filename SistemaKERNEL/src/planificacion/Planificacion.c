@@ -87,7 +87,6 @@ void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 	signal_cola(origen);
 
 	if (strcmp(destino, EXIT) == 0){
-		if(pcb->RR) incrementar_rafagas_ejecutadas(pcb->PID, 1);
 		finalizar_proceso(p);
 	}
 
@@ -215,6 +214,7 @@ void recibir_PCB_de_CPU(int clienteCPU, char * modo) {
 	PCB* pcb = recibir_pcb(clienteCPU);
 
 	if (strcmp(modo, "TERMINADO") == 0) {
+		if(pcb->RR) incrementar_rafagas_ejecutadas(pcb->PID, 1);
 		mover_PCB_de_cola(pcb, EXEC, EXIT);
 	} else if (strcmp(modo, "QUANTUM") == 0) {
 		incrementar_rafagas_ejecutadas(pcb->PID, 1);
