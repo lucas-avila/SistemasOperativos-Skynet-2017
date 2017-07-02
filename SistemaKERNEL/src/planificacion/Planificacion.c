@@ -31,6 +31,10 @@ void inicializar_colas_semaforos() {
 	}
 }
 
+void inicializar_buffer_codigo(){
+	BUFFER_CODIGO = dictionary_create();
+}
+
 void inicializar_colas_5_estados() {
 	COLAS = dictionary_create();
 	dictionary_put(COLAS, NEW, queue_create());
@@ -83,7 +87,6 @@ void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 	signal_cola(origen);
 
 	if (strcmp(destino, EXIT) == 0){
-		if(pcb->RR) incrementar_rafagas_ejecutadas(pcb->PID, 1);
 		finalizar_proceso(p);
 	}
 
@@ -140,7 +143,16 @@ void planificador_largo_plazo() {
 
 		if (configuraciones.GRADO_MULTIPROG > cantidad_procesos_en_memoria()) {
 			if (!queue_is_empty(cola(NEW))) {
-				mover_PCB_de_cola(queue_peek(cola(NEW)), NEW, READY);
+				PCB * pcb = queue_peek(cola(NEW));
+				char * PID = string_itoa(pcb->PID);
+				char * codigo = dictionary_get(BUFFER_CODIGO, PID);
+				procesar_programa(codigo, pcb);
+				void my_free(char * elemento){
+						free(elemento);
+					}
+				dictionary_remove_and_destroy(BUFFER_CODIGO, PID, &my_free);
+				free(PID);
+				mover_PCB_de_cola(pcb, NEW, READY);
 			}
 		}
 	}
@@ -202,6 +214,7 @@ void recibir_PCB_de_CPU(int clienteCPU, char * modo) {
 	PCB* pcb = recibir_pcb(clienteCPU);
 
 	if (strcmp(modo, "TERMINADO") == 0) {
+		if(pcb->RR) incrementar_rafagas_ejecutadas(pcb->PID, 1);
 		mover_PCB_de_cola(pcb, EXEC, EXIT);
 	} else if (strcmp(modo, "QUANTUM") == 0) {
 		incrementar_rafagas_ejecutadas(pcb->PID, 1);

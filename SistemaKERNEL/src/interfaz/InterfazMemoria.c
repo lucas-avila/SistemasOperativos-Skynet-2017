@@ -84,9 +84,7 @@ int enviar_programa_memoria(t_metadata_program * meta, PCB * pcb, char * program
 	//Para el stack
 	numeroPagina = asignar_Paginas_Programa(string_itoa(pcb->PID), "2");
 	if (strcmp(numeroPagina, "FALTA ESPACIO") == 0) {
-		finalizar_Programa_memoria(string_itoa(pcb->PID));
-		printf("ERROR no hay espacio suficiente");
-		return -1;
+		return -1; // EXIT_CODE: "No se pudieron reservar recursos para ejecutar el programa".
 	}
 	// TODO: Fijarse que esta bien esto, porque habia un error antes del
 	// nombre de variables.
@@ -116,9 +114,7 @@ int enviar_programa_memoria(t_metadata_program * meta, PCB * pcb, char * program
 		if (strcmp(respuesta, "CONTENIDO_NO_ENTRA_EN_PAGINA") == 0) {
 			numeroPagina = asignar_Paginas_Programa(string_itoa(pcb->PID), "1");
 			if (strcmp(numeroPagina, "FALTA ESPACIO") == 0) {
-				finalizar_Programa_memoria(string_itoa(pcb->PID));
-				printf("ERROR no hay espacio suficiente");
-				return -1;
+				return -1; // EXIT_CODE: "No se pudieron reservar recursos para ejecutar el programa".
 			}
 			almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(indiceNuevo->pagina), string_itoa(indiceNuevo->byte_inicial_codigo), string_itoa(indiceNuevo->byte_final_codigo - indiceNuevo->byte_inicial_codigo), instruccion);
 			cantidad_paginas++;

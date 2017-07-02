@@ -27,8 +27,6 @@ void escuchar_Conexiones_Programa(int servidorPrograma) {
 			CU_iniciar_programa(cliente);
 			pthread_create(&thread_programa, NULL, &CU_Recibir_Conexiones_Programa, cliente);
 			pthread_detach(&thread_programa);
-
-
 		} else {
 			close(cliente);
 		}

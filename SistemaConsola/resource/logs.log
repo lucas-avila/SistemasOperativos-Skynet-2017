@@ -330,6 +330,7 @@ El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos:
 Fecha de inicio de ejecucion: 16:24:59:87Fecha de fin de ejecucion: 16:25:01:629Tiempo total de ejecucion: -1240463856Cantidad de impresiones por pantalla: 0
 ------Fin del LOG------
 
+<<<<<<< HEAD
 [INFO] 02:03:46:424 CONSOLA/(28699:28703): 
 ***LOGS de la CONSOLA***
  EXIT CODE: El programa finalizo correctamente.
@@ -415,5 +416,23 @@ El Proceso (1002) ha finalizado, los siguientes son sus datos estadisticos:
 Fecha de inicio de ejecucion: 02:52:44:862
 Fecha de fin de ejecucion: 02:52:52:95
 Tiempo total de ejecucion: -1239415248Cantidad de impresiones por pantalla: 0
+=======
+[INFO] 01:04:54:688 CONSOLA/(25400:25408): 
+***LOGS de la CONSOLA***
+ EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:04:34:118
+Fecha de fin de ejecucion: 01:04:54:688
+Tiempo total de ejecucion: -1239415312Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+
+[INFO] 02:22:08:753 CONSOLA/(28059:28067): 
+***LOGS de la CONSOLA***
+ EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
+El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:21:48:844
+Fecha de fin de ejecucion: 02:22:08:752
+Tiempo total de ejecucion: 135663912Cantidad de impresiones por pantalla: 0
+>>>>>>> d2063b77743dd499e8871dd4d32c9ed000ab324c
 ------Fin del LOG------
 
