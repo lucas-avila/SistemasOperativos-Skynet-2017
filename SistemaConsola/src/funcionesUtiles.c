@@ -28,12 +28,9 @@ int validarNumeroInput(int rangoMinimo, int rangoMaximo) {
 	return numero;
 }
 
-void validarArchivo(char * path){
+int validarArchivo(char * path){
 
-	if(access(path, F_OK) == -1) {
-			perror("Archivo Inexistente.");
-			exit(-2);
-		}
+	return access(path, F_OK);
 }
 
 char * obtener_codigo(char * path_archivo_fuente){

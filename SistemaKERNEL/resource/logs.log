@@ -95,3 +95,68 @@ Cantidad de rafagas ejecutadas: 1
 
 ------Fin del LOG------
 
+[INFO] 22:12:57:444 KERNEL/(20430:20430): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+
+[INFO] 22:29:30:287 KERNEL/(21498:21498): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+
+[INFO] 22:31:23:487 KERNEL/(21605:21605): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 READY
+---------------------
+---> Cantidad de procesos totales encontrados: 1
+------Fin del LOG------
+
+[INFO] 22:33:22:20 KERNEL/(21750:21750): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+
+[INFO] 22:33:34:146 KERNEL/(21750:21750): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+
+[INFO] 22:33:35:108 KERNEL/(21750:21750): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+
+[INFO] 22:35:35:201 KERNEL/(21859:21859): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+

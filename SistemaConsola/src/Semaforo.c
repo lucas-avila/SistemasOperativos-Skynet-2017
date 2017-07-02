@@ -11,10 +11,8 @@ void destruir_semaforo(sem_t* variable_semaforo) {
 }
 
 void activar_semaforo(sem_t* variable_semaforo) {
-	//printf("\n Active Semaforo",variable_semaforo->__align );
 	sem_wait(variable_semaforo);
 }
 void desactivar_semaforo(sem_t* variable_semaforo) {
-//	printf("\n Desactive Semaforo",variable_semaforo->__align );
 	sem_post(variable_semaforo);
 }
