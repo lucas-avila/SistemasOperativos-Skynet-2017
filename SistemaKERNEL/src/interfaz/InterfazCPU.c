@@ -105,6 +105,7 @@ void CU_Recibir_Conexiones_CPU(int clienteCPU) {
 			retirar_CPU_global(clienteCPU);
 		}else if(strcmp(codigo_operacion, "DESCONECTAR") == 0) {
 			limpiar_procesos_CPU(clienteCPU, "REPLANIFICAR");
+			retirar_CPU_global(clienteCPU);
 			controlSeguir = 0;
 		}else if(strcmp(codigo_operacion, "") == 0) {
 			limpiar_procesos_CPU(clienteCPU, "ELIMINAR");

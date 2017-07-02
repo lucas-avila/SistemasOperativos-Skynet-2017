@@ -14,6 +14,8 @@
 #include <netinet/in.h>
 #include <signal.h>
 
+#include "Socket.h"
+
 //FUNCIONES DEL LADO DEL SERVER
 int crear_servidor(int puerto, int max_conexiones) {
 	/* recibe puerto y maximo de conexiones acumulables,
@@ -48,58 +50,58 @@ int aceptar_conexion_cliente(int socket_servidor) {
 	return cliente;
 }
 
-int recibir_dato_generico(int socket_conexion, char * buffer, int tam_bytes) {
-//	recibe el socket del cliente, un array de chars y el tamanio de bytes a leer(
-	int bytes_recibidos = recv(socket_conexion, buffer, tam_bytes, 0);
-	if (bytes_recibidos < 0) {
-		//perror("---Se perdio la conexion \n");
-		return -1;
-	} else if (bytes_recibidos == 0) {
-		//printf("---Conexion terminada \n");
-		return 0;
+
+
+int enviar_dato(char * dato, uint32_t tamanio, int conexion){
+	//el dato es en BYTES, NO SON CHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARS (o sea un char ES un byte)
+	//.............cualquier duda consultar el kernigan & ritchie
+	if(conexion == -1)
+				return -1;
+
+	//msg_nosignal para que no tire SIGPIPE y handlear nosotros las desconexiones
+	int bytes_enviados = send(conexion, &tamanio, sizeof(uint32_t), MSG_NOSIGNAL);
+
+	bytes_enviados = send(conexion, dato, tamanio, MSG_NOSIGNAL);
+
+	int nuevos = 0;
+	while(bytes_enviados < tamanio){
+		nuevos = send(conexion, dato + bytes_enviados, tamanio - bytes_enviados, MSG_NOSIGNAL);
+		if(nuevos == -1) return -1;
+		if(nuevos == 0) return 0;
+		bytes_enviados += nuevos;
 	}
-	buffer[bytes_recibidos] = '\0';
-	return bytes_recibidos;
+	return bytes_enviados;
 }
 
-char* recibir_dato_serializado(int socket_conexion) {
-
+DATO_SERIALIZADO * recibir_dato(int conexion){
 	uint32_t tamanio_dato = 0;
-	int bytes_recibidos = recv(socket_conexion, &tamanio_dato, sizeof(uint32_t), MSG_NOSIGNAL);
+	int bytes_recibidos = recv(conexion, &tamanio_dato, sizeof(uint32_t), MSG_NOSIGNAL);
 
-	char * dato = calloc(tamanio_dato, sizeof(char));
-	bytes_recibidos = recv(socket_conexion, dato, tamanio_dato, MSG_NOSIGNAL);
+	char * buffer = calloc(tamanio_dato, sizeof(char));
+	bytes_recibidos = recv(conexion, buffer, tamanio_dato, MSG_NOSIGNAL);
 
 	int nuevos = 0;
 	while(bytes_recibidos < tamanio_dato){
-		nuevos = recv(socket_conexion, dato + bytes_recibidos, tamanio_dato - bytes_recibidos, MSG_NOSIGNAL);
+		nuevos = recv(conexion, buffer + bytes_recibidos, tamanio_dato - bytes_recibidos, MSG_NOSIGNAL);
 		if(nuevos == -1) break;
 		if(nuevos == 0) break;
 		bytes_recibidos += nuevos;
 	}
 
-	return dato;
+	DATO_SERIALIZADO * l = malloc(sizeof(DATO_SERIALIZADO));
+	l->buffer = buffer;
+	l->size = tamanio_dato;
+	return l;
+}
+
+char* recibir_dato_serializado(int conexion) {
+	DATO_SERIALIZADO * dato = recibir_dato(conexion);
+	return dato->buffer;
 }
 
 int enviar_dato_serializado(char* mensaje, int conexion) {
-	if(conexion == -1)
-			return -1;
-
 	uint32_t tamanio = (strlen(mensaje) == 0)?0:strlen(mensaje) + 1;
-
-	//msg_nosignal para que no tire SIGPIPE y handlear nosotros las desconexiones
-	int bytes_enviados = send(conexion, &tamanio, sizeof(uint32_t), MSG_NOSIGNAL);
-
-	bytes_enviados = send(conexion, mensaje, tamanio, MSG_NOSIGNAL);
-
-	int nuevos = 0;
-	while(bytes_enviados < tamanio){
-		nuevos = send(conexion, mensaje + bytes_enviados, tamanio - bytes_enviados, MSG_NOSIGNAL);
-		if(nuevos == -1) return -1;
-		if(nuevos == 0) return 0;
-		bytes_enviados += nuevos;
-	}
-
+	return enviar_dato(mensaje, tamanio, conexion);
 }
 
 void atender_clientes(int servidor, void (*f)(int)) {

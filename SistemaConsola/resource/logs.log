@@ -330,3 +330,45 @@ El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos:
 Fecha de inicio de ejecucion: 16:24:59:87Fecha de fin de ejecucion: 16:25:01:629Tiempo total de ejecucion: -1240463856Cantidad de impresiones por pantalla: 0
 ------Fin del LOG------
 
+[INFO] 02:03:46:424 CONSOLA/(28699:28703): 
+***LOGS de la CONSOLA***
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:03:31:66
+Fecha de fin de ejecucion: 02:03:46:423
+Tiempo total de ejecucion: -1239415312Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+
+[INFO] 02:26:23:180 CONSOLA/(29264:29268): 
+***LOGS de la CONSOLA***
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:26:04:365
+Fecha de fin de ejecucion: 02:26:23:179
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+
+[INFO] 02:30:38:850 CONSOLA/(29306:29310): 
+***LOGS de la CONSOLA***
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:30:32:849
+Fecha de fin de ejecucion: 02:30:38:844
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+
+[INFO] 02:31:38:229 CONSOLA/(29306:29466): 
+***LOGS de la CONSOLA***
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:30:32:849
+Fecha de fin de ejecucion: 02:30:38:844
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+EXIT CODE: El programa finalizo correctamente.
+El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:31:37:253
+Fecha de fin de ejecucion: 02:31:38:228
+Tiempo total de ejecucion: -1239414664Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+

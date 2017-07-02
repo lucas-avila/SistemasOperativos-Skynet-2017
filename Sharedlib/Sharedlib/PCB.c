@@ -14,30 +14,6 @@
 
 #include "Socket.h"
 
-//modificaciones a las funciones de enviar y recibir por sockets
-void enviar_estructura_serializada(char* mensaje, uint32_t size, int conexion) {
-	char * tamanio_dato = malloc(sizeof(uint32_t));
-	memcpy(tamanio_dato, &size, sizeof(uint32_t));
-	send(conexion, tamanio_dato, sizeof(uint32_t), MSG_NOSIGNAL);
-	send(conexion, mensaje, size, MSG_NOSIGNAL);
-}
-
-LISTA_SERIALIZADA * recibir_estructura_serializada(int socket_conexion) {
-	char * tamanio_dato = malloc(sizeof(uint32_t));
-	int bytes_recibidos = recv(socket_conexion, tamanio_dato, sizeof(uint32_t), MSG_NOSIGNAL);
-
-	int size = 0;
-	memcpy(&size, tamanio_dato, sizeof(uint32_t));
-
-	char * buffer = malloc(size);
-	recv(socket_conexion, buffer, size, MSG_NOSIGNAL);
-
-	LISTA_SERIALIZADA * l = malloc(sizeof(LISTA_SERIALIZADA));
-	l->buffer = buffer;
-	l->size = size;
-	return l;
-}
-
 int enviar_pcb(PCB * pcb, int s_destino) {
 	//Se envia el PCB descomponiendo el struct en string y enviandolo por paquetes
 //	enviar_dato_serializado("RECIBIR_PCB", s_destino);
@@ -45,8 +21,8 @@ int enviar_pcb(PCB * pcb, int s_destino) {
 
 	int offset = 0;
 
-	LISTA_SERIALIZADA * buffer_lista_codigo = serializar_con_header(pcb->codigo, "LISTA_CODIGO");
-	LISTA_SERIALIZADA * buffer_lista_pila = serializar_con_header(pcb->pila, "LISTA_PILA");
+	DATO_SERIALIZADO * buffer_lista_codigo = serializar_con_header(pcb->codigo, "LISTA_CODIGO");
+	DATO_SERIALIZADO * buffer_lista_pila = serializar_con_header(pcb->pila, "LISTA_PILA");
 
 
 	int size =  (sizeof(PCB) - 2 * sizeof(t_list *) - sizeof(char *))  + buffer_lista_codigo->size + buffer_lista_pila->size + pcb->etiquetas_size;
@@ -90,7 +66,7 @@ int enviar_pcb(PCB * pcb, int s_destino) {
 	offset += sizeof(int32_t);
 
 	enviar_dato_serializado("RECIBIR_PCB", s_destino);
-	enviar_estructura_serializada(paquete, size, s_destino);
+	enviar_dato(paquete, size, s_destino);
 
 	free(buffer_lista_codigo);
 	free(buffer_lista_pila);
@@ -101,7 +77,7 @@ PCB * recibir_pcb(int s_origen) {
 	PCB * pcb = malloc(sizeof(PCB));
 	//enviar_dato_serializado("ENVIAR_PCB", s_origen);
 
-	LISTA_SERIALIZADA * buffer = recibir_estructura_serializada(s_origen);
+	DATO_SERIALIZADO * buffer = recibir_dato(s_origen);
 	char * paquete = buffer->buffer;
 
 	memcpy(&pcb->PID, paquete, sizeof(uint32_t));
@@ -150,7 +126,7 @@ PCB * recibir_pcb(int s_origen) {
 	return pcb;
 }
 
-LISTA_SERIALIZADA * serializar_con_header(t_list * lista, char * tipo_lista){
+DATO_SERIALIZADO * serializar_con_header(t_list * lista, char * tipo_lista){
 	/* FUNCION SERIALIZADORA PARA ESTRUCTURAS CON TAMAÑO VARIABLE
 	 * POR EJEMPLO : LISTAS
 	 * LA SERIALZIACION SE LLEVA A CABO DE LA SIGUIENTE MANERA
@@ -260,7 +236,7 @@ LISTA_SERIALIZADA * serializar_con_header(t_list * lista, char * tipo_lista){
 		}
 
 	}
-	LISTA_SERIALIZADA * resultado = malloc(sizeof(LISTA_SERIALIZADA));
+	DATO_SERIALIZADO * resultado = malloc(sizeof(DATO_SERIALIZADO));
 	resultado->buffer = buffer;
 	resultado->size = size;
 	return resultado;

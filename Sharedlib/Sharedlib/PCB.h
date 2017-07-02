@@ -4,6 +4,7 @@
 #include <commons/collections/list.h>
 #include <stdint.h>
 #include <sys/types.h>
+#include "Socket.h"
 
 #define valorEXIT -1
 
@@ -80,16 +81,11 @@ PCB;
 /* estructuras auxiliares */
 
 typedef struct {
-	char * buffer;
-	int size;
-} LISTA_SERIALIZADA;
-
-typedef struct {
 	t_list * lista;
 	int size;
 } LISTA_DESERIALIZADA;
 
-LISTA_SERIALIZADA * serializar_con_header(t_list * lista, char * tipo_lista);
+DATO_SERIALIZADO * serializar_con_header(t_list * lista, char * tipo_lista);
 LISTA_DESERIALIZADA * deserializar_con_header(char * cadena, char * tipo_lista);
 
 
