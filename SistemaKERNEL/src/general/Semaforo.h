@@ -28,7 +28,7 @@ sem_t mutex_memoria;
 sem_t mutex_tabla_estadistica;
 sem_t mutex_tabla_estadistica_busqueda;
 
-void inicializar_semaforo(sem_t* variable_semaforo);
+void inicializar_semaforo(sem_t* variable_semaforo, int valor);
 void destruir_semaforo(sem_t* variable_semaforo);
 void activar_semaforo(sem_t* variable_semaforo);
 void desactivar_semaforo(sem_t* variable_semaforo);

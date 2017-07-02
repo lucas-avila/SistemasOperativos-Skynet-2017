@@ -54,19 +54,19 @@ void inicializar_KERNEL() {
 }
 
 void inicializar_semaforos(){
-	inicializar_semaforo(&mutex_pids);
-	inicializar_semaforo(&mutex_lista_PROCESOS);
-	inicializar_semaforo(&mutex_lista_CPUs);
+	inicializar_semaforo(&mutex_pids, 1);
+	inicializar_semaforo(&mutex_lista_PROCESOS, 1);
+	inicializar_semaforo(&mutex_lista_CPUs, 1);
 	//PLANIFICACION
-	inicializar_semaforo(&mutex_cola_NEW);
-	inicializar_semaforo(&mutex_cola_READY);
-	inicializar_semaforo(&mutex_cola_EXEC);
-	inicializar_semaforo(&mutex_cola_WAITING);
-	inicializar_semaforo(&mutex_cola_EXIT);
+	inicializar_semaforo(&mutex_cola_NEW, 1);
+	inicializar_semaforo(&mutex_cola_READY, 1);
+	inicializar_semaforo(&mutex_cola_EXEC, 1);
+	inicializar_semaforo(&mutex_cola_WAITING, 1);
+	inicializar_semaforo(&mutex_cola_EXIT, 1);
 	//OTROS
-	inicializar_semaforo(&mutex_memoria);
-	inicializar_semaforo(&mutex_tabla_estadistica);
-	inicializar_semaforo(&mutex_tabla_estadistica_busqueda);
+	inicializar_semaforo(&mutex_memoria, 1);
+	inicializar_semaforo(&mutex_tabla_estadistica, 1);
+	inicializar_semaforo(&mutex_tabla_estadistica_busqueda, 1);
 }
 
 void inicializar_listas_globales() {
@@ -79,21 +79,15 @@ void inicializar_listas_globales() {
 void CU_iniciar_programa(int programa_socket) {
 	char * codigo = recibir_dato_serializado(programa_socket);
 	PCB * pcb_nuevo = crear_pcb();
-	procesar_programa(codigo, pcb_nuevo); //aca adentro se llena el pcb y se envia el programa a memoria
-
-
-
 	Proceso * proceso_nuevo = new_Proceso(pcb_nuevo);
 
-
-
+	proceso_a_NEW(proceso_nuevo);
 	crear_Proceso_en_tabla(proceso_nuevo->PID);
 	proceso_nuevo->socket = programa_socket;
 	agregar_proceso(proceso_nuevo);
-
-	proceso_a_NEW(proceso_nuevo);
-
 	enviar_dato_serializado(string_itoa(pcb_nuevo->PID), programa_socket);
+
+	procesar_programa(codigo, pcb_nuevo); //aca adentro se llena el pcb y se envia el programa a memoria
 }
 
 void 	mostrar_por_pantalla_memory_leaks(uint32_t PID){

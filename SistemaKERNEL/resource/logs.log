@@ -160,3 +160,91 @@ PID 		 COLA
 ---> Cantidad de procesos totales encontrados: 0
 ------Fin del LOG------
 
+[INFO] 00:44:46:247 KERNEL/(24663:24663): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 READY
+---------------------
+---> Cantidad de procesos totales encontrados: 1
+------Fin del LOG------
+
+[INFO] 00:45:55:611 KERNEL/(24663:24663): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 READY
+---------------------
+---> Cantidad de procesos totales encontrados: 1
+------Fin del LOG------
+
+[INFO] 00:45:56:937 KERNEL/(24663:24663): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 READY
+---------------------
+---> Cantidad de procesos totales encontrados: 1
+------Fin del LOG------
+
+[INFO] 00:45:57:640 KERNEL/(24663:24663): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 READY
+---------------------
+---> Cantidad de procesos totales encontrados: 1
+------Fin del LOG------
+
+[INFO] 00:45:57:985 KERNEL/(24663:24663): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 READY
+---------------------
+---> Cantidad de procesos totales encontrados: 1
+------Fin del LOG------
+
+[INFO] 00:45:58:203 KERNEL/(24663:24663): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 READY
+---------------------
+---> Cantidad de procesos totales encontrados: 1
+------Fin del LOG------
+
+[INFO] 00:45:58:426 KERNEL/(24663:24663): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 READY
+---------------------
+---> Cantidad de procesos totales encontrados: 1
+------Fin del LOG------
+
+[INFO] 00:45:58:625 KERNEL/(24663:24663): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 READY
+---------------------
+---> Cantidad de procesos totales encontrados: 1
+------Fin del LOG------
+
