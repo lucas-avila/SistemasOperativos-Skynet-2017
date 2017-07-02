@@ -372,3 +372,48 @@ Fecha de fin de ejecucion: 02:31:38:228
 Tiempo total de ejecucion: -1239414664Cantidad de impresiones por pantalla: 0
 ------Fin del LOG------
 
+[INFO] 02:52:50:168 CONSOLA/(30971:30975): 
+***LOGS de la CONSOLA***
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:52:24:933
+Fecha de fin de ejecucion: 02:52:50:168
+Tiempo total de ejecucion: -1239415248Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+
+[INFO] 02:52:51:133 CONSOLA/(30971:31001): 
+***LOGS de la CONSOLA***
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:52:24:933
+Fecha de fin de ejecucion: 02:52:50:168
+Tiempo total de ejecucion: -1239415248Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+EXIT CODE: El programa finalizo correctamente.
+El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:52:36:441
+Fecha de fin de ejecucion: 02:52:51:132
+Tiempo total de ejecucion: 142123320Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+
+[INFO] 02:52:52:96 CONSOLA/(30971:31021): 
+***LOGS de la CONSOLA***
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:52:24:933
+Fecha de fin de ejecucion: 02:52:50:168
+Tiempo total de ejecucion: -1239415248Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+EXIT CODE: El programa finalizo correctamente.
+El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:52:36:441
+Fecha de fin de ejecucion: 02:52:51:132
+Tiempo total de ejecucion: 142123320Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+EXIT CODE: El programa finalizo correctamente.
+El Proceso (1002) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:52:44:862
+Fecha de fin de ejecucion: 02:52:52:95
+Tiempo total de ejecucion: -1239415248Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+
