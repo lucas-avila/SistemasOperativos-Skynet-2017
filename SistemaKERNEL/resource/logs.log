@@ -248,3 +248,65 @@ PID 		 COLA
 ---> Cantidad de procesos totales encontrados: 1
 ------Fin del LOG------
 
+[INFO] 01:04:43:999 KERNEL/(25394:25394): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 READY
+---------------------
+---> Cantidad de procesos totales encontrados: 1
+------Fin del LOG------
+
+[INFO] 01:11:25:552 KERNEL/(25671:25671): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 NEW
+---------------------
+---> Cantidad de procesos totales encontrados: 1
+------Fin del LOG------
+
+[INFO] 01:11:40:423 KERNEL/(25671:25671): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 NEW
+- - - - - - - - - - - - - - - - - - -
+1001 		 NEW
+- - - - - - - - - - - - - - - - - - -
+1002 		 NEW
+---------------------
+---> Cantidad de procesos totales encontrados: 3
+------Fin del LOG------
+
+[INFO] 01:13:05:881 KERNEL/(25671:25671): 
+***LOGS del KERNEL***
+ --> Cambio de grado de multiprogramacion a: 2
+------Fin del LOG------
+
+[INFO] 01:45:54:144 KERNEL/(26531:26531): 
+***LOGS del KERNEL***
+ --> Cambio de grado de multiprogramacion a: 2
+------Fin del LOG------
+
+[INFO] 01:51:07:998 KERNEL/(26758:26758): 
+***LOGS del KERNEL***
+ --> Cambio de grado de multiprogramacion a: 2
+------Fin del LOG------
+
+[INFO] 01:54:13:488 KERNEL/(26758:26758): 
+***LOGS del KERNEL***
+ --> Cambio de grado de multiprogramacion a: 3
+------Fin del LOG------
+
+[INFO] 01:54:32:919 KERNEL/(26758:26758): 
+***LOGS del KERNEL***
+ --> Cambio de grado de multiprogramacion a: 2
+------Fin del LOG------
+

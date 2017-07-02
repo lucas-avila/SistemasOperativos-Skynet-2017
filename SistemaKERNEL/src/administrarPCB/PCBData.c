@@ -55,7 +55,7 @@ void procesar_programa(char * programa, PCB * pcb){
 	int cantidad_paginas = enviar_programa_memoria(meta, pcb, programa);
 	if(cantidad_paginas >= 0)
 		pcb->cantidad_paginas_codigo = cantidad_paginas;
-
+	// TODO HANDLEAR EXIT_CODE
 }
 
 /* //ejemplo de busqueda de etiqueta espeficifica en la lista serializada

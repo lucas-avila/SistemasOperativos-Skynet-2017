@@ -16,7 +16,7 @@
 #include "../../../Sharedlib/Sharedlib/PCB.h"
 
 
-
+t_dictionary * BUFFER_CODIGO;
 t_dictionary * COLAS;
 static const char NEW[] = "NEW";
 static const char READY[] = "READY";
