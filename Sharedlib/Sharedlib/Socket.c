@@ -73,7 +73,8 @@ char* recibir_dato_serializado(int socket_conexion) {
 	int nuevos = 0;
 	while(bytes_recibidos < tamanio_dato){
 		nuevos = recv(socket_conexion, dato + bytes_recibidos, tamanio_dato - bytes_recibidos, MSG_NOSIGNAL);
-		if(nuevos == -1) return -1;
+		if(nuevos == -1) break;
+		if(nuevos == 0) break;
 		bytes_recibidos += nuevos;
 	}
 
@@ -89,12 +90,13 @@ int enviar_dato_serializado(char* mensaje, int conexion) {
 	//msg_nosignal para que no tire SIGPIPE y handlear nosotros las desconexiones
 	int bytes_enviados = send(conexion, &tamanio, sizeof(uint32_t), MSG_NOSIGNAL);
 
-	bytes_enviados = send(conexion, mensaje, 4, MSG_NOSIGNAL);
+	bytes_enviados = send(conexion, mensaje, tamanio, MSG_NOSIGNAL);
 
 	int nuevos = 0;
 	while(bytes_enviados < tamanio){
 		nuevos = send(conexion, mensaje + bytes_enviados, tamanio - bytes_enviados, MSG_NOSIGNAL);
 		if(nuevos == -1) return -1;
+		if(nuevos == 0) return 0;
 		bytes_enviados += nuevos;
 	}
 
