@@ -12,7 +12,6 @@
 #include "header/funcionesUtiles.h"
 
 void CU_handshake_programa(int kernel_programa){
-
 	enviar_dato_serializado("INICIAR_PROGRAMA", kernel_programa);
 }
 

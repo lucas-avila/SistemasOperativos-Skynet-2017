@@ -67,7 +67,6 @@ void atender_solicitudes_de_usuario() {
 			printf("Ingrese el PATH del archivo: ");
 			scanf("%s", path_archivo_fuente);
 			iniciar_thread(path_archivo_fuente);
-			system("clear");
 			break;
 		case 2: {
 			int pid;
@@ -99,7 +98,7 @@ void atender_solicitudes_de_usuario() {
 }
 
 void iniciar_thread(char * path_archivo_fuente) {
-
+	system("clear");
 	pthread_t t_programa;
 
 	pthread_create(&t_programa, NULL, &CU_iniciar_programa, path_archivo_fuente);
@@ -109,12 +108,19 @@ void iniciar_thread(char * path_archivo_fuente) {
 
 void CU_iniciar_programa(char * path_archivo_fuente) {
 
-	validarArchivo(path_archivo_fuente);
+	if(validarArchivo(path_archivo_fuente) == -1) {
+		/*Si devuelve 0 quiere decir que hubo
+		 * un error al acceder al archivo*/
+		printf("\nLa ruta ingresada no se pudo acceder. Vuelva a seleccionar una opcion.\n");
+		return;
+	}
 	int kernel_programa = conectar_servidor(configuraciones.IP_KERNEL, configuraciones.PUERTO_KERNEL);
 	CU_handshake_programa(kernel_programa);
 
 	int pid;
-	pid = atoi(enviar_programa_ANSISOP(path_archivo_fuente, kernel_programa));
+	char * respuesta_pid = enviar_programa_ANSISOP(path_archivo_fuente, kernel_programa);
+	pid = atoi(respuesta_pid);
+	free(respuesta_pid);
 
 	Info_ejecucion * info_proceso = new_Info_ejecucion(pid, kernel_programa);
 	agregar_proceso(info_proceso);
@@ -141,7 +147,9 @@ void recibir_mensajes(int pid, int kernel_programa) {
 
 void finalizar_programa(int pid, int kernel_programa) {
 
-	int exit_code = atoi(recibir_dato_serializado(kernel_programa));
+	char * respuesta_exit_code = recibir_dato_serializado(kernel_programa);
+	int exit_code = atoi(respuesta_exit_code);
+	free(respuesta_exit_code);
 
 	mostrar_exit_code(exit_code);
 	mostrar_info_proceso(pid);
@@ -176,7 +184,11 @@ void mostrar_info_proceso(uint32_t pid) {
 	string_append(&info_log, string_itoa(tiempoTranscurrido));
 	string_append(&info_log, "Cantidad de impresiones por pantalla: ");
 	string_append(&info_log, string_itoa(info_proceso->cant_impresiones));
+
 	generar_log();
+	free(textoInicio);
+	free(textoFin);
+	free(tiempoTranscurrido);
 	mostrar_menu_usuario();
 }
 

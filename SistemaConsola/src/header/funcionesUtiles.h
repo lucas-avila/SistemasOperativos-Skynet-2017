@@ -13,7 +13,7 @@
 char * info_log;
 
 int validarNumeroInput(int rangoMinimo, int rangoMaximo) ;
-void validarArchivo(char * path);
+int validarArchivo(char * path);
 char * obtener_codigo(char * path_archivo_fuente);
 int pertenece_a_la_consola(uint32_t pid);
 void incializar_log();

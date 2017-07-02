@@ -731,3 +731,130 @@ Contenido Administrativo de la Memoria:
 ---------------------
    19 	 2 	 1000 
 ---------------------
+[INFO] 21:52:32:185 MEMORIA/(19648:19648): 
+
+Contenido Administrativo de la Memoria: 
+ Estructura de Memoria 
+
+ FRAME 	 PAGINA PID 
+---------------------
+    0 	 ADM 	 ADM 
+---------------------
+    1 	 ADM 	 ADM 
+---------------------
+[INFO] 21:59:01:275 MEMORIA/(19820:19820): 
+
+Contenido Administrativo de la Memoria: 
+ Estructura de Memoria 
+
+ FRAME 	 PAGINA PID 
+---------------------
+    0 	 ADM 	 ADM 
+---------------------
+    1 	 ADM 	 ADM 
+---------------------
+[INFO] 22:06:39:934 MEMORIA/(20199:20199): 
+
+Contenido Administrativo de la Memoria: 
+ Estructura de Memoria 
+
+ FRAME 	 PAGINA PID 
+---------------------
+    0 	 ADM 	 ADM 
+---------------------
+    1 	 ADM 	 ADM 
+---------------------
+    5 	 0 	 1000 
+---------------------
+   14 	 1 	 1000 
+---------------------
+[INFO] 22:12:26:858 MEMORIA/(20402:20402): 
+
+Contenido Administrativo de la Memoria: 
+ Estructura de Memoria 
+
+ FRAME 	 PAGINA PID 
+---------------------
+    0 	 ADM 	 ADM 
+---------------------
+    1 	 ADM 	 ADM 
+---------------------
+    5 	 0 	 1000 
+---------------------
+   14 	 1 	 1000 
+---------------------
+[INFO] 22:13:04:586 MEMORIA/(20426:20426): 
+
+Contenido Administrativo de la Memoria: 
+ Estructura de Memoria 
+
+ FRAME 	 PAGINA PID 
+---------------------
+    0 	 ADM 	 ADM 
+---------------------
+    1 	 ADM 	 ADM 
+---------------------
+    5 	 0 	 1000 
+---------------------
+   14 	 1 	 1000 
+---------------------
+[INFO] 22:29:26:260 MEMORIA/(21494:21494): 
+
+Contenido Administrativo de la Memoria: 
+ Estructura de Memoria 
+
+ FRAME 	 PAGINA PID 
+---------------------
+    0 	 ADM 	 ADM 
+---------------------
+    1 	 ADM 	 ADM 
+---------------------
+    5 	 0 	 1000 
+---------------------
+   14 	 1 	 1000 
+---------------------
+[INFO] 22:30:11:739 MEMORIA/(21494:21494): 
+
+Contenido Administrativo de la Memoria: 
+ Estructura de Memoria 
+
+ FRAME 	 PAGINA PID 
+---------------------
+    0 	 ADM 	 ADM 
+---------------------
+    1 	 ADM 	 ADM 
+---------------------
+    5 	 0 	 1000 
+---------------------
+   14 	 1 	 1000 
+---------------------
+[INFO] 22:33:30:0 MEMORIA/(21746:21746): 
+
+Contenido Administrativo de la Memoria: 
+ Estructura de Memoria 
+
+ FRAME 	 PAGINA PID 
+---------------------
+    0 	 ADM 	 ADM 
+---------------------
+    1 	 ADM 	 ADM 
+---------------------
+    5 	 0 	 1000 
+---------------------
+   14 	 1 	 1000 
+---------------------
+[INFO] 22:35:28:685 MEMORIA/(21855:21855): 
+
+Contenido Administrativo de la Memoria: 
+ Estructura de Memoria 
+
+ FRAME 	 PAGINA PID 
+---------------------
+    0 	 ADM 	 ADM 
+---------------------
+    1 	 ADM 	 ADM 
+---------------------
+    5 	 0 	 1000 
+---------------------
+   14 	 1 	 1000 
+---------------------

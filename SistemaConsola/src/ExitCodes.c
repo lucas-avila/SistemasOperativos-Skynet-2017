@@ -78,6 +78,10 @@ void mostrar_exit_code(int exit_code){
 			break;
 		case -20:
 			string_append(&info_log, "Error sin definición.\n");
+			break;
+		case -21:
+			string_append(&info_log, "Se perdio conexion con el KERNEL.\n");
+			break;
 
 	}
 }
