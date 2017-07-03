@@ -31,7 +31,6 @@ int obtener_BLOQUE_libre(){
 			bitarray_set_bit(bitmap, i);
 			guardar_bitmap();
 			return i;
-			//empiezan desde 1.bin
 		}
 	}
 	return -1;
@@ -172,6 +171,7 @@ void release_blocks(int * blocks, int cant_blocks_archivo){
 	while(i < cant_blocks_archivo){
 
 		block_number = blocks[i];
+		block = string_new();
 		string_append(&block, string_itoa(i));
 		string_append(&block, ".bin");
 		path_block = generar_path_absoluto(PATH_BLOQUES, block);
@@ -191,14 +191,18 @@ char * convertir_bloques_a_array_chars(int * bloques, int size){
 	char * string = string_new();
 	int i = 0;
 
+	int j = 0;
 	string_append(&string, "[");
+	char * aux;
 	while(i < size){
-		string_append(&string, string_itoa(bloques[i]));
+		aux = string_itoa(bloques[i]);
+		string_append(&string, aux);
 		string_append(&string, ",");
+		j += strlen(aux) + 1;
 		i++;
 	}
-	i++;
-	string[i] = ']';
+	//Tapamos la ultima coma con el cierre
+	string[j] = ']';
 	return string;
 }
 
@@ -206,7 +210,6 @@ int * obtener_bloques_de_config(char ** bloques, int cant_bloques){
 
 	int * array_bloques = malloc(sizeof(int) * cant_bloques);
 	int i = 0;
-	char * numero = string_new();
 
 	while(i < cant_bloques){
 		array_bloques[i] = atoi(bloques[i]);
@@ -226,12 +229,14 @@ Archivo * restaurar_archivo(char * path){
 	}
 
 	Archivo * archivo = malloc(sizeof(Archivo));
-	int cant_bloques;
 
 	archivo->tamanio = config_get_int_value(config, "TAMANIO");
-	cant_bloques = obtener_cantidad_bloques(archivo);
+
+	int cant_bloques = obtener_cantidad_bloques(archivo);
 
 	archivo->bloques = obtener_bloques_de_config(config_get_array_value(config, "BLOQUES"), cant_bloques);
+
+	free(config);
 
 	return archivo;
 }
