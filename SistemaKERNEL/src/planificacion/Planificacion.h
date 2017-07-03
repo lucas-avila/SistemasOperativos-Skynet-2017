@@ -10,10 +10,10 @@
 
 #include <commons/collections/dictionary.h>
 #include <commons/collections/queue.h>
+#include <Sharedlib/PCB.h>
 
 #include "../administrarProcesos/Proceso.h"
 #include "../header/Estructuras.h"
-#include "../../../Sharedlib/Sharedlib/PCB.h"
 
 
 t_dictionary * BUFFER_CODIGO;

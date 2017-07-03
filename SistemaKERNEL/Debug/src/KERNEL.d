@@ -1,6 +1,7 @@
 src/KERNEL.d: ../src/KERNEL.c \
  /home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Sharedlib/PCB.h \
  /home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Sharedlib/Socket.h \
+ /home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Sharedlib/Socket.h \
  ../src/administrarPCB/EstadisticaProceso.h \
  ../src/administrarPCB/PCBData.h \
  ../src/administrarPCB/../../../Sharedlib/Sharedlib/PCB.h \
@@ -16,10 +17,11 @@ src/KERNEL.d: ../src/KERNEL.c \
  ../src/interfaz/../../../Sharedlib/Sharedlib/PCB.h \
  ../src/planificacion/Planificacion.h \
  ../src/planificacion/../administrarProcesos/Proceso.h \
- ../src/planificacion/../header/Estructuras.h \
- ../src/planificacion/../../../Sharedlib/Sharedlib/PCB.h
+ ../src/planificacion/../header/Estructuras.h
 
 /home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Sharedlib/PCB.h:
+
+/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Sharedlib/Socket.h:
 
 /home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Sharedlib/Socket.h:
 
@@ -64,5 +66,3 @@ src/KERNEL.d: ../src/KERNEL.c \
 ../src/planificacion/../administrarProcesos/Proceso.h:
 
 ../src/planificacion/../header/Estructuras.h:
-
-../src/planificacion/../../../Sharedlib/Sharedlib/PCB.h:

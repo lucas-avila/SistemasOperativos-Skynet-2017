@@ -86,6 +86,12 @@ void CU_Liberar_memoria_FREE(int conexionCPU) {
 void enviar_datos_respuesta(int conexionCPU, unsigned pagina, char *PID, int byteInicial) {
 	enviar_dato_serializado("OK", conexionCPU);
 	//enviar_dato_serializado(PID, conexionCPU);
-	enviar_dato_serializado(string_itoa(pagina), conexionCPU);
-	enviar_dato_serializado(string_itoa(byteInicial), conexionCPU);
+	char * page = string_itoa(pagina);
+	char * byteIni = string_itoa(byteInicial);
+
+	enviar_dato_serializado(page, conexionCPU);
+	enviar_dato_serializado(byteIni, conexionCPU);
+
+	free(page);
+	free(byteIni);
 }

@@ -107,20 +107,28 @@ char* borrar(char* path) {
 	return recibir_dato_serializado(servidor_filesystem);
 }
 char* obtenerDatos(char* path, int offset, int size) {
+	char * the_offset = string_itoa(offset);
+	char * the_size = string_itoa(size);
 	enviar_dato_serializado("OBTENER_DATOS", servidor_filesystem);
 	enviar_dato_serializado(path, servidor_filesystem);
-	enviar_dato_serializado(string_itoa(offset), servidor_filesystem);
-	enviar_dato_serializado(string_itoa(size), servidor_filesystem);
+	enviar_dato_serializado(the_offset, servidor_filesystem);
+	enviar_dato_serializado(the_size, servidor_filesystem);
+	free(the_offset);
+	free(the_size);
 	/*t_list* contenido = list_get(contenidoArchivo, buscarIndice(path));
 	return string_substring(((char*) list_get(contenido, offset)), 0, size);*/
 	return recibir_dato_serializado(servidor_filesystem);
 }
 char* guardarDatos(char* path, int offset, int size, char* contenido) {
+	char * the_offset = string_itoa(offset);
+	char * the_size = string_itoa(size);
 	enviar_dato_serializado("GUARDAR_DATOS", servidor_filesystem);
 	enviar_dato_serializado(path, servidor_filesystem);
-	enviar_dato_serializado(string_itoa(offset), servidor_filesystem);
-	enviar_dato_serializado(string_itoa(size), servidor_filesystem);
+	enviar_dato_serializado(the_offset, servidor_filesystem);
+	enviar_dato_serializado(the_size, servidor_filesystem);
 	enviar_dato_serializado(contenido, servidor_filesystem);
+	free(the_offset);
+	free(the_size);
 	//t_list* contenidoe = list_get(contenidoArchivo, buscarIndice(path));
 	//list_replace(list_get(contenidoArchivo, buscarIndice(path)), bloqueInicial, contenido);
 	return recibir_dato_serializado(servidor_filesystem);

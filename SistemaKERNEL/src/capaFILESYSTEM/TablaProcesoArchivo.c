@@ -66,5 +66,4 @@ void mostrar_tabla_proceso_archivos(t_list* tablaProceso) {
 		string_append(&info_log, informacion);
 
 	}
-
 }

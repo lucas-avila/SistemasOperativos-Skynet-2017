@@ -188,9 +188,11 @@ void obtener_informacion_proceso() {
 		switch (opcion) {
 		case 1:
 			string_append(&info_log, "Cantidad de rafagas ejecutadas: ");
-			string_append(&info_log, string_itoa(estadistica_proceso->cantidad_Rafagas_Ejecutadas));
+			char * cant_rafagas = string_itoa(estadistica_proceso->cantidad_Rafagas_Ejecutadas);
+			string_append(&info_log, cant_rafagas);
 			string_append(&info_log, "\n");
 			generar_log();
+			free(cant_rafagas);
 			break;
 		case 2:
 			mostrar_tabla_proceso_archivos(proceso->tablaProcesoArchivo);
@@ -198,9 +200,11 @@ void obtener_informacion_proceso() {
 			break;
 		case 3:
 			string_append(&info_log, "Cantidad de páginas de HEAP utilizadas: ");
-			string_append(&info_log, string_itoa(estadistica_proceso->cantidad_Paginas_HEAP_Utilizadas));
+			char * cant_pag_HEAP = string_itoa(estadistica_proceso->cantidad_Paginas_HEAP_Utilizadas);
+			string_append(&info_log, cant_pag_HEAP);
 			string_append(&info_log, "\n");
 			generar_log();
+			free(cant_pag_HEAP);
 			break;
 		case 4:
 			string_append(&info_log, "Cantidad syscalls ejecutadas: ");
@@ -260,14 +264,18 @@ void mostrar_tabla_global_archivos() {
 	string_append(&info_log, "\n FILE \t\t\t OPEN\n");
 	int size = list_size(TABLA_GLOBAL_ARCHIVO);
 	int i = 0;
+	char * open;
 	while (i < size) {
 		TablaGlobalArchivo * elemento = list_get(TABLA_GLOBAL_ARCHIVO, i);
 		string_append(&info_log, elemento->file);
 		string_append(&info_log, " \t\t\t ");
-		string_append(&info_log, string_itoa(elemento->open));
+		open = string_itoa(elemento->open);
+		string_append(&info_log, open);
 		string_append(&info_log, "\n");
+		strcpy(open, "");
 	}
 	generar_log();
+	free(open);
 }
 
 void atender_solicitudes_de_usuario() {
