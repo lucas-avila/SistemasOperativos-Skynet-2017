@@ -47,7 +47,7 @@ TABLA_MEMORIA_PROCESO* solicitar_nueva_pagina_memoria(char* PID);
 /**
  * 1 - Entra en pagina
  * 2 - No hay espacio en la pagina
- * 3 - Es demaciado grande el tamanio, no se puede reservar en este tipo de memoria
+ * 3 - Es demasiado grande el tamanio, no se puede reservar en este tipo de memoria
  */
 int verificar_si_malloc_entra_en_pagina(TABLA_MEMORIA_PROCESO* registro, unsigned espacioSolicitado);
 

@@ -52,7 +52,6 @@ char* CU_MOVER_CURSOR_ARCHIVO(char* PID, int FD, int cursor_bloque) {
 	//Informacion Estadistica
 	incrementar_SYSCALL(PID, 1);
 	return "OK";
-
 }
 
 char* CU_LEER_ARCHIVO(char* PID, int FD, int tamanio) {
@@ -67,8 +66,8 @@ char* CU_LEER_ARCHIVO(char* PID, int FD, int tamanio) {
 	} else {
 		return "ERROR_FALTA_MODO_LECTURA";
 	}
-
 }
+
 char* CU_ESCRIBIR_ARCHIVO(char* PID, int FD, int tamanio, char* contenido) {
 	TablaProcesoArchivo* registro = buscar_registro_TablaProcesoArchivo(PID, FD);
 	if (registro == NULL) {
@@ -82,6 +81,7 @@ char* CU_ESCRIBIR_ARCHIVO(char* PID, int FD, int tamanio, char* contenido) {
 		return "ERROR_FALTA_MODO_ESCRITURA";
 	}
 }
+
 char* CU_CERRAR_ARCHIVO(char* PID, int FD) {
 	TablaProcesoArchivo* registro = buscar_registro_TablaProcesoArchivo(PID, FD);
 	if (registro == NULL) {
@@ -100,6 +100,7 @@ char* CU_CERRAR_ARCHIVO(char* PID, int FD) {
 	}
 	return "OK";
 }
+
 char* CU_BORRAR_ARCHIVO(char* PID, char* rutaArchivo) {
 
 	//1. Valido si el archivo existe

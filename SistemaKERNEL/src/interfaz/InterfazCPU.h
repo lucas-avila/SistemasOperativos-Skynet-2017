@@ -15,10 +15,11 @@
 void iniciar_conexion_servidor_cpu();
 void escuchar_Conexiones_CPU(int servidorCPU);
 void CU_Recibir_Conexiones_CPU(int clienteCPU) ;
-
-int index_of_CPU(int numeroConexion);
 void agregar_CPU_global(int numeroConexion, pthread_t hilo);
 void retirar_CPU_global(int numeroConexion);
+
+int index_of_CPU(int numeroConexion);
+
 CPUInfo * obtener_CPU(int numeroConexion);
 
 #endif /* HEADER_INTERFAZCPU_H_ */

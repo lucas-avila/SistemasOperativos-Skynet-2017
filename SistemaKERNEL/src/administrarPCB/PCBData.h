@@ -10,8 +10,8 @@
 
 #include "../../../Sharedlib/Sharedlib/PCB.h"
 
-
-
 void procesar_programa(char * programa, PCB * pcb);
+
+PCB * crear_pcb();
 
 #endif /* ADMINISTRARPCB_PCBDATA_H_ */

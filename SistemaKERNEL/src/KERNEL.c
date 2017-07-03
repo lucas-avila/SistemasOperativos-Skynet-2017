@@ -91,7 +91,10 @@ void CU_iniciar_programa(int programa_socket) {
 	crear_Proceso_en_tabla(proceso_nuevo->PID);
 	proceso_nuevo->socket = programa_socket;
 	agregar_proceso(proceso_nuevo);
-	enviar_dato_serializado(string_itoa(pcb_nuevo->PID), programa_socket);
+
+	char * pid = string_itoa(pcb_nuevo->PID);
+	enviar_dato_serializado(pid, programa_socket);
+	free(pid);
 }
 
 void 	mostrar_por_pantalla_memory_leaks(uint32_t PID){

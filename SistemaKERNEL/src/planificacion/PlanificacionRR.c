@@ -1,9 +1,8 @@
 #include "PlanificacionRR.h"
 
 #include <stddef.h>
+#include <Sharedlib/PCB.h>
 
-#include "../administrarProcesos/Proceso.h"
-#include "../../../Sharedlib/Sharedlib/Socket.h"
 #include "../header/AppConfig.h"
 #include "../header/Estructuras.h"
 #include "Planificacion.h"

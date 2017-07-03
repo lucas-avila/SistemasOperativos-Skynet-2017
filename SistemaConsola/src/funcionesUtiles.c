@@ -69,7 +69,7 @@ void generar_log(){
     t_log* logger = log_create(configuraciones.PATH_ARCHIVO_LOG, "CONSOLA",false, LOG_LEVEL_INFO);
     log_info(logger, "\n***LOGS de la CONSOLA***\n %s", info_log);
     log_destroy(logger);
-    //strcpy(info_log, "");
+    strcpy(info_log, "");
 }
 
 char * diferencia_entre_tiempos(char * tiempo_A, char * tiempo_B) {
