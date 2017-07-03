@@ -62,9 +62,11 @@ void inicializar() {
 	agregar_proceso(proc);
 }
 
-void iniciar_conexion_servidor_FS(){
+int iniciar_conexion_servidor_FS(){
 	servidor_filesystem = conectar_servidor(configuraciones.IP_FS, configuraciones.PUERTO_FS);
 	enviar_dato_serializado("KERNEL", servidor_filesystem);
+	char * respuesta = recibir_dato_serializado(servidor_filesystem);
+	return strcmp(respuesta, "FILESYSTEM") == 0;
 }
 
 int buscarIndice(char* path) {

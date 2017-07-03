@@ -18,7 +18,8 @@ char* CU_ABRIR_ARCHIVO(char* PID, char* pathArchivo, bool flagCreate, bool flagR
 	}
 
 	//1. Valido si el archivo existe
-	bool existeArchivoFS = (strcmp(validar_archivo(pathArchivo), "OK") == 0);
+	char * respuesta_validar = validar_archivo(pathArchivo);
+	int existeArchivoFS = strcmp(respuesta_validar, "OK") == 0;
 	if (existeArchivoFS && flagCreate) {
 		//2. A El archivo existe, y desea crearlo - error, para que crear si ya existe.
 		return "ERROR - ARCHIVO EXISTE";

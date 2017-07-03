@@ -243,10 +243,9 @@ void limpiar_procesos_CPU(int clienteCPU, char * modo){
 	if(buscado != NULL){
 		if(strcmp(modo, "REPLANIFICAR") == 0){
 			mover_PCB_de_cola(buscado->pcb, EXEC, READY);
-			printf("\n%d a READY\n", buscado->pcb->PID);
 		}
 		else{
-			buscado->pcb->exit_code = -19; // CPU_HEAVY_METAL
+			buscado->pcb->exit_code = -23; // CPU_HEAVY_METAL
 			mover_PCB_de_cola(buscado->pcb, EXEC, EXIT);
 		}
 	}
