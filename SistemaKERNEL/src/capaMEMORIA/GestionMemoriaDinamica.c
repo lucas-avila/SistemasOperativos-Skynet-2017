@@ -57,6 +57,19 @@ void CU_Reservar_memoria_MALLOC(int conexionCPU) {
 	} else if (resultadoVerificacion == 1) {
 		//Asigno Espacio
 		byteInicial = reservar_espacio_memoria_en_pagina(ultima_pagina_asignada, tamanioMALLOC);
+		if (byteInicial == -1) {
+			//No hay espacio en la pagina pido otra
+			ultima_pagina_asignada = solicitar_nueva_pagina_memoria(PID);
+			// Si ya no me asigna otra pagina, la memoria se quedo sin espacio.
+			if (ultima_pagina_asignada == NULL) {
+				enviar_dato_serializado("FALTA ESPACIO", conexionCPU);
+				return;
+			}
+			guardar_registro_tabla_memoria(ultima_pagina_asignada);
+			//Asigno Espacio
+			byteInicial = reservar_espacio_memoria_en_pagina(ultima_pagina_asignada, tamanioMALLOC);
+		}
+
 		enviar_datos_respuesta(conexionCPU, ultima_pagina_asignada->nroPagina, ultima_pagina_asignada->PID, byteInicial);
 	}
 	//Lleno informacion estadistica

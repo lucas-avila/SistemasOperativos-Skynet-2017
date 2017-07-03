@@ -73,6 +73,7 @@ void CU_Recibir_Conexiones_Kernel(int cliente) {
 			int size = atoi(recibir_dato_serializado(cliente));
 			char * buffer = recibir_dato_serializado(cliente);
 			guardar_datos(path, offset, size,buffer);
+			free(buffer);
 		} else if (strcmp(codigo_operacion, "BORRAR_ARCHIVO") == 0) {
 			borrar(path);
 		} else if (strcmp(codigo_operacion, "") == 0) {

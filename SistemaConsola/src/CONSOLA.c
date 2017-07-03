@@ -132,12 +132,18 @@ void CU_iniciar_programa(char * path_archivo_fuente) {
 
 void recibir_mensajes(int pid, int kernel_programa) {
 	char * mensaje;
+	char * log;
 	mensaje = recibir_dato_serializado(kernel_programa);
 
 	while (strcmp(mensaje, "FIN_PROGRAMA") != 0) {
-		printf("El mensaje del Proceso (%d) es: %s\n", pid, mensaje);
-		Info_ejecucion* info_proceso = buscar_info_por_PID(pid);
-		info_proceso->cant_impresiones = info_proceso->cant_impresiones + 1;
+		if(strcmp(mensaje, "")!=0){
+	    	log = string_from_format("Mensaje del Proceso (%d): %s\n", pid, mensaje);
+	    	string_append(&info_log, log);
+	    	generar_log();
+			Info_ejecucion* info_proceso = buscar_info_por_PID(pid);
+			info_proceso->cant_impresiones = info_proceso->cant_impresiones + 1;
+			free(log);
+		}
 		free(mensaje);
 		mensaje = recibir_dato_serializado(kernel_programa);
 	}

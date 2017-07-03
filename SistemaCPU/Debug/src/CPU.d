@@ -1,6 +1,7 @@
 src/CPU.d: ../src/CPU.c \
  /home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Sharedlib/PCB.h \
  /home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Sharedlib/Socket.h \
+ /home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Sharedlib/Socket.h \
  ../src/header/AppConfig.h ../src/interfaz/InterfazKernel.h \
  ../src/interfaz/../../../Sharedlib/Sharedlib/Socket.h \
  ../src/interfaz/../primitivas/PrimitivasFunciones.h \
@@ -11,6 +12,8 @@ src/CPU.d: ../src/CPU.c \
  ../src/procesador/../../../Sharedlib/Sharedlib/PCB.h
 
 /home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Sharedlib/PCB.h:
+
+/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Sharedlib/Socket.h:
 
 /home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Sharedlib/Socket.h:
 

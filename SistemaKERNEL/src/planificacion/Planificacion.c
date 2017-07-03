@@ -221,12 +221,22 @@ void recibir_PCB_de_CPU(int clienteCPU, char * modo) {
 		mover_PCB_de_cola(pcb, EXEC, READY);
 	} else if (strcmp(modo, "WAIT_SEM") == 0) {
 		char * nombre_sem = recibir_dato_serializado(clienteCPU);
+
+		//if( es_semaforo(nombre_sem) == 0) {
+
+		//}
+
 		int resultado_sem = wait_semaforo_ansisop(nombre_sem);
 
-		if (resultado_sem == 0)
+		if (resultado_sem == 0){
 			mover_PCB_de_cola(pcb, EXEC, nombre_sem);
-		else
+
+		}else if(resultado_sem== -2){
+			enviar_dato_serializado("SEMAFORO_NO_EXISTE", clienteCPU);
+
+		}else{
 			enviar_dato_serializado("NO_BLOQUEADO", clienteCPU);
+		}
 	}
 
 }

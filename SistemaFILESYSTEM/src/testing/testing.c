@@ -16,6 +16,7 @@
 void mostrar_menu_testing(){
 	int opcion = -1;
 		char path[100];
+		char contenido[1000];
 		do {
 			printf("Testing --> Tiene efecto de lado\n");
 			printf("\n1- Crear archivo");
@@ -57,7 +58,7 @@ void mostrar_menu_testing(){
 				printf("\n");
 			}
 				break;
-			case 4:
+			case 4:{
 				system("clear");
 				int* block_size = malloc(sizeof(int));
 				int* block_cant = malloc(sizeof(int));
@@ -69,29 +70,44 @@ void mostrar_menu_testing(){
 				wipe_data(*block_size, *block_cant);
 				free(block_size);
 				free(block_cant);
+			}
 				break;
-			case 5:
-				mostrar_bitmap();
-				printf("\n");
-				crear_archivo("pepe.bin");
-				crear_archivo("manuela.bin");
-				mostrar_bitmap();
-				printf("\n");
-				borrar("pepe.bin");
-				mostrar_bitmap();
-				printf("\n");
-				borrar("manuela.bin");
-				mostrar_bitmap();
+			case 5:{
+				printf("Ingrese el nombre del archivo: ");
+				scanf("%s", path);
+				borrar(path);
+			}
 				break;
 			case 6:{
-					//TEST de GUARDAR DATOS.
+				int* offset = malloc(sizeof(int));
+				int* size = malloc(sizeof(int));
+				printf("Ingrese el nombre del archivo: ");
+				scanf("%s", path);
+				printf("Ingrese el offset en bytes desde donde escribir: ");
+				scanf("%d", offset);
+				printf("Ingrese el size en bytes a escribir: ");
+				scanf("%d", size);
+				printf("Ingrese el contenido del archivo (test max 1000): ");
+				scanf("%s", contenido);
+				guardar_datos(path, *offset, *size, contenido);
+				/*
+				FILE * f = fopen("/home/utnso/workspace/tp-2017-1c-Skynet/SistemaFILESYSTEM/pruebita.txt", "r+");
+				if(f == NULL)
+					perror("NO EXISTE");
+				char * buff = read_Archivo(f);
+				guardar_datos(path, *offset, *size, buff);
+				fclose(f);*/
+				free(offset);
+				free(size);
 			}
+			break;
 			case 7:{
 				char * path = generar_path_absoluto(PATH_ARCHIVOS, "pepe.bin");
 				t_config * config = config_create(path);
 				char ** bloques = config_get_array_value(config, "BLOQUES");
 				obtener_bloques_de_config(bloques, 2);
 			}
+			break;
 			}
 		} while (opcion != 0);
 
