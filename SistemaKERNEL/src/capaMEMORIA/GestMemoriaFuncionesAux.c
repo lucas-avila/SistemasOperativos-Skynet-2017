@@ -71,6 +71,10 @@ TABLA_MEMORIA_PROCESO* buscar_ultima_pagina_asignada_a_proceso(char* PID) {
 
 TABLA_MEMORIA_PROCESO* solicitar_nueva_pagina_memoria(char* PID) {
 	char* nroPagina = asignar_Paginas_Programa(PID, "1");
+	if(strcmp(nroPagina,"FALTA ESPACIO")){
+		return NULL;
+	}
+
 	//char* metadata = solicitar_bytes_memoria(PID,nroPagina,"0","5");
 
 	char* metadata = malloc(5 + 1);
@@ -136,11 +140,11 @@ int reservar_espacio_memoria_en_pagina(TABLA_MEMORIA_PROCESO* registro, unsigned
 	strcat(paginaMemoria, numeroBytesOcupados);
 
 	strcat(paginaMemoria, string_repeat(' ', espacioSolicitado));
-
+	registro->espacioDisponible -= espacioSolicitado;
 	if (metadataMemoria->reservarBloqueFinal == 1) {
 
 		strcat(paginaMemoria, "1");
-		registro->espacioDisponible -= tamanioSolicitar;
+
 
 		strcpy(numeroBytesOcupados, string_repeat('0', (4 - strlen(string_itoa(metadataMemoria->espacioDisponible)))));
 		strcat(numeroBytesOcupados, string_itoa(metadataMemoria->espacioDisponible));
@@ -152,7 +156,7 @@ int reservar_espacio_memoria_en_pagina(TABLA_MEMORIA_PROCESO* registro, unsigned
 	char * tamanioSolicitud = string_itoa(tamanioSolicitar);
 	almacenar_Bytes_de_Pagina(registro->PID, nroPagina, byteInicial, tamanioSolicitud, paginaMemoria);
 
-	modificar_registro_tabla_memoria(registro);
+//	modificar_registro_tabla_memoria(registro);
 
 	free(nroPagina);
 	free(byteInicial);

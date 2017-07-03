@@ -68,6 +68,8 @@ void CU_Recibir_Conexiones_CPU(int clienteCPU) {
 		}
 		else if (strcmp(codigo_operacion, "SIGNAL_SEM")== 0) {
 			char * nombre_sem = recibir_dato_serializado(clienteCPU);
+
+
 			int res = recepcion_SIGNAL_semaforo_ansisop(nombre_sem);
 			if(res == -2)
 				enviar_dato_serializado("SEMAFORO_NO_EXISTE", clienteCPU);
@@ -89,9 +91,9 @@ void CU_Recibir_Conexiones_CPU(int clienteCPU) {
 		else if (strcmp(codigo_operacion, "LEER_ARCHIVO") == 0) {
 			leer_archivo(clienteCPU);
 		}
-		else if (strcmp(codigo_operacion, "LEER_ARCHIVO") == 0) {
+		/*else if (strcmp(codigo_operacion, "LEER_ARCHIVO") == 0) {
 			leer_archivo(clienteCPU);
-		}
+		}*/
 		else if (strcmp(codigo_operacion, "ESCRIBIR_ARCHIVO") == 0) {
 			escribir_archivo(clienteCPU);
 		}
@@ -99,7 +101,7 @@ void CU_Recibir_Conexiones_CPU(int clienteCPU) {
 			borrar_archivo(clienteCPU);
 		}
 		else if (strcmp(codigo_operacion, "IMPRIMIR_POR_PANTALLA") == 0) {
-			CU_Atender_Solicitud_Escritura_Por_Pantalla();
+			//CU_Atender_Solicitud_Escritura_Por_Pantalla(clienteCPU);
 		}
 		else if(strcmp(codigo_operacion, "DESCONEXION_PROXIMA") == 0){
 			retirar_CPU_global(clienteCPU);
@@ -164,11 +166,8 @@ CPUInfo * obtener_CPU(int numeroConexion){
 }
 
 // En esta funcion se usan funciones de Proceso.c. Tal vez falte incluir acceso. Revisar funcion atoi.
-void CU_Atender_Solicitud_Escritura_Por_Pantalla(int clienteCPU) {
-	char* pidMensaje = recibir_dato_serializado(clienteCPU);
-	char* mensajeSolicitado = recibir_dato_serializado(clienteCPU);
-	int pidSolicitante = atoi(pidMensaje);
-	Proceso* procesoSolicitante = buscar_proceso_by_PID(pidSolicitante);
+void CU_Atender_Solicitud_Escritura_Por_Pantalla(int cliente_CPU, uint32_t PID, char * mensaje) {
+	Proceso* procesoSolicitante = buscar_proceso_by_PID(PID);
 	int socketDelProceso = procesoSolicitante->socket;
-	enviar_dato_serializado(mensajeSolicitado, socketDelProceso);
+	enviar_dato_serializado(mensaje, socketDelProceso);
 }

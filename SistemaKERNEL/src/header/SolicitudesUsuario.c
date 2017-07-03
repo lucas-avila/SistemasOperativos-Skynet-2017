@@ -272,7 +272,7 @@ void mostrar_tabla_global_archivos() {
 		open = string_itoa(elemento->open);
 		string_append(&info_log, open);
 		string_append(&info_log, "\n");
-		strcpy(open, "");
+		free(open);
 	}
 	generar_log();
 	free(open);

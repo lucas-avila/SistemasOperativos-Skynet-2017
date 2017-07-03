@@ -30,6 +30,10 @@ void buscarPaginaDisponibleStack(PCB* pcbRecibido) {
 		pcb->posicion_pagina_stack += sizeof(uint32_t);
 	}
 
+	//ATACAR EL PROBLEMA DEL STACK OVERFLOW
+	if (pcb->pagina_inicial_stack > pcb->cantidad_paginas_codigo) {
+		lanzar_excepcion("STACKOVERFLOW");
+	}
 }
 
 t_puntero DEFINIR_VARIABLE(t_nombre_variable variable) {
@@ -74,16 +78,16 @@ char* intToChar4(int num) {
 	if (n_char == NULL) {
 		n_char = malloc(4 + 1);
 	}
-/*
-	char * byte = &num;
+	/*
+	 char * byte = &num;
 
-	int i = 0;
-	for(i; i < 4; i++){
-		n_char[i] = *(string_itoa(byte[i]));
-	}
-	n_char[i] = '\0';
-	int resultado=0;
-	memcpy(&resultado, n_char, sizeof(int));*/
+	 int i = 0;
+	 for(i; i < 4; i++){
+	 n_char[i] = *(string_itoa(byte[i]));
+	 }
+	 n_char[i] = '\0';
+	 int resultado=0;
+	 memcpy(&resultado, n_char, sizeof(int));*/
 
 	//num = 1537;
 	int *pb; // pb deklariert als pointer auf int
@@ -91,6 +95,18 @@ char* intToChar4(int num) {
 	strcpy(n_char, "");
 
 	memcpy(n_char, pb, sizeof(int));
+	/*int i = 0;
+	for (i; i < 4; i++) {
+		if (n_char[i] == '\0') {
+			n_char[i] = '.';
+		}
+
+	}*/
+
+	if (n_char[0] == '\0') {
+			n_char[0] = ' ';
+			n_char[1] = '\0';
+		}
 	return n_char;
 }
 
@@ -98,8 +114,15 @@ int char4ToInt(char* chars) {
 	int a;
 	if (strcmp(chars, " ") != 0) {
 		string_trim(&chars);
-	}
 
+		/*int i = 0;
+		for (i; i < 4; i++) {
+			if (n_char[i] == '.') {
+				n_char[i] = '\0';
+			}
+
+		}*/
+	}
 	memcpy(&a, chars, sizeof(int));
 	return a;
 }
@@ -184,14 +207,17 @@ void IR_A_LABEL(t_nombre_etiqueta nombre_etiqueta) {
 	}
 
 	pcb->program_counter = metadata_buscar_etiqueta(nombre_etiqueta, pcb->etiquetas, pcb->etiquetas_size);
-
+	pcb->program_counter-=1;
 }
 
 void RETORNAR(t_valor_variable variableRetorno) {
 
 	IndiceStack* stackDeFuncion = list_get(pcb->pila, (list_size(pcb->pila) - 1));
-	int punteroVariableRetorno = serializarPuntero(stackDeFuncion->retVar->pagina, stackDeFuncion->retVar->byte_inicial, tamanio_pagina_memoria);
-	ASIGNAR_VARIABLE(punteroVariableRetorno, variableRetorno);
+	if(stackDeFuncion->retVar->tamanio != 0){
+		int punteroVariableRetorno = serializarPuntero(stackDeFuncion->retVar->pagina, stackDeFuncion->retVar->byte_inicial, tamanio_pagina_memoria);
+
+	 ASIGNAR_VARIABLE(punteroVariableRetorno, variableRetorno);
+	}
 
 }
 
@@ -211,13 +237,19 @@ void FINALIZAR() {
 }
 
 void LLAMAR_SIN_RETORNO(t_nombre_etiqueta nombre_etiqueta) {
+
 	insertar_nueva_fila_Indice_Stack(pcb);
+
 	IndiceStack * pila = obtener_Ultima_fila_Indice_Stack(pcb);
 	pila->retPos = pcb->program_counter;
 
 	// tiene que buscar la etiqueta en la lista de etiquetas y conseguir la direccion
 	t_puntero_instruccion direccionEtiqueta = metadata_buscar_etiqueta(nombre_etiqueta, pcb->etiquetas, pcb->etiquetas_size);
 	pcb->program_counter = direccionEtiqueta;
+
+	pila->retVar = malloc(sizeof(ReturnVariable));
+
+	pila->retVar->tamanio = 0;
 
 }
 
@@ -229,6 +261,8 @@ void LLAMAR_CON_RETORNO(t_nombre_etiqueta nombre_etiqueta, t_puntero direccionRe
 	//pila->retVar
 	//TODO:Aca hay que poner la fucking RETVAR
 	// tiene que buscar la etiqueta en la lista de etiquetas y conseguir la direccion
+	//char* instruccionBuscar = string_substring(nombre_etiqueta, 0, strlen(nombre_etiqueta) - 1);
+
 	t_puntero_instruccion direccionEtiqueta = metadata_buscar_etiqueta(nombre_etiqueta, pcb->etiquetas, pcb->etiquetas_size);
 	IndiceCodigo* indiceCodigo = list_get(pcbEjecutar->codigo, direccionEtiqueta);
 
