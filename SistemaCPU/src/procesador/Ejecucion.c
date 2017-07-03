@@ -23,18 +23,18 @@ char* solicitar_sentencia_ejecutar() {
 	if (indiceCodigo == NULL) {
 		return "FIN";
 	} else {
+		printf("\n PC %d  - Pagina %d - BI %d - BD %d",indiceCodigo->program_counter,indiceCodigo->pagina,indiceCodigo->byte_inicial_codigo,indiceCodigo->byte_final_codigo);
 
 		int longitud = indiceCodigo->byte_final_codigo - indiceCodigo->byte_inicial_codigo;
 		return solicitar_bytes_memoria(string_itoa(pcbEjecutar->PID), string_itoa(indiceCodigo->pagina), string_itoa(indiceCodigo->byte_inicial_codigo), string_itoa(longitud));
 	}
 }
 
-
 long retardo;
 void ejecutar_Programa() {
 	esFinPrograma = false;
 	programaBloqueado = false;
-	retardo= 	pcbEjecutar->quantum_sleep * 1000000 ;
+	retardo = pcbEjecutar->quantum_sleep * 1000000;
 	bool esRoundRobin = (pcbEjecutar->RR == 1);
 	if (!esRoundRobin) {
 		ejecutar_programa_por_FIFO();
@@ -55,9 +55,10 @@ void ejecutar_programa_por_FIFO() {
 		if (!esFinPrograma && !programaBloqueado) { //Este if tiene que sacarse, es solo para probar ahora
 
 			analizadorLinea(sentencia, funciones, kernel);
-			if(hubo_excepcion) {
+			if (hubo_excepcion) {
 				hubo_excepcion = false;
 				enviar_PCB_a_kernel(pcbEjecutar, "TERMINADO");
+				return;
 			}
 
 			pcbEjecutar->program_counter++;
@@ -86,9 +87,10 @@ void ejecutar_programa_por_RR() {
 		esFinPrograma = (strcmp(sentencia, "FIN") == 0);
 		if (!esFinPrograma && !programaBloqueado) { //Este if tiene que sacarse, es solo para probar ahora
 			analizadorLinea(sentencia, funciones, kernel);
-			if(hubo_excepcion) {
+			if (hubo_excepcion) {
 				hubo_excepcion = false;
 				enviar_PCB_a_kernel(pcbEjecutar, "TERMINADO");
+				return;
 			}
 
 			pcbEjecutar->program_counter++;
@@ -144,28 +146,68 @@ void marcarBloqueado() {
 	programaBloqueado = true;
 }
 
-void lanzar_excepcion(char * mensaje){
-	if(strcmp(mensaje, "SEMAFORO_NO_EXISTE") == 0){
-		pcbEjecutar->exit_code = -16;
-	}else if (strcmp("ERROR_ARCHIVO_NO_ABIERTO", mensaje)) {
-		pcbEjecutar->exit_code = -12;
-	}else if (strcmp("ERROR_FALTA_MODO_LECTURA", mensaje)) {
-		pcbEjecutar->exit_code = -3;
-	}else if (strcmp("ERROR_FALTA_MODO_ESCRITURA", mensaje)) {
-		pcbEjecutar->exit_code = -4;
-	}else if (strcmp("ERROR_ARCHIVO_NO_EXISTE", mensaje)) {
-		pcbEjecutar->exit_code = -2;
-	}else if (strcmp("ERROR_ARCHIVO_ABIERTO", mensaje)) {
-		pcbEjecutar->exit_code = -19;
-	}else if (strcmp("ERROR - FALTA MODO APERTURA", mensaje)) {
-		pcbEjecutar->exit_code = -11;
-	}else if (strcmp("ERROR_PROCESO_NO_EXISTE", mensaje)) {
+void lanzar_excepcion(char * mensaje) {
+	/*if(strcmp(mensaje, "STACKOVERFLOW") == 0){
+	 pcbEjecutar->exit_code = -21;
+	 }else if(strcmp(mensaje, "SEMAFORO_NO_EXISTE") == 0){
+	 pcbEjecutar->exit_code = -16;
+	 }else if (strcmp("ERROR_ARCHIVO_NO_ABIERTO", mensaje)) {
+	 pcbEjecutar->exit_code = -12;
+	 }else if (strcmp("ERROR_FALTA_MODO_LECTURA", mensaje)) {
+	 pcbEjecutar->exit_code = -3;
+	 }else if (strcmp("ERROR_FALTA_MODO_ESCRITURA", mensaje)) {
+	 pcbEjecutar->exit_code = -4;
+	 }else if (strcmp("ERROR_ARCHIVO_NO_EXISTE", mensaje)) {
+	 pcbEjecutar->exit_code = -2;
+	 }else if (strcmp("ERROR_ARCHIVO_ABIERTO", mensaje)) {
+	 pcbEjecutar->exit_code = -19;
+	 }else if (strcmp("ERROR - FALTA MODO APERTURA", mensaje)) {
+	 pcbEjecutar->exit_code = -11;
+	 }else if (strcmp("ERROR_PROCESO_NO_EXISTE", mensaje)) {
+	 pcbEjecutar->exit_code = -5;
+	 }else if (strcmp("ERROR - ARCHIVO EXISTE", mensaje)) {
+	 pcbEjecutar->exit_code = -10;
+	 }*/
+
+	if (strcmp(mensaje, "ERROR_PROCESO_NO_EXISTE") == 0) {
 		pcbEjecutar->exit_code = -5;
-	}else if (strcmp("ERROR - ARCHIVO EXISTE", mensaje)) {
+	} else if (strcmp(mensaje, "ERROR - ARCHIVO EXISTE") == 0) {
 		pcbEjecutar->exit_code = -10;
+	} else if (strcmp(mensaje, "ERROR_ARCHIVO_NO_EXISTE") == 0) {
+		pcbEjecutar->exit_code = -2;
+	} else if (strcmp(mensaje, "ERROR - FALTA MODO APERTURA") == 0) {
+		pcbEjecutar->exit_code = -11;
+	} else if (strcmp(mensaje, "ERROR_ARCHIVO_NO_ABIERTO") == 0) {
+		pcbEjecutar->exit_code = -12;
+	} else if (strcmp(mensaje, "ERROR_FALTA_MODO_LECTURA") == 0) {
+		pcbEjecutar->exit_code = -3;
+	} else if (strcmp(mensaje, "ERROR_FALTA_MODO_ESCRITURA") == 0) {
+		pcbEjecutar->exit_code = -4;
+	} else if (strcmp(mensaje, "No existe la variable compartida solicitada") == 0) {
+		pcbEjecutar->exit_code = -13;
+	} else if (strcmp(mensaje, "ERROR_ARCHIVO_ABIERTO") == 0) {
+		pcbEjecutar->exit_code = -19;
+	} else if (strcmp(mensaje, "PAGINA_NO_EXISTE") == 0) {
+		pcbEjecutar->exit_code = -14;
+	} else if (strcmp(mensaje, "MALLOC_EXCEDE_TAMANIO_DE_PAGINA") == 0) {
+		pcbEjecutar->exit_code = -8;
+	} else if (strcmp(mensaje, "FALTA ESPACIO") == 0) {
+		pcbEjecutar->exit_code = -9;
+	} else if (strcmp(mensaje, "ERROR - SIN_ESPACIO EN FS") == 0) {
+		pcbEjecutar->exit_code = -15;
+	} else if (strcmp(mensaje, "SEMAFORO_NO_EXISTE") == 0) {
+		pcbEjecutar->exit_code = -16;
+	} else if (strcmp(mensaje, "BLOQUE_INEXISTENTE") == 0) {
+		pcbEjecutar->exit_code = -17;
+	} else if (strcmp(mensaje, "BLOQUE_NO_OCUPADO") == 0) {
+		pcbEjecutar->exit_code = -18;
+	} else if (strcmp(mensaje, "STACKOVERFLOW") == 0) {
+		pcbEjecutar->exit_code = -22;
 	}
 
-	if(pcbEjecutar->exit_code != 0)
+	printf("\n\n\n Errorr %s",mensaje);
+
+	if (pcbEjecutar->exit_code != 0)
 		hubo_excepcion = true;
 }
 

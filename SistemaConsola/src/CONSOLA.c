@@ -135,9 +135,12 @@ void recibir_mensajes(int pid, int kernel_programa) {
 	mensaje = recibir_dato_serializado(kernel_programa);
 
 	while (strcmp(mensaje, "FIN_PROGRAMA") != 0) {
-		printf("El mensaje del Proceso (%d) es: %s\n", pid, mensaje);
-		Info_ejecucion* info_proceso = buscar_info_por_PID(pid);
-		info_proceso->cant_impresiones = info_proceso->cant_impresiones + 1;
+		if(strcmp(mensaje, "")!=0){
+	    	printf("El mensaje del Proceso (%d) es: %s\n", pid, mensaje);
+			Info_ejecucion* info_proceso = buscar_info_por_PID(pid);
+			info_proceso->cant_impresiones = info_proceso->cant_impresiones + 1;
+
+		}
 		free(mensaje);
 		mensaje = recibir_dato_serializado(kernel_programa);
 	}

@@ -32,6 +32,7 @@ bool controlSeguir = true;
 bool estaEjecutando = false;
 
 int main(int argc, char *argv[]) {
+
 	intToChar4(15040);
 	//TODO: Agregar adentro de esta funcion, que espere a que termine de ejecutar, lo mande al kernel y DESPUES mandar el desconectar y finalizar el proceso
 	signal(SIGINT, recibir_seniales_de_linux);

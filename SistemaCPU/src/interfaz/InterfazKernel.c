@@ -141,6 +141,7 @@ char* enviar_SYSCALL_solicitar_memoria_dinamica_a_kernel(int PID, int espacio, i
 	} else {
 
 		printf("\n Error en MALLOC: %s", resultado);
+		lanzar_excepcion(resultado);
 		return "ERROR";
 	}
 }
@@ -165,7 +166,7 @@ int asignar_valor_a_variable_compartida_en_kernel(char* nombre_varComp, int valo
 		printf("OK");
 		return 0;
 	} else {
-
+		lanzar_excepcion(resultado);
 		printf("\n Error en ASIGNAR VARIABLE COMPARTIDA: %s", resultado);
 		return -1;
 
@@ -183,7 +184,7 @@ int obtener_valor_de_variable_compartida_en_kernel(char* nombre_varComp, int* va
 		printf("La variable solicitada tiene el valor: %d", (*valorVariable));
 		return 0;
 	} else {
-
+		lanzar_excepcion(resultado);
 		printf("\n Error en BUSCAR VARIABLE COMPARTIDA: %s", resultado);
 		return -1;
 
@@ -233,17 +234,19 @@ char* leer_archivo(char* PID, int FD, int tamanio) {
 }
 
 char* escribir_archivo(char* PID, int FD, int tamanio, char* contenido) {
-	if (FD != 1) {
+	char* respuesta ;
+	if (FD != 0) {
 		enviar_dato_serializado("ESCRIBIR_ARCHIVO", servidor_kernel);
 		enviar_dato_serializado(PID, servidor_kernel);
 		enviar_dato_serializado(string_itoa(FD), servidor_kernel);
 		enviar_dato_serializado(string_itoa(tamanio), servidor_kernel);
 		enviar_dato_serializado(contenido, servidor_kernel);
-
+		 respuesta = recibir_dato_serializado(servidor_kernel);
 	} else {
 		CU_Escribir_Pantalla_AnSISOP(contenido, PID);
+		 respuesta = "OK";
 	}
-	char* respuesta = recibir_dato_serializado(servidor_kernel);
+
 
 	return respuesta;
 }

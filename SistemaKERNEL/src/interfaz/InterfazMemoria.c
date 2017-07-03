@@ -82,7 +82,12 @@ int enviar_programa_memoria(t_metadata_program * meta, PCB * pcb, char * program
 	int i = 0;
 	int indiceInicial = 0;
 	//Para el stack
-	numeroPagina = asignar_Paginas_Programa(string_itoa(pcb->PID), "2");
+	numeroPagina = asignar_Paginas_Programa(string_itoa(pcb->PID),"1");
+	int cantidad=1;
+	for(cantidad=1;cantidad< configuraciones.STACK_SIZE;cantidad++){
+		 asignar_Paginas_Programa(string_itoa(pcb->PID),"1");
+	}
+
 	if (strcmp(numeroPagina, "FALTA ESPACIO") == 0) {
 		return -1; // EXIT_CODE: "No se pudieron reservar recursos para ejecutar el programa".
 	}
@@ -102,7 +107,17 @@ int enviar_programa_memoria(t_metadata_program * meta, PCB * pcb, char * program
 
 	for (i = 0; i < cantidadSentencias; i++) {
 		char * instruccion = string_substring(programa, meta->instrucciones_serializado[i].start, meta->instrucciones_serializado[i].offset);
+
 		instruccion[meta->instrucciones_serializado[i].offset] = '\0';
+
+		int inicial=0;
+		if(instruccion[0]=='\t'){
+			inicial=1;
+		}
+		int final = meta->instrucciones_serializado[i].offset - inicial - 1;
+
+		instruccion=string_substring(instruccion,inicial,final);
+	//	meta->instrucciones_serializado[i].offset -= 2;
 
 		IndiceCodigo * indiceNuevo = crear_IndiceCodigo(i, indiceInicial, strlen(instruccion), atoi(numeroPagina));
 		indiceInicial = indiceInicial + strlen(instruccion);
@@ -116,7 +131,12 @@ int enviar_programa_memoria(t_metadata_program * meta, PCB * pcb, char * program
 			if (strcmp(numeroPagina, "FALTA ESPACIO") == 0) {
 				return -1; // EXIT_CODE: "No se pudieron reservar recursos para ejecutar el programa".
 			}
-			almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(indiceNuevo->pagina), string_itoa(indiceNuevo->byte_inicial_codigo), string_itoa(indiceNuevo->byte_final_codigo - indiceNuevo->byte_inicial_codigo), instruccion);
+			indiceNuevo->pagina = atoi(numeroPagina);
+			indiceNuevo->byte_inicial_codigo = 0;
+			indiceNuevo->byte_final_codigo = strlen(instruccion);
+			respuesta = almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(indiceNuevo->pagina), string_itoa(indiceNuevo->byte_inicial_codigo), string_itoa(indiceNuevo->byte_final_codigo - indiceNuevo->byte_inicial_codigo), instruccion);
+			indiceInicial = strlen(instruccion);
+
 			cantidad_paginas++;
 		}
 
