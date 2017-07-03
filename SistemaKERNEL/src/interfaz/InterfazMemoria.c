@@ -78,17 +78,22 @@ int is_valid_line(char* line) {
 
 int enviar_programa_memoria(t_metadata_program * meta, PCB * pcb, char * programa) {
 	char * numeroPagina;
+	char * PID = string_itoa(pcb->PID);
 	int cantidadSentencias = meta->instrucciones_size;
 	int i = 0;
 	int indiceInicial = 0;
 	//Para el stack
-	numeroPagina = asignar_Paginas_Programa(string_itoa(pcb->PID),"1");
-	int cantidad=1;
-	for(cantidad=1;cantidad< configuraciones.STACK_SIZE;cantidad++){
-		 asignar_Paginas_Programa(string_itoa(pcb->PID),"1");
-	}
+
+//	numeroPagina = asignar_Paginas_Programa(string_itoa(pcb->PID),"1");
+//	int cantidad=1;
+//	for(cantidad=1;cantidad< configuraciones.STACK_SIZE;cantidad++){
+	//	 asignar_Paginas_Programa(string_itoa(pcb->PID),"1");
+//	}
+
+	numeroPagina = asignar_Paginas_Programa(PID, string_itoa(configuraciones.STACK_SIZE));
 
 	if (strcmp(numeroPagina, "FALTA ESPACIO") == 0) {
+		free(PID);
 		return -1; // EXIT_CODE: "No se pudieron reservar recursos para ejecutar el programa".
 	}
 	// TODO: Fijarse que esta bien esto, porque habia un error antes del
@@ -97,53 +102,66 @@ int enviar_programa_memoria(t_metadata_program * meta, PCB * pcb, char * program
 	pcb->posicion_pagina_stack = 0;
 
 	int cantidad_paginas = 0;
-	numeroPagina = asignar_Paginas_Programa(string_itoa(pcb->PID), "1");
+	numeroPagina = asignar_Paginas_Programa(PID, "1");
 	if (strcmp(numeroPagina, "FALTA ESPACIO") == 0) {
-		finalizar_Programa_memoria(string_itoa(pcb->PID));
-		printf("ERROR no hay espacio suficiente");
-		return -1;
+		free(PID);
+		return -1; // EXIT_CODE: "No se pudieron reservar recursos para ejecutar el programa".
 	}
 	cantidad_paginas++;
 
+	char * page;
+	char * byte_inicial_codigo;
+	char * aux;
 	for (i = 0; i < cantidadSentencias; i++) {
 		char * instruccion = string_substring(programa, meta->instrucciones_serializado[i].start, meta->instrucciones_serializado[i].offset);
 
 		instruccion[meta->instrucciones_serializado[i].offset] = '\0';
 
-		int inicial=0;
-		if(instruccion[0]=='\t'){
-			inicial=1;
+		int inicial = 0;
+		if (instruccion[0] == '\t') {
+			inicial = 1;
 		}
 		int final = meta->instrucciones_serializado[i].offset - inicial - 1;
 
-		instruccion=string_substring(instruccion,inicial,final);
-	//	meta->instrucciones_serializado[i].offset -= 2;
+		instruccion = string_substring(instruccion, inicial, final);
+		//	meta->instrucciones_serializado[i].offset -= 2;
 
 		IndiceCodigo * indiceNuevo = crear_IndiceCodigo(i, indiceInicial, strlen(instruccion), atoi(numeroPagina));
 		indiceInicial = indiceInicial + strlen(instruccion);
 		list_add(pcb->codigo, indiceNuevo);
 
-		char * respuesta = almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(indiceNuevo->pagina), string_itoa(indiceNuevo->byte_inicial_codigo), string_itoa(indiceNuevo->byte_final_codigo - indiceNuevo->byte_inicial_codigo), instruccion);
+		char * respuesta = almacenar_Bytes_de_Pagina(PID, string_itoa(indiceNuevo->pagina), string_itoa(indiceNuevo->byte_inicial_codigo), string_itoa(indiceNuevo->byte_final_codigo - indiceNuevo->byte_inicial_codigo), instruccion);
 
 		//Si no queda mas espacio en esa pagina pedimos una nueva y seguimos
 		if (strcmp(respuesta, "CONTENIDO_NO_ENTRA_EN_PAGINA") == 0) {
-			numeroPagina = asignar_Paginas_Programa(string_itoa(pcb->PID), "1");
+			numeroPagina = asignar_Paginas_Programa(PID, "1");
 			if (strcmp(numeroPagina, "FALTA ESPACIO") == 0) {
+				free(PID);
 				return -1; // EXIT_CODE: "No se pudieron reservar recursos para ejecutar el programa".
 			}
+
 			indiceNuevo->pagina = atoi(numeroPagina);
 			indiceNuevo->byte_inicial_codigo = 0;
 			indiceNuevo->byte_final_codigo = strlen(instruccion);
 			respuesta = almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(indiceNuevo->pagina), string_itoa(indiceNuevo->byte_inicial_codigo), string_itoa(indiceNuevo->byte_final_codigo - indiceNuevo->byte_inicial_codigo), instruccion);
 			indiceInicial = strlen(instruccion);
 
-			cantidad_paginas++;
-		}
+			//page = string_itoa(indiceNuevo->pagina);
+			//byte_inicial_codigo = string_itoa(indiceNuevo->byte_inicial_codigo);
+			//aux = string_itoa(indiceNuevo->byte_final_codigo - indiceNuevo->byte_inicial_codigo);
+			//almacenar_Bytes_de_Pagina(PID, page, byte_inicial_codigo, aux, instruccion);
 
+			cantidad_paginas++;
+
+			//	free(page);
+			//free(byte_inicial_codigo);
+			//free(aux);
+		}
 		free(instruccion);
 		free(respuesta);
 	}
 
+	free(PID);
 	return cantidad_paginas;
 }
 

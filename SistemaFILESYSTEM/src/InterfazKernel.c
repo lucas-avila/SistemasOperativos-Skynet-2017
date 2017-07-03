@@ -54,8 +54,6 @@ void crear_archivo(char * path) {
 
 	string_append(&path_abs, directorios[i]);
 
-	printf("%s\n", path_abs);
-
 	FILE * f;
 	//Validaciones...
 	if(access(path_abs, F_OK) != -1){
@@ -83,10 +81,11 @@ void crear_archivo(char * path) {
 		enviar_dato_serializado("ERROR - SIN_ESPACIO EN FS", clienteKernel);
 		return;
 	}
+
 	char * bloques_string = convertir_bloques_a_array_chars(archivo->bloques, obtener_cantidad_bloques(archivo));
-	dictionary_put(file->properties, "TAMANIO", string_itoa(archivo->tamanio));
-	dictionary_put(file->properties, "BLOQUES", bloques_string);
-	config_save_in_file(file, path_abs);
+	config_set_value(file, "TAMANIO", string_itoa(archivo->tamanio));
+	config_set_value(file, "BLOQUES", bloques_string);
+	config_save(file);
 
 	enviar_dato_serializado("OK", clienteKernel);
 
@@ -113,11 +112,12 @@ void obtener_datos(char * path, int offset, int size){
 		char * block_path;
 		int bloques_leidos = 0;
 		int ultimos_bytes_leidos = 0;
+		char * block;
 
 		int i,x=0;
 		for(i = offset_en_bloques; i < cantidad_bloques + offset_en_bloques; i++){
 			ultimos_bytes_leidos = x;
-			char * block = string_new();
+			block = string_new();
 			string_append(&block, string_itoa(archivo->bloques[i]));
 			string_append(&block, ".bin");
 
@@ -130,7 +130,7 @@ void obtener_datos(char * path, int offset, int size){
 				if(i == offset_en_bloques && offset_final > 0)
 					fseek(f_bloque, offset_final, SEEK_SET);
 
-				while ((c = getc(f_bloque)) != EOF && x < size && (x + offset_final - ultimos_bytes_leidos) < metadata->tamanio_bloques){
+				while ((c = getc(f_bloque)) != EOF && x < size && x < archivo->tamanio && (x + offset_final - ultimos_bytes_leidos) < metadata->tamanio_bloques){
 					texto_leido[x] = c;
 					x++;
 				}
@@ -158,78 +158,74 @@ void guardar_datos(char * path, int offset, int size, char * buffer) {
 	 */
 
 	char * path_abs = generar_path_absoluto(PATH_ARCHIVOS, path);
-	//char *
+
 	if(access(path_abs, F_OK) != -1) {
 
 			Archivo * archivo = restaurar_archivo(path_abs);
 			int cantidad_bloques = obtener_cantidad_bloques(archivo);
 
-			int k = 1;
-			if(size > (cantidad_bloques * metadata->tamanio_bloques - offset)) {
-				archivo->tamanio = offset + size;
+			archivo->tamanio += (size + offset > archivo->tamanio)? (size + offset - archivo->tamanio) : 0;
+
+			if(size + offset > cantidad_bloques * metadata->tamanio_bloques) {
 				int bloque_libre;
-				while(size > ((cantidad_bloques + k) * metadata->tamanio_bloques - offset)) {
+				while(size + offset > cantidad_bloques * metadata->tamanio_bloques) {
 					bloque_libre = obtener_BLOQUE_libre();
 					if(bloque_libre != -1) {
-						archivo->bloques = (int *)malloc(sizeof(archivo->tamanio) + k * sizeof(bloque_libre) + cantidad_bloques * sizeof(int));
-						archivo->bloques[cantidad_bloques + k - 1] = bloque_libre;
-						k++;
+						cantidad_bloques++;
+						archivo->bloques = (int*)realloc(archivo->bloques, sizeof(int) * cantidad_bloques);
+						archivo->bloques[cantidad_bloques - 1] = bloque_libre;
 					}
 					else {
-						enviar_dato_serializado(clienteKernel, "ERROR - SIN_ESPACIO EN FS");
+						enviar_dato_serializado("ERROR - SIN_ESPACIO EN FS", clienteKernel);
 						return;
 					}
 				}
 			}
-			cantidad_bloques = obtener_cantidad_bloques(archivo);
 
 			int offset_en_bloques = offset / metadata->tamanio_bloques;
 			int offset_final = offset % metadata->tamanio_bloques;
 			FILE * file_bloque;
-			char * path_bloque;
-			int contador_bloques = 0;
-			int contador_bytes = 0; //Se usará para verificar que no terminamos de escribir la información pedida.
-			int i, j; // "i" para movernos entre bloques, "j" para movernos entre letras.
+			int i, j=0, bytes_a_escribir=0;
+			char * block_path;
+
 
 			for(i = offset_en_bloques; i < cantidad_bloques; i++) {
-				char letra;
-				char * path_bloque_parcial = string_new();
-				string_append(&path_bloque_parcial, string_itoa(i));
-				string_append(&path_bloque_parcial, ".bin");
+				block_path = string_new();
+				string_append(&block_path, string_itoa(archivo->bloques[i]));
+				string_append(&block_path, ".bin");
 
-				path_bloque = generar_path_absoluto(PATH_BLOQUES, path_bloque_parcial);
+				block_path = generar_path_absoluto(PATH_BLOQUES, block_path);
+				file_bloque = fopen(block_path, "r+");
 
-				file_bloque = fopen(path_bloque, "w");
-
-				if(i == offset_en_bloques && offset_final > 0) {
-					fseek(file_bloque, offset_final, SEEK_SET);
-					j = offset_final;
-				}
-				else j = 0;
-
-				while(contador_bytes < size && j < metadata->tamanio_bloques) {
-					letra = buffer[contador_bytes];
-					putc(letra, file_bloque);
-
-					contador_bytes++;
-					j++;
+				bytes_a_escribir = (size - j > metadata->tamanio_bloques)? metadata->tamanio_bloques : size - j;
+				if(i == offset_en_bloques && offset_final > 0){
+					fseek(file_bloque, sizeof(char) * offset_final, SEEK_SET);
+					if(bytes_a_escribir + offset_final > metadata->tamanio_bloques)
+						bytes_a_escribir = metadata->tamanio_bloques - offset_final;
+					offset_final = 0;
 				}
 
-				fclose(path_bloque);
-				free(path_bloque_parcial);
+				if(bytes_a_escribir == 0) i = cantidad_bloques;
+				fwrite(buffer + j, sizeof(char), bytes_a_escribir, file_bloque);
+				j+=bytes_a_escribir;
+
+				fclose(file_bloque);
+				free(block_path);
 			}
 
 			t_config * file = config_create(path_abs);
 			char * bloques_string = convertir_bloques_a_array_chars(archivo->bloques, obtener_cantidad_bloques(archivo));
-			dictionary_put(file->properties, "TAMANIO", string_itoa(archivo->tamanio));
-			dictionary_put(file->properties, "BLOQUES", bloques_string);
-			config_save_in_file(file, path_abs);
+			config_set_value(file, "TAMANIO", string_itoa(archivo->tamanio));
+			config_set_value(file, "BLOQUES", bloques_string);
+			config_save(file);
 
 			free(archivo);
 			free(bloques_string);
+			free(file);
 		}
 
-	enviar_dato_serializado(clienteKernel, "OK");
+	enviar_dato_serializado("OK", clienteKernel);
+	free(path_abs);
 }
 
 void borrar(char * path) {
@@ -250,7 +246,7 @@ void borrar(char * path) {
 	arch = restaurar_archivo(path_abs);
 	cant_bloques_archivo = obtener_cantidad_bloques(arch);
 	release_blocks(arch->bloques, cant_bloques_archivo);
-	enviar_dato_serializado(clienteKernel, "OK");
+	enviar_dato_serializado("OK", clienteKernel);
 	remove(path_abs);
 	free(arch);
 }

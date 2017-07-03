@@ -1,8 +1,11 @@
-#include "Planificacion.h"
 #include "PlanificacionFIFO.h"
+
+#include <stddef.h>
+#include <Sharedlib/PCB.h>
+
 #include "../header/AppConfig.h"
-#include "../administrarPCB/EstadisticaProceso.h"
-#include "../../../Sharedlib/Sharedlib/Socket.h"
+#include "../header/Estructuras.h"
+#include "Planificacion.h"
 
 void dispatcher_FIFO() {
 	PCB* pcb;

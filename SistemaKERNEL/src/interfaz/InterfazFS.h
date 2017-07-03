@@ -11,13 +11,12 @@
 int servidor_filesystem;
 
 void inicializar();
+void iniciar_conexion_servidor_FS();
 
 char* validar_archivo(char *path);
 char* crear_archivo(char *path);
 char* borrar(char* path);
 char* obtenerDatos(char* path,int bloqueInicial,int size);
 char* guardarDatos(char* path,int bloqueInicial,int size,char* contenido);
-
-void iniciar_conexion_servidor_FS();
 
 #endif /* HEADER_INTERFAZFS_H_ */

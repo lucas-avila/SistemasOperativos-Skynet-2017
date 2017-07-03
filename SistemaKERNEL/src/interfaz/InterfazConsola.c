@@ -57,6 +57,10 @@ void CU_Recibir_Conexiones_Programa(int clientePrograma) {
 }
 
 void notificar_exit_code(int exit_code, int socket){
+	char * exit_Code = string_itoa(exit_code);
+
 	enviar_dato_serializado("FIN_PROGRAMA", socket);
-	enviar_dato_serializado(string_itoa(exit_code), socket);
+	enviar_dato_serializado(exit_Code, socket);
+
+	free(exit_Code);
 }
