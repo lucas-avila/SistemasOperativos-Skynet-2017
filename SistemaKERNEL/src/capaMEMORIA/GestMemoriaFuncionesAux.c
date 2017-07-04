@@ -71,7 +71,7 @@ TABLA_MEMORIA_PROCESO* buscar_ultima_pagina_asignada_a_proceso(char* PID) {
 
 TABLA_MEMORIA_PROCESO* solicitar_nueva_pagina_memoria(char* PID) {
 	char* nroPagina = asignar_Paginas_Programa(PID, "1");
-	if(strcmp(nroPagina,"FALTA ESPACIO")){
+	if(strcmp(nroPagina,"FALTA ESPACIO") == 0){
 		return NULL;
 	}
 

@@ -205,9 +205,11 @@ void lanzar_excepcion(char * mensaje) {
 		pcbEjecutar->exit_code = -22;
 	}
 
-	printf("\n\n\n Errorr %s",mensaje);
 
-	if (pcbEjecutar->exit_code != 0)
+
+	if (pcbEjecutar->exit_code != 0){
 		hubo_excepcion = true;
+		printf("\n\n\n Error %s",mensaje);
+	}
 }
 
