@@ -14,7 +14,11 @@ t_puntero serializarPuntero(int pagina, int byte_inicial, int tamanioPagina) {
 }
 
 void deserializar_puntero(t_puntero direccion_variable, int* pagina, int* offset, int tamanioPagina) {
-	if (direccion_variable <= tamanioPagina) {
+
+	*pagina = direccion_variable /tamanioPagina ;
+	*offset=direccion_variable%tamanioPagina;
+
+	/*if (direccion_variable <= tamanioPagina) {
 		*pagina = 0;
 		*offset=direccion_variable;
 	} else {
@@ -32,7 +36,7 @@ void deserializar_puntero(t_puntero direccion_variable, int* pagina, int* offset
 		if (*offset < 0) {
 			*offset = (int) *offset * (-1);
 		}
-	}
+	}*/
 }
 
 

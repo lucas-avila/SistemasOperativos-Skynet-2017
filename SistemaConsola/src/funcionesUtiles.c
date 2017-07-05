@@ -64,10 +64,10 @@ void incializar_log(){
 }
 
 void generar_log(){
-	string_append(&info_log, "\n------Fin del LOG------\n\0");
-	printf("\n%s", info_log);
-    t_log* logger = log_create(configuraciones.PATH_ARCHIVO_LOG, "CONSOLA",false, LOG_LEVEL_INFO);
-    log_info(logger, "\n***LOGS de la CONSOLA***\n %s", info_log);
+	//string_append(&info_log, "\n------Fin del LOG------\n\0");
+	//printf("\n%s", info_log);
+    t_log* logger = log_create(configuraciones.PATH_ARCHIVO_LOG, "CONSOLA",true, LOG_LEVEL_INFO);
+    log_info(logger, "\n %s", info_log);
     log_destroy(logger);
     strcpy(info_log, "");
 }

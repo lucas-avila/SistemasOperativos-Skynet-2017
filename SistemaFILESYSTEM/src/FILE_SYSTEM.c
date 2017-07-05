@@ -24,13 +24,10 @@ void CU_Recibir_Conexiones_Kernel(int clienteKernel);
 int main(int argc, char * argv[]) {
 
 	inicializar_configuracion(argv[1]);
-	/*
-	 servidor = crear_servidor(configuraciones.PUERTO, configuraciones.CANTIDAD_MAXIMA_CONCURRENCIA);
-	 atender_clientes(servidor, &escuchar_Conexiones_Kernel);
-	 */
+
+	servidor = crear_servidor(configuraciones.PUERTO, configuraciones.CANTIDAD_MAXIMA_CONCURRENCIA);
 	inicializar_estructuras_administrativas();
 	atender_clientes(-1, &mostrar_menu_testing);
-
 	escuchar_Conexiones_Kernel(servidor);
 	close(servidor);
 

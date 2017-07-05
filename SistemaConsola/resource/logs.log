@@ -1,852 +1,288 @@
-[INFO] 12:21:54:965 CONSOLA/(5923:5930): 
+[INFO] 01:23:57:755 CONSOLA/(10572:10610): 
 ***LOGS de la CONSOLA***
- EXIT CODE: El Proceso(1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: Sun Jun 25 12:21:54 2017
-Fecha de fin de ejecucion: Sun Jun 25 12:21:54 2017
-Tiempo total de ejecucion: (0) horas, (0) minutos, (1) segundos.
-Cantidad de impresiones por pantalla: 0
+ Mensaje del Proceso (1000): 20
+
 ------Fin del LOG------
 
-[INFO] 12:47:44:409 CONSOLA/(6727:6729): 
+[INFO] 01:23:58:395 CONSOLA/(10572:10610): 
 ***LOGS de la CONSOLA***
- EXIT CODE: El Proceso(1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: Sun Jun 25 12:47:44 2017
-Fecha de fin de ejecucion: Sun Jun 25 12:47:44 2017
-Tiempo total de ejecucion: (0) horas, (0) minutos, (1) segundos.
-Cantidad de impresiones por pantalla: 0
+ Mensaje del Proceso (1000): 16
+
 ------Fin del LOG------
 
-[INFO] 12:47:47:132 CONSOLA/(6727:6735): 
+[INFO] 01:23:58:555 CONSOLA/(10572:10610): 
 ***LOGS de la CONSOLA***
- EXIT CODE: El Proceso(1001) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: Sun Jun 25 12:47:47 2017
-Fecha de fin de ejecucion: Sun Jun 25 12:47:47 2017
-Tiempo total de ejecucion: (0) horas, (0) minutos, (1) segundos.
-Cantidad de impresiones por pantalla: 0
+ Mensaje del Proceso (1000): 2
+
 ------Fin del LOG------
 
-[INFO] 12:47:51:493 CONSOLA/(6727:6741): 
+[INFO] 01:23:59:359 CONSOLA/(10572:10610): 
 ***LOGS de la CONSOLA***
- EXIT CODE: El Proceso(1002) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: Sun Jun 25 12:47:51 2017
-Fecha de fin de ejecucion: Sun Jun 25 12:47:51 2017
-Tiempo total de ejecucion: (0) horas, (0) minutos, (1) segundos.
-Cantidad de impresiones por pantalla: 0
+ Mensaje del Proceso (1000): 18
+
 ------Fin del LOG------
 
-[INFO] 12:48:01:340 CONSOLA/(6727:6747): 
+[INFO] 01:23:59:519 CONSOLA/(10572:10610): 
 ***LOGS de la CONSOLA***
- EXIT CODE: El Proceso(1003) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: Sun Jun 25 12:48:01 2017
-Fecha de fin de ejecucion: Sun Jun 25 12:48:01 2017
-Tiempo total de ejecucion: (0) horas, (0) minutos, (1) segundos.
-Cantidad de impresiones por pantalla: 0
+ Mensaje del Proceso (1000): 20
+
 ------Fin del LOG------
 
-[INFO] 12:48:25:733 CONSOLA/(6756:6758): 
-***LOGS de la CONSOLA***
- EXIT CODE: El Proceso(1004) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: Sun Jun 25 12:48:25 2017
-Fecha de fin de ejecucion: Sun Jun 25 12:48:25 2017
-Tiempo total de ejecucion: (0) horas, (0) minutos, (1) segundos.
-Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 12:50:48:40 CONSOLA/(6756:6813): 
-***LOGS de la CONSOLA***
- EXIT CODE: El Proceso(1005) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: Sun Jun 25 12:50:48 2017
-Fecha de fin de ejecucion: Sun Jun 25 12:50:48 2017
-Tiempo total de ejecucion: (0) horas, (0) minutos, (1) segundos.
-Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 12:51:21:192 CONSOLA/(6756:6827): 
-***LOGS de la CONSOLA***
- EXIT CODE: El Proceso(1006) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: Sun Jun 25 12:51:21 2017
-Fecha de fin de ejecucion: Sun Jun 25 12:51:21 2017
-Tiempo total de ejecucion: (0) horas, (0) minutos, (1) segundos.
-Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 12:53:56:320 CONSOLA/(6926:6932): 
-***LOGS de la CONSOLA***
- EXIT CODE: El Proceso(1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: Sun Jun 25 12:53:56 2017
-Fecha de fin de ejecucion: Sun Jun 25 12:53:56 2017
-Tiempo total de ejecucion: (0) horas, (0) minutos, (1) segundos.
-Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 12:59:49:500 CONSOLA/(7324:7326): 
-***LOGS de la CONSOLA***
- EXIT CODE: El Proceso(1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: Sun Jun 25 12:59:49 2017
-Fecha de fin de ejecucion: Sun Jun 25 12:59:49 2017
-Tiempo total de ejecucion: (0) horas, (0) minutos, (1) segundos.
-Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 13:02:14:83 CONSOLA/(7471:7473): 
-***LOGS de la CONSOLA***
- EXIT CODE: El Proceso(1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: Sun Jun 25 13:02:14 2017
-Fecha de fin de ejecucion: Sun Jun 25 13:02:14 2017
-Tiempo total de ejecucion: (0) horas, (0) minutos, (4) segundos.
-Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 13:04:06:225 CONSOLA/(7597:7599): 
-***LOGS de la CONSOLA***
- EXIT CODE: El Proceso(1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: Sun Jun 25 13:04:06 2017
-Fecha de fin de ejecucion: Sun Jun 25 13:04:06 2017
-Tiempo total de ejecucion: (0) horas, (0) minutos, (6) segundos.
-Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 13:06:59:276 CONSOLA/(7792:7794): 
-***LOGS de la CONSOLA***
- EXIT CODE: El Proceso(1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: Sun Jun 25 13:06:59 2017
-Fecha de fin de ejecucion: Sun Jun 25 13:06:59 2017
-Tiempo total de ejecucion: (0) horas, (0) minutos, (6) segundos.
-Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 13:10:18:484 CONSOLA/(7792:7851): 
-***LOGS de la CONSOLA***
- EXIT CODE: El Proceso(1001) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: Sun Jun 25 13:10:18 2017
-Fecha de fin de ejecucion: Sun Jun 25 13:10:18 2017
-Tiempo total de ejecucion: (0) horas, (0) minutos, (44) segundos.
-Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 13:11:02:168 CONSOLA/(7978:7980): 
-***LOGS de la CONSOLA***
- EXIT CODE: El Proceso(1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: Sun Jun 25 13:11:02 2017
-Fecha de fin de ejecucion: Sun Jun 25 13:11:02 2017
-Tiempo total de ejecucion: (0) horas, (0) minutos, (1) segundos.
-Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 13:12:00:369 CONSOLA/(8048:8050): 
-***LOGS de la CONSOLA***
- EXIT CODE: El Proceso(1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: Sun Jun 25 13:12:00 2017
-Fecha de fin de ejecucion: Sun Jun 25 13:12:00 2017
-Tiempo total de ejecucion: (0) horas, (0) minutos, (12) segundos.
-Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 13:17:21:613 CONSOLA/(8312:8314): 
-***LOGS de la CONSOLA***
- EXIT CODE: El Proceso(1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: Sun Jun 25 13:17:21 2017
-Fecha de fin de ejecucion: Sun Jun 25 13:17:21 2017
-Tiempo total de ejecucion: (0) horas, (0) minutos, (3) segundos.
-Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 13:19:05:19 CONSOLA/(8514:8516): 
-***LOGS de la CONSOLA***
- EXIT CODE: El Proceso(1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: Sun Jun 25 13:19:05 2017
-Fecha de fin de ejecucion: Sun Jun 25 13:19:05 2017
-Tiempo total de ejecucion: (0) horas, (0) minutos, (3) segundos.
-Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 13:20:18:621 CONSOLA/(8655:8657): 
-***LOGS de la CONSOLA***
- EXIT CODE: El Proceso(1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: Sun Jun 25 13:20:18 2017
-Fecha de fin de ejecucion: Sun Jun 25 13:20:18 2017
-Tiempo total de ejecucion: (0) horas, (0) minutos, (2) segundos.
-Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 21:42:26:652 CONSOLA/(7955:7965): 
-***LOGS de la CONSOLA***
- EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
-El Proceso(1002) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: Sun Jun 25 21:42:26 2017
-Fecha de fin de ejecucion: Sun Jun 25 21:42:26 2017
-Tiempo total de ejecucion: (0) horas, (0) minutos, (48) segundos.
-Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 21:54:14:756 CONSOLA/(8342:8344): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa intentó crear un archivo que ya existe.
-El Proceso(1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: Sun Jun 25 21:54:14 2017
-Fecha de fin de ejecucion: Sun Jun 25 21:54:14 2017
-Tiempo total de ejecucion: (0) horas, (1) minutos, (16) segundos.
-Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 22:05:39:316 CONSOLA/(8766:8768): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa finalizo correctamente.
-El Proceso(1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: Sun Jun 25 22:05:39 2017
-Fecha de fin de ejecucion: Sun Jun 25 22:05:39 2017
-Tiempo total de ejecucion: (0) horas, (0) minutos, (15) segundos.
-Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 22:24:48:728 CONSOLA/(9217:9219): 
-***LOGS de la CONSOLA***
- EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
-El Proceso(1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: Sun Jun 25 22:24:48 2017
-Fecha de fin de ejecucion: Sun Jun 25 22:24:48 2017
-Tiempo total de ejecucion: (0) horas, (0) minutos, (3) segundos.
-Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 22:25:21:736 CONSOLA/(9217:9233): 
-***LOGS de la CONSOLA***
- EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
-El Proceso(1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: Sun Jun 25 22:24:48 2017
-Fecha de fin de ejecucion: Sun Jun 25 22:24:48 2017
-Tiempo total de ejecucion: (0) horas, (0) minutos, (3) segundos.
-Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
-El Proceso(1001) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: Sun Jun 25 22:25:21 2017
-Fecha de fin de ejecucion: Sun Jun 25 22:25:21 2017
-Tiempo total de ejecucion: (0) horas, (0) minutos, (2) segundos.
-Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 22:26:45:276 CONSOLA/(9311:9313): 
-***LOGS de la CONSOLA***
- EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
-El Proceso(1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: Sun Jun 25 22:26:45 2017
-Fecha de fin de ejecucion: Sun Jun 25 22:26:45 2017
-Tiempo total de ejecucion: (0) horas, (0) minutos, (14) segundos.
-Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 22:33:22:968 CONSOLA/(9562:9564): 
-***LOGS de la CONSOLA***
- EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
-El Proceso(1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: Sun Jun 25 22:33:22 2017
-Fecha de fin de ejecucion: Sun Jun 25 22:33:22 2017
-Tiempo total de ejecucion: (0) horas, (0) minutos, (5) segundos.
-Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 22:37:25:572 CONSOLA/(9728:9730): 
-***LOGS de la CONSOLA***
- EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
-El Proceso(1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: Sun Jun 25 22:37:25 2017
-Fecha de fin de ejecucion: Sun Jun 25 22:37:25 2017
-Tiempo total de ejecucion: (0) horas, (0) minutos, (6) segundos.
-Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 23:35:42:64 CONSOLA/(9840:9842): 
-***LOGS de la CONSOLA***
- EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
-El Proceso(1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: Sun Jun 25 23:35:42 2017
-Fecha de fin de ejecucion: Sun Jun 25 23:35:42 2017
-Tiempo total de ejecucion: (0) horas, (0) minutos, (2) segundos.
-Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 23:39:42:12 CONSOLA/(9934:9936): 
-***LOGS de la CONSOLA***
- EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
-El Proceso(1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: Sun Jun 25 23:39:42 2017
-Fecha de fin de ejecucion: Sun Jun 25 23:39:42 2017
-Tiempo total de ejecucion: (0) horas, (0) minutos, (7) segundos.
-Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 23:42:41:992 CONSOLA/(10027:10029): 
-***LOGS de la CONSOLA***
- EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
-El Proceso(1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: Sun Jun 25 23:42:41 2017
-Fecha de fin de ejecucion: Sun Jun 25 23:42:41 2017
-Tiempo total de ejecucion: (0) horas, (1) minutos, (38) segundos.
-Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 23:48:36:757 CONSOLA/(10361:10363): 
-***LOGS de la CONSOLA***
- EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
-El Proceso(1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: Sun Jun 25 23:48:36 2017
-Fecha de fin de ejecucion: Sun Jun 25 23:48:36 2017
-Tiempo total de ejecucion: (0) horas, (1) minutos, (15) segundos.
-Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 23:49:19:532 CONSOLA/(10480:10486): 
-***LOGS de la CONSOLA***
- EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
-El Proceso(1001) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: Sun Jun 25 23:49:19 2017
-Fecha de fin de ejecucion: Sun Jun 25 23:49:19 2017
-Tiempo total de ejecucion: (0) horas, (0) minutos, (7) segundos.
-Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 23:49:42:201 CONSOLA/(10480:10482): 
-***LOGS de la CONSOLA***
- EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
-El Proceso(1001) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: Sun Jun 25 23:49:19 2017
-Fecha de fin de ejecucion: Sun Jun 25 23:49:19 2017
-Tiempo total de ejecucion: (0) horas, (0) minutos, (7) segundos.
-Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
-El Proceso(1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: Sun Jun 25 23:49:42 2017
-Fecha de fin de ejecucion: Sun Jun 25 23:49:42 2017
-Tiempo total de ejecucion: (0) horas, (0) minutos, (35) segundos.
-Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 16:25:01:630 CONSOLA/(18262:18264): 
-***LOGS de la CONSOLA***
- EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 16:24:59:87Fecha de fin de ejecucion: 16:25:01:629Tiempo total de ejecucion: -1240463856Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-<<<<<<< HEAD
-[INFO] 02:03:46:424 CONSOLA/(28699:28703): 
+[INFO] 01:23:59:640 CONSOLA/(10572:10610): 
 ***LOGS de la CONSOLA***
  EXIT CODE: El programa finalizo correctamente.
 El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 02:03:31:66
-Fecha de fin de ejecucion: 02:03:46:423
-Tiempo total de ejecucion: -1239415312Cantidad de impresiones por pantalla: 0
+Fecha de inicio de ejecucion: 01:23:54:324
+Fecha de fin de ejecucion: 01:23:59:640
+Tiempo total de ejecucion: -1239414776Cantidad de impresiones por pantalla: 5
 ------Fin del LOG------
 
-[INFO] 02:26:23:180 CONSOLA/(29264:29268): 
+[INFO] 01:24:42:895 CONSOLA/(10572:10631): 
 ***LOGS de la CONSOLA***
- EXIT CODE: El programa finalizo correctamente.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 02:26:04:365
-Fecha de fin de ejecucion: 02:26:23:179
-Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+ Mensaje del Proceso (1001): 1
+
 ------Fin del LOG------
 
-[INFO] 02:30:38:850 CONSOLA/(29306:29310): 
+[INFO] 01:24:44:375 CONSOLA/(10572:10631): 
 ***LOGS de la CONSOLA***
- EXIT CODE: El programa finalizo correctamente.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 02:30:32:849
-Fecha de fin de ejecucion: 02:30:38:844
-Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+ Mensaje del Proceso (1001): 1
+
 ------Fin del LOG------
 
-[INFO] 02:31:38:229 CONSOLA/(29306:29466): 
+[INFO] 01:24:45:536 CONSOLA/(10572:10631): 
 ***LOGS de la CONSOLA***
  EXIT CODE: El programa finalizo correctamente.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 02:30:32:849
-Fecha de fin de ejecucion: 02:30:38:844
-Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-EXIT CODE: El programa finalizo correctamente.
 El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 02:31:37:253
-Fecha de fin de ejecucion: 02:31:38:228
-Tiempo total de ejecucion: -1239414664Cantidad de impresiones por pantalla: 0
+Fecha de inicio de ejecucion: 01:24:39:89
+Fecha de fin de ejecucion: 01:24:45:536
+Tiempo total de ejecucion: -1239414592Cantidad de impresiones por pantalla: 2
 ------Fin del LOG------
 
-[INFO] 02:52:50:168 CONSOLA/(30971:30975): 
+[INFO] 01:25:39:387 CONSOLA/(10572:10649): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1002): 1
+
+------Fin del LOG------
+
+[INFO] 01:25:39:907 CONSOLA/(10572:10649): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1002): 0
+
+------Fin del LOG------
+
+[INFO] 01:25:40:387 CONSOLA/(10572:10649): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1002): 1
+
+------Fin del LOG------
+
+[INFO] 01:25:40:867 CONSOLA/(10572:10649): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1002): 0
+
+------Fin del LOG------
+
+[INFO] 01:25:41:347 CONSOLA/(10572:10649): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1002): 1
+
+------Fin del LOG------
+
+[INFO] 01:25:41:827 CONSOLA/(10572:10649): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1002): 0
+
+------Fin del LOG------
+
+[INFO] 01:25:42:307 CONSOLA/(10572:10649): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1002): 1
+
+------Fin del LOG------
+
+[INFO] 01:25:42:787 CONSOLA/(10572:10649): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1002): 0
+
+------Fin del LOG------
+
+[INFO] 01:25:43:267 CONSOLA/(10572:10649): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1002): 1
+
+------Fin del LOG------
+
+[INFO] 01:25:43:751 CONSOLA/(10572:10649): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1002): 0
+
+------Fin del LOG------
+
+[INFO] 01:25:44:231 CONSOLA/(10572:10649): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1002): 1
+
+------Fin del LOG------
+
+[INFO] 01:25:44:711 CONSOLA/(10572:10649): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1002): 0
+
+------Fin del LOG------
+
+[INFO] 01:25:45:191 CONSOLA/(10572:10649): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1002): 1
+
+------Fin del LOG------
+
+[INFO] 01:25:45:671 CONSOLA/(10572:10649): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1002): 0
+
+------Fin del LOG------
+
+[INFO] 01:25:46:151 CONSOLA/(10572:10649): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1002): 1
+
+------Fin del LOG------
+
+[INFO] 01:25:46:631 CONSOLA/(10572:10649): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1002): 0
+
+------Fin del LOG------
+
+[INFO] 01:25:47:111 CONSOLA/(10572:10649): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1002): 1
+
+------Fin del LOG------
+
+[INFO] 01:25:47:591 CONSOLA/(10572:10649): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1002): 0
+
+------Fin del LOG------
+
+[INFO] 01:25:48:71 CONSOLA/(10572:10649): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1002): 1
+
+------Fin del LOG------
+
+[INFO] 01:25:48:551 CONSOLA/(10572:10649): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1002): 0
+
+------Fin del LOG------
+
+[INFO] 01:25:49:31 CONSOLA/(10572:10649): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1002): 1
+
+------Fin del LOG------
+
+[INFO] 01:25:49:511 CONSOLA/(10572:10649): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1002): 0
+
+------Fin del LOG------
+
+[INFO] 01:25:49:991 CONSOLA/(10572:10649): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1002): 1
+
+------Fin del LOG------
+
+[INFO] 01:25:50:471 CONSOLA/(10572:10649): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1002): 0
+
+------Fin del LOG------
+
+[INFO] 01:25:50:951 CONSOLA/(10572:10649): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1002): 1
+
+------Fin del LOG------
+
+[INFO] 01:25:51:431 CONSOLA/(10572:10649): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1002): 0
+
+------Fin del LOG------
+
+[INFO] 01:25:51:911 CONSOLA/(10572:10649): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1002): 1
+
+------Fin del LOG------
+
+[INFO] 01:25:52:391 CONSOLA/(10572:10649): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1002): 0
+
+------Fin del LOG------
+
+[INFO] 01:25:52:871 CONSOLA/(10572:10649): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1002): 1
+
+------Fin del LOG------
+
+[INFO] 01:25:53:359 CONSOLA/(10572:10649): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1002): 0
+
+------Fin del LOG------
+
+[INFO] 01:25:53:839 CONSOLA/(10572:10649): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1002): 1
+
+------Fin del LOG------
+
+[INFO] 01:28:26:119 CONSOLA/(10572:10649): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1002): 0
+
+------Fin del LOG------
+
+[INFO] 21:00:17:782 CONSOLA/(3472:3476): 
 ***LOGS de la CONSOLA***
  EXIT CODE: El programa finalizo correctamente.
 El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 02:52:24:933
-Fecha de fin de ejecucion: 02:52:50:168
-Tiempo total de ejecucion: -1239415248Cantidad de impresiones por pantalla: 0
+Fecha de inicio de ejecucion: 20:59:09:862
+Fecha de fin de ejecucion: 21:00:17:781
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
 ------Fin del LOG------
 
-[INFO] 02:52:51:133 CONSOLA/(30971:31001): 
+[INFO] 21:17:32:674 CONSOLA/(4276:4280): 
 ***LOGS de la CONSOLA***
  EXIT CODE: El programa finalizo correctamente.
 El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 02:52:24:933
-Fecha de fin de ejecucion: 02:52:50:168
-Tiempo total de ejecucion: -1239415248Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-EXIT CODE: El programa finalizo correctamente.
-El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 02:52:36:441
-Fecha de fin de ejecucion: 02:52:51:132
-Tiempo total de ejecucion: 142123320Cantidad de impresiones por pantalla: 0
+Fecha de inicio de ejecucion: 21:17:22:466
+Fecha de fin de ejecucion: 21:17:32:674
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
 ------Fin del LOG------
 
-[INFO] 02:52:52:96 CONSOLA/(30971:31021): 
+[INFO] 21:18:17:889 CONSOLA/(4378:4382): 
 ***LOGS de la CONSOLA***
  EXIT CODE: El programa finalizo correctamente.
 El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 02:52:24:933
-Fecha de fin de ejecucion: 02:52:50:168
-Tiempo total de ejecucion: -1239415248Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-EXIT CODE: El programa finalizo correctamente.
-El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 02:52:36:441
-Fecha de fin de ejecucion: 02:52:51:132
-Tiempo total de ejecucion: 142123320Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-EXIT CODE: El programa finalizo correctamente.
-El Proceso (1002) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 02:52:44:862
-Fecha de fin de ejecucion: 02:52:52:95
-Tiempo total de ejecucion: -1239415248Cantidad de impresiones por pantalla: 0
-=======
-[INFO] 01:04:54:688 CONSOLA/(25400:25408): 
-***LOGS de la CONSOLA***
- EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 01:04:34:118
-Fecha de fin de ejecucion: 01:04:54:688
-Tiempo total de ejecucion: -1239415312Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 02:22:08:753 CONSOLA/(28059:28067): 
-***LOGS de la CONSOLA***
- EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
-El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 02:21:48:844
-Fecha de fin de ejecucion: 02:22:08:752
-Tiempo total de ejecucion: 135663912Cantidad de impresiones por pantalla: 0
->>>>>>> d2063b77743dd499e8871dd4d32c9ed000ab324c
-------Fin del LOG------
-
-[INFO] 15:50:14:194 CONSOLA/(4124:4140): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa intentó eliminar un archivo que estaba abierto.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 15:49:35:483
-Fecha de fin de ejecucion: 15:50:14:194
+Fecha de inicio de ejecucion: 21:18:08:162
+Fecha de fin de ejecucion: 21:18:17:889
 Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
 ------Fin del LOG------
 
-[INFO] 15:54:06:431 CONSOLA/(4330:4376): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa intentó eliminar un archivo que estaba abierto.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 15:54:00:660
-Fecha de fin de ejecucion: 15:54:06:431
-Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 15:58:07:830 CONSOLA/(4489:4539): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa intentó eliminar un archivo que estaba abierto.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 15:57:59:286
-Fecha de fin de ejecucion: 15:58:07:830
-Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 15:59:37:0 CONSOLA/(4489:4620): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa intentó eliminar un archivo que estaba abierto.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 15:57:59:286
-Fecha de fin de ejecucion: 15:58:07:830
-Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-EXIT CODE: El programa intentó eliminar un archivo que estaba abierto.
-El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 15:59:18:852
-Fecha de fin de ejecucion: 15:59:37:0
-Tiempo total de ejecucion: -1239414664Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 16:01:34:439 CONSOLA/(4489:4717): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa intentó eliminar un archivo que estaba abierto.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 15:57:59:286
-Fecha de fin de ejecucion: 15:58:07:830
-Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-EXIT CODE: El programa intentó eliminar un archivo que estaba abierto.
-El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 15:59:18:852
-Fecha de fin de ejecucion: 15:59:37:0
-Tiempo total de ejecucion: -1239414664Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-EXIT CODE: El programa intentó eliminar un archivo que estaba abierto.
-El Proceso (1002) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 16:00:19:672
-Fecha de fin de ejecucion: 16:01:34:438
-Tiempo total de ejecucion: -1239414448Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 16:04:11:134 CONSOLA/(4899:4903): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa intentó eliminar un archivo que estaba abierto.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 16:02:34:356
-Fecha de fin de ejecucion: 16:04:11:134
-Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 16:29:08:462 CONSOLA/(6406:6410): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa intentó eliminar un archivo que estaba abierto.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 16:26:49:294
-Fecha de fin de ejecucion: 16:29:08:462
-Tiempo total de ejecucion: -1239415248Cantidad de impresiones por pantalla: 1
-------Fin del LOG------
-
-[INFO] 16:31:35:149 CONSOLA/(6406:6558): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa intentó eliminar un archivo que estaba abierto.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 16:26:49:294
-Fecha de fin de ejecucion: 16:29:08:462
-Tiempo total de ejecucion: -1239415248Cantidad de impresiones por pantalla: 1
-------Fin del LOG------
-EXIT CODE: El programa intentó eliminar un archivo que estaba abierto.
-El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 16:29:17:435
-Fecha de fin de ejecucion: 16:31:35:148
-Tiempo total de ejecucion: -1239414648Cantidad de impresiones por pantalla: 1
-------Fin del LOG------
-
-[INFO] 16:34:57:152 CONSOLA/(6798:6802): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa intentó eliminar un archivo que estaba abierto.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 16:33:56:514
-Fecha de fin de ejecucion: 16:34:57:151
-Tiempo total de ejecucion: -1239415248Cantidad de impresiones por pantalla: 1
-------Fin del LOG------
-
-[INFO] 16:41:59:323 CONSOLA/(7219:7231): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa intentó eliminar un archivo que estaba abierto.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 16:40:44:892
-Fecha de fin de ejecucion: 16:41:59:323
-Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 16:50:58:26 CONSOLA/(7386:7390): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa intentó eliminar un archivo que estaba abierto.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 16:43:39:348
-Fecha de fin de ejecucion: 16:50:58:26
-Tiempo total de ejecucion: -1240459808Cantidad de impresiones por pantalla: 228
-------Fin del LOG------
-
-[INFO] 17:03:49:86 CONSOLA/(7904:7948): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa intentó eliminar un archivo que estaba abierto.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 17:01:52:151
-Fecha de fin de ejecucion: 17:03:49:86
-Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 17:17:18:295 CONSOLA/(8532:8539): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa intentó eliminar un archivo que estaba abierto.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 17:17:15:847
-Fecha de fin de ejecucion: 17:17:18:294
-Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 17:21:43:960 CONSOLA/(8603:8607): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa intentó eliminar un archivo que estaba abierto.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 17:18:46:264
-Fecha de fin de ejecucion: 17:21:43:959
-Tiempo total de ejecucion: -1240463840Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 17:40:14:367 CONSOLA/(9086:9090): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa intentó eliminar un archivo que estaba abierto.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 17:29:12:644
-Fecha de fin de ejecucion: 17:40:14:367
-Tiempo total de ejecucion: -1239411168Cantidad de impresiones por pantalla: 232
-------Fin del LOG------
-
-[INFO] 17:41:21:654 CONSOLA/(9296:9300): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa intentó eliminar un archivo que estaba abierto.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 17:40:37:780
-Fecha de fin de ejecucion: 17:41:21:654
-Tiempo total de ejecucion: -1239413744Cantidad de impresiones por pantalla: 71
-------Fin del LOG------
-
-[INFO] 17:55:16:165 CONSOLA/(9715:9722): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa intentó eliminar un archivo que estaba abierto.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 17:50:47:836
-Fecha de fin de ejecucion: 17:55:16:164
-Tiempo total de ejecucion: -1239414240Cantidad de impresiones por pantalla: 40
-------Fin del LOG------
-
-[INFO] 17:59:42:574 CONSOLA/(9888:9892): 
+[INFO] 21:31:04:106 CONSOLA/(5019:5023): 
 ***LOGS de la CONSOLA***
  EXIT CODE: El programa finalizo correctamente.
 El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 17:59:16:199
-Fecha de fin de ejecucion: 17:59:42:573
-Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 18:01:05:390 CONSOLA/(10006:10010): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa finalizo correctamente.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 18:00:43:892
-Fecha de fin de ejecucion: 18:01:05:390
-Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 18:02:08:413 CONSOLA/(10125:10129): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa finalizo correctamente.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 18:01:51:850
-Fecha de fin de ejecucion: 18:02:08:413
-Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 18:03:49:59 CONSOLA/(10125:10188): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa finalizo correctamente.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 18:01:51:850
-Fecha de fin de ejecucion: 18:02:08:413
-Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-EXIT CODE: El programa finalizo correctamente.
-El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 18:03:06:308
-Fecha de fin de ejecucion: 18:03:49:59
-Tiempo total de ejecucion: -1239414664Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 18:10:10:838 CONSOLA/(10125:10269): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa finalizo correctamente.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 18:01:51:850
-Fecha de fin de ejecucion: 18:02:08:413
-Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-EXIT CODE: El programa finalizo correctamente.
-El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 18:03:06:308
-Fecha de fin de ejecucion: 18:03:49:59
-Tiempo total de ejecucion: -1239414664Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-EXIT CODE: El programa intentó eliminar un archivo que estaba abierto.
-El Proceso (1002) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 18:07:27:292
-Fecha de fin de ejecucion: 18:10:10:838
-Tiempo total de ejecucion: -1239414448Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 18:39:38:238 CONSOLA/(11328:11332): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa intentó eliminar un archivo que estaba abierto.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 18:34:36:956
-Fecha de fin de ejecucion: 18:39:38:238
-Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 18:49:17:75 CONSOLA/(11995:12002): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa finalizo correctamente.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 18:49:16:281
-Fecha de fin de ejecucion: 18:49:17:74
-Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 18:57:27:126 CONSOLA/(12037:12086): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa intentó eliminar un archivo que estaba abierto.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 18:52:09:212
-Fecha de fin de ejecucion: 18:57:27:126
-Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 19:01:26:34 CONSOLA/(12134:12186): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa intentó eliminar un archivo que estaba abierto.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 18:58:09:899
-Fecha de fin de ejecucion: 19:01:26:34
-Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 19:02:25:246 CONSOLA/(12134:12294): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa intentó eliminar un archivo que estaba abierto.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 18:58:09:899
-Fecha de fin de ejecucion: 19:01:26:34
-Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-EXIT CODE: El programa intentó eliminar un archivo que estaba abierto.
-El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 19:01:42:389
-Fecha de fin de ejecucion: 19:02:25:245
-Tiempo total de ejecucion: -1239414664Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 19:06:10:195 CONSOLA/(12359:12424): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa intentó eliminar un archivo que estaba abierto.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 19:03:57:112
-Fecha de fin de ejecucion: 19:06:10:195
-Tiempo total de ejecucion: -1240463840Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 19:09:08:4 CONSOLA/(12359:12512): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa intentó eliminar un archivo que estaba abierto.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 19:03:57:112
-Fecha de fin de ejecucion: 19:06:10:195
-Tiempo total de ejecucion: -1240463840Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-EXIT CODE: El programa intentó eliminar un archivo que estaba abierto.
-El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 19:06:31:300
-Fecha de fin de ejecucion: 19:09:08:4
-Tiempo total de ejecucion: -1240463240Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 19:13:25:894 CONSOLA/(12764:12768): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa intentó eliminar un archivo que estaba abierto.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 19:13:14:248
-Fecha de fin de ejecucion: 19:13:25:894
-Tiempo total de ejecucion: -1239415248Cantidad de impresiones por pantalla: 1
-------Fin del LOG------
-
-[INFO] 19:14:55:298 CONSOLA/(12901:12948): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa intentó eliminar un archivo que estaba abierto.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 19:13:55:595
-Fecha de fin de ejecucion: 19:14:55:298
-Tiempo total de ejecucion: -1239415248Cantidad de impresiones por pantalla: 1
-------Fin del LOG------
-
-[INFO] 19:18:40:800 CONSOLA/(13062:13066): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa intentó eliminar un archivo que estaba abierto.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 19:15:22:160
-Fecha de fin de ejecucion: 19:18:40:800
-Tiempo total de ejecucion: -1239415248Cantidad de impresiones por pantalla: 1
-------Fin del LOG------
-
-[INFO] 19:30:54:66 CONSOLA/(13723:13727): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa intentó eliminar un archivo que estaba abierto.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 19:28:25:343
-Fecha de fin de ejecucion: 19:30:54:66
-Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 19:33:33:75 CONSOLA/(13895:13899): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa intentó eliminar un archivo que estaba abierto.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 19:31:26:206
-Fecha de fin de ejecucion: 19:33:33:75
-Tiempo total de ejecucion: -1239415296Cantidad de impresiones por pantalla: 2
-------Fin del LOG------
-
-[INFO] 19:35:10:750 CONSOLA/(14079:14083): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa intentó eliminar un archivo que estaba abierto.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 19:33:47:152
-Fecha de fin de ejecucion: 19:35:10:750
-Tiempo total de ejecucion: -1239415296Cantidad de impresiones por pantalla: 2
-------Fin del LOG------
-
-[INFO] 19:40:56:279 CONSOLA/(14328:14332): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa finalizo correctamente.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 19:39:12:612
-Fecha de fin de ejecucion: 19:40:56:279
-Tiempo total de ejecucion: -1239415296Cantidad de impresiones por pantalla: 2
-------Fin del LOG------
-
-[INFO] 19:57:41:754 CONSOLA/(14792:14796): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa intentó eliminar un archivo que estaba abierto.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 19:54:33:156
-Fecha de fin de ejecucion: 19:57:41:754
-Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 20:00:42:765 CONSOLA/(15138:15142): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa finalizo correctamente.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 20:00:08:699
-Fecha de fin de ejecucion: 20:00:42:765
-Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 20:02:16:474 CONSOLA/(15256:15263): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa finalizo correctamente.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 20:02:15:704
-Fecha de fin de ejecucion: 20:02:16:473
-Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
-------Fin del LOG------
-
-[INFO] 20:03:47:827 CONSOLA/(15340:15344): 
-***LOGS de la CONSOLA***
- EXIT CODE: El programa finalizo correctamente.
-El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
-Fecha de inicio de ejecucion: 20:03:47:34
-Fecha de fin de ejecucion: 20:03:47:827
+Fecha de inicio de ejecucion: 21:30:52:890
+Fecha de fin de ejecucion: 21:31:04:105
 Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
 ------Fin del LOG------
 
@@ -859,3 +295,1681 @@ Fecha de fin de ejecucion: 23:42:54:645
 Tiempo total de ejecucion: -1239415296Cantidad de impresiones por pantalla: 2
 ------Fin del LOG------
 
+[INFO] 21:24:32:525 CONSOLA/(4293:4338): 
+***LOGS de la CONSOLA***
+ EXIT CODE: El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 21:23:14:462
+Fecha de fin de ejecucion: 21:24:32:525
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+
+[INFO] 21:31:26:431 CONSOLA/(4540:4569): 
+***LOGS de la CONSOLA***
+ EXIT CODE: El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 21:30:49:492
+Fecha de fin de ejecucion: 21:31:26:430
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+
+[INFO] 21:43:43:781 CONSOLA/(5044:5051): 
+***LOGS de la CONSOLA***
+ EXIT CODE: El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 21:43:05:587
+Fecha de fin de ejecucion: 21:43:43:781
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+
+[INFO] 21:54:09:563 CONSOLA/(5504:5511): 
+***LOGS de la CONSOLA***
+ EXIT CODE: El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 21:53:31:10
+Fecha de fin de ejecucion: 21:54:09:563
+Tiempo total de ejecucion: -1240463840Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+
+[INFO] 21:58:13:685 CONSOLA/(5773:5780): 
+***LOGS de la CONSOLA***
+ EXIT CODE: El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 21:57:35:519
+Fecha de fin de ejecucion: 21:58:13:685
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+
+[INFO] 22:08:37:733 CONSOLA/(6022:6040): 
+***LOGS de la CONSOLA***
+ EXIT CODE: El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 22:07:59:552
+Fecha de fin de ejecucion: 22:08:37:733
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+
+[INFO] 22:11:53:990 CONSOLA/(6229:6236): 
+***LOGS de la CONSOLA***
+ EXIT CODE: El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 22:11:15:821
+Fecha de fin de ejecucion: 22:11:53:989
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+
+[INFO] 22:15:42:146 CONSOLA/(6310:6317): 
+***LOGS de la CONSOLA***
+ EXIT CODE: El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 22:15:03:929
+Fecha de fin de ejecucion: 22:15:42:146
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+
+[INFO] 22:26:25:97 CONSOLA/(6489:6496): 
+***LOGS de la CONSOLA***
+ EXIT CODE: El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 22:25:40:191
+Fecha de fin de ejecucion: 22:26:25:97
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+
+[INFO] 22:27:42:742 CONSOLA/(6559:6566): 
+***LOGS de la CONSOLA***
+ EXIT CODE: El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 22:26:57:963
+Fecha de fin de ejecucion: 22:27:42:742
+Tiempo total de ejecucion: -1240463840Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+
+[INFO] 22:31:05:351 CONSOLA/(6621:6626): 
+***LOGS de la CONSOLA***
+ EXIT CODE: El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 22:29:55:427
+Fecha de fin de ejecucion: 22:31:05:351
+Tiempo total de ejecucion: -1240463840Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+
+[INFO] 22:32:28:982 CONSOLA/(6791:6798): 
+***LOGS de la CONSOLA***
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 22:31:46:935
+Fecha de fin de ejecucion: 22:32:28:981
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+
+[INFO] 22:33:27:366 CONSOLA/(6791:6805): 
+***LOGS de la CONSOLA***
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 22:32:45:315
+Fecha de fin de ejecucion: 22:33:27:366
+Tiempo total de ejecucion: -1239414664Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+
+[INFO] 22:36:36:161 CONSOLA/(6920:6927): 
+***LOGS de la CONSOLA***
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 22:35:54:108
+Fecha de fin de ejecucion: 22:36:36:161
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+
+[INFO] 22:42:35:866 CONSOLA/(7214:7223): 
+***LOGS de la CONSOLA***
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 22:41:53:783
+Fecha de fin de ejecucion: 22:42:35:866
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+
+[INFO] 22:45:51:130 CONSOLA/(7334:7341): 
+***LOGS de la CONSOLA***
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 22:45:09:45
+Fecha de fin de ejecucion: 22:45:51:129
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+------Fin del LOG------
+
+[INFO] 22:52:17:451 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:17:931 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:18:411 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:18:891 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:19:371 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:19:851 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:20:331 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:20:811 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:21:291 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:21:771 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:22:251 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:22:735 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:23:215 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:23:695 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:24:175 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:24:655 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:25:135 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:25:615 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:26:95 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:26:575 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:27:55 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:27:535 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:28:15 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:28:495 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:28:975 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:29:455 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:29:935 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:30:415 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:30:895 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:31:375 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:31:855 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:32:335 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:32:816 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:33:295 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:33:775 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:34:255 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:34:741 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:35:220 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:35:707 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:36:184 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:36:668 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:37:147 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:37:627 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:38:116 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:38:587 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:39:67 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:39:547 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:40:28 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:40:507 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:40:987 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:41:473 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:41:947 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:42:427 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:42:908 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:43:387 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:43:867 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:44:347 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:44:827 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:45:307 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:45:787 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:46:267 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:46:747 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:47:227 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:47:707 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:48:187 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:48:667 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:49:151 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:49:631 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:50:111 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:50:595 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:51:72 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:51:552 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:52:36 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:52:512 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:52:992 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:53:471 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:53:951 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:54:432 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:54:911 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:55:391 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:55:871 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:56:352 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:56:831 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:57:311 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:57:791 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:58:272 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:58:752 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:52:59:234 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:52:59:715 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:53:00:192 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:53:00:671 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:53:01:151 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:53:01:631 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:53:02:111 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:53:02:595 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:53:03:71 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:53:03:551 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:53:04:31 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:53:04:511 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:53:04:996 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:53:05:471 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:53:05:951 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:53:06:431 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:53:06:911 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:53:07:391 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:53:07:871 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:53:08:351 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:53:08:831 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:53:09:311 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:53:09:791 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:53:10:272 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:53:10:754 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:53:11:234 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:53:11:711 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:53:12:191 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:53:12:671 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:53:13:151 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:53:13:631 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:53:14:111 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:53:14:591 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:53:15:71 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:53:15:551 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:53:16:31 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:53:16:511 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:53:16:991 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:53:17:471 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 0
+
+------Fin del LOG------
+
+[INFO] 22:53:17:951 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ Mensaje del Proceso (1000): 1
+
+------Fin del LOG------
+
+[INFO] 22:53:18:154 CONSOLA/(7563:7570): 
+***LOGS de la CONSOLA***
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 22:52:15:540
+Fecha de fin de ejecucion: 22:53:18:153
+Tiempo total de ejecucion: -1239414712Cantidad de impresiones por pantalla: 127
+------Fin del LOG------
+
+[INFO] 22:56:14:879 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:15:359 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:15:840 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:16:319 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:16:801 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:17:279 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:17:759 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:18:239 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:18:719 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:19:199 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:19:679 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:20:159 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:20:639 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:21:119 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:21:599 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:22:79 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:22:559 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:23:40 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:23:519 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:23:999 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:24:479 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:24:960 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:25:439 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:25:919 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:26:399 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:26:879 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:27:359 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:27:839 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:28:319 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:28:801 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:29:279 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:29:763 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:30:243 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:30:723 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:31:203 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:31:683 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:32:163 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:32:643 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:33:123 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:33:603 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:34:83 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:34:563 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:35:43 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:35:523 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:35:3 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:36:483 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:36:963 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:37:443 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:37:923 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:38:403 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:38:883 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:39:363 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:39:843 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:40:323 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:40:803 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:41:284 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:41:763 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:42:244 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:42:723 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:43:203 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:43:683 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:44:163 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:44:643 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:45:123 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:45:603 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:46:83 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:46:563 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:47:43 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:47:523 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:48:3 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:48:483 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:48:963 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:49:443 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:49:926 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:50:403 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:50:886 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:51:363 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:51:843 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:52:323 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:52:803 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:53:284 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:53:767 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:54:249 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:54:727 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:55:207 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:55:687 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:56:167 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:56:647 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:57:127 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:57:607 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:58:87 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:58:567 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:56:59:51 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:56:59:530 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:57:00:8 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:57:00:487 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:57:00:967 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:57:01:447 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:57:01:927 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:57:02:407 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:57:02:887 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:57:03:367 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:57:03:847 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:57:04:328 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:57:04:807 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:57:05:287 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:57:05:775 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:57:06:251 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:57:06:739 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:57:07:219 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:57:07:699 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:57:08:179 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:57:08:659 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:57:09:139 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:57:09:619 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:57:10:102 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:57:10:582 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:57:11:62 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:57:11:543 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:57:12:20 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:57:12:499 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:57:12:979 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:57:13:459 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:57:13:939 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:57:14:419 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:57:14:899 CONSOLA/(7720:7727): 
+ Proceso (1000): 0
+
+[INFO] 22:57:15:387 CONSOLA/(7720:7727): 
+ Proceso (1000): 1
+
+[INFO] 22:57:15:587 CONSOLA/(7720:7727): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 22:56:12:951
+Fecha de fin de ejecucion: 22:57:15:587
+Tiempo total de ejecucion: -1239414600Cantidad de impresiones por pantalla: 127
+[INFO] 22:58:23:855 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:24:335 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:58:24:815 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:25:295 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:58:25:775 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:26:255 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:58:26:735 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:27:215 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:58:27:695 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:28:175 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:58:28:655 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:29:135 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:58:29:615 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:30:95 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:58:30:575 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:31:55 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:58:31:535 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:32:15 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:58:32:495 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:32:975 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:58:33:455 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:33:935 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:58:34:415 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:34:895 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:58:35:375 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:35:855 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:58:36:335 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:36:815 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:58:37:299 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:37:775 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:58:38:255 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:38:736 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:58:39:216 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:39:695 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:58:40:175 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:40:655 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:58:41:135 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:41:615 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:58:42:95 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:42:575 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:58:43:55 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:43:535 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:58:44:15 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:44:495 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:58:44:975 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:45:455 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:58:45:935 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:46:415 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:58:46:895 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:47:375 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:58:47:855 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:48:335 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:58:48:815 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:49:295 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:58:49:775 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:50:259 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:58:50:739 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:51:220 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:58:51:700 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:52:188 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:58:52:667 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:53:148 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:58:53:627 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:54:111 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:58:54:595 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:55:75 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:58:55:555 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:56:35 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:58:56:515 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:56:995 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:58:57:475 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:57:955 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:58:58:435 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:58:915 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:58:59:395 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:58:59:875 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:59:00:356 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:59:00:835 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:59:01:315 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:59:01:796 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:59:02:275 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:59:02:755 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:59:03:235 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:59:03:715 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:59:04:195 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:59:04:675 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:59:05:155 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:59:05:635 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:59:06:116 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:59:06:595 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:59:07:75 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:59:07:555 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:59:08:35 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:59:08:515 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:59:08:996 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:59:09:477 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:59:09:956 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:59:10:436 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:59:10:915 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:59:11:396 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:59:11:875 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:59:12:355 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:59:12:835 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:59:13:319 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:59:13:800 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:59:14:279 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:59:14:759 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:59:15:239 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:59:15:719 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:59:16:199 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:59:16:684 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:59:17:163 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:59:17:644 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:59:18:123 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:59:18:603 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:59:19:83 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:59:19:563 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:59:20:43 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:59:20:523 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:59:21:3 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:59:21:483 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:59:21:963 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:59:22:444 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:59:22:923 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:59:23:403 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:59:23:884 CONSOLA/(7834:7841): 
+ Proceso (1000): 0
+
+[INFO] 22:59:24:363 CONSOLA/(7834:7841): 
+ Proceso (1000): 1
+
+[INFO] 22:59:24:565 CONSOLA/(7834:7841): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 22:58:21:914
+Fecha de fin de ejecucion: 22:59:24:565
+Tiempo total de ejecucion: -1237317448Cantidad de impresiones por pantalla: 127

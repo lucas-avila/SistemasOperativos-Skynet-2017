@@ -16,7 +16,7 @@ typedef struct {
 	char pagina[TAMANIO];
 
 } Tabla_Pagina_Invertida;
-
+Tabla_Pagina_Invertida* TABLA_MEMORY;
 int buscar_frame();
 
 char* inicializar_programa(char* PID, int cantidad_paginas_requeridas);

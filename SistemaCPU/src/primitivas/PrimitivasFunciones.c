@@ -26,12 +26,15 @@ void buscarPaginaDisponibleStack(PCB* pcbRecibido) {
 	if (pcb->posicion_pagina_stack + sizeof(uint32_t) > tamanio_pagina_memoria) {
 		pcb->posicion_pagina_stack = sizeof(uint32_t);
 		pcb->pagina_inicial_stack++;
+
 	} else {
 		pcb->posicion_pagina_stack += sizeof(uint32_t);
 	}
 
+
 	//ATACAR EL PROBLEMA DEL STACK OVERFLOW
-	if (pcb->pagina_inicial_stack > pcb->cantidad_paginas_codigo) {
+
+	if (pcb->pagina_inicial_stack >= pcb->cantidad_paginas_codigo) {
 		lanzar_excepcion("STACKOVERFLOW");
 	}
 }
@@ -41,6 +44,11 @@ t_puntero DEFINIR_VARIABLE(t_nombre_variable variable) {
 
 	int paginaDiponible = 0, offsetDisp = 0;
 	buscarPaginaDisponibleStack(pcb);
+
+
+	if(hubo_excepcion==true){
+		return 0;
+	}
 
 	if (isalpha(variable)) {
 
@@ -130,7 +138,7 @@ int char4ToInt(char* chars) {
 void ASIGNAR_VARIABLE(t_puntero direccion_variable, t_valor_variable valor) {
 	int pagina = 0, offset = 0;
 	deserializar_puntero(direccion_variable, &pagina, &offset, tamanio_pagina_memoria);
-
+	//printf("\nASGINAR VARIABLE Pagina: %d, Bity Inicial %d",pagina,offset);
 	almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(offset), string_itoa(sizeof(uint32_t)), intToChar4(valor));
 
 }
@@ -325,9 +333,16 @@ void MOVER_CURSOR_PRIM(t_descriptor_archivo descriptor_archivo, t_valor_variable
 }
 
 void ESCRIBIR_ARCHIVO_PRIM(t_descriptor_archivo descriptor_archivo, void* informacion, t_valor_variable tamanio) {
+
+	if(descriptor_archivo==0){
+		CU_Escribir_Pantalla_AnSISOP(informacion,string_itoa(pcb->PID));
+	}else{
+
 	char* mensaje = escribir_archivo(string_itoa(pcb->PID), descriptor_archivo, tamanio, informacion);
 	if (strcmp("OK", mensaje) != 0)
 		lanzar_excepcion(mensaje);
+	}
+
 }
 
 void LEER_ARCHIVO_PRIM(t_descriptor_archivo descriptor_archivo, t_puntero informacion, t_valor_variable tamanio) {

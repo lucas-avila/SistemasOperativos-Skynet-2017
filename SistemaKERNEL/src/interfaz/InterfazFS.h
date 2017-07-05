@@ -11,7 +11,7 @@
 int servidor_filesystem;
 
 void inicializar();
-void iniciar_conexion_servidor_FS();
+int iniciar_conexion_servidor_FS();
 
 char* validar_archivo(char *path);
 char* crear_archivo(char *path);

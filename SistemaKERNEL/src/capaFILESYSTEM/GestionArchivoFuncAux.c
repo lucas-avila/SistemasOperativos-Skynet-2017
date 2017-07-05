@@ -133,10 +133,15 @@ void escribir_archivo(clienteCPU){
 	int FD = atoi(recibir_dato_serializado(clienteCPU));
 	int tamanio = atoi(recibir_dato_serializado(clienteCPU));
 	char * contenido = recibir_dato_serializado(clienteCPU);
+	char * respuesta;
 
-	char * respuesta = CU_ESCRIBIR_ARCHIVO(PID, FD, tamanio, contenido);
-
-	enviar_dato_serializado(respuesta, clienteCPU);
+	if(FD == 1) {
+		CU_Atender_Solicitud_Escritura_Por_Pantalla(clienteCPU, atoi(PID), contenido);
+		enviar_dato_serializado("OK", clienteCPU);
+	} else {
+		respuesta = CU_ESCRIBIR_ARCHIVO(PID, FD, tamanio, contenido);
+		enviar_dato_serializado(respuesta, clienteCPU);
+	}
 	free(PID);
 	free(respuesta);
 	free(contenido);

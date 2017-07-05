@@ -34,7 +34,8 @@ int main(int argc, char *argv[]) {
 	iniciar_conexion_servidor_cpu();
 	iniciar_conexion_servidor_memoria();
 	//inicializar();//sacar esto despues ESPARA PROBAR FILE SYSTEM
-	iniciar_conexion_servidor_FS();
+	int conectado_FS = iniciar_conexion_servidor_FS();
+	if(!conectado_FS) printf("\n\t --> FILESYSTEM SIN CONECTAR\n");
 	atender_solicitudes_de_usuario();
 	return EXIT_SUCCESS;
 }

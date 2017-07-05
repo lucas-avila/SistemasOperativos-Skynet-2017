@@ -27,7 +27,7 @@ void inicializar_memoria_cache(int cantidadEntradas, int tamanioPagina, int cant
 }
 
 void ingresar_valor_en_cache(char* PID, int nroPagina, char* contenidoPagina) {
-	int i = 0;
+	 int i = 0;
 	for (i = 0; i < cantidadEntradasCache; i++) {
 		if ((strcmp(memoriaCacheGlobal[i].PID, PID) == 0) && memoriaCacheGlobal[i].nroPagina == nroPagina) {
 			memoriaCacheGlobal[i].vecesUsada += 1;
@@ -37,7 +37,7 @@ void ingresar_valor_en_cache(char* PID, int nroPagina, char* contenidoPagina) {
 		}
 	}
 
-	/** Sino existe hay que ingresarla */
+
 	MEMORIA_CACHE fila;
 	strcpy(fila.PID, PID);
 	fila.contenidoPagina = malloc(strlen(contenidoPagina));
@@ -107,9 +107,10 @@ void eliminar_filas_de_procesos_en_cache(char* PID) {
 }
 
 int obtener_indice_tabla_menos_usado(char* PID) {
+	int indice = -1;
 	int i = 0;
 	int minCantUso = 0;
-	int indice = -1;
+
 	int controlPrimeraVez = 0;
 	for (i = 0; i < cantidadEntradasCache; i++) {
 
@@ -124,6 +125,7 @@ int obtener_indice_tabla_menos_usado(char* PID) {
 			}
 		}
 	}
+
 	return indice;
 
 }
@@ -153,6 +155,8 @@ bool procesoLleno(char* pid) {
 
 int reemplazar_linea_aplicando_algoritmo(MEMORIA_CACHE fila) {
 	int indice = 0;
+
+
 	if (cacheLlena() == 1) {
 		if (procesoLleno(fila.PID) == 1) {
 			indice = obtener_indice_tabla_menos_usado(fila.PID);
@@ -177,6 +181,7 @@ int reemplazar_linea_aplicando_algoritmo(MEMORIA_CACHE fila) {
 }
 
 void mostrar_tabla_memoria_cache() {
+
 	t_log* logger = log_create(configuraciones.PATH_ARCHIVO_LOG, "MEMORIA", false, LOG_LEVEL_INFO);
 	char* textoLoguear = string_new();
 	string_append(&textoLoguear, "\nContenido de la Memoria CACHE: ");
@@ -204,7 +209,8 @@ void mostrar_tabla_memoria_cache() {
 }
 
 void vaciar_tabla_memoria_cache(int tamanioPagina) {
-	int i = 0;
+
+	 int i = 0;
 	for (i = 0; i < cantidadEntradasCache; i++) {
 		strcpy(memoriaCacheGlobal[i].PID, "");
 		memoriaCacheGlobal[i].contenidoPagina = malloc(tamanioPagina);

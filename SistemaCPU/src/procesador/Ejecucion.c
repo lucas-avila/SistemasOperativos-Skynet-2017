@@ -23,7 +23,7 @@ char* solicitar_sentencia_ejecutar() {
 	if (indiceCodigo == NULL) {
 		return "FIN";
 	} else {
-		printf("\n PC %d  - Pagina %d - BI %d - BD %d",indiceCodigo->program_counter,indiceCodigo->pagina,indiceCodigo->byte_inicial_codigo,indiceCodigo->byte_final_codigo);
+		//printf("\n PC %d  - Pagina %d - BI %d - BD %d",indiceCodigo->program_counter,indiceCodigo->pagina,indiceCodigo->byte_inicial_codigo,indiceCodigo->byte_final_codigo);
 
 		int longitud = indiceCodigo->byte_final_codigo - indiceCodigo->byte_inicial_codigo;
 		return solicitar_bytes_memoria(string_itoa(pcbEjecutar->PID), string_itoa(indiceCodigo->pagina), string_itoa(indiceCodigo->byte_inicial_codigo), string_itoa(longitud));
@@ -46,11 +46,11 @@ void ejecutar_Programa() {
 
 void ejecutar_programa_por_FIFO() {
 
-	printf("\n Comienzo de Ejecucion");
+	//printf("\n Comienzo de Ejecucion");
 	while (!esFinPrograma && !programaBloqueado) {
-		printf("\n Comienzo de Solicitar sentencia...");
+		//printf("\n Comienzo de Solicitar sentencia...");
 		char* sentencia = solicitar_sentencia_ejecutar();
-		printf("\n Sentencia SOlicitada %s: ", sentencia);
+		//printf("\n Sentencia SOlicitada %s: ", sentencia);
 		esFinPrograma = (strcmp(sentencia, "FIN") == 0);
 		if (!esFinPrograma && !programaBloqueado) { //Este if tiene que sacarse, es solo para probar ahora
 
@@ -79,11 +79,11 @@ void ejecutar_programa_por_FIFO() {
 void ejecutar_programa_por_RR() {
 	int topeEjecucion = pcbEjecutar->cantidad_rafagas;
 	int cantidadEjecutada = 0;
-	printf("\n Comienzo de Ejecucion");
+	//printf("\n Comienzo de Ejecucion");
 	while (!esFinPrograma && cantidadEjecutada < topeEjecucion && !programaBloqueado) {
-		printf("\n Comienzo de Solicitar sentencia...");
+		//printf("\n Comienzo de Solicitar sentencia...");
 		char* sentencia = solicitar_sentencia_ejecutar();
-		printf("\n Sentencia SOlicitada %s: ", sentencia);
+		//printf("\n Sentencia SOlicitada %s: ", sentencia);
 		esFinPrograma = (strcmp(sentencia, "FIN") == 0);
 		if (!esFinPrograma && !programaBloqueado) { //Este if tiene que sacarse, es solo para probar ahora
 			analizadorLinea(sentencia, funciones, kernel);
@@ -205,9 +205,11 @@ void lanzar_excepcion(char * mensaje) {
 		pcbEjecutar->exit_code = -22;
 	}
 
-	printf("\n\n\n Errorr %s",mensaje);
 
-	if (pcbEjecutar->exit_code != 0)
+
+	if (pcbEjecutar->exit_code != 0){
 		hubo_excepcion = true;
+		printf("\n\n\n Error %s",mensaje);
+	}
 }
 

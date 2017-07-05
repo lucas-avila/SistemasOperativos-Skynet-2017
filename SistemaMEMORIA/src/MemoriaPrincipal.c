@@ -12,7 +12,7 @@
 #include<commons/string.h>
 
 //int indiceInicialPaginas = 0;
-Tabla_Pagina_Invertida* TABLA_MEMORY;
+
 
 int frame_lookup(char*PID, int pagina) {
 
@@ -121,9 +121,11 @@ char* solicitar_bytes_de_una_pagina(char* PID, int pagina, int byteInicial, int 
 		// Almacenar pagina en memoria cache porque no existe
 		ingresar_valor_en_cache(PID, pagina, string_substring(MEMORIA_PRINCIPAL, configuraciones.MARCO_SIZE * getFrame(PID, pagina) + byteInicial, configuraciones.MARCO_SIZE));
 
-		printf("\n cantidad milisegundo %d", configuraciones.RETARDO_MEMORIA);
-		sleep(configuraciones.RETARDO_MEMORIA);
-		printf("\n fin cantidad milisegundo %d", configuraciones.RETARDO_MEMORIA);
+
+		long retardo = configuraciones.RETARDO_MEMORIA * 1000000;
+		nanosleep(retardo);
+
+		//printf("\n Contenido Enviado: %s Pagina %d", contenidoPaginaBuscada,pagina);
 
 		return contenidoPaginaBuscada;
 	}
@@ -132,7 +134,7 @@ char* solicitar_bytes_de_una_pagina(char* PID, int pagina, int byteInicial, int 
 char* almacenar_bytes_de_una_pagina(char PID[4], int pagina, int byteInicial, int longitud, char* contenido, bool cacheIr) {
 
 	activar_semaforo(&semaforo_Tabla_MEMORY);
-
+	//printf("\n Almacenar: %s Pagina %d", contenido,pagina);
 	int numeroFrame = getFrame(PID, pagina);
 	if (numeroFrame < 0) {
 		desactivar_semaforo(&semaforo_Tabla_MEMORY);
@@ -196,6 +198,9 @@ char* almacenar_bytes_de_una_pagina(char PID[4], int pagina, int byteInicial, in
 
 		ingresar_valor_en_cache(PID, pagina, contenidoPaginaBuscada);
 	}
+
+
+
 	return "OK";
 }
 char* liberar_pagina(char PID[4], int pagina) {

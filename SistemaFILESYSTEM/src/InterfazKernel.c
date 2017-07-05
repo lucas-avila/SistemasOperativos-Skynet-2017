@@ -23,12 +23,10 @@ void validar_archivo(char * path) {
 	/*Cuando el Proceso Kernel reciba la operación de abrir
 	 * un archivo deberá validar que el archivo exista.*/
 	char * path_abs = generar_path_absoluto(PATH_ARCHIVOS, path);
-	if(access(path_abs, F_OK) == -1){
+	if(access(path_abs, F_OK) == -1)
 		enviar_dato_serializado("ARCHIVO_NO_EXISTE", clienteKernel);
-	}
-	else {
+	else
 		enviar_dato_serializado("OK", clienteKernel);
-	}
 	free(path_abs);
 }
 
@@ -56,10 +54,8 @@ void crear_archivo(char * path) {
 
 	FILE * f;
 	//Validaciones...
-	if(access(path_abs, F_OK) != -1){
-		perror("El archivo ya existe.\n");
-		exit(-1);
-	}
+	if(access(path_abs, F_OK) != -1)
+		return;
 	if((f = fopen(path_abs, "w")) == NULL){
 		perror("No se pudo crear el archivo.");
 		exit(-1);

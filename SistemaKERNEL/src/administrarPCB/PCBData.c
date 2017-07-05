@@ -10,7 +10,7 @@
 #include "../general/Semaforo.h"
 #include "../interfaz/InterfazMemoria.h"
 #include "../planificacion/Planificacion.h"
-
+#include "../header/AppConfig.h"
 #define MIN_PIDS 1000
 int pids_reg = MIN_PIDS;
 
@@ -32,7 +32,7 @@ PCB * crear_pcb() {
 	elemento_pila_inicial_vacio->argumentos = list_create();
 	elemento_pila_inicial_vacio->variables = list_create();
 	elemento_pila_inicial_vacio->retVar = malloc(sizeof(ReturnVariable));
-	elemento_pila_inicial_vacio->retVar->byte_inicial= 9999;
+	elemento_pila_inicial_vacio->retVar->byte_inicial = 9999;
 	elemento_pila_inicial_vacio->retVar->pagina = 9999;
 	elemento_pila_inicial_vacio->retVar->tamanio = 9999;
 
@@ -45,7 +45,7 @@ PCB * crear_pcb() {
 	return pcb;
 }
 
-void procesar_programa(char * programa, PCB * pcb){
+void procesar_programa(char * programa, PCB * pcb) {
 	t_metadata_program * meta = metadata_desde_literal(programa);
 
 	pcb->etiquetas = meta->etiquetas;
@@ -57,9 +57,8 @@ void procesar_programa(char * programa, PCB * pcb){
 	/* Si el Resultado es >= 0 son las páginas asignadas.
 	 * Si el Resultado es < 0 es un exit_code.
 	 */
-	if(resultado >= 0)
-		pcb->cantidad_paginas_codigo = resultado;
-	else {
+	pcb->cantidad_paginas_codigo = configuraciones.STACK_SIZE;
+	if (resultado <= 0) {
 		pcb->exit_code = resultado;
 		mover_PCB_de_cola(pcb, NEW, EXIT);
 	}

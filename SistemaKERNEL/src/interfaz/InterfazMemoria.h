@@ -15,7 +15,7 @@
 int servidor_Memoria;
 int tamanio_pagina_memoria;
 
-void iniciar_conexion_servidor_memoria();
+int iniciar_conexion_servidor_memoria();
 
 char* solicitar_bytes_memoria(char* PID, char* pagina, char* byteInicial, char* longitud);
 

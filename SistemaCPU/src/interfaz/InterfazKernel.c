@@ -235,18 +235,13 @@ char* leer_archivo(char* PID, int FD, int tamanio) {
 
 char* escribir_archivo(char* PID, int FD, int tamanio, char* contenido) {
 	char* respuesta ;
-	if (FD != 0) {
-		enviar_dato_serializado("ESCRIBIR_ARCHIVO", servidor_kernel);
-		enviar_dato_serializado(PID, servidor_kernel);
-		enviar_dato_serializado(string_itoa(FD), servidor_kernel);
-		enviar_dato_serializado(string_itoa(tamanio), servidor_kernel);
-		enviar_dato_serializado(contenido, servidor_kernel);
-		 respuesta = recibir_dato_serializado(servidor_kernel);
-	} else {
-		CU_Escribir_Pantalla_AnSISOP(contenido, PID);
-		 respuesta = "OK";
-	}
 
+	enviar_dato_serializado("ESCRIBIR_ARCHIVO", servidor_kernel);
+	enviar_dato_serializado(PID, servidor_kernel);
+	enviar_dato_serializado(string_itoa(FD), servidor_kernel);
+	enviar_dato_serializado(string_itoa(tamanio), servidor_kernel);
+	enviar_dato_serializado(contenido, servidor_kernel);
+	respuesta = recibir_dato_serializado(servidor_kernel);
 
 	return respuesta;
 }

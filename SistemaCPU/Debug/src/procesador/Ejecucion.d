@@ -1,6 +1,7 @@
 src/procesador/Ejecucion.d: ../src/procesador/Ejecucion.c \
  ../src/procesador/Ejecucion.h \
  ../src/procesador/../../../Sharedlib/Sharedlib/PCB.h \
+ ../src/procesador/../../../Sharedlib/Sharedlib/Socket.h \
  ../src/procesador/../primitivas/PrimitivasFunciones.h \
  ../src/procesador/../primitivas/../../../Sharedlib/Sharedlib/PCB.h \
  ../src/procesador/../primitivas/EstructurasDeDatosPrimitivas.h \
@@ -13,6 +14,8 @@ src/procesador/Ejecucion.d: ../src/procesador/Ejecucion.c \
 ../src/procesador/Ejecucion.h:
 
 ../src/procesador/../../../Sharedlib/Sharedlib/PCB.h:
+
+../src/procesador/../../../Sharedlib/Sharedlib/Socket.h:
 
 ../src/procesador/../primitivas/PrimitivasFunciones.h:
 

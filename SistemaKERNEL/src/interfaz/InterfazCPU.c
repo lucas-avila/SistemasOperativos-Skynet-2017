@@ -101,7 +101,9 @@ void CU_Recibir_Conexiones_CPU(int clienteCPU) {
 			borrar_archivo(clienteCPU);
 		}
 		else if (strcmp(codigo_operacion, "IMPRIMIR_POR_PANTALLA") == 0) {
-			CU_Atender_Solicitud_Escritura_Por_Pantalla(clienteCPU);
+			int proceso = atoi(recibir_dato_serializado(clienteCPU));
+			char *mensaje = recibir_dato_serializado(clienteCPU);
+			CU_Atender_Solicitud_Escritura_Por_Pantalla(clienteCPU,proceso,mensaje);
 		}
 		else if(strcmp(codigo_operacion, "DESCONEXION_PROXIMA") == 0){
 			retirar_CPU_global(clienteCPU);
@@ -166,11 +168,8 @@ CPUInfo * obtener_CPU(int numeroConexion){
 }
 
 // En esta funcion se usan funciones de Proceso.c. Tal vez falte incluir acceso. Revisar funcion atoi.
-void CU_Atender_Solicitud_Escritura_Por_Pantalla(int cliente_CPU) {
-	char* pidMensaje = recibir_dato_serializado(cliente_CPU);
-	char* mensajeSolicitado = recibir_dato_serializado(cliente_CPU);
-	int pidSolicitante = atoi(pidMensaje);
-	Proceso* procesoSolicitante = buscar_proceso_by_PID(pidSolicitante);
+void CU_Atender_Solicitud_Escritura_Por_Pantalla(int cliente_CPU, uint32_t PID, char * mensaje) {
+	Proceso* procesoSolicitante = buscar_proceso_by_PID(PID);
 	int socketDelProceso = procesoSolicitante->socket;
-	enviar_dato_serializado(mensajeSolicitado, socketDelProceso);
+	enviar_dato_serializado(mensaje, socketDelProceso);
 }
