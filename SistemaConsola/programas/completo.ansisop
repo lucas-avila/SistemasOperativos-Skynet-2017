@@ -3,7 +3,7 @@
 function imprimir
     wait mutexA
         prints n $0+1
-    signal mutexB
+    wait mutexB
     return 0
 end
 

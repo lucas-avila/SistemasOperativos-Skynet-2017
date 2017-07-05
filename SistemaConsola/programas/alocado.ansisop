@@ -3,6 +3,6 @@
 begin
 	variables a
 	:ready
-	alocar a 100
+	alocar a 200
 	goto ready
 end

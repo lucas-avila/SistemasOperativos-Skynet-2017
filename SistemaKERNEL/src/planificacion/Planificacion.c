@@ -87,6 +87,7 @@ void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 	signal_cola(origen);
 
 	if (strcmp(destino, EXIT) == 0){
+		p->pcb=pcb;
 		finalizar_proceso(p);
 	}
 

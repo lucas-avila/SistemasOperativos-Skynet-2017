@@ -81,7 +81,9 @@ void CU_Liberar_memoria_FREE(int conexionCPU) {
 	unsigned pagina = atoi(recibir_dato_serializado(conexionCPU));
 	unsigned byteInicial = atoi(recibir_dato_serializado(conexionCPU));
 	TABLA_MEMORIA_PROCESO* pagina_Buscada = buscar_pagina_por_PID_NroPagina(PID, pagina);
+
 	int resultado = liberar_pagina_encontrada(pagina_Buscada, byteInicial);
+
 	if (resultado == 1) {
 		enviar_dato_serializado("OK", conexionCPU);
 		aplicar_algoritmo_Desfragmentacion_Interna(pagina_Buscada);

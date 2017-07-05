@@ -181,7 +181,9 @@ TABLA_MEMORIA_PROCESO* buscar_pagina_por_PID_NroPagina(char* PID, unsigned pagin
 }
 
 int liberar_pagina_encontrada(TABLA_MEMORIA_PROCESO* pagina_Buscada, unsigned byteInicial) {
-
+	if(pagina_Buscada==NULL){
+		return 2;
+	}
 	char * nroPagina = string_itoa(pagina_Buscada->nroPagina);
 	char * byteIni = string_itoa(byteInicial);
 

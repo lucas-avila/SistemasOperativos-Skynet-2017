@@ -101,16 +101,15 @@ void inicializar_configuracion(char *PATH_ARCHIVO_CONFIGURACION) {
 	inicializar_vec_variables_compartidas(VECTOR_VAR_COM);
 }*/
 
-void inicializar_vec_variables_compartidas(int VECTOR_VAR_COMP) {
-	VECTOR_VAR_COMP = malloc(configuraciones.cantidad_var_comp);
+void inicializar_vec_variables_compartidas() {
+	VECTOR_VAR_COM = malloc(configuraciones.cantidad_var_comp*sizeof(int));
 
 	int i = 0;
 	while ( i < configuraciones.cantidad_var_comp) {
-		VECTOR_VAR_COM[i] = 110;
+		VECTOR_VAR_COM[i] = 0;
 		i++;
 	}
 }
-
 void inicializar_dict_semaforos_ansisop(){
 	dict_semaforos_ansisop = dictionary_create();
 	int i = 0;

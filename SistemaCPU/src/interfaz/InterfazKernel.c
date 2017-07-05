@@ -72,6 +72,7 @@ PCB* recibir_PCB_de_kernel() {
 /* Se encarga de devolver al kernel el PCB con sus modificaciones por la ejecucion*/
 void enviar_PCB_a_kernel(PCB* pcb, char * modo) {
 	enviar_dato_serializado(modo, servidor_kernel);
+	printf("\n\n EXIT CODE %d",pcb->exit_code);
 	enviar_pcb(pcb, servidor_kernel);
 }
 

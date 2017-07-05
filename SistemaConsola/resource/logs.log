@@ -1973,3 +1973,144 @@ El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos:
 Fecha de inicio de ejecucion: 22:58:21:914
 Fecha de fin de ejecucion: 22:59:24:565
 Tiempo total de ejecucion: -1237317448Cantidad de impresiones por pantalla: 127
+[INFO] 23:15:23:495 CONSOLA/(8979:8987): 
+ Proceso (1000): 1
+
+[INFO] 23:15:23:935 CONSOLA/(8979:8987): 
+ Proceso (1000): 1
+
+[INFO] 23:20:14:219 CONSOLA/(9086:9093): 
+ Proceso (1000): 1
+
+[INFO] 23:20:14:659 CONSOLA/(9086:9093): 
+ Proceso (1000): 1
+
+[INFO] 23:21:01:467 CONSOLA/(9160:9167): 
+ Proceso (1000): 1
+
+[INFO] 23:21:01:907 CONSOLA/(9160:9167): 
+ Proceso (1000): 1
+
+[INFO] 23:23:15:511 CONSOLA/(9673:9680): 
+ Proceso (1000): 1
+
+[INFO] 23:23:15:951 CONSOLA/(9673:9680): 
+ Proceso (1000): 1
+
+[INFO] 23:24:19:815 CONSOLA/(9818:9825): 
+ Proceso (1000): 1
+
+[INFO] 23:24:20:255 CONSOLA/(9818:9825): 
+ Proceso (1000): 1
+
+[INFO] 23:27:15:899 CONSOLA/(9953:9960): 
+ Proceso (1000): 1
+
+[INFO] 23:27:16:339 CONSOLA/(9953:9960): 
+ Proceso (1000): 1
+
+[INFO] 23:28:51:591 CONSOLA/(10040:10047): 
+ Proceso (1000): 1
+
+[INFO] 23:28:52:31 CONSOLA/(10040:10047): 
+ Proceso (1000): 1
+
+[INFO] 23:32:08:381 CONSOLA/(10099:10106): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 23:32:07:139
+Fecha de fin de ejecucion: 23:32:08:381
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+[INFO] 23:42:10:802 CONSOLA/(10304:10308): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 23:42:00:390
+Fecha de fin de ejecucion: 23:42:10:802
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+[INFO] 23:49:21:582 CONSOLA/(10610:10617): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 23:48:12:320
+Fecha de fin de ejecucion: 23:49:21:582
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+[INFO] 23:53:19:243 CONSOLA/(10785:10792): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 23:51:14:216
+Fecha de fin de ejecucion: 23:53:19:243
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+[INFO] 00:04:51:41 CONSOLA/(11540:11547): 
+ EXIT CODE: El programa ha intentado acceder a un semáforo que no existe.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 00:04:50:109
+Fecha de fin de ejecucion: 00:04:51:41
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+[INFO] 00:10:46:861 CONSOLA/(11886:11894): 
+ EXIT CODE: El programa ha intentado acceder a un semáforo que no existe.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 00:10:45:928
+Fecha de fin de ejecucion: 00:10:46:861
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+[INFO] 00:12:58:294 CONSOLA/(11886:11914): 
+ EXIT CODE: El programa ha intentado acceder a un semáforo que no existe.
+El Proceso (1002) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 00:11:53:54
+Fecha de fin de ejecucion: 00:12:58:294
+Tiempo total de ejecucion: 150323464Cantidad de impresiones por pantalla: 0
+[INFO] 00:12:58:693 CONSOLA/(11886:11918): 
+ EXIT CODE: El programa ha intentado acceder a un semáforo que no existe.
+El Proceso (1003) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 00:11:55:310
+Fecha de fin de ejecucion: 00:12:58:693
+Tiempo total de ejecucion: -1239414600Cantidad de impresiones por pantalla: 0
+[INFO] 00:12:59:94 CONSOLA/(11886:11922): 
+ EXIT CODE: El programa ha intentado acceder a un semáforo que no existe.
+El Proceso (1004) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 00:11:58:543
+Fecha de fin de ejecucion: 00:12:59:94
+Tiempo total de ejecucion: -1237317472Cantidad de impresiones por pantalla: 0
+[INFO] 00:12:59:521 CONSOLA/(11886:11926): 
+ EXIT CODE: El programa ha intentado acceder a un semáforo que no existe.
+El Proceso (1005) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 00:12:00:934
+Fecha de fin de ejecucion: 00:12:59:521
+Tiempo total de ejecucion: 150324432Cantidad de impresiones por pantalla: 0
+[INFO] 00:15:42:739 CONSOLA/(12001:12008): 
+ Proceso (1000): 1
+
+[INFO] 00:15:43:619 CONSOLA/(12001:12008): 
+ Proceso (1000): 2
+
+[INFO] 00:15:44:499 CONSOLA/(12001:12008): 
+ Proceso (1000): 3
+
+[INFO] 00:15:45:379 CONSOLA/(12001:12008): 
+ Proceso (1000): 4
+
+[INFO] 00:15:46:259 CONSOLA/(12001:12008): 
+ Proceso (1000): 5
+
+[INFO] 00:15:47:143 CONSOLA/(12001:12008): 
+ Proceso (1000): 6
+
+[INFO] 00:15:48:23 CONSOLA/(12001:12008): 
+ Proceso (1000): 7
+
+[INFO] 00:15:48:625 CONSOLA/(12001:12008): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 00:15:41:211
+Fecha de fin de ejecucion: 00:15:48:625
+Tiempo total de ejecucion: -1239414680Cantidad de impresiones por pantalla: 7
+[INFO] 00:32:31:921 CONSOLA/(12368:12375): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 00:32:15:208
+Fecha de fin de ejecucion: 00:32:31:919
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+[INFO] 00:34:56:462 CONSOLA/(12532:12539): 
+ EXIT CODE: El programa intentó hacer un free a un bloque inexistente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 00:34:54:606
+Fecha de fin de ejecucion: 00:34:56:462
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0

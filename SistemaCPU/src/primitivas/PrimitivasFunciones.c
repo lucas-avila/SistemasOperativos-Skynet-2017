@@ -182,7 +182,7 @@ t_puntero ALOCAR(t_valor_variable espacio) {
 	if (strcmp(mensaje, "OK") == 0) {
 		return serializarPuntero(pagina, offset, tamanio_pagina_memoria);
 	} else {
-		hubo_excepcion = true;
+		lanzar_excepcion(mensaje);
 	}
 	//TODO: aca se tendria que bloquear el programa y lanzar excepcion
 
@@ -205,7 +205,9 @@ void LIBERAR(t_puntero memoria_serializada) {
 	varDinamica->byteInicial = offset;
 
 	char* resultado = enviar_SYSCALL_liberar_memoria_dinamica_a_kernel(varDinamica);
-	printf("\nResultado de LIBERAR el puntero %d: %s", memoria_serializada, resultado);
+	if (strcmp("OK", resultado) != 0)
+			lanzar_excepcion(resultado);
+	//printf("\nResultado de LIBERAR el puntero %d: %s", memoria_serializada, resultado);
 
 }
 
