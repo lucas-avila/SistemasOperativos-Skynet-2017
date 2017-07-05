@@ -1,4 +1,5 @@
 #!/usr/bin/ansisop
+#avila prueba
 begin
 variables f, i, t
 

@@ -1,5 +1,5 @@
 #!/usr/bin/ansisop
-
+#avila prueba
 function imprimir
     wait mutexA
         prints n $0+1

@@ -850,3 +850,12 @@ Fecha de fin de ejecucion: 20:03:47:827
 Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
 ------Fin del LOG------
 
+[INFO] 23:42:54:646 CONSOLA/(17631:17635): 
+***LOGS de la CONSOLA***
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 23:42:48:124
+Fecha de fin de ejecucion: 23:42:54:645
+Tiempo total de ejecucion: -1239415296Cantidad de impresiones por pantalla: 2
+------Fin del LOG------
+
