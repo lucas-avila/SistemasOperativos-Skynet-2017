@@ -98,26 +98,28 @@ char* obtenerNumeroPaginaNew(char* PID) {
 }
 
 char* inicializar_programa(char* PID, int cantidad_paginas_requeridas) {
-	logSO(string_from_format("Iniciando Programa con PID %s. Cantidad de Paginas Requeridas: %d",PID,cantidad_paginas_requeridas));
+	logSO(string_from_format("Iniciando Programa con PID %s. Cantidad de Paginas Requeridas: %d", PID, cantidad_paginas_requeridas));
 	return asignar_paginas_a_proceso(PID, cantidad_paginas_requeridas);
 
 }
 
 char* solicitar_bytes_de_una_pagina(char* PID, int pagina, int byteInicial, int longitud) {
-	logSO(string_from_format("PID %s. Solicitar bytes. Pagina: %d | Byte Incial: %d | Longitud solicitada: %d .",PID,pagina,byteInicial,longitud));
+	logSO(string_from_format("PID %s. Solicitar bytes. Pagina: %d | Byte Incial: %d | Longitud solicitada: %d .", PID, pagina, byteInicial, longitud));
 
 	//1. Primero Busco en memoria Cache
 	char *paginaEnCache = buscar_valor_en_cache(PID, pagina);
 	//Inicializo contenido con todos \0 dejandole uno extra al final
 	char * contenido = calloc(longitud + 1, sizeof(char));
 	if (strcmp(paginaEnCache, "No existe en Cache") != 0) {
+
 		memcpy(contenido, paginaEnCache + byteInicial, longitud);
+		logSO(string_from_format("PID %s. Resultado en CACHE Solicitar bytes. Contenido: %s", PID, contenido));
 		return contenido;
 	} else {
 		//1 b. No Existe en Memoria Cache
 		int numeroFrame = getFrame(PID, pagina);
 		if (numeroFrame < 0) {
-			logSO(string_from_format("PID %s. Resultado Solicitar bytes. Pagina: %d | Byte Incial: %d | Longitud solicitada: %d | Contenido : %s .",PID,pagina,byteInicial,longitud,"PAGINA_NO_EXISTE"));
+			logSO(string_from_format("PID %s. Resultado Solicitar bytes. Pagina: %d | Byte Incial: %d | Longitud solicitada: %d | Contenido : %s .", PID, pagina, byteInicial, longitud, "PAGINA_NO_EXISTE"));
 
 			return "PAGINA_NO_EXISTE"; //getframe retorna negativo cuando no encuentra
 		}
@@ -133,25 +135,25 @@ char* solicitar_bytes_de_una_pagina(char* PID, int pagina, int byteInicial, int 
 		nanosleep(retardo);
 
 		//printf("\n Contenido Enviado: %s Pagina %d", contenidoPaginaBuscada,pagina);
-		logSO(string_from_format("PID %s. Resultado Solicitar bytes. Pagina: %d | Byte Incial: %d | Longitud solicitada: %d | Contenido : %s .",PID,pagina,byteInicial,longitud,contenido));
+		logSO(string_from_format("PID %s. Resultado Solicitar bytes. Pagina: %d | Byte Incial: %d | Longitud solicitada: %d | Contenido : %s .", PID, pagina, byteInicial, longitud, contenido));
 
 		return contenido;
 	}
 }
 
 char* almacenar_bytes_de_una_pagina(char PID[4], int pagina, int byteInicial, int longitud, char* contenido, bool cacheIr) {
-	if(!cacheIr)
-	   logSO(string_from_format("PID %s. Almacenar bytes. Pagina: %d | Byte Incial: %d | Longitud: %d | Contenido: %s.",PID,pagina,byteInicial,longitud,contenido));
+	if (!cacheIr)
+		logSO(string_from_format("PID %s. Almacenar bytes. Pagina: %d | Byte Incial: %d | Longitud: %d | Contenido: %s.", PID, pagina, byteInicial, longitud, contenido));
 
 	activar_semaforo(&semaforo_Tabla_MEMORY);
 	int numeroFrame = getFrame(PID, pagina);
 	if (numeroFrame < 0) {
 		desactivar_semaforo(&semaforo_Tabla_MEMORY);
-		logSO(string_from_format("PID %s. Resultado Almacenar bytes. Pagina: %d | Byte Incial: %d | Longitud: %d | Contenido: %s. | Resultado: %s",PID,pagina,byteInicial,longitud,contenido,"PAGINA_NO_EXISTE"));
+		logSO(string_from_format("PID %s. Resultado Almacenar bytes. Pagina: %d | Byte Incial: %d | Longitud: %d | Contenido: %s. | Resultado: %s", PID, pagina, byteInicial, longitud, contenido, "PAGINA_NO_EXISTE"));
 		return "PAGINA_NO_EXISTE";
 	} else if ((byteInicial > configuraciones.MARCO_SIZE || (byteInicial + longitud) > configuraciones.MARCO_SIZE)) {
 		desactivar_semaforo(&semaforo_Tabla_MEMORY);
-		logSO(string_from_format("PID %s. Resultado Almacenar bytes. Pagina: %d | Byte Incial: %d | Longitud: %d | Contenido: %s. | Resultado: %s",PID,pagina,byteInicial,longitud,contenido,"CONTENIDO_NO_ENTRA_EN_PAGINA"));
+		logSO(string_from_format("PID %s. Resultado Almacenar bytes. Pagina: %d | Byte Incial: %d | Longitud: %d | Contenido: %s. | Resultado: %s", PID, pagina, byteInicial, longitud, contenido, "CONTENIDO_NO_ENTRA_EN_PAGINA"));
 		return "CONTENIDO_NO_ENTRA_EN_PAGINA";
 	}
 	int numeroInicial = (numeroFrame * configuraciones.MARCO_SIZE) + byteInicial;
@@ -165,14 +167,14 @@ char* almacenar_bytes_de_una_pagina(char PID[4], int pagina, int byteInicial, in
 	desactivar_semaforo(&semaforo_Tabla_MEMORY);
 
 	/**CACHE **/
-	if (cacheIr == true){
+	if (cacheIr == true) {
 		ingresar_valor_en_cache(PID, pagina, MEMORIA_PRINCIPAL + configuraciones.MARCO_SIZE * numeroFrame);
-	    logSO(string_from_format("PID %s. Resultado Almacenar bytes. Pagina: %d | Byte Incial: %d | Longitud: %d | Contenido: %s. | Resultado: %s",PID,pagina,byteInicial,longitud,contenido,"Almacenado Correctamente."));
+		logSO(string_from_format("PID %s. Resultado Almacenar bytes. Pagina: %d | Byte Incial: %d | Longitud: %d | Contenido: %s. | Resultado: %s", PID, pagina, byteInicial, longitud, contenido, "Almacenado Correctamente."));
 	}
- return "OK";
+	return "OK";
 }
 char* liberar_pagina(char PID[4], int pagina) {
-	logSO(string_from_format("PID %s. Liberar Pagina. Pagina: %d ",PID,pagina));
+	logSO(string_from_format("PID %s. Liberar Pagina. Pagina: %d ", PID, pagina));
 
 	almacenar_bytes_de_una_pagina(PID, pagina, 0, configuraciones.MARCO_SIZE, string_repeat('-', configuraciones.MARCO_SIZE), false);
 
@@ -186,7 +188,7 @@ char* liberar_pagina(char PID[4], int pagina) {
 			ind = configuraciones.MARCOS;
 		}
 	}
-	logSO(string_from_format("PID %s. Resultado Liberar Pagina. Pagina: %d | Resultado: %s ",PID,pagina,"OK"));
+	logSO(string_from_format("PID %s. Resultado Liberar Pagina. Pagina: %d | Resultado: %s ", PID, pagina, "OK"));
 	return "OK";
 }
 
@@ -204,7 +206,7 @@ int obtener_cantidad_paginas_proceso(char * PID) {
 }
 
 char* asignar_paginas_a_proceso(char *PID, int cantidad_paginas_requeridas) {
-	logSO(string_from_format("PID %s. Asignar Paginas Requeridas. | Cantidad Paginas: %d",PID,cantidad_paginas_requeridas));
+	logSO(string_from_format("PID %s. Asignar Paginas Requeridas. | Cantidad Paginas: %d", PID, cantidad_paginas_requeridas));
 	int cantidad_paginas_pedidas = 0;
 	int numero_pagina_a_asignar = obtener_cantidad_paginas_proceso(PID) + 1;
 	char* numero_pagina_inicial;
@@ -217,7 +219,7 @@ char* asignar_paginas_a_proceso(char *PID, int cantidad_paginas_requeridas) {
 		Tabla_Pagina_Invertida registro = evitar_colisiones(frame);
 		if (strcmp(registro.frame, VACIO) == 0) {
 			desactivar_semaforo(&semaforo_Proceso_Asignar_Pagina);
-			logSO(string_from_format("PID %s. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: %d | Resultado: %s",PID,cantidad_paginas_requeridas, "FALTA ESPACIO"));
+			logSO(string_from_format("PID %s. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: %d | Resultado: %s", PID, cantidad_paginas_requeridas, "FALTA ESPACIO"));
 			return "FALTA ESPACIO";
 		}
 		strcpy(registro.PID, PID);
@@ -236,7 +238,7 @@ char* asignar_paginas_a_proceso(char *PID, int cantidad_paginas_requeridas) {
 		desactivar_semaforo(&semaforo_Proceso_Asignar_Pagina);
 	}
 
-	logSO(string_from_format("PID %s. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: %d | Resultado: %s ",PID,cantidad_paginas_requeridas, "Paginas Asignadas Correctamente."));
+	logSO(string_from_format("PID %s. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: %d | Resultado: %s ", PID, cantidad_paginas_requeridas, "Paginas Asignadas Correctamente."));
 
 	return numero_pagina_inicial;
 
@@ -357,7 +359,7 @@ int buscar_frame(char * PID, int numero_pagina) {
 
 char* pagina_Blanco = NULL;
 void finalizar_programa(char *PID) {
-	logSO(string_from_format("PID %s. Finalizar Programa",PID));
+	logSO(string_from_format("PID %s. Finalizar Programa", PID));
 
 	if (pagina_Blanco == NULL) {
 		pagina_Blanco = string_repeat('-', configuraciones.MARCO_SIZE);
@@ -381,7 +383,7 @@ void finalizar_programa(char *PID) {
 	desactivar_semaforo(&semaforo_Proceso_Finalizar_Programa);
 	/**Liberar memoria cache de ese proceso**/
 	eliminar_filas_de_procesos_en_cache(PID);
-	logSO(string_from_format("PID %s. Programa Finalizado Correctamente",PID));
+	logSO(string_from_format("PID %s. Programa Finalizado Correctamente", PID));
 }
 
 char* crear_tabla_memory_principal() {
@@ -480,13 +482,11 @@ void generar_Reporte_Estructura_de_Memoria() {
 	string_append(&textoLoguear, "\n FRAME \t PAGINA PID ");
 	string_append(&textoLoguear, "\n---------------------");
 
-
 	int i = 0;
 	int tope = configuraciones.MARCOS;
 	for (i = 0; i < tope; i++) {
 		Tabla_Pagina_Invertida registro = TABLA_MEMORY[i];
 		if (strcmp(registro.PID, VACIO) != 0) {
-
 
 			string_append(&textoLoguear, string_from_format("\n %s \t %s \t %s ", registro.frame, registro.pagina, registro.PID));
 			string_append(&textoLoguear, "\n---------------------");

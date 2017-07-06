@@ -404,3 +404,44 @@ Cantidad syscalls ejecutadas: 1
 >>>>>>> c3f27240a6c8583770e9e7720ea2eb4ace4362bf
 ------Fin del LOG------
 
+[INFO] 13:20:40:570 KERNEL/(11020:11020): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 13:21:28:210 KERNEL/(11020:11020): 
+***LOGS del KERNEL***
+ --- Se activó la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 13:52:19:661 KERNEL/(12955:12955): 
+***LOGS del KERNEL***
+ 
+---TABLA GLOBAL DE ARCHIVOS---
+
+ FILE 			 OPEN
+
+---TABLA GLOBAL DE ARCHIVOS---
+
+ FILE 			 OPEN
+
+---TABLA GLOBAL DE ARCHIVOS---
+
+ FILE 			 OPEN
+
+---TABLA GLOBAL DE ARCHIVOS---
+
+ FILE 			 OPEN
+
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXIT
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXIT
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+

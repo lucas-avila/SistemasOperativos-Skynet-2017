@@ -1,29 +1,29 @@
 #!/usr/bin/ansisop
-#avila prueba
+
 function imprimir
     wait mutexA
         prints n $0+1
-    wait mutexB
+    signal mutexB
     return 0
 end
 
 begin
     variables f,  A,  g
-    A = 0
+    A = 	0
     !Global = 1+A
     prints n !Global
     jnz !Global Siguiente 
-    :Proximo
+:Proximo
 	
     f = 8	  
     g <- doble !Global	
     io impresora 20
 	:Siguiente	
     imprimir A
-  #  prints l Hola Mundo!
+    prints l Hola Mundo!
     
     f <- sumar1 &g		
-  #  prints n 		g  
+    prints n 		g  
 end
 
 #Devolver el doble del

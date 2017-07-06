@@ -31,7 +31,6 @@ void buscarPaginaDisponibleStack(PCB* pcbRecibido) {
 		pcb->posicion_pagina_stack += sizeof(uint32_t);
 	}
 
-
 	//ATACAR EL PROBLEMA DEL STACK OVERFLOW
 
 	if (pcb->pagina_inicial_stack >= pcb->cantidad_paginas_codigo) {
@@ -45,8 +44,7 @@ t_puntero DEFINIR_VARIABLE(t_nombre_variable variable) {
 	int paginaDiponible = 0, offsetDisp = 0;
 	buscarPaginaDisponibleStack(pcb);
 
-
-	if(hubo_excepcion==true){
+	if (hubo_excepcion == true) {
 		return 0;
 	}
 
@@ -92,12 +90,12 @@ int char4ToInt(char* chars) {
 		string_trim(&chars);
 
 		/*int i = 0;
-		for (i; i < 4; i++) {
-			if (n_char[i] == '.') {
-				n_char[i] = '\0';
-			}
+		 for (i; i < 4; i++) {
+		 if (n_char[i] == '.') {
+		 n_char[i] = '\0';
+		 }
 
-		}*/
+		 }*/
 	}
 	memcpy(&a, chars, sizeof(int));
 	return a;
@@ -107,7 +105,7 @@ void ASIGNAR_VARIABLE(t_puntero direccion_variable, t_valor_variable valor) {
 	int pagina = 0, offset = 0;
 	deserializar_puntero(direccion_variable, &pagina, &offset, tamanio_pagina_memoria);
 	//printf("\nASGINAR VARIABLE Pagina: %d, Bity Inicial %d",pagina,offset);
-	almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(offset), string_itoa(sizeof(uint32_t)), valor);
+	almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(offset), string_itoa(sizeof(uint32_t)), valor,"");
 
 }
 
@@ -140,7 +138,7 @@ t_valor_variable DEREFERENCIAR(t_puntero puntero) {
 	deserializar_puntero(puntero, &pagina, &offset, tamanio_pagina_memoria);
 	int* resultado = solicitar_bytes_memoria(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(offset), string_itoa(sizeof(uint32_t)));
 	printf("LLegaresultado %d\n", resultado);
-	return *resultado;
+	return *resultado; //Modificado
 
 }
 t_puntero ALOCAR(t_valor_variable espacio) {
@@ -160,13 +158,13 @@ t_puntero ALOCAR(t_valor_variable espacio) {
 
 void LIBERAR(t_puntero memoria_serializada) {
 
-	int punteroLiberar = DEREFERENCIAR(memoria_serializada);
+	//int punteroLiberar = DEREFERENCIAR(memoria_serializada);
 	int pagina = 0, offset = 0;
 	int* ptPagina = &pagina;
 	int* ptoffset = &offset;
 
 	// punteroLiberar = 1536;
-	deserializar_puntero(punteroLiberar, ptPagina, ptoffset, tamanio_pagina_memoria);
+	deserializar_puntero(memoria_serializada, ptPagina, ptoffset, tamanio_pagina_memoria);
 	DireccionMemoriaDinamica* varDinamica = malloc(sizeof(DireccionMemoriaDinamica));
 	varDinamica->pid = pcb->PID;
 	varDinamica->pagina = pagina;
@@ -174,7 +172,7 @@ void LIBERAR(t_puntero memoria_serializada) {
 
 	char* resultado = enviar_SYSCALL_liberar_memoria_dinamica_a_kernel(varDinamica);
 	if (strcmp("OK", resultado) != 0)
-			lanzar_excepcion(resultado);
+		lanzar_excepcion(resultado);
 	//printf("\nResultado de LIBERAR el puntero %d: %s", memoria_serializada, resultado);
 
 }
@@ -185,16 +183,16 @@ void IR_A_LABEL(t_nombre_etiqueta nombre_etiqueta) {
 	}
 
 	pcb->program_counter = metadata_buscar_etiqueta(nombre_etiqueta, pcb->etiquetas, pcb->etiquetas_size);
-	pcb->program_counter-=1;
+	pcb->program_counter -= 1;
 }
 
 void RETORNAR(t_valor_variable variableRetorno) {
 
 	IndiceStack* stackDeFuncion = list_get(pcb->pila, (list_size(pcb->pila) - 1));
-	if(stackDeFuncion->retVar->tamanio != 0){
+	if (stackDeFuncion->retVar->tamanio != 0) {
 		int punteroVariableRetorno = serializarPuntero(stackDeFuncion->retVar->pagina, stackDeFuncion->retVar->byte_inicial, tamanio_pagina_memoria);
 
-	 ASIGNAR_VARIABLE(punteroVariableRetorno, variableRetorno);
+		ASIGNAR_VARIABLE(punteroVariableRetorno, variableRetorno);
 	}
 
 }
@@ -279,8 +277,22 @@ t_valor_variable ASIGNAR_VALOR_COMPARTIDA(t_nombre_compartida variable, t_valor_
 
 t_descriptor_archivo ABRIR_ARCHIVO_PRIM(t_direccion_archivo direccion, t_banderas flags) {
 	char* mensaje = abrir_archivo(string_itoa(pcb->PID), direccion, flags.creacion, flags.lectura, flags.escritura);
-	lanzar_excepcion(mensaje);
-	return atoi(mensaje);
+
+	int i = 0;
+	bool controlNumerico = 1;
+	for (i = 0; i < strlen(mensaje); i++) {
+		if (!isdigit(mensaje[i])) {
+			controlNumerico = 0;
+			i = strlen(mensaje);
+		}
+	}
+
+	if (controlNumerico == 0) {
+		lanzar_excepcion(mensaje);
+		return -1;
+	} else {
+		return atoi(mensaje);
+	}
 }
 
 void BORRAR_ARCHIVO_PRIM(t_descriptor_archivo descriptor_archivo) {
@@ -304,20 +316,26 @@ void MOVER_CURSOR_PRIM(t_descriptor_archivo descriptor_archivo, t_valor_variable
 
 void ESCRIBIR_ARCHIVO_PRIM(t_descriptor_archivo descriptor_archivo, void* informacion, t_valor_variable tamanio) {
 
-	printf("Llega %s\n", informacion);
-	if(descriptor_archivo==0){
-		CU_Escribir_Pantalla_AnSISOP(informacion,string_itoa(pcb->PID));
-	}else{
 
-	char* mensaje = escribir_archivo(string_itoa(pcb->PID), descriptor_archivo, tamanio, informacion);
-	if (strcmp("OK", mensaje) != 0)
-		lanzar_excepcion(mensaje);
+	if (descriptor_archivo <3) {
+		CU_Escribir_Pantalla_AnSISOP(informacion, string_itoa(pcb->PID));
+	} else {
+
+		char* mensaje = escribir_archivo(string_itoa(pcb->PID), descriptor_archivo, tamanio, informacion);
+		if (strcmp("OK", mensaje) != 0)
+			lanzar_excepcion(mensaje);
 	}
 
 }
 
 void LEER_ARCHIVO_PRIM(t_descriptor_archivo descriptor_archivo, t_puntero informacion, t_valor_variable tamanio) {
 	char* mensaje = leer_archivo(string_itoa(pcb->PID), descriptor_archivo, tamanio);
-	if (strcmp("OK", mensaje) != 0)
-		lanzar_excepcion(mensaje);
+	//if (strcmp("OK", mensaje) != 0)
+	//		lanzar_excepcion(mensaje);
+	int pagina = 0, offset = 0;
+	deserializar_puntero(informacion, &pagina, &offset, tamanio_pagina_memoria);
+	offset+=5;
+	almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(offset), string_itoa(tamanio), -1,mensaje);
+
+
 }

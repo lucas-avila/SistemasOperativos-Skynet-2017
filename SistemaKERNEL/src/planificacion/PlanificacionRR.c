@@ -33,7 +33,8 @@ void dispatcher_RR() {
 		if(status == 0){
 			pcb->quantum_sleep= configuraciones.QUANTUM_SLEEP;
 			enviar_PCB_Serializado_a_CPU(cpu, pcb);
-		}
+		}else
+			marcar_CPU_Disponible(cpu);
 
 	}
 }
