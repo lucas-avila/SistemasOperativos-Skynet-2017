@@ -5868,7 +5868,611 @@ Tiempo total de ejecucion: -1239414520Cantidad de impresiones por pantalla: 5
 [INFO] 22:54:42:178 CONSOLA/(21983:22024): 
  Proceso (1002): 12401
 
+<<<<<<< HEAD
+[INFO] 23:45:43:829 CONSOLA/(22327:22388): 
+ EXIT CODE: Se intentó reservar más memoria que el tamaño de una página.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 23:45:34:244
+Fecha de fin de ejecucion: 23:45:43:829
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+[INFO] 23:47:23:264 CONSOLA/(22632:22636): 
+ EXIT CODE: El programa ha intentado acceder a un semáforo que no existe.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 23:47:15:20
+Fecha de fin de ejecucion: 23:47:23:264
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+[INFO] 23:50:05:498 CONSOLA/(22740:22744): 
+ Proceso (1000): 1
+
+[INFO] 23:50:06:140 CONSOLA/(22740:22744): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 23:49:59:173
+Fecha de fin de ejecucion: 23:50:06:140
+Tiempo total de ejecucion: -1239414792Cantidad de impresiones por pantalla: 1
+[INFO] 23:56:44:150 CONSOLA/(22965:22969): 
+ Proceso (1000): 1
+
+[INFO] 23:56:44:793 CONSOLA/(22965:22969): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 23:55:36:576
+Fecha de fin de ejecucion: 23:56:44:793
+Tiempo total de ejecucion: -1239414792Cantidad de impresiones por pantalla: 1
+[INFO] 23:57:56:596 CONSOLA/(22965:23015): 
+ EXIT CODE: El programa intentó crear un archivo que ya existe.
+El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 23:57:54:593
+Fecha de fin de ejecucion: 23:57:56:596
+Tiempo total de ejecucion: -1239414792Cantidad de impresiones por pantalla: 0
+[INFO] 23:59:06:772 CONSOLA/(22965:23038): 
+ EXIT CODE: El programa intentó crear un archivo que ya existe.
+El Proceso (1002) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 23:59:04:768
+Fecha de fin de ejecucion: 23:59:06:772
+Tiempo total de ejecucion: -1239414480Cantidad de impresiones por pantalla: 0
+[INFO] 00:01:06:316 CONSOLA/(22965:23065): 
+ EXIT CODE: El programa ha intentado acceder a un semáforo que no existe.
+El Proceso (1007) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 00:01:03:872
+Fecha de fin de ejecucion: 00:01:06:316
+Tiempo total de ejecucion: -1239414264Cantidad de impresiones por pantalla: 0
+[INFO] 00:35:15:585 CONSOLA/(3177:3181): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 00:34:34:363
+Fecha de fin de ejecucion: 00:35:15:585
+Tiempo total de ejecucion: -1239415248Cantidad de impresiones por pantalla: 0
+[INFO] 00:35:15:666 CONSOLA/(3177:3185): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 00:34:37:472
+Fecha de fin de ejecucion: 00:35:15:666
+Tiempo total de ejecucion: 155508976Cantidad de impresiones por pantalla: 0
+[INFO] 00:35:15:745 CONSOLA/(3177:3190): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1002) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 00:34:40:322
+Fecha de fin de ejecucion: 00:35:15:745
+Tiempo total de ejecucion: -1239415248Cantidad de impresiones por pantalla: 0
+[INFO] 00:35:16:349 CONSOLA/(3177:3194): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1003) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 00:34:45:146
+Fecha de fin de ejecucion: 00:35:16:349
+Tiempo total de ejecucion: -1237317616Cantidad de impresiones por pantalla: 0
+[INFO] 00:37:57:271 CONSOLA/(3296:3304): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 00:37:07:279
+Fecha de fin de ejecucion: 00:37:57:271
+Tiempo total de ejecucion: 140902640Cantidad de impresiones por pantalla: 0
+[INFO] 00:37:57:350 CONSOLA/(3296:3300): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 00:37:03:375
+Fecha de fin de ejecucion: 00:37:57:350
+Tiempo total de ejecucion: -1239415248Cantidad de impresiones por pantalla: 0
+[INFO] 00:37:57:429 CONSOLA/(3296:3308): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1002) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 00:37:09:983
+Fecha de fin de ejecucion: 00:37:57:429
+Tiempo total de ejecucion: -1239415248Cantidad de impresiones por pantalla: 0
+[INFO] 00:37:57:509 CONSOLA/(3296:3312): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1003) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 00:37:12:783
+Fecha de fin de ejecucion: 00:37:57:509
+Tiempo total de ejecucion: -1237317616Cantidad de impresiones por pantalla: 0
+[INFO] 00:40:36:287 CONSOLA/(3296:3433): 
+ Proceso (1004): 1
+
+[INFO] 00:40:36:930 CONSOLA/(3296:3433): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1004) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 00:40:32:468
+Fecha de fin de ejecucion: 00:40:36:930
+Tiempo total de ejecucion: -1237317616Cantidad de impresiones por pantalla: 1
+[INFO] 00:44:20:531 CONSOLA/(3550:3554): 
+ Proceso (1000): 1
+
+[INFO] 00:44:21:149 CONSOLA/(3550:3554): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 00:44:13:111
+Fecha de fin de ejecucion: 00:44:21:149
+Tiempo total de ejecucion: -1239414792Cantidad de impresiones por pantalla: 1
+[INFO] 00:46:37:851 CONSOLA/(3636:3640): 
+ Proceso (1000): 1
+
+[INFO] 00:46:38:513 CONSOLA/(3636:3640): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 00:46:31:819
+Fecha de fin de ejecucion: 00:46:38:513
+Tiempo total de ejecucion: -1239414792Cantidad de impresiones por pantalla: 1
+[INFO] 00:49:19:355 CONSOLA/(3718:3722): 
+ Proceso (1000): 1
+
+[INFO] 00:49:19:5 CONSOLA/(3718:3722): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 00:49:13:732
+Fecha de fin de ejecucion: 00:49:19:5
+Tiempo total de ejecucion: -1239414792Cantidad de impresiones por pantalla: 1
+[INFO] 01:07:14:414 CONSOLA/(4050:4054): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:06:46:857
+Fecha de fin de ejecucion: 01:07:14:414
+Tiempo total de ejecucion: -1239415248Cantidad de impresiones por pantalla: 0
+[INFO] 01:07:15:150 CONSOLA/(4050:4058): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:06:53:767
+Fecha de fin de ejecucion: 01:07:15:150
+Tiempo total de ejecucion: 146927856Cantidad de impresiones por pantalla: 0
+[INFO] 01:07:15:867 CONSOLA/(4050:4062): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1002) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:06:56:371
+Fecha de fin de ejecucion: 01:07:15:867
+Tiempo total de ejecucion: -1239415248Cantidad de impresiones por pantalla: 0
+[INFO] 01:07:53:289 CONSOLA/(4050:4094): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1003) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:07:44:899
+Fecha de fin de ejecucion: 01:07:53:289
+Tiempo total de ejecucion: -1239414512Cantidad de impresiones por pantalla: 0
+[INFO] 01:09:37:750 CONSOLA/(4050:4149): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1004) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:08:27:856
+Fecha de fin de ejecucion: 01:09:37:750
+Tiempo total de ejecucion: -1239414160Cantidad de impresiones por pantalla: 0
+[INFO] 01:09:38:310 CONSOLA/(4050:4153): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1005) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:08:30:808
+Fecha de fin de ejecucion: 01:09:38:310
+Tiempo total de ejecucion: 146928520Cantidad de impresiones por pantalla: 0
+[INFO] 01:09:38:870 CONSOLA/(4050:4157): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1006) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:08:32:952
+Fecha de fin de ejecucion: 01:09:38:870
+Tiempo total de ejecucion: -1239414160Cantidad de impresiones por pantalla: 0
+[INFO] 01:09:39:429 CONSOLA/(4050:4161): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1007) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:08:35:864
+Fecha de fin de ejecucion: 01:09:39:429
+Tiempo total de ejecucion: 146928872Cantidad de impresiones por pantalla: 0
+[INFO] 01:09:39:994 CONSOLA/(4050:4165): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1008) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:08:38:432
+Fecha de fin de ejecucion: 01:09:39:994
+Tiempo total de ejecucion: -1239414160Cantidad de impresiones por pantalla: 0
+[INFO] 01:10:41:861 CONSOLA/(4050:4321): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1009) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:10:40:609
+Fecha de fin de ejecucion: 01:10:41:861
+Tiempo total de ejecucion: -1239413808Cantidad de impresiones por pantalla: 0
+[INFO] 01:10:52:962 CONSOLA/(4050:4349): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1010) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:10:51:713
+Fecha de fin de ejecucion: 01:10:52:962
+Tiempo total de ejecucion: -1239413560Cantidad de impresiones por pantalla: 0
+[INFO] 01:11:32:18 CONSOLA/(4050:4427): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1011) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:11:25:803
+Fecha de fin de ejecucion: 01:11:32:18
+Tiempo total de ejecucion: -1239413392Cantidad de impresiones por pantalla: 0
+[INFO] 01:12:35:29 CONSOLA/(4050:4492): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1012) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:12:01:201
+Fecha de fin de ejecucion: 01:12:35:29
+Tiempo total de ejecucion: -1239413176Cantidad de impresiones por pantalla: 0
+[INFO] 01:12:38:151 CONSOLA/(4050:4502): 
+ Proceso (1013): 1
+
+[INFO] 01:12:38:793 CONSOLA/(4050:4502): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1013) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:12:10:872
+Fecha de fin de ejecucion: 01:12:38:793
+Tiempo total de ejecucion: 146929280Cantidad de impresiones por pantalla: 1
+[INFO] 01:13:08:296 CONSOLA/(4050:4521): 
+ Proceso (1014): 2
+
+[INFO] 01:13:08:937 CONSOLA/(4050:4521): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1014) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:13:04:449
+Fecha de fin de ejecucion: 01:13:08:937
+Tiempo total de ejecucion: 146929280Cantidad de impresiones por pantalla: 1
+[INFO] 01:25:46:78 CONSOLA/(5116:5128): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:25:27:746
+Fecha de fin de ejecucion: 01:25:46:78
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+[INFO] 01:25:46:799 CONSOLA/(5116:5142): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:25:32:434
+Fecha de fin de ejecucion: 01:25:46:799
+Tiempo total de ejecucion: 145834224Cantidad de impresiones por pantalla: 0
+[INFO] 01:32:26:210 CONSOLA/(5585:5589): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:30:32:850
+Fecha de fin de ejecucion: 01:32:26:210
+Tiempo total de ejecucion: -1239415248Cantidad de impresiones por pantalla: 0
+[INFO] 01:37:49:474 CONSOLA/(5852:5856): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:36:50:669
+Fecha de fin de ejecucion: 01:37:49:474
+Tiempo total de ejecucion: -1239415248Cantidad de impresiones por pantalla: 0
+[INFO] 01:37:50:195 CONSOLA/(5852:5860): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:36:55:300
+Fecha de fin de ejecucion: 01:37:50:195
+Tiempo total de ejecucion: 149004528Cantidad de impresiones por pantalla: 0
+[INFO] 01:37:50:914 CONSOLA/(5852:5864): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1002) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:37:05:140
+Fecha de fin de ejecucion: 01:37:50:914
+Tiempo total de ejecucion: -1239415248Cantidad de impresiones por pantalla: 0
+[INFO] 01:40:26:806 CONSOLA/(5852:5927): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1003) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:38:20:532
+Fecha de fin de ejecucion: 01:40:26:806
+Tiempo total de ejecucion: -1239414312Cantidad de impresiones por pantalla: 0
+[INFO] 01:40:27:530 CONSOLA/(5852:5944): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1004) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:38:25:835
+Fecha de fin de ejecucion: 01:40:27:530
+Tiempo total de ejecucion: 149005672Cantidad de impresiones por pantalla: 0
+[INFO] 01:49:05:465 CONSOLA/(6425:6429): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:44:18:646
+Fecha de fin de ejecucion: 01:49:05:465
+Tiempo total de ejecucion: -1240463272Cantidad de impresiones por pantalla: 0
+[INFO] 01:50:49:848 CONSOLA/(6425:6435): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:45:39:887
+Fecha de fin de ejecucion: 01:50:49:848
+Tiempo total de ejecucion: 156582984Cantidad de impresiones por pantalla: 0
+[INFO] 01:51:03:976 CONSOLA/(6425:6439): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1002) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:45:42:724
+Fecha de fin de ejecucion: 01:51:03:976
+Tiempo total de ejecucion: -1240463272Cantidad de impresiones por pantalla: 0
+[INFO] 01:51:11:422 CONSOLA/(6425:6442): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1003) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:45:43:328
+Fecha de fin de ejecucion: 01:51:11:422
+Tiempo total de ejecucion: -1238365904Cantidad de impresiones por pantalla: 0
+[INFO] 01:51:16:703 CONSOLA/(6425:6445): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1004) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:45:47:306
+Fecha de fin de ejecucion: 01:51:16:702
+Tiempo total de ejecucion: 156583072Cantidad de impresiones por pantalla: 0
+[INFO] 01:51:19:210 CONSOLA/(6425:6448): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1005) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:46:37:920
+Fecha de fin de ejecucion: 01:51:19:210
+Tiempo total de ejecucion: -1240463272Cantidad de impresiones por pantalla: 0
+[INFO] 02:08:18:155 CONSOLA/(7280:7284): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:07:25:292
+Fecha de fin de ejecucion: 02:08:18:155
+Tiempo total de ejecucion: -1239414744Cantidad de impresiones por pantalla: 0
+[INFO] 02:08:54:543 CONSOLA/(7280:7307): 
+ EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
+El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:07:45:20
+Fecha de fin de ejecucion: 02:08:54:543
+Tiempo total de ejecucion: 143421704Cantidad de impresiones por pantalla: 0
+[INFO] 02:22:21:544 CONSOLA/(8082:8086): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:21:09:45
+Fecha de fin de ejecucion: 02:22:21:543
+Tiempo total de ejecucion: -1239414744Cantidad de impresiones por pantalla: 0
+[INFO] 02:22:42:186 CONSOLA/(8082:8090): 
+ EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
+El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:21:18:61
+Fecha de fin de ejecucion: 02:22:42:186
+Tiempo total de ejecucion: 160691384Cantidad de impresiones por pantalla: 0
+[INFO] 02:34:26:258 CONSOLA/(8699:8703): 
+ EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:33:42:588
+Fecha de fin de ejecucion: 02:34:26:258
+Tiempo total de ejecucion: -1239414632Cantidad de impresiones por pantalla: 0
+[INFO] 02:35:00:599 CONSOLA/(8699:8722): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:33:49:917
+Fecha de fin de ejecucion: 02:35:00:599
+Tiempo total de ejecucion: 137442408Cantidad de impresiones por pantalla: 0
+[INFO] 02:35:01:321 CONSOLA/(8699:8730): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1002) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:33:52:59
+Fecha de fin de ejecucion: 02:35:01:321
+Tiempo total de ejecucion: -1239414632Cantidad de impresiones por pantalla: 0
+[INFO] 02:35:02:34 CONSOLA/(8699:8736): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1003) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:33:53:763
+Fecha de fin de ejecucion: 02:35:02:34
+Tiempo total de ejecucion: -1237316584Cantidad de impresiones por pantalla: 0
+[INFO] 02:35:02:755 CONSOLA/(8699:8744): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1004) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:33:55:315
+Fecha de fin de ejecucion: 02:35:02:755
+Tiempo total de ejecucion: 137442320Cantidad de impresiones por pantalla: 0
+[INFO] 02:35:03:476 CONSOLA/(8699:8752): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1005) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:33:56:843
+Fecha de fin de ejecucion: 02:35:03:476
+Tiempo total de ejecucion: -1239414632Cantidad de impresiones por pantalla: 0
+[INFO] 02:35:04:193 CONSOLA/(8699:8762): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1006) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:33:59:883
+Fecha de fin de ejecucion: 02:35:04:193
+Tiempo total de ejecucion: -1237316584Cantidad de impresiones por pantalla: 0
+[INFO] 02:35:04:915 CONSOLA/(8699:8774): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1007) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:34:04:395
+Fecha de fin de ejecucion: 02:35:04:915
+Tiempo total de ejecucion: 137442576Cantidad de impresiones por pantalla: 0
+[INFO] 02:35:05:635 CONSOLA/(8699:8783): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1008) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:34:06:267
+Fecha de fin de ejecucion: 02:35:05:635
+Tiempo total de ejecucion: -1239414248Cantidad de impresiones por pantalla: 0
+[INFO] 02:35:06:357 CONSOLA/(8699:8791): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1009) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:34:08:355
+Fecha de fin de ejecucion: 02:35:06:357
+Tiempo total de ejecucion: -1237316584Cantidad de impresiones por pantalla: 0
+[INFO] 02:39:36:438 CONSOLA/(9044:9048): 
+ EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:37:12:476
+Fecha de fin de ejecucion: 02:39:36:438
+Tiempo total de ejecucion: -1239414696Cantidad de impresiones por pantalla: 0
+[INFO] 02:47:55:238 CONSOLA/(9410:9414): 
+ EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:47:28:974
+Fecha de fin de ejecucion: 02:47:55:238
+Tiempo total de ejecucion: -1239414744Cantidad de impresiones por pantalla: 0
+[INFO] 02:49:06:137 CONSOLA/(9410:9418): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:47:32:30
+Fecha de fin de ejecucion: 02:49:06:137
+Tiempo total de ejecucion: 140943624Cantidad de impresiones por pantalla: 0
+[INFO] 02:49:06:856 CONSOLA/(9410:9422): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1002) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:47:33:917
+Fecha de fin de ejecucion: 02:49:06:856
+Tiempo total de ejecucion: -1239414744Cantidad de impresiones por pantalla: 0
+[INFO] 02:49:07:575 CONSOLA/(9410:9426): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1003) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:47:35:358
+Fecha de fin de ejecucion: 02:49:07:575
+Tiempo total de ejecucion: -1237317104Cantidad de impresiones por pantalla: 0
+[INFO] 02:49:08:260 CONSOLA/(9410:9430): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1004) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:47:37:5
+Fecha de fin de ejecucion: 02:49:08:260
+Tiempo total de ejecucion: 140944488Cantidad de impresiones por pantalla: 0
+[INFO] 02:49:25:821 CONSOLA/(9410:9434): 
+ EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
+El Proceso (1005) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:47:38:453
+Fecha de fin de ejecucion: 02:49:25:821
+Tiempo total de ejecucion: -1239414744Cantidad de impresiones por pantalla: 0
+[INFO] 02:51:03:85 CONSOLA/(9735:9739): 
+ EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:50:51:598
+Fecha de fin de ejecucion: 02:51:03:85
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+[INFO] 02:54:38:517 CONSOLA/(9891:9895): 
+ EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:53:00:736
+Fecha de fin de ejecucion: 02:54:38:517
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+[INFO] 02:58:07:46 CONSOLA/(10077:10081): 
+ EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:57:43:170
+Fecha de fin de ejecucion: 02:58:07:46
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+[INFO] 02:58:18:935 CONSOLA/(10077:10085): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:57:46:529
+Fecha de fin de ejecucion: 02:58:18:935
+Tiempo total de ejecucion: 136130776Cantidad de impresiones por pantalla: 0
+[INFO] 03:00:04:67 CONSOLA/(10222:10248): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:59:09:818
+Fecha de fin de ejecucion: 03:00:04:67
+Tiempo total de ejecucion: -1239414632Cantidad de impresiones por pantalla: 0
+[INFO] 03:00:04:627 CONSOLA/(10222:10252): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:59:11:666
+Fecha de fin de ejecucion: 03:00:04:627
+Tiempo total de ejecucion: 162170008Cantidad de impresiones por pantalla: 0
+[INFO] 03:00:04:986 CONSOLA/(10222:10256): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1002) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:59:13:177
+Fecha de fin de ejecucion: 03:00:04:986
+Tiempo total de ejecucion: -1239414632Cantidad de impresiones por pantalla: 0
+[INFO] 03:00:05:329 CONSOLA/(10222:10260): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1003) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:59:14:834
+Fecha de fin de ejecucion: 03:00:05:329
+Tiempo total de ejecucion: -1237316816Cantidad de impresiones por pantalla: 0
+[INFO] 03:00:05:506 CONSOLA/(10222:10301): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1004) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:59:49:410
+Fecha de fin de ejecucion: 03:00:05:506
+Tiempo total de ejecucion: 162169872Cantidad de impresiones por pantalla: 0
+[INFO] 03:00:06:62 CONSOLA/(10222:10307): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1005) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:59:50:625
+Fecha de fin de ejecucion: 03:00:06:62
+Tiempo total de ejecucion: -1239414632Cantidad de impresiones por pantalla: 0
+[INFO] 03:00:06:239 CONSOLA/(10222:10315): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1006) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:59:51:945
+Fecha de fin de ejecucion: 03:00:06:239
+Tiempo total de ejecucion: -1237316816Cantidad de impresiones por pantalla: 0
+[INFO] 03:00:06:779 CONSOLA/(10222:10321): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1007) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:59:53:161
+Fecha de fin de ejecucion: 03:00:06:779
+Tiempo total de ejecucion: 162169016Cantidad de impresiones por pantalla: 0
+[INFO] 03:00:06:945 CONSOLA/(10222:10327): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1008) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:59:54:449
+Fecha de fin de ejecucion: 03:00:06:945
+Tiempo total de ejecucion: -1239414248Cantidad de impresiones por pantalla: 0
+[INFO] 03:01:04:768 CONSOLA/(10222:10517): 
+ Proceso (1009): 65586
+
+[INFO] 03:01:04:933 CONSOLA/(10222:10517): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1009) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 03:01:03:970
+Fecha de fin de ejecucion: 03:01:04:933
+Tiempo total de ejecucion: -1239414248Cantidad de impresiones por pantalla: 1
+[INFO] 03:01:06:232 CONSOLA/(10222:10527): 
+ Proceso (1010): 65586
+
+[INFO] 03:01:06:396 CONSOLA/(10222:10527): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1010) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 03:01:05:434
+Fecha de fin de ejecucion: 03:01:06:396
+Tiempo total de ejecucion: -1239413928Cantidad de impresiones por pantalla: 1
+[INFO] 03:01:50:271 CONSOLA/(10575:10585): 
+ Proceso (1011): 65586
+
+[INFO] 03:01:50:404 CONSOLA/(10575:10585): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1011) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 03:01:29:698
+Fecha de fin de ejecucion: 03:01:50:403
+Tiempo total de ejecucion: -1239415040Cantidad de impresiones por pantalla: 1
+[INFO] 03:01:50:624 CONSOLA/(10575:10595): 
+ Proceso (1012): 65586
+
+[INFO] 03:01:50:751 CONSOLA/(10575:10595): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1012) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 03:01:32:874
+Fecha de fin de ejecucion: 03:01:50:751
+Tiempo total de ejecucion: 166442080Cantidad de impresiones por pantalla: 1
+[INFO] 03:01:50:752 CONSOLA/(10575:10603): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1012) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 03:01:32:874
+Fecha de fin de ejecucion: 03:01:50:751
+Tiempo total de ejecucion: 166442080Cantidad de impresiones por pantalla: 1Proceso (1013): 65586
+
+[INFO] 03:01:51:69 CONSOLA/(10575:10603): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1013) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 03:01:35:346
+Fecha de fin de ejecucion: 03:01:51:69
+Tiempo total de ejecucion: -1239415040Cantidad de impresiones por pantalla: 1
+[INFO] 03:01:51:232 CONSOLA/(10575:10611): 
+ Proceso (1014): 65586
+
+[INFO] 03:01:51:355 CONSOLA/(10575:10611): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1014) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 03:01:37:227
+Fecha de fin de ejecucion: 03:01:51:355
+Tiempo total de ejecucion: -1237317064Cantidad de impresiones por pantalla: 1
+[INFO] 03:01:51:712 CONSOLA/(10575:10617): 
+ Proceso (1015): 65586
+
+[INFO] 03:01:51:838 CONSOLA/(10575:10617): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1015) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 03:01:38:594
+Fecha de fin de ejecucion: 03:01:51:838
+Tiempo total de ejecucion: 166442488Cantidad de impresiones por pantalla: 1
+[INFO] 03:01:52:191 CONSOLA/(10575:10625): 
+ Proceso (1016): 65586
+
+[INFO] 03:01:52:317 CONSOLA/(10575:10625): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1016) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 03:01:40:577
+Fecha de fin de ejecucion: 03:01:52:316
+Tiempo total de ejecucion: -1239414472Cantidad de impresiones por pantalla: 1
+[INFO] 03:01:52:671 CONSOLA/(10575:10633): 
+ Proceso (1017): 65586
+
+[INFO] 03:01:52:797 CONSOLA/(10575:10633): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1017) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 03:01:42:394
+Fecha de fin de ejecucion: 03:01:52:797
+Tiempo total de ejecucion: -1237318472Cantidad de impresiones por pantalla: 1
+=======
 >>>>>>> 31fb35040e383343556a4599e2ad47394b5418b8
+<<<<<<< HEAD
 [INFO] 01:58:54:45 CONSOLA/(8253:8257): 
  EXIT CODE: El programa intentó acceder a un archivo que no existe.
 El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
@@ -6847,3 +7451,6 @@ El Proceso (1005) ha finalizado, los siguientes son sus datos estadisticos:
 Fecha de inicio de ejecucion: 03:48:22:27
 Fecha de fin de ejecucion: 03:50:26:166
 Tiempo total de ejecucion: -1239413744Cantidad de impresiones por pantalla: 255
+=======
+>>>>>>> c3f27240a6c8583770e9e7720ea2eb4ace4362bf
+>>>>>>> ea9d52066b3793c424446f7298c22318ff89f136

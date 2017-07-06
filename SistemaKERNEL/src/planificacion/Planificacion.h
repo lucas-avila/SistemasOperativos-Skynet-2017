@@ -35,7 +35,7 @@ t_queue* cola(char * nombre);
 
 void proceso_a_NEW(Proceso * p);
 
-void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino);
+int mover_PCB_de_cola(PCB* pcb, char * origen, char * destino);
 
 CPUInfo* obtener_CPU_Disponible();
 

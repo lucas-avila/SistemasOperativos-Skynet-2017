@@ -1,3 +1,192 @@
+<<<<<<< HEAD
+[INFO] 00:05:40:390 KERNEL/(23444:23444): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:05:52:552 KERNEL/(23444:23444): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:05:53:968 KERNEL/(23444:23444): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:06:59:872 KERNEL/(23444:23444): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:11:29:590 KERNEL/(23704:23704): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:12:27:845 KERNEL/(23744:23744): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:12:50:0 KERNEL/(23744:23744): 
+***LOGS del KERNEL***
+ --- Se activó la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:13:30:713 KERNEL/(23744:23744): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:13:32:137 KERNEL/(23744:23744): 
+***LOGS del KERNEL***
+ --- Se activó la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:17:14:757 KERNEL/(23913:23913): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:17:55:510 KERNEL/(23973:23973): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:18:01:754 KERNEL/(23973:23973): 
+***LOGS del KERNEL***
+ --- Se activó la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:18:07:966 KERNEL/(23973:23973): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:19:05:511 KERNEL/(23997:23997): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:19:28:497 KERNEL/(23997:23997): 
+***LOGS del KERNEL***
+ --- Se activó la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:21:09:414 KERNEL/(24140:24140): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:21:21:737 KERNEL/(24140:24140): 
+***LOGS del KERNEL***
+ --- Se activó la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:21:35:799 KERNEL/(24140:24140): 
+***LOGS del KERNEL***
+ 
+---TABLA GLOBAL DE ARCHIVOS---
+
+ FILE 			 OPEN
+
+------Fin del LOG------
+
+[INFO] 00:27:38:305 KERNEL/(2484:2484): 
+***LOGS del KERNEL***
+ 
+---TABLA GLOBAL DE ARCHIVOS---
+
+ FILE 			 OPEN
+
+------Fin del LOG------
+
+[INFO] 00:29:16:554 KERNEL/(2564:2564): 
+***LOGS del KERNEL***
+ 
+---TABLA GLOBAL DE ARCHIVOS---
+
+ FILE 			 OPEN
+
+------Fin del LOG------
+
+[INFO] 00:32:05:55 KERNEL/(2960:2960): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:32:15:411 KERNEL/(2960:2960): 
+***LOGS del KERNEL***
+ --- Se activó la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:32:25:719 KERNEL/(2960:2960): 
+***LOGS del KERNEL***
+ 
+---TABLA GLOBAL DE ARCHIVOS---
+
+ FILE 			 OPEN
+
+------Fin del LOG------
+
+[INFO] 00:34:51:816 KERNEL/(3168:3168): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:35:14:865 KERNEL/(3168:3168): 
+***LOGS del KERNEL***
+ --- Se activó la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:36:56:738 KERNEL/(3287:3287): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:37:17:367 KERNEL/(3287:3287): 
+***LOGS del KERNEL***
+ --- Se activó la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:37:26:452 KERNEL/(3287:3287): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:37:56:550 KERNEL/(3287:3287): 
+***LOGS del KERNEL***
+ --- Se activó la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:39:47:144 KERNEL/(3287:3287): 
+=======
 [INFO] 14:10:46:843 KERNEL/(5028:5028): 
 ***LOGS del KERNEL***
  
@@ -39,10 +228,130 @@ PID 		 COLA
 ------Fin del LOG------
 
 [INFO] 14:11:13:729 KERNEL/(5028:5028): 
+>>>>>>> c3f27240a6c8583770e9e7720ea2eb4ace4362bf
 ***LOGS del KERNEL***
  
 ---------------------
 PID 		 COLA
+<<<<<<< HEAD
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXIT
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXIT
+- - - - - - - - - - - - - - - - - - -
+1002 		 EXIT
+- - - - - - - - - - - - - - - - - - -
+1003 		 EXIT
+---------------------
+---> Cantidad de procesos totales encontrados: 4
+------Fin del LOG------
+
+[INFO] 00:41:02:393 KERNEL/(3287:3287): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:41:18:235 KERNEL/(3287:3287): 
+***LOGS del KERNEL***
+ --- Se activó la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 01:08:04:857 KERNEL/(4026:4026): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 01:09:36:503 KERNEL/(4026:4026): 
+***LOGS del KERNEL***
+ --- Se activó la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 01:11:54:746 KERNEL/(4026:4026): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 01:12:33:784 KERNEL/(4026:4026): 
+***LOGS del KERNEL***
+ --- Se activó la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 01:26:15:64 KERNEL/(5097:5097): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 01:26:53:321 KERNEL/(5097:5097): 
+***LOGS del KERNEL***
+ --- Se activó la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 01:31:02:553 KERNEL/(5579:5579): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 01:31:35:906 KERNEL/(5579:5579): 
+***LOGS del KERNEL***
+ --- Se activó la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 01:38:36:433 KERNEL/(5846:5846): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 01:39:02:99 KERNEL/(5846:5846): 
+***LOGS del KERNEL***
+ --- Se activó la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 02:01:00:571 KERNEL/(6955:6955): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 02:01:02:226 KERNEL/(6955:6955): 
+***LOGS del KERNEL***
+ --- Se activó la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 02:10:26:25 KERNEL/(7274:7274): 
+***LOGS del KERNEL***
+ --> Cambio de grado de multiprogramacion a: 6
+------Fin del LOG------
+
+[INFO] 02:24:16:18 KERNEL/(8071:8071): 
+***LOGS del KERNEL***
+ --> Cambio de grado de multiprogramacion a: 6
+------Fin del LOG------
+
+[INFO] 02:51:49:182 KERNEL/(9729:9729): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXIT
+- - - - - - - - - - - - - - - - - - -
+1001 		 READY
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+=======
 ---------------------
 ---> Cantidad de procesos totales encontrados: 0
 ------Fin del LOG------
@@ -92,5 +401,6 @@ Cantidad de páginas de HEAP utilizadas: 0
 -->Logs del Proceso 1000:
 Cantidad syscalls ejecutadas: 1
 
+>>>>>>> c3f27240a6c8583770e9e7720ea2eb4ace4362bf
 ------Fin del LOG------
 

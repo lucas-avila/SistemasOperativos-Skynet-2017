@@ -7,7 +7,6 @@
 
 #include "SolicitudesUsuario.h"
 
-#include <commons/collections/list.h>
 #include <commons/log.h>
 #include <commons/string.h>
 #include <semaphore.h>
@@ -15,16 +14,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <Sharedlib/Socket.h>
 
 #include "../administrarPCB/EstadisticaProceso.h"
 #include "../administrarProcesos/Proceso.h"
+#include "../capaFILESYSTEM/TablaGlobalArchivo.h"
+#include "../capaFILESYSTEM/TablaProcesoArchivo.h"
 #include "../general/funcionesUtiles.h"
 #include "../general/Semaforo.h"
-#include "../../../Sharedlib/Sharedlib/Socket.h"
 #include "../planificacion/Planificacion.h"
 #include "../testing/TestingMenu.h"
-#include "../capaFILESYSTEM/TablaGlobalArchivo.h"
 #include "AppConfig.h"
+#include "KERNEL.h"
 
 void mostrar_menu_usuario() {
 	printf("\n******* MENU KERNEL ******");
@@ -33,7 +34,10 @@ void mostrar_menu_usuario() {
 	printf("\n 3 - Obtener la tabla global de archivos.");
 	printf("\n 4 - Modificar grado de multiprogramacion.");
 	printf("\n 5 - Finalizar proceso.");
-	printf("\n 6 - Detener la planificacion.");
+	if(configuraciones.planificacion_activa == 1)
+		printf("\n 6 - Detener la planificacion.");
+	else
+		printf("\n 6 - Activar la planificacion.");
 	printf("\n 7 - MENU TESTING.");
 	printf("\n 8 - Salir.");
 	printf("\n Opcion: ");
@@ -234,14 +238,27 @@ void modificar_grado_multiprogramacion() {
 	} while (grado_multiprog < 0);
 
 	configuraciones.GRADO_MULTIPROG = grado_multiprog;
+	int i = grado_multiprogramacion.__align;
+	printf("sem es %d\n", i);
+	for(i; i < grado_multiprog; i++)
+		sem_post(&grado_multiprogramacion);
+
 	string_append(&info_log, "--> Cambio de grado de multiprogramacion a: ");
 	string_append(&info_log, string_itoa(grado_multiprog));
 	generar_log();
 }
 
 void detener_planificacion() {
-	configuraciones.planificacion_activa = 0;
-	string_append(&info_log, "--- Se detuvo la planificacion ---\n");
+	if(configuraciones.planificacion_activa == 0){
+		configuraciones.planificacion_activa = 1;
+		atender_clientes(0, &EJECUTAR_ALGORITMO_PLANIFICACION);
+		string_append(&info_log, "--- Se activó la planificacion ---\n");
+	}
+	else{
+		configuraciones.planificacion_activa = 0;
+		string_append(&info_log, "--- Se detuvo la planificacion ---\n");
+	}
+
 	generar_log();
 }
 
@@ -272,10 +289,8 @@ void mostrar_tabla_global_archivos() {
 		open = string_itoa(elemento->open);
 		string_append(&info_log, open);
 		string_append(&info_log, "\n");
-		free(open);
+		i++;
 	}
-	generar_log();
-	free(open);
 }
 
 void atender_solicitudes_de_usuario() {

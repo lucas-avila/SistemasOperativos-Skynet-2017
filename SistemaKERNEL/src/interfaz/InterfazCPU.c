@@ -144,7 +144,7 @@ void agregar_CPU_global(int numeroConexion, pthread_t hilo) {
 	CPUInfo * cpu = malloc(sizeof(CPUInfo));
 	cpu->numeroConexion = numeroConexion;
 	cpu->hilo = hilo;
-	cpu->disponible = 1;
+	marcar_CPU_Disponible(cpu);
 	sem_wait(&mutex_lista_CPUs);
 	list_add(lista_CPUs, cpu);
 	sem_post(&mutex_lista_CPUs);

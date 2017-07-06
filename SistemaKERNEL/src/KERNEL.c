@@ -64,6 +64,11 @@ void inicializar_semaforos(){
 	inicializar_semaforo(&mutex_cola_EXEC, 1);
 	inicializar_semaforo(&mutex_cola_WAITING, 1);
 	inicializar_semaforo(&mutex_cola_EXIT, 1);
+
+	inicializar_semaforo(&grado_multiprogramacion, configuraciones.GRADO_MULTIPROG);
+	inicializar_semaforo(&cpu_disponible, 0);
+	inicializar_semaforo(&proceso_new, 0);
+	inicializar_semaforo(&proceso_ready, 0);
 	//OTROS
 	inicializar_semaforo(&mutex_memoria, 1);
 	inicializar_semaforo(&mutex_tabla_estadistica, 1);

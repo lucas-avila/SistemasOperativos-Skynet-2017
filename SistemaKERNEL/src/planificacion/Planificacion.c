@@ -55,11 +55,16 @@ void proceso_a_NEW(Proceso * p) {
 	wait_cola(NEW);
 	queue_push(cola(NEW), p->pcb);
 	signal_cola(NEW);
+	sem_post(&proceso_new);
 }
 
-void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
+int mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 
 	Proceso * p = proceso(pcb);
+
+	//Validacion
+	if(strcmp(p->cola, origen) != 0)
+		return -1;
 
 	wait_cola(origen);
 
@@ -89,6 +94,7 @@ void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 	if (strcmp(destino, EXIT) == 0){
 		p->pcb=pcb;
 		finalizar_proceso(p);
+		sem_post(&grado_multiprogramacion);
 	}
 
 	char * cola_guardada = p->cola;
@@ -104,12 +110,19 @@ void mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 		list_add((t_list*) cola(WAITING), pcb);
 	} else
 		queue_push(cola(destino), pcb);
+
+	if(strcmp(destino, READY) == 0)
+		sem_post(&proceso_ready);
+
 	signal_cola(destino);
+
+	return 0;
 }
 
 CPUInfo* obtener_CPU_Disponible() {
 	int i = 0;
 	while (configuraciones.planificacion_activa == 1) {
+		sem_wait(&cpu_disponible);
 		sem_wait(&mutex_lista_CPUs);
 		int tamanioLista = list_size(lista_CPUs);
 		for (i = 0; i < tamanioLista; i++) {
@@ -141,27 +154,28 @@ int cantidad_procesos_en_memoria() {
 
 void planificador_largo_plazo() {
 	while (configuraciones.planificacion_activa == 1) {
-
-		if (configuraciones.GRADO_MULTIPROG > cantidad_procesos_en_memoria()) {
-			if (!queue_is_empty(cola(NEW))) {
-				PCB * pcb = queue_peek(cola(NEW));
-				char * PID = string_itoa(pcb->PID);
-				char * codigo = dictionary_get(BUFFER_CODIGO, PID);
-				procesar_programa(codigo, pcb);
-				void my_free(char * elemento){
-						free(elemento);
-					}
-				dictionary_remove_and_destroy(BUFFER_CODIGO, PID, &my_free);
-				free(PID);
-				mover_PCB_de_cola(pcb, NEW, READY);
-			}
+		sem_wait(&proceso_new);
+		sem_wait(&grado_multiprogramacion);
+		if (!queue_is_empty(cola(NEW))) {
+			PCB * pcb = queue_peek(cola(NEW));
+			char * PID = string_itoa(pcb->PID);
+			char * codigo = dictionary_get(BUFFER_CODIGO, PID);
+			procesar_programa(codigo, pcb);
+			void my_free(char * elemento){
+					free(elemento);
+				}
+			dictionary_remove_and_destroy(BUFFER_CODIGO, PID, &my_free);
+			free(PID);
+			mover_PCB_de_cola(pcb, NEW, READY);
 		}
+
 	}
 }
 
 PCB* obtener_proceso_de_cola_READY() {
 	while (configuraciones.planificacion_activa == 1) {
-		//SE CONTROLA LA MULTIPROGRAMACION DE ESTA MANERA
+		sem_wait(&proceso_ready);
+		printf("\nproceso_ready es %d\n", proceso_ready);
 		wait_cola(READY);
 		if (!queue_is_empty(cola(READY))) {
 
@@ -183,7 +197,6 @@ void enviar_PCB_Serializado_a_CPU(CPUInfo* cpu, PCB* pcb) {
 	enviar_pcb(pcb, cpu->numeroConexion);
 }
 
-//TODO: VOLVER A VERIFICAR SI ESTA FUNCION ANDA BIEN, Y SI NECESITA SEMAFOROS.
 void marcar_CPU_Ocupada(CPUInfo* cpu) {
 	if(cpu == NULL) return;
 	cpu->disponible = 0;
@@ -192,6 +205,7 @@ void marcar_CPU_Ocupada(CPUInfo* cpu) {
 
 void marcar_CPU_Disponible(CPUInfo* cpu) {
 	if(cpu == NULL) return;
+	sem_post(&cpu_disponible);
 	cpu->disponible = 1;
 	return;
 }

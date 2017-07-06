@@ -27,12 +27,11 @@ void dispatcher_FIFO() {
 
 		marcar_CPU_Ocupada(cpu);
 
-		mover_PCB_de_cola(pcb, READY, EXEC);
-
-
-		pcb->quantum_sleep= configuraciones.QUANTUM_SLEEP;
-
-
-		enviar_PCB_Serializado_a_CPU(cpu, pcb);
+		int status = mover_PCB_de_cola(pcb, READY, EXEC);
+		if(status == 0){
+			pcb->quantum_sleep= configuraciones.QUANTUM_SLEEP;
+			enviar_PCB_Serializado_a_CPU(cpu, pcb);
+		}else
+			marcar_CPU_Disponible(cpu);
 	}
 }
