@@ -445,3 +445,102 @@ PID 		 COLA
 ---> Cantidad de procesos totales encontrados: 2
 ------Fin del LOG------
 
+[INFO] 16:48:16:161 KERNEL/(3658:3658): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+
+[INFO] 17:07:56:631 KERNEL/(4362:4362): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 READY
+---------------------
+---> Cantidad de procesos totales encontrados: 1
+------Fin del LOG------
+
+[INFO] 17:28:16:300 KERNEL/(5293:5293): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 READY
+---------------------
+---> Cantidad de procesos totales encontrados: 1
+------Fin del LOG------
+
+[INFO] 17:28:26:934 KERNEL/(5293:5293): 
+***LOGS del KERNEL***
+ 
+-->Logs del Proceso 1000:
+Cantidad de rafagas ejecutadas: 0
+
+------Fin del LOG------
+
+[INFO] 17:28:29:320 KERNEL/(5293:5293): 
+***LOGS del KERNEL***
+ 
+-->Logs del Proceso 1000:
+Cantidad de páginas de HEAP utilizadas: 0
+
+------Fin del LOG------
+
+[INFO] 17:28:31:765 KERNEL/(5293:5293): 
+***LOGS del KERNEL***
+ 
+-->Logs del Proceso 1000:
+Cantidad syscalls ejecutadas: 0
+
+------Fin del LOG------
+
+[INFO] 17:28:33:710 KERNEL/(5293:5293): 
+***LOGS del KERNEL***
+ 
+-->Logs del Proceso 1000:
+
+ -----------------------------------------------------
+ TABLA PROCESO DE ARCHIVOS
+ -----------------------------------------------------
+ FD 		 GlobalFD 	 CursorBloque 	   FLAGS
+ -----------------------------------------------------
+------Fin del LOG------
+
+[INFO] 17:37:10:750 KERNEL/(5611:5613): 
+***LOGS del KERNEL***
+ Se añadio el proceso (1000) a la cola NEW.
+
+------Fin del LOG------
+
+[INFO] 17:44:36:994 KERNEL/(5821:5823): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola NEW.
+
+------Fin del LOG------
+
+[INFO] 17:45:49:336 KERNEL/(5949:5951): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola NEW.
+------Fin del LOG------
+
+[INFO] 17:45:49:856 KERNEL/(5949:5954): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola READY.
+------Fin del LOG------
+
+[INFO] 17:45:58:189 KERNEL/(5949:5951): 
+***LOGS del KERNEL***
+ Se movio el proceso (1001) a la cola NEW.
+------Fin del LOG------
+
+[INFO] 17:45:58:708 KERNEL/(5949:5954): 
+***LOGS del KERNEL***
+ Se movio el proceso (1001) a la cola READY.
+------Fin del LOG------
+

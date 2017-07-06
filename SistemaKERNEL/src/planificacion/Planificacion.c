@@ -4,14 +4,18 @@
 #include <commons/string.h>
 #include <semaphore.h>
 #include <stdbool.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <Sharedlib/Socket.h>
 
+#include "../administrarPCB/EstadisticaProceso.h"
+#include "../administrarPCB/PCBData.h"
 #include "../capaMEMORIA/AdministrarSemaforos.h"
 #include "../general/Semaforo.h"
 #include "../header/AppConfig.h"
 #include "../header/KERNEL.h"
+#include "../header/SolicitudesUsuario.h"
 #include "PlanificacionFIFO.h"
 #include "PlanificacionRR.h"
 
@@ -56,6 +60,23 @@ void proceso_a_NEW(Proceso * p) {
 	queue_push(cola(NEW), p->pcb);
 	signal_cola(NEW);
 	sem_post(&proceso_new);
+
+	// Informar mediante log.
+	informar_accion_en_log(p->PID, NEW);
+}
+
+void informar_accion_en_log(uint32_t PID, char * destino){
+	sem_wait(&escribir_log);
+	char * pid = string_new();
+	pid = string_itoa(PID);
+	string_append(&info_log, "Se movio el proceso (");
+	string_append(&info_log, pid);
+	string_append(&info_log, ") a la cola ");
+	string_append(&info_log, destino);
+	string_append(&info_log, ".");
+	sem_post(&escribir_log);
+
+	generar_log();
 }
 
 int mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
@@ -115,7 +136,7 @@ int mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 		sem_post(&proceso_ready);
 
 	signal_cola(destino);
-
+	informar_accion_en_log(pcb->PID, destino);
 	return 0;
 }
 

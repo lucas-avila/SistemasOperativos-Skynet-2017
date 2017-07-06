@@ -7602,3 +7602,9 @@ Tiempo total de ejecucion: -1239414664Cantidad de impresiones por pantalla: 1
 =======
 >>>>>>> ea9d52066b3793c424446f7298c22318ff89f136
 >>>>>>> a5e7037a47bce891d3729ddd73229793e637ac64
+[INFO] 17:29:06:337 CONSOLA/(5299:5303): 
+ EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 17:28:09:701
+Fecha de fin de ejecucion: 17:29:06:337
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0

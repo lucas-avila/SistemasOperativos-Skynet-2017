@@ -4107,3 +4107,215 @@ PATH_ARCHIVO_LOGUEO=/home/utnso/workspace/tp-2017-1c-Skynet/SistemaMEMORIA/resou
 >>>>>>> a5e7037a47bce891d3729ddd73229793e637ac64
 =======
 >>>>>>> a5e7037a47bce891d3729ddd73229793e637ac64
+[INFO] 16:58:10:902 MEMORIA/(4127:4127): 
+ Parametros de Archivo de Configuracion 
+PUERTO=8084	
+MARCOS=500	
+MARCO_SIZE=256	
+ENTRADAS_CACHE=0	
+CACHE_X_PROC=0	
+RETARDO_MEMORIA=100	
+CANTIDAD_MAXIMA_CONCURRENCIA=100	
+PATH_ARCHIVO_LOGUEO=../resource/logueo.log 
+[INFO] 16:58:10:902 MEMORIA/(4127:4127): Creando Memoria Principal...
+[INFO] 16:58:10:903 MEMORIA/(4127:4127): Memoria Principal creada correctamente.
+[INFO] 16:58:10:903 MEMORIA/(4127:4127): Creando Estructuras administrativas...
+[INFO] 16:58:10:903 MEMORIA/(4127:4127): Estructuras administrativas creadas correctamente.
+[INFO] 16:58:33:69 MEMORIA/(4180:4180): 
+ Parametros de Archivo de Configuracion 
+PUERTO=8084	
+MARCOS=500	
+MARCO_SIZE=256	
+ENTRADAS_CACHE=0	
+CACHE_X_PROC=0	
+RETARDO_MEMORIA=100	
+CANTIDAD_MAXIMA_CONCURRENCIA=100	
+PATH_ARCHIVO_LOGUEO=../resource/logueo.log 
+[INFO] 16:58:33:69 MEMORIA/(4180:4180): Creando Memoria Principal...
+[INFO] 16:58:33:69 MEMORIA/(4180:4180): Memoria Principal creada correctamente.
+[INFO] 16:58:33:69 MEMORIA/(4180:4180): Creando Estructuras administrativas...
+[INFO] 16:58:33:69 MEMORIA/(4180:4180): Estructuras administrativas creadas correctamente.
+[INFO] 16:59:20:951 MEMORIA/(4180:4190): PID 1000. Asignar Paginas Requeridas. | Cantidad Paginas: 2
+[INFO] 16:59:20:952 MEMORIA/(4180:4190): PID 1000. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 2 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 16:59:20:992 MEMORIA/(4180:4190): PID 1000. Asignar Paginas Requeridas. | Cantidad Paginas: 1
+[INFO] 16:59:20:992 MEMORIA/(4180:4190): PID 1000. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 1 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 16:59:21:71 MEMORIA/(4180:4190): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 0 | Longitud: 15 | Contenido:     wait mutexA. | Resultado: Almacenado Correctamente.
+[INFO] 16:59:21:152 MEMORIA/(4180:4190): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 15 | Longitud: 21 | Contenido:         prints n $0+1. | Resultado: Almacenado Correctamente.
+[INFO] 16:59:21:231 MEMORIA/(4180:4190): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 36 | Longitud: 17 | Contenido:     signal mutexB. | Resultado: Almacenado Correctamente.
+[INFO] 16:59:21:311 MEMORIA/(4180:4190): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 53 | Longitud: 12 | Contenido:     return 0. | Resultado: Almacenado Correctamente.
+[INFO] 16:59:21:391 MEMORIA/(4180:4190): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 65 | Longitud: 3 | Contenido: end. | Resultado: Almacenado Correctamente.
+[INFO] 16:59:21:472 MEMORIA/(4180:4190): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 68 | Longitud: 23 | Contenido:     variables f,  A,  g. | Resultado: Almacenado Correctamente.
+[INFO] 16:59:21:552 MEMORIA/(4180:4190): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 91 | Longitud: 10 | Contenido:     A = 	0. | Resultado: Almacenado Correctamente.
+[INFO] 16:59:21:631 MEMORIA/(4180:4190): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 101 | Longitud: 17 | Contenido:     !Global = 1+A. | Resultado: Almacenado Correctamente.
+[INFO] 16:59:21:712 MEMORIA/(4180:4190): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 118 | Longitud: 20 | Contenido:     prints n !Global. | Resultado: Almacenado Correctamente.
+[INFO] 16:59:21:791 MEMORIA/(4180:4190): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 138 | Longitud: 26 | Contenido:     jnz !Global Siguiente . | Resultado: Almacenado Correctamente.
+[INFO] 16:59:21:872 MEMORIA/(4180:4190): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 164 | Longitud: 12 | Contenido:     f = 8	  . | Resultado: Almacenado Correctamente.
+[INFO] 16:59:21:952 MEMORIA/(4180:4190): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 176 | Longitud: 23 | Contenido:     g <- doble !Global	. | Resultado: Almacenado Correctamente.
+[INFO] 16:59:22:32 MEMORIA/(4180:4190): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 199 | Longitud: 19 | Contenido:     io impresora 20. | Resultado: Almacenado Correctamente.
+[INFO] 16:59:22:112 MEMORIA/(4180:4190): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 218 | Longitud: 14 | Contenido:     imprimir A. | Resultado: Almacenado Correctamente.
+[INFO] 16:59:22:191 MEMORIA/(4180:4190): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 232 | Longitud: 24 | Contenido:     prints l Hola Mundo!. | Resultado: Almacenado Correctamente.
+[INFO] 16:59:22:272 MEMORIA/(4180:4190): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 256 | Longitud: 20 | Contenido:     f <- sumar1 &g		. | Resultado: CONTENIDO_NO_ENTRA_EN_PAGINA
+[INFO] 16:59:22:351 MEMORIA/(4180:4190): PID 1000. Asignar Paginas Requeridas. | Cantidad Paginas: 1
+[INFO] 16:59:22:352 MEMORIA/(4180:4190): PID 1000. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 1 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 16:59:22:432 MEMORIA/(4180:4190): PID 1000. Resultado Almacenar bytes. Pagina: 3 | Byte Incial: 0 | Longitud: 20 | Contenido:     f <- sumar1 &g		. | Resultado: Almacenado Correctamente.
+[INFO] 16:59:22:512 MEMORIA/(4180:4190): PID 1000. Resultado Almacenar bytes. Pagina: 3 | Byte Incial: 20 | Longitud: 18 | Contenido:     prints n 		g  . | Resultado: Almacenado Correctamente.
+[INFO] 16:59:22:592 MEMORIA/(4180:4190): PID 1000. Resultado Almacenar bytes. Pagina: 3 | Byte Incial: 38 | Longitud: 3 | Contenido: end. | Resultado: Almacenado Correctamente.
+[INFO] 16:59:22:671 MEMORIA/(4180:4190): PID 1000. Resultado Almacenar bytes. Pagina: 3 | Byte Incial: 41 | Longitud: 11 | Contenido: variables f. | Resultado: Almacenado Correctamente.
+[INFO] 16:59:22:751 MEMORIA/(4180:4190): PID 1000. Resultado Almacenar bytes. Pagina: 3 | Byte Incial: 52 | Longitud: 15 | Contenido:     f = $0 + $0. | Resultado: Almacenado Correctamente.
+[INFO] 16:59:22:832 MEMORIA/(4180:4190): PID 1000. Resultado Almacenar bytes. Pagina: 3 | Byte Incial: 67 | Longitud: 12 | Contenido:     return f. | Resultado: Almacenado Correctamente.
+[INFO] 16:59:22:912 MEMORIA/(4180:4190): PID 1000. Resultado Almacenar bytes. Pagina: 3 | Byte Incial: 79 | Longitud: 3 | Contenido: end. | Resultado: Almacenado Correctamente.
+[INFO] 16:59:22:992 MEMORIA/(4180:4190): PID 1000. Resultado Almacenar bytes. Pagina: 3 | Byte Incial: 82 | Longitud: 13 | Contenido: *$0 = 1 + *$0. | Resultado: Almacenado Correctamente.
+[INFO] 16:59:23:71 MEMORIA/(4180:4190): PID 1000. Resultado Almacenar bytes. Pagina: 3 | Byte Incial: 95 | Longitud: 12 | Contenido:     return 1. | Resultado: Almacenado Correctamente.
+[INFO] 16:59:23:152 MEMORIA/(4180:4190): PID 1000. Resultado Almacenar bytes. Pagina: 3 | Byte Incial: 107 | Longitud: 3 | Contenido: end. | Resultado: Almacenado Correctamente.
+[INFO] 17:02:39:14 MEMORIA/(4246:4246): 
+ Parametros de Archivo de Configuracion 
+PUERTO=8084	
+MARCOS=500	
+MARCO_SIZE=256	
+ENTRADAS_CACHE=0	
+CACHE_X_PROC=0	
+RETARDO_MEMORIA=100	
+CANTIDAD_MAXIMA_CONCURRENCIA=100	
+PATH_ARCHIVO_LOGUEO=../resource/logueo.log 
+[INFO] 17:02:39:22 MEMORIA/(4246:4246): Creando Memoria Principal...
+[INFO] 17:02:39:22 MEMORIA/(4246:4246): Memoria Principal creada correctamente.
+[INFO] 17:02:39:22 MEMORIA/(4246:4246): Creando Estructuras administrativas...
+[INFO] 17:02:39:22 MEMORIA/(4246:4246): Estructuras administrativas creadas correctamente.
+[INFO] 17:02:59:835 MEMORIA/(4246:4258): PID 1000. Asignar Paginas Requeridas. | Cantidad Paginas: 2
+[INFO] 17:02:59:836 MEMORIA/(4246:4258): PID 1000. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 2 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 17:02:59:875 MEMORIA/(4246:4258): PID 1000. Asignar Paginas Requeridas. | Cantidad Paginas: 1
+[INFO] 17:02:59:876 MEMORIA/(4246:4258): PID 1000. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 1 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 17:02:59:956 MEMORIA/(4246:4258): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 0 | Longitud: 6 | Contenido: wait c. | Resultado: Almacenado Correctamente.
+[INFO] 17:03:00:35 MEMORIA/(4246:4258): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 6 | Longitud: 13 | Contenido: 	print !colas. | Resultado: Almacenado Correctamente.
+[INFO] 17:03:00:116 MEMORIA/(4246:4258): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 19 | Longitud: 8 | Contenido: signal b. | Resultado: Almacenado Correctamente.
+[INFO] 17:03:00:196 MEMORIA/(4246:4258): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 27 | Longitud: 13 | Contenido: goto etiqueta. | Resultado: Almacenado Correctamente.
+[INFO] 17:03:00:276 MEMORIA/(4246:4258): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 40 | Longitud: 3 | Contenido: end. | Resultado: Almacenado Correctamente.
+[INFO] 17:07:25:152 MEMORIA/(4356:4356): 
+ Parametros de Archivo de Configuracion 
+PUERTO=8084	
+MARCOS=500	
+MARCO_SIZE=256	
+ENTRADAS_CACHE=0	
+CACHE_X_PROC=0	
+RETARDO_MEMORIA=100	
+CANTIDAD_MAXIMA_CONCURRENCIA=100	
+PATH_ARCHIVO_LOGUEO=../resource/logueo.log 
+[INFO] 17:07:25:159 MEMORIA/(4356:4356): Creando Memoria Principal...
+[INFO] 17:07:25:160 MEMORIA/(4356:4356): Memoria Principal creada correctamente.
+[INFO] 17:07:25:160 MEMORIA/(4356:4356): Creando Estructuras administrativas...
+[INFO] 17:07:25:160 MEMORIA/(4356:4356): Estructuras administrativas creadas correctamente.
+[INFO] 17:07:39:376 MEMORIA/(4356:4366): PID 1000. Asignar Paginas Requeridas. | Cantidad Paginas: 2
+[INFO] 17:07:39:377 MEMORIA/(4356:4366): PID 1000. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 2 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 17:07:39:415 MEMORIA/(4356:4366): PID 1000. Asignar Paginas Requeridas. | Cantidad Paginas: 1
+[INFO] 17:07:39:416 MEMORIA/(4356:4366): PID 1000. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 1 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 17:07:39:496 MEMORIA/(4356:4366): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 0 | Longitud: 6 | Contenido: wait c. | Resultado: Almacenado Correctamente.
+[INFO] 17:07:39:575 MEMORIA/(4356:4366): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 6 | Longitud: 13 | Contenido: 	print !colas. | Resultado: Almacenado Correctamente.
+[INFO] 17:07:39:656 MEMORIA/(4356:4366): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 19 | Longitud: 8 | Contenido: signal b. | Resultado: Almacenado Correctamente.
+[INFO] 17:07:39:736 MEMORIA/(4356:4366): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 27 | Longitud: 13 | Contenido: goto etiqueta. | Resultado: Almacenado Correctamente.
+[INFO] 17:07:39:815 MEMORIA/(4356:4366): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 40 | Longitud: 3 | Contenido: end. | Resultado: Almacenado Correctamente.
+[INFO] 17:27:56:564 MEMORIA/(5287:5287): 
+ Parametros de Archivo de Configuracion 
+PUERTO=8084	
+MARCOS=500	
+MARCO_SIZE=256	
+ENTRADAS_CACHE=0	
+CACHE_X_PROC=0	
+RETARDO_MEMORIA=100	
+CANTIDAD_MAXIMA_CONCURRENCIA=100	
+PATH_ARCHIVO_LOGUEO=../resource/logueo.log 
+[INFO] 17:27:56:564 MEMORIA/(5287:5287): Creando Memoria Principal...
+[INFO] 17:27:56:564 MEMORIA/(5287:5287): Memoria Principal creada correctamente.
+[INFO] 17:27:56:565 MEMORIA/(5287:5287): Creando Estructuras administrativas...
+[INFO] 17:27:56:565 MEMORIA/(5287:5287): Estructuras administrativas creadas correctamente.
+[INFO] 17:28:09:740 MEMORIA/(5287:5297): PID 1000. Asignar Paginas Requeridas. | Cantidad Paginas: 2
+[INFO] 17:28:09:740 MEMORIA/(5287:5297): PID 1000. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 2 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 17:28:09:779 MEMORIA/(5287:5297): PID 1000. Asignar Paginas Requeridas. | Cantidad Paginas: 1
+[INFO] 17:28:09:780 MEMORIA/(5287:5297): PID 1000. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 1 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 17:28:09:860 MEMORIA/(5287:5297): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 0 | Longitud: 6 | Contenido: wait c. | Resultado: Almacenado Correctamente.
+[INFO] 17:28:09:940 MEMORIA/(5287:5297): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 6 | Longitud: 13 | Contenido: 	print !colas. | Resultado: Almacenado Correctamente.
+[INFO] 17:28:10:20 MEMORIA/(5287:5297): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 19 | Longitud: 8 | Contenido: signal b. | Resultado: Almacenado Correctamente.
+[INFO] 17:28:10:99 MEMORIA/(5287:5297): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 27 | Longitud: 13 | Contenido: goto etiqueta. | Resultado: Almacenado Correctamente.
+[INFO] 17:28:10:179 MEMORIA/(5287:5297): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 40 | Longitud: 3 | Contenido: end. | Resultado: Almacenado Correctamente.
+[INFO] 17:29:06:335 MEMORIA/(5287:5297): PID 1000. Finalizar Programa
+[INFO] 17:29:06:335 MEMORIA/(5287:5297): PID 1000. Almacenar bytes. Pagina: 1 | Byte Incial: 0 | Longitud: 256 | Contenido: ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------.
+[INFO] 17:29:06:335 MEMORIA/(5287:5297): PID 1000. Almacenar bytes. Pagina: 0 | Byte Incial: 0 | Longitud: 256 | Contenido: ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------.
+[INFO] 17:29:06:336 MEMORIA/(5287:5297): PID 1000. Almacenar bytes. Pagina: 2 | Byte Incial: 0 | Longitud: 256 | Contenido: ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------.
+[INFO] 17:29:06:336 MEMORIA/(5287:5297): PID 1000. Programa Finalizado Correctamente
+[INFO] 17:36:59:543 MEMORIA/(5605:5605): 
+ Parametros de Archivo de Configuracion 
+PUERTO=8084	
+MARCOS=500	
+MARCO_SIZE=256	
+ENTRADAS_CACHE=0	
+CACHE_X_PROC=0	
+RETARDO_MEMORIA=100	
+CANTIDAD_MAXIMA_CONCURRENCIA=100	
+PATH_ARCHIVO_LOGUEO=../resource/logueo.log 
+[INFO] 17:36:59:543 MEMORIA/(5605:5605): Creando Memoria Principal...
+[INFO] 17:36:59:543 MEMORIA/(5605:5605): Memoria Principal creada correctamente.
+[INFO] 17:36:59:543 MEMORIA/(5605:5605): Creando Estructuras administrativas...
+[INFO] 17:36:59:543 MEMORIA/(5605:5605): Estructuras administrativas creadas correctamente.
+[INFO] 17:37:10:787 MEMORIA/(5605:5615): PID 1000. Asignar Paginas Requeridas. | Cantidad Paginas: 2
+[INFO] 17:37:10:788 MEMORIA/(5605:5615): PID 1000. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 2 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 17:37:10:827 MEMORIA/(5605:5615): PID 1000. Asignar Paginas Requeridas. | Cantidad Paginas: 1
+[INFO] 17:37:10:827 MEMORIA/(5605:5615): PID 1000. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 1 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 17:37:10:908 MEMORIA/(5605:5615): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 0 | Longitud: 6 | Contenido: wait c. | Resultado: Almacenado Correctamente.
+[INFO] 17:37:10:988 MEMORIA/(5605:5615): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 6 | Longitud: 13 | Contenido: 	print !colas. | Resultado: Almacenado Correctamente.
+[INFO] 17:37:11:67 MEMORIA/(5605:5615): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 19 | Longitud: 8 | Contenido: signal b. | Resultado: Almacenado Correctamente.
+[INFO] 17:37:11:148 MEMORIA/(5605:5615): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 27 | Longitud: 13 | Contenido: goto etiqueta. | Resultado: Almacenado Correctamente.
+[INFO] 17:37:11:228 MEMORIA/(5605:5615): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 40 | Longitud: 3 | Contenido: end. | Resultado: Almacenado Correctamente.
+[INFO] 17:44:26:93 MEMORIA/(5815:5815): 
+ Parametros de Archivo de Configuracion 
+PUERTO=8084	
+MARCOS=500	
+MARCO_SIZE=256	
+ENTRADAS_CACHE=0	
+CACHE_X_PROC=0	
+RETARDO_MEMORIA=100	
+CANTIDAD_MAXIMA_CONCURRENCIA=100	
+PATH_ARCHIVO_LOGUEO=../resource/logueo.log 
+[INFO] 17:44:26:93 MEMORIA/(5815:5815): Creando Memoria Principal...
+[INFO] 17:44:26:94 MEMORIA/(5815:5815): Memoria Principal creada correctamente.
+[INFO] 17:44:26:94 MEMORIA/(5815:5815): Creando Estructuras administrativas...
+[INFO] 17:44:26:94 MEMORIA/(5815:5815): Estructuras administrativas creadas correctamente.
+[INFO] 17:44:37:32 MEMORIA/(5815:5825): PID 1000. Asignar Paginas Requeridas. | Cantidad Paginas: 2
+[INFO] 17:44:37:32 MEMORIA/(5815:5825): PID 1000. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 2 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 17:44:37:72 MEMORIA/(5815:5825): PID 1000. Asignar Paginas Requeridas. | Cantidad Paginas: 1
+[INFO] 17:44:37:72 MEMORIA/(5815:5825): PID 1000. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 1 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 17:44:37:152 MEMORIA/(5815:5825): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 0 | Longitud: 6 | Contenido: wait c. | Resultado: Almacenado Correctamente.
+[INFO] 17:44:37:231 MEMORIA/(5815:5825): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 6 | Longitud: 13 | Contenido: 	print !colas. | Resultado: Almacenado Correctamente.
+[INFO] 17:44:37:312 MEMORIA/(5815:5825): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 19 | Longitud: 8 | Contenido: signal b. | Resultado: Almacenado Correctamente.
+[INFO] 17:44:37:392 MEMORIA/(5815:5825): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 27 | Longitud: 13 | Contenido: goto etiqueta. | Resultado: Almacenado Correctamente.
+[INFO] 17:44:37:472 MEMORIA/(5815:5825): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 40 | Longitud: 3 | Contenido: end. | Resultado: Almacenado Correctamente.
+[INFO] 17:45:35:177 MEMORIA/(5941:5941): 
+ Parametros de Archivo de Configuracion 
+PUERTO=8084	
+MARCOS=500	
+MARCO_SIZE=256	
+ENTRADAS_CACHE=0	
+CACHE_X_PROC=0	
+RETARDO_MEMORIA=100	
+CANTIDAD_MAXIMA_CONCURRENCIA=100	
+PATH_ARCHIVO_LOGUEO=../resource/logueo.log 
+[INFO] 17:45:35:177 MEMORIA/(5941:5941): Creando Memoria Principal...
+[INFO] 17:45:35:177 MEMORIA/(5941:5941): Memoria Principal creada correctamente.
+[INFO] 17:45:35:177 MEMORIA/(5941:5941): Creando Estructuras administrativas...
+[INFO] 17:45:35:177 MEMORIA/(5941:5941): Estructuras administrativas creadas correctamente.
+[INFO] 17:45:49:376 MEMORIA/(5941:5953): PID 1000. Asignar Paginas Requeridas. | Cantidad Paginas: 2
+[INFO] 17:45:49:376 MEMORIA/(5941:5953): PID 1000. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 2 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 17:45:49:415 MEMORIA/(5941:5953): PID 1000. Asignar Paginas Requeridas. | Cantidad Paginas: 1
+[INFO] 17:45:49:415 MEMORIA/(5941:5953): PID 1000. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 1 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 17:45:49:496 MEMORIA/(5941:5953): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 0 | Longitud: 6 | Contenido: wait c. | Resultado: Almacenado Correctamente.
+[INFO] 17:45:49:576 MEMORIA/(5941:5953): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 6 | Longitud: 13 | Contenido: 	print !colas. | Resultado: Almacenado Correctamente.
+[INFO] 17:45:49:656 MEMORIA/(5941:5953): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 19 | Longitud: 8 | Contenido: signal b. | Resultado: Almacenado Correctamente.
+[INFO] 17:45:49:736 MEMORIA/(5941:5953): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 27 | Longitud: 13 | Contenido: goto etiqueta. | Resultado: Almacenado Correctamente.
+[INFO] 17:45:49:816 MEMORIA/(5941:5953): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 40 | Longitud: 3 | Contenido: end. | Resultado: Almacenado Correctamente.
+[INFO] 17:45:58:228 MEMORIA/(5941:5953): PID 1001. Asignar Paginas Requeridas. | Cantidad Paginas: 2
+[INFO] 17:45:58:228 MEMORIA/(5941:5953): PID 1001. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 2 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 17:45:58:267 MEMORIA/(5941:5953): PID 1001. Asignar Paginas Requeridas. | Cantidad Paginas: 1
+[INFO] 17:45:58:268 MEMORIA/(5941:5953): PID 1001. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 1 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 17:45:58:347 MEMORIA/(5941:5953): PID 1001. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 0 | Longitud: 6 | Contenido: wait b. | Resultado: Almacenado Correctamente.
+[INFO] 17:45:58:428 MEMORIA/(5941:5953): PID 1001. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 6 | Longitud: 19 | Contenido: 	!colas = !colas +1. | Resultado: Almacenado Correctamente.
+[INFO] 17:45:58:507 MEMORIA/(5941:5953): PID 1001. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 25 | Longitud: 8 | Contenido: signal c. | Resultado: Almacenado Correctamente.
+[INFO] 17:45:58:588 MEMORIA/(5941:5953): PID 1001. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 33 | Longitud: 13 | Contenido: goto etiqueta. | Resultado: Almacenado Correctamente.
+[INFO] 17:45:58:668 MEMORIA/(5941:5953): PID 1001. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 46 | Longitud: 3 | Contenido: end. | Resultado: Almacenado Correctamente.
