@@ -76,7 +76,7 @@ void transformarFecha(char * fecha, int vectorFecha[4]) {
 	int i;
 	char ** matrizFechas = string_split(fecha, ":");
 
-	for(i = 0; i < 4; i++) {
+	for(i = 0, i < 4, i++) {
 		vectorFecha[i] = atoi(matrizFechas[i]);
 	}
 }
