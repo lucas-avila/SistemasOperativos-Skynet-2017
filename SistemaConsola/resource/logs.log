@@ -7454,6 +7454,7 @@ Tiempo total de ejecucion: -1239413744Cantidad de impresiones por pantalla: 255
 =======
 >>>>>>> c3f27240a6c8583770e9e7720ea2eb4ace4362bf
 <<<<<<< HEAD
+<<<<<<< HEAD
 [INFO] 13:20:43:823 CONSOLA/(11038:11054): 
  EXIT CODE: El programa finalizo correctamente.
 El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
@@ -7595,6 +7596,9 @@ Tiempo total de ejecucion: -1239414664Cantidad de impresiones por pantalla: 1
 [INFO] 13:59:48:544 CONSOLA/(13175:13179): 
  Proceso (1000): 808529968
 
+=======
+>>>>>>> ea9d52066b3793c424446f7298c22318ff89f136
+>>>>>>> a5e7037a47bce891d3729ddd73229793e637ac64
 =======
 >>>>>>> ea9d52066b3793c424446f7298c22318ff89f136
 >>>>>>> a5e7037a47bce891d3729ddd73229793e637ac64

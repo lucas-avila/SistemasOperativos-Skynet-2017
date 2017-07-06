@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [INFO] 20:59:36:193 MEMORIA/(3461:3461): 
 
 Contenido Administrativo de la Memoria: 
@@ -4102,5 +4103,7 @@ PATH_ARCHIVO_LOGUEO=/home/utnso/workspace/tp-2017-1c-Skynet/SistemaMEMORIA/resou
 [INFO] 13:59:49:816 MEMORIA/(13163:13182): PID 1000. Resultado Solicitar bytes. Pagina: 3 | Byte Incial: 0 | Longitud solicitada: 4 | Contenido : 0010 .
 [INFO] 13:59:49:896 MEMORIA/(13163:13182): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 118 | Longitud solicitada: 3 .
 [INFO] 13:59:49:896 MEMORIA/(13163:13182): PID 1000. Resultado Solicitar bytes. Pagina: 2 | Byte Incial: 118 | Longitud solicitada: 3 | Contenido : end .
+=======
+>>>>>>> a5e7037a47bce891d3729ddd73229793e637ac64
 =======
 >>>>>>> a5e7037a47bce891d3729ddd73229793e637ac64
