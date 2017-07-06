@@ -73,10 +73,9 @@ void generar_log(){
 }
 
 void transformarFecha(char * fecha, int vectorFecha[4]) {
-	int i;
-	char ** matrizFechas = string_split(fecha, ":");
+	char ** matrizFechas ** = string_split(fecha, ":");
 
-	for(i = 0; i < 4; i++) {
+	for(int i = 0, i < 4, i++) {
 		vectorFecha[i] = atoi(matrizFechas[i]);
 	}
 }
@@ -123,6 +122,7 @@ char * diferencia_entre_tiempos(char * tiempo_A, char * tiempo_B) {
 	string_append(&diferencia_temporal, string_itoa(diferenciaSegundo));
 	string_append(&diferencia_temporal, ":");
 	string_append(&diferencia_temporal, string_itoa(diferenciaMilisegundo));
+	string_append(&diferencia_temporal, "\0");
 
 	return diferencia_temporal;
 }

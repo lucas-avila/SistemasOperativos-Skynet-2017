@@ -72,46 +72,42 @@ void generar_log(){
     strcpy(info_log, "");
 }
 
-void transformarFecha(char * fecha, int vectorFecha[4]) {
-	int i;
-	char ** matrizFechas = string_split(fecha, ":");
-
-	for(i = 0; i < 4; i++) {
-		vectorFecha[i] = atoi(matrizFechas[i]);
-	}
-}
-
 char * diferencia_entre_tiempos(char * tiempo_A, char * tiempo_B) {
 	char * diferencia_temporal = string_new();
-	int vectorTiempo_A[4];
-	int vectorTiempo_B[4];
 
-	transformarFecha(tiempo_A, vectorTiempo_A);
-	transformarFecha(tiempo_B, vectorTiempo_B);
+	char horaA[2] = {tiempo_A[0], tiempo_A[1]};
+	char minutoA[2] = {tiempo_A[3], tiempo_A[4]};
+	char segundoA[2] = {tiempo_A[6], tiempo_A[7]};
+	char milisegundoA[2] = {tiempo_A[9], tiempo_A[10], tiempo_A[11]};
+
+	char horaB[2] = {tiempo_B[0], tiempo_B[1]};
+	char minutoB[2] = {tiempo_B[3], tiempo_B[4]};
+	char segundoB[2] = {tiempo_B[6], tiempo_B[7]};
+	char milisegundoB[2] = {tiempo_B[3], tiempo_B[4], tiempo_B[11]};
 
 	int a = 0;
 	int b = 0;
 	int c = 0;
 
-	int diferenciaMilisegundo = vectorTiempo_B[3] - vectorTiempo_A[3];
+	int diferenciaMilisegundo = atoi(milisegundoB) - atoi(milisegundoA);
 	if(diferenciaMilisegundo < 0) {
 		diferenciaMilisegundo = diferenciaMilisegundo + 1000;
 		c = -1;
 	}
 
-	int diferenciaSegundo = vectorTiempo_B[2] - vectorTiempo_A[2] + c;
+	int diferenciaSegundo = atoi(segundoB) - atoi(segundoA) + c;
 	if(diferenciaSegundo < 0) {
 		diferenciaSegundo = diferenciaSegundo + 60;
 		b = -1;
 	}
 
-	int diferenciaMinuto = vectorTiempo_B[1] - vectorTiempo_A[1] + b;
+	int diferenciaMinuto = atoi(minutoB) - atoi(minutoA) + b;
 	if(diferenciaMinuto < 0) {
 		diferenciaMinuto = diferenciaMinuto + 60;
 		a = -1;
 	}
 
-	int diferenciaHora = vectorTiempo_B[0] - vectorTiempo_A[0] + a;
+	int diferenciaHora = atoi(horaB) - atoi(horaA) + a;
 	if(diferenciaHora < 0) {
 		diferenciaHora = diferenciaHora + 24;
 	}
@@ -123,6 +119,7 @@ char * diferencia_entre_tiempos(char * tiempo_A, char * tiempo_B) {
 	string_append(&diferencia_temporal, string_itoa(diferenciaSegundo));
 	string_append(&diferencia_temporal, ":");
 	string_append(&diferencia_temporal, string_itoa(diferenciaMilisegundo));
+	string_append(&diferencia_temporal, "\0");
 
 	return diferencia_temporal;
 }

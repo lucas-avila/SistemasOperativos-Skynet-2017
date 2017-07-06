@@ -1,6 +1,20 @@
-22:47:21 **** Incremental Build of configuration Debug for project SistemaConsola ****
+17:36:53 **** Incremental Build of configuration Debug for project SistemaConsola ****
 make all 
-make: No se hace nada para «all».
+Building file: ../src/funcionesUtiles.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/funcionesUtiles.d" -MT"src/funcionesUtiles.d" -o "src/funcionesUtiles.o" "../src/funcionesUtiles.c"
+../src/funcionesUtiles.c: In function ‘generar_log’:
+../src/funcionesUtiles.c:72:5: warning: implicit declaration of function ‘strcpy’ [-Wimplicit-function-declaration]
+     strcpy(info_log, "");
+     ^
+../src/funcionesUtiles.c:72:5: warning: incompatible implicit declaration of built-in function ‘strcpy’ [enabled by default]
+Finished building: ../src/funcionesUtiles.c
+ 
+Building target: SistemaConsola
+Invoking: GCC C Linker
+gcc -L"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug" -o "SistemaConsola"  ./src/header/AppConfig.o  ./src/CONSOLA.o ./src/Estructuras.o ./src/ExitCodes.o ./src/InterfazKernel.o ./src/Semaforo.o ./src/funcionesUtiles.o   -lSharedlib -lpthread -lcommons
+Finished building target: SistemaConsola
+ 
 
-22:47:21 Build Finished (took 175ms)
+17:36:53 Build Finished (took 324ms)
 
