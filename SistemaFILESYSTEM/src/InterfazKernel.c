@@ -141,7 +141,18 @@ void obtener_datos(char * path, int offset, int size){
 		texto_leido[x] = '\0';
 		free(archivo);
 	}
-	printf("El texto leido es : %s\n", texto_leido);
+
+	if(strlen(texto_leido)<1){
+		int indiceEspacio= 0;
+	//for( indiceEspacio= 0; indiceEspacio<size;indiceEspacio++){
+		   texto_leido[indiceEspacio]= ' ';
+	//	}
+		//texto_leido[size]= '\0';
+		   texto_leido[1]= '\0';
+
+	}
+	//printf("El texto leido es : %s\n", texto_leido);
+
 	enviar_dato_serializado(texto_leido, clienteKernel);
 	free(texto_leido);
 	free(path_abs);

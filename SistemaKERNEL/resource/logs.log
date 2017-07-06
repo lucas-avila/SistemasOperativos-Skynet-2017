@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [INFO] 00:05:40:390 KERNEL/(23444:23444): 
 ***LOGS del KERNEL***
  --- Se detuvo la planificacion ---
@@ -185,10 +186,54 @@
 ------Fin del LOG------
 
 [INFO] 00:39:47:144 KERNEL/(3287:3287): 
+=======
+[INFO] 14:10:46:843 KERNEL/(5028:5028): 
 ***LOGS del KERNEL***
  
 ---------------------
 PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 1
+------Fin del LOG------
+
+[INFO] 14:11:04:712 KERNEL/(5028:5028): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 1
+------Fin del LOG------
+
+[INFO] 14:11:07:262 KERNEL/(5028:5028): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+
+[INFO] 14:11:11:612 KERNEL/(5028:5028): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+
+[INFO] 14:11:13:729 KERNEL/(5028:5028): 
+>>>>>>> c3f27240a6c8583770e9e7720ea2eb4ace4362bf
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+<<<<<<< HEAD
 - - - - - - - - - - - - - - - - - - -
 1000 		 EXIT
 - - - - - - - - - - - - - - - - - - -
@@ -306,5 +351,56 @@ PID 		 COLA
 1001 		 READY
 ---------------------
 ---> Cantidad de procesos totales encontrados: 2
+=======
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+
+[INFO] 14:11:14:736 KERNEL/(5028:5028): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+
+[INFO] 14:13:54:800 KERNEL/(5112:5112): 
+***LOGS del KERNEL***
+ 
+-->Logs del Proceso 1000:
+Cantidad de rafagas ejecutadas: 0
+
+------Fin del LOG------
+
+[INFO] 14:13:57:136 KERNEL/(5112:5112): 
+***LOGS del KERNEL***
+ 
+-->Logs del Proceso 1000:
+
+ -----------------------------------------------------
+ TABLA PROCESO DE ARCHIVOS
+ -----------------------------------------------------
+ FD 		 GlobalFD 	 CursorBloque 	   FLAGS
+ -----------------------------------------------------
+ 3 		 0  		 0 		 CLE
+ 4 		 1  		 0 		 CLE
+------Fin del LOG------
+
+[INFO] 14:14:16:253 KERNEL/(5112:5112): 
+***LOGS del KERNEL***
+ 
+-->Logs del Proceso 1000:
+Cantidad de páginas de HEAP utilizadas: 0
+
+------Fin del LOG------
+
+[INFO] 14:14:23:219 KERNEL/(5112:5112): 
+***LOGS del KERNEL***
+ 
+-->Logs del Proceso 1000:
+Cantidad syscalls ejecutadas: 1
+
+>>>>>>> c3f27240a6c8583770e9e7720ea2eb4ace4362bf
 ------Fin del LOG------
 

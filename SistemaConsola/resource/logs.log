@@ -2114,6 +2114,152 @@ El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos:
 Fecha de inicio de ejecucion: 00:34:54:606
 Fecha de fin de ejecucion: 00:34:56:462
 Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+<<<<<<< HEAD
+[INFO] 00:39:09:350 CONSOLA/(13271:13278): 
+ EXIT CODE: Se intentó reservar más memoria que el tamaño de una página.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 00:39:08:103
+Fecha de fin de ejecucion: 00:39:09:349
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+[INFO] 00:39:33:257 CONSOLA/(13271:13285): 
+ EXIT CODE: El programa intentó acceder a un archivo que no existe.
+El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 00:39:31:730
+Fecha de fin de ejecucion: 00:39:33:257
+Tiempo total de ejecucion: -1239414664Cantidad de impresiones por pantalla: 0
+[INFO] 00:48:31:226 CONSOLA/(13329:13336): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 00:48:28:133
+Fecha de fin de ejecucion: 00:48:31:226
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+[INFO] 00:50:03:529 CONSOLA/(13354:13361): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 00:50:00:431
+Fecha de fin de ejecucion: 00:50:03:529
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+[INFO] 00:50:55:662 CONSOLA/(13394:13401): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 00:50:52:571
+Fecha de fin de ejecucion: 00:50:55:662
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+[INFO] 00:57:07:185 CONSOLA/(13556:13560): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 00:56:22:160
+Fecha de fin de ejecucion: 00:57:07:185
+Tiempo total de ejecucion: -1239415248Cantidad de impresiones por pantalla: 0
+[INFO] 00:57:09:866 CONSOLA/(13556:13564): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 00:56:30:462
+Fecha de fin de ejecucion: 00:57:09:866
+Tiempo total de ejecucion: 165888240Cantidad de impresiones por pantalla: 0
+[INFO] 00:57:10:225 CONSOLA/(13556:13568): 
+ EXIT CODE: Se intentó reservar más memoria que el tamaño de una página.
+El Proceso (1002) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 00:56:38:639
+Fecha de fin de ejecucion: 00:57:10:225
+Tiempo total de ejecucion: -1239415248Cantidad de impresiones por pantalla: 0
+[INFO] 00:57:10:590 CONSOLA/(13556:13572): 
+ EXIT CODE: Se intentó reservar más memoria que el tamaño de una página.
+El Proceso (1003) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 00:56:46:681
+Fecha de fin de ejecucion: 00:57:10:590
+Tiempo total de ejecucion: -1237317616Cantidad de impresiones por pantalla: 0
+[INFO] 14:07:12:118 CONSOLA/(5008:5017): 
+ EXIT CODE: El programa intentó crear un archivo que ya existe.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 14:07:10:595
+Fecha de fin de ejecucion: 14:07:12:118
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+[INFO] 14:26:34:761 CONSOLA/(5640:5647): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 14:25:21:302
+Fecha de fin de ejecucion: 14:26:34:761
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+[INFO] 14:35:54:761 CONSOLA/(5814:5834): 
+ EXIT CODE: Se intentó reservar más memoria que el tamaño de una página.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 14:35:53:598
+Fecha de fin de ejecucion: 14:35:54:761
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+[INFO] 14:42:25:329 CONSOLA/(6101:6108): 
+ EXIT CODE: El programa intentó crear un archivo que ya existe.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 14:42:24:463
+Fecha de fin de ejecucion: 14:42:25:329
+Tiempo total de ejecucion: -1240463840Cantidad de impresiones por pantalla: 0
+[INFO] 14:44:57:649 CONSOLA/(6101:6123): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 14:42:50:709
+Fecha de fin de ejecucion: 14:44:57:649
+Tiempo total de ejecucion: -1240463240Cantidad de impresiones por pantalla: 0
+[INFO] 14:49:14:285 CONSOLA/(6234:6244): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 14:45:45:271
+Fecha de fin de ejecucion: 14:49:14:285
+Tiempo total de ejecucion: -1240463824Cantidad de impresiones por pantalla: 0
+[INFO] 14:51:24:306 CONSOLA/(6349:6359): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 14:51:20:363
+Fecha de fin de ejecucion: 14:51:24:306
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+[INFO] 14:51:43:21 CONSOLA/(6349:6372): 
+ EXIT CODE: Se intentó reservar más memoria que el tamaño de una página.
+El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 14:51:41:812
+Fecha de fin de ejecucion: 14:51:43:21
+Tiempo total de ejecucion: -1239414664Cantidad de impresiones por pantalla: 0
+[INFO] 14:52:25:497 CONSOLA/(6349:6380): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1002) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 14:52:21:810
+Fecha de fin de ejecucion: 14:52:25:497
+Tiempo total de ejecucion: -1239414448Cantidad de impresiones por pantalla: 0
+[INFO] 14:52:47:73 CONSOLA/(6349:6393): 
+ EXIT CODE: El programa intentó crear un archivo que ya existe.
+El Proceso (1003) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 14:52:45:819
+Fecha de fin de ejecucion: 14:52:47:73
+Tiempo total de ejecucion: -1239414296Cantidad de impresiones por pantalla: 0
+[INFO] 14:55:06:305 CONSOLA/(6467:6477): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 14:54:30:595
+Fecha de fin de ejecucion: 14:55:06:305
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+[INFO] 14:57:03:405 CONSOLA/(6467:6521): 
+ EXIT CODE: El programa intentó crear un archivo que ya existe.
+El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 14:57:02:114
+Fecha de fin de ejecucion: 14:57:03:405
+Tiempo total de ejecucion: -1239414664Cantidad de impresiones por pantalla: 0
+[INFO] 14:59:34:626 CONSOLA/(6467:6530): 
+ EXIT CODE: El programa intentó crear un archivo que ya existe.
+El Proceso (1002) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 14:59:33:378
+Fecha de fin de ejecucion: 14:59:34:626
+Tiempo total de ejecucion: -1239414448Cantidad de impresiones por pantalla: 0
+[INFO] 15:02:29:541 CONSOLA/(6585:6592): 
+ EXIT CODE: El programa intentó crear un archivo que ya existe.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 15:02:28:47
+Fecha de fin de ejecucion: 15:02:29:541
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+[INFO] 18:26:52:57 CONSOLA/(7121:7131): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 18:26:48:125
+Fecha de fin de ejecucion: 18:26:52:57
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+=======
 [INFO] 15:39:38:436 CONSOLA/(5860:5864): 
 ***LOGS de la CONSOLA***
  EXIT CODE: El programa finalizo correctamente.
@@ -5722,6 +5868,7 @@ Tiempo total de ejecucion: -1239414520Cantidad de impresiones por pantalla: 5
 [INFO] 22:54:42:178 CONSOLA/(21983:22024): 
  Proceso (1002): 12401
 
+<<<<<<< HEAD
 [INFO] 23:45:43:829 CONSOLA/(22327:22388): 
  EXIT CODE: Se intentó reservar más memoria que el tamaño de una página.
 El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
@@ -6323,3 +6470,6 @@ El Proceso (1017) ha finalizado, los siguientes son sus datos estadisticos:
 Fecha de inicio de ejecucion: 03:01:42:394
 Fecha de fin de ejecucion: 03:01:52:797
 Tiempo total de ejecucion: -1237318472Cantidad de impresiones por pantalla: 1
+=======
+>>>>>>> 31fb35040e383343556a4599e2ad47394b5418b8
+>>>>>>> c3f27240a6c8583770e9e7720ea2eb4ace4362bf

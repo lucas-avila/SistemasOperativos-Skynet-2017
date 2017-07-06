@@ -7,7 +7,7 @@
 #include <commons/string.h>
 
 #include "AppConfig.h"
-
+#include "../general/funcionesUtiles.h"
 #include "../general/Semaforo.h"
 
 void inicializar_configuracion(char *PATH_ARCHIVO_CONFIGURACION) {
@@ -37,13 +37,16 @@ void inicializar_configuracion(char *PATH_ARCHIVO_CONFIGURACION) {
 		if (config_has_property(config, "CANTIDAD_MAXIMA_CONCURRENCIA") == true) {
 			configuraciones.CANTIDAD_MAXIMA_CONCURRENCIA = config_get_int_value(config, "CANTIDAD_MAXIMA_CONCURRENCIA");
 		}
-		configuraciones.PATH_ARCHIVO_LOG = malloc(strlen(config_get_string_value(config,"PATH_ARCHIVO_LOGUEO"))+1);
-		strcpy(configuraciones.PATH_ARCHIVO_LOG,config_get_string_value(config,"PATH_ARCHIVO_LOGUEO"));
-
-
+		configuraciones.PATH_ARCHIVO_LOG = malloc(strlen(config_get_string_value(config, "PATH_ARCHIVO_LOGUEO")) + 1);
+		strcpy(configuraciones.PATH_ARCHIVO_LOG, config_get_string_value(config, "PATH_ARCHIVO_LOGUEO"));
 
 	}
 
+	char* mensajeLogueo = string_from_format("\n Parametros de Archivo de Configuracion \nPUERTO=%d	\nMARCOS=%d	\nMARCO_SIZE=%d	\nENTRADAS_CACHE=%d	\nCACHE_X_PROC=%d	\nRETARDO_MEMORIA=%d	\nCANTIDAD_MAXIMA_CONCURRENCIA=%d	\nPATH_ARCHIVO_LOGUEO=%s ", configuraciones.PUERTO, configuraciones.MARCOS, configuraciones.MARCO_SIZE, configuraciones.ENTRADAS_CACHE, configuraciones.CACHE_X_PROC, configuraciones.RETARDO_MEMORIA, configuraciones.CANTIDAD_MAXIMA_CONCURRENCIA, configuraciones.PATH_ARCHIVO_LOG);
+	logSO(mensajeLogueo);
+	if (mensajeLogueo != NULL) {
+		free(mensajeLogueo);
+	}
 
 	config_destroy(config);
 

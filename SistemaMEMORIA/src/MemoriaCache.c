@@ -67,6 +67,7 @@ void ingresar_valor_en_cache(char* PID, int nroPagina, char* punteroAPagina) {
 }
 
 char* buscar_valor_en_cache(char* PID, int nroPagina) {
+
 	int i = 0;
 	char* valorBuscado;
 	for (i = 0; i < cantidadEntradasCache; i++) {
