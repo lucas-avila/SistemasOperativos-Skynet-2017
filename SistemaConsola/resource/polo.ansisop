@@ -1,0 +1,13 @@
+begin
+	variables a, b, c
+	c = 65586
+	b = 12345
+	a = 56
+	prints n c
+	prints n a
+	prints n b
+	prints n c
+	c = a + b
+	prints n c
+	wait poloMutex
+end

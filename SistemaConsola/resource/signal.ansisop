@@ -1,4 +1,4 @@
 #!/usr/bin/ansisop
 begin
-	signal mutex1
+	signal poloMutex
 end

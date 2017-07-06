@@ -69,6 +69,7 @@ int main(int argc, char *argv[]) {
 	} while (controlSeguir);
 
 	enviar_dato_serializado("DESCONECTAR", servidor_kernel);
+	enviar_dato_serializado("DESCONECTAR", servidor_Memoria);
 	close(servidor_kernel);
 
 	return EXIT_SUCCESS;

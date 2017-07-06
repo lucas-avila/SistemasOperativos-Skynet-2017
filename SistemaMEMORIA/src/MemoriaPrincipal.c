@@ -105,10 +105,12 @@ char* inicializar_programa(char* PID, int cantidad_paginas_requeridas) {
 
 char* solicitar_bytes_de_una_pagina(char* PID, int pagina, int byteInicial, int longitud) {
 	//1. Primero Busco en memoria Cache
-	char *contenidoPaginaBuscada = buscar_valor_en_cache(PID, pagina);
-	if (strcmp(contenidoPaginaBuscada, "No existe en Cache") != 0) {
-
-		return string_substring(contenidoPaginaBuscada, byteInicial, longitud);
+	char *paginaEnCache = buscar_valor_en_cache(PID, pagina);
+	//Inicializo contenido con todos \0 dejandole uno extra al final
+	char * contenido = calloc(longitud + 1, sizeof(char));
+	if (strcmp(paginaEnCache, "No existe en Cache") != 0) {
+		memcpy(contenido, paginaEnCache + byteInicial, longitud);
+		return contenido;
 	} else {
 		//1 b. No Existe en Memoria Cache
 		int numeroFrame = getFrame(PID, pagina);
@@ -117,7 +119,9 @@ char* solicitar_bytes_de_una_pagina(char* PID, int pagina, int byteInicial, int 
 		}
 		int numeroInicial = configuraciones.MARCO_SIZE * numeroFrame + byteInicial;
 
-		contenidoPaginaBuscada = string_substring(MEMORIA_PRINCIPAL, numeroInicial, longitud);
+		memcpy(contenido, MEMORIA_PRINCIPAL + numeroInicial, longitud);
+
+		//memcpy(contenidoPaginaBuscada, MEMORIA_PRINCIPAL + numeroInicial, sizeof(char) * longitud);
 		// Almacenar pagina en memoria cache porque no existe
 		ingresar_valor_en_cache(PID, pagina, string_substring(MEMORIA_PRINCIPAL, configuraciones.MARCO_SIZE * getFrame(PID, pagina) + byteInicial, configuraciones.MARCO_SIZE));
 
@@ -127,7 +131,7 @@ char* solicitar_bytes_de_una_pagina(char* PID, int pagina, int byteInicial, int 
 
 		//printf("\n Contenido Enviado: %s Pagina %d", contenidoPaginaBuscada,pagina);
 
-		return contenidoPaginaBuscada;
+		return contenido;
 	}
 }
 
@@ -153,26 +157,15 @@ char* almacenar_bytes_de_una_pagina(char PID[4], int pagina, int byteInicial, in
 	 * Obtengo la primer parte de todo el bloque de memoria desde la poscion cero
 	 * hasta la posición donde voy a comenzar a modificar.
 	 */
-	char* primeraParte = string_substring(MEMORIA_PRINCIPAL, 0, numeroInicial);
-	char* textoMedio;
-	if (longitud > strlen(contenido)) {
-		char* cerosLlenar = malloc(longitud + 1);
-		strcpy(cerosLlenar, "");
-		int j;
-		for (j = 0; j < longitud - strlen(contenido) ; j++) {
-			strcat(cerosLlenar, " ");
-		}
-		strcat(cerosLlenar, contenido);
-		textoMedio = cerosLlenar;
-	} else {
-		textoMedio = contenido;
-	}
+	//char* primeraParte = string_substring(MEMORIA_PRINCIPAL, 0, numeroInicial);
+	char* punteroAPosicionDondePegar = (char*) (MEMORIA_PRINCIPAL + numeroInicial);
+	printf("\n%d -- pag : %d -- byte I : %d -- long : %d\n", &(*punteroAPosicionDondePegar), pagina, byteInicial, longitud);
 
 	/***
 	 * Obtengo la segunda parte del bloque de memoria, desde la posición que corresponde
 	 * al final de espacio de memoria que voy a modificar hasta el final del string.
 	 */
-	char* segundaParte = string_substring_from(MEMORIA_PRINCIPAL, numeroFinal);
+	//char* segundaParte = string_substring_from(MEMORIA_PRINCIPAL, numeroFinal);
 
 	/**
 	 * Concateno primero la primera parte
@@ -182,22 +175,22 @@ char* almacenar_bytes_de_una_pagina(char PID[4], int pagina, int byteInicial, in
 	 * modificado.
 	 */
 
-	strcpy(MEMORIA_PRINCIPAL, "");
-	strcpy(MEMORIA_PRINCIPAL, primeraParte);
-	strcat(MEMORIA_PRINCIPAL, textoMedio);
-	strcat(MEMORIA_PRINCIPAL, segundaParte);
-	free(primeraParte);
+	//strcpy(MEMORIA_PRINCIPAL, "");
+	//strcpy(MEMORIA_PRINCIPAL, primeraParte);
+	//strcat(MEMORIA_PRINCIPAL, textoMedio);
+	memcpy(punteroAPosicionDondePegar, contenido, sizeof(char) * longitud);
 
-	free(segundaParte);
+	int * entero = punteroAPosicionDondePegar;
+	printf("\n>----EL ENTERO GUARDADO ES %d\n", *entero);
+	//strcat(MEMORIA_PRINCIPAL, segundaParte);
+	//free(primeraParte);
+
+	//free(segundaParte);
 
 	desactivar_semaforo(&semaforo_Tabla_MEMORY);
 	/**CACHE **/
-	if (cacheIr == true) {
-		//ingresar_valor_en_cache(PID, pagina, solicitar_bytes_de_una_pagina(PID, pagina, 0, configuraciones.MARCO_SIZE));
-		char* contenidoPaginaBuscada = string_substring(MEMORIA_PRINCIPAL, (configuraciones.MARCO_SIZE * numeroFrame), configuraciones.MARCO_SIZE);
-
-		ingresar_valor_en_cache(PID, pagina, contenidoPaginaBuscada);
-	}
+	if (cacheIr == true)
+		ingresar_valor_en_cache(PID, pagina, MEMORIA_PRINCIPAL + configuraciones.MARCO_SIZE * numeroFrame);
 
 
 
