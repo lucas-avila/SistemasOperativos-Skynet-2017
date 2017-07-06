@@ -23,6 +23,12 @@ sem_t mutex_cola_EXEC;
 sem_t mutex_cola_WAITING;
 sem_t mutex_cola_EXIT;
 
+//EVITAR ESPERA ACTIVA
+sem_t grado_multiprogramacion;
+sem_t cpu_disponible;
+sem_t proceso_new;
+sem_t proceso_ready;
+
 //OTROS
 sem_t mutex_memoria;
 sem_t mutex_tabla_estadistica;
