@@ -28,7 +28,7 @@ endif
 all: SistemaFILESYSTEM
 
 dependents:
-	-cd /home/utnso/2017/C/UNIVERSIDAD/PROYECTOS/ENTREGA_FINAL/Sharedlib/Debug && $(MAKE) clean all
+	-cd /home/utnso/2017/C/UNIVERSIDAD/PROYECTOS/ENTREGA_FINAL/Sharedlib/Debug && $(MAKE) all
 
 # Tool invocations
 SistemaFILESYSTEM: $(OBJS) $(USER_OBJS) /home/utnso/2017/C/UNIVERSIDAD/PROYECTOS/ENTREGA_FINAL/Sharedlib/Debug/libSharedlib.so

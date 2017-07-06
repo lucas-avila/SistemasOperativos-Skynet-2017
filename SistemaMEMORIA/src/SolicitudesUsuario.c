@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
 #include<stdbool.h>
 #include<commons/log.h>
 
@@ -12,10 +13,13 @@
 void CU_Modificar_Retardo() {
 	printf("\nIngresar nuevo retardo: ");
 	configuraciones.RETARDO_MEMORIA = validarNumeroInput(0, 100000);
+	logSO(string_from_format("Retardo Modificado. %d milisegundos", configuraciones.RETARDO_MEMORIA));
 }
 
 void CU_Limpiar_CACHE() {
+	logSO("Vaciando Memoria Cache...");
 	vaciar_tabla_memoria_cache(configuraciones.MARCO_SIZE);
+	logSO("MEMORIA CACHE VACIA.");
 }
 
 void generar_Reporte_Estructura_Por_PID() {
@@ -26,19 +30,31 @@ void generar_Reporte_Estructura_Por_PID() {
 	int i = 0;
 	int tope = configuraciones.MARCOS;
 	char* contenidoPagina;
+
+	int tamanio = configuraciones.MARCOS * configuraciones.MARCO_SIZE;
+	char * copia_memoria = malloc(tamanio);
+	int j = 0;
+	for (j=0; j < tamanio; j++) {
+		if (MEMORIA_PRINCIPAL[j] == '\0') {
+			copia_memoria[j] == '0';
+
+		} else
+			copia_memoria[j] = MEMORIA_PRINCIPAL[j];
+	}
+
 	for (i = 0; i < tope; i++) {
 		Tabla_Pagina_Invertida registro = TABLA_MEMORY[i];
 		if (strcmp(registro.PID, pidConsultar) == 0) {
 			int desde = atoi(registro.frame) * configuraciones.MARCO_SIZE;
-			int hasta = desde + configuraciones.MARCO_SIZE;
-			contenidoPagina = string_substring(MEMORIA_PRINCIPAL, desde, hasta);
-			//printf("\n%s", contenidoPagina);
-			t_log* logger = log_create(configuraciones.PATH_ARCHIVO_LOG, "MEMORIA", true, LOG_LEVEL_INFO);
-			log_info(logger, "\nProceso %s pagina %s ", contenidoPagina, pidConsultar, registro.pagina);
-			log_destroy(logger);
+
+			contenidoPagina = string_substring(copia_memoria, desde, configuraciones.MARCO_SIZE);
+
+			logSO(string_from_format("Proceso: %s | Pagina: %s | Contenido: %s ", pidConsultar, registro.pagina, contenidoPagina));
 
 		}
 	}
+
+	free(copia_memoria);
 
 }
 
@@ -85,15 +101,14 @@ void generar_Reporte_Contenido_de_Memoria() {
 	int tamanio = configuraciones.MARCOS * configuraciones.MARCO_SIZE;
 	char * copia_memoria = malloc(tamanio);
 	int j = 0;
-	for(j; j < tamanio; j++){
-		if(MEMORIA_PRINCIPAL[j] == '\0'){
+	for (j; j < tamanio; j++) {
+		if (MEMORIA_PRINCIPAL[j] == '\0') {
 			copia_memoria[j] == '0';
-			printf("aaa\n");
-		}
-		else
+
+		} else
 			copia_memoria[j] = MEMORIA_PRINCIPAL[j];
 	}
-	printf("\n%s", copia_memoria);
+	logSO(string_from_format("Contenido de la MEMORIA: %s", copia_memoria));
 	free(copia_memoria);
 	//t_log* logger = log_create(configuraciones.PATH_ARCHIVO_LOG, "MEMORIA", false, LOG_LEVEL_INFO);
 	//log_info(logger, "\nContenido de la Memoria %s", copia_memoria);
