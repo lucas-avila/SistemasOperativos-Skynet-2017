@@ -114,7 +114,7 @@ void mover_cursor_archivo(clienteCPU){
 
 	enviar_dato_serializado(respuesta, clienteCPU);
 	free(PID);
-	free(respuesta);
+	//free(respuesta);
 }
 
 void leer_archivo(clienteCPU){
@@ -126,7 +126,7 @@ void leer_archivo(clienteCPU){
 
 	enviar_dato_serializado(respuesta, clienteCPU);
 	free(PID);
-	free(respuesta);
+	//free(respuesta);
 }
 void escribir_archivo(clienteCPU){
 	char * PID = recibir_dato_serializado(clienteCPU);
@@ -143,7 +143,7 @@ void escribir_archivo(clienteCPU){
 		enviar_dato_serializado(respuesta, clienteCPU);
 	}
 	free(PID);
-	free(respuesta);
+	//free(respuesta);
 	free(contenido);
 }
 
@@ -155,7 +155,7 @@ void cerrar_archivo(clienteCPU){
 
 	enviar_dato_serializado(respuesta, clienteCPU);
 	free(PID);
-	free(respuesta);
+	//free(respuesta);
 }
 
 void borrar_archivo(clienteCPU){
@@ -167,5 +167,5 @@ void borrar_archivo(clienteCPU){
 	enviar_dato_serializado(respuesta, clienteCPU);
 	free(PID);
 	free(rutaArchivo);
-	free(respuesta);
+	//free(respuesta);
 }

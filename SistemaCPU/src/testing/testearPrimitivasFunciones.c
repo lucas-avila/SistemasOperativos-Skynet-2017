@@ -53,7 +53,7 @@ void crear_PCB_TEST() {
 		indiceInicial = indiceInicial + strlen(sentencias[i]);
 		list_add(pcbDePrueba->codigo, indiceNuevo);
 
-		almacenar_Bytes_de_Pagina(string_itoa(pcbDePrueba->PID), string_itoa(indiceNuevo->pagina), string_itoa(indiceNuevo->byte_inicial_codigo), string_itoa(indiceNuevo->byte_final_codigo - indiceNuevo->byte_inicial_codigo), sentencias[i]);
+		//almacenar_Bytes_de_Pagina(string_itoa(pcbDePrueba->PID), string_itoa(indiceNuevo->pagina), string_itoa(indiceNuevo->byte_inicial_codigo), string_itoa(indiceNuevo->byte_final_codigo - indiceNuevo->byte_inicial_codigo), sentencias[i]);
 	}
 
 }

@@ -1,14 +1,14 @@
-[INFO] 01:20:06:950 MEMORIA/(6666:6666): 
+[INFO] 03:58:04:857 MEMORIA/(13886:13886): 
  Parametros de Archivo de Configuracion 
 PUERTO=8084	
-MARCOS=32	
-MARCO_SIZE=64	
+MARCOS=200	
+MARCO_SIZE=512	
 ENTRADAS_CACHE=0	
 CACHE_X_PROC=0	
 RETARDO_MEMORIA=100	
 CANTIDAD_MAXIMA_CONCURRENCIA=100	
-PATH_ARCHIVO_LOGUEO=/home/utnso/2017/C/UNIVERSIDAD/PROYECTOS/ENTREGA_FINAL/SistemaMEMORIA/resource/logueo.log 
-[INFO] 01:20:06:950 MEMORIA/(6666:6666): Creando Memoria Principal...
-[INFO] 01:20:06:950 MEMORIA/(6666:6666): Memoria Principal creada correctamente.
-[INFO] 01:20:06:950 MEMORIA/(6666:6666): Creando Estructuras administrativas...
-[INFO] 01:20:06:950 MEMORIA/(6666:6666): Estructuras administrativas creadas correctamente.
+PATH_ARCHIVO_LOGUEO=../resource/logueo.log 
+[INFO] 03:58:04:857 MEMORIA/(13886:13886): Creando Memoria Principal...
+[INFO] 03:58:04:857 MEMORIA/(13886:13886): Memoria Principal creada correctamente.
+[INFO] 03:58:04:857 MEMORIA/(13886:13886): Creando Estructuras administrativas...
+[INFO] 03:58:04:857 MEMORIA/(13886:13886): Estructuras administrativas creadas correctamente.

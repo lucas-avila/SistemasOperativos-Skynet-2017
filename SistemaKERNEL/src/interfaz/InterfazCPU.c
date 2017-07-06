@@ -91,9 +91,9 @@ void CU_Recibir_Conexiones_CPU(int clienteCPU) {
 		else if (strcmp(codigo_operacion, "LEER_ARCHIVO") == 0) {
 			leer_archivo(clienteCPU);
 		}
-		/*else if (strcmp(codigo_operacion, "LEER_ARCHIVO") == 0) {
-			leer_archivo(clienteCPU);
-		}*/
+		else if (strcmp(codigo_operacion, "CERRAR_ARCHIVO") == 0) {
+			cerrar_archivo(clienteCPU);
+		}
 		else if (strcmp(codigo_operacion, "ESCRIBIR_ARCHIVO") == 0) {
 			escribir_archivo(clienteCPU);
 		}

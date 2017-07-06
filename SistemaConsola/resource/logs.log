@@ -5869,3 +5869,981 @@ Tiempo total de ejecucion: -1239414520Cantidad de impresiones por pantalla: 5
  Proceso (1002): 12401
 
 >>>>>>> 31fb35040e383343556a4599e2ad47394b5418b8
+[INFO] 01:58:54:45 CONSOLA/(8253:8257): 
+ EXIT CODE: El programa intentó acceder a un archivo que no existe.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:58:29:859
+Fecha de fin de ejecucion: 01:58:54:45
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+[INFO] 02:00:09:422 CONSOLA/(8253:8310): 
+ EXIT CODE: El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:59:53:794
+Fecha de fin de ejecucion: 02:00:09:422
+Tiempo total de ejecucion: -1239414664Cantidad de impresiones por pantalla: 0
+[INFO] 02:05:05:641 CONSOLA/(8416:8420): 
+ EXIT CODE: El programa intentó crear un archivo que ya existe.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:02:33:329
+Fecha de fin de ejecucion: 02:05:05:641
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+[INFO] 02:08:22:256 CONSOLA/(8561:8565): 
+ EXIT CODE: El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:06:45:295
+Fecha de fin de ejecucion: 02:08:22:256
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+[INFO] 02:18:54:413 CONSOLA/(8960:9009): 
+ EXIT CODE: El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:17:28:908
+Fecha de fin de ejecucion: 02:18:54:413
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+[INFO] 02:22:04:729 CONSOLA/(9121:9177): 
+ EXIT CODE: El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:20:02:722
+Fecha de fin de ejecucion: 02:22:04:729
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+[INFO] 02:33:04:470 CONSOLA/(9545:9593): 
+ EXIT CODE: El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:30:02:332
+Fecha de fin de ejecucion: 02:33:04:470
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+[INFO] 02:34:54:929 CONSOLA/(9667:9715): 
+ EXIT CODE: El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:33:45:185
+Fecha de fin de ejecucion: 02:34:54:929
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+[INFO] 02:42:16:22 CONSOLA/(9887:9978): 
+ EXIT CODE: El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:40:46:431
+Fecha de fin de ejecucion: 02:42:16:22
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+[INFO] 02:43:41:297 CONSOLA/(10143:10190): 
+ EXIT CODE: El programa ha intentado acceder a un semáforo que no existe.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:43:37:513
+Fecha de fin de ejecucion: 02:43:41:297
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+[INFO] 02:47:07:589 CONSOLA/(10217:10261): 
+ Proceso (1000): 1
+
+[INFO] 02:48:32:153 CONSOLA/(10217:10261): 
+ EXIT CODE: El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:44:50:911
+Fecha de fin de ejecucion: 02:48:32:153
+Tiempo total de ejecucion: -1239414792Cantidad de impresiones por pantalla: 1
+[INFO] 02:49:15:93 CONSOLA/(10385:10435): 
+ Proceso (1000): 1
+
+[INFO] 03:04:01:603 CONSOLA/(10960:11008): 
+ Proceso (1000): 1
+
+[INFO] 03:14:57:280 CONSOLA/(11799:11803): 
+ Proceso (1000): 757935405
+
+[INFO] 03:15:00:468 CONSOLA/(11799:11803): 
+ Proceso (1000): 1
+
+[INFO] 03:19:43:216 CONSOLA/(11889:11893): 
+ EXIT CODE: El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 03:16:26:40
+Fecha de fin de ejecucion: 03:19:43:216
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+[INFO] 03:22:53:222 CONSOLA/(12094:12148): 
+ EXIT CODE: El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 03:20:29:706
+Fecha de fin de ejecucion: 03:22:53:222
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+[INFO] 03:24:14:763 CONSOLA/(12343:12393): 
+ Proceso (1000): 808529968
+
+[INFO] 03:24:36:993 CONSOLA/(12343:12393): 
+ Proceso (1000): 1
+
+[INFO] 03:27:43:359 CONSOLA/(12583:12587): 
+ Proceso (1000): 808529968
+
+[INFO] 03:27:43:735 CONSOLA/(12583:12587): 
+ Proceso (1000): 1
+
+[INFO] 03:29:56:956 CONSOLA/(12846:12850): 
+ Proceso (1000): 808529968
+
+[INFO] 03:29:57:436 CONSOLA/(12846:12850): 
+ Proceso (1000): 1
+
+[INFO] 03:30:09:289 CONSOLA/(12846:12850): 
+ EXIT CODE: El programa intentó hacer un free a un bloque inexistente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 03:29:49:754
+Fecha de fin de ejecucion: 03:30:09:289
+Tiempo total de ejecucion: -1239414792Cantidad de impresiones por pantalla: 2
+[INFO] 03:32:07:660 CONSOLA/(12846:12899): 
+ Proceso (1001): 808529968
+
+[INFO] 03:32:08:140 CONSOLA/(12846:12899): 
+ Proceso (1001): 2
+
+[INFO] 03:36:51:456 CONSOLA/(13153:13202): 
+ Proceso (1000): 808529968
+
+[INFO] 03:37:03:737 CONSOLA/(13153:13202): 
+ Proceso (1000): 1
+
+[INFO] 03:39:14:714 CONSOLA/(13153:13202): 
+ EXIT CODE: El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 03:36:18:191
+Fecha de fin de ejecucion: 03:39:14:714
+Tiempo total de ejecucion: -1239414792Cantidad de impresiones por pantalla: 2
+[INFO] 03:40:09:300 CONSOLA/(13385:13434): 
+ Proceso (1000): 808529968
+
+[INFO] 03:40:15:176 CONSOLA/(13385:13434): 
+ Proceso (1000): 1
+
+[INFO] 03:40:21:513 CONSOLA/(13385:13434): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 03:39:53:755
+Fecha de fin de ejecucion: 03:40:21:513
+Tiempo total de ejecucion: -1239414792Cantidad de impresiones por pantalla: 2
+[INFO] 03:40:46:984 CONSOLA/(13385:13498): 
+ Proceso (1001): 2
+
+[INFO] 03:40:47:442 CONSOLA/(13385:13498): 
+ EXIT CODE: El programa intentó hacer un free a un bloque inexistente.
+El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 03:40:32:634
+Fecha de fin de ejecucion: 03:40:47:442
+Tiempo total de ejecucion: -1239414608Cantidad de impresiones por pantalla: 1
+[INFO] 03:41:48:134 CONSOLA/(13385:13528): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1002) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 03:41:45:233
+Fecha de fin de ejecucion: 03:41:48:134
+Tiempo total de ejecucion: -1239414408Cantidad de impresiones por pantalla: 0
+[INFO] 03:42:00:493 CONSOLA/(13385:13534): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1003) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 03:41:56:682
+Fecha de fin de ejecucion: 03:42:00:493
+Tiempo total de ejecucion: -1239414192Cantidad de impresiones por pantalla: 0
+[INFO] 03:42:16:5 CONSOLA/(13385:13540): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1004) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 03:42:13:797
+Fecha de fin de ejecucion: 03:42:16:5
+Tiempo total de ejecucion: -1239414072Cantidad de impresiones por pantalla: 0
+[INFO] 03:45:26:533 CONSOLA/(13385:13546): 
+ EXIT CODE: El Proceso (1005) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 03:42:30:825
+Fecha de fin de ejecucion: 03:45:26:533
+Tiempo total de ejecucion: -1239413856Cantidad de impresiones por pantalla: 0
+[INFO] 03:46:52:873 CONSOLA/(13734:13738): 
+ Proceso (1000): -1
+
+[INFO] 03:46:53:312 CONSOLA/(13734:13738): 
+ Proceso (1000): 1
+
+[INFO] 03:46:54:474 CONSOLA/(13734:13738): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 03:46:45:196
+Fecha de fin de ejecucion: 03:46:54:474
+Tiempo total de ejecucion: -1239414792Cantidad de impresiones por pantalla: 2
+[INFO] 03:47:09:882 CONSOLA/(13734:13789): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 03:47:07:676
+Fecha de fin de ejecucion: 03:47:09:882
+Tiempo total de ejecucion: -1239414624Cantidad de impresiones por pantalla: 0
+[INFO] 03:47:18:394 CONSOLA/(13734:13795): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1002) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 03:47:17:132
+Fecha de fin de ejecucion: 03:47:18:394
+Tiempo total de ejecucion: -1239414408Cantidad de impresiones por pantalla: 0
+[INFO] 03:47:26:695 CONSOLA/(13734:13801): 
+ Proceso (1003): 1
+
+[INFO] 03:47:27:218 CONSOLA/(13734:13801): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1003) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 03:47:25:173
+Fecha de fin de ejecucion: 03:47:27:218
+Tiempo total de ejecucion: -1239414288Cantidad de impresiones por pantalla: 1
+[INFO] 03:47:52:894 CONSOLA/(13734:13807): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1004) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 03:47:50:610
+Fecha de fin de ejecucion: 03:47:52:894
+Tiempo total de ejecucion: -1239414040Cantidad de impresiones por pantalla: 0
+[INFO] 03:48:23:951 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:24:431 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:48:24:912 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:25:392 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:48:25:871 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:26:352 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:48:26:831 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:27:311 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:48:27:792 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:28:272 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:48:28:751 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:29:232 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:48:29:712 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:30:191 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:48:30:672 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:31:152 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:48:31:631 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:32:112 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:48:32:592 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:33:71 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:48:33:552 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:34:36 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:48:34:511 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:34:992 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:48:35:472 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:35:952 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:48:36:432 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:36:912 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:48:37:394 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:37:872 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:48:38:352 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:38:833 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:48:39:311 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:39:792 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:48:40:272 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:40:751 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:48:41:234 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:41:711 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:48:42:192 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:42:672 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:48:43:152 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:43:640 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:48:44:119 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:44:600 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:48:45:84 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:45:563 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:48:46:44 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:46:524 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:48:47:6 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:47:484 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:48:47:963 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:48:447 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:48:48:928 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:49:407 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:48:49:887 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:50:368 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:48:50:848 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:51:328 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:48:51:808 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:52:288 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:48:52:767 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:53:248 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:48:53:731 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:54:212 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:48:54:690 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:55:167 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:48:55:656 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:56:128 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:48:56:607 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:57:88 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:48:57:568 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:58:47 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:48:58:528 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:59:8 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:48:59:488 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:48:59:968 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:00:448 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:00:930 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:01:410 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:01:888 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:02:367 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:02:848 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:03:328 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:03:807 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:04:287 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:04:768 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:05:247 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:05:728 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:06:208 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:06:687 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:07:168 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:07:648 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:08:127 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:08:614 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:09:98 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:09:568 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:10:47 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:10:528 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:11:7 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:11:487 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:11:968 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:12:448 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:12:927 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:13:408 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:13:888 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:14:370 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:14:849 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:15:328 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:15:815 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:16:293 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:16:771 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:17:249 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:17:727 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:18:220 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:18:706 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:19:179 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:19:663 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:20:144 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:20:624 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:21:104 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:21:584 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:22:64 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:22:547 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:23:24 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:23:506 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:23:983 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:24:463 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:24:948 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:25:433 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:25:917 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:26:392 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:26:885 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:27:368 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:27:848 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:28:329 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:28:808 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:29:290 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:29:767 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:30:248 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:30:734 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:31:212 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:31:696 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:32:174 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:32:652 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:33:132 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:33:612 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:34:92 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:34:572 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:35:56 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:35:535 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:36:16 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:36:502 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:36:982 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:37:462 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:37:940 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:38:420 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:38:899 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:39:380 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:39:863 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:40:339 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:40:820 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:41:300 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:41:784 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:42:264 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:42:744 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:43:224 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:43:704 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:44:184 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:44:668 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:45:149 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:45:628 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:46:108 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:46:589 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:47:68 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:47:548 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:48:31 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:48:510 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:48:987 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:49:471 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:49:948 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:50:427 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:50:917 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:51:391 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:51:870 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:52:347 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:52:828 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:53:310 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:53:788 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:54:268 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:54:748 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:55:231 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:55:716 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:56:198 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:56:679 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:57:156 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:57:636 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:58:120 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:58:600 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:49:59:80 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:49:59:560 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:50:00:40 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:50:00:520 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:50:00:0 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:50:01:480 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:50:01:960 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:50:02:440 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:50:02:919 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:50:03:400 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:50:03:883 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:50:04:360 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:50:04:840 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:50:05:320 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:50:05:799 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:50:06:279 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:50:06:760 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:50:07:240 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:50:07:720 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:50:08:200 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:50:08:680 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:50:09:159 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:50:09:640 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:50:10:120 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:50:10:599 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:50:11:80 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:50:11:560 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:50:12:40 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:50:12:520 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:50:12:999 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:50:13:480 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:50:13:960 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:50:14:439 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:50:14:920 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:50:15:400 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:50:15:882 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:50:16:360 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:50:16:840 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:50:17:319 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:50:17:800 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:50:18:280 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:50:18:760 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:50:19:240 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:50:19:721 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:50:20:200 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:50:20:679 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:50:21:164 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:50:21:644 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:50:22:124 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:50:22:604 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:50:23:84 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:50:23:564 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:50:24:43 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:50:24:524 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:50:25:4 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:50:25:484 CONSOLA/(13734:13819): 
+ Proceso (1005): 0
+
+[INFO] 03:50:25:964 CONSOLA/(13734:13819): 
+ Proceso (1005): 1
+
+[INFO] 03:50:26:166 CONSOLA/(13734:13819): 
+ EXIT CODE: Stack Overflow.
+El Proceso (1005) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 03:48:22:27
+Fecha de fin de ejecucion: 03:50:26:166
+Tiempo total de ejecucion: -1239413744Cantidad de impresiones por pantalla: 255

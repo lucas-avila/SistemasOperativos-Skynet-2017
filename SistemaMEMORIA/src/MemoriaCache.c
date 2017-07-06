@@ -4,13 +4,20 @@
 #include<commons/string.h>
 #include<stdbool.h>
 #include<commons/log.h>
-
+#include "general/funcionesUtiles.h"
 #include "header/MemoriaCache.h"
 #include "header/AppConfig.h"
 
 int cantidadEntradasCache = 0;
 
 int cantidadMaximaEntradaPorProceso = 0;
+
+int instanteUltimaReferencia = 0;
+
+int secuenciador_referencia() {
+	instanteUltimaReferencia++;
+	return instanteUltimaReferencia;
+}
 
 void inicializar_memoria_cache(int cantidadEntradas, int tamanioPagina, int cantMaximaPorProceso) {
 	memoriaCacheGlobal = malloc(sizeof(MEMORIA_CACHE) * cantidadEntradas);
@@ -27,16 +34,15 @@ void inicializar_memoria_cache(int cantidadEntradas, int tamanioPagina, int cant
 }
 
 void ingresar_valor_en_cache(char* PID, int nroPagina, char* punteroAPagina) {
-	 int i = 0;
+	int i = 0;
 	for (i = 0; i < cantidadEntradasCache; i++) {
 		if ((strcmp(memoriaCacheGlobal[i].PID, PID) == 0) && memoriaCacheGlobal[i].nroPagina == nroPagina) {
-			memoriaCacheGlobal[i].vecesUsada += 1;
+			memoriaCacheGlobal[i].vecesUsada = secuenciador_referencia();
 			//memoriaCacheGlobal[i].contenidoPagina = malloc(strlen(contenidoPagina));
 			memcpy(memoriaCacheGlobal[i].contenidoPagina, punteroAPagina, configuraciones.MARCO_SIZE);
 			return;
 		}
 	}
-
 
 	MEMORIA_CACHE fila;
 	strcpy(fila.PID, PID);
@@ -44,7 +50,7 @@ void ingresar_valor_en_cache(char* PID, int nroPagina, char* punteroAPagina) {
 	memcpy(fila.contenidoPagina, punteroAPagina, configuraciones.MARCO_SIZE);
 	fila.nroPagina = nroPagina;
 
-	fila.vecesUsada = 0;
+	fila.vecesUsada = secuenciador_referencia();
 
 	int codigo_resultado = reemplazar_linea_aplicando_algoritmo(fila);
 	if (codigo_resultado == 0) {
@@ -74,7 +80,7 @@ char* buscar_valor_en_cache(char* PID, int nroPagina) {
 		if ((strcmp(memoriaCacheGlobal[i].PID, PID) == 0) && (memoriaCacheGlobal[i].nroPagina == nroPagina)) {
 			valorBuscado = string_new();
 			string_append(&valorBuscado, memoriaCacheGlobal[i].contenidoPagina);
-			memoriaCacheGlobal[i].vecesUsada += 1;
+			memoriaCacheGlobal[i].vecesUsada = secuenciador_referencia();
 			return valorBuscado;
 		}
 	}
@@ -120,7 +126,7 @@ int obtener_indice_tabla_menos_usado(char* PID) {
 				minCantUso = memoriaCacheGlobal[i].vecesUsada;
 				indice = i;
 				controlPrimeraVez = 1;
-			} else if (minCantUso >= memoriaCacheGlobal[i].vecesUsada) {
+			} else if (minCantUso > memoriaCacheGlobal[i].vecesUsada && memoriaCacheGlobal[i].vecesUsada>=0) {
 				minCantUso = memoriaCacheGlobal[i].vecesUsada;
 				indice = i;
 			}
@@ -157,7 +163,6 @@ bool procesoLleno(char* pid) {
 int reemplazar_linea_aplicando_algoritmo(MEMORIA_CACHE fila) {
 	int indice = 0;
 
-
 	if (cacheLlena() == 1) {
 		if (procesoLleno(fila.PID) == 1) {
 			indice = obtener_indice_tabla_menos_usado(fila.PID);
@@ -183,7 +188,6 @@ int reemplazar_linea_aplicando_algoritmo(MEMORIA_CACHE fila) {
 
 void mostrar_tabla_memoria_cache() {
 
-	t_log* logger = log_create(configuraciones.PATH_ARCHIVO_LOG, "MEMORIA", false, LOG_LEVEL_INFO);
 	char* textoLoguear = string_new();
 	string_append(&textoLoguear, "\nContenido de la Memoria CACHE: ");
 
@@ -192,26 +196,21 @@ void mostrar_tabla_memoria_cache() {
 	string_append(&textoLoguear, "\n PID PAG CONTENIDO");
 	string_append(&textoLoguear, "\n---------------------------");
 
-	printf("\n---------------------------");
-	printf("\n PID PAG CONTENIDO");
-	printf("\n---------------------------");
 	for (i = 0; i < cantidadEntradasCache; i++) {
 		if (strcmp(memoriaCacheGlobal[i].PID, "") != 0) {
-			printf("\n %s %d %s", memoriaCacheGlobal[i].PID, memoriaCacheGlobal[i].nroPagina, memoriaCacheGlobal[i].contenidoPagina);
-			printf("\n---------------------------");
 
 			string_append(&textoLoguear, string_from_format("\n %s %d  %s", memoriaCacheGlobal[i].PID, memoriaCacheGlobal[i].nroPagina, memoriaCacheGlobal[i].contenidoPagina));
 			string_append(&textoLoguear, "\n---------------------------");
 		}
 	}
-	log_info(logger, "\n%s", textoLoguear);
-	log_destroy(logger);
+	logSO(textoLoguear);
+
 
 }
 
 void vaciar_tabla_memoria_cache(int tamanioPagina) {
 
-	 int i = 0;
+	int i = 0;
 	for (i = 0; i < cantidadEntradasCache; i++) {
 		strcpy(memoriaCacheGlobal[i].PID, "");
 		memoriaCacheGlobal[i].contenidoPagina = malloc(tamanioPagina);
