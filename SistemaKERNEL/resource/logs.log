@@ -544,3 +544,163 @@ Cantidad syscalls ejecutadas: 0
  Se movio el proceso (1001) a la cola READY.
 ------Fin del LOG------
 
+[INFO] 18:00:10:627 KERNEL/(6196:6198): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola NEW.
+------Fin del LOG------
+
+[INFO] 18:00:10:628 KERNEL/(6196:6200): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola READY.
+------Fin del LOG------
+
+[INFO] 18:00:31:812 KERNEL/(6196:6212): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola EXIT.
+------Fin del LOG------
+
+[INFO] 18:01:03:480 KERNEL/(6196:6198): 
+***LOGS del KERNEL***
+ Se movio el proceso (1001) a la cola NEW.
+------Fin del LOG------
+
+[INFO] 18:01:03:480 KERNEL/(6196:6200): 
+***LOGS del KERNEL***
+ Se movio el proceso (1001) a la cola READY.
+------Fin del LOG------
+
+[INFO] 18:01:17:899 KERNEL/(6196:6196): 
+***LOGS del KERNEL***
+ Se movio el proceso (1001) a la cola EXIT.
+------Fin del LOG------
+
+[INFO] 18:06:55:555 KERNEL/(6240:6242): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola NEW.
+------Fin del LOG------
+
+[INFO] 18:06:56:76 KERNEL/(6240:6245): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola READY.
+------Fin del LOG------
+
+[INFO] 18:07:04:948 KERNEL/(6240:6251): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola EXIT.
+------Fin del LOG------
+
+[INFO] 18:14:54:620 KERNEL/(6404:6406): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola NEW.
+------Fin del LOG------
+
+[INFO] 18:14:56:20 KERNEL/(6404:6405): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola EXEC.
+------Fin del LOG------
+
+[INFO] 18:14:56:20 KERNEL/(6404:6409): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola READY.
+------Fin del LOG------
+
+[INFO] 18:15:57:228 KERNEL/(6404:6463): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola EXIT.
+------Fin del LOG------
+
+[INFO] 18:18:38:600 KERNEL/(6404:6406): 
+***LOGS del KERNEL***
+ Se movio el proceso (1001) a la cola NEW.
+------Fin del LOG------
+
+[INFO] 18:18:39:839 KERNEL/(6404:6405): 
+***LOGS del KERNEL***
+ Se movio el proceso (1001) a la cola EXEC.
+------Fin del LOG------
+
+[INFO] 18:18:39:840 KERNEL/(6404:6409): 
+***LOGS del KERNEL***
+ Se movio el proceso (1001) a la cola READY.
+------Fin del LOG------
+
+[INFO] 18:21:08:920 KERNEL/(6404:6406): 
+***LOGS del KERNEL***
+ Se movio el proceso (1002) a la cola NEW.
+------Fin del LOG------
+
+[INFO] 18:21:10:159 KERNEL/(6404:6405): 
+***LOGS del KERNEL***
+ Se movio el proceso (1002) a la cola EXEC.
+------Fin del LOG------
+
+[INFO] 18:21:10:160 KERNEL/(6404:6409): 
+***LOGS del KERNEL***
+ Se movio el proceso (1002) a la cola READY.
+------Fin del LOG------
+
+[INFO] 18:21:20:760 KERNEL/(6404:6466): 
+***LOGS del KERNEL***
+ Se movio el proceso (1002) a la cola EXIT.
+------Fin del LOG------
+
+[INFO] 18:21:57:809 KERNEL/(6404:6406): 
+***LOGS del KERNEL***
+ Se movio el proceso (1003) a la cola NEW.
+------Fin del LOG------
+
+[INFO] 18:21:58:967 KERNEL/(6404:6405): 
+***LOGS del KERNEL***
+ Se movio el proceso (1003) a la cola EXEC.
+------Fin del LOG------
+
+[INFO] 18:21:58:968 KERNEL/(6404:6409): 
+***LOGS del KERNEL***
+ Se movio el proceso (1003) a la cola READY.
+------Fin del LOG------
+
+[INFO] 18:22:01:452 KERNEL/(6404:6466): 
+***LOGS del KERNEL***
+ Se movio el proceso (1003) a la cola EXIT.
+------Fin del LOG------
+
+[INFO] 18:23:58:698 KERNEL/(6751:6753): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola NEW.
+------Fin del LOG------
+
+[INFO] 18:23:59:856 KERNEL/(6751:6752): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola EXEC.
+------Fin del LOG------
+
+[INFO] 18:23:59:856 KERNEL/(6751:6756): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola READY.
+------Fin del LOG------
+
+[INFO] 18:24:02:336 KERNEL/(6751:6761): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola EXIT.
+------Fin del LOG------
+
+[INFO] 18:29:06:318 KERNEL/(6918:6920): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola NEW.
+------Fin del LOG------
+
+[INFO] 18:29:07:555 KERNEL/(6918:6919): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola EXEC.
+------Fin del LOG------
+
+[INFO] 18:29:07:556 KERNEL/(6918:6923): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola READY.
+------Fin del LOG------
+
+[INFO] 18:29:18:159 KERNEL/(6918:6928): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola EXIT.
+------Fin del LOG------
+

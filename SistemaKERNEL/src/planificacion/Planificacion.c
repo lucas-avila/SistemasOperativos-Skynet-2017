@@ -99,8 +99,16 @@ int mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 		//Marcamos el CPU que estaba usando como disponible
 		marcar_CPU_Disponible(p->cpu);
 		//Si va a algun waiting
-		if (es_semaforo(destino))
+		if (es_semaforo(destino)){
 			enviar_dato_serializado("BLOQUEADO", p->cpu->numeroConexion);
+			sem_wait(&escribir_log);
+			char * pid = string_itoa(p->PID);
+			string_append(&info_log, "El Proceso (");
+			string_append(&info_log, p->PID);
+			string_append(&info_log, ") se bloqueo.\n");
+			sem_post(&escribir_log);
+			generar_log();
+		}
 
 		p->cpu = NULL;
 	} //Si viene de algun waiting

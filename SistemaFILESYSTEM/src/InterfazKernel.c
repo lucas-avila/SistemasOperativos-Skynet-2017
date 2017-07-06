@@ -97,7 +97,7 @@ void obtener_datos(char * path, int offset, int size){
 	 * Requiere que el archivo se encuentre abierto en modo lectura (“r”).
 	 */
 	char * path_abs = generar_path_absoluto(PATH_ARCHIVOS, path);
-	char * texto_leido = malloc(size);
+	char * texto_leido = malloc(size+1);
 	if(access(path_abs, F_OK) != -1){
 		Archivo * archivo = restaurar_archivo(path_abs);
 
