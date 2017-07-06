@@ -23,13 +23,15 @@ char* solicitar_bytes_memoria(char* PID, char* pagina, char* byteInicial, char* 
 	return recibir_dato_serializado(servidor_Memoria);
 }
 
-char* almacenar_Bytes_de_Pagina(char* PID, char* pagina, char* byteInicial, char* longitud, char* texto) {
+char* almacenar_Bytes_de_Pagina(char* PID, char* pagina, char* byteInicial, char* longitud, int valor) {
 	enviar_dato_serializado("ALMACENAR_BYTE_MEMORIA", servidor_Memoria);
 	enviar_dato_serializado(PID, servidor_Memoria);
 	enviar_dato_serializado(pagina, servidor_Memoria);
 	enviar_dato_serializado(byteInicial, servidor_Memoria);
 	enviar_dato_serializado(longitud, servidor_Memoria);
-	enviar_dato_serializado(texto, servidor_Memoria);
+	//enviar_dato_serializado(texto, servidor_Memoria);
+	char * puntero_a_dato = &valor;
+	enviar_dato(puntero_a_dato, sizeof(int), servidor_Memoria);
 	return recibir_dato_serializado(servidor_Memoria);
 }
 

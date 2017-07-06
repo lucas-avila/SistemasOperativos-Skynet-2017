@@ -10,7 +10,8 @@ src/administrarPCB/PCBData.d: ../src/administrarPCB/PCBData.c \
  ../src/administrarPCB/../planificacion/../administrarProcesos/Proceso.h \
  ../src/administrarPCB/../planificacion/../administrarProcesos/../header/Estructuras.h \
  ../src/administrarPCB/../planificacion/../administrarProcesos/../../../Sharedlib/Sharedlib/PCB.h \
- ../src/administrarPCB/../planificacion/../header/Estructuras.h
+ ../src/administrarPCB/../planificacion/../header/Estructuras.h \
+ ../src/administrarPCB/../header/AppConfig.h
 
 ../src/administrarPCB/PCBData.h:
 
@@ -35,3 +36,5 @@ src/administrarPCB/PCBData.d: ../src/administrarPCB/PCBData.c \
 ../src/administrarPCB/../planificacion/../administrarProcesos/../../../Sharedlib/Sharedlib/PCB.h:
 
 ../src/administrarPCB/../planificacion/../header/Estructuras.h:
+
+../src/administrarPCB/../header/AppConfig.h:

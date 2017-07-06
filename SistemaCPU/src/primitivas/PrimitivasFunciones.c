@@ -82,40 +82,8 @@ t_puntero OBTENER_DIRECCION_DE_VARIABLE(t_nombre_variable variable) {
 char* n_char;
 
 char* intToChar4(int num) {
-	//RECORDAR: liberar el puntero con free()
-	if (n_char == NULL) {
-		n_char = malloc(4 + 1);
-	}
-	/*
-	 char * byte = &num;
 
-	 int i = 0;
-	 for(i; i < 4; i++){
-	 n_char[i] = *(string_itoa(byte[i]));
-	 }
-	 n_char[i] = '\0';
-	 int resultado=0;
-	 memcpy(&resultado, n_char, sizeof(int));*/
-
-	//num = 1537;
-	int *pb; // pb deklariert als pointer auf int
-	pb = &num; // & ist Adress operator, liefert Adresse von b
-	strcpy(n_char, "");
-
-	memcpy(n_char, pb, sizeof(int));
-	/*int i = 0;
-	for (i; i < 4; i++) {
-		if (n_char[i] == '\0') {
-			n_char[i] = '.';
-		}
-
-	}*/
-
-	if (n_char[0] == '\0') {
-			n_char[0] = ' ';
-			n_char[1] = '\0';
-		}
-	return n_char;
+	return num;
 }
 
 int char4ToInt(char* chars) {
@@ -139,7 +107,7 @@ void ASIGNAR_VARIABLE(t_puntero direccion_variable, t_valor_variable valor) {
 	int pagina = 0, offset = 0;
 	deserializar_puntero(direccion_variable, &pagina, &offset, tamanio_pagina_memoria);
 	//printf("\nASGINAR VARIABLE Pagina: %d, Bity Inicial %d",pagina,offset);
-	almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(offset), string_itoa(sizeof(uint32_t)), intToChar4(valor));
+	almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(offset), string_itoa(sizeof(uint32_t)), valor);
 
 }
 
@@ -170,9 +138,9 @@ void SIGNAL(t_nombre_semaforo identificador_semaforo) {
 t_valor_variable DEREFERENCIAR(t_puntero puntero) {
 	int pagina = 0, offset = 0;
 	deserializar_puntero(puntero, &pagina, &offset, tamanio_pagina_memoria);
-	char* resultado = solicitar_bytes_memoria(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(offset), string_itoa(sizeof(uint32_t)));
-
-	return char4ToInt(resultado);
+	int* resultado = solicitar_bytes_memoria(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(offset), string_itoa(sizeof(uint32_t)));
+	printf("LLegaresultado %d\n", resultado);
+	return *resultado;
 
 }
 t_puntero ALOCAR(t_valor_variable espacio) {
@@ -336,6 +304,7 @@ void MOVER_CURSOR_PRIM(t_descriptor_archivo descriptor_archivo, t_valor_variable
 
 void ESCRIBIR_ARCHIVO_PRIM(t_descriptor_archivo descriptor_archivo, void* informacion, t_valor_variable tamanio) {
 
+	printf("Llega %s\n", informacion);
 	if(descriptor_archivo==0){
 		CU_Escribir_Pantalla_AnSISOP(informacion,string_itoa(pcb->PID));
 	}else{

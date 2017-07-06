@@ -82,10 +82,22 @@ void generar_Reporte_Cache() {
 }
 
 void generar_Reporte_Contenido_de_Memoria() {
-	printf("\n%s", MEMORIA_PRINCIPAL);
-	t_log* logger = log_create(configuraciones.PATH_ARCHIVO_LOG, "MEMORIA", false, LOG_LEVEL_INFO);
-	log_info(logger, "\nContenido de la Memoria %s", MEMORIA_PRINCIPAL);
-	log_destroy(logger);
+	int tamanio = configuraciones.MARCOS * configuraciones.MARCO_SIZE;
+	char * copia_memoria = malloc(tamanio);
+	int j = 0;
+	for(j; j < tamanio; j++){
+		if(MEMORIA_PRINCIPAL[j] == '\0'){
+			copia_memoria[j] == '0';
+			printf("aaa\n");
+		}
+		else
+			copia_memoria[j] = MEMORIA_PRINCIPAL[j];
+	}
+	printf("\n%s", copia_memoria);
+	free(copia_memoria);
+	//t_log* logger = log_create(configuraciones.PATH_ARCHIVO_LOG, "MEMORIA", false, LOG_LEVEL_INFO);
+	//log_info(logger, "\nContenido de la Memoria %s", copia_memoria);
+	//log_destroy(logger);
 }
 
 void CU_Mostrar_Tamanio_MEMORIA_PID() {

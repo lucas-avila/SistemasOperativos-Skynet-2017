@@ -70,9 +70,9 @@ void CU_Recibir_Conexion_CPU(int cliente) {
 			CU_Almacenar_Bytes_de_Pagina(cliente);
 		} else if (strcmp(codigo_operacion, "ASIGNAR_PAGINAS_PROCESO") == 0) {
 			CU_Asignar_Paginas_Programa(cliente);
-		} else if (strcmp(codigo_operacion, "") == 0) {
-			//close(cliente);
-			//controlSeguir = 0;
+		} else if (strcmp(codigo_operacion, "") == 0 || strcmp(codigo_operacion, "DESCONECTAR") == 0) {
+			close(cliente);
+			controlSeguir = 0;
 		} else {
 			enviar_dato_serializado("ERROR: CODIGO OPERACION INEXISTENTE", cliente);
 		}
@@ -97,7 +97,7 @@ void CU_Solicitar_Bytes_Memoria(int cliente) {
 	free(texto);
 
 	texto = solicitar_bytes_de_una_pagina(PID, pagina, byteInicial, longitud);
-	enviar_dato_serializado(texto, cliente);
+	enviar_dato(texto, longitud, cliente);
 
 	//enviar_dato_serializado("OK JONY", cliente);
 	free(PID);
@@ -121,10 +121,12 @@ void CU_Almacenar_Bytes_de_Pagina(int cliente) {
 
 	char* contenido;
 	contenido = recibir_dato_serializado(cliente);
+	int * entero = contenido;
+	printf("\nEl entero es %d\n", *entero);
 
 	texto = almacenar_bytes_de_una_pagina(PID, pagina, byteInicial, tamanio, contenido, true);
 	enviar_dato_serializado(texto, cliente);
-	free(contenido);
+	//free(contenido);
 
 	//enviar_dato_serializado("OK JONY", cliente);
 	free(PID);

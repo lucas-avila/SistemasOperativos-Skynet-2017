@@ -26,13 +26,13 @@ void inicializar_memoria_cache(int cantidadEntradas, int tamanioPagina, int cant
 	cantidadMaximaEntradaPorProceso = cantMaximaPorProceso;
 }
 
-void ingresar_valor_en_cache(char* PID, int nroPagina, char* contenidoPagina) {
+void ingresar_valor_en_cache(char* PID, int nroPagina, char* punteroAPagina) {
 	 int i = 0;
 	for (i = 0; i < cantidadEntradasCache; i++) {
 		if ((strcmp(memoriaCacheGlobal[i].PID, PID) == 0) && memoriaCacheGlobal[i].nroPagina == nroPagina) {
 			memoriaCacheGlobal[i].vecesUsada += 1;
 			//memoriaCacheGlobal[i].contenidoPagina = malloc(strlen(contenidoPagina));
-			strcpy(memoriaCacheGlobal[i].contenidoPagina, contenidoPagina);
+			memcpy(memoriaCacheGlobal[i].contenidoPagina, punteroAPagina, configuraciones.MARCO_SIZE);
 			return;
 		}
 	}
@@ -40,8 +40,8 @@ void ingresar_valor_en_cache(char* PID, int nroPagina, char* contenidoPagina) {
 
 	MEMORIA_CACHE fila;
 	strcpy(fila.PID, PID);
-	fila.contenidoPagina = malloc(strlen(contenidoPagina));
-	strcpy(fila.contenidoPagina, contenidoPagina);
+	fila.contenidoPagina = malloc(configuraciones.MARCO_SIZE);
+	memcpy(fila.contenidoPagina, punteroAPagina, configuraciones.MARCO_SIZE);
 	fila.nroPagina = nroPagina;
 
 	fila.vecesUsada = 0;
