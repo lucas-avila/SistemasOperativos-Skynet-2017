@@ -544,3 +544,77 @@ Cantidad syscalls ejecutadas: 0
  Se movio el proceso (1001) a la cola READY.
 ------Fin del LOG------
 
+[INFO] 20:36:39:255 KERNEL/(2860:2860): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+
+[INFO] 20:36:44:279 KERNEL/(2860:2860): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+
+[INFO] 20:36:45:831 KERNEL/(2860:2860): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+
+[INFO] 20:36:47:479 KERNEL/(2860:2860): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+
+[INFO] 20:36:49:735 KERNEL/(2860:2860): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+
+[INFO] 20:36:51:431 KERNEL/(2860:2860): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+
+[INFO] 20:39:26:560 KERNEL/(2990:2990): 
+***LOGS del KERNEL***
+ --> Cambio de grado de multiprogramacion a: 5
+------Fin del LOG------
+
+[INFO] 20:39:39:969 KERNEL/(2990:2990): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 20:39:54:577 KERNEL/(3002:3002): 
+***LOGS del KERNEL***
+ 
+---TABLA GLOBAL DE ARCHIVOS---
+
+ FILE 			 OPEN
+
+------Fin del LOG------
+

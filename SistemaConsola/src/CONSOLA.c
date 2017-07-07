@@ -188,8 +188,8 @@ void mostrar_info_proceso(uint32_t pid) {
 	string_append(&info_log, textoFin);
 	string_append(&info_log, "\n");
 	string_append(&info_log, "Tiempo total de ejecucion: ");
-	string_append(&info_log, string_itoa(tiempoTranscurrido));
-	string_append(&info_log, "Cantidad de impresiones por pantalla: ");
+	string_append(&info_log, tiempoTranscurrido);
+	string_append(&info_log, "\nCantidad de impresiones por pantalla: ");
 	string_append(&info_log, string_itoa(info_proceso->cant_impresiones));
 
 	generar_log();

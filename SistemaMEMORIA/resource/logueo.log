@@ -4319,3 +4319,30 @@ PATH_ARCHIVO_LOGUEO=../resource/logueo.log
 [INFO] 17:45:58:507 MEMORIA/(5941:5953): PID 1001. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 25 | Longitud: 8 | Contenido: signal c. | Resultado: Almacenado Correctamente.
 [INFO] 17:45:58:588 MEMORIA/(5941:5953): PID 1001. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 33 | Longitud: 13 | Contenido: goto etiqueta. | Resultado: Almacenado Correctamente.
 [INFO] 17:45:58:668 MEMORIA/(5941:5953): PID 1001. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 46 | Longitud: 3 | Contenido: end. | Resultado: Almacenado Correctamente.
+[INFO] 20:30:46:823 MEMORIA/(2856:2856): 
+ Parametros de Archivo de Configuracion 
+PUERTO=8084	
+MARCOS=500	
+MARCO_SIZE=256	
+ENTRADAS_CACHE=0	
+CACHE_X_PROC=0	
+RETARDO_MEMORIA=100	
+CANTIDAD_MAXIMA_CONCURRENCIA=100	
+PATH_ARCHIVO_LOGUEO=../resource/logueo.log 
+[INFO] 20:30:46:824 MEMORIA/(2856:2856): Creando Memoria Principal...
+[INFO] 20:30:46:824 MEMORIA/(2856:2856): Memoria Principal creada correctamente.
+[INFO] 20:30:46:824 MEMORIA/(2856:2856): Creando Estructuras administrativas...
+[INFO] 20:30:46:824 MEMORIA/(2856:2856): Estructuras administrativas creadas correctamente.
+[INFO] 20:37:26:103 MEMORIA/(2856:2856): 
+Contenido de la Memoria CACHE: 
+---------------------------
+ PID PAG CONTENIDO
+---------------------------
+[INFO] 20:37:33:782 MEMORIA/(2856:2856): Vaciando Memoria Cache...
+[INFO] 20:37:33:783 MEMORIA/(2856:2856): MEMORIA CACHE VACIA.
+[INFO] 20:37:47:733 MEMORIA/(2856:2856): 
+-----------------------------
+[INFO] 20:37:47:733 MEMORIA/(2856:2856): 
+ Cantidad de Frames Total del Proceso 1005 : 0 
+[INFO] 20:37:47:733 MEMORIA/(2856:2856): 
+-----------------------------

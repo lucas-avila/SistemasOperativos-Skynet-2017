@@ -1,5 +1,41 @@
-17:36:53 **** Incremental Build of configuration Debug for project SistemaConsola ****
+21:48:46 **** Build of configuration Debug for project SistemaConsola ****
 make all 
+Building file: ../src/CONSOLA.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/CONSOLA.d" -MT"src/CONSOLA.d" -o "src/CONSOLA.o" "../src/CONSOLA.c"
+../src/CONSOLA.c: In function ‘main’:
+../src/CONSOLA.c:42:2: warning: passing argument 3 of ‘pthread_create’ from incompatible pointer type [enabled by default]
+  pthread_create(&t_interfaz, NULL, &atender_solicitudes_de_usuario, NULL);
+  ^
+In file included from ../src/CONSOLA.c:14:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * (*)(void *)’ but argument is of type ‘void (*)()’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/CONSOLA.c: In function ‘atender_solicitudes_de_usuario’:
+../src/CONSOLA.c:88:4: warning: statement with no effect [-Wunused-value]
+    for (i; i < tamanio; i++) {
+    ^
+../src/CONSOLA.c:90:5: warning: implicit declaration of function ‘solicitar_desconexion’ [-Wimplicit-function-declaration]
+     solicitar_desconexion(info_ejecucion->pid, info_ejecucion->socket);
+     ^
+../src/CONSOLA.c: In function ‘iniciar_thread’:
+../src/CONSOLA.c:104:2: warning: passing argument 3 of ‘pthread_create’ from incompatible pointer type [enabled by default]
+  pthread_create(&t_programa, NULL, &CU_iniciar_programa, path_archivo_fuente);
+  ^
+In file included from ../src/CONSOLA.c:14:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * (*)(void *)’ but argument is of type ‘void (*)()’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/CONSOLA.c: In function ‘CU_iniciar_programa’:
+../src/CONSOLA.c:117:2: warning: passing argument 2 of ‘conectar_servidor’ makes integer from pointer without a cast [enabled by default]
+  int kernel_programa = conectar_servidor(configuraciones.IP_KERNEL, configuraciones.PUERTO_KERNEL);
+  ^
+In file included from ../src/CONSOLA.c:19:0:
+/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Sharedlib/Socket.h:20:5: note: expected ‘int’ but argument is of type ‘char *’
+ int conectar_servidor(char * ip_addr, int puerto);
+     ^
+Finished building: ../src/CONSOLA.c
+ 
 Building file: ../src/funcionesUtiles.c
 Invoking: GCC C Compiler
 gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/funcionesUtiles.d" -MT"src/funcionesUtiles.d" -o "src/funcionesUtiles.o" "../src/funcionesUtiles.c"
@@ -16,5 +52,5 @@ gcc -L"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug" -o "SistemaConso
 Finished building target: SistemaConsola
  
 
-17:36:53 Build Finished (took 324ms)
+21:48:47 Build Finished (took 988ms)
 
