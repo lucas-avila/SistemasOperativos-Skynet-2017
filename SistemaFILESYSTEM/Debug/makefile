@@ -28,7 +28,7 @@ endif
 all: SistemaFILESYSTEM
 
 dependents:
-	-cd /home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug && $(MAKE) all
+	-cd /home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug && $(MAKE) clean all
 
 # Tool invocations
 SistemaFILESYSTEM: $(OBJS) $(USER_OBJS) /home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug/libSharedlib.so
