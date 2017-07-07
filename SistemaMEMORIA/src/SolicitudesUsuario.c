@@ -34,12 +34,13 @@ void generar_Reporte_Estructura_Por_PID() {
 	int tamanio = configuraciones.MARCOS * configuraciones.MARCO_SIZE;
 	char * copia_memoria = malloc(tamanio);
 	int j = 0;
-	for (j=0; j < tamanio; j++) {
+	for (j = 0; j < tamanio; j++) {
 		if (MEMORIA_PRINCIPAL[j] == '\0') {
-			copia_memoria[j] == '0';
+			copia_memoria[j] = '0';
 
-		} else
+		} else {
 			copia_memoria[j] = MEMORIA_PRINCIPAL[j];
+		}
 	}
 
 	for (i = 0; i < tope; i++) {
@@ -98,17 +99,24 @@ void generar_Reporte_Cache() {
 }
 
 void generar_Reporte_Contenido_de_Memoria() {
-	int tamanio = configuraciones.MARCOS * configuraciones.MARCO_SIZE;
-	char * copia_memoria = malloc(tamanio);
+	int tamanio = configuraciones.MARCO_SIZE;
+	char * copia_memoria = malloc(tamanio+1);
 	int j = 0;
-	for (j; j < tamanio; j++) {
-		if (MEMORIA_PRINCIPAL[j] == '\0') {
-			copia_memoria[j] == '0';
-
-		} else
-			copia_memoria[j] = MEMORIA_PRINCIPAL[j];
+	int ind = 0;
+	for (ind = 0; ind < configuraciones.MARCOS; ind++) {
+		int posicionamientoInicial = ind* tamanio;
+		for (j=0; j < tamanio; j++) {
+			if (MEMORIA_PRINCIPAL[posicionamientoInicial+j] == '\0') {
+				copia_memoria[j] = ' ';
+			} else{
+				copia_memoria[j] = MEMORIA_PRINCIPAL[posicionamientoInicial+j];
+			}
+		}
+		copia_memoria[tamanio]='\0';
+		logSO(string_from_format("FRAME: %d | %s",ind, copia_memoria));
 	}
-	logSO(string_from_format("Contenido de la MEMORIA: %s", copia_memoria));
+
+	//logSO(string_from_format("Contenido de la MEMORIA: %s", copia_memoria));
 	free(copia_memoria);
 	//t_log* logger = log_create(configuraciones.PATH_ARCHIVO_LOG, "MEMORIA", false, LOG_LEVEL_INFO);
 	//log_info(logger, "\nContenido de la Memoria %s", copia_memoria);

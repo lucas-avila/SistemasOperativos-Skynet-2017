@@ -50,7 +50,7 @@ void mostrar_menu_usuario() {
 	printf("\n 3 - Limpiar CACHE");
 	printf("\n 4 - Mostrar Tamaño");
 	printf("\n 5 - Salir");
-	printf("\n 6 - DESARROLLO PROBAR MEMORIA");
+	//printf("\n 6 - DESARROLLO PROBAR MEMORIA");
 	printf("\n Opcion: ");
 }
 
@@ -75,9 +75,9 @@ void atender_solicitudes_de_usuario() {
 		case 4:
 			CU_Mostrar_Tamanio_MEMORIA_PID();
 			break;
-		case 6:
-			menu_pruebas();
-			break;
+		//case 6:
+		//	menu_pruebas();
+		//	break;
 		}
 		if (opcion != 5) {
 			printf("\n\nPress '0' to continue: ... ");

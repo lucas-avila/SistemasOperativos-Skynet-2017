@@ -13,7 +13,7 @@
 #include "../primitivas/IndiceCodigo.h"
 #include "../interfaz/InterfazKernel.h"
 #include "../interfaz/InterfazMemoria.h"
-
+#include "../general/funcionesUtiles.h"
 void setPCBEjecucion(PCB* pcb) {
 	pcbEjecutar = pcb;
 	setearPCB(pcb);
@@ -37,8 +37,10 @@ void ejecutar_Programa() {
 	retardo = pcbEjecutar->quantum_sleep * 1000000;
 	bool esRoundRobin = (pcbEjecutar->RR == 1);
 	if (!esRoundRobin) {
+		logSO(string_from_format("PID : %d. Ejecutando con Algoritmo FIFO", pcbEjecutar->PID));
 		ejecutar_programa_por_FIFO();
 	} else {
+		logSO(string_from_format("PID : %d. Ejecutando con Algoritmo RR", pcbEjecutar->PID));
 		ejecutar_programa_por_RR();
 	}
 
@@ -79,6 +81,7 @@ void ejecutar_programa_por_FIFO() {
 void ejecutar_programa_por_RR() {
 	int topeEjecucion = pcbEjecutar->cantidad_rafagas;
 	int cantidadEjecutada = 0;
+	logSO(string_from_format("PID : %d. Algoritmo RR. Quantum Establecido: %d", pcbEjecutar->PID,topeEjecucion));
 	//printf("\n Comienzo de Ejecucion");
 	while (!esFinPrograma && cantidadEjecutada < topeEjecucion && !programaBloqueado) {
 		//printf("\n Comienzo de Solicitar sentencia...");

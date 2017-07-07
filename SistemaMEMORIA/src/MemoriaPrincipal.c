@@ -9,6 +9,7 @@
 #include "general/funcionesUtiles.h"
 #include "general/Semaforo.h"
 #include <math.h>
+#include <unistd.h>
 #include<commons/string.h>
 
 //int indiceInicialPaginas = 0;
@@ -111,8 +112,7 @@ char* solicitar_bytes_de_una_pagina(char* PID, int pagina, int byteInicial, int 
 	//Inicializo contenido con todos \0 dejandole uno extra al final
 	char * contenido = calloc(longitud + 1, sizeof(char));
 	if (strcmp(paginaEnCache, "No existe en Cache") != 0) {
-
-		memcpy(contenido, paginaEnCache + byteInicial, longitud);
+        memcpy(contenido, paginaEnCache + byteInicial, longitud);
 		logSO(string_from_format("PID %s. Resultado en CACHE Solicitar bytes. Contenido: %s", PID, contenido));
 		return contenido;
 	} else {
@@ -129,10 +129,11 @@ char* solicitar_bytes_de_una_pagina(char* PID, int pagina, int byteInicial, int 
 
 		//memcpy(contenidoPaginaBuscada, MEMORIA_PRINCIPAL + numeroInicial, sizeof(char) * longitud);
 		// Almacenar pagina en memoria cache porque no existe
-		ingresar_valor_en_cache(PID, pagina, string_substring(MEMORIA_PRINCIPAL, configuraciones.MARCO_SIZE * getFrame(PID, pagina) + byteInicial, configuraciones.MARCO_SIZE));
+		ingresar_valor_en_cache(PID, pagina, MEMORIA_PRINCIPAL + configuraciones.MARCO_SIZE * numeroFrame);
+		logSO(string_from_format("PID %s. Pagina: %d No esta en CACHE. Tiempo de Retardo %d ",PID,pagina,configuraciones.RETARDO_MEMORIA ));
 
-		long retardo = configuraciones.RETARDO_MEMORIA * 1000000;
-		nanosleep(retardo);
+		int retardo = configuraciones.RETARDO_MEMORIA / 1000;
+		sleep(retardo);
 
 		//printf("\n Contenido Enviado: %s Pagina %d", contenidoPaginaBuscada,pagina);
 		logSO(string_from_format("PID %s. Resultado Solicitar bytes. Pagina: %d | Byte Incial: %d | Longitud solicitada: %d | Contenido : %s .", PID, pagina, byteInicial, longitud, contenido));
@@ -157,15 +158,9 @@ char* almacenar_bytes_de_una_pagina(char PID[4], int pagina, int byteInicial, in
 		return "CONTENIDO_NO_ENTRA_EN_PAGINA";
 	}
 	int numeroInicial = (numeroFrame * configuraciones.MARCO_SIZE) + byteInicial;
-
-	int numeroFinal = numeroInicial + longitud;
-
 	char* punteroAPosicionDondePegar = (char*) (MEMORIA_PRINCIPAL + numeroInicial);
-
 	memcpy(punteroAPosicionDondePegar, contenido, sizeof(char) * longitud);
-
 	desactivar_semaforo(&semaforo_Tabla_MEMORY);
-
 	/**CACHE **/
 	if (cacheIr == true) {
 		ingresar_valor_en_cache(PID, pagina, MEMORIA_PRINCIPAL + configuraciones.MARCO_SIZE * numeroFrame);

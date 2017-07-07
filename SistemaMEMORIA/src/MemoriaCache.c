@@ -78,10 +78,10 @@ char* buscar_valor_en_cache(char* PID, int nroPagina) {
 	char* valorBuscado;
 	for (i = 0; i < cantidadEntradasCache; i++) {
 		if ((strcmp(memoriaCacheGlobal[i].PID, PID) == 0) && (memoriaCacheGlobal[i].nroPagina == nroPagina)) {
-			valorBuscado = string_new();
-			string_append(&valorBuscado, memoriaCacheGlobal[i].contenidoPagina);
+			//valorBuscado = string_new();
+			//string_append(&valorBuscado, memoriaCacheGlobal[i].contenidoPagina);
 			memoriaCacheGlobal[i].vecesUsada = secuenciador_referencia();
-			return valorBuscado;
+			return memoriaCacheGlobal[i].contenidoPagina;
 		}
 	}
 	return "No existe en Cache";
@@ -126,7 +126,7 @@ int obtener_indice_tabla_menos_usado(char* PID) {
 				minCantUso = memoriaCacheGlobal[i].vecesUsada;
 				indice = i;
 				controlPrimeraVez = 1;
-			} else if (minCantUso > memoriaCacheGlobal[i].vecesUsada && memoriaCacheGlobal[i].vecesUsada>=0) {
+			} else if (minCantUso > memoriaCacheGlobal[i].vecesUsada && memoriaCacheGlobal[i].vecesUsada >= 0) {
 				minCantUso = memoriaCacheGlobal[i].vecesUsada;
 				indice = i;
 			}
@@ -195,16 +195,25 @@ void mostrar_tabla_memoria_cache() {
 	string_append(&textoLoguear, "\n---------------------------");
 	string_append(&textoLoguear, "\n PID PAG CONTENIDO");
 	string_append(&textoLoguear, "\n---------------------------");
-
+	char* textoAuxiliar = malloc(configuraciones.MARCO_SIZE + 1);
+	int ind = 0;
 	for (i = 0; i < cantidadEntradasCache; i++) {
 		if (strcmp(memoriaCacheGlobal[i].PID, "") != 0) {
+			strcpy(textoAuxiliar, "");
+			for (ind = 0; ind < configuraciones.MARCO_SIZE; ind++) {
+				textoAuxiliar[ind] = memoriaCacheGlobal[i].contenidoPagina[ind];
+				if (textoAuxiliar[ind] == '\0') {
+					textoAuxiliar[ind] = '0';
+				}
+			}
+			textoAuxiliar[configuraciones.MARCO_SIZE] = '\0';
 
-			string_append(&textoLoguear, string_from_format("\n %s %d  %s", memoriaCacheGlobal[i].PID, memoriaCacheGlobal[i].nroPagina, memoriaCacheGlobal[i].contenidoPagina));
+			string_append(&textoLoguear, string_from_format("\n %s %d  %s", memoriaCacheGlobal[i].PID, memoriaCacheGlobal[i].nroPagina, textoAuxiliar));
 			string_append(&textoLoguear, "\n---------------------------");
 		}
 	}
+	free(textoAuxiliar);
 	logSO(textoLoguear);
-
 
 }
 

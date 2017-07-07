@@ -12,4 +12,12 @@ int validarNumeroInput(int rangoMinimo, int rangoMaximo) {
 	return numero;
 }
 
+void logSO(char* mensajeLoguear) {
+	printf("\n %s",mensajeLoguear);
 
+
+	//t_log* logger = log_create(configuraciones.PATH_ARCHIVO_LOG, "MEMORIA", true, LOG_LEVEL_INFO);
+	//log_info(logger, "%s", mensajeLoguear);
+
+	//log_destroy(logger);
+}

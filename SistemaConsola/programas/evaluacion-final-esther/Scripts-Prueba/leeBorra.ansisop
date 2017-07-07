@@ -1,4 +1,4 @@
-begin
+#begin
   variables a, f
   alocar a 100
   abrir f LE /archivo.bin

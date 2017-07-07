@@ -21,7 +21,7 @@
 PCB* recibir_PCB_de_kernel() {
 	int kernel = servidor_kernel;
 	PCB * pcb = recibir_pcb(kernel);
-	printf("PID : %d\n", pcb->PID);
+	logSO(string_from_format("Recibiendo proceso para ejecutar con PID : %d", pcb->PID));
 	/*
 	 printf("El fucking PCB es :\n");
 	 printf("program counter : %d\n", pcb->program_counter);
@@ -72,7 +72,7 @@ PCB* recibir_PCB_de_kernel() {
 /* Se encarga de devolver al kernel el PCB con sus modificaciones por la ejecucion*/
 void enviar_PCB_a_kernel(PCB* pcb, char * modo) {
 	enviar_dato_serializado(modo, servidor_kernel);
-	printf("\n\n EXIT CODE %d",pcb->exit_code);
+	logSO(string_from_format("EXIT CODE %d",pcb->exit_code));
 	enviar_pcb(pcb, servidor_kernel);
 }
 
@@ -85,16 +85,16 @@ int enviar_SYSCALL_wait_semaforo_a_kernel(char* nombre, PCB * pcb) {
 
 	enviar_PCB_a_kernel(pcb, "WAIT_SEM");
 	enviar_dato_serializado(nombre_semaforo, servidor_kernel);
-	printf("WAIT %s\n", nombre_semaforo);
+
 	char * respuesta = recibir_dato_serializado(servidor_kernel);
-	printf("Continuando la cpu, respuesta recibida : %s\n", respuesta);
+	//logSO("Continuando la cpu, respuesta recibida : %s\n", respuesta);
 	if (strcmp(respuesta, "BLOQUEADO") == 0) {
 		//TODO: el semaforo quedo bloqueando el proceso, se libera esta cpu
-		printf("el semaforo quedo bloqueando el proceso, se libera esta cpu\n");
+		//printf("el semaforo quedo bloqueando el proceso, se libera esta cpu\n");
 		return 1;
 	} else if (strcmp(respuesta, "NO_BLOQUEADO") == 0) {
 		//TODO: el semaforo no bloqueó el proceso, el proceso continua su ejecucion normal
-		printf("el semaforo no bloqueo el proceso");
+		//printf("el semaforo no bloqueo el proceso");
 		return 0;
 	} else if (strcmp(respuesta, "SEMAFORO_NO_EXISTE") == 0)
 		lanzar_excepcion(respuesta);
@@ -111,7 +111,7 @@ int enviar_SYSCALL_signal_semaforo_a_kernel(char* nombre) {
 
 	enviar_dato_serializado("SIGNAL_SEM", servidor_kernel);
 	enviar_dato_serializado(nombre_semaforo, servidor_kernel);
-	printf("SIGNAL %s\n", nombre_semaforo);
+	//printf("SIGNAL %s\n", nombre_semaforo);
 	//TODO: que pasa si el nombre del semaforo no existe?
 	char * respuesta = recibir_dato_serializado(servidor_kernel);
 	if (strcmp(respuesta, "SEMAFORO_NO_EXISTE") == 0)
@@ -141,7 +141,7 @@ char* enviar_SYSCALL_solicitar_memoria_dinamica_a_kernel(int PID, int espacio, i
 		//return "0001";
 	} else {
 
-		printf("\n Error en MALLOC: %s", resultado);
+		//printf("\n Error en MALLOC: %s", resultado);
 		lanzar_excepcion(resultado);
 		return "ERROR";
 	}
@@ -168,7 +168,7 @@ int asignar_valor_a_variable_compartida_en_kernel(char* nombre_varComp, int valo
 		return 0;
 	} else {
 		lanzar_excepcion(resultado);
-		printf("\n Error en ASIGNAR VARIABLE COMPARTIDA: %s", resultado);
+	//	printf("\n Error en ASIGNAR VARIABLE COMPARTIDA: %s", resultado);
 		return -1;
 
 	}
@@ -182,11 +182,11 @@ int obtener_valor_de_variable_compartida_en_kernel(char* nombre_varComp, int* va
 	if (strcmp(resultado, "OK") == 0) {
 		char* valor_var_comp = recibir_dato_serializado(servidor_kernel);
 		(*valorVariable) = (atoi(valor_var_comp));
-		printf("La variable solicitada tiene el valor: %d", (*valorVariable));
+		//printf("La variable solicitada tiene el valor: %d", (*valorVariable));
 		return 0;
 	} else {
 		lanzar_excepcion(resultado);
-		printf("\n Error en BUSCAR VARIABLE COMPARTIDA: %s", resultado);
+	//	printf("\n Error en BUSCAR VARIABLE COMPARTIDA: %s", resultado);
 		return -1;
 
 	}
@@ -205,7 +205,7 @@ char* abrir_archivo(char* PID, char* pathArchivo, bool flagCreate, bool flagRead
 
 	respuesta = recibir_dato_serializado(servidor_kernel);
 // SI ALGO SALE MAL, DEVUELVE UN MSG DE ERROR--SI SALE BIEN DEVUELVE EL 'FD'
-	printf("EL FD ES: %s\n", respuesta);
+	//printf("EL FD ES: %s\n", respuesta);
 	return respuesta;
 
 }
