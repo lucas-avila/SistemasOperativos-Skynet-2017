@@ -29,7 +29,6 @@ char* almacenar_Bytes_de_Pagina(char* PID, char* pagina, char* byteInicial, char
 	enviar_dato_serializado(pagina, servidor_Memoria);
 	enviar_dato_serializado(byteInicial, servidor_Memoria);
 	enviar_dato_serializado(longitud, servidor_Memoria);
-	//enviar_dato_serializado(texto, servidor_Memoria);
 	if (valor >= 0) {
 		char * puntero_a_dato = &valor;
 		enviar_dato(puntero_a_dato, sizeof(int), servidor_Memoria);

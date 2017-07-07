@@ -8037,3 +8037,789 @@ El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos:
 Fecha de inicio de ejecucion: 18:29:06:318
 Fecha de fin de ejecucion: 18:29:18:163
 Tiempo total de ejecucion: -1239415352Cantidad de impresiones por pantalla: 1
+[INFO] 21:17:31:773 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:17:32:213 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:17:32:693 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:17:33:173 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:17:33:653 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:17:34:133 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:17:34:613 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:17:35:93 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:17:35:573 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:17:36:53 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:17:36:533 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:17:37:13 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:17:37:493 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:17:37:973 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:17:38:453 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:17:38:933 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:17:39:413 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:17:39:893 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:17:40:373 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:17:40:853 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:17:41:333 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:17:41:813 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:17:42:293 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:17:42:773 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:17:43:253 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:17:43:733 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:17:44:213 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:17:44:693 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:17:45:173 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:17:45:653 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:17:46:133 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:17:46:613 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:17:47:93 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:17:47:573 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:17:48:53 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:17:48:533 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:17:49:13 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:17:49:493 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:17:49:973 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:17:50:453 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:17:50:933 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:17:51:413 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:17:51:893 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:17:52:373 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:17:52:853 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:17:53:333 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:17:53:813 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:17:54:293 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:17:54:774 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:17:55:253 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:17:55:733 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:17:56:213 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:17:56:693 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:17:57:173 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:17:57:653 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:17:58:133 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:17:58:617 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:17:59:98 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:17:59:577 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:18:00:57 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:18:00:537 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:18:01:18 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:18:01:497 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:18:01:977 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:18:02:457 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:18:02:937 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:18:03:417 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:18:03:897 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:18:04:377 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:18:04:857 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:18:05:337 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:18:05:817 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:18:06:297 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:18:06:777 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:18:07:257 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:18:07:737 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:18:08:217 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:18:08:697 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:18:09:177 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:18:09:657 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:18:10:137 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:18:10:617 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:18:11:97 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:18:11:577 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:18:12:57 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:18:12:537 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:18:13:17 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:18:13:497 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:18:13:977 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:18:14:457 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:18:14:937 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:18:15:417 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:18:15:897 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:18:16:377 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:18:16:857 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:18:17:337 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:18:17:817 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:18:18:297 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:18:18:777 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:18:19:257 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:18:19:737 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:18:20:218 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:18:20:697 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:18:21:177 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:18:21:657 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:18:22:137 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:18:22:617 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:18:23:97 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:18:23:577 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:18:24:57 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:18:24:537 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:18:25:17 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:18:25:497 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:18:25:977 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:18:26:457 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:18:26:937 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:18:27:417 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:18:27:897 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:18:28:377 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:18:28:857 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:18:29:337 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:18:29:817 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:18:30:297 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:18:30:777 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:18:31:257 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:18:31:737 CONSOLA/(3163:3167): 
+ Proceso (1000): 0
+
+[INFO] 21:18:32:217 CONSOLA/(3163:3167): 
+ Proceso (1000): 1
+
+[INFO] 21:18:32:423 CONSOLA/(3163:3167): 
+ EXIT CODE: Stack Overflow.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 21:17:21:632
+Fecha de fin de ejecucion: 21:18:32:423
+Tiempo total de ejecucion: -1239414760Cantidad de impresiones por pantalla: 127
+[INFO] 21:22:15:614 CONSOLA/(3197:3251): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 21:22:12:96
+Fecha de fin de ejecucion: 21:22:15:614
+Tiempo total de ejecucion: -1239415424Cantidad de impresiones por pantalla: 0
+[INFO] 21:44:58:627 CONSOLA/(4027:4031): 
+ EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 21:44:53:396
+Fecha de fin de ejecucion: 21:44:58:627
+Tiempo total de ejecucion: 0:0:5:231Cantidad de impresiones por pantalla: 0
+[INFO] 00:19:47:394 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:19:47:837 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:19:48:317 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:19:48:801 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:19:49:281 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:19:49:761 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:19:50:241 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:19:50:721 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:19:51:205 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:19:51:685 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:19:52:165 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:19:52:645 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:19:53:125 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:19:53:605 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:19:54:85 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:19:54:565 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:19:55:45 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:19:55:525 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:19:56:5 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:19:56:486 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:19:56:965 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:19:57:445 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:19:57:925 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:19:58:405 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:19:58:885 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:19:59:365 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:19:59:845 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:00:325 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:00:805 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:01:285 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:01:765 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:02:245 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:02:725 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:03:205 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:03:685 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:04:165 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:04:645 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:05:125 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:05:605 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:06:85 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:06:565 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:07:45 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:07:526 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:08:5 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:08:485 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:08:965 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:09:445 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:09:925 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:10:405 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:10:885 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:11:365 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:11:845 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:12:325 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:12:805 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:13:285 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:13:765 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:14:246 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:14:725 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:15:209 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:15:689 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:16:169 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:16:649 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:17:129 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:17:609 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:18:89 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:18:569 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:19:49 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:19:529 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:20:9 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:20:489 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:20:973 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:21:453 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:21:933 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:22:413 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:22:893 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:23:373 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:23:853 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:24:333 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:24:813 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:25:293 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:25:773 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:26:253 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:26:733 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:27:213 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:27:693 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:28:173 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:28:653 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:29:133 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:29:613 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:30:93 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:30:573 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:31:53 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:31:533 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:32:13 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:32:493 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:32:973 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:33:453 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:33:933 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:34:413 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:34:893 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:35:373 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:35:853 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:36:333 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:36:813 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:37:293 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:37:773 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:38:253 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:38:733 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:39:213 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:39:693 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:40:173 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:40:653 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:41:133 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:41:614 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:42:93 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:42:573 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:43:53 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:43:533 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:44:13 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:44:493 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:44:973 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:45:454 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:45:933 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:46:413 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:46:893 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:47:373 CONSOLA/(7532:7536): 
+ Proceso (1000): 0
+
+[INFO] 00:20:47:853 CONSOLA/(7532:7536): 
+ Proceso (1000): 1
+
+[INFO] 00:20:48:57 CONSOLA/(7532:7536): 
+ EXIT CODE: Stack Overflow.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 00:19:41:755
+Fecha de fin de ejecucion: 00:20:48:56
+Tiempo total de ejecucion: 0:1:6:301Cantidad de impresiones por pantalla: 127
