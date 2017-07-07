@@ -1,17 +1,19 @@
 #include <commons/collections/list.h>
 #include <commons/collections/queue.h>
 #include <commons/string.h>
+#include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <Sharedlib/PCB.h>
 #include <unistd.h>
 
-
 #include "../administrarPCB/EstadisticaProceso.h"
+#include "../administrarPCB/PCBData.h"
 #include "../administrarProcesos/Proceso.h"
+#include "../capaMEMORIA/AdministrarSemaforos.h"
 #include "../general/funcionesUtiles.h"
 #include "../header/AppConfig.h"
-#include "../../../Sharedlib/Sharedlib/PCB.h"
 #include "../planificacion/Planificacion.h"
 
 PCB * crear_PCB_TEST_2();
@@ -92,6 +94,7 @@ void mostrar_estado_colas() {
 		int i;
 		for(i=0; i < configuraciones.cantidad_sem; i++){
 			printf("\n\t\tCOLA %s", configuraciones.SEM_IDS[i]);
+			printf("\t valor : %d\n", obtener_valor_semaforo(configuraciones.SEM_IDS[i]));
 			mostrar_datos_cola(cola(configuraciones.SEM_IDS[i]));
 		}
 		printf("\n\t_______\n");

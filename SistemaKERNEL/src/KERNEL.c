@@ -93,10 +93,10 @@ void CU_iniciar_programa(int programa_socket) {
 	dictionary_put(BUFFER_CODIGO, string_itoa(pcb_nuevo->PID), codigo);
 	sem_post(&buffer_codigo);
 
-	proceso_a_NEW(proceso_nuevo);
 	crear_Proceso_en_tabla(proceso_nuevo->PID);
 	proceso_nuevo->socket = programa_socket;
 	agregar_proceso(proceso_nuevo);
+	proceso_a_NEW(proceso_nuevo);
 
 	char * pid = string_itoa(pcb_nuevo->PID);
 	enviar_dato_serializado(pid, programa_socket);
