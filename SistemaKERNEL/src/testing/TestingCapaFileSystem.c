@@ -166,7 +166,7 @@ void TEST_Manual_CU_CERRAR_ARCHIVO() {
 void TEST_Manual_CU_BORRAR_ARCHIVO() {
 	char* PID = recibir_INPUT("Ingrese PID: ", 4);
 	char* pathArchivo = recibir_INPUT("Ingrese Path Archivo: ", 200);
-	printf("\n Resultado: %s \n", CU_BORRAR_ARCHIVO(PID, pathArchivo));
+	//printf("\n Resultado: %s \n", CU_BORRAR_ARCHIVO(PID, pathArchivo));
 
 }
 

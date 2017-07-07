@@ -102,33 +102,30 @@ char* CU_CERRAR_ARCHIVO(char* PID, int FD) {
 	return "OK";
 }
 
-char* CU_BORRAR_ARCHIVO(char* PID, char* rutaArchivo) {
+char* CU_BORRAR_ARCHIVO(char* PID, char* rutaArchivo, int FD) {
 
 	//1. Valido si el archivo existe
 	bool existeArchivoFS = (strcmp(validar_archivo(rutaArchivo), "OK") == 0);
 	if (!existeArchivoFS) {
 		return "ERROR_ARCHIVO_NO_EXISTE";
 	}
-	bool existeArchivoTablaGlobal = (buscar_TablaGlobalArchivo_por_FILE(rutaArchivo) != NULL);
-	if (existeArchivoTablaGlobal) {
-		return "ERROR_ARCHIVO_ABIERTO";
-	}
-
-	TablaProcesoArchivo* registro = buscar_registro_TablaProcesoArchivo(PID, atoi(rutaArchivo));
-	int IndiceGlobal = registro->GlobalFD;
+	TablaProcesoArchivo* registro = buscar_registro_TablaProcesoArchivo(PID, FD);
 	if (registro == NULL) {
 		return "ERROR_ARCHIVO_NO_ABIERTO";
+	}
+
+	int IndiceGlobal = registro->GlobalFD;
+	bool existeArchivoTablaGlobal = (buscar_TablaGlobalArchivo_por_FILE(rutaArchivo) != NULL);
+	if (existeArchivoTablaGlobal) {
+		if (contar_Cantidad_FD_ABIERTO(IndiceGlobal) > 1) {
+			return "ERROR_ARCHIVO_ABIERTO";
+		}
 	}
 
 	existeArchivoFS = (strcmp(validar_archivo(rutaArchivo), "OK") == 0);
 	if (!existeArchivoFS) {
 		return "ERROR_ARCHIVO_NO_EXISTE";
 	}
-	existeArchivoTablaGlobal = (contar_Cantidad_FD_ABIERTO(IndiceGlobal) > 1);
-	if (existeArchivoTablaGlobal) {
-		return "ERROR_ARCHIVO_ABIERTO";
-	}
-
 	eliminar_registro_Tabla_Proceso_Archivo(((Proceso*) buscar_proceso_by_PID(atoi(PID)))->tablaProcesoArchivo, registro);
 	TablaGlobalArchivo* registroGlobal = list_get(TABLA_GLOBAL_ARCHIVO, IndiceGlobal);
 	registroGlobal->open -= 1;
@@ -137,9 +134,7 @@ char* CU_BORRAR_ARCHIVO(char* PID, char* rutaArchivo) {
 		incrementar_SYSCALL(PID, 1);
 		eliminar_Tabla_Global_Archivo(registroGlobal);
 	}
-
 	borrar(rutaArchivo);
-
 	//Informacion Estadistica
 	incrementar_SYSCALL(PID, 1);
 	return "OK";

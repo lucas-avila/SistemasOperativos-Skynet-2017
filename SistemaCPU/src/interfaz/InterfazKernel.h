@@ -45,7 +45,7 @@ char* escribir_archivo(char* PID, int FD, int tamanio, char* contenido);
 
 char* cerrar_archivo(char* PID, int FD);
 
-char* borrar_archivo(char* PID, char* rutaArchivo);
+char* borrar_archivo(char* PID, int FD);
 
 void CU_Escribir_Pantalla_AnSISOP(char* mensaje,char* PID);
 

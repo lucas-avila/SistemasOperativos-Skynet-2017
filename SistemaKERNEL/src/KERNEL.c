@@ -74,7 +74,6 @@ void inicializar_semaforos(){
 	inicializar_semaforo(&mutex_tabla_estadistica, 1);
 	inicializar_semaforo(&mutex_tabla_estadistica_busqueda, 1);
 	inicializar_semaforo(&buffer_codigo, 1);
-	inicializar_semaforo(&escribir_log, 1);
 }
 
 void inicializar_listas_globales() {
@@ -94,15 +93,9 @@ void CU_iniciar_programa(int programa_socket) {
 	dictionary_put(BUFFER_CODIGO, string_itoa(pcb_nuevo->PID), codigo);
 	sem_post(&buffer_codigo);
 
-<<<<<<< HEAD
 	crear_Proceso_en_tabla(proceso_nuevo->PID);
 	proceso_nuevo->socket = programa_socket;
 	agregar_proceso(proceso_nuevo);
-=======
-	agregar_proceso(proceso_nuevo);
-	crear_Proceso_en_tabla(proceso_nuevo->PID);
-	proceso_nuevo->socket = programa_socket;
->>>>>>> f617bed21251d98d85e5040cd6193ea58c7e8e5b
 	proceso_a_NEW(proceso_nuevo);
 
 	char * pid = string_itoa(pcb_nuevo->PID);

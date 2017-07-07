@@ -16,5 +16,5 @@ char* CU_MOVER_CURSOR_ARCHIVO(char* PID,int FD,int cursor_bloque);
 char* CU_LEER_ARCHIVO(char* PID,int FD,int tamanio);
 char* CU_ESCRIBIR_ARCHIVO(char* PID,int FD,int tamanio,char* contenido);
 char* CU_CERRAR_ARCHIVO(char* PID,int FD);
-char* CU_BORRAR_ARCHIVO(char* PID,char* rutaArchivo);
+char* CU_BORRAR_ARCHIVO(char* PID,char* rutaArchivo, int FD);
 #endif /* CAPAFILESYSTEM_GESTIONARCHIVOS_H_ */

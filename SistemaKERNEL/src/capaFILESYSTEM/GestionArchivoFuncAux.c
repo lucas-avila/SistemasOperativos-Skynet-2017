@@ -157,7 +157,7 @@ void cerrar_archivo(clienteCPU){
 	free(PID);
 	//free(respuesta);
 }
-
+/*
 void borrar_archivo(clienteCPU){
 	char * PID = recibir_dato_serializado(clienteCPU);
 	char * rutaArchivo = atoi(recibir_dato_serializado(clienteCPU));
@@ -167,5 +167,25 @@ void borrar_archivo(clienteCPU){
 	enviar_dato_serializado(respuesta, clienteCPU);
 	free(PID);
 	free(rutaArchivo);
+	//free(respuesta);
+}
+*/
+void borrar_archivo( clienteCPU) {
+	char * PID = recibir_dato_serializado(clienteCPU);
+	int FD = atoi(recibir_dato_serializado(clienteCPU));
+
+	TablaProcesoArchivo* registro = buscar_registro_TablaProcesoArchivo(PID, FD);
+	if (registro == NULL) {
+		enviar_dato_serializado("ERROR_ARCHIVO_NO_ABIERTO", clienteCPU);
+		return;
+	}
+	int IndiceGlobal = registro->GlobalFD;
+
+	TablaGlobalArchivo* registroGlobal = list_get(TABLA_GLOBAL_ARCHIVO, IndiceGlobal);
+	char * respuesta = CU_BORRAR_ARCHIVO(PID, registroGlobal->file, FD);
+
+	enviar_dato_serializado(respuesta, clienteCPU);
+	free(PID);
+	//free(rutaArchivo);
 	//free(respuesta);
 }

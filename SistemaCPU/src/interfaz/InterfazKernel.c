@@ -258,11 +258,11 @@ char* cerrar_archivo(char* PID, int FD) {
 	return respuesta;
 }
 
-char* borrar_archivo(char* PID, char* rutaArchivo) {
+char* borrar_archivo(char* PID, int FD) {
 
 	enviar_dato_serializado("BORRAR_ARCHIVO", servidor_kernel);
 	enviar_dato_serializado(PID, servidor_kernel);
-	enviar_dato_serializado(rutaArchivo, servidor_kernel);
+	enviar_dato_serializado(string_itoa(FD), servidor_kernel);
 	char* respuesta = recibir_dato_serializado(servidor_kernel);
 
 	return respuesta;

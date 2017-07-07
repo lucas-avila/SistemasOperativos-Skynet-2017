@@ -158,6 +158,7 @@ void actualizar_bitmap(int * blocks, int cant_blocks_archivo){
 		bitarray_clean_bit(bitmap, blocks[i]);
 		i++;
 	}
+	guardar_bitmap();
 }
 
 void release_blocks(int * blocks, int cant_blocks_archivo){

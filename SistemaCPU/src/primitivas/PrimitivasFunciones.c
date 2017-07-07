@@ -105,7 +105,7 @@ void ASIGNAR_VARIABLE(t_puntero direccion_variable, t_valor_variable valor) {
 	int pagina = 0, offset = 0;
 	deserializar_puntero(direccion_variable, &pagina, &offset, tamanio_pagina_memoria);
 	//printf("\nASGINAR VARIABLE Pagina: %d, Bity Inicial %d",pagina,offset);
-	almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(offset), string_itoa(sizeof(uint32_t)), valor,"");
+	almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(offset), string_itoa(sizeof(uint32_t)), valor, "");
 
 }
 
@@ -133,13 +133,26 @@ void SIGNAL(t_nombre_semaforo identificador_semaforo) {
 	printf("\nPRE-SIGNAL %s\n", identificador_semaforo);
 	enviar_SYSCALL_signal_semaforo_a_kernel(identificador_semaforo);
 }
+/*
+ t_valor_variable DEREFERENCIAR(t_puntero puntero) {
+ int pagina = 0, offset = 0;
+ deserializar_puntero(puntero, &pagina, &offset, tamanio_pagina_memoria);
+ int* resultado = solicitar_bytes_memoria(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(offset), string_itoa(sizeof(uint32_t)));
+ printf("LLegaresultado %d\n", resultado);
+ return *resultado; //Modificado
 
+ }*/
 t_valor_variable DEREFERENCIAR(t_puntero puntero) {
 	int pagina = 0, offset = 0;
 	deserializar_puntero(puntero, &pagina, &offset, tamanio_pagina_memoria);
-	int* resultado = solicitar_bytes_memoria(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(offset), string_itoa(sizeof(uint32_t)));
-	printf("LLegaresultado %d\n", resultado);
-	return *resultado; //Modificado
+	void* resultado = solicitar_bytes_memoria(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(offset), string_itoa(sizeof(uint32_t)));
+
+	if (strcmp(resultado, "PAGINA_NO_EXISTE") == 0) {
+		lanzar_excepcion(resultado);
+		return 0;
+	}
+
+	return *((int*)resultado); //Modificado
 
 }
 t_puntero ALOCAR(t_valor_variable espacio) {
@@ -163,9 +176,16 @@ void LIBERAR(t_puntero memoria_serializada) {
 	int pagina = 0, offset = 0;
 	int* ptPagina = &pagina;
 	int* ptoffset = &offset;
+	deserializar_puntero(memoria_serializada, &pagina, &offset, tamanio_pagina_memoria);
+	char* valorPuntero = solicitar_bytes_memoria(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(offset), "4");
+	if(pagina < pcb->cantidad_paginas_codigo){
+		deserializar_puntero(*((int*)valorPuntero), &pagina, &offset, tamanio_pagina_memoria);
+	}
+
+
 
 	// punteroLiberar = 1536;
-	deserializar_puntero(memoria_serializada, ptPagina, ptoffset, tamanio_pagina_memoria);
+	//deserializar_puntero(memoria_serializada, ptPagina, ptoffset, tamanio_pagina_memoria);
 	DireccionMemoriaDinamica* varDinamica = malloc(sizeof(DireccionMemoriaDinamica));
 	varDinamica->pid = pcb->PID;
 	varDinamica->pagina = pagina;
@@ -180,7 +200,7 @@ void LIBERAR(t_puntero memoria_serializada) {
 
 void IR_A_LABEL(t_nombre_etiqueta nombre_etiqueta) {
 	if (nombre_etiqueta[strlen(nombre_etiqueta) - 1] == '\n') {
-		nombre_etiqueta[strlen(nombre_etiqueta) - 1] = '\0';	//esto es porque las etiquetas vienen con el \n al final
+		nombre_etiqueta[strlen(nombre_etiqueta) - 1] = '\0'; //esto es porque las etiquetas vienen con el \n al final
 	}
 
 	pcb->program_counter = metadata_buscar_etiqueta(nombre_etiqueta, pcb->etiquetas, pcb->etiquetas_size);
@@ -297,7 +317,7 @@ t_descriptor_archivo ABRIR_ARCHIVO_PRIM(t_direccion_archivo direccion, t_bandera
 }
 
 void BORRAR_ARCHIVO_PRIM(t_descriptor_archivo descriptor_archivo) {
-	char* mensaje = borrar_archivo(string_itoa(pcb->PID), string_itoa(descriptor_archivo));
+	char* mensaje = borrar_archivo(string_itoa(pcb->PID), descriptor_archivo);
 	if (strcmp("OK", mensaje) != 0)
 		lanzar_excepcion(mensaje);
 
@@ -317,8 +337,7 @@ void MOVER_CURSOR_PRIM(t_descriptor_archivo descriptor_archivo, t_valor_variable
 
 void ESCRIBIR_ARCHIVO_PRIM(t_descriptor_archivo descriptor_archivo, void* informacion, t_valor_variable tamanio) {
 
-
-	if (descriptor_archivo <3) {
+	if (descriptor_archivo < 3) {
 		CU_Escribir_Pantalla_AnSISOP(informacion, string_itoa(pcb->PID));
 	} else {
 
@@ -328,15 +347,30 @@ void ESCRIBIR_ARCHIVO_PRIM(t_descriptor_archivo descriptor_archivo, void* inform
 	}
 
 }
+/*
+ void LEER_ARCHIVO_PRIM(t_descriptor_archivo descriptor_archivo, t_puntero informacion, t_valor_variable tamanio) {
+ char* mensaje = leer_archivo(string_itoa(pcb->PID), descriptor_archivo, tamanio);
+ //if (strcmp("OK", mensaje) != 0)
+ //		lanzar_excepcion(mensaje);
+ int pagina = 0, offset = 0;
+ deserializar_puntero(informacion, &pagina, &offset, tamanio_pagina_memoria);
+ offset+=5;
+ almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(offset), string_itoa(tamanio), -1,mensaje);
 
+
+ }*/
 void LEER_ARCHIVO_PRIM(t_descriptor_archivo descriptor_archivo, t_puntero informacion, t_valor_variable tamanio) {
 	char* mensaje = leer_archivo(string_itoa(pcb->PID), descriptor_archivo, tamanio);
 	//if (strcmp("OK", mensaje) != 0)
 	//		lanzar_excepcion(mensaje);
 	int pagina = 0, offset = 0;
 	deserializar_puntero(informacion, &pagina, &offset, tamanio_pagina_memoria);
-	offset+=5;
-	almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(offset), string_itoa(tamanio), -1,mensaje);
-
+	char* valorPuntero = solicitar_bytes_memoria(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(offset), "4");
+	if(pagina < pcb->cantidad_paginas_codigo){
+		deserializar_puntero(*((int*)valorPuntero), &pagina, &offset, tamanio_pagina_memoria);
+	}
+	//deserializar_puntero(*((int*)valorPuntero), &pagina, &offset, tamanio_pagina_memoria);
+	offset += 5;
+	almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(offset), string_itoa(tamanio), -1, mensaje);
 
 }
