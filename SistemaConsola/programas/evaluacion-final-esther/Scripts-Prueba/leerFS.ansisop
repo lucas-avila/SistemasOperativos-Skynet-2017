@@ -4,7 +4,7 @@ begin
   abrir f L /archivo.bin
     leer f a 100
     wait c
-    prints s a
+    #prints s a
   cerrar f
   liberar a
 end

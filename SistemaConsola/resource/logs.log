@@ -17787,3 +17787,48 @@ Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
 [INFO] 04:34:52:958 CONSOLA/(2293:2311): 
  Proceso (1001): 154
 
+[INFO] 04:56:58:0 CONSOLA/(3438:3442): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 04:56:47:795
+Fecha de fin de ejecucion: 04:56:58:0
+Tiempo total de ejecucion: -1239415264Cantidad de impresiones por pantalla: 0
+[INFO] 04:57:39:25 CONSOLA/(3438:3472): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1002) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 04:57:38:546
+Fecha de fin de ejecucion: 04:57:39:25
+Tiempo total de ejecucion: 139010264Cantidad de impresiones por pantalla: 0
+[INFO] 04:57:39:903 CONSOLA/(3438:3462): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 04:57:23:15
+Fecha de fin de ejecucion: 04:57:39:903
+Tiempo total de ejecucion: -1239414664Cantidad de impresiones por pantalla: 0
+[INFO] 04:58:08:298 CONSOLA/(3438:3499): 
+ Proceso (1003): 808529968
+
+[INFO] 04:58:08:819 CONSOLA/(3438:3499): 
+ EXIT CODE: El programa intentó hacer una operación sobre un archivo sin abrirlo previamente.
+El Proceso (1003) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 04:58:06:181
+Fecha de fin de ejecucion: 04:58:08:819
+Tiempo total de ejecucion: -1239414448Cantidad de impresiones por pantalla: 1
+[INFO] 04:58:35:87 CONSOLA/(3438:3505): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1004) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 04:58:31:889
+Fecha de fin de ejecucion: 04:58:35:87
+Tiempo total de ejecucion: -1239414280Cantidad de impresiones por pantalla: 0
+[INFO] 04:58:50:902 CONSOLA/(3438:3511): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1005) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 04:58:46:818
+Fecha de fin de ejecucion: 04:58:50:902
+Tiempo total de ejecucion: -1239414096Cantidad de impresiones por pantalla: 0
+[INFO] 04:59:03:256 CONSOLA/(3438:3517): 
+ EXIT CODE: Se intentó reservar más memoria que el tamaño de una página.
+El Proceso (1006) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 04:59:02:566
+Fecha de fin de ejecucion: 04:59:03:256
+Tiempo total de ejecucion: -1239413912Cantidad de impresiones por pantalla: 0

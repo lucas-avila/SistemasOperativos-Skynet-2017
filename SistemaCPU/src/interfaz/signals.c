@@ -12,7 +12,6 @@
 
 void recibir_seniales_de_linux(int signum){
     //Terminar de ejecutar y salir
-	printf("\na\n");
 	CU_Terminar_ejecucion_y_finalizar();
 }
 
