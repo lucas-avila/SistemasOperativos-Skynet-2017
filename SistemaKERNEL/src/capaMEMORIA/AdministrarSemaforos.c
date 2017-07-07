@@ -19,8 +19,10 @@ int es_semaforo(char* nombre_sem) {
 }
 
 int obtener_valor_semaforo(char * nombre_sem){
-	if(dictionary_has_key(dict_semaforos_ansisop, nombre_sem))
-		return dictionary_get(dict_semaforos_ansisop, nombre_sem);
+	if(dictionary_has_key(dict_semaforos_ansisop, nombre_sem)){
+		int * sem_pointer = dictionary_get(dict_semaforos_ansisop, nombre_sem);
+		return *sem_pointer;
+	}
 	return -2;
 }
 
@@ -39,8 +41,12 @@ int signal_semaforo_ansisop(char * nombre_sem){
 int wait_semaforo_ansisop(char * nombre_sem){
 	if(dictionary_has_key(dict_semaforos_ansisop, nombre_sem)){
 		int * sem_pointer = dictionary_get(dict_semaforos_ansisop, nombre_sem);
-		(*sem_pointer >= 0)? (*sem_pointer)-- : (*sem_pointer = -1);
-		return *sem_pointer;
+		if(*sem_pointer == 0)
+			return -1;
+		else{
+			(*sem_pointer)--;
+			return *sem_pointer;
+		}
 	}
 	return -2; //no existe
 }

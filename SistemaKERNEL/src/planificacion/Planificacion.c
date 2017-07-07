@@ -80,7 +80,8 @@ void informar_accion_en_log(uint32_t PID, char * destino){
 }
 
 int mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
-
+printf("-------------\n");
+printf("%d de %s a %s\n", pcb->PID, origen, destino);
 	Proceso * p = proceso(pcb);
 
 	//Validacion
@@ -126,9 +127,6 @@ int mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 		sem_post(&grado_multiprogramacion);
 	}
 
-	char * cola_guardada = p->cola;
-	strcpy(cola_guardada, "");
-	string_append(&cola_guardada, destino);
 
 	//Después de que se actualice el proceso lo metemos en la cola a la que iba
 	wait_cola(destino);
@@ -140,11 +138,20 @@ int mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 	} else
 		queue_push(cola(destino), pcb);
 
+
+	char * cola_guardada = p->cola;
+	strcpy(cola_guardada, "");
+	string_append(&cola_guardada, destino);
+
+	signal_cola(destino);
+<<<<<<< HEAD
+printf("%d de %s a %s OK\n", pcb->PID, origen, p->cola);
 	if(strcmp(destino, READY) == 0)
 		sem_post(&proceso_ready);
 
-	signal_cola(destino);
+=======
 	informar_accion_en_log(pcb->PID, destino);
+>>>>>>> f617bed21251d98d85e5040cd6193ea58c7e8e5b
 	return 0;
 }
 
@@ -203,8 +210,8 @@ void planificador_largo_plazo() {
 
 PCB* obtener_proceso_de_cola_READY() {
 	while (configuraciones.planificacion_activa == 1) {
+
 		sem_wait(&proceso_ready);
-		printf("\nproceso_ready es %d\n", proceso_ready);
 		wait_cola(READY);
 		if (!queue_is_empty(cola(READY))) {
 
@@ -224,6 +231,7 @@ void enviar_PCB_Serializado_a_CPU(CPUInfo* cpu, PCB* pcb) {
 	proceso(pcb)->cpu = cpu;
 	//enviar_dato_serializado("TESTEAR_PLANIFICACION", cpu->numeroConexion);
 	enviar_pcb(pcb, cpu->numeroConexion);
+
 }
 
 void marcar_CPU_Ocupada(CPUInfo* cpu) {
@@ -234,8 +242,8 @@ void marcar_CPU_Ocupada(CPUInfo* cpu) {
 
 void marcar_CPU_Disponible(CPUInfo* cpu) {
 	if(cpu == NULL) return;
-	sem_post(&cpu_disponible);
 	cpu->disponible = 1;
+	sem_post(&cpu_disponible);
 	return;
 }
 
@@ -245,11 +253,14 @@ int recepcion_SIGNAL_semaforo_ansisop(char * nombre_sem) {
 	if(res == -2)
 		return res;
 
-
+	wait_cola(WAITING);
 	PCB * pcb = queue_peek(cola(nombre_sem));
+	signal_cola(WAITING);
 
-	if (pcb != NULL)
+	if (pcb != NULL){
+		wait_semaforo_ansisop(nombre_sem);
 		mover_PCB_de_cola(pcb, nombre_sem, READY);
+	}
 
 	return res;
 }

@@ -1,0 +1,6 @@
+begin
+  :etiqueta
+  wait poloMutex
+  signal mutexB
+  goto etiqueta
+end

@@ -44,7 +44,6 @@ void CU_Recibir_Conexiones_Programa(int clientePrograma) {
 			verificar_estado(pid, -7);
 		} else if (strcmp(codigo_operacion, "DESCONEXION_CONSOLA") == 0){
 			int pid = atoi(recibir_dato_serializado(clientePrograma));
-			Proceso* Proceso_a_eliminar = buscar_proceso_by_PID(pid);
 			verificar_estado(pid, -6);
 		} else if (strcmp(codigo_operacion, "") == 0) {
 			close(clientePrograma);

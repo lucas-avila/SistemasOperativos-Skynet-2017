@@ -137,6 +137,7 @@ void WAIT(t_nombre_semaforo identificador_semaforo) {
 }
 
 void SIGNAL(t_nombre_semaforo identificador_semaforo) {
+	printf("\nPRE-SIGNAL %s\n", identificador_semaforo);
 	enviar_SYSCALL_signal_semaforo_a_kernel(identificador_semaforo);
 }
 
@@ -305,7 +306,7 @@ t_descriptor_archivo ABRIR_ARCHIVO_PRIM(t_direccion_archivo direccion, t_bandera
 
 	if (controlNumerico == 0) {
 		lanzar_excepcion(mensaje);
-		return -1;
+		return 0;
 	} else {
 		return atoi(mensaje);
 	}

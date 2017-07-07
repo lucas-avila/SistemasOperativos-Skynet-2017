@@ -53,11 +53,11 @@ void mostrar_menu_listado_procesos() {
 
 void mostrar_menu_colas() {
 	printf("\n******* Elija una cola de procesos: ******");
-	printf("\n 1 - New.");
-	printf("\n 2 - Ready.");
-	printf("\n 3 - Running.");
-	printf("\n 4 - Finished.");
-	printf("\n 5 - Waiting.");
+	printf("\n 1 - NEW.");
+	printf("\n 2 - READY.");
+	printf("\n 3 - EXEC.");
+	printf("\n 4 - WAITING.");
+	printf("\n 5 - EXIT.");
 	printf("\n 6 - Volver.");
 	printf("\n Opcion: ");
 }
@@ -106,7 +106,7 @@ char* devolver_cola(int opcion) {
 		return EXEC;
 		break;
 	case 4:
-		return EXIT;
+		return WAITING;
 		break;
 	case 5:
 		return EXIT;
@@ -123,6 +123,8 @@ void listar_procesos_por_cola() {
 		char * cola_elegida = devolver_cola(opcion);
 		if (opcion != 6) {
 			int buscar_procesos_por_cola(Proceso * proceso) {
+				if(strcmp(cola_elegida, WAITING) == 0)
+					return es_semaforo(proceso->cola);
 				return strcmp(proceso->cola, cola_elegida) == 0;
 			}
 			sem_wait(&mutex_lista_PROCESOS);
@@ -145,6 +147,8 @@ void mostrar_procesos(t_list * procesos_lista) {
 		string_append(&info_log, "- - - - - - - - - - - - - - - - - - -\n");
 		string_append(&info_log, string_itoa(proceso->PID));
 		string_append(&info_log, " \t\t ");
+		if(es_semaforo(proceso->cola))
+			string_append(&info_log, "WAITING -->");
 		string_append(&info_log, proceso->cola);
 		string_append(&info_log, "\n");
 		i++;
