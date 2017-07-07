@@ -1,0 +1,2248 @@
+<<<<<<< HEAD
+[INFO] 00:05:40:390 KERNEL/(23444:23444): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:05:52:552 KERNEL/(23444:23444): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:05:53:968 KERNEL/(23444:23444): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:06:59:872 KERNEL/(23444:23444): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:11:29:590 KERNEL/(23704:23704): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:12:27:845 KERNEL/(23744:23744): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:12:50:0 KERNEL/(23744:23744): 
+***LOGS del KERNEL***
+ --- Se activó la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:13:30:713 KERNEL/(23744:23744): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:13:32:137 KERNEL/(23744:23744): 
+***LOGS del KERNEL***
+ --- Se activó la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:17:14:757 KERNEL/(23913:23913): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:17:55:510 KERNEL/(23973:23973): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:18:01:754 KERNEL/(23973:23973): 
+***LOGS del KERNEL***
+ --- Se activó la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:18:07:966 KERNEL/(23973:23973): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:19:05:511 KERNEL/(23997:23997): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:19:28:497 KERNEL/(23997:23997): 
+***LOGS del KERNEL***
+ --- Se activó la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:21:09:414 KERNEL/(24140:24140): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:21:21:737 KERNEL/(24140:24140): 
+***LOGS del KERNEL***
+ --- Se activó la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:21:35:799 KERNEL/(24140:24140): 
+***LOGS del KERNEL***
+ 
+---TABLA GLOBAL DE ARCHIVOS---
+
+ FILE 			 OPEN
+
+------Fin del LOG------
+
+[INFO] 00:27:38:305 KERNEL/(2484:2484): 
+***LOGS del KERNEL***
+ 
+---TABLA GLOBAL DE ARCHIVOS---
+
+ FILE 			 OPEN
+
+------Fin del LOG------
+
+[INFO] 00:29:16:554 KERNEL/(2564:2564): 
+***LOGS del KERNEL***
+ 
+---TABLA GLOBAL DE ARCHIVOS---
+
+ FILE 			 OPEN
+
+------Fin del LOG------
+
+[INFO] 00:32:05:55 KERNEL/(2960:2960): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:32:15:411 KERNEL/(2960:2960): 
+***LOGS del KERNEL***
+ --- Se activó la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:32:25:719 KERNEL/(2960:2960): 
+***LOGS del KERNEL***
+ 
+---TABLA GLOBAL DE ARCHIVOS---
+
+ FILE 			 OPEN
+
+------Fin del LOG------
+
+[INFO] 00:34:51:816 KERNEL/(3168:3168): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:35:14:865 KERNEL/(3168:3168): 
+***LOGS del KERNEL***
+ --- Se activó la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:36:56:738 KERNEL/(3287:3287): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:37:17:367 KERNEL/(3287:3287): 
+***LOGS del KERNEL***
+ --- Se activó la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:37:26:452 KERNEL/(3287:3287): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:37:56:550 KERNEL/(3287:3287): 
+***LOGS del KERNEL***
+ --- Se activó la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:39:47:144 KERNEL/(3287:3287): 
+=======
+[INFO] 14:10:46:843 KERNEL/(5028:5028): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 1
+------Fin del LOG------
+
+[INFO] 14:11:04:712 KERNEL/(5028:5028): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 1
+------Fin del LOG------
+
+[INFO] 14:11:07:262 KERNEL/(5028:5028): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+
+[INFO] 14:11:11:612 KERNEL/(5028:5028): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+
+[INFO] 14:11:13:729 KERNEL/(5028:5028): 
+>>>>>>> c3f27240a6c8583770e9e7720ea2eb4ace4362bf
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+<<<<<<< HEAD
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXIT
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXIT
+- - - - - - - - - - - - - - - - - - -
+1002 		 EXIT
+- - - - - - - - - - - - - - - - - - -
+1003 		 EXIT
+---------------------
+---> Cantidad de procesos totales encontrados: 4
+------Fin del LOG------
+
+[INFO] 00:41:02:393 KERNEL/(3287:3287): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 00:41:18:235 KERNEL/(3287:3287): 
+***LOGS del KERNEL***
+ --- Se activó la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 01:08:04:857 KERNEL/(4026:4026): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 01:09:36:503 KERNEL/(4026:4026): 
+***LOGS del KERNEL***
+ --- Se activó la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 01:11:54:746 KERNEL/(4026:4026): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 01:12:33:784 KERNEL/(4026:4026): 
+***LOGS del KERNEL***
+ --- Se activó la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 01:26:15:64 KERNEL/(5097:5097): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 01:26:53:321 KERNEL/(5097:5097): 
+***LOGS del KERNEL***
+ --- Se activó la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 01:31:02:553 KERNEL/(5579:5579): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 01:31:35:906 KERNEL/(5579:5579): 
+***LOGS del KERNEL***
+ --- Se activó la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 01:38:36:433 KERNEL/(5846:5846): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 01:39:02:99 KERNEL/(5846:5846): 
+***LOGS del KERNEL***
+ --- Se activó la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 02:01:00:571 KERNEL/(6955:6955): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 02:01:02:226 KERNEL/(6955:6955): 
+***LOGS del KERNEL***
+ --- Se activó la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 02:10:26:25 KERNEL/(7274:7274): 
+***LOGS del KERNEL***
+ --> Cambio de grado de multiprogramacion a: 6
+------Fin del LOG------
+
+[INFO] 02:24:16:18 KERNEL/(8071:8071): 
+***LOGS del KERNEL***
+ --> Cambio de grado de multiprogramacion a: 6
+------Fin del LOG------
+
+[INFO] 02:51:49:182 KERNEL/(9729:9729): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXIT
+- - - - - - - - - - - - - - - - - - -
+1001 		 READY
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+=======
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+
+[INFO] 14:11:14:736 KERNEL/(5028:5028): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+
+[INFO] 14:13:54:800 KERNEL/(5112:5112): 
+***LOGS del KERNEL***
+ 
+-->Logs del Proceso 1000:
+Cantidad de rafagas ejecutadas: 0
+
+------Fin del LOG------
+
+[INFO] 14:13:57:136 KERNEL/(5112:5112): 
+***LOGS del KERNEL***
+ 
+-->Logs del Proceso 1000:
+
+ -----------------------------------------------------
+ TABLA PROCESO DE ARCHIVOS
+ -----------------------------------------------------
+ FD 		 GlobalFD 	 CursorBloque 	   FLAGS
+ -----------------------------------------------------
+ 3 		 0  		 0 		 CLE
+ 4 		 1  		 0 		 CLE
+------Fin del LOG------
+
+[INFO] 14:14:16:253 KERNEL/(5112:5112): 
+***LOGS del KERNEL***
+ 
+-->Logs del Proceso 1000:
+Cantidad de páginas de HEAP utilizadas: 0
+
+------Fin del LOG------
+
+[INFO] 14:14:23:219 KERNEL/(5112:5112): 
+***LOGS del KERNEL***
+ 
+-->Logs del Proceso 1000:
+Cantidad syscalls ejecutadas: 1
+
+>>>>>>> c3f27240a6c8583770e9e7720ea2eb4ace4362bf
+------Fin del LOG------
+
+[INFO] 13:20:40:570 KERNEL/(11020:11020): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 13:21:28:210 KERNEL/(11020:11020): 
+***LOGS del KERNEL***
+ --- Se activó la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 13:52:19:661 KERNEL/(12955:12955): 
+***LOGS del KERNEL***
+ 
+---TABLA GLOBAL DE ARCHIVOS---
+
+ FILE 			 OPEN
+
+---TABLA GLOBAL DE ARCHIVOS---
+
+ FILE 			 OPEN
+
+---TABLA GLOBAL DE ARCHIVOS---
+
+ FILE 			 OPEN
+
+---TABLA GLOBAL DE ARCHIVOS---
+
+ FILE 			 OPEN
+
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXIT
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXIT
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+<<<<<<< HEAD:SistemaKERNEL/resource/logs.log
+[INFO] 16:49:09:212 KERNEL/(16041:16041): 
+=======
+[INFO] 16:48:16:161 KERNEL/(3658:3658): 
+>>>>>>> f617bed21251d98d85e5040cd6193ea58c7e8e5b:.metadata/.plugins/org.eclipse.core.resources/.history/b/d0549ed3ae6200171c94d4f857bef1f4
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+<<<<<<< HEAD:SistemaKERNEL/resource/logs.log
+- - - - - - - - - - - - - - - - - - -
+1000 		 poloMutex
+---------------------
+---> Cantidad de procesos totales encontrados: 1
+------Fin del LOG------
+
+[INFO] 16:53:07:964 KERNEL/(16122:16122): 
+=======
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+
+[INFO] 17:07:56:631 KERNEL/(4362:4362): 
+>>>>>>> f617bed21251d98d85e5040cd6193ea58c7e8e5b:.metadata/.plugins/org.eclipse.core.resources/.history/b/d0549ed3ae6200171c94d4f857bef1f4
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+<<<<<<< HEAD:SistemaKERNEL/resource/logs.log
+1000 		 poloMutex
+=======
+1000 		 READY
+>>>>>>> f617bed21251d98d85e5040cd6193ea58c7e8e5b:.metadata/.plugins/org.eclipse.core.resources/.history/b/d0549ed3ae6200171c94d4f857bef1f4
+---------------------
+---> Cantidad de procesos totales encontrados: 1
+------Fin del LOG------
+
+<<<<<<< HEAD:SistemaKERNEL/resource/logs.log
+[INFO] 17:17:02:147 KERNEL/(16345:16345): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+
+[INFO] 17:17:16:660 KERNEL/(16345:16345): 
+=======
+[INFO] 17:28:16:300 KERNEL/(5293:5293): 
+>>>>>>> f617bed21251d98d85e5040cd6193ea58c7e8e5b:.metadata/.plugins/org.eclipse.core.resources/.history/b/d0549ed3ae6200171c94d4f857bef1f4
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+<<<<<<< HEAD:SistemaKERNEL/resource/logs.log
+1000 		 poloMutex
+=======
+1000 		 READY
+>>>>>>> f617bed21251d98d85e5040cd6193ea58c7e8e5b:.metadata/.plugins/org.eclipse.core.resources/.history/b/d0549ed3ae6200171c94d4f857bef1f4
+---------------------
+---> Cantidad de procesos totales encontrados: 1
+------Fin del LOG------
+
+<<<<<<< HEAD:SistemaKERNEL/resource/logs.log
+[INFO] 17:17:51:299 KERNEL/(16433:16433): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 WAITING -->poloMutex
+---------------------
+---> Cantidad de procesos totales encontrados: 1
+------Fin del LOG------
+
+[INFO] 17:17:57:283 KERNEL/(16433:16433): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 WAITING -->poloMutex
+---------------------
+---> Cantidad de procesos totales encontrados: 1
+------Fin del LOG------
+
+[INFO] 19:59:33:753 KERNEL/(21433:21433): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 WAITING -->b
+---------------------
+---> Cantidad de procesos totales encontrados: 1
+------Fin del LOG------
+
+[INFO] 21:23:11:496 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:17:380 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:18:501 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:19:590 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:20:333 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:20:791 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:21:198 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:21:606 KERNEL/(24795:24795): 
+=======
+[INFO] 17:28:26:934 KERNEL/(5293:5293): 
+***LOGS del KERNEL***
+ 
+-->Logs del Proceso 1000:
+Cantidad de rafagas ejecutadas: 0
+
+------Fin del LOG------
+
+[INFO] 17:28:29:320 KERNEL/(5293:5293): 
+***LOGS del KERNEL***
+ 
+-->Logs del Proceso 1000:
+Cantidad de páginas de HEAP utilizadas: 0
+
+------Fin del LOG------
+
+[INFO] 17:28:31:765 KERNEL/(5293:5293): 
+***LOGS del KERNEL***
+ 
+-->Logs del Proceso 1000:
+Cantidad syscalls ejecutadas: 0
+
+------Fin del LOG------
+
+[INFO] 17:28:33:710 KERNEL/(5293:5293): 
+***LOGS del KERNEL***
+ 
+-->Logs del Proceso 1000:
+
+ -----------------------------------------------------
+ TABLA PROCESO DE ARCHIVOS
+ -----------------------------------------------------
+ FD 		 GlobalFD 	 CursorBloque 	   FLAGS
+ -----------------------------------------------------
+------Fin del LOG------
+
+[INFO] 17:37:10:750 KERNEL/(5611:5613): 
+***LOGS del KERNEL***
+ Se añadio el proceso (1000) a la cola NEW.
+
+------Fin del LOG------
+
+[INFO] 17:44:36:994 KERNEL/(5821:5823): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola NEW.
+
+------Fin del LOG------
+
+[INFO] 17:45:49:336 KERNEL/(5949:5951): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola NEW.
+------Fin del LOG------
+
+[INFO] 17:45:49:856 KERNEL/(5949:5954): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola READY.
+------Fin del LOG------
+
+[INFO] 17:45:58:189 KERNEL/(5949:5951): 
+***LOGS del KERNEL***
+ Se movio el proceso (1001) a la cola NEW.
+------Fin del LOG------
+
+[INFO] 17:45:58:708 KERNEL/(5949:5954): 
+***LOGS del KERNEL***
+ Se movio el proceso (1001) a la cola READY.
+------Fin del LOG------
+
+<<<<<<< HEAD
+[INFO] 20:36:39:255 KERNEL/(2860:2860): 
+>>>>>>> f617bed21251d98d85e5040cd6193ea58c7e8e5b:.metadata/.plugins/org.eclipse.core.resources/.history/b/d0549ed3ae6200171c94d4f857bef1f4
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+<<<<<<< HEAD:SistemaKERNEL/resource/logs.log
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 WAITING -->c
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:23:955 KERNEL/(24795:24795): 
+=======
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+
+[INFO] 20:36:44:279 KERNEL/(2860:2860): 
+>>>>>>> f617bed21251d98d85e5040cd6193ea58c7e8e5b:.metadata/.plugins/org.eclipse.core.resources/.history/b/d0549ed3ae6200171c94d4f857bef1f4
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+<<<<<<< HEAD:SistemaKERNEL/resource/logs.log
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:25:345 KERNEL/(24795:24795): 
+=======
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+
+[INFO] 20:36:45:831 KERNEL/(2860:2860): 
+>>>>>>> f617bed21251d98d85e5040cd6193ea58c7e8e5b:.metadata/.plugins/org.eclipse.core.resources/.history/b/d0549ed3ae6200171c94d4f857bef1f4
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+<<<<<<< HEAD:SistemaKERNEL/resource/logs.log
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:26:34 KERNEL/(24795:24795): 
+=======
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+
+[INFO] 20:36:47:479 KERNEL/(2860:2860): 
+>>>>>>> f617bed21251d98d85e5040cd6193ea58c7e8e5b:.metadata/.plugins/org.eclipse.core.resources/.history/b/d0549ed3ae6200171c94d4f857bef1f4
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+<<<<<<< HEAD:SistemaKERNEL/resource/logs.log
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 WAITING -->c
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:27:665 KERNEL/(24795:24795): 
+=======
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+
+[INFO] 20:36:49:735 KERNEL/(2860:2860): 
+>>>>>>> f617bed21251d98d85e5040cd6193ea58c7e8e5b:.metadata/.plugins/org.eclipse.core.resources/.history/b/d0549ed3ae6200171c94d4f857bef1f4
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+<<<<<<< HEAD:SistemaKERNEL/resource/logs.log
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 WAITING -->c
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:28:237 KERNEL/(24795:24795): 
+=======
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+
+[INFO] 20:36:51:431 KERNEL/(2860:2860): 
+>>>>>>> f617bed21251d98d85e5040cd6193ea58c7e8e5b:.metadata/.plugins/org.eclipse.core.resources/.history/b/d0549ed3ae6200171c94d4f857bef1f4
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+<<<<<<< HEAD:SistemaKERNEL/resource/logs.log
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:28:876 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 WAITING -->c
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:29:361 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:30:130 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:30:749 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:31:283 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 WAITING -->c
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:32:91 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:33:485 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:34:845 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 WAITING -->c
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:35:69 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:35:342 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:35:613 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 WAITING -->c
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:35:876 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:36:166 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:36:437 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 WAITING -->c
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:36:726 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:37:14 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:37:294 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:37:582 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:37:870 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:38:167 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:38:461 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 WAITING -->c
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:38:752 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:39:70 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:39:342 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:39:639 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 WAITING -->c
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:39:920 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:40:208 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:40:511 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:40:808 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 WAITING -->c
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:41:102 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:41:384 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:41:671 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 WAITING -->c
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:41:969 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:42:272 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:42:569 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:42:849 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 WAITING -->c
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:43:161 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:43:457 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:43:752 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:44:49 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 WAITING -->c
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:44:370 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:44:666 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:44:970 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:45:265 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 WAITING -->c
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:45:570 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:45:882 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:46:187 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:46:481 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 WAITING -->c
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:46:795 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:47:105 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:47:427 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:47:739 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:48:51 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 WAITING -->c
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:48:331 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:48:636 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:48:923 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:23:49:203 KERNEL/(24795:24795): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:17:807 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 WAITING -->c
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:21:790 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:23:4 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 WAITING -->c
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:23:452 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 WAITING -->c
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:23:836 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:24:190 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:24:487 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 WAITING -->c
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:24:732 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:24:994 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 WAITING -->c
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:25:250 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:25:489 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 WAITING -->c
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:25:737 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:25:979 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:26:279 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:26:536 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:26:804 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 WAITING -->c
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:27:75 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:27:340 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 WAITING -->c
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:27:603 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:27:882 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 WAITING -->c
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:28:139 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:28:419 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:28:703 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 WAITING -->c
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:28:946 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:29:204 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 WAITING -->c
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:29:427 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:29:699 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 WAITING -->c
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:29:970 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:30:228 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 WAITING -->c
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:30:496 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:30:776 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:31:83 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:31:364 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:31:652 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 WAITING -->c
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:31:939 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:32:235 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:32:558 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 WAITING -->c
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+------Fin del LOG------
+
+[INFO] 21:33:32:843 KERNEL/(24990:24990): 
+***LOGS del KERNEL***
+ 
+---------------------
+PID 		 COLA
+- - - - - - - - - - - - - - - - - - -
+1000 		 EXEC
+- - - - - - - - - - - - - - - - - - -
+1001 		 EXEC
+---------------------
+---> Cantidad de procesos totales encontrados: 2
+=======
+---------------------
+---> Cantidad de procesos totales encontrados: 0
+------Fin del LOG------
+
+[INFO] 20:39:26:560 KERNEL/(2990:2990): 
+***LOGS del KERNEL***
+ --> Cambio de grado de multiprogramacion a: 5
+------Fin del LOG------
+
+[INFO] 20:39:39:969 KERNEL/(2990:2990): 
+***LOGS del KERNEL***
+ --- Se detuvo la planificacion ---
+
+------Fin del LOG------
+
+[INFO] 20:39:54:577 KERNEL/(3002:3002): 
+***LOGS del KERNEL***
+ 
+---TABLA GLOBAL DE ARCHIVOS---
+
+ FILE 			 OPEN
+
+=======
+[INFO] 18:00:10:627 KERNEL/(6196:6198): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola NEW.
+------Fin del LOG------
+
+[INFO] 18:00:10:628 KERNEL/(6196:6200): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola READY.
+------Fin del LOG------
+
+[INFO] 18:00:31:812 KERNEL/(6196:6212): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola EXIT.
+------Fin del LOG------
+
+[INFO] 18:01:03:480 KERNEL/(6196:6198): 
+***LOGS del KERNEL***
+ Se movio el proceso (1001) a la cola NEW.
+------Fin del LOG------
+
+[INFO] 18:01:03:480 KERNEL/(6196:6200): 
+***LOGS del KERNEL***
+ Se movio el proceso (1001) a la cola READY.
+------Fin del LOG------
+
+[INFO] 18:01:17:899 KERNEL/(6196:6196): 
+***LOGS del KERNEL***
+ Se movio el proceso (1001) a la cola EXIT.
+------Fin del LOG------
+
+[INFO] 18:06:55:555 KERNEL/(6240:6242): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola NEW.
+------Fin del LOG------
+
+[INFO] 18:06:56:76 KERNEL/(6240:6245): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola READY.
+------Fin del LOG------
+
+[INFO] 18:07:04:948 KERNEL/(6240:6251): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola EXIT.
+------Fin del LOG------
+
+[INFO] 18:14:54:620 KERNEL/(6404:6406): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola NEW.
+------Fin del LOG------
+
+[INFO] 18:14:56:20 KERNEL/(6404:6405): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola EXEC.
+------Fin del LOG------
+
+[INFO] 18:14:56:20 KERNEL/(6404:6409): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola READY.
+------Fin del LOG------
+
+[INFO] 18:15:57:228 KERNEL/(6404:6463): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola EXIT.
+------Fin del LOG------
+
+[INFO] 18:18:38:600 KERNEL/(6404:6406): 
+***LOGS del KERNEL***
+ Se movio el proceso (1001) a la cola NEW.
+------Fin del LOG------
+
+[INFO] 18:18:39:839 KERNEL/(6404:6405): 
+***LOGS del KERNEL***
+ Se movio el proceso (1001) a la cola EXEC.
+------Fin del LOG------
+
+[INFO] 18:18:39:840 KERNEL/(6404:6409): 
+***LOGS del KERNEL***
+ Se movio el proceso (1001) a la cola READY.
+------Fin del LOG------
+
+[INFO] 18:21:08:920 KERNEL/(6404:6406): 
+***LOGS del KERNEL***
+ Se movio el proceso (1002) a la cola NEW.
+------Fin del LOG------
+
+[INFO] 18:21:10:159 KERNEL/(6404:6405): 
+***LOGS del KERNEL***
+ Se movio el proceso (1002) a la cola EXEC.
+------Fin del LOG------
+
+[INFO] 18:21:10:160 KERNEL/(6404:6409): 
+***LOGS del KERNEL***
+ Se movio el proceso (1002) a la cola READY.
+------Fin del LOG------
+
+[INFO] 18:21:20:760 KERNEL/(6404:6466): 
+***LOGS del KERNEL***
+ Se movio el proceso (1002) a la cola EXIT.
+------Fin del LOG------
+
+[INFO] 18:21:57:809 KERNEL/(6404:6406): 
+***LOGS del KERNEL***
+ Se movio el proceso (1003) a la cola NEW.
+------Fin del LOG------
+
+[INFO] 18:21:58:967 KERNEL/(6404:6405): 
+***LOGS del KERNEL***
+ Se movio el proceso (1003) a la cola EXEC.
+------Fin del LOG------
+
+[INFO] 18:21:58:968 KERNEL/(6404:6409): 
+***LOGS del KERNEL***
+ Se movio el proceso (1003) a la cola READY.
+------Fin del LOG------
+
+[INFO] 18:22:01:452 KERNEL/(6404:6466): 
+***LOGS del KERNEL***
+ Se movio el proceso (1003) a la cola EXIT.
+------Fin del LOG------
+
+[INFO] 18:23:58:698 KERNEL/(6751:6753): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola NEW.
+------Fin del LOG------
+
+[INFO] 18:23:59:856 KERNEL/(6751:6752): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola EXEC.
+------Fin del LOG------
+
+[INFO] 18:23:59:856 KERNEL/(6751:6756): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola READY.
+------Fin del LOG------
+
+[INFO] 18:24:02:336 KERNEL/(6751:6761): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola EXIT.
+------Fin del LOG------
+
+[INFO] 18:29:06:318 KERNEL/(6918:6920): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola NEW.
+------Fin del LOG------
+
+[INFO] 18:29:07:555 KERNEL/(6918:6919): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola EXEC.
+------Fin del LOG------
+
+[INFO] 18:29:07:556 KERNEL/(6918:6923): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola READY.
+------Fin del LOG------
+
+[INFO] 18:29:18:159 KERNEL/(6918:6928): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola EXIT.
+>>>>>>> 2677ff3dcf06a1e1d293ea431014a1ab424a157d
+>>>>>>> f617bed21251d98d85e5040cd6193ea58c7e8e5b:.metadata/.plugins/org.eclipse.core.resources/.history/b/d0549ed3ae6200171c94d4f857bef1f4
+------Fin del LOG------
+
