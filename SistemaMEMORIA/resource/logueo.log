@@ -1,0 +1,14 @@
+[INFO] 22:11:31:138 MEMORIA/(3865:3865): 
+ Parametros de Archivo de Configuracion 
+PUERTO=8084	
+MARCOS=500	
+MARCO_SIZE=256	
+ENTRADAS_CACHE=0	
+CACHE_X_PROC=0	
+RETARDO_MEMORIA=100	
+CANTIDAD_MAXIMA_CONCURRENCIA=100	
+PATH_ARCHIVO_LOGUEO=../resource/logueo.log 
+[INFO] 22:11:31:138 MEMORIA/(3865:3865): Creando Memoria Principal...
+[INFO] 22:11:31:139 MEMORIA/(3865:3865): Memoria Principal creada correctamente.
+[INFO] 22:11:31:139 MEMORIA/(3865:3865): Creando Estructuras administrativas...
+[INFO] 22:11:31:139 MEMORIA/(3865:3865): Estructuras administrativas creadas correctamente.

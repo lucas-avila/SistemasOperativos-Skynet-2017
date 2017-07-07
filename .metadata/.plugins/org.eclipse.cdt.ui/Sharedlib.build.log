@@ -1,6 +1,6 @@
-21:53:41 **** Incremental Build of configuration Debug for project Sharedlib ****
+23:15:24 **** Incremental Build of configuration Debug for project Sharedlib ****
 make all 
 make: No se hace nada para «all».
 
-21:53:41 Build Finished (took 142ms)
+23:15:25 Build Finished (took 66ms)
 
