@@ -1,6 +1,84 @@
-21:48:47 **** Build of configuration Debug for project SistemaFILESYSTEM ****
+21:53:42 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
 make all 
-make: No se hace nada para «all».
+Building file: ../src/InterfazKernel.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InterfazKernel.d" -MT"src/InterfazKernel.d" -o "src/InterfazKernel.o" "../src/InterfazKernel.c"
+../src/InterfazKernel.c: In function ‘validar_archivo’:
+../src/InterfazKernel.c:25:2: warning: passing argument 1 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  char * path_abs = generar_path_absoluto(PATH_ARCHIVOS, path);
+  ^
+In file included from ../src/InterfazKernel.c:20:0:
+../src/header/FileManager.h:45:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path);
+        ^
+../src/InterfazKernel.c: In function ‘crear_archivo’:
+../src/InterfazKernel.c:39:2: warning: passing argument 1 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  char * path_abs = generar_path_absoluto(PATH_ARCHIVOS, "");
+  ^
+In file included from ../src/InterfazKernel.c:20:0:
+../src/header/FileManager.h:45:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path);
+        ^
+../src/InterfazKernel.c:74:2: warning: implicit declaration of function ‘new_Archivo’ [-Wimplicit-function-declaration]
+  Archivo * archivo = new_Archivo();
+  ^
+../src/InterfazKernel.c:74:22: warning: initialization makes pointer from integer without a cast [enabled by default]
+  Archivo * archivo = new_Archivo();
+                      ^
+../src/InterfazKernel.c: In function ‘obtener_datos’:
+../src/InterfazKernel.c:99:2: warning: passing argument 1 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  char * path_abs = generar_path_absoluto(PATH_ARCHIVOS, path);
+  ^
+In file included from ../src/InterfazKernel.c:20:0:
+../src/header/FileManager.h:45:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path);
+        ^
+../src/InterfazKernel.c:120:4: warning: passing argument 1 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    block_path = generar_path_absoluto(PATH_BLOQUES, block);
+    ^
+In file included from ../src/InterfazKernel.c:20:0:
+../src/header/FileManager.h:45:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path);
+        ^
+../src/InterfazKernel.c:145:2: warning: implicit declaration of function ‘strlen’ [-Wimplicit-function-declaration]
+  if(strlen(texto_leido)<1){
+  ^
+../src/InterfazKernel.c:145:5: warning: incompatible implicit declaration of built-in function ‘strlen’ [enabled by default]
+  if(strlen(texto_leido)<1){
+     ^
+../src/InterfazKernel.c: In function ‘guardar_datos’:
+../src/InterfazKernel.c:167:2: warning: passing argument 1 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  char * path_abs = generar_path_absoluto(PATH_ARCHIVOS, path);
+  ^
+In file included from ../src/InterfazKernel.c:20:0:
+../src/header/FileManager.h:45:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path);
+        ^
+../src/InterfazKernel.c:204:5: warning: passing argument 1 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+     block_path = generar_path_absoluto(PATH_BLOQUES, block_path);
+     ^
+In file included from ../src/InterfazKernel.c:20:0:
+../src/header/FileManager.h:45:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path);
+        ^
+../src/InterfazKernel.c: In function ‘borrar’:
+../src/InterfazKernel.c:244:2: warning: passing argument 1 of ‘generar_path_absoluto’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  char * path_abs = generar_path_absoluto(PATH_ARCHIVOS, path);
+  ^
+In file included from ../src/InterfazKernel.c:20:0:
+../src/header/FileManager.h:45:8: note: expected ‘char *’ but argument is of type ‘const char *’
+ char * generar_path_absoluto(char * intermedio, char * path);
+        ^
+../src/InterfazKernel.c:246:13: warning: unused variable ‘config’ [-Wunused-variable]
+  t_config * config;
+             ^
+Finished building: ../src/InterfazKernel.c
+ 
+Building target: SistemaFILESYSTEM
+Invoking: GCC C Linker
+gcc -L"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug" -o "SistemaFILESYSTEM"  ./src/testing/testing.o  ./src/header/AppConfig.o  ./src/Archivo.o ./src/FILE_SYSTEM.o ./src/FileManager.o ./src/InterfazKernel.o   -lSharedlib -lpthread -lcommons
+Finished building target: SistemaFILESYSTEM
+ 
 
-21:48:48 Build Finished (took 78ms)
+21:53:43 Build Finished (took 578ms)
 

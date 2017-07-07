@@ -1,6 +1,6 @@
-21:48:46 **** Build of configuration Debug for project SistemaCPU ****
+21:53:42 **** Incremental Build of configuration Debug for project SistemaCPU ****
 make all 
 make: No se hace nada para «all».
 
-21:48:46 Build Finished (took 76ms)
+21:53:42 Build Finished (took 82ms)
 
