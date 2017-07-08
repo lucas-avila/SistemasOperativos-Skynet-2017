@@ -69,6 +69,8 @@ void inicializar_semaforos(){
 	inicializar_semaforo(&cpu_disponible, 0);
 	inicializar_semaforo(&proceso_new, 0);
 	inicializar_semaforo(&proceso_ready, 0);
+	inicializar_semaforo(&eliminacion, 1);
+
 	//OTROS
 	inicializar_semaforo(&mutex_memoria, 1);
 	inicializar_semaforo(&mutex_tabla_estadistica, 1);

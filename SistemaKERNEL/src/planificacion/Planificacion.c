@@ -20,6 +20,7 @@
 #include "PlanificacionRR.h"
 
 void EJECUTAR_ALGORITMO_PLANIFICACION() {
+	pid_eliminacion = 0;
 	atender_clientes(0, planificador_largo_plazo);
 	if (strcmp(configuraciones.ALGORITMO, "FIFO") == 0) {
 		dispatcher_FIFO();
@@ -76,8 +77,19 @@ void informar_movimiento_de_cola_en_log(uint32_t PID, char * origen,char * desti
 	generar_log();
 }
 
+
+
 int mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 	Proceso * p = proceso(pcb);
+
+	sem_wait(&eliminacion);
+	if(pid_eliminacion != 0){
+		if(pcb->PID == pid_eliminacion){
+			destino = EXIT;
+			pid_eliminacion = 0;
+		}
+	}
+	sem_post(&eliminacion);
 
 	//Validacion
 	if(strcmp(p->cola, origen) != 0)
