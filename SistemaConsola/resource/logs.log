@@ -21,3 +21,583 @@ Fecha de inicio de ejecucion: 01:00:27:675
 Fecha de fin de ejecucion: 01:00:44:121
 Tiempo total de ejecucion: 0:0:16:446
 Cantidad de impresiones por pantalla: 1
+[INFO] 01:22:00:771 CONSOLA/(16828:16880): 
+ Proceso (1001): 1
+
+[INFO] 01:22:00:861 CONSOLA/(16828:16880): 
+ Proceso (1001): Hola Mundo!
+
+[INFO] 01:22:01:64 CONSOLA/(16828:16880): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:21:59:522
+Fecha de fin de ejecucion: 01:22:01:64
+Tiempo total de ejecucion: 0:0:1:542
+Cantidad de impresiones por pantalla: 2
+[INFO] 01:22:09:332 CONSOLA/(16828:16832): 
+ Proceso (1000):     HOLA                                                                                           1
+
+[INFO] 01:22:10:100 CONSOLA/(16828:16832): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:18:39:573
+Fecha de fin de ejecucion: 01:22:10:100
+Tiempo total de ejecucion: 0:3:30:527
+Cantidad de impresiones por pantalla: 1
+[INFO] 01:28:24:484 CONSOLA/(16972:16977): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:28:20:584
+Fecha de fin de ejecucion: 01:28:24:484
+Tiempo total de ejecucion: 0:0:3:900
+Cantidad de impresiones por pantalla: 0
+[INFO] 01:39:13:455 CONSOLA/(17194:17198): 
+ EXIT CODE: El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:39:06:107
+Fecha de fin de ejecucion: 01:39:13:455
+Tiempo total de ejecucion: 0:0:7:348
+Cantidad de impresiones por pantalla: 0
+[INFO] 01:41:37:17 CONSOLA/(17194:17333): 
+ Proceso (1002): 1
+
+[INFO] 01:41:37:98 CONSOLA/(17194:17333): 
+ Proceso (1002): Hola Mundo!
+
+[INFO] 01:41:37:308 CONSOLA/(17194:17333): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1002) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:41:35:777
+Fecha de fin de ejecucion: 01:41:37:308
+Tiempo total de ejecucion: 0:0:1:531
+Cantidad de impresiones por pantalla: 2
+[INFO] 01:42:00:31 CONSOLA/(17194:17298): 
+ Proceso (1001):     HOLA                                                                                           110146--------------------------------------------------------------------------------------------------------------------------------------------------PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
+
+[INFO] 01:42:41:227 CONSOLA/(17395:17399): 
+ Proceso (1000): 1
+
+[INFO] 01:42:41:346 CONSOLA/(17395:17399): 
+ Proceso (1000): Hola Mundo!
+
+[INFO] 01:42:41:551 CONSOLA/(17395:17399): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:42:40:23
+Fecha de fin de ejecucion: 01:42:41:551
+Tiempo total de ejecucion: 0:0:1:528
+Cantidad de impresiones por pantalla: 2
+[INFO] 01:43:03:854 CONSOLA/(17395:17405): 
+ Proceso (1001):     HOLA                                                                                           
+
+[INFO] 01:43:04:824 CONSOLA/(17395:17405): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:42:53:719
+Fecha de fin de ejecucion: 01:43:04:824
+Tiempo total de ejecucion: 0:0:11:105
+Cantidad de impresiones por pantalla: 1
+[INFO] 02:08:26:593 CONSOLA/(14122:14145): 
+ Proceso (1001): 1
+
+[INFO] 02:08:26:914 CONSOLA/(14122:14145): 
+ Proceso (1001): 2
+
+[INFO] 02:08:27:394 CONSOLA/(14122:14145): 
+ Proceso (1001): 3
+
+[INFO] 02:08:27:874 CONSOLA/(14122:14145): 
+ Proceso (1001): 4
+
+[INFO] 02:08:28:353 CONSOLA/(14122:14145): 
+ Proceso (1001): 5
+
+[INFO] 02:08:28:833 CONSOLA/(14122:14145): 
+ Proceso (1001): 6
+
+[INFO] 02:08:29:313 CONSOLA/(14122:14145): 
+ Proceso (1001): 7
+
+[INFO] 02:08:29:793 CONSOLA/(14122:14145): 
+ Proceso (1001): 8
+
+[INFO] 02:08:30:273 CONSOLA/(14122:14145): 
+ Proceso (1001): 9
+
+[INFO] 02:08:30:754 CONSOLA/(14122:14145): 
+ Proceso (1001): 10
+
+[INFO] 02:08:31:234 CONSOLA/(14122:14145): 
+ Proceso (1001): 11
+
+[INFO] 02:08:31:713 CONSOLA/(14122:14145): 
+ Proceso (1001): 12
+
+[INFO] 02:08:32:193 CONSOLA/(14122:14145): 
+ Proceso (1001): 13
+
+[INFO] 02:08:32:673 CONSOLA/(14122:14145): 
+ Proceso (1001): 14
+
+[INFO] 02:08:33:153 CONSOLA/(14122:14145): 
+ Proceso (1001): 15
+
+[INFO] 02:08:33:634 CONSOLA/(14122:14145): 
+ Proceso (1001): 16
+
+[INFO] 02:08:34:113 CONSOLA/(14122:14145): 
+ Proceso (1001): 17
+
+[INFO] 02:08:34:594 CONSOLA/(14122:14145): 
+ Proceso (1001): 18
+
+[INFO] 02:08:35:73 CONSOLA/(14122:14145): 
+ Proceso (1001): 19
+
+[INFO] 02:08:35:554 CONSOLA/(14122:14145): 
+ Proceso (1001): 20
+
+[INFO] 02:08:36:34 CONSOLA/(14122:14145): 
+ Proceso (1001): 21
+
+[INFO] 02:08:36:517 CONSOLA/(14122:14145): 
+ Proceso (1001): 22
+
+[INFO] 02:08:36:1 CONSOLA/(14122:14145): 
+ Proceso (1001): 23
+
+[INFO] 02:08:37:482 CONSOLA/(14122:14145): 
+ Proceso (1001): 24
+
+[INFO] 02:08:37:961 CONSOLA/(14122:14145): 
+ Proceso (1001): 25
+
+[INFO] 02:08:38:441 CONSOLA/(14122:14145): 
+ Proceso (1001): 26
+
+[INFO] 02:08:38:922 CONSOLA/(14122:14145): 
+ Proceso (1001): 27
+
+[INFO] 02:08:39:401 CONSOLA/(14122:14145): 
+ Proceso (1001): 28
+
+[INFO] 02:08:39:882 CONSOLA/(14122:14145): 
+ Proceso (1001): 29
+
+[INFO] 02:08:40:361 CONSOLA/(14122:14145): 
+ Proceso (1001): 30
+
+[INFO] 02:08:40:841 CONSOLA/(14122:14145): 
+ Proceso (1001): 31
+
+[INFO] 02:08:41:321 CONSOLA/(14122:14145): 
+ Proceso (1001): 32
+
+[INFO] 02:08:41:802 CONSOLA/(14122:14145): 
+ Proceso (1001): 33
+
+[INFO] 02:08:42:281 CONSOLA/(14122:14145): 
+ Proceso (1001): 34
+
+[INFO] 02:08:42:761 CONSOLA/(14122:14145): 
+ Proceso (1001): 35
+
+[INFO] 02:08:43:241 CONSOLA/(14122:14145): 
+ Proceso (1001): 36
+
+[INFO] 02:08:43:721 CONSOLA/(14122:14145): 
+ Proceso (1001): 37
+
+[INFO] 02:08:44:201 CONSOLA/(14122:14145): 
+ Proceso (1001): 38
+
+[INFO] 02:08:44:685 CONSOLA/(14122:14145): 
+ Proceso (1001): 39
+
+[INFO] 02:08:45:165 CONSOLA/(14122:14145): 
+ Proceso (1001): 40
+
+[INFO] 02:08:45:645 CONSOLA/(14122:14145): 
+ Proceso (1001): 41
+
+[INFO] 02:08:46:125 CONSOLA/(14122:14145): 
+ Proceso (1001): 42
+
+[INFO] 02:08:46:605 CONSOLA/(14122:14145): 
+ Proceso (1001): 43
+
+[INFO] 02:08:47:85 CONSOLA/(14122:14145): 
+ Proceso (1001): 44
+
+[INFO] 02:08:47:565 CONSOLA/(14122:14145): 
+ Proceso (1001): 45
+
+[INFO] 02:08:48:45 CONSOLA/(14122:14145): 
+ Proceso (1001): 46
+
+[INFO] 02:08:48:525 CONSOLA/(14122:14145): 
+ Proceso (1001): 47
+
+[INFO] 02:08:49:5 CONSOLA/(14122:14145): 
+ Proceso (1001): 48
+
+[INFO] 02:08:49:485 CONSOLA/(14122:14145): 
+ Proceso (1001): 49
+
+[INFO] 02:08:49:965 CONSOLA/(14122:14145): 
+ Proceso (1001): 50
+
+[INFO] 02:08:50:445 CONSOLA/(14122:14145): 
+ Proceso (1001): 51
+
+[INFO] 02:08:50:926 CONSOLA/(14122:14145): 
+ Proceso (1001): 52
+
+[INFO] 02:08:51:405 CONSOLA/(14122:14145): 
+ Proceso (1001): 53
+
+[INFO] 02:08:51:885 CONSOLA/(14122:14145): 
+ Proceso (1001): 54
+
+[INFO] 02:08:52:365 CONSOLA/(14122:14145): 
+ Proceso (1001): 55
+
+[INFO] 02:08:52:845 CONSOLA/(14122:14145): 
+ Proceso (1001): 56
+
+[INFO] 02:08:53:325 CONSOLA/(14122:14145): 
+ Proceso (1001): 57
+
+[INFO] 02:08:53:806 CONSOLA/(14122:14145): 
+ Proceso (1001): 58
+
+[INFO] 02:08:54:285 CONSOLA/(14122:14145): 
+ Proceso (1001): 59
+
+[INFO] 02:08:54:766 CONSOLA/(14122:14145): 
+ Proceso (1001): 60
+
+[INFO] 02:08:55:246 CONSOLA/(14122:14145): 
+ Proceso (1001): 61
+
+[INFO] 02:08:55:726 CONSOLA/(14122:14145): 
+ Proceso (1001): 62
+
+[INFO] 02:08:56:205 CONSOLA/(14122:14145): 
+ Proceso (1001): 63
+
+[INFO] 02:08:56:685 CONSOLA/(14122:14145): 
+ Proceso (1001): 64
+
+[INFO] 02:08:57:166 CONSOLA/(14122:14145): 
+ Proceso (1001): 65
+
+[INFO] 02:08:57:645 CONSOLA/(14122:14145): 
+ Proceso (1001): 66
+
+[INFO] 02:08:58:125 CONSOLA/(14122:14145): 
+ Proceso (1001): 67
+
+[INFO] 02:08:58:605 CONSOLA/(14122:14145): 
+ Proceso (1001): 68
+
+[INFO] 02:08:59:86 CONSOLA/(14122:14145): 
+ Proceso (1001): 69
+
+[INFO] 02:08:59:565 CONSOLA/(14122:14145): 
+ Proceso (1001): 70
+
+[INFO] 02:09:00:45 CONSOLA/(14122:14145): 
+ Proceso (1001): 71
+
+[INFO] 02:09:00:525 CONSOLA/(14122:14145): 
+ Proceso (1001): 72
+
+[INFO] 02:09:01:5 CONSOLA/(14122:14145): 
+ Proceso (1001): 73
+
+[INFO] 02:09:01:485 CONSOLA/(14122:14145): 
+ Proceso (1001): 74
+
+[INFO] 02:09:01:965 CONSOLA/(14122:14145): 
+ Proceso (1001): 75
+
+[INFO] 02:09:02:445 CONSOLA/(14122:14145): 
+ Proceso (1001): 76
+
+[INFO] 02:09:02:925 CONSOLA/(14122:14145): 
+ Proceso (1001): 77
+
+[INFO] 02:09:03:406 CONSOLA/(14122:14145): 
+ Proceso (1001): 78
+
+[INFO] 02:09:03:889 CONSOLA/(14122:14145): 
+ Proceso (1001): 79
+
+[INFO] 02:09:04:370 CONSOLA/(14122:14145): 
+ Proceso (1001): 80
+
+[INFO] 02:09:04:849 CONSOLA/(14122:14145): 
+ Proceso (1001): 81
+
+[INFO] 02:09:05:329 CONSOLA/(14122:14145): 
+ Proceso (1001): 82
+
+[INFO] 02:09:05:809 CONSOLA/(14122:14145): 
+ Proceso (1001): 83
+
+[INFO] 02:09:06:289 CONSOLA/(14122:14145): 
+ Proceso (1001): 84
+
+[INFO] 02:09:06:769 CONSOLA/(14122:14145): 
+ Proceso (1001): 85
+
+[INFO] 02:09:07:249 CONSOLA/(14122:14145): 
+ Proceso (1001): 86
+
+[INFO] 02:09:07:730 CONSOLA/(14122:14145): 
+ Proceso (1001): 87
+
+[INFO] 02:09:08:210 CONSOLA/(14122:14145): 
+ Proceso (1001): 88
+
+[INFO] 02:09:08:690 CONSOLA/(14122:14145): 
+ Proceso (1001): 89
+
+[INFO] 02:09:09:182 CONSOLA/(14122:14145): 
+ Proceso (1001): 90
+
+[INFO] 02:09:09:669 CONSOLA/(14122:14145): 
+ Proceso (1001): 91
+
+[INFO] 02:09:10:149 CONSOLA/(14122:14145): 
+ Proceso (1001): 92
+
+[INFO] 02:09:10:629 CONSOLA/(14122:14145): 
+ Proceso (1001): 93
+
+[INFO] 02:09:11:109 CONSOLA/(14122:14145): 
+ Proceso (1001): 94
+
+[INFO] 02:09:11:590 CONSOLA/(14122:14145): 
+ Proceso (1001): 95
+
+[INFO] 02:09:12:69 CONSOLA/(14122:14145): 
+ Proceso (1001): 96
+
+[INFO] 02:09:12:553 CONSOLA/(14122:14145): 
+ Proceso (1001): 97
+
+[INFO] 02:09:13:34 CONSOLA/(14122:14145): 
+ Proceso (1001): 98
+
+[INFO] 02:09:13:513 CONSOLA/(14122:14145): 
+ Proceso (1001): 99
+
+[INFO] 02:09:13:993 CONSOLA/(14122:14145): 
+ Proceso (1001): 100
+
+[INFO] 02:09:14:474 CONSOLA/(14122:14145): 
+ Proceso (1001): 101
+
+[INFO] 02:09:14:953 CONSOLA/(14122:14145): 
+ Proceso (1001): 102
+
+[INFO] 02:09:15:433 CONSOLA/(14122:14145): 
+ Proceso (1001): 103
+
+[INFO] 02:09:15:914 CONSOLA/(14122:14145): 
+ Proceso (1001): 104
+
+[INFO] 02:09:16:393 CONSOLA/(14122:14145): 
+ Proceso (1001): 105
+
+[INFO] 02:09:16:873 CONSOLA/(14122:14145): 
+ Proceso (1001): 106
+
+[INFO] 02:09:17:353 CONSOLA/(14122:14145): 
+ Proceso (1001): 107
+
+[INFO] 02:09:17:833 CONSOLA/(14122:14145): 
+ Proceso (1001): 108
+
+[INFO] 02:09:18:318 CONSOLA/(14122:14145): 
+ Proceso (1001): 109
+
+[INFO] 02:09:18:797 CONSOLA/(14122:14145): 
+ Proceso (1001): 110
+
+[INFO] 02:09:19:277 CONSOLA/(14122:14145): 
+ Proceso (1001): 111
+
+[INFO] 02:09:19:757 CONSOLA/(14122:14145): 
+ Proceso (1001): 112
+
+[INFO] 02:09:20:237 CONSOLA/(14122:14145): 
+ Proceso (1001): 113
+
+[INFO] 02:09:20:717 CONSOLA/(14122:14145): 
+ Proceso (1001): 114
+
+[INFO] 02:09:21:197 CONSOLA/(14122:14145): 
+ Proceso (1001): 115
+
+[INFO] 02:09:21:677 CONSOLA/(14122:14145): 
+ Proceso (1001): 116
+
+[INFO] 02:09:22:158 CONSOLA/(14122:14145): 
+ Proceso (1001): 117
+
+[INFO] 02:09:22:637 CONSOLA/(14122:14145): 
+ Proceso (1001): 118
+
+[INFO] 02:09:23:118 CONSOLA/(14122:14145): 
+ Proceso (1001): 119
+
+[INFO] 02:09:23:597 CONSOLA/(14122:14145): 
+ Proceso (1001): 120
+
+[INFO] 02:09:24:77 CONSOLA/(14122:14145): 
+ Proceso (1001): 121
+
+[INFO] 02:09:24:557 CONSOLA/(14122:14145): 
+ Proceso (1001): 122
+
+[INFO] 02:21:04:481 CONSOLA/(14436:14455): 
+ Proceso (1001): 1
+
+[INFO] 02:21:04:801 CONSOLA/(14436:14455): 
+ Proceso (1001): 2
+
+[INFO] 02:21:05:281 CONSOLA/(14436:14455): 
+ Proceso (1001): 3
+
+[INFO] 02:21:05:761 CONSOLA/(14436:14455): 
+ Proceso (1001): 4
+
+[INFO] 02:21:06:241 CONSOLA/(14436:14455): 
+ Proceso (1001): 5
+
+[INFO] 02:21:06:722 CONSOLA/(14436:14455): 
+ Proceso (1001): 6
+
+[INFO] 02:21:07:201 CONSOLA/(14436:14455): 
+ Proceso (1001): 7
+
+[INFO] 02:21:07:681 CONSOLA/(14436:14455): 
+ Proceso (1001): 8
+
+[INFO] 02:21:08:161 CONSOLA/(14436:14455): 
+ Proceso (1001): 9
+
+[INFO] 02:21:08:641 CONSOLA/(14436:14455): 
+ Proceso (1001): 10
+
+[INFO] 02:21:09:122 CONSOLA/(14436:14455): 
+ Proceso (1001): 11
+
+[INFO] 02:21:09:602 CONSOLA/(14436:14455): 
+ Proceso (1001): 12
+
+[INFO] 02:21:10:81 CONSOLA/(14436:14455): 
+ Proceso (1001): 13
+
+[INFO] 02:21:10:561 CONSOLA/(14436:14455): 
+ Proceso (1001): 14
+
+[INFO] 02:21:11:42 CONSOLA/(14436:14455): 
+ Proceso (1001): 15
+
+[INFO] 02:21:11:521 CONSOLA/(14436:14455): 
+ Proceso (1001): 16
+
+[INFO] 02:21:12:5 CONSOLA/(14436:14455): 
+ Proceso (1001): 17
+
+[INFO] 02:21:12:485 CONSOLA/(14436:14455): 
+ Proceso (1001): 18
+
+[INFO] 02:21:12:965 CONSOLA/(14436:14455): 
+ Proceso (1001): 19
+
+[INFO] 02:21:13:445 CONSOLA/(14436:14455): 
+ Proceso (1001): 20
+
+[INFO] 02:21:13:926 CONSOLA/(14436:14455): 
+ Proceso (1001): 21
+
+[INFO] 02:21:14:410 CONSOLA/(14436:14455): 
+ Proceso (1001): 22
+
+[INFO] 02:21:14:889 CONSOLA/(14436:14455): 
+ Proceso (1001): 23
+
+[INFO] 02:21:15:370 CONSOLA/(14436:14455): 
+ Proceso (1001): 24
+
+[INFO] 02:21:15:849 CONSOLA/(14436:14455): 
+ Proceso (1001): 25
+
+[INFO] 02:21:16:329 CONSOLA/(14436:14455): 
+ Proceso (1001): 26
+
+[INFO] 02:21:16:810 CONSOLA/(14436:14455): 
+ Proceso (1001): 27
+
+[INFO] 02:21:17:290 CONSOLA/(14436:14455): 
+ Proceso (1001): 28
+
+[INFO] 02:21:17:769 CONSOLA/(14436:14455): 
+ Proceso (1001): 29
+
+[INFO] 02:21:18:249 CONSOLA/(14436:14455): 
+ Proceso (1001): 30
+
+[INFO] 02:21:18:730 CONSOLA/(14436:14455): 
+ Proceso (1001): 31
+
+[INFO] 02:21:19:209 CONSOLA/(14436:14455): 
+ Proceso (1001): 32
+
+[INFO] 02:21:19:690 CONSOLA/(14436:14455): 
+ Proceso (1001): 33
+
+[INFO] 02:21:20:169 CONSOLA/(14436:14455): 
+ Proceso (1001): 34
+
+[INFO] 02:21:20:650 CONSOLA/(14436:14455): 
+ Proceso (1001): 35
+
+[INFO] 02:21:21:129 CONSOLA/(14436:14455): 
+ Proceso (1001): 36
+
+[INFO] 02:21:21:609 CONSOLA/(14436:14455): 
+ Proceso (1001): 37
+
+[INFO] 02:21:22:89 CONSOLA/(14436:14455): 
+ Proceso (1001): 38
+
+[INFO] 02:21:22:570 CONSOLA/(14436:14455): 
+ Proceso (1001): 39
+
+[INFO] 02:21:23:49 CONSOLA/(14436:14455): 
+ Proceso (1001): 40
+
+[INFO] 02:21:23:529 CONSOLA/(14436:14455): 
+ Proceso (1001): 41
+
+[INFO] 02:21:24:9 CONSOLA/(14436:14455): 
+ Proceso (1001): 42
+
+[INFO] 02:21:24:489 CONSOLA/(14436:14455): 
+ Proceso (1001): 43
+
+[INFO] 02:21:24:939 CONSOLA/(14438:14451): 
+ EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 02:20:45:153
+Fecha de fin de ejecucion: 02:21:24:939
+Tiempo total de ejecucion: 0:0:39:786
+Cantidad de impresiones por pantalla: 0
+[INFO] 02:21:24:973 CONSOLA/(14436:14455): 
+ Proceso (1001): 44
+
