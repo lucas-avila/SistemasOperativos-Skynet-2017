@@ -18601,3 +18601,77 @@ Fecha de fin de ejecucion: 23:48:58:204
 Tiempo total de ejecucion: 0:1:40:842
 >>>>>>> 350d2cdd3dfb56c0b27cd487c7c2bf380862a23c
 Cantidad de impresiones por pantalla: 0
+[INFO] 00:24:29:626 CONSOLA/(9210:9218): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 00:24:23:582
+Fecha de fin de ejecucion: 00:24:29:626
+Tiempo total de ejecucion: 0:0:6:44
+Cantidad de impresiones por pantalla: 0
+[INFO] 00:45:21:229 CONSOLA/(9614:9618): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 00:45:08:433
+Fecha de fin de ejecucion: 00:45:21:228
+Tiempo total de ejecucion: 0:0:12:795
+Cantidad de impresiones por pantalla: 0
+[INFO] 00:50:02:314 CONSOLA/(9614:9685): 
+ Proceso (1001): 001000010HOLA                                                                                            10146--------------------------------------------------------------------------------------------------------------------------------------------------PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
+
+[INFO] 01:01:33:794 CONSOLA/(10545:10553): 
+ Proceso (1001): -1
+
+[INFO] 01:01:34:517 CONSOLA/(10545:10553): 
+ Proceso (1001): -1
+
+[INFO] 01:01:35:237 CONSOLA/(10545:10553): 
+ Proceso (1001): -1
+
+[INFO] 01:01:35:958 CONSOLA/(10545:10553): 
+ Proceso (1001): -1
+
+[INFO] 01:01:36:677 CONSOLA/(10545:10553): 
+ Proceso (1001): -1
+
+[INFO] 01:01:37:397 CONSOLA/(10545:10553): 
+ Proceso (1001): -1
+
+[INFO] 01:01:38:118 CONSOLA/(10545:10553): 
+ Proceso (1001): -1
+
+[INFO] 01:01:38:838 CONSOLA/(10545:10553): 
+ Proceso (1001): -1
+
+[INFO] 01:01:39:557 CONSOLA/(10545:10553): 
+ Proceso (1001): -1
+
+[INFO] 01:01:40:282 CONSOLA/(10545:10553): 
+ Proceso (1001): -1
+
+[INFO] 01:01:40:2 CONSOLA/(10545:10553): 
+ Proceso (1001): -1
+
+[INFO] 01:01:41:722 CONSOLA/(10545:10553): 
+ Proceso (1001): -1
+
+[INFO] 01:01:42:442 CONSOLA/(10545:10553): 
+ Proceso (1001): -1
+
+[INFO] 01:01:43:162 CONSOLA/(10545:10553): 
+ Proceso (1001): -1
+
+[INFO] 01:01:43:882 CONSOLA/(10545:10553): 
+ Proceso (1001): -1
+
+[INFO] 01:01:44:602 CONSOLA/(10545:10553): 
+ Proceso (1001): -1
+
+[INFO] 01:01:45:321 CONSOLA/(10545:10553): 
+ Proceso (1001): -1
+
+[INFO] 01:01:46:42 CONSOLA/(10545:10553): 
+ Proceso (1001): -1
+
+[INFO] 01:01:46:762 CONSOLA/(10545:10553): 
+ Proceso (1001): -1
+

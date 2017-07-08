@@ -1946,3 +1946,542 @@ El Proceso 1000 se movio de la cola NEW a la cola READY.
 
 ------Fin del LOG------
 
+[INFO] 01:00:39:674 KERNEL/(10506:10507): 
+***LOGS del KERNEL***
+ El Proceso se 1000 agrego a la cola NEW.
+El Proceso 1000 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:00:39:674 KERNEL/(10506:10511): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola NEW a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:00:40:73 KERNEL/(10506:10507): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:00:40:74 KERNEL/(10506:10516): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:26:785 KERNEL/(10537:10542): 
+***LOGS del KERNEL***
+ El Proceso se 1000 agrego a la cola NEW.
+El Proceso 1000 se movio de la cola NEW a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:31:9 KERNEL/(10537:10542): 
+***LOGS del KERNEL***
+ El Proceso se 1001 agrego a la cola NEW.
+El Proceso 1001 se movio de la cola NEW a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:33:153 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:33:593 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:33:593 KERNEL/(10537:10557): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:33:913 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:33:913 KERNEL/(10537:10557): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:34:313 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:34:318 KERNEL/(10537:10557): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:34:637 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:34:637 KERNEL/(10537:10557): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:35:37 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:35:37 KERNEL/(10537:10557): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:35:357 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:35:357 KERNEL/(10537:10557): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:35:758 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:35:758 KERNEL/(10537:10557): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:36:78 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:36:78 KERNEL/(10537:10557): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:36:477 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:36:477 KERNEL/(10537:10557): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:36:797 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:36:797 KERNEL/(10537:10557): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:37:197 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:37:198 KERNEL/(10537:10557): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:37:517 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:37:517 KERNEL/(10537:10557): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:37:917 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:37:918 KERNEL/(10537:10557): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:38:237 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:38:237 KERNEL/(10537:10557): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:38:637 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:38:638 KERNEL/(10537:10557): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:38:957 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:38:957 KERNEL/(10537:10557): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:39:357 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:39:358 KERNEL/(10537:10557): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:39:678 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:39:678 KERNEL/(10537:10557): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:40:77 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:40:77 KERNEL/(10537:10557): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:40:402 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:40:402 KERNEL/(10537:10557): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:40:801 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:40:801 KERNEL/(10537:10557): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:41:122 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:41:122 KERNEL/(10537:10557): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:41:521 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:41:521 KERNEL/(10537:10557): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:41:841 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:41:841 KERNEL/(10537:10557): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:42:242 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:42:242 KERNEL/(10537:10557): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:42:562 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:42:562 KERNEL/(10537:10557): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:42:961 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:42:962 KERNEL/(10537:10557): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:43:281 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:43:281 KERNEL/(10537:10557): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:43:681 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:43:682 KERNEL/(10537:10557): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:43:1 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:43:1 KERNEL/(10537:10557): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:44:401 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:44:401 KERNEL/(10537:10557): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:44:722 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:44:722 KERNEL/(10537:10557): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:45:121 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:45:121 KERNEL/(10537:10557): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:45:441 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:45:441 KERNEL/(10537:10557): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:45:841 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:45:841 KERNEL/(10537:10557): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:46:161 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:46:161 KERNEL/(10537:10557): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:01:46:561 KERNEL/(10537:10538): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:01:46:562 KERNEL/(10537:10557): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:14:01:821 KERNEL/(10686:10687): 
+***LOGS del KERNEL***
+ El Proceso se 1000 agrego a la cola NEW.
+El Proceso 1000 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:14:01:822 KERNEL/(10686:10691): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola NEW a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:14:02:221 KERNEL/(10686:10687): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:14:02:222 KERNEL/(10686:10698): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:14:43:150 KERNEL/(10713:10714): 
+***LOGS del KERNEL***
+ El Proceso se 1000 agrego a la cola NEW.
+El Proceso 1000 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:14:43:150 KERNEL/(10713:10718): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola NEW a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:14:43:550 KERNEL/(10713:10714): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:14:43:550 KERNEL/(10713:10721): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
