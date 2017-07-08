@@ -21,3 +21,78 @@ Fecha de inicio de ejecucion: 01:00:27:675
 Fecha de fin de ejecucion: 01:00:44:121
 Tiempo total de ejecucion: 0:0:16:446
 Cantidad de impresiones por pantalla: 1
+[INFO] 01:22:00:771 CONSOLA/(16828:16880): 
+ Proceso (1001): 1
+
+[INFO] 01:22:00:861 CONSOLA/(16828:16880): 
+ Proceso (1001): Hola Mundo!
+
+[INFO] 01:22:01:64 CONSOLA/(16828:16880): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:21:59:522
+Fecha de fin de ejecucion: 01:22:01:64
+Tiempo total de ejecucion: 0:0:1:542
+Cantidad de impresiones por pantalla: 2
+[INFO] 01:22:09:332 CONSOLA/(16828:16832): 
+ Proceso (1000):     HOLA                                                                                           1
+
+[INFO] 01:22:10:100 CONSOLA/(16828:16832): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:18:39:573
+Fecha de fin de ejecucion: 01:22:10:100
+Tiempo total de ejecucion: 0:3:30:527
+Cantidad de impresiones por pantalla: 1
+[INFO] 01:28:24:484 CONSOLA/(16972:16977): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:28:20:584
+Fecha de fin de ejecucion: 01:28:24:484
+Tiempo total de ejecucion: 0:0:3:900
+Cantidad de impresiones por pantalla: 0
+[INFO] 01:39:13:455 CONSOLA/(17194:17198): 
+ EXIT CODE: El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:39:06:107
+Fecha de fin de ejecucion: 01:39:13:455
+Tiempo total de ejecucion: 0:0:7:348
+Cantidad de impresiones por pantalla: 0
+[INFO] 01:41:37:17 CONSOLA/(17194:17333): 
+ Proceso (1002): 1
+
+[INFO] 01:41:37:98 CONSOLA/(17194:17333): 
+ Proceso (1002): Hola Mundo!
+
+[INFO] 01:41:37:308 CONSOLA/(17194:17333): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1002) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:41:35:777
+Fecha de fin de ejecucion: 01:41:37:308
+Tiempo total de ejecucion: 0:0:1:531
+Cantidad de impresiones por pantalla: 2
+[INFO] 01:42:00:31 CONSOLA/(17194:17298): 
+ Proceso (1001):     HOLA                                                                                           110146--------------------------------------------------------------------------------------------------------------------------------------------------PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
+
+[INFO] 01:42:41:227 CONSOLA/(17395:17399): 
+ Proceso (1000): 1
+
+[INFO] 01:42:41:346 CONSOLA/(17395:17399): 
+ Proceso (1000): Hola Mundo!
+
+[INFO] 01:42:41:551 CONSOLA/(17395:17399): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:42:40:23
+Fecha de fin de ejecucion: 01:42:41:551
+Tiempo total de ejecucion: 0:0:1:528
+Cantidad de impresiones por pantalla: 2
+[INFO] 01:43:03:854 CONSOLA/(17395:17405): 
+ Proceso (1001):     HOLA                                                                                           
+
+[INFO] 01:43:04:824 CONSOLA/(17395:17405): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:42:53:719
+Fecha de fin de ejecucion: 01:43:04:824
+Tiempo total de ejecucion: 0:0:11:105
+Cantidad de impresiones por pantalla: 1
