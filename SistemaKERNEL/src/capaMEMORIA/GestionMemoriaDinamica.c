@@ -74,6 +74,7 @@ void CU_Reservar_memoria_MALLOC(int conexionCPU) {
 	}
 	//Lleno informacion estadistica
 	incrementar_MALLOC(atoi(PID), tamanioMALLOC);
+	informar_accion_en_log("RESERVO memoria (MALLOC)", atoi(PID));
 }
 
 void CU_Liberar_memoria_FREE(int conexionCPU) {
@@ -85,6 +86,7 @@ void CU_Liberar_memoria_FREE(int conexionCPU) {
 	int resultado = liberar_pagina_encontrada(pagina_Buscada, byteInicial);
 
 	if (resultado == 1) {
+		informar_accion_en_log("LIBERO memoria (FREE)", atoi(PID));
 		enviar_dato_serializado("OK", conexionCPU);
 		aplicar_algoritmo_Desfragmentacion_Interna(pagina_Buscada);
 		return;

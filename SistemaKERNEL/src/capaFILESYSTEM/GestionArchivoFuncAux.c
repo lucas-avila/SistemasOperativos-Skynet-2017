@@ -2,6 +2,7 @@
 
 #include <commons/collections/list.h>
 #include <commons/string.h>
+#include <semaphore.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -9,6 +10,9 @@
 #include <Sharedlib/Socket.h>
 
 #include "../administrarProcesos/Proceso.h"
+#include "../general/Semaforo.h"
+#include "../header/SolicitudesUsuario.h"
+#include "../interfaz/InterfazCPU.h"
 #include "GestionArchivos.h"
 #include "TablaGlobalArchivo.h"
 #include "TablaProcesoArchivo.h"
@@ -18,6 +22,13 @@ char* grabar_apertura_en_tablas_archivos(char * pathArchivo, Proceso * proc, boo
 	char * modoApertura = obtener_modo_apertura(flagCreate, flagRead, flagWrite);
 	int FD = guardar_archivo_tabla_local_archivo(proc, pathArchivo, modoApertura);
 	free(modoApertura);
+
+	//Informar en log
+	sem_wait(&escribir_log);
+	char * log = string_from_format("El Proceso %d ABRIO un archivo.\n", proc->PID);
+	string_append(&info_log, log);
+	sem_post(&escribir_log);
+	generar_log();
 	return string_itoa(FD);
 }
 
