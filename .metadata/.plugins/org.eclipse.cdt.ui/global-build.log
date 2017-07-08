@@ -26058,3 +26058,119 @@ Invoking: GCC C Linker
 gcc -L"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug" -o "SistemaMEMORIA"  ./src/testing/PruebasUnitarias.o ./src/testing/TestingMemoriaCache.o  ./src/header/AppConfig.o  ./src/general/Semaforo.o ./src/general/funcionesUtiles.o  ./src/Interfaz.o ./src/Main.o ./src/MemoriaCache.o ./src/MemoriaPrincipal.o ./src/SolicitudesUsuario.o   -lSharedlib -lcommons -lm -lpthread
 Finished building target: SistemaMEMORIA
  
+01:17:26 **** Incremental Build of configuration Debug for project Sharedlib ****
+make all 
+make: No se hace nada para «all».
+01:17:26 **** Incremental Build of configuration Debug for project SistemaCPU ****
+make all 
+make: No se hace nada para «all».
+01:17:27 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+make: No se hace nada para «all».
+01:17:27 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+make: No se hace nada para «all».
+01:17:28 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+make: No se hace nada para «all».
+01:17:28 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+make: No se hace nada para «all».
+01:20:27 **** Incremental Build of configuration Debug for project Sharedlib ****
+make all 
+make: No se hace nada para «all».
+01:20:29 **** Incremental Build of configuration Debug for project SistemaCPU ****
+make all 
+make: No se hace nada para «all».
+01:20:30 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+make: No se hace nada para «all».
+01:20:30 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+make: No se hace nada para «all».
+01:20:31 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+Building file: ../src/header/SolicitudesUsuario.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/SolicitudesUsuario.d" -MT"src/header/SolicitudesUsuario.d" -o "src/header/SolicitudesUsuario.o" "../src/header/SolicitudesUsuario.c"
+../src/header/SolicitudesUsuario.c: In function ‘listar_procesos’:
+../src/header/SolicitudesUsuario.c:84:4: warning: implicit declaration of function ‘mostrar_procesos’ [-Wimplicit-function-declaration]
+    mostrar_procesos(procesos);
+    ^
+../src/header/SolicitudesUsuario.c: In function ‘devolver_cola’:
+../src/header/SolicitudesUsuario.c:100:3: warning: return discards ‘const’ qualifier from pointer target type [enabled by default]
+   return NEW;
+   ^
+../src/header/SolicitudesUsuario.c:103:3: warning: return discards ‘const’ qualifier from pointer target type [enabled by default]
+   return READY;
+   ^
+../src/header/SolicitudesUsuario.c:106:3: warning: return discards ‘const’ qualifier from pointer target type [enabled by default]
+   return EXEC;
+   ^
+../src/header/SolicitudesUsuario.c:109:3: warning: return discards ‘const’ qualifier from pointer target type [enabled by default]
+   return WAITING;
+   ^
+../src/header/SolicitudesUsuario.c:112:3: warning: return discards ‘const’ qualifier from pointer target type [enabled by default]
+   return EXIT;
+   ^
+../src/header/SolicitudesUsuario.c: In function ‘buscar_procesos_por_cola’:
+../src/header/SolicitudesUsuario.c:127:6: warning: implicit declaration of function ‘es_semaforo’ [-Wimplicit-function-declaration]
+      return es_semaforo(proceso->cola);
+      ^
+../src/header/SolicitudesUsuario.c: In function ‘listar_procesos_por_cola’:
+../src/header/SolicitudesUsuario.c:131:4: warning: passing argument 2 of ‘list_filter’ from incompatible pointer type [enabled by default]
+    t_list * procesos_filtrados = list_filter(procesos, &buscar_procesos_por_cola);
+    ^
+In file included from ../src/header/SolicitudesUsuario.h:11:0,
+                 from ../src/header/SolicitudesUsuario.c:8:
+/usr/include/commons/collections/list.h:92:10: note: expected ‘_Bool (*)(void *)’ but argument is of type ‘int (*)(struct Proceso *)’
+  t_list* list_filter(t_list*, bool(*condition)(void*));
+          ^
+../src/header/SolicitudesUsuario.c: At top level:
+../src/header/SolicitudesUsuario.c:138:6: warning: conflicting types for ‘mostrar_procesos’ [enabled by default]
+ void mostrar_procesos(t_list * procesos_lista) {
+      ^
+../src/header/SolicitudesUsuario.c:84:4: note: previous implicit declaration of ‘mostrar_procesos’ was here
+    mostrar_procesos(procesos);
+    ^
+../src/header/SolicitudesUsuario.c: In function ‘mostrar_procesos’:
+../src/header/SolicitudesUsuario.c:160:2: warning: implicit declaration of function ‘generar_log’ [-Wimplicit-function-declaration]
+  generar_log();
+  ^
+../src/header/SolicitudesUsuario.c: At top level:
+../src/header/SolicitudesUsuario.c:163:6: warning: conflicting types for ‘generar_log’ [enabled by default]
+ void generar_log() {
+      ^
+../src/header/SolicitudesUsuario.c:160:2: note: previous implicit declaration of ‘generar_log’ was here
+  generar_log();
+  ^
+../src/header/SolicitudesUsuario.c: In function ‘modificar_grado_multiprogramacion’:
+../src/header/SolicitudesUsuario.c:256:2: warning: statement with no effect [-Wunused-value]
+  for(i; i < grado_multiprog; i++)
+  ^
+../src/header/SolicitudesUsuario.c: In function ‘verificar_estado’:
+../src/header/SolicitudesUsuario.c:287:2: warning: passing argument 1 of ‘strcmp’ from incompatible pointer type [enabled by default]
+  if(strcmp(proceso_a_eliminar, "EXEC") == 0) {
+  ^
+In file included from ../src/header/SolicitudesUsuario.c:16:0:
+/usr/include/string.h:144:12: note: expected ‘const char *’ but argument is of type ‘struct Proceso *’
+ extern int strcmp (const char *__s1, const char *__s2)
+            ^
+../src/header/SolicitudesUsuario.c: In function ‘finalizar_proceso_desde_consola’:
+../src/header/SolicitudesUsuario.c:320:12: warning: unused variable ‘proceso_a_eliminar’ [-Wunused-variable]
+  Proceso * proceso_a_eliminar;
+            ^
+../src/header/SolicitudesUsuario.c: In function ‘devolver_cola’:
+../src/header/SolicitudesUsuario.c:115:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/header/SolicitudesUsuario.c
+ 
+Building target: SistemaKERNEL
+Invoking: GCC C Linker
+gcc -L"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug" -o "SistemaKERNEL"  ./src/testing/TestingCapaFileSystem.o ./src/testing/TestingGeneral.o ./src/testing/TestingInterfazMemoria.o ./src/testing/TestingMenu.o ./src/testing/TestingPlanificacion.o  ./src/planificacion/Planificacion.o ./src/planificacion/PlanificacionFIFO.o ./src/planificacion/PlanificacionRR.o  ./src/interfaz/InterfazCPU.o ./src/interfaz/InterfazConsola.o ./src/interfaz/InterfazFS.o ./src/interfaz/InterfazMemoria.o  ./src/header/AppConfig.o ./src/header/SolicitudesUsuario.o  ./src/general/Semaforo.o ./src/general/funcionesUtiles.o  ./src/capaMEMORIA/AdministrarSemaforos.o ./src/capaMEMORIA/AdministrarVarCompartidas.o ./src/capaMEMORIA/GestMemoriaFuncionesAux.o ./src/capaMEMORIA/GestionMemoriaDinamica.o  ./src/capaFILESYSTEM/GestionArchivoFuncAux.o ./src/capaFILESYSTEM/GestionArchivos.o ./src/capaFILESYSTEM/TablaGlobalArchivo.o ./src/capaFILESYSTEM/TablaProcesoArchivo.o  ./src/administrarProcesos/Proceso.o  ./src/administrarPCB/EstadisticaProceso.o ./src/administrarPCB/PCBData.o  ./src/KERNEL.o   -lcommons -lpthread -lparser-ansisop -lSharedlib
+Finished building target: SistemaKERNEL
+ 
+01:20:33 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+make: No se hace nada para «all».
