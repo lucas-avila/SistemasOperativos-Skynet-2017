@@ -269,15 +269,13 @@ void detener_planificacion() {
 void verificar_estado(uint32_t pid, int exit_code) {
 
 	Proceso * proceso_a_eliminar = buscar_proceso_by_PID(pid);
-	while (strcmp(proceso_a_eliminar->cola, "EXEC") == 0)
-		;
+	sem_wait(&eliminacion);
+	pid_eliminacion = pid;
+	sem_post(&eliminacion);
+	while(strcmp(proceso_a_eliminar->cola, "EXIT") != 0);
+	printf("El proceso ya ha finalizado.\n");
+	actualizar_exit_code(proceso_a_eliminar, exit_code);
 
-	if (strcmp(proceso_a_eliminar->cola, "EXIT") == 0) {
-		printf("El proceso ya ha finalizado.\n");
-	} else {
-		actualizar_exit_code(proceso_a_eliminar, exit_code);
-		mover_PCB_de_cola(proceso_a_eliminar->pcb, proceso_a_eliminar->cola, EXIT);
-	}
 }
 
 void mostrar_tabla_global_archivos() {
