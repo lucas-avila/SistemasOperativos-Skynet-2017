@@ -27,7 +27,11 @@ endif
 all: SistemaConsola
 
 dependents:
+<<<<<<< HEAD
+	-cd /home/utnso/2017/C/UNIVERSIDAD/PROYECTOS/ENTREGA_FINAL/Sharedlib/Debug && $(MAKE) all
+=======
 	-cd /home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug && $(MAKE) all
+>>>>>>> 5079626d1c8d65ffb35d3294ae80da48f4652e9d
 
 # Tool invocations
 SistemaConsola: $(OBJS) $(USER_OBJS) /home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug/libSharedlib.so

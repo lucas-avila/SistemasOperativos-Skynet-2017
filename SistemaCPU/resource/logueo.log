@@ -88,6 +88,7 @@ El proceso 1001 desea Asignar variable en la Pagina: 0, con Byte Inicial 4
 [INFO] 01:00:43:1 CPU/(15359:15359): 
  El proceso 1000 desea terminar su ejecucion
 [INFO] 01:00:43:3 CPU/(15359:15359): EXIT CODE 0
+<<<<<<< HEAD
 [INFO] 01:22:54:594 CPU/(11456:11456): Recibiendo proceso para ejecutar con PID : 1000
 [INFO] 01:22:54:594 CPU/(11456:11456): PID : 1000. Ejecutando con Algoritmo RR
 [INFO] 01:22:54:594 CPU/(11456:11456): PID : 1000. Algoritmo RR. Quantum Establecido: 4
@@ -3730,3 +3731,1494 @@ La asignacion fue exitosa
 [INFO] 01:40:55:535 CPU/(12186:12186): 
  El proceso 1001 esta haciendo un wait al semaforo: c
 [INFO] 01:40:55:535 CPU/(12186:12186): EXIT CODE 0
+=======
+[INFO] 01:15:00:694 CPU/(16447:16447): Recibiendo proceso para ejecutar con PID : 1000
+[INFO] 01:15:00:694 CPU/(16447:16447): PID : 1000. Ejecutando con Algoritmo RR
+[INFO] 01:15:00:694 CPU/(16447:16447): PID : 1000. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:15:00:736 CPU/(16447:16447): 
+ El proceso 1000 desea definir la variable: a
+[INFO] 01:15:00:736 CPU/(16447:16447): 
+ La variable a, se definio satisfactoriamente
+[INFO] 01:15:00:736 CPU/(16447:16447): 
+ El proceso 1000 desea definir la variable: f
+[INFO] 01:15:00:736 CPU/(16447:16447): 
+ La variable f, se definio satisfactoriamente
+[INFO] 01:15:43:522 CPU/(16447:16447): 
+ El proceso 1000 desea alocar 100 bytes en la pagina -1216412416, offset 160625568
+[INFO] 01:15:43:522 CPU/(16447:16447): 
+ Hubo un error al alocar la memoria solicitada
+[INFO] 01:15:43:522 CPU/(16447:16447): 
+ El proceso 1000 desea obtener la direccion de la variable: a
+[INFO] 01:15:43:522 CPU/(16447:16447): 
+El proceso 1000 desea Asignar variable en la Pagina: 0, con Byte Inicial 0
+[INFO] 01:15:43:562 CPU/(16447:16447): EXIT CODE 0
+[INFO] 01:16:21:646 CPU/(16557:16557): Recibiendo proceso para ejecutar con PID : 1000
+[INFO] 01:16:21:646 CPU/(16557:16557): PID : 1000. Ejecutando con Algoritmo RR
+[INFO] 01:16:21:646 CPU/(16557:16557): PID : 1000. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:16:21:686 CPU/(16557:16557): 
+ El proceso 1000 desea definir la variable: a
+[INFO] 01:16:21:686 CPU/(16557:16557): 
+ La variable a, se definio satisfactoriamente
+[INFO] 01:16:21:686 CPU/(16557:16557): 
+ El proceso 1000 desea definir la variable: f
+[INFO] 01:16:21:686 CPU/(16557:16557): 
+ La variable f, se definio satisfactoriamente
+[INFO] 01:16:47:434 CPU/(16557:16557): 
+ El proceso 1000 desea alocar 100 bytes en la pagina -1217112832, offset 162087840
+[INFO] 01:16:47:434 CPU/(16557:16557): 
+ Hubo un error al alocar la memoria solicitada
+[INFO] 01:16:47:434 CPU/(16557:16557): 
+ El proceso 1000 desea obtener la direccion de la variable: a
+[INFO] 01:16:47:434 CPU/(16557:16557): 
+El proceso 1000 desea Asignar variable en la Pagina: 0, con Byte Inicial 0
+[INFO] 01:16:47:473 CPU/(16557:16557): EXIT CODE 0
+[INFO] 01:17:42:675 CPU/(16724:16724): Recibiendo proceso para ejecutar con PID : 1000
+[INFO] 01:17:42:675 CPU/(16724:16724): PID : 1000. Ejecutando con Algoritmo RR
+[INFO] 01:17:42:675 CPU/(16724:16724): PID : 1000. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:17:42:714 CPU/(16724:16724): 
+ El proceso 1000 desea definir la variable: a
+[INFO] 01:17:42:714 CPU/(16724:16724): 
+ La variable a, se definio satisfactoriamente
+[INFO] 01:17:42:714 CPU/(16724:16724): 
+ El proceso 1000 desea definir la variable: f
+[INFO] 01:17:42:714 CPU/(16724:16724): 
+ La variable f, se definio satisfactoriamente
+[INFO] 01:17:49:9 CPU/(16724:16724): 
+ El proceso 1000 desea alocar 100 bytes en la pagina -1217055488, offset 162534304
+[INFO] 01:17:49:9 CPU/(16724:16724): 
+ Hubo un error al alocar la memoria solicitada
+[INFO] 01:17:49:9 CPU/(16724:16724): 
+ El proceso 1000 desea obtener la direccion de la variable: a
+[INFO] 01:17:49:9 CPU/(16724:16724): 
+El proceso 1000 desea Asignar variable en la Pagina: 0, con Byte Inicial 0
+[INFO] 01:17:49:49 CPU/(16724:16724): EXIT CODE 0
+[INFO] 01:18:40:411 CPU/(16825:16825): Recibiendo proceso para ejecutar con PID : 1000
+[INFO] 01:18:40:411 CPU/(16825:16825): PID : 1000. Ejecutando con Algoritmo RR
+[INFO] 01:18:40:412 CPU/(16825:16825): PID : 1000. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:18:40:450 CPU/(16825:16825): 
+ El proceso 1000 desea definir la variable: a
+[INFO] 01:18:40:450 CPU/(16825:16825): 
+ La variable a, se definio satisfactoriamente
+[INFO] 01:18:40:450 CPU/(16825:16825): 
+ El proceso 1000 desea definir la variable: f
+[INFO] 01:18:40:450 CPU/(16825:16825): 
+ La variable f, se definio satisfactoriamente
+[INFO] 01:19:51:802 CPU/(16825:16825): 
+ El proceso 1000 desea alocar 100 bytes en la pagina 3, offset 0
+[INFO] 01:19:51:802 CPU/(16825:16825): 
+ Se aloco satisfactoriamente la memoria solicitada
+[INFO] 01:19:51:802 CPU/(16825:16825): 
+ El proceso 1000 desea obtener la direccion de la variable: a
+[INFO] 01:19:51:802 CPU/(16825:16825): 
+El proceso 1000 desea Asignar variable en la Pagina: 0, con Byte Inicial 0
+[INFO] 01:19:51:961 CPU/(16825:16825): 
+ El proceso 1000 desea abrir un archivo
+[INFO] 01:19:51:961 CPU/(16825:16825): 
+ El proceso 1000 desea obtener la direccion de la variable: f
+[INFO] 01:19:51:961 CPU/(16825:16825): 
+El proceso 1000 desea Asignar variable en la Pagina: 0, con Byte Inicial 4
+[INFO] 01:19:52:82 CPU/(16825:16825): 
+ El proceso 1000 desea obtener la direccion de la variable: a
+[INFO] 01:19:52:161 CPU/(16825:16825): 
+ El proceso 1000 desea obtener la direccion de la variable: f
+[INFO] 01:19:52:282 CPU/(16825:16825): 
+ El proceso 1000 desea leer un archivo
+[INFO] 01:19:52:401 CPU/(16825:16825): EXIT CODE 0
+[INFO] 01:19:52:402 CPU/(16825:16825): Recibiendo proceso para ejecutar con PID : 1000
+[INFO] 01:19:52:402 CPU/(16825:16825): PID : 1000. Ejecutando con Algoritmo RR
+[INFO] 01:19:52:402 CPU/(16825:16825): PID : 1000. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:19:52:481 CPU/(16825:16825): 
+ El proceso 1000 esta haciendo un wait al semaforo: c
+[INFO] 01:19:52:481 CPU/(16825:16825): EXIT CODE 0
+[INFO] 01:22:00:202 CPU/(16825:16825): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:22:00:202 CPU/(16825:16825): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:22:00:202 CPU/(16825:16825): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:22:00:242 CPU/(16825:16825): 
+ El proceso 1001 desea definir la variable: a
+[INFO] 01:22:00:242 CPU/(16825:16825): 
+ La variable a, se definio satisfactoriamente
+[INFO] 01:22:00:242 CPU/(16825:16825): 
+ El proceso 1001 desea definir la variable: b
+[INFO] 01:22:00:242 CPU/(16825:16825): 
+ La variable b, se definio satisfactoriamente
+[INFO] 01:22:00:325 CPU/(16825:16825): 
+ El proceso 1001 desea obtener la direccion de la variable: a
+[INFO] 01:22:00:325 CPU/(16825:16825): 
+El proceso 1001 desea Asignar variable en la Pagina: 0, con Byte Inicial 0
+[INFO] 01:22:00:486 CPU/(16825:16825): 
+ El proceso 1001 desea obtener la direccion de la variable: b
+[INFO] 01:22:00:486 CPU/(16825:16825): 
+El proceso 1001 desea Asignar variable en la Pagina: 0, con Byte Inicial 4
+[INFO] 01:22:00:646 CPU/(16825:16825): 
+ El proceso 1001 desea obtener la direccion de la variable: a
+[INFO] 01:22:00:727 CPU/(16825:16825): 
+ El proceso 1001 desea escribir 
+[INFO] 01:22:00:727 CPU/(16825:16825): EXIT CODE 0
+[INFO] 01:22:00:771 CPU/(16825:16825): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:22:00:771 CPU/(16825:16825): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:22:00:772 CPU/(16825:16825): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:22:00:825 CPU/(16825:16825): 
+ El proceso 1001 desea escribir 
+[INFO] 01:22:00:902 CPU/(16825:16825): 
+ El proceso 1001 esta haciendo un signal al semaforo: c
+[INFO] 01:22:00:983 CPU/(16825:16825): 
+ El proceso 1001 desea terminar su ejecucion
+[INFO] 01:22:00:983 CPU/(16825:16825): EXIT CODE 0
+[INFO] 01:22:01:23 CPU/(16825:16825): Recibiendo proceso para ejecutar con PID : 1000
+[INFO] 01:22:01:23 CPU/(16825:16825): PID : 1000. Ejecutando con Algoritmo RR
+[INFO] 01:22:01:23 CPU/(16825:16825): PID : 1000. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:22:01:62 CPU/(16825:16825): 
+ El proceso 1000 desea obtener la direccion de la variable: a
+[INFO] 01:22:09:291 CPU/(16825:16825): 
+ El proceso 1000 desea escribir 
+[INFO] 01:22:09:378 CPU/(16825:16825): 
+ El proceso 1000 desea obtener la direccion de la variable: f
+[INFO] 01:22:09:458 CPU/(16825:16825): 
+ El proceso 1000 desea cerrar un archivo
+[INFO] 01:22:09:537 CPU/(16825:16825): 
+ El proceso 1000 desea obtener la direccion de la variable: a
+[INFO] 01:22:09:699 CPU/(16825:16825): 
+ El proceso 1000 esta liberando memoria de la pagina 3, offset 5
+[INFO] 01:22:09:979 CPU/(16825:16825): 
+ El proceso 1000 desea terminar su ejecucion
+[INFO] 01:22:09:979 CPU/(16825:16825): EXIT CODE 0
+[INFO] 01:26:13:646 CPU/(16825:16825): Recibiendo proceso para ejecutar con PID : 1002
+[INFO] 01:26:13:646 CPU/(16825:16825): PID : 1002. Ejecutando con Algoritmo RR
+[INFO] 01:26:13:646 CPU/(16825:16825): PID : 1002. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:26:13:685 CPU/(16825:16825): 
+ El proceso 1002 desea definir la variable: a
+[INFO] 01:26:13:685 CPU/(16825:16825): 
+ La variable a, se definio satisfactoriamente
+[INFO] 01:26:13:766 CPU/(16825:16825): 
+ El proceso 1002 desea definir la variable: b
+[INFO] 01:26:13:766 CPU/(16825:16825): 
+ La variable b, se definio satisfactoriamente
+[INFO] 01:26:13:845 CPU/(16825:16825): 
+ El proceso 1002 desea definir la variable: c
+[INFO] 01:26:13:845 CPU/(16825:16825): 
+ La variable c, se definio satisfactoriamente
+[INFO] 01:26:13:933 CPU/(16825:16825): 
+ El proceso 1002 desea definir la variable: d
+[INFO] 01:26:13:933 CPU/(16825:16825): 
+ La variable d, se definio satisfactoriamente
+[INFO] 01:26:13:933 CPU/(16825:16825): EXIT CODE 0
+[INFO] 01:26:13:934 CPU/(16825:16825): Recibiendo proceso para ejecutar con PID : 1002
+[INFO] 01:26:13:934 CPU/(16825:16825): PID : 1002. Ejecutando con Algoritmo RR
+[INFO] 01:26:13:934 CPU/(16825:16825): PID : 1002. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:26:14:14 CPU/(16825:16825): 
+ El proceso 1002 desea definir la variable: e
+[INFO] 01:26:14:14 CPU/(16825:16825): 
+ La variable e, se definio satisfactoriamente
+[INFO] 01:26:17:546 CPU/(16825:16825): 
+ El proceso 1002 desea alocar 100 bytes en la pagina 3, offset 0
+[INFO] 01:26:17:546 CPU/(16825:16825): 
+ Se aloco satisfactoriamente la memoria solicitada
+[INFO] 01:26:17:546 CPU/(16825:16825): 
+ El proceso 1002 desea obtener la direccion de la variable: a
+[INFO] 01:26:17:546 CPU/(16825:16825): 
+El proceso 1002 desea Asignar variable en la Pagina: 0, con Byte Inicial 0
+[INFO] 01:26:20:858 CPU/(16825:16825): 
+ El proceso 1002 desea alocar 50 bytes en la pagina 4, offset 0
+[INFO] 01:26:20:858 CPU/(16825:16825): 
+ Se aloco satisfactoriamente la memoria solicitada
+[INFO] 01:26:20:858 CPU/(16825:16825): 
+ El proceso 1002 desea obtener la direccion de la variable: b
+[INFO] 01:26:20:858 CPU/(16825:16825): 
+El proceso 1002 desea Asignar variable en la Pagina: 0, con Byte Inicial 4
+[INFO] 01:27:16:219 CPU/(16825:16825): 
+ El proceso 1002 desea alocar 30 bytes en la pagina -1217065542, offset -1217215653
+[INFO] 01:27:16:219 CPU/(16825:16825): 
+ Hubo un error al alocar la memoria solicitada
+[INFO] 01:27:16:219 CPU/(16825:16825): 
+ El proceso 1002 desea obtener la direccion de la variable: c
+[INFO] 01:27:16:219 CPU/(16825:16825): 
+El proceso 1002 desea Asignar variable en la Pagina: 0, con Byte Inicial 8
+[INFO] 01:27:16:261 CPU/(16825:16825): EXIT CODE 0
+[INFO] 01:28:21:591 CPU/(16969:16969): Recibiendo proceso para ejecutar con PID : 1000
+[INFO] 01:28:21:591 CPU/(16969:16969): PID : 1000. Ejecutando con Algoritmo RR
+[INFO] 01:28:21:591 CPU/(16969:16969): PID : 1000. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:28:21:630 CPU/(16969:16969): 
+ El proceso 1000 desea definir la variable: a
+[INFO] 01:28:21:630 CPU/(16969:16969): 
+ La variable a, se definio satisfactoriamente
+[INFO] 01:28:21:710 CPU/(16969:16969): 
+ El proceso 1000 desea definir la variable: b
+[INFO] 01:28:21:710 CPU/(16969:16969): 
+ La variable b, se definio satisfactoriamente
+[INFO] 01:28:21:798 CPU/(16969:16969): 
+ El proceso 1000 desea definir la variable: c
+[INFO] 01:28:21:798 CPU/(16969:16969): 
+ La variable c, se definio satisfactoriamente
+[INFO] 01:28:21:879 CPU/(16969:16969): 
+ El proceso 1000 desea definir la variable: d
+[INFO] 01:28:21:879 CPU/(16969:16969): 
+ La variable d, se definio satisfactoriamente
+[INFO] 01:28:21:879 CPU/(16969:16969): EXIT CODE 0
+[INFO] 01:28:21:880 CPU/(16969:16969): Recibiendo proceso para ejecutar con PID : 1000
+[INFO] 01:28:21:880 CPU/(16969:16969): PID : 1000. Ejecutando con Algoritmo RR
+[INFO] 01:28:21:880 CPU/(16969:16969): PID : 1000. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:28:21:958 CPU/(16969:16969): 
+ El proceso 1000 desea definir la variable: e
+[INFO] 01:28:21:958 CPU/(16969:16969): 
+ La variable e, se definio satisfactoriamente
+[INFO] 01:28:22:358 CPU/(16969:16969): 
+ El proceso 1000 desea alocar 100 bytes en la pagina 3, offset 0
+[INFO] 01:28:22:358 CPU/(16969:16969): 
+ Se aloco satisfactoriamente la memoria solicitada
+[INFO] 01:28:22:358 CPU/(16969:16969): 
+ El proceso 1000 desea obtener la direccion de la variable: a
+[INFO] 01:28:22:358 CPU/(16969:16969): 
+El proceso 1000 desea Asignar variable en la Pagina: 0, con Byte Inicial 0
+[INFO] 01:28:22:837 CPU/(16969:16969): 
+ El proceso 1000 desea alocar 50 bytes en la pagina 4, offset 0
+[INFO] 01:28:22:837 CPU/(16969:16969): 
+ Se aloco satisfactoriamente la memoria solicitada
+[INFO] 01:28:22:837 CPU/(16969:16969): 
+ El proceso 1000 desea obtener la direccion de la variable: b
+[INFO] 01:28:22:837 CPU/(16969:16969): 
+El proceso 1000 desea Asignar variable en la Pagina: 0, con Byte Inicial 4
+[INFO] 01:28:23:317 CPU/(16969:16969): 
+ El proceso 1000 desea alocar 30 bytes en la pagina 5, offset 0
+[INFO] 01:28:23:317 CPU/(16969:16969): 
+ Se aloco satisfactoriamente la memoria solicitada
+[INFO] 01:28:23:318 CPU/(16969:16969): 
+ El proceso 1000 desea obtener la direccion de la variable: c
+[INFO] 01:28:23:318 CPU/(16969:16969): 
+El proceso 1000 desea Asignar variable en la Pagina: 0, con Byte Inicial 8
+[INFO] 01:28:23:361 CPU/(16969:16969): EXIT CODE 0
+[INFO] 01:28:23:364 CPU/(16969:16969): Recibiendo proceso para ejecutar con PID : 1000
+[INFO] 01:28:23:364 CPU/(16969:16969): PID : 1000. Ejecutando con Algoritmo RR
+[INFO] 01:28:23:364 CPU/(16969:16969): PID : 1000. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:28:23:841 CPU/(16969:16969): 
+ El proceso 1000 desea alocar 30 bytes en la pagina 6, offset 0
+[INFO] 01:28:23:841 CPU/(16969:16969): 
+ Se aloco satisfactoriamente la memoria solicitada
+[INFO] 01:28:23:841 CPU/(16969:16969): 
+ El proceso 1000 desea obtener la direccion de la variable: d
+[INFO] 01:28:23:841 CPU/(16969:16969): 
+El proceso 1000 desea Asignar variable en la Pagina: 0, con Byte Inicial 12
+[INFO] 01:28:24:322 CPU/(16969:16969): 
+ El proceso 1000 desea alocar 20 bytes en la pagina 7, offset 0
+[INFO] 01:28:24:322 CPU/(16969:16969): 
+ Se aloco satisfactoriamente la memoria solicitada
+[INFO] 01:28:24:322 CPU/(16969:16969): 
+ El proceso 1000 desea obtener la direccion de la variable: e
+[INFO] 01:28:24:322 CPU/(16969:16969): 
+El proceso 1000 desea Asignar variable en la Pagina: 0, con Byte Inicial 16
+[INFO] 01:28:24:441 CPU/(16969:16969): 
+ El proceso 1000 desea terminar su ejecucion
+[INFO] 01:28:24:441 CPU/(16969:16969): EXIT CODE 0
+[INFO] 01:29:44:114 CPU/(16969:16969): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:29:44:114 CPU/(16969:16969): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:29:44:114 CPU/(16969:16969): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:29:44:155 CPU/(16969:16969): 
+ El proceso 1001 desea definir la variable: a
+[INFO] 01:29:44:155 CPU/(16969:16969): 
+ La variable a, se definio satisfactoriamente
+[INFO] 01:29:44:233 CPU/(16969:16969): 
+ El proceso 1001 desea definir la variable: b
+[INFO] 01:29:44:234 CPU/(16969:16969): 
+ La variable b, se definio satisfactoriamente
+[INFO] 01:29:44:313 CPU/(16969:16969): 
+ El proceso 1001 desea definir la variable: c
+[INFO] 01:29:44:314 CPU/(16969:16969): 
+ La variable c, se definio satisfactoriamente
+[INFO] 01:29:44:393 CPU/(16969:16969): 
+ El proceso 1001 desea definir la variable: d
+[INFO] 01:29:44:393 CPU/(16969:16969): 
+ La variable d, se definio satisfactoriamente
+[INFO] 01:29:44:393 CPU/(16969:16969): EXIT CODE 0
+[INFO] 01:29:44:394 CPU/(16969:16969): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:29:44:394 CPU/(16969:16969): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:29:44:394 CPU/(16969:16969): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:29:44:474 CPU/(16969:16969): 
+ El proceso 1001 desea definir la variable: e
+[INFO] 01:29:44:474 CPU/(16969:16969): 
+ La variable e, se definio satisfactoriamente
+[INFO] 01:29:44:873 CPU/(16969:16969): 
+ El proceso 1001 desea alocar 100 bytes en la pagina 3, offset 0
+[INFO] 01:29:44:873 CPU/(16969:16969): 
+ Se aloco satisfactoriamente la memoria solicitada
+[INFO] 01:29:44:873 CPU/(16969:16969): 
+ El proceso 1001 desea obtener la direccion de la variable: a
+[INFO] 01:29:44:873 CPU/(16969:16969): 
+El proceso 1001 desea Asignar variable en la Pagina: 0, con Byte Inicial 0
+[INFO] 01:29:45:353 CPU/(16969:16969): 
+ El proceso 1001 desea alocar 50 bytes en la pagina 4, offset 0
+[INFO] 01:29:45:353 CPU/(16969:16969): 
+ Se aloco satisfactoriamente la memoria solicitada
+[INFO] 01:29:45:353 CPU/(16969:16969): 
+ El proceso 1001 desea obtener la direccion de la variable: b
+[INFO] 01:29:45:353 CPU/(16969:16969): 
+El proceso 1001 desea Asignar variable en la Pagina: 0, con Byte Inicial 4
+[INFO] 01:29:45:834 CPU/(16969:16969): 
+ El proceso 1001 desea alocar 30 bytes en la pagina 5, offset 0
+[INFO] 01:29:45:834 CPU/(16969:16969): 
+ Se aloco satisfactoriamente la memoria solicitada
+[INFO] 01:29:45:834 CPU/(16969:16969): 
+ El proceso 1001 desea obtener la direccion de la variable: c
+[INFO] 01:29:45:834 CPU/(16969:16969): 
+El proceso 1001 desea Asignar variable en la Pagina: 0, con Byte Inicial 8
+[INFO] 01:29:45:873 CPU/(16969:16969): EXIT CODE 0
+[INFO] 01:29:45:874 CPU/(16969:16969): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:29:45:874 CPU/(16969:16969): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:29:45:874 CPU/(16969:16969): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:29:46:357 CPU/(16969:16969): 
+ El proceso 1001 desea alocar 30 bytes en la pagina 6, offset 0
+[INFO] 01:29:46:357 CPU/(16969:16969): 
+ Se aloco satisfactoriamente la memoria solicitada
+[INFO] 01:29:46:357 CPU/(16969:16969): 
+ El proceso 1001 desea obtener la direccion de la variable: d
+[INFO] 01:29:46:357 CPU/(16969:16969): 
+El proceso 1001 desea Asignar variable en la Pagina: 0, con Byte Inicial 12
+[INFO] 01:29:46:837 CPU/(16969:16969): 
+ El proceso 1001 desea alocar 20 bytes en la pagina 7, offset 0
+[INFO] 01:29:46:837 CPU/(16969:16969): 
+ Se aloco satisfactoriamente la memoria solicitada
+[INFO] 01:29:46:837 CPU/(16969:16969): 
+ El proceso 1001 desea obtener la direccion de la variable: e
+[INFO] 01:29:46:837 CPU/(16969:16969): 
+El proceso 1001 desea Asignar variable en la Pagina: 0, con Byte Inicial 16
+[INFO] 01:29:46:957 CPU/(16969:16969): 
+ El proceso 1001 esta haciendo un wait al semaforo: c
+[INFO] 01:29:46:957 CPU/(16969:16969): EXIT CODE 0
+[INFO] 01:33:08:38 CPU/(17102:17102): Recibiendo proceso para ejecutar con PID : 1000
+[INFO] 01:33:08:38 CPU/(17102:17102): PID : 1000. Ejecutando con Algoritmo RR
+[INFO] 01:33:08:38 CPU/(17102:17102): PID : 1000. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:33:08:77 CPU/(17102:17102): 
+ El proceso 1000 desea definir la variable: a
+[INFO] 01:33:08:77 CPU/(17102:17102): 
+ La variable a, se definio satisfactoriamente
+[INFO] 01:33:08:159 CPU/(17102:17102): 
+ El proceso 1000 desea definir la variable: b
+[INFO] 01:33:08:159 CPU/(17102:17102): 
+ La variable b, se definio satisfactoriamente
+[INFO] 01:33:08:238 CPU/(17102:17102): 
+ El proceso 1000 desea definir la variable: c
+[INFO] 01:33:08:238 CPU/(17102:17102): 
+ La variable c, se definio satisfactoriamente
+[INFO] 01:33:08:318 CPU/(17102:17102): 
+ El proceso 1000 desea definir la variable: d
+[INFO] 01:33:08:319 CPU/(17102:17102): 
+ La variable d, se definio satisfactoriamente
+[INFO] 01:33:08:319 CPU/(17102:17102): EXIT CODE 0
+[INFO] 01:33:08:319 CPU/(17102:17102): Recibiendo proceso para ejecutar con PID : 1000
+[INFO] 01:33:08:319 CPU/(17102:17102): PID : 1000. Ejecutando con Algoritmo RR
+[INFO] 01:33:08:319 CPU/(17102:17102): PID : 1000. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:33:08:400 CPU/(17102:17102): 
+ El proceso 1000 desea definir la variable: e
+[INFO] 01:33:08:400 CPU/(17102:17102): 
+ La variable e, se definio satisfactoriamente
+[INFO] 01:33:08:801 CPU/(17102:17102): 
+ El proceso 1000 desea alocar 100 bytes en la pagina 3, offset 0
+[INFO] 01:33:08:801 CPU/(17102:17102): 
+ Se aloco satisfactoriamente la memoria solicitada
+[INFO] 01:33:08:801 CPU/(17102:17102): 
+ El proceso 1000 desea obtener la direccion de la variable: a
+[INFO] 01:33:08:801 CPU/(17102:17102): 
+El proceso 1000 desea Asignar variable en la Pagina: 0, con Byte Inicial 0
+[INFO] 01:33:09:41 CPU/(17102:17102): 
+ El proceso 1000 desea alocar 50 bytes en la pagina 3, offset 105
+[INFO] 01:33:09:41 CPU/(17102:17102): 
+ Se aloco satisfactoriamente la memoria solicitada
+[INFO] 01:33:09:41 CPU/(17102:17102): 
+ El proceso 1000 desea obtener la direccion de la variable: b
+[INFO] 01:33:09:41 CPU/(17102:17102): 
+El proceso 1000 desea Asignar variable en la Pagina: 0, con Byte Inicial 4
+[INFO] 01:33:09:282 CPU/(17102:17102): 
+ El proceso 1000 desea alocar 30 bytes en la pagina 3, offset 160
+[INFO] 01:33:09:282 CPU/(17102:17102): 
+ Se aloco satisfactoriamente la memoria solicitada
+[INFO] 01:33:09:282 CPU/(17102:17102): 
+ El proceso 1000 desea obtener la direccion de la variable: c
+[INFO] 01:33:09:282 CPU/(17102:17102): 
+El proceso 1000 desea Asignar variable en la Pagina: 0, con Byte Inicial 8
+[INFO] 01:33:09:321 CPU/(17102:17102): EXIT CODE 0
+[INFO] 01:33:09:321 CPU/(17102:17102): Recibiendo proceso para ejecutar con PID : 1000
+[INFO] 01:33:09:321 CPU/(17102:17102): PID : 1000. Ejecutando con Algoritmo RR
+[INFO] 01:33:09:321 CPU/(17102:17102): PID : 1000. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:33:09:561 CPU/(17102:17102): 
+ El proceso 1000 desea alocar 30 bytes en la pagina 3, offset 195
+[INFO] 01:33:09:561 CPU/(17102:17102): 
+ Se aloco satisfactoriamente la memoria solicitada
+[INFO] 01:33:09:561 CPU/(17102:17102): 
+ El proceso 1000 desea obtener la direccion de la variable: d
+[INFO] 01:33:09:561 CPU/(17102:17102): 
+El proceso 1000 desea Asignar variable en la Pagina: 0, con Byte Inicial 12
+[INFO] 01:33:10:42 CPU/(17102:17102): 
+ El proceso 1000 desea alocar 20 bytes en la pagina 4, offset 0
+[INFO] 01:33:10:42 CPU/(17102:17102): 
+ Se aloco satisfactoriamente la memoria solicitada
+[INFO] 01:33:10:42 CPU/(17102:17102): 
+ El proceso 1000 desea obtener la direccion de la variable: e
+[INFO] 01:33:10:42 CPU/(17102:17102): 
+El proceso 1000 desea Asignar variable en la Pagina: 0, con Byte Inicial 16
+[INFO] 01:33:10:161 CPU/(17102:17102): 
+ El proceso 1000 esta haciendo un wait al semaforo: c
+[INFO] 01:33:10:161 CPU/(17102:17102): EXIT CODE 0
+[INFO] 01:40:17:937 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:40:17:939 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:40:17:939 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:40:17:978 CPU/(17276:17276): 
+ El proceso 1001 desea definir la variable: a
+[INFO] 01:40:17:979 CPU/(17276:17276): 
+ La variable a, se definio satisfactoriamente
+[INFO] 01:40:17:979 CPU/(17276:17276): 
+ El proceso 1001 desea definir la variable: f
+[INFO] 01:40:17:979 CPU/(17276:17276): 
+ La variable f, se definio satisfactoriamente
+[INFO] 01:40:18:338 CPU/(17276:17276): 
+ El proceso 1001 desea alocar 100 bytes en la pagina 3, offset 0
+[INFO] 01:40:18:338 CPU/(17276:17276): 
+ Se aloco satisfactoriamente la memoria solicitada
+[INFO] 01:40:18:338 CPU/(17276:17276): 
+ El proceso 1001 desea obtener la direccion de la variable: a
+[INFO] 01:40:18:339 CPU/(17276:17276): 
+El proceso 1001 desea Asignar variable en la Pagina: 0, con Byte Inicial 0
+[INFO] 01:40:18:499 CPU/(17276:17276): 
+ El proceso 1001 desea abrir un archivo
+[INFO] 01:40:18:499 CPU/(17276:17276): 
+ El proceso 1001 desea obtener la direccion de la variable: f
+[INFO] 01:40:18:500 CPU/(17276:17276): 
+El proceso 1001 desea Asignar variable en la Pagina: 0, con Byte Inicial 4
+[INFO] 01:40:18:617 CPU/(17276:17276): 
+ El proceso 1001 desea obtener la direccion de la variable: a
+[INFO] 01:40:18:698 CPU/(17276:17276): 
+ El proceso 1001 desea obtener la direccion de la variable: f
+[INFO] 01:40:18:818 CPU/(17276:17276): 
+ El proceso 1001 desea leer un archivo
+[INFO] 01:40:34:606 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:40:34:607 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:40:34:607 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:40:34:607 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:40:34:686 CPU/(17276:17276): 
+ El proceso 1001 esta haciendo un wait al semaforo: c
+[INFO] 01:40:34:686 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:41:36:458 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1002
+[INFO] 01:41:36:458 CPU/(17276:17276): PID : 1002. Ejecutando con Algoritmo RR
+[INFO] 01:41:36:458 CPU/(17276:17276): PID : 1002. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:41:36:498 CPU/(17276:17276): 
+ El proceso 1002 desea definir la variable: a
+[INFO] 01:41:36:498 CPU/(17276:17276): 
+ La variable a, se definio satisfactoriamente
+[INFO] 01:41:36:498 CPU/(17276:17276): 
+ El proceso 1002 desea definir la variable: b
+[INFO] 01:41:36:498 CPU/(17276:17276): 
+ La variable b, se definio satisfactoriamente
+[INFO] 01:41:36:577 CPU/(17276:17276): 
+ El proceso 1002 desea obtener la direccion de la variable: a
+[INFO] 01:41:36:577 CPU/(17276:17276): 
+El proceso 1002 desea Asignar variable en la Pagina: 0, con Byte Inicial 0
+[INFO] 01:41:36:738 CPU/(17276:17276): 
+ El proceso 1002 desea obtener la direccion de la variable: b
+[INFO] 01:41:36:738 CPU/(17276:17276): 
+El proceso 1002 desea Asignar variable en la Pagina: 0, con Byte Inicial 4
+[INFO] 01:41:36:897 CPU/(17276:17276): 
+ El proceso 1002 desea obtener la direccion de la variable: a
+[INFO] 01:41:36:978 CPU/(17276:17276): 
+ El proceso 1002 desea escribir 
+[INFO] 01:41:36:978 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:41:37:17 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1002
+[INFO] 01:41:37:17 CPU/(17276:17276): PID : 1002. Ejecutando con Algoritmo RR
+[INFO] 01:41:37:18 CPU/(17276:17276): PID : 1002. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:41:37:57 CPU/(17276:17276): 
+ El proceso 1002 desea escribir 
+[INFO] 01:41:37:145 CPU/(17276:17276): 
+ El proceso 1002 esta haciendo un signal al semaforo: c
+[INFO] 01:41:37:225 CPU/(17276:17276): 
+ El proceso 1002 desea terminar su ejecucion
+[INFO] 01:41:37:225 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:41:37:265 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:41:37:265 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:41:37:265 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:41:37:305 CPU/(17276:17276): 
+ El proceso 1001 desea obtener la direccion de la variable: a
+[INFO] 01:41:59:992 CPU/(17276:17276): 
+ El proceso 1001 desea escribir 
+[INFO] 01:41:59:992 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:41:59:992 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:41:59:992 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:41:59:992 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:00:31 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:00:31 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:00:31 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:00:32 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:32 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:32 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:32 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:32 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:00:110 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:00:110 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:00:110 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:00:110 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:110 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:110 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:110 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:110 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:00:190 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:00:191 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:00:191 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:00:191 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:191 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:191 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:191 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:191 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:00:269 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:00:269 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:00:270 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:00:270 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:270 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:270 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:270 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:270 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:00:351 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:00:351 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:00:351 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:00:351 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:352 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:352 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:352 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:352 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:00:429 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:00:429 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:00:429 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:00:429 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:429 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:429 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:429 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:429 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:00:509 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:00:509 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:00:509 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:00:509 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:509 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:509 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:509 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:509 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:00:589 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:00:589 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:00:589 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:00:589 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:589 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:589 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:589 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:589 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:00:669 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:00:669 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:00:669 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:00:669 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:669 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:669 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:669 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:669 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:00:749 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:00:749 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:00:749 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:00:749 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:749 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:749 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:749 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:749 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:00:829 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:00:829 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:00:829 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:00:829 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:829 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:829 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:829 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:829 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:00:909 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:00:909 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:00:909 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:00:909 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:909 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:909 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:909 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:910 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:00:989 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:00:989 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:00:989 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:00:989 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:990 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:990 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:990 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:00:990 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:01:70 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:01:70 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:01:70 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:01:70 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:70 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:70 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:70 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:70 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:01:149 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:01:149 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:01:149 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:01:149 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:149 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:149 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:149 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:149 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:01:229 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:01:229 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:01:229 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:01:229 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:229 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:229 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:229 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:229 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:01:311 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:01:311 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:01:311 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:01:311 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:311 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:311 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:311 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:311 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:01:389 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:01:389 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:01:389 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:01:389 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:389 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:389 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:389 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:389 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:01:473 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:01:473 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:01:473 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:01:473 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:473 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:473 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:473 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:473 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:01:554 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:01:554 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:01:554 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:01:554 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:554 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:554 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:554 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:554 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:01:634 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:01:634 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:01:634 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:01:634 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:634 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:634 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:634 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:634 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:01:713 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:01:713 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:01:713 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:01:713 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:713 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:713 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:713 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:713 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:01:793 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:01:793 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:01:793 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:01:793 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:793 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:793 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:793 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:793 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:01:873 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:01:874 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:01:874 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:01:874 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:874 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:874 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:874 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:875 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:01:954 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:01:954 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:01:955 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:01:955 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:955 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:955 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:955 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:01:956 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:02:33 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:02:34 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:02:34 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:02:34 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:34 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:34 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:34 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:34 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:02:113 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:02:113 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:02:113 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:02:113 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:113 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:113 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:113 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:113 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:02:193 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:02:193 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:02:193 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:02:193 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:193 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:193 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:193 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:193 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:02:273 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:02:273 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:02:273 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:02:273 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:273 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:273 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:273 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:273 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:02:353 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:02:353 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:02:353 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:02:353 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:353 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:353 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:353 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:353 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:02:433 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:02:433 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:02:433 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:02:433 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:433 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:433 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:433 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:433 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:02:513 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:02:513 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:02:513 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:02:513 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:513 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:513 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:513 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:513 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:02:598 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:02:598 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:02:598 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:02:598 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:598 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:599 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:599 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:599 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:02:677 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:02:677 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:02:677 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:02:677 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:677 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:677 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:677 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:677 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:02:757 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:02:757 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:02:757 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:02:757 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:757 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:757 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:757 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:757 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:02:838 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:02:838 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:02:838 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:02:838 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:838 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:839 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:839 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:839 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:02:918 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:02:918 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:02:918 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:02:918 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:918 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:918 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:918 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:919 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:02:998 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:02:998 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:02:998 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:02:998 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:998 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:998 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:998 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:02:998 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:03:77 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:03:77 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:03:77 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:03:77 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:77 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:77 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:78 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:78 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:03:158 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:03:158 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:03:158 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:03:158 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:158 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:158 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:158 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:158 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:03:237 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:03:237 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:03:237 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:03:237 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:237 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:238 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:238 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:238 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:03:319 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:03:319 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:03:319 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:03:319 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:319 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:319 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:319 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:319 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:03:405 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:03:405 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:03:405 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:03:405 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:406 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:406 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:406 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:406 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:03:485 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:03:485 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:03:485 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:03:486 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:486 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:486 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:486 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:486 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:03:565 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:03:565 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:03:566 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:03:566 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:566 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:566 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:566 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:566 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:03:650 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:03:650 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:03:650 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:03:650 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:651 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:651 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:651 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:651 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:03:729 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:03:729 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:03:730 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:03:730 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:730 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:730 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:730 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:730 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:03:810 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:03:810 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:03:810 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:03:810 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:810 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:810 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:810 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:810 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:03:890 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:03:890 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:03:890 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:03:890 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:891 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:891 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:891 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:891 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:03:970 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:03:970 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:03:970 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:03:970 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:970 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:970 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:970 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:03:970 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:04:50 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:04:50 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:04:50 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:04:50 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:50 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:50 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:50 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:50 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:04:132 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:04:132 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:04:133 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:04:133 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:133 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:135 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:136 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:136 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:04:216 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:04:217 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:04:217 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:04:217 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:220 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:222 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:222 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:223 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:04:305 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:04:305 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:04:305 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:04:305 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:305 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:305 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:306 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:306 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:04:390 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:04:390 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:04:390 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:04:390 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:390 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:390 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:390 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:390 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:04:470 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:04:470 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:04:470 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:04:470 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:470 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:470 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:470 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:470 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:04:549 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:04:550 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:04:550 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:04:550 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:550 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:550 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:550 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:550 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:04:629 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:04:629 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:04:629 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:04:629 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:629 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:629 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:629 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:629 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:04:709 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:04:709 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:04:709 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:04:709 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:710 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:710 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:710 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:710 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:04:790 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:04:790 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:04:790 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:04:790 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:790 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:790 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:790 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:790 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:04:872 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:04:872 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:04:872 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:04:873 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:874 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:874 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:875 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:876 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:04:954 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:04:954 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:04:954 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:04:954 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:954 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:954 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:954 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:04:954 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:05:33 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:05:33 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:05:33 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:05:33 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:33 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:33 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:34 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:34 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:05:114 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:05:114 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:05:114 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:05:114 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:114 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:114 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:114 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:114 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:05:194 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:05:194 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:05:194 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:05:194 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:194 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:195 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:195 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:195 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:05:274 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:05:274 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:05:274 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:05:274 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:274 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:274 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:274 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:274 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:05:353 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:05:354 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:05:354 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:05:354 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:354 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:354 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:354 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:354 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:05:433 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:05:433 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:05:433 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:05:433 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:433 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:433 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:433 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:433 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:05:513 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:05:513 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:05:513 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:05:513 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:513 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:513 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:514 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:514 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:05:594 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:05:594 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:05:594 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:05:594 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:594 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:594 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:594 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:594 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:05:673 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:05:673 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:05:673 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:05:673 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:673 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:673 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:673 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:674 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:05:756 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:05:756 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:05:756 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:05:756 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:756 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:756 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:756 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:757 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:05:842 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:05:842 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:05:842 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:05:842 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:842 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:842 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:842 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:842 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:05:922 CPU/(17276:17276): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:05:922 CPU/(17276:17276): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:05:922 CPU/(17276:17276): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:05:922 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:922 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:922 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:922 CPU/(17276:17276): 
+ El proceso 1001 desea ejecutar la funcion  sin variable de retorno
+[INFO] 01:42:05:922 CPU/(17276:17276): EXIT CODE 0
+[INFO] 01:42:40:708 CPU/(17392:17392): Recibiendo proceso para ejecutar con PID : 1000
+[INFO] 01:42:40:708 CPU/(17392:17392): PID : 1000. Ejecutando con Algoritmo RR
+[INFO] 01:42:40:708 CPU/(17392:17392): PID : 1000. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:40:746 CPU/(17392:17392): 
+ El proceso 1000 desea definir la variable: a
+[INFO] 01:42:40:746 CPU/(17392:17392): 
+ La variable a, se definio satisfactoriamente
+[INFO] 01:42:40:746 CPU/(17392:17392): 
+ El proceso 1000 desea definir la variable: b
+[INFO] 01:42:40:746 CPU/(17392:17392): 
+ La variable b, se definio satisfactoriamente
+[INFO] 01:42:40:826 CPU/(17392:17392): 
+ El proceso 1000 desea obtener la direccion de la variable: a
+[INFO] 01:42:40:826 CPU/(17392:17392): 
+El proceso 1000 desea Asignar variable en la Pagina: 0, con Byte Inicial 0
+[INFO] 01:42:40:986 CPU/(17392:17392): 
+ El proceso 1000 desea obtener la direccion de la variable: b
+[INFO] 01:42:40:987 CPU/(17392:17392): 
+El proceso 1000 desea Asignar variable en la Pagina: 0, con Byte Inicial 4
+[INFO] 01:42:41:146 CPU/(17392:17392): 
+ El proceso 1000 desea obtener la direccion de la variable: a
+[INFO] 01:42:41:227 CPU/(17392:17392): 
+ El proceso 1000 desea escribir 
+[INFO] 01:42:41:227 CPU/(17392:17392): EXIT CODE 0
+[INFO] 01:42:41:228 CPU/(17392:17392): Recibiendo proceso para ejecutar con PID : 1000
+[INFO] 01:42:41:228 CPU/(17392:17392): PID : 1000. Ejecutando con Algoritmo RR
+[INFO] 01:42:41:228 CPU/(17392:17392): PID : 1000. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:41:305 CPU/(17392:17392): 
+ El proceso 1000 desea escribir 
+[INFO] 01:42:41:385 CPU/(17392:17392): 
+ El proceso 1000 esta haciendo un signal al semaforo: c
+[INFO] 01:42:41:466 CPU/(17392:17392): 
+ El proceso 1000 desea terminar su ejecucion
+[INFO] 01:42:41:466 CPU/(17392:17392): EXIT CODE 0
+[INFO] 01:42:54:558 CPU/(17392:17392): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:54:558 CPU/(17392:17392): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:54:558 CPU/(17392:17392): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:54:597 CPU/(17392:17392): 
+ El proceso 1001 desea definir la variable: a
+[INFO] 01:42:54:597 CPU/(17392:17392): 
+ La variable a, se definio satisfactoriamente
+[INFO] 01:42:54:598 CPU/(17392:17392): 
+ El proceso 1001 desea definir la variable: f
+[INFO] 01:42:54:598 CPU/(17392:17392): 
+ La variable f, se definio satisfactoriamente
+[INFO] 01:42:54:958 CPU/(17392:17392): 
+ El proceso 1001 desea alocar 100 bytes en la pagina 3, offset 0
+[INFO] 01:42:54:958 CPU/(17392:17392): 
+ Se aloco satisfactoriamente la memoria solicitada
+[INFO] 01:42:54:958 CPU/(17392:17392): 
+ El proceso 1001 desea obtener la direccion de la variable: a
+[INFO] 01:42:54:959 CPU/(17392:17392): 
+El proceso 1001 desea Asignar variable en la Pagina: 0, con Byte Inicial 0
+[INFO] 01:42:55:119 CPU/(17392:17392): 
+ El proceso 1001 desea abrir un archivo
+[INFO] 01:42:55:119 CPU/(17392:17392): 
+ El proceso 1001 desea obtener la direccion de la variable: f
+[INFO] 01:42:55:119 CPU/(17392:17392): 
+El proceso 1001 desea Asignar variable en la Pagina: 0, con Byte Inicial 4
+[INFO] 01:42:55:238 CPU/(17392:17392): 
+ El proceso 1001 desea obtener la direccion de la variable: a
+[INFO] 01:42:55:318 CPU/(17392:17392): 
+ El proceso 1001 desea obtener la direccion de la variable: f
+[INFO] 01:42:55:440 CPU/(17392:17392): 
+ El proceso 1001 desea leer un archivo
+[INFO] 01:42:55:557 CPU/(17392:17392): EXIT CODE 0
+[INFO] 01:42:55:557 CPU/(17392:17392): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:42:55:557 CPU/(17392:17392): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:42:55:557 CPU/(17392:17392): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:42:55:637 CPU/(17392:17392): 
+ El proceso 1001 esta haciendo un wait al semaforo: c
+[INFO] 01:42:55:637 CPU/(17392:17392): EXIT CODE 0
+[INFO] 01:42:55:719 CPU/(17392:17392): 
+ El proceso 1001 desea obtener la direccion de la variable: a
+[INFO] 01:43:03:813 CPU/(17392:17392): 
+ El proceso 1001 desea escribir 
+[INFO] 01:43:03:893 CPU/(17392:17392): 
+ El proceso 1001 desea obtener la direccion de la variable: f
+[INFO] 01:43:03:974 CPU/(17392:17392): 
+ El proceso 1001 desea cerrar un archivo
+[INFO] 01:43:04:53 CPU/(17392:17392): 
+ El proceso 1001 desea obtener la direccion de la variable: a
+[INFO] 01:43:04:213 CPU/(17392:17392): 
+ El proceso 1001 esta liberando memoria de la pagina 3, offset 5
+[INFO] 01:43:04:454 CPU/(17392:17392): EXIT CODE 0
+[INFO] 01:43:04:733 CPU/(17392:17392): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:43:04:733 CPU/(17392:17392): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:43:04:733 CPU/(17392:17392): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:43:04:774 CPU/(17392:17392): 
+ El proceso 1001 desea terminar su ejecucion
+[INFO] 01:43:04:774 CPU/(17392:17392): EXIT CODE 0
+>>>>>>> aee8c27581ccddb1fd1874dfa3ad1b47a1ba8521
