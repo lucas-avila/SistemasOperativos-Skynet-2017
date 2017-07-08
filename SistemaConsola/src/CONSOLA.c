@@ -89,7 +89,7 @@ void atender_solicitudes_de_usuario() {
 			break;
 		case 2: {
 			int pid;
-			printf("\nIngrese el PID del programa que desea terminar: ");
+			printf("\nPID: ");
 			scanf("%d", &pid);
 			if(pertenece_a_la_consola(pid)){
 				Info_ejecucion * programa = buscar_info_por_PID(pid);

@@ -662,3 +662,17 @@ PATH_ARCHIVO_LOGUEO=../resource/logueo.log
 [INFO] 01:00:44:78 MEMORIA/(15213:15308): PID 1000. Almacenar bytes. Pagina: 3 | Byte Incial: 0 | Longitud: 256 | Contenido: ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------.
 [INFO] 01:00:44:78 MEMORIA/(15213:15308): PID 1000. Almacenar bytes. Pagina: 2 | Byte Incial: 0 | Longitud: 256 | Contenido: ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------.
 [INFO] 01:00:44:78 MEMORIA/(15213:15308): PID 1000. Programa Finalizado Correctamente
+[INFO] 01:41:11:856 MEMORIA/(13672:13672): 
+ Parametros de Archivo de Configuracion 
+PUERTO=8084	
+MARCOS=500	
+MARCO_SIZE=256	
+ENTRADAS_CACHE=100	
+CACHE_X_PROC=10	
+RETARDO_MEMORIA=5000	
+CANTIDAD_MAXIMA_CONCURRENCIA=100	
+PATH_ARCHIVO_LOGUEO=../resource/logueo.log 
+[INFO] 01:41:11:856 MEMORIA/(13672:13672): Creando Memoria Principal...
+[INFO] 01:41:11:856 MEMORIA/(13672:13672): Memoria Principal creada correctamente.
+[INFO] 01:41:11:856 MEMORIA/(13672:13672): Creando Estructuras administrativas...
+[INFO] 01:41:11:856 MEMORIA/(13672:13672): Estructuras administrativas creadas correctamente.
