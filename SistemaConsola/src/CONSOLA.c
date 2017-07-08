@@ -18,6 +18,7 @@
 #include <string.h>
 #include <Sharedlib/Socket.h>
 #include <unistd.h>
+#include <signal.h>
 
 #include "header/AppConfig.h"
 #include "header/Estructuras.h"
@@ -55,9 +56,27 @@ void mostrar_menu_usuario() {
 	printf("\n Opcion: ");
 }
 
+void recibir_seniales_de_linux(int signum){
+	desconectar_consola();
+	exit(0);
+}
+
+void desconectar_consola() {
+	int tamanio = list_size(Info_procesos);
+	int i = 0;
+	Info_ejecucion* info_ejecucion;
+	for (i; i < tamanio; i++) {
+		info_ejecucion = list_get(Info_procesos, i);
+		solicitar_desconexion(info_ejecucion->pid, info_ejecucion->socket);
+	}
+}
+
 void atender_solicitudes_de_usuario() {
 	int opcion = -1;
 	char path_archivo_fuente[100];
+
+	signal(SIGINT, recibir_seniales_de_linux);
+
 	do {
 		mostrar_menu_usuario();
 		opcion = validarNumeroInput(0, 4);
@@ -82,13 +101,7 @@ void atender_solicitudes_de_usuario() {
 			break;
 		case 3:
 			printf("Se finalizaran todos los programas activos.\n");
-			int tamanio = list_size(Info_procesos);
-			int i = 0;
-			Info_ejecucion* info_ejecucion;
-			for (i; i < tamanio; i++) {
-				info_ejecucion = list_get(Info_procesos, i);
-				solicitar_desconexion(info_ejecucion->pid, info_ejecucion->socket);
-			}
+			desconectar_consola();
 			break;
 		case 4:
 			system("clear");
@@ -165,6 +178,7 @@ void finalizar_programa(int pid, int kernel_programa) {
 
 // Fecha y hora de fin de ejecucion, fecha y hora de inicio de ejecucion,
 // tiempo total de ejecucion, cantidad de impresiones por pantalla.
+
 void mostrar_info_proceso(uint32_t pid) {
 
 	Info_ejecucion * info_proceso = buscar_info_por_PID(pid);
@@ -188,7 +202,8 @@ void mostrar_info_proceso(uint32_t pid) {
 	string_append(&info_log, textoFin);
 	string_append(&info_log, "\n");
 	string_append(&info_log, "Tiempo total de ejecucion: ");
-	string_append(&info_log, string_itoa(tiempoTranscurrido));
+	string_append(&info_log, tiempoTranscurrido);
+	string_append(&info_log, "\n");
 	string_append(&info_log, "Cantidad de impresiones por pantalla: ");
 	string_append(&info_log, string_itoa(info_proceso->cant_impresiones));
 

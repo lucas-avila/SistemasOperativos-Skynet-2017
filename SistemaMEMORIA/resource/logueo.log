@@ -323,3 +323,342 @@ PATH_ARCHIVO_LOGUEO=../resource/logueo.log
 [INFO] 00:56:15:682 MEMORIA/(14591:14601): PID 1000. Almacenar bytes. Pagina: 3 | Byte Incial: 0 | Longitud: 256 | Contenido: ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------.
 [INFO] 00:56:15:682 MEMORIA/(14591:14601): PID 1000. Almacenar bytes. Pagina: 2 | Byte Incial: 0 | Longitud: 256 | Contenido: ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------.
 [INFO] 00:56:15:682 MEMORIA/(14591:14601): PID 1000. Programa Finalizado Correctamente
+[INFO] 00:59:52:849 MEMORIA/(14959:14959): 
+ Parametros de Archivo de Configuracion 
+PUERTO=8084	
+MARCOS=500	
+MARCO_SIZE=256	
+ENTRADAS_CACHE=100	
+CACHE_X_PROC=10	
+RETARDO_MEMORIA=5000	
+CANTIDAD_MAXIMA_CONCURRENCIA=100	
+PATH_ARCHIVO_LOGUEO=../resource/logueo.log 
+[INFO] 00:59:52:849 MEMORIA/(14959:14959): Creando Memoria Principal...
+[INFO] 00:59:52:849 MEMORIA/(14959:14959): Memoria Principal creada correctamente.
+[INFO] 00:59:52:849 MEMORIA/(14959:14959): Creando Estructuras administrativas...
+[INFO] 00:59:52:849 MEMORIA/(14959:14959): Estructuras administrativas creadas correctamente.
+[INFO] 01:00:17:684 MEMORIA/(15213:15213): 
+ Parametros de Archivo de Configuracion 
+PUERTO=8084	
+MARCOS=500	
+MARCO_SIZE=256	
+ENTRADAS_CACHE=100	
+CACHE_X_PROC=10	
+RETARDO_MEMORIA=5000	
+CANTIDAD_MAXIMA_CONCURRENCIA=100	
+PATH_ARCHIVO_LOGUEO=../resource/logueo.log 
+[INFO] 01:00:17:684 MEMORIA/(15213:15213): Creando Memoria Principal...
+[INFO] 01:00:17:685 MEMORIA/(15213:15213): Memoria Principal creada correctamente.
+[INFO] 01:00:17:685 MEMORIA/(15213:15213): Creando Estructuras administrativas...
+[INFO] 01:00:17:685 MEMORIA/(15213:15213): Estructuras administrativas creadas correctamente.
+[INFO] 01:00:27:713 MEMORIA/(15213:15308): PID 1000. Asignar Paginas Requeridas. | Cantidad Paginas: 2
+[INFO] 01:00:27:714 MEMORIA/(15213:15308): PID 1000. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 2 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 01:00:27:754 MEMORIA/(15213:15308): PID 1000. Asignar Paginas Requeridas. | Cantidad Paginas: 1
+[INFO] 01:00:27:754 MEMORIA/(15213:15308): PID 1000. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 1 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 01:00:27:834 MEMORIA/(15213:15308): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 0 | Longitud: 16 | Contenido:   variables a, f. | Resultado: Almacenado Correctamente.
+[INFO] 01:00:27:915 MEMORIA/(15213:15308): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 16 | Longitud: 14 | Contenido:   alocar a 100. | Resultado: Almacenado Correctamente.
+[INFO] 01:00:27:994 MEMORIA/(15213:15308): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 30 | Longitud: 24 | Contenido:   abrir f L /archivo.bin. | Resultado: Almacenado Correctamente.
+[INFO] 01:00:28:78 MEMORIA/(15213:15308): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 54 | Longitud: 16 | Contenido:     leer f a 100. | Resultado: Almacenado Correctamente.
+[INFO] 01:00:28:160 MEMORIA/(15213:15308): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 70 | Longitud: 10 | Contenido:     wait c. | Resultado: Almacenado Correctamente.
+[INFO] 01:00:28:238 MEMORIA/(15213:15308): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 80 | Longitud: 14 | Contenido:     prints s a. | Resultado: Almacenado Correctamente.
+[INFO] 01:00:28:322 MEMORIA/(15213:15308): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 94 | Longitud: 10 | Contenido:   cerrar f. | Resultado: Almacenado Correctamente.
+[INFO] 01:00:28:402 MEMORIA/(15213:15308): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 104 | Longitud: 11 | Contenido:   liberar a. | Resultado: Almacenado Correctamente.
+[INFO] 01:00:28:483 MEMORIA/(15213:15308): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 115 | Longitud: 3 | Contenido: end. | Resultado: Almacenado Correctamente.
+[INFO] 01:00:28:561 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 16 .
+[INFO] 01:00:28:562 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:   variables a, f
+[INFO] 01:00:28:602 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 16 | Longitud solicitada: 14 .
+[INFO] 01:00:28:602 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:   alocar a 100
+[INFO] 01:00:28:685 MEMORIA/(15213:15308): PID 1000. Asignar Paginas Requeridas. | Cantidad Paginas: 1
+[INFO] 01:00:28:685 MEMORIA/(15213:15308): PID 1000. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 1 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 01:00:28:721 MEMORIA/(15213:15308): PID 1000. Resultado Almacenar bytes. Pagina: 3 | Byte Incial: 0 | Longitud: 5 | Contenido: 10251. | Resultado: Almacenado Correctamente.
+[INFO] 01:00:28:801 MEMORIA/(15213:15308): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 0 | Longitud solicitada: 246 .
+[INFO] 01:00:28:801 MEMORIA/(15213:15308): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 10251-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[INFO] 01:00:28:882 MEMORIA/(15213:15308): PID 1000. Resultado Almacenar bytes. Pagina: 3 | Byte Incial: 0 | Longitud: 110 | Contenido: 00100                                                                                                   10146. | Resultado: Almacenado Correctamente.
+[INFO] 01:00:28:962 MEMORIA/(15213:15360): PID 1000. Resultado Almacenar bytes. Pagina: 0 | Byte Incial: 0 | Longitud: 4 | Contenido: . | Resultado: Almacenado Correctamente.
+[INFO] 01:00:29:1 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 24 .
+[INFO] 01:00:29:1 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:   abrir f L /archivo.bin
+[INFO] 01:00:29:122 MEMORIA/(15213:15360): PID 1000. Resultado Almacenar bytes. Pagina: 0 | Byte Incial: 4 | Longitud: 4 | Contenido: . | Resultado: Almacenado Correctamente.
+[INFO] 01:00:29:161 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 54 | Longitud solicitada: 16 .
+[INFO] 01:00:29:161 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     leer f a 100
+[INFO] 01:00:29:241 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 0 | Byte Incial: 0 | Longitud solicitada: 4 .
+[INFO] 01:00:29:241 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 
+[INFO] 01:00:29:322 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 0 | Byte Incial: 4 | Longitud solicitada: 4 .
+[INFO] 01:00:29:322 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 
+[INFO] 01:00:29:442 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 5 | Longitud solicitada: 4 .
+[INFO] 01:00:29:442 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:29:482 MEMORIA/(15213:15360): PID 1000. Resultado Almacenar bytes. Pagina: 3 | Byte Incial: 5 | Longitud: 100 | Contenido:     HOLA                                                                                           1. | Resultado: Almacenado Correctamente.
+[INFO] 01:00:29:562 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 70 | Longitud solicitada: 10 .
+[INFO] 01:00:29:562 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     wait c
+[INFO] 01:00:33:274 MEMORIA/(15213:15308): PID 1001. Asignar Paginas Requeridas. | Cantidad Paginas: 2
+[INFO] 01:00:33:274 MEMORIA/(15213:15308): PID 1001. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 2 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 01:00:33:317 MEMORIA/(15213:15308): PID 1001. Asignar Paginas Requeridas. | Cantidad Paginas: 1
+[INFO] 01:00:33:317 MEMORIA/(15213:15308): PID 1001. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 1 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 01:00:33:397 MEMORIA/(15213:15308): PID 1001. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 0 | Longitud: 16 | Contenido:   variables a,b;. | Resultado: Almacenado Correctamente.
+[INFO] 01:00:33:477 MEMORIA/(15213:15308): PID 1001. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 16 | Longitud: 6 | Contenido:   a=1;. | Resultado: Almacenado Correctamente.
+[INFO] 01:00:33:562 MEMORIA/(15213:15308): PID 1001. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 22 | Longitud: 6 | Contenido:   b=3;. | Resultado: Almacenado Correctamente.
+[INFO] 01:00:33:642 MEMORIA/(15213:15308): PID 1001. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 28 | Longitud: 13 | Contenido:   prints n a;. | Resultado: Almacenado Correctamente.
+[INFO] 01:00:33:721 MEMORIA/(15213:15308): PID 1001. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 41 | Longitud: 22 | Contenido:   prints l Hola Mundo!. | Resultado: Almacenado Correctamente.
+[INFO] 01:00:33:801 MEMORIA/(15213:15308): PID 1001. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 63 | Longitud: 10 | Contenido:   signal c. | Resultado: Almacenado Correctamente.
+[INFO] 01:00:33:881 MEMORIA/(15213:15308): PID 1001. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 73 | Longitud: 3 | Contenido: end. | Resultado: Almacenado Correctamente.
+[INFO] 01:00:33:961 MEMORIA/(15213:15360): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 16 .
+[INFO] 01:00:33:961 MEMORIA/(15213:15360): PID 1001. Resultado en CACHE Solicitar bytes. Contenido:   variables a,b;
+[INFO] 01:00:34:1 MEMORIA/(15213:15360): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 16 | Longitud solicitada: 6 .
+[INFO] 01:00:34:1 MEMORIA/(15213:15360): PID 1001. Resultado en CACHE Solicitar bytes. Contenido:   a=1;
+[INFO] 01:00:34:82 MEMORIA/(15213:15360): PID 1001. Resultado Almacenar bytes. Pagina: 0 | Byte Incial: 0 | Longitud: 4 | Contenido: . | Resultado: Almacenado Correctamente.
+[INFO] 01:00:34:161 MEMORIA/(15213:15360): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 6 .
+[INFO] 01:00:34:161 MEMORIA/(15213:15360): PID 1001. Resultado en CACHE Solicitar bytes. Contenido:   b=3;
+[INFO] 01:00:34:241 MEMORIA/(15213:15360): PID 1001. Resultado Almacenar bytes. Pagina: 0 | Byte Incial: 4 | Longitud: 4 | Contenido: . | Resultado: Almacenado Correctamente.
+[INFO] 01:00:34:321 MEMORIA/(15213:15360): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 28 | Longitud solicitada: 13 .
+[INFO] 01:00:34:321 MEMORIA/(15213:15360): PID 1001. Resultado en CACHE Solicitar bytes. Contenido:   prints n a;
+[INFO] 01:00:34:402 MEMORIA/(15213:15360): PID 1001. Solicitar bytes. Pagina: 0 | Byte Incial: 0 | Longitud solicitada: 4 .
+[INFO] 01:00:34:402 MEMORIA/(15213:15360): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 
+[INFO] 01:00:34:521 MEMORIA/(15213:15360): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 41 | Longitud solicitada: 22 .
+[INFO] 01:00:34:521 MEMORIA/(15213:15360): PID 1001. Resultado en CACHE Solicitar bytes. Contenido:   prints l Hola Mundo!
+[INFO] 01:00:34:561 MEMORIA/(15213:15360): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 63 | Longitud solicitada: 10 .
+[INFO] 01:00:34:561 MEMORIA/(15213:15360): PID 1001. Resultado en CACHE Solicitar bytes. Contenido:   signal c
+[INFO] 01:00:34:641 MEMORIA/(15213:15360): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 73 | Longitud solicitada: 3 .
+[INFO] 01:00:34:641 MEMORIA/(15213:15360): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: end
+[INFO] 01:00:34:762 MEMORIA/(15213:15308): PID 1001. Finalizar Programa
+[INFO] 01:00:34:762 MEMORIA/(15213:15308): PID 1001. Almacenar bytes. Pagina: 1 | Byte Incial: 0 | Longitud: 256 | Contenido: ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------.
+[INFO] 01:00:34:762 MEMORIA/(15213:15308): PID 1001. Almacenar bytes. Pagina: 0 | Byte Incial: 0 | Longitud: 256 | Contenido: ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------.
+[INFO] 01:00:34:762 MEMORIA/(15213:15308): PID 1001. Almacenar bytes. Pagina: 2 | Byte Incial: 0 | Longitud: 256 | Contenido: ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------.
+[INFO] 01:00:34:762 MEMORIA/(15213:15308): PID 1001. Programa Finalizado Correctamente
+[INFO] 01:00:34:762 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 80 | Longitud solicitada: 14 .
+[INFO] 01:00:34:762 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     prints s a
+[INFO] 01:00:34:801 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 0 | Byte Incial: 0 | Longitud solicitada: 4 .
+[INFO] 01:00:34:801 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 
+[INFO] 01:00:34:882 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 5 | Longitud solicitada: 4 .
+[INFO] 01:00:34:882 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:34:961 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 6 | Longitud solicitada: 4 .
+[INFO] 01:00:34:961 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:    H
+[INFO] 01:00:35:41 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 7 | Longitud solicitada: 4 .
+[INFO] 01:00:35:41 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:   HO
+[INFO] 01:00:35:121 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 8 | Longitud solicitada: 4 .
+[INFO] 01:00:35:122 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:  HOL
+[INFO] 01:00:35:201 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 9 | Longitud solicitada: 4 .
+[INFO] 01:00:35:201 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: HOLA
+[INFO] 01:00:35:282 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 10 | Longitud solicitada: 4 .
+[INFO] 01:00:35:282 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: OLA 
+[INFO] 01:00:35:361 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 11 | Longitud solicitada: 4 .
+[INFO] 01:00:35:361 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: LA  
+[INFO] 01:00:35:441 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 12 | Longitud solicitada: 4 .
+[INFO] 01:00:35:441 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: A   
+[INFO] 01:00:35:521 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 13 | Longitud solicitada: 4 .
+[INFO] 01:00:35:521 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:35:601 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 14 | Longitud solicitada: 4 .
+[INFO] 01:00:35:601 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:35:681 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 15 | Longitud solicitada: 4 .
+[INFO] 01:00:35:681 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:35:761 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 16 | Longitud solicitada: 4 .
+[INFO] 01:00:35:761 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:35:841 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 17 | Longitud solicitada: 4 .
+[INFO] 01:00:35:841 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:35:921 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 18 | Longitud solicitada: 4 .
+[INFO] 01:00:35:922 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:36:1 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 19 | Longitud solicitada: 4 .
+[INFO] 01:00:36:1 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:36:81 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 20 | Longitud solicitada: 4 .
+[INFO] 01:00:36:81 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:36:161 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 21 | Longitud solicitada: 4 .
+[INFO] 01:00:36:161 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:36:241 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 22 | Longitud solicitada: 4 .
+[INFO] 01:00:36:241 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:36:322 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 23 | Longitud solicitada: 4 .
+[INFO] 01:00:36:322 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:36:401 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 24 | Longitud solicitada: 4 .
+[INFO] 01:00:36:401 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:36:481 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 25 | Longitud solicitada: 4 .
+[INFO] 01:00:36:481 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:36:561 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 26 | Longitud solicitada: 4 .
+[INFO] 01:00:36:562 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:36:642 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 27 | Longitud solicitada: 4 .
+[INFO] 01:00:36:642 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:36:722 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 28 | Longitud solicitada: 4 .
+[INFO] 01:00:36:722 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:36:802 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 29 | Longitud solicitada: 4 .
+[INFO] 01:00:36:803 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:36:881 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 30 | Longitud solicitada: 4 .
+[INFO] 01:00:36:882 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:36:962 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 31 | Longitud solicitada: 4 .
+[INFO] 01:00:36:962 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:37:42 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 32 | Longitud solicitada: 4 .
+[INFO] 01:00:37:42 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:37:122 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 33 | Longitud solicitada: 4 .
+[INFO] 01:00:37:122 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:37:202 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 34 | Longitud solicitada: 4 .
+[INFO] 01:00:37:202 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:37:282 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 35 | Longitud solicitada: 4 .
+[INFO] 01:00:37:283 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:37:362 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 36 | Longitud solicitada: 4 .
+[INFO] 01:00:37:362 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:37:443 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 37 | Longitud solicitada: 4 .
+[INFO] 01:00:37:443 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:37:522 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 38 | Longitud solicitada: 4 .
+[INFO] 01:00:37:522 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:37:602 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 39 | Longitud solicitada: 4 .
+[INFO] 01:00:37:602 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:37:683 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 40 | Longitud solicitada: 4 .
+[INFO] 01:00:37:683 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:37:762 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 41 | Longitud solicitada: 4 .
+[INFO] 01:00:37:762 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:37:842 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 42 | Longitud solicitada: 4 .
+[INFO] 01:00:37:842 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:37:922 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 43 | Longitud solicitada: 4 .
+[INFO] 01:00:37:922 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:38:2 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 44 | Longitud solicitada: 4 .
+[INFO] 01:00:38:3 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:38:83 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 45 | Longitud solicitada: 4 .
+[INFO] 01:00:38:83 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:38:162 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 46 | Longitud solicitada: 4 .
+[INFO] 01:00:38:162 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:38:243 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 47 | Longitud solicitada: 4 .
+[INFO] 01:00:38:243 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:38:323 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 48 | Longitud solicitada: 4 .
+[INFO] 01:00:38:323 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:38:401 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 49 | Longitud solicitada: 4 .
+[INFO] 01:00:38:401 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:38:482 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 50 | Longitud solicitada: 4 .
+[INFO] 01:00:38:483 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:38:562 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 51 | Longitud solicitada: 4 .
+[INFO] 01:00:38:562 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:38:646 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 52 | Longitud solicitada: 4 .
+[INFO] 01:00:38:647 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:38:727 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 53 | Longitud solicitada: 4 .
+[INFO] 01:00:38:728 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:38:810 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 54 | Longitud solicitada: 4 .
+[INFO] 01:00:38:810 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:38:891 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 55 | Longitud solicitada: 4 .
+[INFO] 01:00:38:891 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:38:971 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 56 | Longitud solicitada: 4 .
+[INFO] 01:00:38:971 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:39:50 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 57 | Longitud solicitada: 4 .
+[INFO] 01:00:39:51 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:39:141 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 58 | Longitud solicitada: 4 .
+[INFO] 01:00:39:142 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:39:222 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 59 | Longitud solicitada: 4 .
+[INFO] 01:00:39:222 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:39:303 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 60 | Longitud solicitada: 4 .
+[INFO] 01:00:39:304 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:39:387 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 61 | Longitud solicitada: 4 .
+[INFO] 01:00:39:388 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:39:466 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 62 | Longitud solicitada: 4 .
+[INFO] 01:00:39:466 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:39:546 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 63 | Longitud solicitada: 4 .
+[INFO] 01:00:39:546 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:39:625 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 64 | Longitud solicitada: 4 .
+[INFO] 01:00:39:626 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:39:706 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 65 | Longitud solicitada: 4 .
+[INFO] 01:00:39:706 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:39:785 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 66 | Longitud solicitada: 4 .
+[INFO] 01:00:39:786 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:39:866 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 67 | Longitud solicitada: 4 .
+[INFO] 01:00:39:866 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:39:945 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 68 | Longitud solicitada: 4 .
+[INFO] 01:00:39:945 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:40:25 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 69 | Longitud solicitada: 4 .
+[INFO] 01:00:40:26 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:40:105 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 70 | Longitud solicitada: 4 .
+[INFO] 01:00:40:105 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:40:186 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 71 | Longitud solicitada: 4 .
+[INFO] 01:00:40:186 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:40:265 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 72 | Longitud solicitada: 4 .
+[INFO] 01:00:40:266 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:40:346 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 73 | Longitud solicitada: 4 .
+[INFO] 01:00:40:348 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:40:427 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 74 | Longitud solicitada: 4 .
+[INFO] 01:00:40:427 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:40:507 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 75 | Longitud solicitada: 4 .
+[INFO] 01:00:40:507 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:40:586 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 76 | Longitud solicitada: 4 .
+[INFO] 01:00:40:587 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:40:665 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 77 | Longitud solicitada: 4 .
+[INFO] 01:00:40:666 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:40:746 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 78 | Longitud solicitada: 4 .
+[INFO] 01:00:40:746 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:40:826 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 79 | Longitud solicitada: 4 .
+[INFO] 01:00:40:826 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:40:907 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 80 | Longitud solicitada: 4 .
+[INFO] 01:00:40:907 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:40:987 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 81 | Longitud solicitada: 4 .
+[INFO] 01:00:40:987 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:41:67 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 82 | Longitud solicitada: 4 .
+[INFO] 01:00:41:68 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:41:161 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 83 | Longitud solicitada: 4 .
+[INFO] 01:00:41:161 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:41:239 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 84 | Longitud solicitada: 4 .
+[INFO] 01:00:41:239 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:41:323 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 85 | Longitud solicitada: 4 .
+[INFO] 01:00:41:323 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:41:403 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 86 | Longitud solicitada: 4 .
+[INFO] 01:00:41:403 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:41:482 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 87 | Longitud solicitada: 4 .
+[INFO] 01:00:41:482 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:41:570 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 88 | Longitud solicitada: 4 .
+[INFO] 01:00:41:570 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:41:650 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 89 | Longitud solicitada: 4 .
+[INFO] 01:00:41:650 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:41:730 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 90 | Longitud solicitada: 4 .
+[INFO] 01:00:41:730 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:41:810 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 91 | Longitud solicitada: 4 .
+[INFO] 01:00:41:810 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:41:890 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 92 | Longitud solicitada: 4 .
+[INFO] 01:00:41:890 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:41:973 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 93 | Longitud solicitada: 4 .
+[INFO] 01:00:41:973 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:42:54 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 94 | Longitud solicitada: 4 .
+[INFO] 01:00:42:54 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:42:133 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 95 | Longitud solicitada: 4 .
+[INFO] 01:00:42:133 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:42:213 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 96 | Longitud solicitada: 4 .
+[INFO] 01:00:42:214 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:42:306 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 97 | Longitud solicitada: 4 .
+[INFO] 01:00:42:306 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:42:387 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 98 | Longitud solicitada: 4 .
+[INFO] 01:00:42:387 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:42:465 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 99 | Longitud solicitada: 4 .
+[INFO] 01:00:42:465 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:42:545 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 100 | Longitud solicitada: 4 .
+[INFO] 01:00:42:545 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:42:626 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 101 | Longitud solicitada: 4 .
+[INFO] 01:00:42:626 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:    1
+[INFO] 01:00:42:706 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 102 | Longitud solicitada: 4 .
+[INFO] 01:00:42:707 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:   10
+[INFO] 01:00:42:786 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 103 | Longitud solicitada: 4 .
+[INFO] 01:00:42:786 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:  101
+[INFO] 01:00:42:866 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 104 | Longitud solicitada: 4 .
+[INFO] 01:00:42:866 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 1014
+[INFO] 01:00:42:947 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 105 | Longitud solicitada: 4 .
+[INFO] 01:00:42:947 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 0146
+[INFO] 01:00:43:27 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 106 | Longitud solicitada: 4 .
+[INFO] 01:00:43:27 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 146
+[INFO] 01:00:43:114 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 107 | Longitud solicitada: 4 .
+[INFO] 01:00:43:114 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 46
+[INFO] 01:00:43:193 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 108 | Longitud solicitada: 4 .
+[INFO] 01:00:43:194 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 6
+[INFO] 01:00:43:275 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 109 | Longitud solicitada: 4 .
+[INFO] 01:00:43:275 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 
+[INFO] 01:00:43:355 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 94 | Longitud solicitada: 10 .
+[INFO] 01:00:43:357 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:   cerrar f
+[INFO] 01:00:43:437 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 0 | Byte Incial: 4 | Longitud solicitada: 4 .
+[INFO] 01:00:43:437 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 
+[INFO] 01:00:43:517 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 104 | Longitud solicitada: 11 .
+[INFO] 01:00:43:517 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:   liberar a
+[INFO] 01:00:43:597 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 0 | Byte Incial: 0 | Longitud solicitada: 4 .
+[INFO] 01:00:43:597 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 
+[INFO] 01:00:43:677 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 5 | Longitud solicitada: 4 .
+[INFO] 01:00:43:678 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido:     
+[INFO] 01:00:43:797 MEMORIA/(15213:15308): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 0 | Longitud solicitada: 1 .
+[INFO] 01:00:43:797 MEMORIA/(15213:15308): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 0
+[INFO] 01:00:43:839 MEMORIA/(15213:15308): PID 1000. Resultado Almacenar bytes. Pagina: 3 | Byte Incial: 0 | Longitud: 1 | Contenido: 1. | Resultado: Almacenado Correctamente.
+[INFO] 01:00:43:919 MEMORIA/(15213:15308): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 1 | Longitud solicitada: 4 .
+[INFO] 01:00:43:919 MEMORIA/(15213:15308): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 0100
+[INFO] 01:00:43:999 MEMORIA/(15213:15308): PID 1000. Solicitar bytes. Pagina: 3 | Byte Incial: 0 | Longitud solicitada: 256 .
+[INFO] 01:00:43:999 MEMORIA/(15213:15308): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 10100    HOLA                                                                                           10146
+[INFO] 01:00:43:999 MEMORIA/(15213:15360): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 115 | Longitud solicitada: 3 .
+[INFO] 01:00:43:999 MEMORIA/(15213:15360): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: end
+[INFO] 01:00:44:77 MEMORIA/(15213:15308): PID 1000. Finalizar Programa
+[INFO] 01:00:44:77 MEMORIA/(15213:15308): PID 1000. Almacenar bytes. Pagina: 1 | Byte Incial: 0 | Longitud: 256 | Contenido: ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------.
+[INFO] 01:00:44:77 MEMORIA/(15213:15308): PID 1000. Almacenar bytes. Pagina: 0 | Byte Incial: 0 | Longitud: 256 | Contenido: ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------.
+[INFO] 01:00:44:78 MEMORIA/(15213:15308): PID 1000. Almacenar bytes. Pagina: 3 | Byte Incial: 0 | Longitud: 256 | Contenido: ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------.
+[INFO] 01:00:44:78 MEMORIA/(15213:15308): PID 1000. Almacenar bytes. Pagina: 2 | Byte Incial: 0 | Longitud: 256 | Contenido: ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------.
+[INFO] 01:00:44:78 MEMORIA/(15213:15308): PID 1000. Programa Finalizado Correctamente

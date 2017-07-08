@@ -1,0 +1,90 @@
+[INFO] 01:00:28:522 CPU/(15359:15359): Recibiendo proceso para ejecutar con PID : 1000
+[INFO] 01:00:28:522 CPU/(15359:15359): PID : 1000. Ejecutando con Algoritmo RR
+[INFO] 01:00:28:522 CPU/(15359:15359): PID : 1000. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:00:28:562 CPU/(15359:15359): 
+ El proceso 1000 desea definir la variable: a
+[INFO] 01:00:28:562 CPU/(15359:15359): 
+ La variable a, se definio satisfactoriamente
+[INFO] 01:00:28:562 CPU/(15359:15359): 
+ El proceso 1000 desea definir la variable: f
+[INFO] 01:00:28:562 CPU/(15359:15359): 
+ La variable f, se definio satisfactoriamente
+[INFO] 01:00:28:924 CPU/(15359:15359): 
+ El proceso 1000 desea alocar 100 bytes en la pagina 3, offset 0
+[INFO] 01:00:28:924 CPU/(15359:15359): 
+ Se aloco satisfactoriamente la memoria solicitada
+[INFO] 01:00:28:924 CPU/(15359:15359): 
+ El proceso 1000 desea obtener la direccion de la variable: a
+[INFO] 01:00:28:924 CPU/(15359:15359): 
+El proceso 1000 desea Asignar variable en la Pagina: 0, con Byte Inicial 0
+[INFO] 01:00:29:82 CPU/(15359:15359): 
+ El proceso 1000 desea abrir un archivo
+[INFO] 01:00:29:82 CPU/(15359:15359): 
+ El proceso 1000 desea obtener la direccion de la variable: f
+[INFO] 01:00:29:82 CPU/(15359:15359): 
+El proceso 1000 desea Asignar variable en la Pagina: 0, con Byte Inicial 4
+[INFO] 01:00:29:201 CPU/(15359:15359): 
+ El proceso 1000 desea obtener la direccion de la variable: a
+[INFO] 01:00:29:281 CPU/(15359:15359): 
+ El proceso 1000 desea obtener la direccion de la variable: f
+[INFO] 01:00:29:402 CPU/(15359:15359): 
+ El proceso 1000 desea leer un archivo
+[INFO] 01:00:29:521 CPU/(15359:15359): EXIT CODE 0
+[INFO] 01:00:29:522 CPU/(15359:15359): Recibiendo proceso para ejecutar con PID : 1000
+[INFO] 01:00:29:522 CPU/(15359:15359): PID : 1000. Ejecutando con Algoritmo RR
+[INFO] 01:00:29:522 CPU/(15359:15359): PID : 1000. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:00:29:601 CPU/(15359:15359): 
+ El proceso 1000 esta haciendo un wait al semaforo: c
+[INFO] 01:00:29:601 CPU/(15359:15359): EXIT CODE 0
+[INFO] 01:00:33:922 CPU/(15359:15359): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:00:33:922 CPU/(15359:15359): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:00:33:922 CPU/(15359:15359): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:00:33:961 CPU/(15359:15359): 
+ El proceso 1001 desea definir la variable: a
+[INFO] 01:00:33:961 CPU/(15359:15359): 
+ La variable a, se definio satisfactoriamente
+[INFO] 01:00:33:961 CPU/(15359:15359): 
+ El proceso 1001 desea definir la variable: b
+[INFO] 01:00:33:961 CPU/(15359:15359): 
+ La variable b, se definio satisfactoriamente
+[INFO] 01:00:34:42 CPU/(15359:15359): 
+ El proceso 1001 desea obtener la direccion de la variable: a
+[INFO] 01:00:34:42 CPU/(15359:15359): 
+El proceso 1001 desea Asignar variable en la Pagina: 0, con Byte Inicial 0
+[INFO] 01:00:34:202 CPU/(15359:15359): 
+ El proceso 1001 desea obtener la direccion de la variable: b
+[INFO] 01:00:34:202 CPU/(15359:15359): 
+El proceso 1001 desea Asignar variable en la Pagina: 0, con Byte Inicial 4
+[INFO] 01:00:34:362 CPU/(15359:15359): 
+ El proceso 1001 desea obtener la direccion de la variable: a
+[INFO] 01:00:34:441 CPU/(15359:15359): 
+ El proceso 1001 desea escribir 
+[INFO] 01:00:34:441 CPU/(15359:15359): EXIT CODE 0
+[INFO] 01:00:34:482 CPU/(15359:15359): Recibiendo proceso para ejecutar con PID : 1001
+[INFO] 01:00:34:482 CPU/(15359:15359): PID : 1001. Ejecutando con Algoritmo RR
+[INFO] 01:00:34:482 CPU/(15359:15359): PID : 1001. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:00:34:521 CPU/(15359:15359): 
+ El proceso 1001 desea escribir 
+[INFO] 01:00:34:601 CPU/(15359:15359): 
+ El proceso 1001 esta haciendo un signal al semaforo: c
+[INFO] 01:00:34:681 CPU/(15359:15359): 
+ El proceso 1001 desea terminar su ejecucion
+[INFO] 01:00:34:682 CPU/(15359:15359): EXIT CODE 0
+[INFO] 01:00:34:721 CPU/(15359:15359): Recibiendo proceso para ejecutar con PID : 1000
+[INFO] 01:00:34:721 CPU/(15359:15359): PID : 1000. Ejecutando con Algoritmo RR
+[INFO] 01:00:34:721 CPU/(15359:15359): PID : 1000. Algoritmo RR. Quantum Establecido: 4
+[INFO] 01:00:34:762 CPU/(15359:15359): 
+ El proceso 1000 desea obtener la direccion de la variable: a
+[INFO] 01:00:43:314 CPU/(15359:15359): 
+ El proceso 1000 desea escribir 
+[INFO] 01:00:43:397 CPU/(15359:15359): 
+ El proceso 1000 desea obtener la direccion de la variable: f
+[INFO] 01:00:43:478 CPU/(15359:15359): 
+ El proceso 1000 desea cerrar un archivo
+[INFO] 01:00:43:559 CPU/(15359:15359): 
+ El proceso 1000 desea obtener la direccion de la variable: a
+[INFO] 01:00:43:718 CPU/(15359:15359): 
+ El proceso 1000 esta liberando memoria de la pagina 3, offset 5
+[INFO] 01:00:43:1 CPU/(15359:15359): 
+ El proceso 1000 desea terminar su ejecucion
+[INFO] 01:00:43:3 CPU/(15359:15359): EXIT CODE 0

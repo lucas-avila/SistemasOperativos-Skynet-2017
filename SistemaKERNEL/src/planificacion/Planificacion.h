@@ -25,6 +25,8 @@ static const char EXEC[] = "EXEC";
 static const char EXIT[] = "EXIT";
 //t_queue* COLA_SUSPENDIDO;
 
+int pid_eliminacion;
+
 void EJECUTAR_ALGORITMO_PLANIFICACION();
 
 void inicializar_colas_semaforos();

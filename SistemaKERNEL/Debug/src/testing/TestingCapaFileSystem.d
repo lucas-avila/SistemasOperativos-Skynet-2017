@@ -3,8 +3,6 @@ src/testing/TestingCapaFileSystem.d: \
  ../src/testing/../capaFILESYSTEM/GestionArchivos.h \
  ../src/testing/../capaFILESYSTEM/TablaGlobalArchivo.h \
  ../src/testing/../capaFILESYSTEM/TablaProcesoArchivo.h \
- ../src/testing/../capaFILESYSTEM/TablaGlobalArchivo.h \
- ../src/testing/../capaFILESYSTEM/TablaProcesoArchivo.h \
  ../src/testing/../capaFILESYSTEM/GestionArchivoFuncAux.h \
  ../src/testing/../capaFILESYSTEM/../capaFILESYSTEM/TablaProcesoArchivo.h \
  ../src/testing/../capaFILESYSTEM/../capaFILESYSTEM/TablaGlobalArchivo.h \
@@ -16,10 +14,6 @@ src/testing/TestingCapaFileSystem.d: \
  ../src/testing/../interfaz/InterfazFS.h
 
 ../src/testing/../capaFILESYSTEM/GestionArchivos.h:
-
-../src/testing/../capaFILESYSTEM/TablaGlobalArchivo.h:
-
-../src/testing/../capaFILESYSTEM/TablaProcesoArchivo.h:
 
 ../src/testing/../capaFILESYSTEM/TablaGlobalArchivo.h:
 
