@@ -11,10 +11,11 @@
 
 void obtener_valor_var_comp(int conexionCPU){
 	char* nombreVarComp = recibir_dato_serializado(conexionCPU);
+	printf("El valor es %s\n", nombreVarComp);
 	int valor;
 	int i = 0;
 	char * varCompartida = string_new();
-	if(!string_starts_with(nombreVarComp, "!")){
+	if((configuraciones.cantidad_var_comp > 0) && string_starts_with(configuraciones.VAR_COMP[0], "!") && !string_starts_with(nombreVarComp, "!")){
 		string_append(&varCompartida, "!");
 	}
 	string_append(&varCompartida, nombreVarComp);
@@ -42,7 +43,7 @@ void asignar_valor_var_comp (int conexionCPU){
 	int valorVarComp = atoi(recibir_dato_serializado(conexionCPU));
 	int i = 0;
 	char * varCompartida = string_new();
-	if(!string_starts_with(nombreVarComp, "!")){
+	if((configuraciones.cantidad_var_comp > 0) && string_starts_with(configuraciones.VAR_COMP[0], "!") && !string_starts_with(nombreVarComp, "!")){
 		string_append(&varCompartida, "!");
 	}
 	string_append(&varCompartida, nombreVarComp);

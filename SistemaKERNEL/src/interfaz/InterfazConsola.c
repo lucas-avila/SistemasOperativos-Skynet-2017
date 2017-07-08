@@ -1,12 +1,13 @@
 #include "InterfazConsola.h"
 
+#include <commons/string.h>
 #include <pthread.h>
 #include <stdlib.h>
 #include <string.h>
+#include <Sharedlib/Socket.h>
 #include <unistd.h>
 
 #include "../administrarProcesos/Proceso.h"
-#include "../../../Sharedlib/Sharedlib/Socket.h"
 #include "../header/AppConfig.h"
 #include "../header/KERNEL.h"
 #include "../header/SolicitudesUsuario.h"
@@ -27,6 +28,7 @@ void escuchar_Conexiones_Programa(int servidorPrograma) {
 			CU_iniciar_programa(cliente);
 			pthread_create(&thread_programa, NULL, &CU_Recibir_Conexiones_Programa, cliente);
 			pthread_detach(&thread_programa);
+			informar_handshake_log("PROGRAMA");
 		} else {
 			close(cliente);
 		}

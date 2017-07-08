@@ -63,6 +63,8 @@ int contar_Cantidad_FD_ABIERTO( IndiceGlobal) {
 	}
 }
 
+// SOLO PARA TESTING:
+
 void mostrar_tabla_Global_archivos() {
 	printf("\n -----------------------------------------------------");
 	printf("\n TABLA GLOBAL DE ARCHIVOS");

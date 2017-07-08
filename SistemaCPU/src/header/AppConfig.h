@@ -15,6 +15,7 @@ typedef struct {
 	int PUERTO_MEMORIA;
 	char* IP_MEMORIA;
 	int CANTIDAD_MAXIMA_CONCURRENCIA;
+	char* PATH_ARCHIVO_LOG;
 
 } AppConfig;
 

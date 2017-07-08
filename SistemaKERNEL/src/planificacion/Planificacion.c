@@ -67,9 +67,10 @@ void proceso_a_NEW(Proceso * p) {
 	char * log = string_from_format("El Proceso se %d agrego a la cola %s.\n", p->PID, NEW);
 	string_append(&info_log, log);
 	sem_post(&escribir_log);
+	generar_log();
 }
 
-void informar_accion_en_log(uint32_t PID, char * origen,char * destino){
+void informar_movimiento_de_cola_en_log(uint32_t PID, char * origen,char * destino){
 	sem_wait(&escribir_log);
 	char * log = string_from_format("El Proceso %d se movio de la cola %s a la cola %s.\n", PID, origen, destino);
 	string_append(&info_log, log);
@@ -110,10 +111,8 @@ int mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 		if (es_semaforo(destino)){
 			enviar_dato_serializado("BLOQUEADO", p->cpu->numeroConexion);
 			sem_wait(&escribir_log);
-			char * pid = string_itoa(p->PID);
-			string_append(&info_log, "El Proceso (");
-			string_append(&info_log, p->PID);
-			string_append(&info_log, ") se bloqueo.\n");
+			char * log = string_from_format("El Proceso %d se BLOQUEO.\n", p->PID);
+			string_append(&info_log, log);
 			sem_post(&escribir_log);
 			generar_log();
 			}
@@ -122,6 +121,11 @@ int mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 	else if (es_semaforo(origen)) {
 		list_remove_by_condition((t_list*) cola(WAITING), &es_pcb_buscado);
 		queue_pop(cola(origen));
+		sem_wait(&escribir_log);
+		char * log = string_from_format("El Proceso %d se DESBLOQUEo.\n", p->PID);
+		string_append(&info_log, log);
+		sem_post(&escribir_log);
+		generar_log();
 	} else
 		queue_pop(cola(origen));
 
@@ -152,7 +156,7 @@ int mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 	signal_cola(destino);
 	if(strcmp(destino, READY) == 0)
 		sem_post(&proceso_ready);
-	informar_accion_en_log(pcb->PID, origen, destino);
+	informar_movimiento_de_cola_en_log(pcb->PID, origen, destino);
 	return 0;
 }
 

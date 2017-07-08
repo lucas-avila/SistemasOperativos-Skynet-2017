@@ -8,6 +8,10 @@ src/capaFILESYSTEM/GestionArchivoFuncAux.d: \
  ../src/capaFILESYSTEM/../administrarProcesos/../../../Sharedlib/Sharedlib/PCB.h \
  ../src/capaFILESYSTEM/../administrarProcesos/../../../Sharedlib/Sharedlib/Socket.h \
  /home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Sharedlib/Socket.h \
+ ../src/capaFILESYSTEM/../general/Semaforo.h \
+ ../src/capaFILESYSTEM/../header/SolicitudesUsuario.h \
+ ../src/capaFILESYSTEM/../interfaz/InterfazCPU.h \
+ ../src/capaFILESYSTEM/../interfaz/../header/Estructuras.h \
  ../src/capaFILESYSTEM/GestionArchivos.h \
  ../src/capaFILESYSTEM/TablaGlobalArchivo.h \
  ../src/capaFILESYSTEM/TablaProcesoArchivo.h
@@ -27,6 +31,14 @@ src/capaFILESYSTEM/GestionArchivoFuncAux.d: \
 ../src/capaFILESYSTEM/../administrarProcesos/../../../Sharedlib/Sharedlib/Socket.h:
 
 /home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Sharedlib/Socket.h:
+
+../src/capaFILESYSTEM/../general/Semaforo.h:
+
+../src/capaFILESYSTEM/../header/SolicitudesUsuario.h:
+
+../src/capaFILESYSTEM/../interfaz/InterfazCPU.h:
+
+../src/capaFILESYSTEM/../interfaz/../header/Estructuras.h:
 
 ../src/capaFILESYSTEM/GestionArchivos.h:
 

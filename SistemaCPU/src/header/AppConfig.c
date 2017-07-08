@@ -38,6 +38,9 @@ void inicializar_configuracion(char *PATH_ARCHIVO_CONFIGURACION) {
 			strcpy(configuraciones.IP_MEMORIA, config_get_string_value(config, "IP_MEMORIA"));
 
 		}
+		configuraciones.PATH_ARCHIVO_LOG = malloc(strlen(config_get_string_value(config, "PATH_ARCHIVO_LOGUEO")) + 1);
+		strcpy(configuraciones.PATH_ARCHIVO_LOG, config_get_string_value(config, "PATH_ARCHIVO_LOGUEO"));
+
 
 	}
 

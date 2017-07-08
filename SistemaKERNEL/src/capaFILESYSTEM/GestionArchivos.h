@@ -7,9 +7,12 @@
 
 #ifndef CAPAFILESYSTEM_GESTIONARCHIVOS_H_
 #define CAPAFILESYSTEM_GESTIONARCHIVOS_H_
-#include<stdbool.h>
-#include "TablaGlobalArchivo.h"
-#include "TablaProcesoArchivo.h"
+
+#include <stdbool.h>
+#include <stdint.h>
+
+
+void informar_accion_en_log(char * accion, uint32_t PID);
 
 char* CU_ABRIR_ARCHIVO(char* PID,char* pathArchivo, bool flagCreate,bool flagRead,bool flagWrite);
 char* CU_MOVER_CURSOR_ARCHIVO(char* PID,int FD,int cursor_bloque);
