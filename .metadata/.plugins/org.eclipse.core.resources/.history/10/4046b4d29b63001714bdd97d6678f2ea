@@ -56,8 +56,8 @@ void mostrar_menu_colas() {
 	printf("\n 1 - NEW.");
 	printf("\n 2 - READY.");
 	printf("\n 3 - EXEC.");
-	printf("\n 4 - WAITING.");
-	printf("\n 5 - EXIT.");
+	printf("\n 4 - FINISHED.");
+	printf("\n 5 - WAITING.");
 	printf("\n 6 - Volver.");
 	printf("\n Opcion: ");
 }
@@ -163,7 +163,7 @@ void mostrar_procesos(t_list * procesos_lista) {
 void generar_log() {
 	sem_wait(&escribir_log);
 	string_append(&info_log, "\n------Fin del LOG------\n\0");
-	t_log* logger = log_create(configuraciones.PATH_ARCHIVO_LOG, "KERNEL", false, LOG_LEVEL_INFO);
+	t_log* logger = log_create(configuraciones.PATH_ARCHIVO_LOG, "KERNEL", true, LOG_LEVEL_INFO);
 	log_info(logger, "\n***LOGS del KERNEL***\n %s", info_log);
 	log_destroy(logger);
 	strcpy(info_log, "");
@@ -282,18 +282,17 @@ void detener_planificacion() {
 }
 
 void verificar_estado(uint32_t pid, int exit_code) {
+
 	Proceso * proceso_a_eliminar = buscar_proceso_by_PID(pid);
-	if(strcmp(proceso_a_eliminar->cola, "EXEC") == 0) {
-		actualizar_exit_code(proceso_a_eliminar, exit_code);
+	if(strcmp(proceso_a_eliminar, "EXEC") == 0) {
 		sem_wait(&eliminacion);
 		pid_eliminacion = pid;
 		sem_post(&eliminacion);
 		while(strcmp(proceso_a_eliminar->cola, "EXIT") != 0);
+		printf("El proceso ya ha finalizado.\n");
 	}
-	else {
-		actualizar_exit_code(proceso_a_eliminar, exit_code);
-		mover_PCB_de_cola(proceso_a_eliminar->pcb, proceso_a_eliminar->cola, EXIT);
-	}
+	else actualizar_exit_code(proceso_a_eliminar, exit_code);
+
 }
 
 void mostrar_tabla_global_archivos() {
