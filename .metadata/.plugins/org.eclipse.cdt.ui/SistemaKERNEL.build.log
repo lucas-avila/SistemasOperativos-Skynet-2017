@@ -1,6 +1,6 @@
-22:48:25 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+00:04:28 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
 make all 
 make: No se hace nada para «all».
 
-22:48:25 Build Finished (took 69ms)
+00:04:28 Build Finished (took 124ms)
 

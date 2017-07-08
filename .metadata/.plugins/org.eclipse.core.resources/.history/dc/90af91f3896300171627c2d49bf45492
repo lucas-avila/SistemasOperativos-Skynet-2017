@@ -18,7 +18,6 @@
 #include <string.h>
 #include <Sharedlib/Socket.h>
 #include <unistd.h>
-#include <signal.h>
 
 #include "header/AppConfig.h"
 #include "header/Estructuras.h"
@@ -57,11 +56,11 @@ void mostrar_menu_usuario() {
 }
 
 void recibir_seniales_de_linux(int signum){
-	desconectar_consola();
+	enviar_dato_serializado("DESCONEXION_CONSOLA", kernel_programa);
 	exit(0);
 }
 
-void desconectar_consola() {
+void desconectar_consola {
 	int tamanio = list_size(Info_procesos);
 	int i = 0;
 	Info_ejecucion* info_ejecucion;
@@ -69,6 +68,7 @@ void desconectar_consola() {
 		info_ejecucion = list_get(Info_procesos, i);
 		solicitar_desconexion(info_ejecucion->pid, info_ejecucion->socket);
 	}
+	break;
 }
 
 void atender_solicitudes_de_usuario() {
@@ -101,7 +101,13 @@ void atender_solicitudes_de_usuario() {
 			break;
 		case 3:
 			printf("Se finalizaran todos los programas activos.\n");
-			desconectar_consola();
+			int tamanio = list_size(Info_procesos);
+			int i = 0;
+			Info_ejecucion* info_ejecucion;
+			for (i; i < tamanio; i++) {
+				info_ejecucion = list_get(Info_procesos, i);
+				solicitar_desconexion(info_ejecucion->pid, info_ejecucion->socket);
+			}
 			break;
 		case 4:
 			system("clear");

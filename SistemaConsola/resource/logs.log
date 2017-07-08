@@ -17968,3 +17968,24 @@ El Proceso (1003) ha finalizado, los siguientes son sus datos estadisticos:
 Fecha de inicio de ejecucion: 19:30:24:515
 Fecha de fin de ejecucion: 19:30:27:191
 Tiempo total de ejecucion: -1239414448Cantidad de impresiones por pantalla: 1
+[INFO] 23:40:26:298 CONSOLA/(8783:8964): 
+ EXIT CODE: Se intentó reservar más memoria que el tamaño de una página.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 23:40:25:539
+Fecha de fin de ejecucion: 23:40:26:298
+Tiempo total de ejecucion: 0:0:0:759
+Cantidad de impresiones por pantalla: 0
+[INFO] 23:40:34:650 CONSOLA/(8783:8986): 
+ EXIT CODE: Se intentó reservar más memoria que el tamaño de una página.
+El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 23:40:33:891
+Fecha de fin de ejecucion: 23:40:34:650
+Tiempo total de ejecucion: 0:0:0:759
+Cantidad de impresiones por pantalla: 0
+[INFO] 23:40:43:194 CONSOLA/(8783:9008): 
+ EXIT CODE: Se intentó reservar más memoria que el tamaño de una página.
+El Proceso (1002) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 23:40:42:434
+Fecha de fin de ejecucion: 23:40:43:194
+Tiempo total de ejecucion: 0:0:0:760
+Cantidad de impresiones por pantalla: 0

@@ -18,7 +18,6 @@
 #include <string.h>
 #include <Sharedlib/Socket.h>
 #include <unistd.h>
-#include <signal.h>
 
 #include "header/AppConfig.h"
 #include "header/Estructuras.h"
