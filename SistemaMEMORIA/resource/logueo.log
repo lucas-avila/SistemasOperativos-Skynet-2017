@@ -5664,3 +5664,1465 @@ PATH_ARCHIVO_LOGUEO=../resource/logueo.log
 [INFO] 01:00:44:78 MEMORIA/(15213:15308): PID 1000. Almacenar bytes. Pagina: 2 | Byte Incial: 0 | Longitud: 256 | Contenido: ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------.
 [INFO] 01:00:44:78 MEMORIA/(15213:15308): PID 1000. Programa Finalizado Correctamente
 >>>>>>> cda82e0a43aaf1e3d0d373258805f6d80413d3e4
+[INFO] 01:19:24:427 MEMORIA/(10806:10806): 
+ Parametros de Archivo de Configuracion 
+PUERTO=8084	
+MARCOS=500	
+MARCO_SIZE=256	
+ENTRADAS_CACHE=100	
+CACHE_X_PROC=10	
+RETARDO_MEMORIA=5000	
+CANTIDAD_MAXIMA_CONCURRENCIA=100	
+PATH_ARCHIVO_LOGUEO=../resource/logueo.log 
+[INFO] 01:19:24:428 MEMORIA/(10806:10806): Creando Memoria Principal...
+[INFO] 01:19:24:429 MEMORIA/(10806:10806): Memoria Principal creada correctamente.
+[INFO] 01:19:24:429 MEMORIA/(10806:10806): Creando Estructuras administrativas...
+[INFO] 01:19:24:429 MEMORIA/(10806:10806): Estructuras administrativas creadas correctamente.
+[INFO] 01:22:34:415 MEMORIA/(11442:11442): 
+ Parametros de Archivo de Configuracion 
+PUERTO=8084	
+MARCOS=500	
+MARCO_SIZE=256	
+ENTRADAS_CACHE=100	
+CACHE_X_PROC=10	
+RETARDO_MEMORIA=5000	
+CANTIDAD_MAXIMA_CONCURRENCIA=100	
+PATH_ARCHIVO_LOGUEO=../resource/logueo.log 
+[INFO] 01:22:34:416 MEMORIA/(11442:11442): Creando Memoria Principal...
+[INFO] 01:22:34:416 MEMORIA/(11442:11442): Memoria Principal creada correctamente.
+[INFO] 01:22:34:416 MEMORIA/(11442:11442): Creando Estructuras administrativas...
+[INFO] 01:22:34:416 MEMORIA/(11442:11442): Estructuras administrativas creadas correctamente.
+[INFO] 01:22:54:113 MEMORIA/(11442:11450): PID 1000. Asignar Paginas Requeridas. | Cantidad Paginas: 2
+[INFO] 01:22:54:113 MEMORIA/(11442:11450): PID 1000. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 2 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 01:22:54:153 MEMORIA/(11442:11450): PID 1000. Asignar Paginas Requeridas. | Cantidad Paginas: 1
+[INFO] 01:22:54:154 MEMORIA/(11442:11450): PID 1000. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 1 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 01:22:54:233 MEMORIA/(11442:11450): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 0 | Longitud: 6 | Contenido: wait b. | Resultado: Almacenado Correctamente.
+[INFO] 01:22:54:314 MEMORIA/(11442:11450): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 6 | Longitud: 19 | Contenido: 	!colas = !colas +1. | Resultado: Almacenado Correctamente.
+[INFO] 01:22:54:393 MEMORIA/(11442:11450): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 25 | Longitud: 8 | Contenido: signal c. | Resultado: Almacenado Correctamente.
+[INFO] 01:22:54:474 MEMORIA/(11442:11450): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 33 | Longitud: 13 | Contenido: goto etiqueta. | Resultado: Almacenado Correctamente.
+[INFO] 01:22:54:553 MEMORIA/(11442:11450): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 46 | Longitud: 3 | Contenido: end. | Resultado: Almacenado Correctamente.
+[INFO] 01:22:54:633 MEMORIA/(11442:11457): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:22:54:633 MEMORIA/(11442:11457): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:22:54:673 MEMORIA/(11442:11457): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:22:54:673 MEMORIA/(11442:11457): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:22:54:873 MEMORIA/(11442:11457): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:22:54:873 MEMORIA/(11442:11457): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:22:54:953 MEMORIA/(11442:11457): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:22:54:953 MEMORIA/(11442:11457): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:22:55:33 MEMORIA/(11442:11457): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:22:55:34 MEMORIA/(11442:11457): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:00:885 MEMORIA/(11442:11450): PID 1001. Asignar Paginas Requeridas. | Cantidad Paginas: 2
+[INFO] 01:23:00:886 MEMORIA/(11442:11450): PID 1001. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 2 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 01:23:00:925 MEMORIA/(11442:11450): PID 1001. Asignar Paginas Requeridas. | Cantidad Paginas: 1
+[INFO] 01:23:00:925 MEMORIA/(11442:11450): PID 1001. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 1 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 01:23:01:6 MEMORIA/(11442:11450): PID 1001. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 0 | Longitud: 6 | Contenido: wait c. | Resultado: Almacenado Correctamente.
+[INFO] 01:23:01:85 MEMORIA/(11442:11450): PID 1001. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 6 | Longitud: 16 | Contenido: 	prints n !colas. | Resultado: Almacenado Correctamente.
+[INFO] 01:23:01:165 MEMORIA/(11442:11450): PID 1001. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 22 | Longitud: 8 | Contenido: signal b. | Resultado: Almacenado Correctamente.
+[INFO] 01:23:01:245 MEMORIA/(11442:11450): PID 1001. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 30 | Longitud: 13 | Contenido: goto etiqueta. | Resultado: Almacenado Correctamente.
+[INFO] 01:23:01:325 MEMORIA/(11442:11450): PID 1001. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 43 | Longitud: 3 | Contenido: end. | Resultado: Almacenado Correctamente.
+[INFO] 01:23:01:405 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:01:405 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:01:485 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:01:485 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:01:565 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:01:565 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:01:605 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:01:605 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:01:645 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:01:645 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:01:726 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:01:726 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:01:726 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:01:726 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:01:805 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:01:805 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:01:805 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:01:805 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:01:845 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:01:845 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:01:886 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:01:886 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:01:965 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:01:965 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:02:45 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:02:45 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:02:46 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:02:46 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:02:205 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:02:205 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:02:285 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:02:285 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:02:285 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:02:285 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:02:325 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:02:325 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:02:365 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:02:365 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:02:445 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:02:445 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:02:486 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:02:486 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:02:525 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:02:525 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:02:685 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:02:685 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:02:765 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:02:766 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:02:766 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:02:766 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:02:805 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:02:805 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:02:845 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:02:845 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:02:925 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:02:925 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:02:965 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:02:965 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:03:5 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:03:5 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:03:165 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:03:166 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:03:245 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:03:245 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:03:245 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:03:245 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:03:285 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:03:285 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:03:326 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:03:326 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:03:405 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:03:405 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:03:446 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:03:446 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:03:485 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:03:485 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:03:645 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:03:645 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:03:725 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:03:725 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:03:725 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:03:725 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:03:765 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:03:765 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:03:805 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:03:805 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:03:885 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:03:885 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:03:925 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:03:925 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:03:966 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:03:966 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:04:125 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:04:125 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:04:205 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:04:205 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:04:205 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:04:205 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:04:245 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:04:245 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:04:285 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:04:285 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:04:365 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:04:365 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:04:405 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:04:405 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:04:445 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:04:445 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:04:605 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:04:605 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:04:685 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:04:685 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:04:685 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:04:685 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:04:725 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:04:725 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:04:765 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:04:765 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:04:845 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:04:845 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:04:886 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:04:886 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:04:925 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:04:925 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:05:85 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:05:85 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:05:165 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:05:165 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:05:166 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:05:166 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:05:205 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:05:206 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:05:245 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:05:245 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:05:325 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:05:326 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:05:366 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:05:366 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:05:405 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:05:406 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:05:565 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:05:566 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:05:645 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:05:646 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:05:646 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:05:646 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:05:685 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:05:685 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:05:726 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:05:726 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:05:805 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:05:805 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:05:845 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:05:845 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:05:885 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:05:885 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:06:45 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:06:45 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:06:125 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:06:125 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:06:125 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:06:125 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:06:165 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:06:165 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:06:206 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:06:206 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:06:285 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:06:285 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:06:325 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:06:325 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:06:365 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:06:365 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:06:525 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:06:525 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:06:605 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:06:605 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:06:605 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:06:606 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:06:645 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:06:645 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:06:685 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:06:686 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:06:766 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:06:766 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:06:805 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:06:805 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:06:845 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:06:845 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:07:5 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:07:6 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:07:85 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:07:85 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:07:85 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:07:85 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:07:125 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:07:125 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:07:166 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:07:166 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:07:245 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:07:245 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:07:285 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:07:285 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:07:325 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:07:325 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:07:485 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:07:485 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:07:565 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:07:565 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:07:565 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:07:565 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:07:606 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:07:606 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:07:645 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:07:645 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:07:725 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:07:725 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:07:765 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:07:765 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:07:805 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:07:805 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:07:965 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:07:965 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:08:45 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:08:45 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:08:45 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:08:45 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:08:85 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:08:85 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:08:125 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:08:125 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:08:205 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:08:205 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:08:246 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:08:246 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:08:285 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:08:285 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:08:445 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:08:445 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:08:525 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:08:526 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:08:526 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:08:526 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:08:565 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:08:566 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:08:606 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:08:606 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:08:685 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:08:685 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:08:725 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:08:725 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:08:765 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:08:766 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:08:926 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:08:926 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:09:5 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:09:5 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:09:5 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:09:5 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:09:45 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:09:45 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:09:85 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:09:86 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:09:165 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:09:165 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:09:205 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:09:205 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:09:245 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:09:245 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:09:405 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:09:405 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:09:485 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:09:485 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:09:485 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:09:485 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:09:525 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:09:525 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:09:565 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:09:565 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:09:645 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:09:645 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:09:686 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:09:686 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:09:725 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:09:725 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:09:885 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:09:885 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:09:965 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:09:965 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:09:965 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:09:965 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:10:5 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:10:6 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:10:46 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:10:46 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:10:125 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:10:125 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:10:165 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:10:165 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:10:205 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:10:206 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:10:365 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:10:365 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:10:445 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:10:446 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:10:446 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:10:446 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:10:485 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:10:485 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:10:526 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:10:526 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:10:605 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:10:605 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:10:646 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:10:646 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:10:685 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:10:685 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:10:845 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:10:845 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:10:925 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:10:925 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:10:925 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:10:925 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:10:965 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:10:965 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:11:5 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:11:5 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:11:85 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:11:85 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:11:125 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:11:125 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:11:165 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:11:165 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:11:325 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:11:325 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:11:405 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:11:405 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:11:406 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:11:406 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:11:445 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:11:445 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:11:485 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:11:485 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:11:566 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:11:566 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:11:605 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:11:605 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:11:645 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:11:645 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:11:805 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:11:805 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:11:885 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:11:885 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:11:885 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:11:885 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:11:925 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:11:925 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:11:965 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:11:965 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:12:45 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:12:45 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:12:85 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:12:85 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:12:125 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:12:125 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:12:285 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:12:285 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:12:365 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:12:365 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:12:366 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:12:366 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:12:405 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:12:405 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:12:445 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:12:445 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:12:525 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:12:525 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:12:565 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:12:565 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:12:605 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:12:605 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:12:765 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:12:765 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:12:845 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:12:845 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:12:845 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:12:846 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:12:885 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:12:885 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:12:925 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:12:925 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:13:5 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:13:5 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:13:45 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:13:45 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:13:85 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:13:85 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:13:245 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:13:245 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:13:325 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:13:325 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:13:325 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:13:325 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:13:365 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:13:365 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:13:405 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:13:405 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:13:485 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:13:485 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:13:525 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:13:525 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:13:565 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:13:565 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:13:725 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:13:725 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:13:805 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:13:805 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:13:805 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:13:805 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:13:845 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:13:845 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:13:885 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:13:885 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:13:965 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:13:965 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:14:6 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:14:6 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:14:46 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:14:46 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:14:205 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:14:205 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:14:285 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:14:285 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:14:285 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:14:285 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:14:326 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:14:326 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:14:365 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:14:365 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:14:445 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:14:445 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:14:486 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:14:486 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:14:526 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:14:526 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:14:685 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:14:685 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:14:765 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:14:765 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:14:765 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:14:765 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:14:805 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:14:805 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:14:845 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:14:845 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:14:925 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:14:925 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:14:965 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:14:965 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:15:6 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:15:6 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:15:165 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:15:165 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:15:245 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:15:245 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:15:245 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:15:245 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:15:285 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:15:285 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:15:326 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:15:326 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:15:406 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:15:406 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:15:445 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:15:446 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:15:485 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:15:485 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:15:645 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:15:645 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:15:725 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:15:725 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:15:725 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:15:725 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:15:765 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:15:765 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:15:805 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:15:805 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:15:885 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:15:885 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:15:926 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:15:926 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:15:965 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:15:965 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:16:125 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:16:125 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:16:205 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:16:205 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:16:205 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:16:205 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:16:245 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:16:245 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:16:285 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:16:285 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:16:365 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:16:365 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:16:406 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:16:406 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:16:445 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:16:445 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:16:605 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:16:605 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:16:685 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:16:685 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:16:685 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:16:685 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:16:725 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:16:726 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:16:765 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:16:766 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:16:845 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:16:845 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:16:886 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:16:886 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:16:925 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:16:926 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:17:85 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:17:86 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:17:165 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:17:165 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:17:165 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:17:166 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:17:205 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:17:205 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:17:245 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:17:245 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:17:325 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:17:325 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:17:365 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:17:366 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:17:405 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:17:406 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:17:565 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:17:565 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:17:645 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:17:645 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:17:645 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:17:645 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:17:685 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:17:685 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:17:725 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:17:726 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:17:805 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:17:805 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:17:845 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:17:845 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:17:885 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:17:885 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:18:45 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:18:45 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:18:125 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:18:125 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:18:125 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:18:125 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:18:166 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:18:166 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:18:206 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:18:206 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:18:285 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:18:285 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:18:325 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:18:325 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:18:365 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:18:365 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:18:525 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:18:525 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:18:605 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:18:605 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:18:605 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:18:606 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:18:645 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:18:645 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:18:685 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:18:686 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:18:765 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:18:766 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:18:805 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:18:805 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:18:845 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:18:845 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:19:5 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:19:5 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:19:85 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:19:86 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:19:86 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:19:86 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:19:126 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:19:126 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:19:165 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:19:165 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:19:246 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:19:246 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:19:286 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:19:286 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:19:326 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:19:326 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:19:485 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:19:485 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:19:565 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:19:566 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:19:566 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:19:566 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:19:608 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:19:608 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:19:646 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:19:646 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:19:726 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:19:727 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:19:765 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:19:765 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:19:805 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:19:805 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:19:965 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:19:966 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:20:45 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:20:45 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:20:45 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:20:45 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:20:85 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:20:86 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:20:126 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:20:126 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:20:205 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:20:205 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:20:245 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:20:245 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:20:285 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:20:285 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:20:445 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:20:445 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:20:525 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:20:525 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:20:525 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:20:525 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:20:565 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:20:565 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:20:605 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:20:605 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:20:685 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:20:685 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:20:726 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:20:726 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:20:766 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:20:766 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:20:925 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:20:925 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:21:5 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:23:21:5 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:23:21:5 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:21:5 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:21:45 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:21:45 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:23:21:86 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:23:21:86 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:23:21:165 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:23:21:165 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:21:205 MEMORIA/(11442:11457): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:21:205 MEMORIA/(11442:11457): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:23:21:245 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:23:21:246 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:23:21:333 MEMORIA/(11442:11450): PID 1001. Finalizar Programa
+[INFO] 01:23:21:333 MEMORIA/(11442:11450): PID 1001. Almacenar bytes. Pagina: 1 | Byte Incial: 0 | Longitud: 256 | Contenido: ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------.
+[INFO] 01:23:21:333 MEMORIA/(11442:11450): PID 1001. Almacenar bytes. Pagina: 0 | Byte Incial: 0 | Longitud: 256 | Contenido: ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------.
+[INFO] 01:23:21:334 MEMORIA/(11442:11450): PID 1001. Almacenar bytes. Pagina: 2 | Byte Incial: 0 | Longitud: 256 | Contenido: ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------.
+[INFO] 01:23:21:334 MEMORIA/(11442:11450): PID 1001. Programa Finalizado Correctamente
+[INFO] 01:23:21:413 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:23:21:413 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:23:21:493 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:23:21:493 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:23:21:533 MEMORIA/(11442:11462): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:23:21:533 MEMORIA/(11442:11462): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:24:51:161 MEMORIA/(11501:11501): 
+ Parametros de Archivo de Configuracion 
+PUERTO=8084	
+MARCOS=500	
+MARCO_SIZE=256	
+ENTRADAS_CACHE=100	
+CACHE_X_PROC=10	
+RETARDO_MEMORIA=5000	
+CANTIDAD_MAXIMA_CONCURRENCIA=100	
+PATH_ARCHIVO_LOGUEO=../resource/logueo.log 
+[INFO] 01:24:51:174 MEMORIA/(11501:11501): Creando Memoria Principal...
+[INFO] 01:24:51:174 MEMORIA/(11501:11501): Memoria Principal creada correctamente.
+[INFO] 01:24:51:174 MEMORIA/(11501:11501): Creando Estructuras administrativas...
+[INFO] 01:24:51:175 MEMORIA/(11501:11501): Estructuras administrativas creadas correctamente.
+[INFO] 01:25:12:573 MEMORIA/(11501:11509): PID 1000. Asignar Paginas Requeridas. | Cantidad Paginas: 2
+[INFO] 01:25:12:574 MEMORIA/(11501:11509): PID 1000. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 2 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 01:25:12:613 MEMORIA/(11501:11509): PID 1000. Asignar Paginas Requeridas. | Cantidad Paginas: 1
+[INFO] 01:25:12:614 MEMORIA/(11501:11509): PID 1000. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 1 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 01:25:12:693 MEMORIA/(11501:11509): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 0 | Longitud: 6 | Contenido: wait b. | Resultado: Almacenado Correctamente.
+[INFO] 01:25:12:773 MEMORIA/(11501:11509): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 6 | Longitud: 19 | Contenido: 	!colas = !colas +1. | Resultado: Almacenado Correctamente.
+[INFO] 01:25:12:854 MEMORIA/(11501:11509): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 25 | Longitud: 8 | Contenido: signal c. | Resultado: Almacenado Correctamente.
+[INFO] 01:25:12:933 MEMORIA/(11501:11509): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 33 | Longitud: 13 | Contenido: goto etiqueta. | Resultado: Almacenado Correctamente.
+[INFO] 01:25:13:13 MEMORIA/(11501:11509): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 46 | Longitud: 3 | Contenido: end. | Resultado: Almacenado Correctamente.
+[INFO] 01:25:13:101 MEMORIA/(11501:11516): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:25:13:102 MEMORIA/(11501:11516): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:25:13:141 MEMORIA/(11501:11516): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:25:13:141 MEMORIA/(11501:11516): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:25:13:341 MEMORIA/(11501:11516): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:25:13:341 MEMORIA/(11501:11516): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:25:13:421 MEMORIA/(11501:11516): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:25:13:421 MEMORIA/(11501:11516): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:25:13:513 MEMORIA/(11501:11516): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:25:13:513 MEMORIA/(11501:11516): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:25:52:529 MEMORIA/(11501:11509): PID 1001. Asignar Paginas Requeridas. | Cantidad Paginas: 2
+[INFO] 01:25:52:529 MEMORIA/(11501:11509): PID 1001. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 2 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 01:25:52:570 MEMORIA/(11501:11509): PID 1001. Asignar Paginas Requeridas. | Cantidad Paginas: 1
+[INFO] 01:25:52:570 MEMORIA/(11501:11509): PID 1001. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 1 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 01:25:52:649 MEMORIA/(11501:11509): PID 1001. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 0 | Longitud: 6 | Contenido: wait c. | Resultado: Almacenado Correctamente.
+[INFO] 01:25:52:729 MEMORIA/(11501:11509): PID 1001. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 6 | Longitud: 16 | Contenido: 	prints n !colas. | Resultado: Almacenado Correctamente.
+[INFO] 01:25:52:809 MEMORIA/(11501:11509): PID 1001. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 22 | Longitud: 8 | Contenido: signal b. | Resultado: Almacenado Correctamente.
+[INFO] 01:25:52:890 MEMORIA/(11501:11509): PID 1001. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 30 | Longitud: 13 | Contenido: goto etiqueta. | Resultado: Almacenado Correctamente.
+[INFO] 01:25:52:969 MEMORIA/(11501:11509): PID 1001. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 43 | Longitud: 3 | Contenido: end. | Resultado: Almacenado Correctamente.
+[INFO] 01:25:53:49 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:25:53:49 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:25:53:129 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:25:53:129 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:25:53:209 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:25:53:209 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:25:53:249 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:25:53:249 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:25:53:289 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:25:53:289 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:25:53:370 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:25:53:370 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:25:53:370 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:25:53:370 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:25:53:449 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:25:53:449 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:25:53:449 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:25:53:450 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:25:53:490 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:25:53:490 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:25:53:530 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:25:53:530 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:25:53:609 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:25:53:609 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:25:53:649 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:25:53:649 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:25:53:689 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:25:53:690 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:25:53:849 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:25:53:849 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:25:53:929 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:25:53:929 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:25:53:929 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:25:53:929 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:25:53:969 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:25:53:969 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:25:54:10 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:25:54:10 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:25:54:89 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:25:54:89 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:25:54:130 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:25:54:130 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:25:54:169 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:25:54:169 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:25:54:329 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:25:54:329 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:25:54:409 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:25:54:410 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:25:54:410 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:25:54:410 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:25:54:449 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:25:54:449 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:25:54:489 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:25:54:489 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:25:54:569 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:25:54:569 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:25:54:609 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:25:54:609 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:25:54:649 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:25:54:649 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:25:54:809 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:25:54:809 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:25:54:890 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:25:54:890 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:25:54:890 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:25:54:890 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:25:54:929 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:25:54:929 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:25:54:969 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:25:54:969 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:25:55:49 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:25:55:49 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:25:55:89 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:25:55:90 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:25:55:129 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:25:55:129 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:25:55:289 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:25:55:289 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:25:55:369 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:25:55:370 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:25:55:370 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:25:55:370 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:25:55:409 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:25:55:409 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:25:55:449 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:25:55:449 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:25:55:529 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:25:55:529 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:25:55:569 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:25:55:569 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:25:55:609 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:25:55:609 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:25:55:770 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:25:55:770 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:25:55:849 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:25:55:849 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:25:55:849 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:25:55:849 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:25:55:889 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:25:55:889 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:25:55:929 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:25:55:929 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:25:56:9 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:25:56:9 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:25:56:50 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:25:56:50 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:25:56:90 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:25:56:90 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:25:56:250 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:25:56:250 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:25:56:329 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:25:56:329 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:25:56:329 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:25:56:329 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:25:56:369 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:25:56:369 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:25:56:409 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:25:56:409 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:25:56:489 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:25:56:489 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:25:56:529 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:25:56:529 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:25:56:569 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:25:56:569 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:25:56:729 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:25:56:729 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:25:56:809 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:25:56:809 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:25:56:809 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:25:56:809 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:25:56:849 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:25:56:849 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:25:56:889 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:25:56:889 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:25:56:969 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:25:56:969 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:25:57:9 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:25:57:9 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:25:57:49 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:25:57:49 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:25:57:209 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:25:57:209 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:25:57:289 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:25:57:289 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:25:57:289 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:25:57:289 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:25:57:329 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:25:57:329 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:25:57:369 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:25:57:369 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:25:57:450 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:25:57:450 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:25:57:489 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:25:57:489 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:25:57:529 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:25:57:529 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:25:57:689 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:25:57:689 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:25:57:769 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:25:57:769 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:25:57:769 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:25:57:769 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:25:57:809 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:25:57:809 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:25:57:849 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:25:57:849 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:25:57:929 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:25:57:929 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:25:57:970 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:25:57:970 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:25:58:9 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:25:58:9 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:25:58:169 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:25:58:169 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:25:58:249 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:25:58:249 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:25:58:249 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:25:58:249 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:25:58:289 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:25:58:289 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:25:58:330 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:25:58:330 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:25:58:409 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:25:58:409 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:25:58:450 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:25:58:450 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:25:58:489 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:25:58:489 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:25:58:649 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:25:58:649 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:25:58:729 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:25:58:729 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:25:58:729 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:25:58:729 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:25:58:769 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:25:58:769 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:25:58:809 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:25:58:809 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:25:58:889 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:25:58:889 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:25:58:929 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:25:58:929 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:25:58:970 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:25:58:970 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:25:59:129 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:25:59:129 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:25:59:209 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:25:59:210 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:25:59:210 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:25:59:210 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:25:59:249 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:25:59:249 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:25:59:289 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:25:59:289 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:25:59:369 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:25:59:369 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:25:59:410 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:25:59:410 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:25:59:449 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:25:59:449 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:25:59:609 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:25:59:609 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:25:59:689 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:25:59:689 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:25:59:689 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:25:59:689 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:25:59:729 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:25:59:729 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:25:59:769 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:25:59:769 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:25:59:849 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:25:59:849 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:25:59:889 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:25:59:890 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:25:59:929 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:25:59:929 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:26:00:89 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:26:00:89 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:26:00:169 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:26:00:169 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:26:00:169 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:26:00:169 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:26:00:210 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:26:00:210 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:26:00:249 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:26:00:249 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:26:00:329 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:26:00:329 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:26:00:370 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:26:00:370 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:26:00:409 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:26:00:409 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:26:00:569 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:26:00:569 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:26:00:653 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:26:00:653 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:26:00:653 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:26:00:653 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:26:00:693 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:26:00:693 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:26:00:733 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:26:00:734 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:26:00:813 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:26:00:813 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:26:00:854 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:26:00:854 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:26:00:893 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:26:00:893 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:26:01:53 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:26:01:53 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:26:01:133 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:26:01:133 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:26:01:133 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:26:01:133 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:26:01:173 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:26:01:173 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:26:01:213 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:26:01:213 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:26:01:293 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:26:01:293 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:26:01:333 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:26:01:333 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:26:01:374 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:26:01:374 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:26:01:533 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:26:01:533 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:26:01:613 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:26:01:613 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:26:01:613 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:26:01:613 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:26:01:654 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:26:01:654 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:26:01:693 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:26:01:694 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:26:01:773 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:26:01:773 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:26:01:814 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:26:01:814 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:26:01:854 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:26:01:854 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:26:02:13 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:26:02:13 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:26:02:93 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:26:02:93 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:26:02:93 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:26:02:93 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:26:02:134 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:26:02:134 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:26:02:173 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:26:02:173 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:26:02:253 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:26:02:253 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:26:02:294 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:26:02:294 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:26:02:333 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:26:02:334 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:26:02:493 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:26:02:494 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:26:02:573 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:26:02:573 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:26:02:574 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:26:02:574 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:26:02:613 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:26:02:613 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:26:02:653 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:26:02:653 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:26:02:733 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:26:02:733 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:26:02:773 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:26:02:773 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:26:02:813 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:26:02:813 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:26:02:973 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:26:02:973 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:26:03:53 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:26:03:53 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:26:03:53 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:26:03:53 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:26:03:93 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:26:03:93 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:26:03:133 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:26:03:133 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:26:03:213 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:26:03:214 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:26:03:254 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:26:03:254 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:26:03:293 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:26:03:293 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:26:03:457 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:26:03:457 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:26:03:538 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:26:03:538 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:26:03:538 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:26:03:538 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:26:03:577 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:26:03:577 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:26:03:617 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:26:03:617 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:26:03:697 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:26:03:698 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:26:03:737 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:26:03:737 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:26:03:777 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:26:03:777 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:26:03:937 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:26:03:937 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:26:04:17 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:26:04:17 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:26:04:17 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:26:04:17 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:26:04:57 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:26:04:57 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:26:04:97 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:26:04:98 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:26:04:178 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:26:04:178 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:26:04:218 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:26:04:218 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:26:04:257 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:26:04:257 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:26:04:417 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:26:04:417 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:26:04:497 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:26:04:497 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:26:04:497 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:26:04:497 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:26:04:537 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:26:04:537 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:26:04:577 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:26:04:577 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:26:04:657 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:26:04:657 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:26:04:697 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:26:04:697 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:26:04:738 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:26:04:738 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:26:04:897 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:26:04:897 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:26:04:977 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:26:04:978 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:26:04:978 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:26:04:978 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:26:05:17 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:26:05:18 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:26:05:57 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:26:05:57 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:26:05:137 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:26:05:138 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:26:05:178 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:26:05:178 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:26:05:217 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:26:05:217 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:26:05:377 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:26:05:377 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:26:05:457 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:26:05:457 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:26:05:457 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:26:05:457 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:26:05:497 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:26:05:497 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:26:05:538 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:26:05:538 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:26:05:617 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:26:05:618 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:26:05:657 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:26:05:657 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:26:05:697 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:26:05:697 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:26:05:857 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:26:05:857 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:26:05:937 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:26:05:937 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:26:05:937 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:26:05:937 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:26:05:977 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:26:05:977 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:26:06:18 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:26:06:18 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:26:06:97 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:26:06:97 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:26:06:138 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:26:06:138 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:26:06:177 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:26:06:177 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:26:06:337 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:26:06:337 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:26:06:417 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:26:06:417 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:26:06:417 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:26:06:417 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:26:06:457 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:26:06:457 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:26:06:498 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:26:06:498 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:26:06:578 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:26:06:578 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:26:06:617 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:26:06:617 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:26:06:657 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:26:06:657 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:26:06:817 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:26:06:817 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:26:06:897 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:26:06:897 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:26:06:897 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:26:06:898 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:26:06:938 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:26:06:938 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:26:06:978 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:26:06:978 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:26:07:57 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:26:07:57 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:26:07:97 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:26:07:97 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:26:07:137 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:26:07:137 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:26:07:297 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:26:07:297 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:26:07:377 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:26:07:378 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:26:07:378 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:26:07:378 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:26:07:417 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:26:07:417 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:26:07:457 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:26:07:457 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:26:07:537 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:26:07:537 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:26:07:577 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:26:07:577 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:26:07:617 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:26:07:617 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:26:07:777 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:26:07:777 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:26:07:857 MEMORIA/(11501:11516): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:26:07:857 MEMORIA/(11501:11516): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:26:07:857 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:26:07:857 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:26:07:897 MEMORIA/(11501:11521): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:26:07:897 MEMORIA/(11501:11521): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:28:19:947 MEMORIA/(11757:11757): 
+ Parametros de Archivo de Configuracion 
+PUERTO=8084	
+MARCOS=500	
+MARCO_SIZE=256	
+ENTRADAS_CACHE=100	
+CACHE_X_PROC=10	
+RETARDO_MEMORIA=5000	
+CANTIDAD_MAXIMA_CONCURRENCIA=100	
+PATH_ARCHIVO_LOGUEO=../resource/logueo.log 
+[INFO] 01:28:19:947 MEMORIA/(11757:11757): Creando Memoria Principal...
+[INFO] 01:28:19:947 MEMORIA/(11757:11757): Memoria Principal creada correctamente.
+[INFO] 01:28:19:947 MEMORIA/(11757:11757): Creando Estructuras administrativas...
+[INFO] 01:28:19:947 MEMORIA/(11757:11757): Estructuras administrativas creadas correctamente.
+[INFO] 01:30:04:265 MEMORIA/(11757:11765): PID 1000. Asignar Paginas Requeridas. | Cantidad Paginas: 2
+[INFO] 01:30:04:265 MEMORIA/(11757:11765): PID 1000. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 2 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 01:30:04:305 MEMORIA/(11757:11765): PID 1000. Asignar Paginas Requeridas. | Cantidad Paginas: 1
+[INFO] 01:30:04:305 MEMORIA/(11757:11765): PID 1000. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 1 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 01:30:04:386 MEMORIA/(11757:11765): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 0 | Longitud: 6 | Contenido: wait b. | Resultado: Almacenado Correctamente.
+[INFO] 01:30:04:465 MEMORIA/(11757:11765): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 6 | Longitud: 19 | Contenido: 	!colas = !colas +1. | Resultado: Almacenado Correctamente.
+[INFO] 01:30:04:545 MEMORIA/(11757:11765): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 25 | Longitud: 8 | Contenido: signal c. | Resultado: Almacenado Correctamente.
+[INFO] 01:30:04:625 MEMORIA/(11757:11765): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 33 | Longitud: 13 | Contenido: goto etiqueta. | Resultado: Almacenado Correctamente.
+[INFO] 01:30:04:705 MEMORIA/(11757:11765): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 46 | Longitud: 3 | Contenido: end. | Resultado: Almacenado Correctamente.
+[INFO] 01:30:04:785 MEMORIA/(11757:11770): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:30:04:785 MEMORIA/(11757:11770): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:30:04:825 MEMORIA/(11757:11770): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:30:04:825 MEMORIA/(11757:11770): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:30:05:25 MEMORIA/(11757:11770): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:30:05:25 MEMORIA/(11757:11770): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:30:05:105 MEMORIA/(11757:11770): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:30:05:106 MEMORIA/(11757:11770): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:30:05:185 MEMORIA/(11757:11770): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:30:05:185 MEMORIA/(11757:11770): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:30:09:313 MEMORIA/(11757:11765): PID 1001. Asignar Paginas Requeridas. | Cantidad Paginas: 2
+[INFO] 01:30:09:314 MEMORIA/(11757:11765): PID 1001. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 2 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 01:30:09:353 MEMORIA/(11757:11765): PID 1001. Asignar Paginas Requeridas. | Cantidad Paginas: 1
+[INFO] 01:30:09:354 MEMORIA/(11757:11765): PID 1001. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 1 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 01:30:09:433 MEMORIA/(11757:11765): PID 1001. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 0 | Longitud: 6 | Contenido: wait c. | Resultado: Almacenado Correctamente.
+[INFO] 01:30:09:514 MEMORIA/(11757:11765): PID 1001. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 6 | Longitud: 16 | Contenido: 	prints n !colas. | Resultado: Almacenado Correctamente.
+[INFO] 01:30:09:594 MEMORIA/(11757:11765): PID 1001. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 22 | Longitud: 8 | Contenido: signal b. | Resultado: Almacenado Correctamente.
+[INFO] 01:30:09:673 MEMORIA/(11757:11765): PID 1001. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 30 | Longitud: 13 | Contenido: goto etiqueta. | Resultado: Almacenado Correctamente.
+[INFO] 01:30:09:753 MEMORIA/(11757:11765): PID 1001. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 43 | Longitud: 3 | Contenido: end. | Resultado: Almacenado Correctamente.
+[INFO] 01:30:09:833 MEMORIA/(11757:11770): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:30:09:833 MEMORIA/(11757:11770): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:30:09:913 MEMORIA/(11757:11770): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:30:09:913 MEMORIA/(11757:11770): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:30:09:993 MEMORIA/(11757:11770): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:30:09:993 MEMORIA/(11757:11770): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:30:10:34 MEMORIA/(11757:11775): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:30:10:34 MEMORIA/(11757:11775): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:30:10:73 MEMORIA/(11757:11770): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:30:10:74 MEMORIA/(11757:11770): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:30:10:153 MEMORIA/(11757:11775): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:30:10:153 MEMORIA/(11757:11775): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:30:10:153 MEMORIA/(11757:11770): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:30:10:153 MEMORIA/(11757:11770): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:30:10:233 MEMORIA/(11757:11775): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:30:10:234 MEMORIA/(11757:11775): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:30:10:234 MEMORIA/(11757:11770): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:30:10:234 MEMORIA/(11757:11770): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:30:10:273 MEMORIA/(11757:11775): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:30:10:274 MEMORIA/(11757:11775): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:30:10:314 MEMORIA/(11757:11770): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:30:10:314 MEMORIA/(11757:11770): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:30:10:559 MEMORIA/(11757:11770): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:30:10:559 MEMORIA/(11757:11770): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:30:10:639 MEMORIA/(11757:11775): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:30:10:639 MEMORIA/(11757:11775): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:30:10:640 MEMORIA/(11757:11770): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:30:10:640 MEMORIA/(11757:11770): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:30:10:799 MEMORIA/(11757:11775): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:30:10:799 MEMORIA/(11757:11775): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:30:10:879 MEMORIA/(11757:11775): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:30:10:879 MEMORIA/(11757:11775): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:30:10:879 MEMORIA/(11757:11770): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:30:10:879 MEMORIA/(11757:11770): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:30:10:919 MEMORIA/(11757:11775): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:30:10:919 MEMORIA/(11757:11775): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:30:10:959 MEMORIA/(11757:11770): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:30:10:959 MEMORIA/(11757:11770): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:30:11:39 MEMORIA/(11757:11770): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:30:11:39 MEMORIA/(11757:11770): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:30:11:80 MEMORIA/(11757:11770): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:30:11:80 MEMORIA/(11757:11770): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:30:11:119 MEMORIA/(11757:11775): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:30:11:120 MEMORIA/(11757:11775): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:30:11:279 MEMORIA/(11757:11775): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:30:11:279 MEMORIA/(11757:11775): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:30:11:359 MEMORIA/(11757:11775): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:30:11:359 MEMORIA/(11757:11775): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:30:11:359 MEMORIA/(11757:11770): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:30:11:359 MEMORIA/(11757:11770): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:30:11:399 MEMORIA/(11757:11775): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:30:11:399 MEMORIA/(11757:11775): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:30:11:440 MEMORIA/(11757:11770): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:30:11:440 MEMORIA/(11757:11770): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:30:11:519 MEMORIA/(11757:11770): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:30:11:519 MEMORIA/(11757:11770): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:30:11:560 MEMORIA/(11757:11770): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:30:11:560 MEMORIA/(11757:11770): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:30:11:600 MEMORIA/(11757:11775): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:30:11:600 MEMORIA/(11757:11775): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:30:11:759 MEMORIA/(11757:11775): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:30:11:759 MEMORIA/(11757:11775): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:30:11:839 MEMORIA/(11757:11775): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:30:11:839 MEMORIA/(11757:11775): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:30:11:840 MEMORIA/(11757:11770): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:30:11:840 MEMORIA/(11757:11770): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:30:11:879 MEMORIA/(11757:11775): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:30:11:879 MEMORIA/(11757:11775): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:30:11:920 MEMORIA/(11757:11770): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:30:11:920 MEMORIA/(11757:11770): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:30:11:999 MEMORIA/(11757:11770): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:30:11:999 MEMORIA/(11757:11770): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:30:12:39 MEMORIA/(11757:11770): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:30:12:39 MEMORIA/(11757:11770): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:30:12:79 MEMORIA/(11757:11775): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:30:12:79 MEMORIA/(11757:11775): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:30:12:239 MEMORIA/(11757:11775): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:30:12:239 MEMORIA/(11757:11775): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:30:12:320 MEMORIA/(11757:11775): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:30:12:320 MEMORIA/(11757:11775): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:30:12:320 MEMORIA/(11757:11770): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:30:12:320 MEMORIA/(11757:11770): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:30:12:359 MEMORIA/(11757:11775): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:30:12:359 MEMORIA/(11757:11775): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:30:12:399 MEMORIA/(11757:11770): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:30:12:399 MEMORIA/(11757:11770): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:30:12:479 MEMORIA/(11757:11770): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:30:12:479 MEMORIA/(11757:11770): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:30:12:519 MEMORIA/(11757:11770): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:30:12:519 MEMORIA/(11757:11770): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:30:12:559 MEMORIA/(11757:11775): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:30:12:560 MEMORIA/(11757:11775): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:30:12:719 MEMORIA/(11757:11775): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:30:12:719 MEMORIA/(11757:11775): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:30:12:800 MEMORIA/(11757:11775): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:30:12:800 MEMORIA/(11757:11775): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:30:12:800 MEMORIA/(11757:11770): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:30:12:800 MEMORIA/(11757:11770): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:30:12:839 MEMORIA/(11757:11775): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:30:12:839 MEMORIA/(11757:11775): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:30:12:879 MEMORIA/(11757:11770): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:30:12:879 MEMORIA/(11757:11770): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:30:12:960 MEMORIA/(11757:11770): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:30:12:960 MEMORIA/(11757:11770): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:30:12:0 MEMORIA/(11757:11770): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:30:12:0 MEMORIA/(11757:11770): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:30:13:39 MEMORIA/(11757:11775): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:30:13:39 MEMORIA/(11757:11775): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:30:13:200 MEMORIA/(11757:11775): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:30:13:200 MEMORIA/(11757:11775): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:30:13:279 MEMORIA/(11757:11770): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:30:13:279 MEMORIA/(11757:11770): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:30:13:279 MEMORIA/(11757:11775): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:30:13:279 MEMORIA/(11757:11775): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:30:13:319 MEMORIA/(11757:11775): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:30:13:319 MEMORIA/(11757:11775): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:30:13:359 MEMORIA/(11757:11770): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:30:13:359 MEMORIA/(11757:11770): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:30:13:439 MEMORIA/(11757:11770): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:30:13:439 MEMORIA/(11757:11770): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:30:13:480 MEMORIA/(11757:11770): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:30:13:480 MEMORIA/(11757:11770): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
+[INFO] 01:30:13:519 MEMORIA/(11757:11775): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 19 .
+[INFO] 01:30:13:520 MEMORIA/(11757:11775): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: 	!colas = !colas +1
+[INFO] 01:30:13:679 MEMORIA/(11757:11775): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 25 | Longitud solicitada: 8 .
+[INFO] 01:30:13:679 MEMORIA/(11757:11775): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: signal c
+[INFO] 01:30:13:759 MEMORIA/(11757:11770): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 6 | Longitud solicitada: 16 .
+[INFO] 01:30:13:759 MEMORIA/(11757:11770): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: 	prints n !colas
+[INFO] 01:30:13:760 MEMORIA/(11757:11775): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 33 | Longitud solicitada: 13 .
+[INFO] 01:30:13:760 MEMORIA/(11757:11775): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:30:13:799 MEMORIA/(11757:11775): PID 1000. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:30:13:800 MEMORIA/(11757:11775): PID 1000. Resultado en CACHE Solicitar bytes. Contenido: wait b
+[INFO] 01:30:13:847 MEMORIA/(11757:11770): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 22 | Longitud solicitada: 8 .
+[INFO] 01:30:13:847 MEMORIA/(11757:11770): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: signal b
+[INFO] 01:30:13:931 MEMORIA/(11757:11770): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 30 | Longitud solicitada: 13 .
+[INFO] 01:30:13:931 MEMORIA/(11757:11770): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: goto etiqueta
+[INFO] 01:30:13:971 MEMORIA/(11757:11765): PID 1000. Finalizar Programa
+[INFO] 01:30:13:971 MEMORIA/(11757:11765): PID 1000. Almacenar bytes. Pagina: 1 | Byte Incial: 0 | Longitud: 256 | Contenido: ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------.
+[INFO] 01:30:13:971 MEMORIA/(11757:11765): PID 1000. Almacenar bytes. Pagina: 0 | Byte Incial: 0 | Longitud: 256 | Contenido: ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------.
+[INFO] 01:30:13:972 MEMORIA/(11757:11765): PID 1000. Almacenar bytes. Pagina: 2 | Byte Incial: 0 | Longitud: 256 | Contenido: ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------.
+[INFO] 01:30:13:972 MEMORIA/(11757:11765): PID 1000. Programa Finalizado Correctamente
+[INFO] 01:30:13:972 MEMORIA/(11757:11770): PID 1001. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
+[INFO] 01:30:13:972 MEMORIA/(11757:11770): PID 1001. Resultado en CACHE Solicitar bytes. Contenido: wait c
