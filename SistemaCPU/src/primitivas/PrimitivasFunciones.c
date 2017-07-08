@@ -152,7 +152,7 @@ t_valor_variable DEREFERENCIAR(t_puntero puntero) {
 		return 0;
 	}
 
-	return *((int*)resultado); //Modificado
+	return *((int*) resultado); //Modificado
 
 }
 t_puntero ALOCAR(t_valor_variable espacio) {
@@ -160,7 +160,7 @@ t_puntero ALOCAR(t_valor_variable espacio) {
 	char* mensaje = enviar_SYSCALL_solicitar_memoria_dinamica_a_kernel(pcb->PID, espacio, &pagina, &offset);
 
 	if (strcmp(mensaje, "OK") == 0) {
-		return serializarPuntero(pagina, offset, tamanio_pagina_memoria);
+		return serializarPuntero(pagina, offset + 5, tamanio_pagina_memoria);
 	} else {
 		lanzar_excepcion(mensaje);
 	}
@@ -178,18 +178,16 @@ void LIBERAR(t_puntero memoria_serializada) {
 	int* ptoffset = &offset;
 	deserializar_puntero(memoria_serializada, &pagina, &offset, tamanio_pagina_memoria);
 	char* valorPuntero = solicitar_bytes_memoria(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(offset), "4");
-	if(pagina < pcb->cantidad_paginas_codigo){
-		deserializar_puntero(*((int*)valorPuntero), &pagina, &offset, tamanio_pagina_memoria);
+	if (pagina < pcb->cantidad_paginas_codigo) {
+		deserializar_puntero(*((int*) valorPuntero), &pagina, &offset, tamanio_pagina_memoria);
 	}
-
-
 
 	// punteroLiberar = 1536;
 	//deserializar_puntero(memoria_serializada, ptPagina, ptoffset, tamanio_pagina_memoria);
 	DireccionMemoriaDinamica* varDinamica = malloc(sizeof(DireccionMemoriaDinamica));
 	varDinamica->pid = pcb->PID;
 	varDinamica->pagina = pagina;
-	varDinamica->byteInicial = offset;
+	varDinamica->byteInicial = offset - 5;
 
 	char* resultado = enviar_SYSCALL_liberar_memoria_dinamica_a_kernel(varDinamica);
 	if (strcmp("OK", resultado) != 0)
@@ -336,8 +334,11 @@ void MOVER_CURSOR_PRIM(t_descriptor_archivo descriptor_archivo, t_valor_variable
 }
 
 void ESCRIBIR_ARCHIVO_PRIM(t_descriptor_archivo descriptor_archivo, void* informacion, t_valor_variable tamanio) {
-
 	if (descriptor_archivo < 3) {
+
+		//char* informacionEscribir = malloc(tamanio + 1);
+		//memcpy(informacionEscribir, informacion, tamanio);
+
 		CU_Escribir_Pantalla_AnSISOP(informacion, string_itoa(pcb->PID));
 	} else {
 
@@ -366,11 +367,11 @@ void LEER_ARCHIVO_PRIM(t_descriptor_archivo descriptor_archivo, t_puntero inform
 	int pagina = 0, offset = 0;
 	deserializar_puntero(informacion, &pagina, &offset, tamanio_pagina_memoria);
 	char* valorPuntero = solicitar_bytes_memoria(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(offset), "4");
-	if(pagina < pcb->cantidad_paginas_codigo){
-		deserializar_puntero(*((int*)valorPuntero), &pagina, &offset, tamanio_pagina_memoria);
+	if (pagina < pcb->cantidad_paginas_codigo) {
+		deserializar_puntero(*((int*) valorPuntero), &pagina, &offset, tamanio_pagina_memoria);
 	}
 	//deserializar_puntero(*((int*)valorPuntero), &pagina, &offset, tamanio_pagina_memoria);
-	offset += 5;
+	//offset += 5;
 	almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(offset), string_itoa(tamanio), -1, mensaje);
 
 }
