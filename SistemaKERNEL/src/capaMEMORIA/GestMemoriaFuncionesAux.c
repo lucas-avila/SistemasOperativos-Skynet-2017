@@ -139,7 +139,8 @@ int reservar_espacio_memoria_en_pagina(TABLA_MEMORIA_PROCESO* registro, unsigned
 	strcat(numeroBytesOcupados, tamanioMalloc_String);
 	strcat(paginaMemoria, numeroBytesOcupados);
 
-	strcat(paginaMemoria, string_repeat(' ', espacioSolicitado));
+	strcat(paginaMemoria, string_repeat(' ', espacioSolicitado-1));
+	strcat(paginaMemoria,"\0");
 	registro->espacioDisponible -= espacioSolicitado;
 	if (metadataMemoria->reservarBloqueFinal == 1) {
 

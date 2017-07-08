@@ -1,0 +1,23 @@
+[INFO] 01:00:34:481 CONSOLA/(15370:15378): 
+ Proceso (1001): 1
+
+[INFO] 01:00:34:562 CONSOLA/(15370:15378): 
+ Proceso (1001): Hola Mundo!
+
+[INFO] 01:00:34:766 CONSOLA/(15370:15378): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1001) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:00:33:235
+Fecha de fin de ejecucion: 01:00:34:766
+Tiempo total de ejecucion: 0:0:1:531
+Cantidad de impresiones por pantalla: 2
+[INFO] 01:00:43:356 CONSOLA/(15370:15374): 
+ Proceso (1000):     HOLA                                                                                           10146
+
+[INFO] 01:00:44:121 CONSOLA/(15370:15374): 
+ EXIT CODE: El programa finalizo correctamente.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 01:00:27:675
+Fecha de fin de ejecucion: 01:00:44:121
+Tiempo total de ejecucion: 0:0:16:446
+Cantidad de impresiones por pantalla: 1

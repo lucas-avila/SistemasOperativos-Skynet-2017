@@ -49,7 +49,7 @@ t_puntero DEFINIR_VARIABLE(t_nombre_variable variable) {
 	}
 
 	if (isalpha(variable)) {
-		logSO(string_from_format("\n El proceso %d desea definir la variable: %c",pcb->PID, variable));
+		logSO(string_from_format("\n El proceso %d desea definir la variable: %c", pcb->PID, variable));
 
 		Variable* var_new = crear_variable(variable, pcb->pagina_inicial_stack, pcb->posicion_pagina_stack - sizeof(uint32_t), sizeof(uint32_t), 0);
 		crear_variable_en_Indice_Stack(pila, var_new);
@@ -57,7 +57,7 @@ t_puntero DEFINIR_VARIABLE(t_nombre_variable variable) {
 		logSO(string_from_format("\n La variable %c, se definio satisfactoriamente", variable));
 		return serializarPuntero(var_new->pagina, var_new->byte_inicial, tamanio_pagina_memoria);
 	} else {
-		logSO(string_from_format("\n El proceso %d desea definir el argumento: %c",pcb->PID, variable));
+		logSO(string_from_format("\n El proceso %d desea definir el argumento: %c", pcb->PID, variable));
 		Argumento* arg_new = crear_argumento(variable, pcb->pagina_inicial_stack, pcb->posicion_pagina_stack - sizeof(uint32_t), sizeof(uint32_t));
 
 		crear_argumento_en_Indice_Stack(pila, arg_new);
@@ -71,12 +71,12 @@ t_puntero DEFINIR_VARIABLE(t_nombre_variable variable) {
 t_puntero OBTENER_DIRECCION_DE_VARIABLE(t_nombre_variable variable) {
 
 	if (isalpha(variable)) {
-		logSO(string_from_format("\n El proceso %d desea obtener la direccion de la variable: %c",pcb->PID, variable));
+		logSO(string_from_format("\n El proceso %d desea obtener la direccion de la variable: %c", pcb->PID, variable));
 
 		Variable* var = buscar_variable_stack_por_nombre(pcb, variable);
 		return serializarPuntero(var->pagina, var->byte_inicial, tamanio_pagina_memoria);
 	} else {
-		logSO(string_from_format("\n El proceso %d desea obtener la direccion del argumento: %c",pcb->PID, variable));
+		logSO(string_from_format("\n El proceso %d desea obtener la direccion del argumento: %c", pcb->PID, variable));
 		Argumento* arg = buscar_argumento_stack_por_nombre(pcb, variable);
 		return serializarPuntero(arg->pagina, arg->byte_inicial, tamanio_pagina_memoria);
 	}
@@ -111,7 +111,7 @@ void ASIGNAR_VARIABLE(t_puntero direccion_variable, t_valor_variable valor) {
 	int pagina = 0, offset = 0;
 	deserializar_puntero(direccion_variable, &pagina, &offset, tamanio_pagina_memoria);
 
-	logSO(string_from_format("\nEl proceso %d desea Asignar variable en la Pagina: %d, con Byte Inicial %d",pcb->PID,pagina,offset));
+	logSO(string_from_format("\nEl proceso %d desea Asignar variable en la Pagina: %d, con Byte Inicial %d", pcb->PID, pagina, offset));
 
 	almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(offset), string_itoa(sizeof(uint32_t)), valor, "");
 
@@ -166,7 +166,7 @@ t_valor_variable DEREFERENCIAR(t_puntero puntero) {
 		return 0;
 	}
 
-	return *((int*)resultado); //Modificado
+	return *((int*) resultado); //Modificado
 
 }
 t_puntero ALOCAR(t_valor_variable espacio) {
@@ -175,17 +175,16 @@ t_puntero ALOCAR(t_valor_variable espacio) {
 
 	logSO(string_from_format("\n El proceso %d desea alocar %d bytes en la pagina %d, offset %d", pcb->PID, espacio, pagina, offset));
 
-
 	if (strcmp(mensaje, "OK") == 0) {
 		logSO("\n Se aloco satisfactoriamente la memoria solicitada");
+		return serializarPuntero(pagina, offset + 5, tamanio_pagina_memoria);
 
-		return serializarPuntero(pagina, offset, tamanio_pagina_memoria);
 	} else {
 		logSO("\n Hubo un error al alocar la memoria solicitada");
 
 		lanzar_excepcion(mensaje);
 	}
-	//TODO: aca se tendria que bloquear el programa y lanzar excepcion
+//TODO: aca se tendria que bloquear el programa y lanzar excepcion
 
 	return 0;
 
@@ -193,31 +192,30 @@ t_puntero ALOCAR(t_valor_variable espacio) {
 
 void LIBERAR(t_puntero memoria_serializada) {
 
-	//int punteroLiberar = DEREFERENCIAR(memoria_serializada);
+//int punteroLiberar = DEREFERENCIAR(memoria_serializada);
 	int pagina = 0, offset = 0;
 	int* ptPagina = &pagina;
 	int* ptoffset = &offset;
 	deserializar_puntero(memoria_serializada, &pagina, &offset, tamanio_pagina_memoria);
 	char* valorPuntero = solicitar_bytes_memoria(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(offset), "4");
+
+	if (pagina < pcb->cantidad_paginas_codigo) {
+		deserializar_puntero(*((int*) valorPuntero), &pagina, &offset, tamanio_pagina_memoria);
+
+	}
 	logSO(string_from_format("\n El proceso %d esta liberando memoria de la pagina %d, offset %d", pcb->PID, pagina, offset));
 
-	if(pagina < pcb->cantidad_paginas_codigo){
-		deserializar_puntero(*((int*)valorPuntero), &pagina, &offset, tamanio_pagina_memoria);
-	}
-
-
-
-	// punteroLiberar = 1536;
-	//deserializar_puntero(memoria_serializada, ptPagina, ptoffset, tamanio_pagina_memoria);
+// punteroLiberar = 1536;
+//deserializar_puntero(memoria_serializada, ptPagina, ptoffset, tamanio_pagina_memoria);
 	DireccionMemoriaDinamica* varDinamica = malloc(sizeof(DireccionMemoriaDinamica));
 	varDinamica->pid = pcb->PID;
 	varDinamica->pagina = pagina;
-	varDinamica->byteInicial = offset;
+	varDinamica->byteInicial = offset - 5;
 
 	char* resultado = enviar_SYSCALL_liberar_memoria_dinamica_a_kernel(varDinamica);
 	if (strcmp("OK", resultado) != 0)
 		lanzar_excepcion(resultado);
-	//printf("\nResultado de LIBERAR el puntero %d: %s", memoria_serializada, resultado);
+//printf("\nResultado de LIBERAR el puntero %d: %s", memoria_serializada, resultado);
 
 }
 
@@ -244,7 +242,7 @@ void RETORNAR(t_valor_variable variableRetorno) {
 }
 
 void FINALIZAR() {
-	//FALTA DETERMINAR SI DEBE CAMBIAR EL EXIT_CODE DEL PCB (SI TERMINO EL PROCESO)
+//FALTA DETERMINAR SI DEBE CAMBIAR EL EXIT_CODE DEL PCB (SI TERMINO EL PROCESO)
 	if (list_size(pcb->pila) != 1) {
 		logSO(string_from_format("\n El proceso %d desea finalizar la funcion recien utilizada", pcb->PID));
 
@@ -270,7 +268,7 @@ void LLAMAR_SIN_RETORNO(t_nombre_etiqueta nombre_etiqueta) {
 	IndiceStack * pila = obtener_Ultima_fila_Indice_Stack(pcb);
 	pila->retPos = pcb->program_counter;
 
-	// tiene que buscar la etiqueta en la lista de etiquetas y conseguir la direccion
+// tiene que buscar la etiqueta en la lista de etiquetas y conseguir la direccion
 	t_puntero_instruccion direccionEtiqueta = metadata_buscar_etiqueta(nombre_etiqueta, pcb->etiquetas, pcb->etiquetas_size);
 	pcb->program_counter = direccionEtiqueta;
 
@@ -286,10 +284,10 @@ void LLAMAR_CON_RETORNO(t_nombre_etiqueta nombre_etiqueta, t_puntero direccionRe
 	insertar_nueva_fila_Indice_Stack(pcb);
 	IndiceStack * pila = obtener_Ultima_fila_Indice_Stack(pcb);
 	pila->retPos = pcb->program_counter;
-	//pila->retVar
-	//TODO:Aca hay que poner la fucking RETVAR
-	// tiene que buscar la etiqueta en la lista de etiquetas y conseguir la direccion
-	//char* instruccionBuscar = string_substring(nombre_etiqueta, 0, strlen(nombre_etiqueta) - 1);
+//pila->retVar
+//TODO:Aca hay que poner la fucking RETVAR
+// tiene que buscar la etiqueta en la lista de etiquetas y conseguir la direccion
+//char* instruccionBuscar = string_substring(nombre_etiqueta, 0, strlen(nombre_etiqueta) - 1);
 
 	t_puntero_instruccion direccionEtiqueta = metadata_buscar_etiqueta(nombre_etiqueta, pcb->etiquetas, pcb->etiquetas_size);
 	IndiceCodigo* indiceCodigo = list_get(pcbEjecutar->codigo, direccionEtiqueta);
@@ -339,7 +337,6 @@ t_descriptor_archivo ABRIR_ARCHIVO_PRIM(t_direccion_archivo direccion, t_bandera
 	char* mensaje = abrir_archivo(string_itoa(pcb->PID), direccion, flags.creacion, flags.lectura, flags.escritura);
 	logSO(string_from_format("\n El proceso %d desea abrir un archivo", pcb->PID));
 
-
 	int i = 0;
 	bool controlNumerico = 1;
 	for (i = 0; i < strlen(mensaje); i++) {
@@ -383,9 +380,14 @@ void MOVER_CURSOR_PRIM(t_descriptor_archivo descriptor_archivo, t_valor_variable
 }
 
 void ESCRIBIR_ARCHIVO_PRIM(t_descriptor_archivo descriptor_archivo, void* informacion, t_valor_variable tamanio) {
-	logSO(string_from_format("\n El proceso %d desea escribir un archivo", pcb->PID));
+
+	logSO(string_from_format("\n El proceso %d desea escribir ", pcb->PID));
 
 	if (descriptor_archivo < 3) {
+
+//char* informacionEscribir = malloc(tamanio + 1);
+//memcpy(informacionEscribir, informacion, tamanio);
+
 		CU_Escribir_Pantalla_AnSISOP(informacion, string_itoa(pcb->PID));
 	} else {
 
@@ -411,16 +413,16 @@ void LEER_ARCHIVO_PRIM(t_descriptor_archivo descriptor_archivo, t_puntero inform
 	char* mensaje = leer_archivo(string_itoa(pcb->PID), descriptor_archivo, tamanio);
 	logSO(string_from_format("\n El proceso %d desea leer un archivo", pcb->PID));
 
-	//if (strcmp("OK", mensaje) != 0)
-	//		lanzar_excepcion(mensaje);
+//if (strcmp("OK", mensaje) != 0)
+//		lanzar_excepcion(mensaje);
 	int pagina = 0, offset = 0;
 	deserializar_puntero(informacion, &pagina, &offset, tamanio_pagina_memoria);
 	char* valorPuntero = solicitar_bytes_memoria(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(offset), "4");
-	if(pagina < pcb->cantidad_paginas_codigo){
-		deserializar_puntero(*((int*)valorPuntero), &pagina, &offset, tamanio_pagina_memoria);
+	if (pagina < pcb->cantidad_paginas_codigo) {
+		deserializar_puntero(*((int*) valorPuntero), &pagina, &offset, tamanio_pagina_memoria);
 	}
-	//deserializar_puntero(*((int*)valorPuntero), &pagina, &offset, tamanio_pagina_memoria);
-	offset += 5;
+//deserializar_puntero(*((int*)valorPuntero), &pagina, &offset, tamanio_pagina_memoria);
+//offset += 5;
 	almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(offset), string_itoa(tamanio), -1, mensaje);
 
 }

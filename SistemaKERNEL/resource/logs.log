@@ -3970,3 +3970,125 @@ El Proceso 1000 se movio de la cola NEW a la cola READY.
 
 ------Fin del LOG------
 
+[INFO] 01:00:28:522 KERNEL/(15304:15305): 
+***LOGS del KERNEL***
+ El Proceso se 1000 agrego a la cola NEW.
+El Proceso 1000 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:00:28:522 KERNEL/(15304:15309): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola NEW a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:00:28:923 KERNEL/(15304:15361): 
+***LOGS del KERNEL***
+ El Proceso 1000 RESERVO memoria (MALLOC).
+
+------Fin del LOG------
+
+[INFO] 01:00:29:81 KERNEL/(15304:15361): 
+***LOGS del KERNEL***
+ El Proceso 1000 ABRIO un archivo.
+
+------Fin del LOG------
+
+[INFO] 01:00:29:362 KERNEL/(15304:15361): 
+***LOGS del KERNEL***
+ El Proceso 1000 solicito LEER un ARCHIVO.
+
+------Fin del LOG------
+
+[INFO] 01:00:29:522 KERNEL/(15304:15305): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:00:29:522 KERNEL/(15304:15361): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:00:29:641 KERNEL/(15304:15361): 
+***LOGS del KERNEL***
+ El Proceso 1000 se BLOQUEO.
+
+------Fin del LOG------
+
+[INFO] 01:00:29:641 KERNEL/(15304:15361): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola EXEC a la cola c.
+
+------Fin del LOG------
+
+[INFO] 01:00:33:921 KERNEL/(15304:15305): 
+***LOGS del KERNEL***
+ El Proceso se 1001 agrego a la cola NEW.
+El Proceso 1001 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:00:33:922 KERNEL/(15304:15309): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola NEW a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:00:34:481 KERNEL/(15304:15305): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:00:34:481 KERNEL/(15304:15361): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola EXEC a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:00:34:601 KERNEL/(15304:15361): 
+***LOGS del KERNEL***
+ El Proceso 1000 se DESBLOQUEo.
+
+------Fin del LOG------
+
+[INFO] 01:00:34:601 KERNEL/(15304:15361): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola c a la cola READY.
+
+------Fin del LOG------
+
+[INFO] 01:00:34:721 KERNEL/(15304:15305): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola READY a la cola EXEC.
+
+------Fin del LOG------
+
+[INFO] 01:00:34:762 KERNEL/(15304:15361): 
+***LOGS del KERNEL***
+ El Proceso 1001 se movio de la cola EXEC a la cola EXIT.
+
+------Fin del LOG------
+
+[INFO] 01:00:43:478 KERNEL/(15304:15361): 
+***LOGS del KERNEL***
+ El Proceso 1000 CERRO un ARCHIVO.
+
+------Fin del LOG------
+
+[INFO] 01:00:43:958 KERNEL/(15304:15361): 
+***LOGS del KERNEL***
+ El Proceso 1000 LIBERO memoria (FREE).
+
+------Fin del LOG------
+
+[INFO] 01:00:44:117 KERNEL/(15304:15361): 
+***LOGS del KERNEL***
+ El Proceso 1000 se movio de la cola EXEC a la cola EXIT.
+
+------Fin del LOG------
+
