@@ -12,3 +12,17 @@ PATH_ARCHIVO_LOGUEO=../resource/logueo.log
 [INFO] 22:28:15:222 MEMORIA/(6724:6724): Memoria Principal creada correctamente.
 [INFO] 22:28:15:223 MEMORIA/(6724:6724): Creando Estructuras administrativas...
 [INFO] 22:28:15:223 MEMORIA/(6724:6724): Estructuras administrativas creadas correctamente.
+[INFO] 23:17:08:463 MEMORIA/(2355:2355): 
+ Parametros de Archivo de Configuracion 
+PUERTO=8084	
+MARCOS=500	
+MARCO_SIZE=256	
+ENTRADAS_CACHE=100	
+CACHE_X_PROC=10	
+RETARDO_MEMORIA=5000	
+CANTIDAD_MAXIMA_CONCURRENCIA=100	
+PATH_ARCHIVO_LOGUEO=../resource/logueo.log 
+[INFO] 23:17:08:470 MEMORIA/(2355:2355): Creando Memoria Principal...
+[INFO] 23:17:08:478 MEMORIA/(2355:2355): Memoria Principal creada correctamente.
+[INFO] 23:17:08:479 MEMORIA/(2355:2355): Creando Estructuras administrativas...
+[INFO] 23:17:08:480 MEMORIA/(2355:2355): Estructuras administrativas creadas correctamente.

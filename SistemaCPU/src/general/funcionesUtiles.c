@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include<commons/log.h>
+#include<commons/string.h>
+#include "../header/AppConfig.h"
 
 int validarNumeroInput(int rangoMinimo, int rangoMaximo) {
 	int numero = 0;
@@ -13,11 +16,15 @@ int validarNumeroInput(int rangoMinimo, int rangoMaximo) {
 }
 
 void logSO(char* mensajeLoguear) {
-	printf("\n %s",mensajeLoguear);
 
+	/*va_list pa;
 
-	//t_log* logger = log_create(configuraciones.PATH_ARCHIVO_LOG, "MEMORIA", true, LOG_LEVEL_INFO);
-	//log_info(logger, "%s", mensajeLoguear);
+	va_start(pa, mensajeLoguear);
+	char* mensaje = string_from_format(mensajeLoguear, pa);
+	va_end(pa); */
 
-	//log_destroy(logger);
+	t_log* logger = log_create(configuraciones.PATH_ARCHIVO_LOG, "CPU", true, LOG_LEVEL_INFO);
+	log_info(logger, "%s", mensajeLoguear);
+	//free(mensajeLoguear);
+	log_destroy(logger);
 }
