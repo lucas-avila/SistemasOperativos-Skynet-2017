@@ -26058,3 +26058,1392 @@ Invoking: GCC C Linker
 gcc -L"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug" -o "SistemaMEMORIA"  ./src/testing/PruebasUnitarias.o ./src/testing/TestingMemoriaCache.o  ./src/header/AppConfig.o  ./src/general/Semaforo.o ./src/general/funcionesUtiles.o  ./src/Interfaz.o ./src/Main.o ./src/MemoriaCache.o ./src/MemoriaPrincipal.o ./src/SolicitudesUsuario.o   -lSharedlib -lcommons -lm -lpthread
 Finished building target: SistemaMEMORIA
  
+01:17:26 **** Incremental Build of configuration Debug for project Sharedlib ****
+make all 
+make: No se hace nada para «all».
+01:17:26 **** Incremental Build of configuration Debug for project SistemaCPU ****
+make all 
+make: No se hace nada para «all».
+01:17:27 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+make: No se hace nada para «all».
+01:17:27 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+make: No se hace nada para «all».
+01:17:28 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+make: No se hace nada para «all».
+01:17:28 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+make: No se hace nada para «all».
+01:20:27 **** Incremental Build of configuration Debug for project Sharedlib ****
+make all 
+make: No se hace nada para «all».
+01:20:29 **** Incremental Build of configuration Debug for project SistemaCPU ****
+make all 
+make: No se hace nada para «all».
+01:20:30 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+make: No se hace nada para «all».
+01:20:30 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+make: No se hace nada para «all».
+01:20:31 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+Building file: ../src/header/SolicitudesUsuario.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/SolicitudesUsuario.d" -MT"src/header/SolicitudesUsuario.d" -o "src/header/SolicitudesUsuario.o" "../src/header/SolicitudesUsuario.c"
+../src/header/SolicitudesUsuario.c: In function ‘listar_procesos’:
+../src/header/SolicitudesUsuario.c:84:4: warning: implicit declaration of function ‘mostrar_procesos’ [-Wimplicit-function-declaration]
+    mostrar_procesos(procesos);
+    ^
+../src/header/SolicitudesUsuario.c: In function ‘devolver_cola’:
+../src/header/SolicitudesUsuario.c:100:3: warning: return discards ‘const’ qualifier from pointer target type [enabled by default]
+   return NEW;
+   ^
+../src/header/SolicitudesUsuario.c:103:3: warning: return discards ‘const’ qualifier from pointer target type [enabled by default]
+   return READY;
+   ^
+../src/header/SolicitudesUsuario.c:106:3: warning: return discards ‘const’ qualifier from pointer target type [enabled by default]
+   return EXEC;
+   ^
+../src/header/SolicitudesUsuario.c:109:3: warning: return discards ‘const’ qualifier from pointer target type [enabled by default]
+   return WAITING;
+   ^
+../src/header/SolicitudesUsuario.c:112:3: warning: return discards ‘const’ qualifier from pointer target type [enabled by default]
+   return EXIT;
+   ^
+../src/header/SolicitudesUsuario.c: In function ‘buscar_procesos_por_cola’:
+../src/header/SolicitudesUsuario.c:127:6: warning: implicit declaration of function ‘es_semaforo’ [-Wimplicit-function-declaration]
+      return es_semaforo(proceso->cola);
+      ^
+../src/header/SolicitudesUsuario.c: In function ‘listar_procesos_por_cola’:
+../src/header/SolicitudesUsuario.c:131:4: warning: passing argument 2 of ‘list_filter’ from incompatible pointer type [enabled by default]
+    t_list * procesos_filtrados = list_filter(procesos, &buscar_procesos_por_cola);
+    ^
+In file included from ../src/header/SolicitudesUsuario.h:11:0,
+                 from ../src/header/SolicitudesUsuario.c:8:
+/usr/include/commons/collections/list.h:92:10: note: expected ‘_Bool (*)(void *)’ but argument is of type ‘int (*)(struct Proceso *)’
+  t_list* list_filter(t_list*, bool(*condition)(void*));
+          ^
+../src/header/SolicitudesUsuario.c: At top level:
+../src/header/SolicitudesUsuario.c:138:6: warning: conflicting types for ‘mostrar_procesos’ [enabled by default]
+ void mostrar_procesos(t_list * procesos_lista) {
+      ^
+../src/header/SolicitudesUsuario.c:84:4: note: previous implicit declaration of ‘mostrar_procesos’ was here
+    mostrar_procesos(procesos);
+    ^
+../src/header/SolicitudesUsuario.c: In function ‘mostrar_procesos’:
+../src/header/SolicitudesUsuario.c:160:2: warning: implicit declaration of function ‘generar_log’ [-Wimplicit-function-declaration]
+  generar_log();
+  ^
+../src/header/SolicitudesUsuario.c: At top level:
+../src/header/SolicitudesUsuario.c:163:6: warning: conflicting types for ‘generar_log’ [enabled by default]
+ void generar_log() {
+      ^
+../src/header/SolicitudesUsuario.c:160:2: note: previous implicit declaration of ‘generar_log’ was here
+  generar_log();
+  ^
+../src/header/SolicitudesUsuario.c: In function ‘modificar_grado_multiprogramacion’:
+../src/header/SolicitudesUsuario.c:256:2: warning: statement with no effect [-Wunused-value]
+  for(i; i < grado_multiprog; i++)
+  ^
+../src/header/SolicitudesUsuario.c: In function ‘verificar_estado’:
+../src/header/SolicitudesUsuario.c:287:2: warning: passing argument 1 of ‘strcmp’ from incompatible pointer type [enabled by default]
+  if(strcmp(proceso_a_eliminar, "EXEC") == 0) {
+  ^
+In file included from ../src/header/SolicitudesUsuario.c:16:0:
+/usr/include/string.h:144:12: note: expected ‘const char *’ but argument is of type ‘struct Proceso *’
+ extern int strcmp (const char *__s1, const char *__s2)
+            ^
+../src/header/SolicitudesUsuario.c: In function ‘finalizar_proceso_desde_consola’:
+../src/header/SolicitudesUsuario.c:320:12: warning: unused variable ‘proceso_a_eliminar’ [-Wunused-variable]
+  Proceso * proceso_a_eliminar;
+            ^
+../src/header/SolicitudesUsuario.c: In function ‘devolver_cola’:
+../src/header/SolicitudesUsuario.c:115:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/header/SolicitudesUsuario.c
+ 
+Building target: SistemaKERNEL
+Invoking: GCC C Linker
+gcc -L"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug" -o "SistemaKERNEL"  ./src/testing/TestingCapaFileSystem.o ./src/testing/TestingGeneral.o ./src/testing/TestingInterfazMemoria.o ./src/testing/TestingMenu.o ./src/testing/TestingPlanificacion.o  ./src/planificacion/Planificacion.o ./src/planificacion/PlanificacionFIFO.o ./src/planificacion/PlanificacionRR.o  ./src/interfaz/InterfazCPU.o ./src/interfaz/InterfazConsola.o ./src/interfaz/InterfazFS.o ./src/interfaz/InterfazMemoria.o  ./src/header/AppConfig.o ./src/header/SolicitudesUsuario.o  ./src/general/Semaforo.o ./src/general/funcionesUtiles.o  ./src/capaMEMORIA/AdministrarSemaforos.o ./src/capaMEMORIA/AdministrarVarCompartidas.o ./src/capaMEMORIA/GestMemoriaFuncionesAux.o ./src/capaMEMORIA/GestionMemoriaDinamica.o  ./src/capaFILESYSTEM/GestionArchivoFuncAux.o ./src/capaFILESYSTEM/GestionArchivos.o ./src/capaFILESYSTEM/TablaGlobalArchivo.o ./src/capaFILESYSTEM/TablaProcesoArchivo.o  ./src/administrarProcesos/Proceso.o  ./src/administrarPCB/EstadisticaProceso.o ./src/administrarPCB/PCBData.o  ./src/KERNEL.o   -lcommons -lpthread -lparser-ansisop -lSharedlib
+Finished building target: SistemaKERNEL
+ 
+01:20:33 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+make: No se hace nada para «all».
+01:22:55 **** Incremental Build of configuration Debug for project Sharedlib ****
+make all 
+make: No se hace nada para «all».
+01:22:56 **** Incremental Build of configuration Debug for project SistemaCPU ****
+make all 
+Building file: ../src/testing/testearPrimitivasFunciones.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/testearPrimitivasFunciones.d" -MT"src/testing/testearPrimitivasFunciones.d" -o "src/testing/testearPrimitivasFunciones.o" "../src/testing/testearPrimitivasFunciones.c"
+../src/testing/testearPrimitivasFunciones.c: In function ‘mostrar_menu_primitivas’:
+../src/testing/testearPrimitivasFunciones.c:184:5: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char * (*)[20]’ [-Wformat=]
+     scanf("%s", &nombVarComp);
+     ^
+../src/testing/testearPrimitivasFunciones.c:185:25: warning: comparison between pointer and integer [enabled by default]
+    } while (nombVarComp == '\n');
+                         ^
+../src/testing/testearPrimitivasFunciones.c:188:4: warning: passing argument 1 of ‘ASIGNAR_VALOR_COMPARTIDA’ from incompatible pointer type [enabled by default]
+    ASIGNAR_VALOR_COMPARTIDA(nombVarComp, valor);
+    ^
+In file included from ../src/testing/testearPrimitivasFunciones.c:7:0:
+../src/testing/../primitivas/PrimitivasFunciones.h:57:18: note: expected ‘char *’ but argument is of type ‘char **’
+ t_valor_variable ASIGNAR_VALOR_COMPARTIDA(t_nombre_compartida variable, t_valor_variable valor);
+                  ^
+../src/testing/testearPrimitivasFunciones.c:194:5: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char * (*)[20]’ [-Wformat=]
+     scanf("%s", &nombVarComp);
+     ^
+../src/testing/testearPrimitivasFunciones.c:195:25: warning: comparison between pointer and integer [enabled by default]
+    } while (nombVarComp == '\n');
+                         ^
+../src/testing/testearPrimitivasFunciones.c:196:4: warning: passing argument 1 of ‘OBTENER_VALOR_COMPARTIDA’ from incompatible pointer type [enabled by default]
+    OBTENER_VALOR_COMPARTIDA(nombVarComp);
+    ^
+In file included from ../src/testing/testearPrimitivasFunciones.c:7:0:
+../src/testing/../primitivas/PrimitivasFunciones.h:55:18: note: expected ‘char *’ but argument is of type ‘char **’
+ t_valor_variable OBTENER_VALOR_COMPARTIDA(t_nombre_compartida variable);
+                  ^
+../src/testing/testearPrimitivasFunciones.c:201:5: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char * (*)[50]’ [-Wformat=]
+     scanf("%s", &nombreArchivo);
+     ^
+../src/testing/testearPrimitivasFunciones.c:202:4: warning: passing argument 1 of ‘strcmp’ from incompatible pointer type [enabled by default]
+    } while (strcmp(nombreArchivo, "") == 0);
+    ^
+In file included from ../src/testing/testearPrimitivasFunciones.c:4:0:
+/usr/include/string.h:144:12: note: expected ‘const char *’ but argument is of type ‘char **’
+ extern int strcmp (const char *__s1, const char *__s2)
+            ^
+../src/testing/testearPrimitivasFunciones.c:203:4: warning: implicit declaration of function ‘abrir_archivo’ [-Wimplicit-function-declaration]
+    abrir_archivo(string_itoa(pcbDePrueba->PID), nombreArchivo, true, false, false);
+    ^
+../src/testing/testearPrimitivasFunciones.c:209:5: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char * (*)[50]’ [-Wformat=]
+     scanf("%s", &nombreArchivo);
+     ^
+../src/testing/testearPrimitivasFunciones.c:210:4: warning: passing argument 1 of ‘strcmp’ from incompatible pointer type [enabled by default]
+    } while (strcmp(nombreArchivo, "") == 0);
+    ^
+In file included from ../src/testing/testearPrimitivasFunciones.c:4:0:
+/usr/include/string.h:144:12: note: expected ‘const char *’ but argument is of type ‘char **’
+ extern int strcmp (const char *__s1, const char *__s2)
+            ^
+../src/testing/testearPrimitivasFunciones.c:218:4: warning: implicit declaration of function ‘leer_archivo’ [-Wimplicit-function-declaration]
+    leer_archivo(string_itoa(pcbDePrueba->PID), valor);
+    ^
+../src/testing/testearPrimitivasFunciones.c:225:5: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char * (*)[500]’ [-Wformat=]
+     scanf("%s", &filaArchivo);
+     ^
+../src/testing/testearPrimitivasFunciones.c:226:4: warning: passing argument 1 of ‘strcmp’ from incompatible pointer type [enabled by default]
+    } while (strcmp(filaArchivo, "") == 0);
+    ^
+In file included from ../src/testing/testearPrimitivasFunciones.c:4:0:
+/usr/include/string.h:144:12: note: expected ‘const char *’ but argument is of type ‘char **’
+ extern int strcmp (const char *__s1, const char *__s2)
+            ^
+../src/testing/testearPrimitivasFunciones.c:227:4: warning: implicit declaration of function ‘escribir_archivo’ [-Wimplicit-function-declaration]
+    escribir_archivo(string_itoa(pcbDePrueba->PID), FD, strlen(filaArchivo), filaArchivo);
+    ^
+../src/testing/testearPrimitivasFunciones.c:227:4: warning: passing argument 1 of ‘strlen’ from incompatible pointer type [enabled by default]
+In file included from ../src/testing/testearPrimitivasFunciones.c:4:0:
+/usr/include/string.h:399:15: note: expected ‘const char *’ but argument is of type ‘char **’
+ extern size_t strlen (const char *__s)
+               ^
+../src/testing/testearPrimitivasFunciones.c:236:4: warning: implicit declaration of function ‘mover_cursor_archivo’ [-Wimplicit-function-declaration]
+    mover_cursor_archivo(string_itoa(pcbDePrueba->PID), nombreArchivo, valor);
+    ^
+../src/testing/testearPrimitivasFunciones.c:242:4: warning: implicit declaration of function ‘cerrar_archivo’ [-Wimplicit-function-declaration]
+    cerrar_archivo(string_itoa(pcbDePrueba->PID), FD);
+    ^
+../src/testing/testearPrimitivasFunciones.c:233:8: warning: unused variable ‘tamanio’ [-Wunused-variable]
+    int tamanio;
+        ^
+../src/testing/testearPrimitivasFunciones.c:65:6: warning: unused variable ‘valor’ [-Wunused-variable]
+  int valor;
+      ^
+../src/testing/testearPrimitivasFunciones.c:64:7: warning: unused variable ‘nombreVariable’ [-Wunused-variable]
+  char nombreVariable[20];
+       ^
+Finished building: ../src/testing/testearPrimitivasFunciones.c
+ 
+Building file: ../src/procesador/Ejecucion.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/procesador/Ejecucion.d" -MT"src/procesador/Ejecucion.d" -o "src/procesador/Ejecucion.o" "../src/procesador/Ejecucion.c"
+../src/procesador/Ejecucion.c: In function ‘ejecutar_programa_por_FIFO’:
+../src/procesador/Ejecucion.c:67:4: warning: implicit declaration of function ‘nanosleep’ [-Wimplicit-function-declaration]
+    nanosleep(retardo); //Retardo en tiempo de ejecucion
+    ^
+Finished building: ../src/procesador/Ejecucion.c
+ 
+Building file: ../src/primitivas/PrimitivasFunciones.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/primitivas/PrimitivasFunciones.d" -MT"src/primitivas/PrimitivasFunciones.d" -o "src/primitivas/PrimitivasFunciones.o" "../src/primitivas/PrimitivasFunciones.c"
+../src/primitivas/PrimitivasFunciones.c: In function ‘DEFINIR_VARIABLE’:
+../src/primitivas/PrimitivasFunciones.c:52:3: warning: implicit declaration of function ‘logSO’ [-Wimplicit-function-declaration]
+   logSO(string_from_format("\n El proceso %d desea definir la variable: %c", pcb->PID, variable));
+   ^
+../src/primitivas/PrimitivasFunciones.c:58:3: warning: implicit declaration of function ‘serializarPuntero’ [-Wimplicit-function-declaration]
+   return serializarPuntero(var_new->pagina, var_new->byte_inicial, tamanio_pagina_memoria);
+   ^
+../src/primitivas/PrimitivasFunciones.c:44:27: warning: unused variable ‘offsetDisp’ [-Wunused-variable]
+  int paginaDiponible = 0, offsetDisp = 0;
+                           ^
+../src/primitivas/PrimitivasFunciones.c:44:6: warning: unused variable ‘paginaDiponible’ [-Wunused-variable]
+  int paginaDiponible = 0, offsetDisp = 0;
+      ^
+../src/primitivas/PrimitivasFunciones.c: In function ‘intToChar4’:
+../src/primitivas/PrimitivasFunciones.c:90:2: warning: return makes pointer from integer without a cast [enabled by default]
+  return num;
+  ^
+../src/primitivas/PrimitivasFunciones.c: In function ‘ASIGNAR_VARIABLE’:
+../src/primitivas/PrimitivasFunciones.c:112:2: warning: implicit declaration of function ‘deserializar_puntero’ [-Wimplicit-function-declaration]
+  deserializar_puntero(direccion_variable, &pagina, &offset, tamanio_pagina_memoria);
+  ^
+../src/primitivas/PrimitivasFunciones.c: In function ‘WAIT’:
+../src/primitivas/PrimitivasFunciones.c:129:2: warning: implicit declaration of function ‘enviar_SYSCALL_wait_semaforo_a_kernel’ [-Wimplicit-function-declaration]
+  int result = enviar_SYSCALL_wait_semaforo_a_kernel(identificador_semaforo, pcb);
+  ^
+../src/primitivas/PrimitivasFunciones.c: In function ‘SIGNAL’:
+../src/primitivas/PrimitivasFunciones.c:147:2: warning: implicit declaration of function ‘enviar_SYSCALL_signal_semaforo_a_kernel’ [-Wimplicit-function-declaration]
+  enviar_SYSCALL_signal_semaforo_a_kernel(identificador_semaforo);
+  ^
+../src/primitivas/PrimitivasFunciones.c: In function ‘LIBERAR’:
+../src/primitivas/PrimitivasFunciones.c:198:7: warning: unused variable ‘ptoffset’ [-Wunused-variable]
+  int* ptoffset = &offset;
+       ^
+../src/primitivas/PrimitivasFunciones.c:197:7: warning: unused variable ‘ptPagina’ [-Wunused-variable]
+  int* ptPagina = &pagina;
+       ^
+Finished building: ../src/primitivas/PrimitivasFunciones.c
+ 
+Building file: ../src/interfaz/InterfazKernel.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/interfaz/InterfazKernel.d" -MT"src/interfaz/InterfazKernel.d" -o "src/interfaz/InterfazKernel.o" "../src/interfaz/InterfazKernel.c"
+../src/interfaz/InterfazKernel.c: In function ‘recibir_PCB_de_kernel’:
+../src/interfaz/InterfazKernel.c:23:2: warning: implicit declaration of function ‘recibir_pcb’ [-Wimplicit-function-declaration]
+  PCB * pcb = recibir_pcb(kernel);
+  ^
+../src/interfaz/InterfazKernel.c:23:14: warning: initialization makes pointer from integer without a cast [enabled by default]
+  PCB * pcb = recibir_pcb(kernel);
+              ^
+../src/interfaz/InterfazKernel.c:24:2: warning: implicit declaration of function ‘logSO’ [-Wimplicit-function-declaration]
+  logSO(string_from_format("Recibiendo proceso para ejecutar con PID : %d", pcb->PID));
+  ^
+../src/interfaz/InterfazKernel.c: In function ‘enviar_PCB_a_kernel’:
+../src/interfaz/InterfazKernel.c:76:2: warning: implicit declaration of function ‘enviar_pcb’ [-Wimplicit-function-declaration]
+  enviar_pcb(pcb, servidor_kernel);
+  ^
+Finished building: ../src/interfaz/InterfazKernel.c
+ 
+Building file: ../src/interfaz/InterfazMemoria.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/interfaz/InterfazMemoria.d" -MT"src/interfaz/InterfazMemoria.d" -o "src/interfaz/InterfazMemoria.o" "../src/interfaz/InterfazMemoria.c"
+../src/interfaz/InterfazMemoria.c: In function ‘almacenar_Bytes_de_Pagina’:
+../src/interfaz/InterfazMemoria.c:33:27: warning: initialization from incompatible pointer type [enabled by default]
+   char * puntero_a_dato = &valor;
+                           ^
+Finished building: ../src/interfaz/InterfazMemoria.c
+ 
+Building file: ../src/interfaz/signals.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/interfaz/signals.d" -MT"src/interfaz/signals.d" -o "src/interfaz/signals.o" "../src/interfaz/signals.c"
+../src/interfaz/signals.c: In function ‘recibir_seniales_de_linux’:
+../src/interfaz/signals.c:15:2: warning: implicit declaration of function ‘CU_Terminar_ejecucion_y_finalizar’ [-Wimplicit-function-declaration]
+  CU_Terminar_ejecucion_y_finalizar();
+  ^
+Finished building: ../src/interfaz/signals.c
+ 
+Building file: ../src/header/AppConfig.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/AppConfig.d" -MT"src/header/AppConfig.d" -o "src/header/AppConfig.o" "../src/header/AppConfig.c"
+../src/header/AppConfig.c: In function ‘inicializar_configuracion’:
+../src/header/AppConfig.c:31:4: warning: implicit declaration of function ‘strlen’ [-Wimplicit-function-declaration]
+    configuraciones.IP_KERNEL = malloc(strlen(config_get_string_value(config, "IP_KERNEL")) + 1);
+    ^
+../src/header/AppConfig.c:31:39: warning: incompatible implicit declaration of built-in function ‘strlen’ [enabled by default]
+    configuraciones.IP_KERNEL = malloc(strlen(config_get_string_value(config, "IP_KERNEL")) + 1);
+                                       ^
+../src/header/AppConfig.c:32:4: warning: implicit declaration of function ‘strcpy’ [-Wimplicit-function-declaration]
+    strcpy(configuraciones.IP_KERNEL, config_get_string_value(config, "IP_KERNEL"));
+    ^
+../src/header/AppConfig.c:32:4: warning: incompatible implicit declaration of built-in function ‘strcpy’ [enabled by default]
+../src/header/AppConfig.c:37:40: warning: incompatible implicit declaration of built-in function ‘strlen’ [enabled by default]
+    configuraciones.IP_MEMORIA = malloc(strlen(config_get_string_value(config, "IP_MEMORIA")) + 1);
+                                        ^
+../src/header/AppConfig.c:38:4: warning: incompatible implicit declaration of built-in function ‘strcpy’ [enabled by default]
+    strcpy(configuraciones.IP_MEMORIA, config_get_string_value(config, "IP_MEMORIA"));
+    ^
+../src/header/AppConfig.c:41:45: warning: incompatible implicit declaration of built-in function ‘strlen’ [enabled by default]
+   configuraciones.PATH_ARCHIVO_LOG = malloc(strlen(config_get_string_value(config, "PATH_ARCHIVO_LOGUEO")) + 1);
+                                             ^
+../src/header/AppConfig.c:42:3: warning: incompatible implicit declaration of built-in function ‘strcpy’ [enabled by default]
+   strcpy(configuraciones.PATH_ARCHIVO_LOG, config_get_string_value(config, "PATH_ARCHIVO_LOGUEO"));
+   ^
+Finished building: ../src/header/AppConfig.c
+ 
+Building file: ../src/general/funcionesUtiles.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/general/funcionesUtiles.d" -MT"src/general/funcionesUtiles.d" -o "src/general/funcionesUtiles.o" "../src/general/funcionesUtiles.c"
+Finished building: ../src/general/funcionesUtiles.c
+ 
+Building file: ../src/CPU.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/CPU.d" -MT"src/CPU.d" -o "src/CPU.o" "../src/CPU.c"
+../src/CPU.c:29:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void testear_planificacion(servidor_kernel); //borrame
+ ^
+../src/CPU.c: In function ‘testear_planificacion’:
+../src/CPU.c:103:3: warning: implicit declaration of function ‘enviar_SYSCALL_wait_semaforo_a_kernel’ [-Wimplicit-function-declaration]
+   int res = enviar_SYSCALL_wait_semaforo_a_kernel("mutex1", pcb);
+   ^
+../src/CPU.c:109:3: warning: implicit declaration of function ‘enviar_SYSCALL_signal_semaforo_a_kernel’ [-Wimplicit-function-declaration]
+   enviar_SYSCALL_signal_semaforo_a_kernel("mutex1");
+   ^
+Finished building: ../src/CPU.c
+ 
+Building target: SistemaCPU
+Invoking: GCC C Linker
+gcc -L"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug" -o "SistemaCPU"  ./src/testing/testearPrimitivasFunciones.o ./src/testing/testingPCB.o  ./src/procesador/Ejecucion.o  ./src/primitivas/FuncionesAuxiliares.o ./src/primitivas/IndiceCodigo.o ./src/primitivas/PrimitivasFunciones.o ./src/primitivas/Stack.o  ./src/interfaz/InterfazKernel.o ./src/interfaz/InterfazMemoria.o ./src/interfaz/signals.o  ./src/header/AppConfig.o  ./src/general/Semaforo.o ./src/general/funcionesUtiles.o  ./src/CPU.o   -lSharedlib -lparser-ansisop -lpthread -lcommons
+Finished building target: SistemaCPU
+ 
+01:22:58 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+make: No se hace nada para «all».
+01:22:58 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+make: No se hace nada para «all».
+01:22:59 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+Building file: ../src/testing/TestingCapaFileSystem.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testing/TestingCapaFileSystem.d" -MT"src/testing/TestingCapaFileSystem.d" -o "src/testing/TestingCapaFileSystem.o" "../src/testing/TestingCapaFileSystem.c"
+In file included from ../src/testing/TestingCapaFileSystem.c:8:0:
+../src/testing/../capaFILESYSTEM/GestionArchivoFuncAux.h:18:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void abrir_archivo(clienteCPU);
+ ^
+../src/testing/../capaFILESYSTEM/GestionArchivoFuncAux.h:19:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void cerrar_archivo(clienteCPU);
+ ^
+../src/testing/../capaFILESYSTEM/GestionArchivoFuncAux.h:20:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void leer_archivo(clienteCPU);
+ ^
+../src/testing/../capaFILESYSTEM/GestionArchivoFuncAux.h:21:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void borrar_archivo(clienteCPU);
+ ^
+../src/testing/../capaFILESYSTEM/GestionArchivoFuncAux.h:22:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void mover_cursor_archivo(clienteCPU);
+ ^
+../src/testing/TestingCapaFileSystem.c: In function ‘inicializar_test’:
+../src/testing/TestingCapaFileSystem.c:18:2: warning: implicit declaration of function ‘crear_pcb’ [-Wimplicit-function-declaration]
+  pcb = crear_pcb();
+  ^
+../src/testing/TestingCapaFileSystem.c:18:6: warning: assignment makes pointer from integer without a cast [enabled by default]
+  pcb = crear_pcb();
+      ^
+../src/testing/TestingCapaFileSystem.c:23:6: warning: assignment makes pointer from integer without a cast [enabled by default]
+  pcb = crear_pcb();
+      ^
+../src/testing/TestingCapaFileSystem.c:28:6: warning: assignment makes pointer from integer without a cast [enabled by default]
+  pcb = crear_pcb();
+      ^
+../src/testing/TestingCapaFileSystem.c: In function ‘mostrar_menu_testing_filesystem’:
+../src/testing/TestingCapaFileSystem.c:65:3: warning: implicit declaration of function ‘validarNumeroInput’ [-Wimplicit-function-declaration]
+   opcion = validarNumeroInput(1, 14);
+   ^
+../src/testing/TestingCapaFileSystem.c:70:4: warning: implicit declaration of function ‘TEST_Manual_CU_ABRIR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Manual_CU_ABRIR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:73:4: warning: implicit declaration of function ‘TEST_Manual_CU_MOVER_CURSOR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Manual_CU_MOVER_CURSOR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:76:4: warning: implicit declaration of function ‘TEST_Manual_CU_LEER_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Manual_CU_LEER_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:79:4: warning: implicit declaration of function ‘TEST_Manual_CU_ESCRIBIR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Manual_CU_ESCRIBIR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:82:4: warning: implicit declaration of function ‘TEST_Manual_CU_CERRAR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Manual_CU_CERRAR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:85:4: warning: implicit declaration of function ‘TEST_Manual_CU_BORRAR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Manual_CU_BORRAR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:88:4: warning: implicit declaration of function ‘TEST_Auto_CU_ABRIR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Auto_CU_ABRIR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:91:4: warning: implicit declaration of function ‘TEST_Auto_CU_MOVER_CURSOR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Auto_CU_MOVER_CURSOR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:94:4: warning: implicit declaration of function ‘TEST_Auto_CU_LEER_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Auto_CU_LEER_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:97:4: warning: implicit declaration of function ‘TEST_Auto_CU_ESCRIBIR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Auto_CU_ESCRIBIR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:100:4: warning: implicit declaration of function ‘TEST_Auto_CU_CERRAR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Auto_CU_CERRAR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:103:4: warning: implicit declaration of function ‘TEST_Auto_CU_BORRAR_ARCHIVO’ [-Wimplicit-function-declaration]
+    TEST_Auto_CU_BORRAR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:106:4: warning: implicit declaration of function ‘TEST_VER_TABLA_PROCESO’ [-Wimplicit-function-declaration]
+    TEST_VER_TABLA_PROCESO();
+    ^
+../src/testing/TestingCapaFileSystem.c: In function ‘recibir_INPUT’:
+../src/testing/TestingCapaFileSystem.c:119:3: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char (*)[250]’ [-Wformat=]
+   scanf("%s", &dato);
+   ^
+../src/testing/TestingCapaFileSystem.c: At top level:
+../src/testing/TestingCapaFileSystem.c:124:6: warning: conflicting types for ‘TEST_Manual_CU_ABRIR_ARCHIVO’ [enabled by default]
+ void TEST_Manual_CU_ABRIR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:70:4: note: previous implicit declaration of ‘TEST_Manual_CU_ABRIR_ARCHIVO’ was here
+    TEST_Manual_CU_ABRIR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:135:6: warning: conflicting types for ‘TEST_Manual_CU_MOVER_CURSOR_ARCHIVO’ [enabled by default]
+ void TEST_Manual_CU_MOVER_CURSOR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:73:4: note: previous implicit declaration of ‘TEST_Manual_CU_MOVER_CURSOR_ARCHIVO’ was here
+    TEST_Manual_CU_MOVER_CURSOR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:143:6: warning: conflicting types for ‘TEST_Manual_CU_LEER_ARCHIVO’ [enabled by default]
+ void TEST_Manual_CU_LEER_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:76:4: note: previous implicit declaration of ‘TEST_Manual_CU_LEER_ARCHIVO’ was here
+    TEST_Manual_CU_LEER_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:151:6: warning: conflicting types for ‘TEST_Manual_CU_ESCRIBIR_ARCHIVO’ [enabled by default]
+ void TEST_Manual_CU_ESCRIBIR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:79:4: note: previous implicit declaration of ‘TEST_Manual_CU_ESCRIBIR_ARCHIVO’ was here
+    TEST_Manual_CU_ESCRIBIR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:160:6: warning: conflicting types for ‘TEST_Manual_CU_CERRAR_ARCHIVO’ [enabled by default]
+ void TEST_Manual_CU_CERRAR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:82:4: note: previous implicit declaration of ‘TEST_Manual_CU_CERRAR_ARCHIVO’ was here
+    TEST_Manual_CU_CERRAR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:166:6: warning: conflicting types for ‘TEST_Manual_CU_BORRAR_ARCHIVO’ [enabled by default]
+ void TEST_Manual_CU_BORRAR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:85:4: note: previous implicit declaration of ‘TEST_Manual_CU_BORRAR_ARCHIVO’ was here
+    TEST_Manual_CU_BORRAR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c: In function ‘TEST_Manual_CU_BORRAR_ARCHIVO’:
+../src/testing/TestingCapaFileSystem.c:168:8: warning: unused variable ‘pathArchivo’ [-Wunused-variable]
+  char* pathArchivo = recibir_INPUT("Ingrese Path Archivo: ", 200);
+        ^
+../src/testing/TestingCapaFileSystem.c:167:8: warning: unused variable ‘PID’ [-Wunused-variable]
+  char* PID = recibir_INPUT("Ingrese PID: ", 4);
+        ^
+../src/testing/TestingCapaFileSystem.c: At top level:
+../src/testing/TestingCapaFileSystem.c:173:6: warning: conflicting types for ‘TEST_Auto_CU_ABRIR_ARCHIVO’ [enabled by default]
+ void TEST_Auto_CU_ABRIR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:88:4: note: previous implicit declaration of ‘TEST_Auto_CU_ABRIR_ARCHIVO’ was here
+    TEST_Auto_CU_ABRIR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:188:6: warning: conflicting types for ‘TEST_Auto_CU_MOVER_CURSOR_ARCHIVO’ [enabled by default]
+ void TEST_Auto_CU_MOVER_CURSOR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:91:4: note: previous implicit declaration of ‘TEST_Auto_CU_MOVER_CURSOR_ARCHIVO’ was here
+    TEST_Auto_CU_MOVER_CURSOR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:191:6: warning: conflicting types for ‘TEST_Auto_CU_LEER_ARCHIVO’ [enabled by default]
+ void TEST_Auto_CU_LEER_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:94:4: note: previous implicit declaration of ‘TEST_Auto_CU_LEER_ARCHIVO’ was here
+    TEST_Auto_CU_LEER_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:194:6: warning: conflicting types for ‘TEST_Auto_CU_ESCRIBIR_ARCHIVO’ [enabled by default]
+ void TEST_Auto_CU_ESCRIBIR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:97:4: note: previous implicit declaration of ‘TEST_Auto_CU_ESCRIBIR_ARCHIVO’ was here
+    TEST_Auto_CU_ESCRIBIR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:197:6: warning: conflicting types for ‘TEST_Auto_CU_CERRAR_ARCHIVO’ [enabled by default]
+ void TEST_Auto_CU_CERRAR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:100:4: note: previous implicit declaration of ‘TEST_Auto_CU_CERRAR_ARCHIVO’ was here
+    TEST_Auto_CU_CERRAR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:200:6: warning: conflicting types for ‘TEST_Auto_CU_BORRAR_ARCHIVO’ [enabled by default]
+ void TEST_Auto_CU_BORRAR_ARCHIVO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:103:4: note: previous implicit declaration of ‘TEST_Auto_CU_BORRAR_ARCHIVO’ was here
+    TEST_Auto_CU_BORRAR_ARCHIVO();
+    ^
+../src/testing/TestingCapaFileSystem.c:204:6: warning: conflicting types for ‘TEST_VER_TABLA_PROCESO’ [enabled by default]
+ void TEST_VER_TABLA_PROCESO() {
+      ^
+../src/testing/TestingCapaFileSystem.c:106:4: note: previous implicit declaration of ‘TEST_VER_TABLA_PROCESO’ was here
+    TEST_VER_TABLA_PROCESO();
+    ^
+../src/testing/TestingCapaFileSystem.c: In function ‘TEST_VER_TABLA_PROCESO’:
+../src/testing/TestingCapaFileSystem.c:208:8: warning: unused variable ‘info’ [-Wunused-variable]
+  char* info= string_new();
+        ^
+Finished building: ../src/testing/TestingCapaFileSystem.c
+ 
+Building file: ../src/planificacion/Planificacion.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/planificacion/Planificacion.d" -MT"src/planificacion/Planificacion.d" -o "src/planificacion/Planificacion.o" "../src/planificacion/Planificacion.c"
+../src/planificacion/Planificacion.c: In function ‘inicializar_colas_5_estados’:
+../src/planificacion/Planificacion.c:45:2: warning: passing argument 2 of ‘dictionary_put’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  dictionary_put(COLAS, NEW, queue_create());
+  ^
+In file included from ../src/planificacion/Planificacion.h:11:0,
+                 from ../src/planificacion/Planificacion.c:1:
+/usr/include/commons/collections/dictionary.h:42:11: note: expected ‘char *’ but argument is of type ‘const char *’
+  void     dictionary_put(t_dictionary *, char *key, void *data);
+           ^
+../src/planificacion/Planificacion.c:46:2: warning: passing argument 2 of ‘dictionary_put’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  dictionary_put(COLAS, READY, queue_create());
+  ^
+In file included from ../src/planificacion/Planificacion.h:11:0,
+                 from ../src/planificacion/Planificacion.c:1:
+/usr/include/commons/collections/dictionary.h:42:11: note: expected ‘char *’ but argument is of type ‘const char *’
+  void     dictionary_put(t_dictionary *, char *key, void *data);
+           ^
+../src/planificacion/Planificacion.c:47:2: warning: passing argument 2 of ‘dictionary_put’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  dictionary_put(COLAS, EXEC, list_create());
+  ^
+In file included from ../src/planificacion/Planificacion.h:11:0,
+                 from ../src/planificacion/Planificacion.c:1:
+/usr/include/commons/collections/dictionary.h:42:11: note: expected ‘char *’ but argument is of type ‘const char *’
+  void     dictionary_put(t_dictionary *, char *key, void *data);
+           ^
+../src/planificacion/Planificacion.c:48:2: warning: passing argument 2 of ‘dictionary_put’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  dictionary_put(COLAS, WAITING, list_create());
+  ^
+In file included from ../src/planificacion/Planificacion.h:11:0,
+                 from ../src/planificacion/Planificacion.c:1:
+/usr/include/commons/collections/dictionary.h:42:11: note: expected ‘char *’ but argument is of type ‘const char *’
+  void     dictionary_put(t_dictionary *, char *key, void *data);
+           ^
+../src/planificacion/Planificacion.c:49:2: warning: passing argument 2 of ‘dictionary_put’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  dictionary_put(COLAS, EXIT, queue_create());
+  ^
+In file included from ../src/planificacion/Planificacion.h:11:0,
+                 from ../src/planificacion/Planificacion.c:1:
+/usr/include/commons/collections/dictionary.h:42:11: note: expected ‘char *’ but argument is of type ‘const char *’
+  void     dictionary_put(t_dictionary *, char *key, void *data);
+           ^
+../src/planificacion/Planificacion.c: In function ‘proceso_a_NEW’:
+../src/planificacion/Planificacion.c:59:2: warning: passing argument 2 of ‘string_append’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  string_append(&p->cola, NEW);
+  ^
+In file included from ../src/planificacion/Planificacion.c:4:0:
+/usr/include/commons/string.h:74:8: note: expected ‘char *’ but argument is of type ‘const char *’
+  void  string_append(char ** original, char * string_to_add);
+        ^
+../src/planificacion/Planificacion.c:60:2: warning: passing argument 1 of ‘wait_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  wait_cola(NEW);
+  ^
+In file included from ../src/planificacion/Planificacion.c:1:0:
+../src/planificacion/Planificacion.h:64:6: note: expected ‘char *’ but argument is of type ‘const char *’
+ void wait_cola(char * cola);
+      ^
+../src/planificacion/Planificacion.c:61:2: warning: passing argument 1 of ‘cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  queue_push(cola(NEW), p->pcb);
+  ^
+../src/planificacion/Planificacion.c:54:10: note: expected ‘char *’ but argument is of type ‘const char *’
+ t_queue* cola(char * nombre) {
+          ^
+../src/planificacion/Planificacion.c:62:2: warning: passing argument 1 of ‘signal_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  signal_cola(NEW);
+  ^
+In file included from ../src/planificacion/Planificacion.c:1:0:
+../src/planificacion/Planificacion.h:66:6: note: expected ‘char *’ but argument is of type ‘const char *’
+ void signal_cola(char * cola);
+      ^
+../src/planificacion/Planificacion.c:70:2: warning: implicit declaration of function ‘generar_log’ [-Wimplicit-function-declaration]
+  generar_log();
+  ^
+../src/planificacion/Planificacion.c: In function ‘mover_PCB_de_cola’:
+../src/planificacion/Planificacion.c:89:12: warning: assignment discards ‘const’ qualifier from pointer target type [enabled by default]
+    destino = EXIT;
+            ^
+../src/planificacion/Planificacion.c:107:3: warning: passing argument 1 of ‘cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+   list_remove_by_condition((t_list*) cola(EXEC), &es_pcb_buscado);
+   ^
+../src/planificacion/Planificacion.c:54:10: note: expected ‘char *’ but argument is of type ‘const char *’
+ t_queue* cola(char * nombre) {
+          ^
+../src/planificacion/Planificacion.c:107:3: warning: passing argument 2 of ‘list_remove_by_condition’ from incompatible pointer type [enabled by default]
+   list_remove_by_condition((t_list*) cola(EXEC), &es_pcb_buscado);
+   ^
+In file included from /usr/include/commons/collections/queue.h:20:0,
+                 from ../src/planificacion/Planificacion.h:12,
+                 from ../src/planificacion/Planificacion.c:1:
+/usr/include/commons/collections/list.h:134:8: note: expected ‘_Bool (*)(void *)’ but argument is of type ‘_Bool (*)(struct PCB *)’
+  void *list_remove_by_condition(t_list *, bool(*condition)(void*));
+        ^
+../src/planificacion/Planificacion.c:111:3: warning: implicit declaration of function ‘es_semaforo’ [-Wimplicit-function-declaration]
+   if (es_semaforo(destino)){
+   ^
+../src/planificacion/Planificacion.c:122:3: warning: passing argument 1 of ‘cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+   list_remove_by_condition((t_list*) cola(WAITING), &es_pcb_buscado);
+   ^
+../src/planificacion/Planificacion.c:54:10: note: expected ‘char *’ but argument is of type ‘const char *’
+ t_queue* cola(char * nombre) {
+          ^
+../src/planificacion/Planificacion.c:122:3: warning: passing argument 2 of ‘list_remove_by_condition’ from incompatible pointer type [enabled by default]
+   list_remove_by_condition((t_list*) cola(WAITING), &es_pcb_buscado);
+   ^
+In file included from /usr/include/commons/collections/queue.h:20:0,
+                 from ../src/planificacion/Planificacion.h:12,
+                 from ../src/planificacion/Planificacion.c:1:
+/usr/include/commons/collections/list.h:134:8: note: expected ‘_Bool (*)(void *)’ but argument is of type ‘_Bool (*)(struct PCB *)’
+  void *list_remove_by_condition(t_list *, bool(*condition)(void*));
+        ^
+../src/planificacion/Planificacion.c:147:3: warning: passing argument 1 of ‘cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+   list_add((t_list*) cola(WAITING), pcb);
+   ^
+../src/planificacion/Planificacion.c:54:10: note: expected ‘char *’ but argument is of type ‘const char *’
+ t_queue* cola(char * nombre) {
+          ^
+../src/planificacion/Planificacion.c: In function ‘cantidad_procesos_en_memoria’:
+../src/planificacion/Planificacion.c:193:2: warning: passing argument 1 of ‘cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  return (queue_size(cola(READY)) + list_size(cola(EXEC)) + cantidad_en_WAITING());
+  ^
+../src/planificacion/Planificacion.c:54:10: note: expected ‘char *’ but argument is of type ‘const char *’
+ t_queue* cola(char * nombre) {
+          ^
+../src/planificacion/Planificacion.c:193:2: warning: passing argument 1 of ‘cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  return (queue_size(cola(READY)) + list_size(cola(EXEC)) + cantidad_en_WAITING());
+  ^
+../src/planificacion/Planificacion.c:54:10: note: expected ‘char *’ but argument is of type ‘const char *’
+ t_queue* cola(char * nombre) {
+          ^
+../src/planificacion/Planificacion.c:193:2: warning: passing argument 1 of ‘list_size’ from incompatible pointer type [enabled by default]
+  return (queue_size(cola(READY)) + list_size(cola(EXEC)) + cantidad_en_WAITING());
+  ^
+In file included from /usr/include/commons/collections/queue.h:20:0,
+                 from ../src/planificacion/Planificacion.h:12,
+                 from ../src/planificacion/Planificacion.c:1:
+/usr/include/commons/collections/list.h:171:6: note: expected ‘struct t_list *’ but argument is of type ‘struct t_queue *’
+  int list_size(t_list *);
+      ^
+../src/planificacion/Planificacion.c: In function ‘planificador_largo_plazo’:
+../src/planificacion/Planificacion.c:200:3: warning: passing argument 1 of ‘cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+   if (!queue_is_empty(cola(NEW))) {
+   ^
+../src/planificacion/Planificacion.c:54:10: note: expected ‘char *’ but argument is of type ‘const char *’
+ t_queue* cola(char * nombre) {
+          ^
+../src/planificacion/Planificacion.c:201:4: warning: passing argument 1 of ‘cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    PCB * pcb = queue_peek(cola(NEW));
+    ^
+../src/planificacion/Planificacion.c:54:10: note: expected ‘char *’ but argument is of type ‘const char *’
+ t_queue* cola(char * nombre) {
+          ^
+../src/planificacion/Planificacion.c:208:4: warning: passing argument 3 of ‘dictionary_remove_and_destroy’ from incompatible pointer type [enabled by default]
+    dictionary_remove_and_destroy(BUFFER_CODIGO, PID, &my_free);
+    ^
+In file included from ../src/planificacion/Planificacion.h:11:0,
+                 from ../src/planificacion/Planificacion.c:1:
+/usr/include/commons/collections/dictionary.h:60:11: note: expected ‘void (*)(void *)’ but argument is of type ‘void (*)(char *)’
+  void     dictionary_remove_and_destroy(t_dictionary *, char *, void(*data_destroyer)(void*));
+           ^
+../src/planificacion/Planificacion.c:210:4: warning: passing argument 2 of ‘mover_PCB_de_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    mover_PCB_de_cola(pcb, NEW, READY);
+    ^
+../src/planificacion/Planificacion.c:83:5: note: expected ‘char *’ but argument is of type ‘const char *’
+ int mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
+     ^
+../src/planificacion/Planificacion.c:210:4: warning: passing argument 3 of ‘mover_PCB_de_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    mover_PCB_de_cola(pcb, NEW, READY);
+    ^
+../src/planificacion/Planificacion.c:83:5: note: expected ‘char *’ but argument is of type ‘const char *’
+ int mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
+     ^
+../src/planificacion/Planificacion.c: In function ‘obtener_proceso_de_cola_READY’:
+../src/planificacion/Planificacion.c:220:3: warning: passing argument 1 of ‘wait_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+   wait_cola(READY);
+   ^
+In file included from ../src/planificacion/Planificacion.c:1:0:
+../src/planificacion/Planificacion.h:64:6: note: expected ‘char *’ but argument is of type ‘const char *’
+ void wait_cola(char * cola);
+      ^
+../src/planificacion/Planificacion.c:221:3: warning: passing argument 1 of ‘cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+   if (!queue_is_empty(cola(READY))) {
+   ^
+../src/planificacion/Planificacion.c:54:10: note: expected ‘char *’ but argument is of type ‘const char *’
+ t_queue* cola(char * nombre) {
+          ^
+../src/planificacion/Planificacion.c:223:4: warning: passing argument 1 of ‘cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    PCB* pcb = queue_peek(cola(READY));
+    ^
+../src/planificacion/Planificacion.c:54:10: note: expected ‘char *’ but argument is of type ‘const char *’
+ t_queue* cola(char * nombre) {
+          ^
+../src/planificacion/Planificacion.c:224:4: warning: passing argument 1 of ‘signal_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    signal_cola(READY);
+    ^
+In file included from ../src/planificacion/Planificacion.c:1:0:
+../src/planificacion/Planificacion.h:66:6: note: expected ‘char *’ but argument is of type ‘const char *’
+ void signal_cola(char * cola);
+      ^
+../src/planificacion/Planificacion.c:227:3: warning: passing argument 1 of ‘signal_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+   signal_cola(READY);
+   ^
+In file included from ../src/planificacion/Planificacion.c:1:0:
+../src/planificacion/Planificacion.h:66:6: note: expected ‘char *’ but argument is of type ‘const char *’
+ void signal_cola(char * cola);
+      ^
+../src/planificacion/Planificacion.c: In function ‘enviar_PCB_Serializado_a_CPU’:
+../src/planificacion/Planificacion.c:238:2: warning: implicit declaration of function ‘enviar_pcb’ [-Wimplicit-function-declaration]
+  enviar_pcb(pcb, cpu->numeroConexion);
+  ^
+../src/planificacion/Planificacion.c: In function ‘recepcion_SIGNAL_semaforo_ansisop’:
+../src/planificacion/Planificacion.c:261:2: warning: passing argument 1 of ‘wait_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  wait_cola(WAITING);
+  ^
+In file included from ../src/planificacion/Planificacion.c:1:0:
+../src/planificacion/Planificacion.h:64:6: note: expected ‘char *’ but argument is of type ‘const char *’
+ void wait_cola(char * cola);
+      ^
+../src/planificacion/Planificacion.c:263:2: warning: passing argument 1 of ‘signal_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+  signal_cola(WAITING);
+  ^
+In file included from ../src/planificacion/Planificacion.c:1:0:
+../src/planificacion/Planificacion.h:66:6: note: expected ‘char *’ but argument is of type ‘const char *’
+ void signal_cola(char * cola);
+      ^
+../src/planificacion/Planificacion.c:267:3: warning: passing argument 3 of ‘mover_PCB_de_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+   mover_PCB_de_cola(pcb, nombre_sem, READY);
+   ^
+../src/planificacion/Planificacion.c:83:5: note: expected ‘char *’ but argument is of type ‘const char *’
+ int mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
+     ^
+../src/planificacion/Planificacion.c: In function ‘recibir_PCB_de_CPU’:
+../src/planificacion/Planificacion.c:274:2: warning: implicit declaration of function ‘recibir_pcb’ [-Wimplicit-function-declaration]
+  PCB* pcb = recibir_pcb(clienteCPU);
+  ^
+../src/planificacion/Planificacion.c:274:13: warning: initialization makes pointer from integer without a cast [enabled by default]
+  PCB* pcb = recibir_pcb(clienteCPU);
+             ^
+../src/planificacion/Planificacion.c:278:3: warning: passing argument 2 of ‘mover_PCB_de_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+   mover_PCB_de_cola(pcb, EXEC, EXIT);
+   ^
+../src/planificacion/Planificacion.c:83:5: note: expected ‘char *’ but argument is of type ‘const char *’
+ int mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
+     ^
+../src/planificacion/Planificacion.c:278:3: warning: passing argument 3 of ‘mover_PCB_de_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+   mover_PCB_de_cola(pcb, EXEC, EXIT);
+   ^
+../src/planificacion/Planificacion.c:83:5: note: expected ‘char *’ but argument is of type ‘const char *’
+ int mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
+     ^
+../src/planificacion/Planificacion.c:281:3: warning: passing argument 2 of ‘mover_PCB_de_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+   mover_PCB_de_cola(pcb, EXEC, READY);
+   ^
+../src/planificacion/Planificacion.c:83:5: note: expected ‘char *’ but argument is of type ‘const char *’
+ int mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
+     ^
+../src/planificacion/Planificacion.c:281:3: warning: passing argument 3 of ‘mover_PCB_de_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+   mover_PCB_de_cola(pcb, EXEC, READY);
+Finished building: ../src/planificacion/Planificacion.c
+   ^
+../src/planificacion/Planificacion.c:83:5: note: expected ‘char *’ but argument is of type ‘const char *’
+ int mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
+     ^
+../src/planificacion/Planificacion.c:288:4: warning: passing argument 2 of ‘mover_PCB_de_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    mover_PCB_de_cola(pcb, EXEC, nombre_sem);
+    ^
+../src/planificacion/Planificacion.c:83:5: note: expected ‘char *’ but argument is of type ‘const char *’
+ int mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
+     ^
+../src/planificacion/Planificacion.c: In function ‘limpiar_procesos_CPU’:
+../src/planificacion/Planificacion.c:304:2: warning: passing argument 2 of ‘list_filter’ from incompatible pointer type [enabled by default]
+  t_list * procesos_filtrados = list_filter(procesos, &buscar_procesos_por_cola);
+  ^
+In file included from /usr/include/commons/collections/queue.h:20:0,
+                 from ../src/planificacion/Planificacion.h:12,
+                 from ../src/planificacion/Planificacion.c:1:
+/usr/include/commons/collections/list.h:92:10: note: expected ‘_Bool (*)(void *)’ but argument is of type ‘_Bool (*)(struct Proceso *)’
+ 
+  t_list* list_filter(t_list*, bool(*condition)(void*));
+          ^
+../src/planificacion/Planificacion.c:309:4: warning: passing argument 2 of ‘mover_PCB_de_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    mover_PCB_de_cola(buscado->pcb, EXEC, READY);
+    ^
+../src/planificacion/Planificacion.c:83:5: note: expected ‘char *’ but argument is of type ‘const char *’
+ int mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
+     ^
+../src/planificacion/Planificacion.c:309:4: warning: passing argument 3 of ‘mover_PCB_de_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+Building file: ../src/interfaz/InterfazCPU.c
+    mover_PCB_de_cola(buscado->pcb, EXEC, READY);
+    ^
+../src/planificacion/Planificacion.c:83:5: note: expected ‘char *’ but argument is of type ‘const char *’
+ int mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
+     ^
+../src/planificacion/Planificacion.c:313:4: warning: passing argument 2 of ‘mover_PCB_de_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    mover_PCB_de_cola(buscado->pcb, EXEC, EXIT);
+    ^
+../src/planificacion/Planificacion.c:83:5: note: expected ‘char *’ but argument is of type ‘const char *’
+ int mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
+     ^
+../src/planificacion/Planificacion.c:313:4: warning: passing argument 3 of ‘mover_PCB_de_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+    mover_PCB_de_cola(buscado->pcb, EXEC, EXIT);
+    ^
+../src/planificacion/Planificacion.c:83:5: note: expected ‘char *’ but argument is of type ‘const char *’
+ int mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
+     ^
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/interfaz/InterfazCPU.d" -MT"src/interfaz/InterfazCPU.d" -o "src/interfaz/InterfazCPU.o" "../src/interfaz/InterfazCPU.c"
+In file included from ../src/interfaz/InterfazCPU.c:13:0:
+../src/interfaz/../capaFILESYSTEM/GestionArchivoFuncAux.h:18:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void abrir_archivo(clienteCPU);
+ ^
+../src/interfaz/../capaFILESYSTEM/GestionArchivoFuncAux.h:19:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void cerrar_archivo(clienteCPU);
+ ^
+../src/interfaz/../capaFILESYSTEM/GestionArchivoFuncAux.h:20:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void leer_archivo(clienteCPU);
+ ^
+../src/interfaz/../capaFILESYSTEM/GestionArchivoFuncAux.h:21:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void borrar_archivo(clienteCPU);
+ ^
+../src/interfaz/../capaFILESYSTEM/GestionArchivoFuncAux.h:22:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void mover_cursor_archivo(clienteCPU);
+ ^
+../src/interfaz/InterfazCPU.c: In function ‘escuchar_Conexiones_CPU’:
+../src/interfaz/InterfazCPU.c:36:4: warning: passing argument 3 of ‘pthread_create’ from incompatible pointer type [enabled by default]
+    pthread_create(&mihilo1, NULL, &CU_Recibir_Conexiones_CPU, cliente);
+    ^
+In file included from ../src/interfaz/InterfazCPU.h:11:0,
+                 from ../src/interfaz/InterfazCPU.c:1:
+/usr/include/pthread.h:244:12: note: expected ‘void * (*)(void *)’ but argument is of type ‘void (*)(int)’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/interfaz/InterfazCPU.c:36:4: warning: passing argument 4 of ‘pthread_create’ makes pointer from integer without a cast [enabled by default]
+    pthread_create(&mihilo1, NULL, &CU_Recibir_Conexiones_CPU, cliente);
+    ^
+In file included from ../src/interfaz/InterfazCPU.h:11:0,
+                 from ../src/interfaz/InterfazCPU.c:1:
+/usr/include/pthread.h:244:12: note: expected ‘void * __restrict__’ but argument is of type ‘int’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/interfaz/InterfazCPU.c:37:4: warning: passing argument 1 of ‘pthread_detach’ makes integer from pointer without a cast [enabled by default]
+    pthread_detach(&mihilo1);
+    ^
+In file included from ../src/interfaz/InterfazCPU.h:11:0,
+                 from ../src/interfaz/InterfazCPU.c:1:
+/usr/include/pthread.h:282:12: note: expected ‘pthread_t’ but argument is of type ‘pthread_t *’
+ extern int pthread_detach (pthread_t __th) __THROW;
+            ^
+../src/interfaz/InterfazCPU.c:38:4: warning: implicit declaration of function ‘informar_handshake_log’ [-Wimplicit-function-declaration]
+    informar_handshake_log("CPU");
+    ^
+../src/interfaz/InterfazCPU.c: In function ‘CU_Recibir_Conexiones_CPU’:
+../src/interfaz/InterfazCPU.c:99:4: warning: implicit declaration of function ‘escribir_archivo’ [-Wimplicit-function-declaration]
+    escribir_archivo(clienteCPU);
+    ^
+../src/interfaz/InterfazCPU.c: In function ‘index_of_CPU’:
+../src/interfaz/InterfazCPU.c:133:2: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  while (aux = list_get(lista_CPUs, i)) {
+  ^
+Finished building: ../src/interfaz/InterfazCPU.c
+ 
+Building file: ../src/interfaz/InterfazConsola.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/interfaz/InterfazConsola.d" -MT"src/interfaz/InterfazConsola.d" -o "src/interfaz/InterfazConsola.o" "../src/interfaz/InterfazConsola.c"
+../src/interfaz/InterfazConsola.c: In function ‘escuchar_Conexiones_Programa’:
+../src/interfaz/InterfazConsola.c:29:4: warning: passing argument 3 of ‘pthread_create’ from incompatible pointer type [enabled by default]
+    pthread_create(&thread_programa, NULL, &CU_Recibir_Conexiones_Programa, cliente);
+    ^
+In file included from ../src/interfaz/InterfazConsola.c:4:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * (*)(void *)’ but argument is of type ‘void (*)(int)’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/interfaz/InterfazConsola.c:29:4: warning: passing argument 4 of ‘pthread_create’ makes pointer from integer without a cast [enabled by default]
+    pthread_create(&thread_programa, NULL, &CU_Recibir_Conexiones_Programa, cliente);
+    ^
+In file included from ../src/interfaz/InterfazConsola.c:4:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * __restrict__’ but argument is of type ‘int’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/interfaz/InterfazConsola.c:30:4: warning: passing argument 1 of ‘pthread_detach’ makes integer from pointer without a cast [enabled by default]
+    pthread_detach(&thread_programa);
+    ^
+In file included from ../src/interfaz/InterfazConsola.c:4:0:
+/usr/include/pthread.h:282:12: note: expected ‘pthread_t’ but argument is of type ‘pthread_t *’
+ extern int pthread_detach (pthread_t __th) __THROW;
+            ^
+../src/interfaz/InterfazConsola.c:31:4: warning: implicit declaration of function ‘informar_handshake_log’ [-Wimplicit-function-declaration]
+    informar_handshake_log("PROGRAMA");
+    ^
+../src/interfaz/InterfazConsola.c: In function ‘CU_Recibir_Conexiones_Programa’:
+../src/interfaz/InterfazConsola.c:45:13: warning: unused variable ‘Proceso_a_eliminar’ [-Wunused-variable]
+    Proceso* Proceso_a_eliminar = buscar_proceso_by_PID(pid);
+             ^
+Finished building: ../src/interfaz/InterfazConsola.c
+ 
+Building file: ../src/header/SolicitudesUsuario.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/header/SolicitudesUsuario.d" -MT"src/header/SolicitudesUsuario.d" -o "src/header/SolicitudesUsuario.o" "../src/header/SolicitudesUsuario.c"
+../src/header/SolicitudesUsuario.c: In function ‘listar_procesos’:
+../src/header/SolicitudesUsuario.c:84:4: warning: implicit declaration of function ‘mostrar_procesos’ [-Wimplicit-function-declaration]
+    mostrar_procesos(procesos);
+    ^
+../src/header/SolicitudesUsuario.c: In function ‘devolver_cola’:
+../src/header/SolicitudesUsuario.c:100:3: warning: return discards ‘const’ qualifier from pointer target type [enabled by default]
+   return NEW;
+   ^
+../src/header/SolicitudesUsuario.c:103:3: warning: return discards ‘const’ qualifier from pointer target type [enabled by default]
+   return READY;
+   ^
+../src/header/SolicitudesUsuario.c:106:3: warning: return discards ‘const’ qualifier from pointer target type [enabled by default]
+   return EXEC;
+   ^
+../src/header/SolicitudesUsuario.c:109:3: warning: return discards ‘const’ qualifier from pointer target type [enabled by default]
+   return WAITING;
+   ^
+../src/header/SolicitudesUsuario.c:112:3: warning: return discards ‘const’ qualifier from pointer target type [enabled by default]
+   return EXIT;
+   ^
+../src/header/SolicitudesUsuario.c: In function ‘buscar_procesos_por_cola’:
+../src/header/SolicitudesUsuario.c:127:6: warning: implicit declaration of function ‘es_semaforo’ [-Wimplicit-function-declaration]
+      return es_semaforo(proceso->cola);
+      ^
+../src/header/SolicitudesUsuario.c: In function ‘listar_procesos_por_cola’:
+../src/header/SolicitudesUsuario.c:131:4: warning: passing argument 2 of ‘list_filter’ from incompatible pointer type [enabled by default]
+    t_list * procesos_filtrados = list_filter(procesos, &buscar_procesos_por_cola);
+    ^
+In file included from ../src/header/SolicitudesUsuario.h:11:0,
+                 from ../src/header/SolicitudesUsuario.c:8:
+/usr/include/commons/collections/list.h:92:10: note: expected ‘_Bool (*)(void *)’ but argument is of type ‘int (*)(struct Proceso *)’
+  t_list* list_filter(t_list*, bool(*condition)(void*));
+          ^
+../src/header/SolicitudesUsuario.c: At top level:
+../src/header/SolicitudesUsuario.c:138:6: warning: conflicting types for ‘mostrar_procesos’ [enabled by default]
+ void mostrar_procesos(t_list * procesos_lista) {
+      ^
+../src/header/SolicitudesUsuario.c:84:4: note: previous implicit declaration of ‘mostrar_procesos’ was here
+    mostrar_procesos(procesos);
+    ^
+../src/header/SolicitudesUsuario.c: In function ‘mostrar_procesos’:
+../src/header/SolicitudesUsuario.c:160:2: warning: implicit declaration of function ‘generar_log’ [-Wimplicit-function-declaration]
+  generar_log();
+  ^
+../src/header/SolicitudesUsuario.c: At top level:
+../src/header/SolicitudesUsuario.c:163:6: warning: conflicting types for ‘generar_log’ [enabled by default]
+ void generar_log() {
+      ^
+../src/header/SolicitudesUsuario.c:160:2: note: previous implicit declaration of ‘generar_log’ was here
+  generar_log();
+  ^
+../src/header/SolicitudesUsuario.c: In function ‘modificar_grado_multiprogramacion’:
+../src/header/SolicitudesUsuario.c:256:2: warning: statement with no effect [-Wunused-value]
+  for(i; i < grado_multiprog; i++)
+  ^
+../src/header/SolicitudesUsuario.c: In function ‘verificar_estado’:
+../src/header/SolicitudesUsuario.c:287:2: warning: passing argument 1 of ‘strcmp’ from incompatible pointer type [enabled by default]
+  if(strcmp(proceso_a_eliminar, "EXEC") == 0) {
+  ^
+In file included from ../src/header/SolicitudesUsuario.c:16:0:
+/usr/include/string.h:144:12: note: expected ‘const char *’ but argument is of type ‘struct Proceso *’
+ extern int strcmp (const char *__s1, const char *__s2)
+            ^
+../src/header/SolicitudesUsuario.c: In function ‘finalizar_proceso_desde_consola’:
+../src/header/SolicitudesUsuario.c:320:12: warning: unused variable ‘proceso_a_eliminar’ [-Wunused-variable]
+  Proceso * proceso_a_eliminar;
+            ^
+../src/header/SolicitudesUsuario.c: In function ‘devolver_cola’:
+../src/header/SolicitudesUsuario.c:115:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/header/SolicitudesUsuario.c
+ 
+Building file: ../src/general/funcionesUtiles.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/general/funcionesUtiles.d" -MT"src/general/funcionesUtiles.d" -o "src/general/funcionesUtiles.o" "../src/general/funcionesUtiles.c"
+../src/general/funcionesUtiles.c: In function ‘informar_handshake_log’:
+../src/general/funcionesUtiles.c:93:2: warning: implicit declaration of function ‘generar_log’ [-Wimplicit-function-declaration]
+  generar_log();
+  ^
+Finished building: ../src/general/funcionesUtiles.c
+ 
+Building file: ../src/capaMEMORIA/AdministrarVarCompartidas.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/capaMEMORIA/AdministrarVarCompartidas.d" -MT"src/capaMEMORIA/AdministrarVarCompartidas.d" -o "src/capaMEMORIA/AdministrarVarCompartidas.o" "../src/capaMEMORIA/AdministrarVarCompartidas.c"
+../src/capaMEMORIA/AdministrarVarCompartidas.c: In function ‘obtener_valor_var_comp’:
+../src/capaMEMORIA/AdministrarVarCompartidas.c:13:2: warning: implicit declaration of function ‘recibir_dato_serializado’ [-Wimplicit-function-declaration]
+  char* nombreVarComp = recibir_dato_serializado(conexionCPU);
+  ^
+../src/capaMEMORIA/AdministrarVarCompartidas.c:13:24: warning: initialization makes pointer from integer without a cast [enabled by default]
+  char* nombreVarComp = recibir_dato_serializado(conexionCPU);
+                        ^
+../src/capaMEMORIA/AdministrarVarCompartidas.c:17:2: warning: implicit declaration of function ‘string_new’ [-Wimplicit-function-declaration]
+  char * varCompartida = string_new();
+  ^
+../src/capaMEMORIA/AdministrarVarCompartidas.c:17:25: warning: initialization makes pointer from integer without a cast [enabled by default]
+  char * varCompartida = string_new();
+                         ^
+../src/capaMEMORIA/AdministrarVarCompartidas.c:18:2: warning: implicit declaration of function ‘string_starts_with’ [-Wimplicit-function-declaration]
+  if((configuraciones.cantidad_var_comp > 0) && string_starts_with(configuraciones.VAR_COMP[0], "!") && !string_starts_with(nombreVarComp, "!")){
+  ^
+../src/capaMEMORIA/AdministrarVarCompartidas.c:19:3: warning: implicit declaration of function ‘string_append’ [-Wimplicit-function-declaration]
+   string_append(&varCompartida, "!");
+   ^
+../src/capaMEMORIA/AdministrarVarCompartidas.c:26:4: warning: implicit declaration of function ‘enviar_dato_serializado’ [-Wimplicit-function-declaration]
+    enviar_dato_serializado("OK",conexionCPU);
+    ^
+../src/capaMEMORIA/AdministrarVarCompartidas.c:27:4: warning: implicit declaration of function ‘string_itoa’ [-Wimplicit-function-declaration]
+    enviar_dato_serializado(string_itoa(valor), conexionCPU);
+    ^
+../src/capaMEMORIA/AdministrarVarCompartidas.c:28:4: warning: implicit declaration of function ‘free’ [-Wimplicit-function-declaration]
+    free(nombreVarComp);
+    ^
+../src/capaMEMORIA/AdministrarVarCompartidas.c:28:4: warning: incompatible implicit declaration of built-in function ‘free’ [enabled by default]
+../src/capaMEMORIA/AdministrarVarCompartidas.c:35:2: warning: incompatible implicit declaration of built-in function ‘free’ [enabled by default]
+  free(nombreVarComp);
+  ^
+../src/capaMEMORIA/AdministrarVarCompartidas.c: In function ‘asignar_valor_var_comp’:
+../src/capaMEMORIA/AdministrarVarCompartidas.c:42:24: warning: initialization makes pointer from integer without a cast [enabled by default]
+  char* nombreVarComp = recibir_dato_serializado(conexionCPU);
+                        ^
+../src/capaMEMORIA/AdministrarVarCompartidas.c:43:2: warning: implicit declaration of function ‘atoi’ [-Wimplicit-function-declaration]
+  int valorVarComp = atoi(recibir_dato_serializado(conexionCPU));
+  ^
+../src/capaMEMORIA/AdministrarVarCompartidas.c:45:25: warning: initialization makes pointer from integer without a cast [enabled by default]
+  char * varCompartida = string_new();
+                         ^
+../src/capaMEMORIA/AdministrarVarCompartidas.c:54:5: warning: incompatible implicit declaration of built-in function ‘free’ [enabled by default]
+     free(varCompartida);
+     ^
+../src/capaMEMORIA/AdministrarVarCompartidas.c:61:2: warning: incompatible implicit declaration of built-in function ‘free’ [enabled by default]
+  free(varCompartida);
+  ^
+Finished building: ../src/capaMEMORIA/AdministrarVarCompartidas.c
+ 
+Building file: ../src/capaMEMORIA/GestMemoriaFuncionesAux.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/capaMEMORIA/GestMemoriaFuncionesAux.d" -MT"src/capaMEMORIA/GestMemoriaFuncionesAux.d" -o "src/capaMEMORIA/GestMemoriaFuncionesAux.o" "../src/capaMEMORIA/GestMemoriaFuncionesAux.c"
+../src/capaMEMORIA/GestMemoriaFuncionesAux.c: In function ‘guardar_registro_tabla_memoria’:
+../src/capaMEMORIA/GestMemoriaFuncionesAux.c:28:2: warning: passing argument 1 of ‘incrementar_en_uno_paginas_HEAP’ makes integer from pointer without a cast [enabled by default]
+  incrementar_en_uno_paginas_HEAP(registro->PID);
+  ^
+In file included from ../src/capaMEMORIA/GestMemoriaFuncionesAux.c:10:0:
+../src/capaMEMORIA/../administrarPCB/EstadisticaProceso.h:26:6: note: expected ‘uint32_t’ but argument is of type ‘char *’
+ void incrementar_en_uno_paginas_HEAP(uint32_t PID);
+      ^
+../src/capaMEMORIA/GestMemoriaFuncionesAux.c: In function ‘liberar_pagina_encontrada’:
+../src/capaMEMORIA/GestMemoriaFuncionesAux.c:209:3: warning: passing argument 1 of ‘incrementar_FREE’ makes integer from pointer without a cast [enabled by default]
+   incrementar_FREE(pagina_Buscada->PID, tamanioLiberado);
+   ^
+In file included from ../src/capaMEMORIA/GestMemoriaFuncionesAux.c:10:0:
+../src/capaMEMORIA/../administrarPCB/EstadisticaProceso.h:28:6: note: expected ‘uint32_t’ but argument is of type ‘char *’
+ void incrementar_FREE(uint32_t PID, uint32_t tamanioFREE);
+      ^
+Finished building: ../src/capaMEMORIA/GestMemoriaFuncionesAux.c
+ 
+Building file: ../src/capaMEMORIA/GestionMemoriaDinamica.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/capaMEMORIA/GestionMemoriaDinamica.d" -MT"src/capaMEMORIA/GestionMemoriaDinamica.d" -o "src/capaMEMORIA/GestionMemoriaDinamica.o" "../src/capaMEMORIA/GestionMemoriaDinamica.c"
+../src/capaMEMORIA/GestionMemoriaDinamica.c: In function ‘CU_Reservar_memoria_MALLOC’:
+../src/capaMEMORIA/GestionMemoriaDinamica.c:77:2: warning: implicit declaration of function ‘informar_accion_en_log’ [-Wimplicit-function-declaration]
+  informar_accion_en_log("RESERVO memoria (MALLOC)", atoi(PID));
+  ^
+Finished building: ../src/capaMEMORIA/GestionMemoriaDinamica.c
+ 
+Building file: ../src/capaFILESYSTEM/GestionArchivoFuncAux.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/capaFILESYSTEM/GestionArchivoFuncAux.d" -MT"src/capaFILESYSTEM/GestionArchivoFuncAux.d" -o "src/capaFILESYSTEM/GestionArchivoFuncAux.o" "../src/capaFILESYSTEM/GestionArchivoFuncAux.c"
+In file included from ../src/capaFILESYSTEM/GestionArchivoFuncAux.c:1:0:
+../src/capaFILESYSTEM/GestionArchivoFuncAux.h:18:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void abrir_archivo(clienteCPU);
+ ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.h:19:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void cerrar_archivo(clienteCPU);
+ ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.h:20:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void leer_archivo(clienteCPU);
+ ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.h:21:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void borrar_archivo(clienteCPU);
+ ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.h:22:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void mover_cursor_archivo(clienteCPU);
+ ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.c: In function ‘grabar_apertura_en_tablas_archivos’:
+../src/capaFILESYSTEM/GestionArchivoFuncAux.c:31:2: warning: implicit declaration of function ‘generar_log’ [-Wimplicit-function-declaration]
+  generar_log();
+  ^
+Finished building: ../src/capaFILESYSTEM/GestionArchivoFuncAux.c
+ 
+Building file: ../src/capaFILESYSTEM/GestionArchivos.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/capaFILESYSTEM/GestionArchivos.d" -MT"src/capaFILESYSTEM/GestionArchivos.d" -o "src/capaFILESYSTEM/GestionArchivos.o" "../src/capaFILESYSTEM/GestionArchivos.c"
+In file included from ../src/capaFILESYSTEM/GestionArchivos.c:14:0:
+../src/capaFILESYSTEM/GestionArchivoFuncAux.h:18:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void abrir_archivo(clienteCPU);
+ ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.h:19:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void cerrar_archivo(clienteCPU);
+ ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.h:20:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void leer_archivo(clienteCPU);
+ ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.h:21:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void borrar_archivo(clienteCPU);
+ ^
+../src/capaFILESYSTEM/GestionArchivoFuncAux.h:22:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void mover_cursor_archivo(clienteCPU);
+ ^
+../src/capaFILESYSTEM/GestionArchivos.c: In function ‘CU_ABRIR_ARCHIVO’:
+../src/capaFILESYSTEM/GestionArchivos.c:37:3: warning: passing argument 1 of ‘incrementar_SYSCALL’ makes integer from pointer without a cast [enabled by default]
+   incrementar_SYSCALL(PID, 1);
+   ^
+In file included from ../src/capaFILESYSTEM/GestionArchivos.c:9:0:
+../src/capaFILESYSTEM/../administrarPCB/EstadisticaProceso.h:29:6: note: expected ‘uint32_t’ but argument is of type ‘char *’
+ void incrementar_SYSCALL(uint32_t PID, uint32_t cantidadSysCall);
+      ^
+../src/capaFILESYSTEM/GestionArchivos.c:46:2: warning: implicit declaration of function ‘informar_movimiento_de_cola_en_log’ [-Wimplicit-function-declaration]
+  informar_movimiento_de_cola_en_log("ABRIO un archivo", atoi(PID));
+  ^
+../src/capaFILESYSTEM/GestionArchivos.c: In function ‘informar_accion_en_log’:
+../src/capaFILESYSTEM/GestionArchivos.c:55:2: warning: implicit declaration of function ‘generar_log’ [-Wimplicit-function-declaration]
+  generar_log();
+  ^
+../src/capaFILESYSTEM/GestionArchivos.c: In function ‘CU_MOVER_CURSOR_ARCHIVO’:
+../src/capaFILESYSTEM/GestionArchivos.c:66:2: warning: passing argument 1 of ‘incrementar_SYSCALL’ makes integer from pointer without a cast [enabled by default]
+  incrementar_SYSCALL(PID, 1);
+  ^
+In file included from ../src/capaFILESYSTEM/GestionArchivos.c:9:0:
+../src/capaFILESYSTEM/../administrarPCB/EstadisticaProceso.h:29:6: note: expected ‘uint32_t’ but argument is of type ‘char *’
+ void incrementar_SYSCALL(uint32_t PID, uint32_t cantidadSysCall);
+      ^
+../src/capaFILESYSTEM/GestionArchivos.c: In function ‘CU_LEER_ARCHIVO’:
+../src/capaFILESYSTEM/GestionArchivos.c:78:3: warning: passing argument 1 of ‘incrementar_SYSCALL’ makes integer from pointer without a cast [enabled by default]
+   incrementar_SYSCALL(PID, 1);
+   ^
+In file included from ../src/capaFILESYSTEM/GestionArchivos.c:9:0:
+../src/capaFILESYSTEM/../administrarPCB/EstadisticaProceso.h:29:6: note: expected ‘uint32_t’ but argument is of type ‘char *’
+ void incrementar_SYSCALL(uint32_t PID, uint32_t cantidadSysCall);
+      ^
+../src/capaFILESYSTEM/GestionArchivos.c: In function ‘CU_ESCRIBIR_ARCHIVO’:
+../src/capaFILESYSTEM/GestionArchivos.c:93:3: warning: passing argument 1 of ‘incrementar_SYSCALL’ makes integer from pointer without a cast [enabled by default]
+   incrementar_SYSCALL(PID, 1);
+   ^
+In file included from ../src/capaFILESYSTEM/GestionArchivos.c:9:0:
+../src/capaFILESYSTEM/../administrarPCB/EstadisticaProceso.h:29:6: note: expected ‘uint32_t’ but argument is of type ‘char *’
+ void incrementar_SYSCALL(uint32_t PID, uint32_t cantidadSysCall);
+      ^
+../src/capaFILESYSTEM/GestionArchivos.c: In function ‘CU_CERRAR_ARCHIVO’:
+../src/capaFILESYSTEM/GestionArchivos.c:114:3: warning: passing argument 1 of ‘incrementar_SYSCALL’ makes integer from pointer without a cast [enabled by default]
+   incrementar_SYSCALL(PID, 1);
+   ^
+In file included from ../src/capaFILESYSTEM/GestionArchivos.c:9:0:
+../src/capaFILESYSTEM/../administrarPCB/EstadisticaProceso.h:29:6: note: expected ‘uint32_t’ but argument is of type ‘char *’
+ void incrementar_SYSCALL(uint32_t PID, uint32_t cantidadSysCall);
+      ^
+../src/capaFILESYSTEM/GestionArchivos.c: In function ‘CU_BORRAR_ARCHIVO’:
+../src/capaFILESYSTEM/GestionArchivos.c:136:3: warning: implicit declaration of function ‘contar_Cantidad_FD_ABIERTO’ [-Wimplicit-function-declaration]
+   if (contar_Cantidad_FD_ABIERTO(IndiceGlobal) > 1) {
+   ^
+../src/capaFILESYSTEM/GestionArchivos.c:150:3: warning: passing argument 1 of ‘incrementar_SYSCALL’ makes integer from pointer without a cast [enabled by default]
+   incrementar_SYSCALL(PID, 1);
+   ^
+In file included from ../src/capaFILESYSTEM/GestionArchivos.c:9:0:
+../src/capaFILESYSTEM/../administrarPCB/EstadisticaProceso.h:29:6: note: expected ‘uint32_t’ but argument is of type ‘char *’
+ void incrementar_SYSCALL(uint32_t PID, uint32_t cantidadSysCall);
+      ^
+../src/capaFILESYSTEM/GestionArchivos.c:155:2: warning: passing argument 1 of ‘incrementar_SYSCALL’ makes integer from pointer without a cast [enabled by default]
+  incrementar_SYSCALL(PID, 1);
+  ^
+In file included from ../src/capaFILESYSTEM/GestionArchivos.c:9:0:
+../src/capaFILESYSTEM/../administrarPCB/EstadisticaProceso.h:29:6: note: expected ‘uint32_t’ but argument is of type ‘char *’
+ void incrementar_SYSCALL(uint32_t PID, uint32_t cantidadSysCall);
+      ^
+Finished building: ../src/capaFILESYSTEM/GestionArchivos.c
+ 
+Building file: ../src/capaFILESYSTEM/TablaGlobalArchivo.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/capaFILESYSTEM/TablaGlobalArchivo.d" -MT"src/capaFILESYSTEM/TablaGlobalArchivo.d" -o "src/capaFILESYSTEM/TablaGlobalArchivo.o" "../src/capaFILESYSTEM/TablaGlobalArchivo.c"
+../src/capaFILESYSTEM/TablaGlobalArchivo.c: In function ‘contar_Cantidad_FD_ABIERTO’:
+../src/capaFILESYSTEM/TablaGlobalArchivo.c:62:3: warning: return makes integer from pointer without a cast [enabled by default]
+   return NULL;
+   ^
+Finished building: ../src/capaFILESYSTEM/TablaGlobalArchivo.c
+ 
+Building file: ../src/administrarProcesos/Proceso.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/administrarProcesos/Proceso.d" -MT"src/administrarProcesos/Proceso.d" -o "src/administrarProcesos/Proceso.o" "../src/administrarProcesos/Proceso.c"
+Finished building: ../src/administrarProcesos/Proceso.c
+ 
+Building file: ../src/administrarPCB/EstadisticaProceso.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/administrarPCB/EstadisticaProceso.d" -MT"src/administrarPCB/EstadisticaProceso.d" -o "src/administrarPCB/EstadisticaProceso.o" "../src/administrarPCB/EstadisticaProceso.c"
+Finished building: ../src/administrarPCB/EstadisticaProceso.c
+ 
+Building file: ../src/administrarPCB/PCBData.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/administrarPCB/PCBData.d" -MT"src/administrarPCB/PCBData.d" -o "src/administrarPCB/PCBData.o" "../src/administrarPCB/PCBData.c"
+../src/administrarPCB/PCBData.c: In function ‘procesar_programa’:
+../src/administrarPCB/PCBData.c:63:3: warning: passing argument 2 of ‘mover_PCB_de_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+   mover_PCB_de_cola(pcb, NEW, EXIT);
+   ^
+In file included from ../src/administrarPCB/PCBData.c:12:0:
+../src/administrarPCB/../planificacion/Planificacion.h:40:5: note: expected ‘char *’ but argument is of type ‘const char *’
+ int mover_PCB_de_cola(PCB* pcb, char * origen, char * destino);
+     ^
+../src/administrarPCB/PCBData.c:63:3: warning: passing argument 3 of ‘mover_PCB_de_cola’ discards ‘const’ qualifier from pointer target type [enabled by default]
+   mover_PCB_de_cola(pcb, NEW, EXIT);
+   ^
+In file included from ../src/administrarPCB/PCBData.c:12:0:
+../src/administrarPCB/../planificacion/Planificacion.h:40:5: note: expected ‘char *’ but argument is of type ‘const char *’
+ int mover_PCB_de_cola(PCB* pcb, char * origen, char * destino);
+     ^
+Finished building: ../src/administrarPCB/PCBData.c
+ 
+Building file: ../src/KERNEL.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/KERNEL.d" -MT"src/KERNEL.d" -o "src/KERNEL.o" "../src/KERNEL.c"
+../src/KERNEL.c: In function ‘inicializar_KERNEL’:
+../src/KERNEL.c:44:2: warning: implicit declaration of function ‘inicializar_semaforos’ [-Wimplicit-function-declaration]
+  inicializar_semaforos();
+  ^
+../src/KERNEL.c:45:2: warning: implicit declaration of function ‘inicializar_listas_globales’ [-Wimplicit-function-declaration]
+  inicializar_listas_globales();
+  ^
+../src/KERNEL.c: At top level:
+../src/KERNEL.c:57:6: warning: conflicting types for ‘inicializar_semaforos’ [enabled by default]
+ void inicializar_semaforos(){
+      ^
+../src/KERNEL.c:44:2: note: previous implicit declaration of ‘inicializar_semaforos’ was here
+  inicializar_semaforos();
+  ^
+../src/KERNEL.c:82:6: warning: conflicting types for ‘inicializar_listas_globales’ [enabled by default]
+ void inicializar_listas_globales() {
+      ^
+../src/KERNEL.c:45:2: note: previous implicit declaration of ‘inicializar_listas_globales’ was here
+  inicializar_listas_globales();
+  ^
+../src/KERNEL.c: In function ‘inicializar_listas_globales’:
+../src/KERNEL.c:86:2: warning: implicit declaration of function ‘inicializar_dict_semaforos_ansisop’ [-Wimplicit-function-declaration]
+  inicializar_dict_semaforos_ansisop();
+  ^
+../src/KERNEL.c:87:2: warning: implicit declaration of function ‘inicializar_buffer_codigo’ [-Wimplicit-function-declaration]
+  inicializar_buffer_codigo();
+  ^
+../src/KERNEL.c: In function ‘mostrar_por_pantalla_memory_leaks’:
+../src/KERNEL.c:119:3: warning: implicit declaration of function ‘informar_accion_en_log’ [-Wimplicit-function-declaration]
+   informar_accion_en_log("LIBERO toda la memoria alocada exitosamente", PID);
+   ^
+Finished building: ../src/KERNEL.c
+ 
+Building target: SistemaKERNEL
+Invoking: GCC C Linker
+gcc -L"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug" -o "SistemaKERNEL"  ./src/testing/TestingCapaFileSystem.o ./src/testing/TestingGeneral.o ./src/testing/TestingInterfazMemoria.o ./src/testing/TestingMenu.o ./src/testing/TestingPlanificacion.o  ./src/planificacion/Planificacion.o ./src/planificacion/PlanificacionFIFO.o ./src/planificacion/PlanificacionRR.o  ./src/interfaz/InterfazCPU.o ./src/interfaz/InterfazConsola.o ./src/interfaz/InterfazFS.o ./src/interfaz/InterfazMemoria.o  ./src/header/AppConfig.o ./src/header/SolicitudesUsuario.o  ./src/general/Semaforo.o ./src/general/funcionesUtiles.o  ./src/capaMEMORIA/AdministrarSemaforos.o ./src/capaMEMORIA/AdministrarVarCompartidas.o ./src/capaMEMORIA/GestMemoriaFuncionesAux.o ./src/capaMEMORIA/GestionMemoriaDinamica.o  ./src/capaFILESYSTEM/GestionArchivoFuncAux.o ./src/capaFILESYSTEM/GestionArchivos.o ./src/capaFILESYSTEM/TablaGlobalArchivo.o ./src/capaFILESYSTEM/TablaProcesoArchivo.o  ./src/administrarProcesos/Proceso.o  ./src/administrarPCB/EstadisticaProceso.o ./src/administrarPCB/PCBData.o  ./src/KERNEL.o   -lcommons -lpthread -lparser-ansisop -lSharedlib
+Finished building target: SistemaKERNEL
+ 
+01:23:03 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+Building file: ../src/Interfaz.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Interfaz.d" -MT"src/Interfaz.d" -o "src/Interfaz.o" "../src/Interfaz.c"
+../src/Interfaz.c: In function ‘CU_Recibir_conexiones’:
+../src/Interfaz.c:20:4: warning: passing argument 3 of ‘pthread_create’ from incompatible pointer type [enabled by default]
+    pthread_create(&mihilo1, NULL, &CU_Recibir_Conexion_KERNEL, cliente);
+    ^
+In file included from ../src/Interfaz.c:8:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * (*)(void *)’ but argument is of type ‘void (*)(int)’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/Interfaz.c:20:4: warning: passing argument 4 of ‘pthread_create’ makes pointer from integer without a cast [enabled by default]
+    pthread_create(&mihilo1, NULL, &CU_Recibir_Conexion_KERNEL, cliente);
+    ^
+In file included from ../src/Interfaz.c:8:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * __restrict__’ but argument is of type ‘int’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/Interfaz.c:21:4: warning: passing argument 1 of ‘pthread_detach’ makes integer from pointer without a cast [enabled by default]
+    pthread_detach(&mihilo1);
+    ^
+In file included from ../src/Interfaz.c:8:0:
+/usr/include/pthread.h:282:12: note: expected ‘pthread_t’ but argument is of type ‘pthread_t *’
+ extern int pthread_detach (pthread_t __th) __THROW;
+            ^
+../src/Interfaz.c:24:4: warning: passing argument 3 of ‘pthread_create’ from incompatible pointer type [enabled by default]
+    pthread_create(&mihilo1, NULL, &CU_Recibir_Conexion_CPU, cliente);
+    ^
+In file included from ../src/Interfaz.c:8:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * (*)(void *)’ but argument is of type ‘void (*)(int)’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/Interfaz.c:24:4: warning: passing argument 4 of ‘pthread_create’ makes pointer from integer without a cast [enabled by default]
+    pthread_create(&mihilo1, NULL, &CU_Recibir_Conexion_CPU, cliente);
+    ^
+In file included from ../src/Interfaz.c:8:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * __restrict__’ but argument is of type ‘int’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/Interfaz.c:25:4: warning: passing argument 1 of ‘pthread_detach’ makes integer from pointer without a cast [enabled by default]
+    pthread_detach(&mihilo1);
+    ^
+In file included from ../src/Interfaz.c:8:0:
+/usr/include/pthread.h:282:12: note: expected ‘pthread_t’ but argument is of type ‘pthread_t *’
+ extern int pthread_detach (pthread_t __th) __THROW;
+            ^
+../src/Interfaz.c: In function ‘CU_Recibir_Conexion_KERNEL’:
+../src/Interfaz.c:35:2: warning: implicit declaration of function ‘string_itoa’ [-Wimplicit-function-declaration]
+  enviar_dato_serializado(string_itoa(configuraciones.MARCO_SIZE), cliente);
+  ^
+../src/Interfaz.c:35:2: warning: passing argument 1 of ‘enviar_dato_serializado’ makes pointer from integer without a cast [enabled by default]
+In file included from ../src/Interfaz.c:11:0:
+../src/../../Sharedlib/Sharedlib/Socket.h:18:5: note: expected ‘char *’ but argument is of type ‘int’
+ int enviar_dato_serializado(char * mensaje, int conexion);
+     ^
+../src/Interfaz.c:42:4: warning: implicit declaration of function ‘CU_Solicitar_Bytes_Memoria’ [-Wimplicit-function-declaration]
+    CU_Solicitar_Bytes_Memoria(cliente);
+    ^
+../src/Interfaz.c: In function ‘CU_Recibir_Conexion_CPU’:
+../src/Interfaz.c:65:2: warning: passing argument 1 of ‘enviar_dato_serializado’ makes pointer from integer without a cast [enabled by default]
+  enviar_dato_serializado(string_itoa(configuraciones.MARCO_SIZE), cliente);
+  ^
+In file included from ../src/Interfaz.c:11:0:
+../src/../../Sharedlib/Sharedlib/Socket.h:18:5: note: expected ‘char *’ but argument is of type ‘int’
+ int enviar_dato_serializado(char * mensaje, int conexion);
+     ^
+../src/Interfaz.c: At top level:
+../src/Interfaz.c:85:6: warning: conflicting types for ‘CU_Solicitar_Bytes_Memoria’ [enabled by default]
+ void CU_Solicitar_Bytes_Memoria(int cliente) {
+      ^
+../src/Interfaz.c:42:4: note: previous implicit declaration of ‘CU_Solicitar_Bytes_Memoria’ was here
+    CU_Solicitar_Bytes_Memoria(cliente);
+    ^
+../src/Interfaz.c: In function ‘CU_Almacenar_Bytes_de_Pagina’:
+../src/Interfaz.c:126:17: warning: initialization from incompatible pointer type [enabled by default]
+  int * entero = contenido;
+                 ^
+../src/Interfaz.c: In function ‘CU_Asignar_Paginas_Programa’:
+../src/Interfaz.c:159:2: warning: passing argument 1 of ‘enviar_dato_serializado’ from incompatible pointer type [enabled by default]
+  enviar_dato_serializado(&texto2, cliente);
+  ^
+In file included from ../src/Interfaz.c:11:0:
+../src/../../Sharedlib/Sharedlib/Socket.h:18:5: note: expected ‘char *’ but argument is of type ‘char (*)[5]’
+ int enviar_dato_serializado(char * mensaje, int conexion);
+     ^
+../src/Interfaz.c: In function ‘CU_Liberar_Pagina’:
+../src/Interfaz.c:173:2: warning: passing argument 1 of ‘enviar_dato_serializado’ from incompatible pointer type [enabled by default]
+  enviar_dato_serializado(&texto2, cliente);
+  ^
+In file included from ../src/Interfaz.c:11:0:
+../src/../../Sharedlib/Sharedlib/Socket.h:18:5: note: expected ‘char *’ but argument is of type ‘char (*)[5]’
+ int enviar_dato_serializado(char * mensaje, int conexion);
+     ^
+Finished building: ../src/Interfaz.c
+ 
+Building target: SistemaMEMORIA
+Invoking: GCC C Linker
+gcc -L"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug" -o "SistemaMEMORIA"  ./src/testing/PruebasUnitarias.o ./src/testing/TestingMemoriaCache.o  ./src/header/AppConfig.o  ./src/general/Semaforo.o ./src/general/funcionesUtiles.o  ./src/Interfaz.o ./src/Main.o ./src/MemoriaCache.o ./src/MemoriaPrincipal.o ./src/SolicitudesUsuario.o   -lSharedlib -lcommons -lm -lpthread
+Finished building target: SistemaMEMORIA
+ 

@@ -58,7 +58,6 @@ void mostrar_menu_usuario() {
 
 void recibir_seniales_de_linux(int signum){
 	desconectar_consola();
-	printf("NV PERRO\n");
 	exit(0);
 }
 
