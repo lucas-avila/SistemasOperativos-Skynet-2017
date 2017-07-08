@@ -23,7 +23,7 @@ void logSO(char* mensajeLoguear) {
 	char* mensaje = string_from_format(mensajeLoguear, pa);
 	va_end(pa); */
 
-	t_log* logger = log_create(configuraciones.PATH_ARCHIVO_LOG, "CPU", true, LOG_LEVEL_INFO);
+	t_log* logger = log_create(configuraciones.PATH_ARCHIVO_LOG, "CPU", false, LOG_LEVEL_INFO);
 	log_info(logger, "%s", mensajeLoguear);
 	//free(mensajeLoguear);
 	log_destroy(logger);

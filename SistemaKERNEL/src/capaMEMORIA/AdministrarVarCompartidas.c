@@ -11,7 +11,7 @@
 
 void obtener_valor_var_comp(int conexionCPU){
 	char* nombreVarComp = recibir_dato_serializado(conexionCPU);
-	printf("El valor es %s\n", nombreVarComp);
+	//printf("El valor es %s\n", nombreVarComp);
 	int valor;
 	int i = 0;
 	char * varCompartida = string_new();

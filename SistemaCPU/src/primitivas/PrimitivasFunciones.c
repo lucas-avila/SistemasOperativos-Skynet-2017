@@ -140,7 +140,7 @@ void WAIT(t_nombre_semaforo identificador_semaforo) {
 }
 
 void SIGNAL(t_nombre_semaforo identificador_semaforo) {
-	printf("\nPRE-SIGNAL %s\n", identificador_semaforo);
+	//printf("\nPRE-SIGNAL %s\n", identificador_semaforo);
 
 	logSO(string_from_format("\n El proceso %d esta haciendo un signal al semaforo: %s", pcb->PID, identificador_semaforo));
 
@@ -328,12 +328,12 @@ t_valor_variable ASIGNAR_VALOR_COMPARTIDA(t_nombre_compartida variable, t_valor_
 	if ((asignar_valor_a_variable_compartida_en_kernel(variable, valor)) == 0) {
 		logSO("\nLa asignacion fue exitosa ");
 
-		printf("Asignacion exitosa!!\n");
+	//	printf("Asignacion exitosa!!\n");
 		return valor;
 	} else {
 		logSO("\n Ocurrio un error en la asignacion de la variable compartida");
 
-		printf("Ocurrio un error al asiignar el valor a la variable\n");
+	//	printf("Ocurrio un error al asiignar el valor a la variable\n");
 		return valor;
 	}
 }

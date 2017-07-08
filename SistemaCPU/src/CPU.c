@@ -94,7 +94,7 @@ void CU_Terminar_ejecucion_y_finalizar() {
 
 int n = 0;
 void testear_planificacion(servidor_kernel){
-	printf("\nDEBUG ---> Llego a testing -->  ");
+	//printf("\nDEBUG ---> Llego a testing -->  ");
 	PCB* pcb = recibir_PCB_de_kernel();
 
 	sleep(1);

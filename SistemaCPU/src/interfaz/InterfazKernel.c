@@ -164,7 +164,7 @@ int asignar_valor_a_variable_compartida_en_kernel(char* nombre_varComp, int valo
 	char* resultado = recibir_dato_serializado(servidor_kernel);
 	if (strcmp(resultado, "OK") == 0) {
 
-		printf("OK");
+		//printf("OK");
 		return 0;
 	} else {
 		lanzar_excepcion(resultado);

@@ -1,0 +1,372 @@
+/*
+ * SolicitudesUsuario.c
+ *
+ *  Created on: 1/4/2017
+ *      Author: utnso
+ */
+
+#include "SolicitudesUsuario.h"
+
+#include <commons/log.h>
+#include <commons/string.h>
+#include <semaphore.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <Sharedlib/Socket.h>
+
+#include "../administrarPCB/EstadisticaProceso.h"
+#include "../administrarProcesos/Proceso.h"
+#include "../capaFILESYSTEM/TablaGlobalArchivo.h"
+#include "../capaFILESYSTEM/TablaProcesoArchivo.h"
+#include "../general/funcionesUtiles.h"
+#include "../general/Semaforo.h"
+#include "../planificacion/Planificacion.h"
+#include "../testing/TestingMenu.h"
+#include "AppConfig.h"
+#include "KERNEL.h"
+
+void mostrar_menu_usuario() {
+	printf("\n******* MENU KERNEL ******");
+	printf("\n 1 - Obtener listado de procesos del Sistema.");
+	printf("\n 2 - Obtener Informacion de un proceso.");
+	printf("\n 3 - Obtener la tabla global de archivos.");
+	printf("\n 4 - Modificar grado de multiprogramacion.");
+	printf("\n 5 - Finalizar proceso.");
+	if(configuraciones.planificacion_activa == 1)
+		printf("\n 6 - Detener la planificacion.");
+	else
+		printf("\n 6 - Activar la planificacion.");
+	printf("\n 7 - MENU TESTING.");
+	printf("\n 8 - Salir.");
+	printf("\n Opcion: ");
+}
+
+void mostrar_menu_listado_procesos() {
+	printf("\n******* Listado de procesos: ******");
+	printf("\n 1 - Todos.");
+	printf("\n 2 - En algún estado (cola).");
+	printf("\n 3 - Volver.");
+	printf("\n Opcion: ");
+}
+
+void mostrar_menu_colas() {
+	printf("\n******* Elija una cola de procesos: ******");
+	printf("\n 1 - NEW.");
+	printf("\n 2 - READY.");
+	printf("\n 3 - EXEC.");
+	printf("\n 4 - FINISHED.");
+	printf("\n 5 - WAITING.");
+	printf("\n 6 - Volver.");
+	printf("\n Opcion: ");
+}
+
+void mostrar_menu_informacion_proceso() {
+	printf("\n******* Elija la informacion deseada: ******");
+	printf("\n 1 - Cantidad de rafagas ejecutadas.");
+	printf("\n 2 - Tabla de archivos abiertos por el proceso.");
+	printf("\n 3 - Cantidad de paginas de HEAP utilizadas.");
+	printf("\n 4 - Cantidad de SYSCALLS ejecutadas.");
+	printf("\n 5 - Volver.");
+	printf("\n Opcion: ");
+}
+
+void listar_procesos() {
+	int opcion = 0;
+	do {
+		mostrar_menu_listado_procesos();
+		opcion = validarNumeroInput(1, 3);
+		system("clear");
+		switch (opcion) {
+
+		case 1:
+			mostrar_procesos(procesos);
+			break;
+		case 2:
+			listar_procesos_por_cola();
+			break;
+		}
+	} while (opcion != 3);
+	system("clear");
+	atender_solicitudes_de_usuario();
+}
+
+char* devolver_cola(int opcion) {
+
+	switch (opcion) {
+
+	case 1:
+		return NEW;
+		break;
+	case 2:
+		return READY;
+		break;
+	case 3:
+		return EXEC;
+		break;
+	case 4:
+		return WAITING;
+		break;
+	case 5:
+		return EXIT;
+	}
+
+}
+
+void listar_procesos_por_cola() {
+	int opcion = 0;
+	do {
+		mostrar_menu_colas();
+		opcion = validarNumeroInput(1, 6);
+		system("clear");
+		char * cola_elegida = devolver_cola(opcion);
+		if (opcion != 6) {
+			int buscar_procesos_por_cola(Proceso * proceso) {
+				if(strcmp(cola_elegida, WAITING) == 0)
+					return es_semaforo(proceso->cola);
+				return strcmp(proceso->cola, cola_elegida) == 0;
+			}
+			sem_wait(&mutex_lista_PROCESOS);
+			t_list * procesos_filtrados = list_filter(procesos, &buscar_procesos_por_cola);
+			sem_post(&mutex_lista_PROCESOS);
+			mostrar_procesos(procesos_filtrados);
+		}
+	} while (opcion != 6);
+}
+
+void mostrar_procesos(t_list * procesos_lista) {
+	int size = list_size(procesos_lista);
+	int i = 0;
+	Proceso * proceso;
+	sem_wait(&escribir_log);
+	string_append(&info_log, "\n---------------------\n");
+	string_append(&info_log, "PID \t\t COLA\n");
+	while (i < size) {
+		proceso = list_get(procesos_lista, i);
+		string_append(&info_log, "- - - - - - - - - - - - - - - - - - -\n");
+		string_append(&info_log, string_itoa(proceso->PID));
+		string_append(&info_log, " \t\t ");
+		if(es_semaforo(proceso->cola))
+			string_append(&info_log, "WAITING -->");
+		string_append(&info_log, proceso->cola);
+		string_append(&info_log, "\n");
+		i++;
+	}
+	string_append(&info_log, "---------------------");
+	string_append(&info_log, "\n---> Cantidad de procesos totales encontrados: ");
+	string_append(&info_log, string_itoa(i));
+	sem_post(&escribir_log);
+	generar_log();
+}
+
+void generar_log() {
+	sem_wait(&escribir_log);
+	string_append(&info_log, "\n------Fin del LOG------\n\0");
+	t_log* logger = log_create(configuraciones.PATH_ARCHIVO_LOG, "KERNEL", false, LOG_LEVEL_INFO);
+	log_info(logger, "\n***LOGS del KERNEL***\n %s", info_log);
+	log_destroy(logger);
+	strcpy(info_log, "");
+	sem_post(&escribir_log);
+}
+
+void mencionar_proceso(int pid) {
+	sem_wait(&escribir_log);
+	string_append(&info_log, "\n-->Logs del Proceso ");
+	string_append(&info_log, string_itoa(pid));
+	string_append(&info_log, ":\n");
+	sem_post(&escribir_log);
+}
+
+void obtener_informacion_proceso() {
+	int opcion = 0;
+	int pid;
+	EstadisticaProceso * estadistica_proceso;
+	printf("\nPor favor ingrese el PID del proceso del cual desea informacion: ");
+	scanf("%d", &pid);
+	Proceso* proceso ;
+	proceso = buscar_proceso_by_PID(pid);
+
+	if(proceso==NULL){
+		printf("\n El Proceso ingresado no existe.");
+		return;
+	}
+	estadistica_proceso = buscar_registro_por_PID(pid);
+
+	do {
+		mostrar_menu_informacion_proceso();
+		opcion = validarNumeroInput(1, 5);
+		system("clear");
+		mencionar_proceso(pid);
+		switch (opcion) {
+			case 1:
+				sem_wait(&escribir_log);
+				string_append(&info_log, "Cantidad de rafagas ejecutadas: ");
+				char * cant_rafagas = string_itoa(estadistica_proceso->cantidad_Rafagas_Ejecutadas);
+				string_append(&info_log, cant_rafagas);
+				string_append(&info_log, "\n");
+				sem_post(&escribir_log);
+				generar_log();
+				free(cant_rafagas);
+				break;
+			case 2:
+				mostrar_tabla_proceso_archivos(proceso->tablaProcesoArchivo);
+				generar_log();
+				break;
+			case 3:
+				sem_wait(&escribir_log);
+				string_append(&info_log, "Cantidad de páginas de HEAP utilizadas: ");
+				char * cant_pag_HEAP = string_itoa(estadistica_proceso->cantidad_Paginas_HEAP_Utilizadas);
+				string_append(&info_log, cant_pag_HEAP);
+				string_append(&info_log, "\n");
+				sem_post(&escribir_log);
+				generar_log();
+				free(cant_pag_HEAP);
+				break;
+			case 4:
+				sem_wait(&escribir_log);
+				string_append(&info_log, "Cantidad syscalls ejecutadas: ");
+				string_append(&info_log, string_itoa(estadistica_proceso->cantidad_SYSCALL_Ejecutadas));
+				string_append(&info_log, "\n");
+				sem_post(&escribir_log);
+				generar_log();
+				break;
+		}
+	} while (opcion != 5);
+	system("clear");
+	printf("\n Presione 0 para continuar.");
+	while (getchar() != '0')
+				;
+}
+
+void modificar_grado_multiprogramacion() {
+	int grado_multiprog;
+
+	system("clear");
+	do {
+		printf("Ingrese el nuevo grado de multiprogramacion: ");
+		scanf("%d", &grado_multiprog);
+		if (grado_multiprog < 0)
+			printf("Por favor vuelva a intentarlo con un numero mayor/igual a 0.\n");
+	} while (grado_multiprog < 0);
+
+	configuraciones.GRADO_MULTIPROG = grado_multiprog;
+	int i = grado_multiprogramacion.__align;
+	printf("sem es %d\n", i);
+	for(i; i < grado_multiprog; i++)
+		sem_post(&grado_multiprogramacion);
+
+	sem_wait(&escribir_log);
+	string_append(&info_log, "--> Cambio de grado de multiprogramacion a: ");
+	string_append(&info_log, string_itoa(grado_multiprog));
+	sem_post(&escribir_log);
+	generar_log();
+}
+
+void detener_planificacion() {
+	if(configuraciones.planificacion_activa == 0){
+		configuraciones.planificacion_activa = 1;
+		atender_clientes(0, &EJECUTAR_ALGORITMO_PLANIFICACION);
+		sem_wait(&escribir_log);
+		string_append(&info_log, "--- Se activó la planificacion ---\n");
+		sem_post(&escribir_log);
+	}
+	else{
+		configuraciones.planificacion_activa = 0;
+		sem_wait(&escribir_log);
+		string_append(&info_log, "--- Se detuvo la planificacion ---\n");
+		sem_post(&escribir_log);
+	}
+
+	generar_log();
+}
+
+void verificar_estado(uint32_t pid, int exit_code) {
+	Proceso * proceso_a_eliminar = buscar_proceso_by_PID(pid);
+<<<<<<< HEAD
+	if(strcmp(proceso_a_eliminar->cola, "EXEC") == 0) {
+=======
+	if(strcmp(proceso_a_eliminar, "EXEC") == 0) {
+		actualizar_exit_code(proceso_a_eliminar, exit_code);
+>>>>>>> 9913ae34a8fd0b5c3392b09896000a6ae7b75ec9
+		sem_wait(&eliminacion);
+		pid_eliminacion = pid;
+		sem_post(&eliminacion);
+		while(strcmp(proceso_a_eliminar->cola, "EXIT") != 0);
+	}
+	else {
+		actualizar_exit_code(proceso_a_eliminar, exit_code);
+		mover_PCB_de_cola(proceso_a_eliminar->pcb, proceso_a_eliminar->cola, EXIT);
+	}
+}
+
+void mostrar_tabla_global_archivos() {
+	sem_wait(&escribir_log);
+	string_append(&info_log, "\n---TABLA GLOBAL DE ARCHIVOS---\n");
+	string_append(&info_log, "\n FILE \t\t\t OPEN\n");
+	int size = list_size(TABLA_GLOBAL_ARCHIVO);
+	int i = 0;
+	char * open;
+	while (i < size) {
+		TablaGlobalArchivo * elemento = list_get(TABLA_GLOBAL_ARCHIVO, i);
+		string_append(&info_log, elemento->file);
+		string_append(&info_log, " \t\t\t ");
+		open = string_itoa(elemento->open);
+		string_append(&info_log, open);
+		string_append(&info_log, "\n");
+		i++;
+	}
+	sem_post(&escribir_log);
+	generar_log();
+}
+
+void finalizar_proceso_desde_consola(){
+	int pid;
+	Proceso * proceso_a_eliminar;
+	printf("\nPID: ");
+	scanf("%d", &pid);
+	Proceso* proceso ;
+	proceso = buscar_proceso_by_PID(pid);
+
+	if(proceso==NULL){
+		printf("\n El Proceso ingresado no existe.\n");
+	} else
+	{
+		verificar_estado(pid, -7);
+	}
+}
+
+void atender_solicitudes_de_usuario() {
+	int opcion = 0;
+	do {
+		mostrar_menu_usuario();
+		opcion = validarNumeroInput(1, 8);
+		system("clear");
+		switch (opcion) {
+		case 1:
+			listar_procesos();
+			break;
+		case 2:
+			obtener_informacion_proceso();
+			break;
+		case 3:
+			mostrar_tabla_global_archivos();
+			break;
+		case 4:
+			modificar_grado_multiprogramacion();
+			break;
+		case 5: {
+			finalizar_proceso_desde_consola();
+			break;
+		}
+			break;
+		case 6:
+			detener_planificacion();
+			break;
+		case 7:
+			menu_principal_testing();
+			break;
+		}
+	} while (opcion != 8);
+}
+

@@ -143,7 +143,7 @@ void CU_Almacenar_Bytes_de_Pagina(int cliente) {
 	char* contenido;
 	contenido = recibir_dato_serializado(cliente);
 	int * entero = contenido;
-	printf("\nEl entero es %d\n", *entero);
+	//printf("\nEl entero es %d\n", *entero);
 
 	texto = almacenar_bytes_de_una_pagina(PID, pagina, byteInicial, tamanio, contenido, true);
 	enviar_dato_serializado(texto, cliente);

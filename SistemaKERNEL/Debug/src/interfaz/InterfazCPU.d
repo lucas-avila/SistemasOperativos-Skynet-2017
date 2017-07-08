@@ -13,6 +13,7 @@ src/interfaz/InterfazCPU.d: ../src/interfaz/InterfazCPU.c \
  ../src/interfaz/../capaMEMORIA/GestionMemoriaDinamica.h \
  ../src/interfaz/../general/Semaforo.h \
  ../src/interfaz/../header/AppConfig.h \
+ ../src/interfaz/../header/SolicitudesUsuario.h \
  ../src/interfaz/../planificacion/Planificacion.h \
  /home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Sharedlib/PCB.h \
  ../src/interfaz/../planificacion/../administrarProcesos/Proceso.h \
@@ -47,6 +48,8 @@ src/interfaz/InterfazCPU.d: ../src/interfaz/InterfazCPU.c \
 ../src/interfaz/../general/Semaforo.h:
 
 ../src/interfaz/../header/AppConfig.h:
+
+../src/interfaz/../header/SolicitudesUsuario.h:
 
 ../src/interfaz/../planificacion/Planificacion.h:
 

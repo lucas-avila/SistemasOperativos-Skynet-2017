@@ -25,7 +25,7 @@ void logSO(char* mensajeLoguear) {
 	va_end(pa); */
 	activar_semaforo(&semaforo_ARCHIVO);
 
-	t_log* logger = log_create(configuraciones.PATH_ARCHIVO_LOG, "MEMORIA", true, LOG_LEVEL_INFO);
+	t_log* logger = log_create(configuraciones.PATH_ARCHIVO_LOG, "MEMORIA", false, LOG_LEVEL_INFO);
 	log_info(logger, "%s", mensajeLoguear);
 	//free(mensajeLoguear);
 	log_destroy(logger);
