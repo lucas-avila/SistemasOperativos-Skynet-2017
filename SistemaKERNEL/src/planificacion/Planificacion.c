@@ -4,18 +4,23 @@
 #include <commons/string.h>
 #include <semaphore.h>
 #include <stdbool.h>
+#include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
 #include <Sharedlib/Socket.h>
 
+#include "../administrarPCB/EstadisticaProceso.h"
+#include "../administrarPCB/PCBData.h"
 #include "../capaMEMORIA/AdministrarSemaforos.h"
 #include "../general/Semaforo.h"
 #include "../header/AppConfig.h"
 #include "../header/KERNEL.h"
+#include "../header/SolicitudesUsuario.h"
 #include "PlanificacionFIFO.h"
 #include "PlanificacionRR.h"
 
 void EJECUTAR_ALGORITMO_PLANIFICACION() {
+	pid_eliminacion = 0;
 	atender_clientes(0, planificador_largo_plazo);
 	if (strcmp(configuraciones.ALGORITMO, "FIFO") == 0) {
 		dispatcher_FIFO();
@@ -56,12 +61,35 @@ void proceso_a_NEW(Proceso * p) {
 	queue_push(cola(NEW), p->pcb);
 	signal_cola(NEW);
 	sem_post(&proceso_new);
+
+	// Informar mediante log.
+	sem_wait(&escribir_log);
+	char * log = string_from_format("El Proceso se %d agrego a la cola %s.\n", p->PID, NEW);
+	string_append(&info_log, log);
+	sem_post(&escribir_log);
 }
 
+void informar_accion_en_log(uint32_t PID, char * origen,char * destino){
+	sem_wait(&escribir_log);
+	char * log = string_from_format("El Proceso %d se movio de la cola %s a la cola %s.\n", PID, origen, destino);
+	string_append(&info_log, log);
+	sem_post(&escribir_log);
+	generar_log();
+}
+
+
+
 int mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
-printf("-------------\n");
-printf("%d de %s a %s\n", pcb->PID, origen, destino);
 	Proceso * p = proceso(pcb);
+
+	sem_wait(&eliminacion);
+	if(pid_eliminacion != 0){
+		if(pcb->PID == pid_eliminacion){
+			destino = EXIT;
+			pid_eliminacion = 0;
+		}
+	}
+	sem_post(&eliminacion);
 
 	//Validacion
 	if(strcmp(p->cola, origen) != 0)
@@ -79,9 +107,16 @@ printf("%d de %s a %s\n", pcb->PID, origen, destino);
 		//Marcamos el CPU que estaba usando como disponible
 		marcar_CPU_Disponible(p->cpu);
 		//Si va a algun waiting
-		if (es_semaforo(destino))
+		if (es_semaforo(destino)){
 			enviar_dato_serializado("BLOQUEADO", p->cpu->numeroConexion);
-
+			sem_wait(&escribir_log);
+			char * pid = string_itoa(p->PID);
+			string_append(&info_log, "El Proceso (");
+			string_append(&info_log, p->PID);
+			string_append(&info_log, ") se bloqueo.\n");
+			sem_post(&escribir_log);
+			generar_log();
+			}
 		p->cpu = NULL;
 	} //Si viene de algun waiting
 	else if (es_semaforo(origen)) {
@@ -115,10 +150,9 @@ printf("%d de %s a %s\n", pcb->PID, origen, destino);
 	string_append(&cola_guardada, destino);
 
 	signal_cola(destino);
-printf("%d de %s a %s OK\n", pcb->PID, origen, p->cola);
 	if(strcmp(destino, READY) == 0)
 		sem_post(&proceso_ready);
-
+	informar_accion_en_log(pcb->PID, origen, destino);
 	return 0;
 }
 

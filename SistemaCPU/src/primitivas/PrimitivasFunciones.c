@@ -111,7 +111,7 @@ void ASIGNAR_VARIABLE(t_puntero direccion_variable, t_valor_variable valor) {
 	int pagina = 0, offset = 0;
 	deserializar_puntero(direccion_variable, &pagina, &offset, tamanio_pagina_memoria);
 
-	logSO(string_from_format("\nEl proceso %d desea Asignar variable en la Pagina: %d, con Byte Inicial %d",pcb->PID,pagina,offset);
+	logSO(string_from_format("\nEl proceso %d desea Asignar variable en la Pagina: %d, con Byte Inicial %d",pcb->PID,pagina,offset));
 
 	almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(offset), string_itoa(sizeof(uint32_t)), valor, "");
 
@@ -314,7 +314,7 @@ t_valor_variable OBTENER_VALOR_COMPARTIDA(t_nombre_compartida variable) {
 	if ((obtener_valor_de_variable_compartida_en_kernel(variable, &valorVariable)) == 0) {
 		return valorVariable;
 	} else {
-		logSO(string_from_format("Ocurrio un error al buscar la variable %s\n", variable);
+		logSO(string_from_format("Ocurrio un error al buscar la variable %s\n", variable));
 		return -1;
 	}
 }
