@@ -108,7 +108,7 @@ void CU_iniciar_programa(int programa_socket) {
 
 void 	mostrar_por_pantalla_memory_leaks(uint32_t PID){
 	EstadisticaProceso* estadistica = buscar_registro_por_PID(PID);
-	printf("\n Ha finalizado el proceso PID %d ",PID);
+
 	int diferencia = estadistica->tamanio_Total_Alocar == estadistica->tamanio_Total_Liberar;
 
 	if(estadistica->tamanio_Total_Alocar==0){
@@ -116,9 +116,9 @@ void 	mostrar_por_pantalla_memory_leaks(uint32_t PID){
 	}
 
 	if(diferencia==0){
-		printf("\n El proceso ha liberado toda la memoria alocada.");
+		informar_accion_en_log("LIBERO toda la memoria alocada exitosamente", PID);
 	}else{
-		printf("\n El proceso no ha liberado toda la memoria alocada.");
+		informar_accion_en_log("NO logro liberar la memoria alocada", PID);
 	}
 }
 

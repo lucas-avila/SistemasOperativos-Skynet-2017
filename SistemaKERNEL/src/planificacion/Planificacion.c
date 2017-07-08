@@ -67,6 +67,7 @@ void proceso_a_NEW(Proceso * p) {
 	char * log = string_from_format("El Proceso se %d agrego a la cola %s.\n", p->PID, NEW);
 	string_append(&info_log, log);
 	sem_post(&escribir_log);
+	generar_log();
 }
 
 void informar_movimiento_de_cola_en_log(uint32_t PID, char * origen,char * destino){

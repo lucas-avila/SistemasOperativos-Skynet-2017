@@ -19,9 +19,11 @@ void CU_Recibir_conexiones(int servidor) {
 		if (strcmp(codigo_IDENTIFICACION, "KERNEL") == 0) {
 			pthread_create(&mihilo1, NULL, &CU_Recibir_Conexion_KERNEL, cliente);
 			pthread_detach(&mihilo1);
+			printf("HANDSAKE: Se conecto KERNEL.\n");
 		} else if (strcmp(codigo_IDENTIFICACION, "CPU") == 0) {
 			pthread_create(&mihilo1, NULL, &CU_Recibir_Conexion_CPU, cliente);
 			pthread_detach(&mihilo1);
+			printf("HANDSHAKE: Se conecto CPU.\n");
 		} else {
 			close(cliente);
 		}

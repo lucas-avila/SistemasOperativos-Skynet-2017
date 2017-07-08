@@ -35,6 +35,7 @@ void escuchar_Conexiones_CPU(int servidorCPU) {
 			agregar_CPU_global(cliente, mihilo1);
 			pthread_create(&mihilo1, NULL, &CU_Recibir_Conexiones_CPU, cliente);
 			pthread_detach(&mihilo1);
+			informar_handshake_log("CPU");
 		} else {
 			close(cliente);
 		}
