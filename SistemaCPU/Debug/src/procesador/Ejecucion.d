@@ -9,7 +9,8 @@ src/procesador/Ejecucion.d: ../src/procesador/Ejecucion.c \
  ../src/procesador/../interfaz/InterfazKernel.h \
  ../src/procesador/../interfaz/../../../Sharedlib/Sharedlib/Socket.h \
  ../src/procesador/../interfaz/../primitivas/PrimitivasFunciones.h \
- ../src/procesador/../interfaz/InterfazMemoria.h
+ ../src/procesador/../interfaz/InterfazMemoria.h \
+ ../src/procesador/../general/funcionesUtiles.h
 
 ../src/procesador/Ejecucion.h:
 
@@ -32,3 +33,5 @@ src/procesador/Ejecucion.d: ../src/procesador/Ejecucion.c \
 ../src/procesador/../interfaz/../primitivas/PrimitivasFunciones.h:
 
 ../src/procesador/../interfaz/InterfazMemoria.h:
+
+../src/procesador/../general/funcionesUtiles.h:
