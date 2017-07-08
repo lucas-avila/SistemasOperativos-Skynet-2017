@@ -17968,3 +17968,10 @@ El Proceso (1003) ha finalizado, los siguientes son sus datos estadisticos:
 Fecha de inicio de ejecucion: 19:30:24:515
 Fecha de fin de ejecucion: 19:30:27:191
 Tiempo total de ejecucion: -1239414448Cantidad de impresiones por pantalla: 1
+[INFO] 23:48:58:204 CONSOLA/(9108:9130): 
+ EXIT CODE: Finalizado a través del comando Finalizar Programa de la Consola.
+El Proceso (1000) ha finalizado, los siguientes son sus datos estadisticos: 
+Fecha de inicio de ejecucion: 23:47:17:362
+Fecha de fin de ejecucion: 23:48:58:204
+Tiempo total de ejecucion: 0:1:40:842
+Cantidad de impresiones por pantalla: 0

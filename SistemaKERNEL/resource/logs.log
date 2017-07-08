@@ -1924,3 +1924,25 @@ PID 		 COLA
 ---> Cantidad de procesos totales encontrados: 2
 ------Fin del LOG------
 
+[INFO] 23:47:17:361 KERNEL/(9122:9124): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola NEW.
+------Fin del LOG------
+
+[INFO] 23:47:18:761 KERNEL/(9122:9127): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola READY.
+------Fin del LOG------
+
+[INFO] 23:48:58:202 KERNEL/(9122:9122): 
+***LOGS del KERNEL***
+ Se movio el proceso (1000) a la cola EXIT.
+------Fin del LOG------
+
+[INFO] 23:58:09:617 KERNEL/(9690:9695): 
+***LOGS del KERNEL***
+ El Proceso 1000 agrego a la cola NEW.
+El Proceso 1000 se movio de la cola NEW a la cola READY.
+
+------Fin del LOG------
+

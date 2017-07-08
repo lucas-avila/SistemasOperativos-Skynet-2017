@@ -53,11 +53,11 @@ void mostrar_menu_listado_procesos() {
 
 void mostrar_menu_colas() {
 	printf("\n******* Elija una cola de procesos: ******");
-	printf("\n 1 - New.");
-	printf("\n 2 - Ready.");
-	printf("\n 3 - Running.");
-	printf("\n 4 - Finished.");
-	printf("\n 5 - Waiting.");
+	printf("\n 1 - NEW.");
+	printf("\n 2 - READY.");
+	printf("\n 3 - EXEC.");
+	printf("\n 4 - FINISHED.");
+	printf("\n 5 - WAITING.");
 	printf("\n 6 - Volver.");
 	printf("\n Opcion: ");
 }
