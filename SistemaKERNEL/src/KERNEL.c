@@ -74,6 +74,7 @@ void inicializar_semaforos(){
 	inicializar_semaforo(&mutex_tabla_estadistica, 1);
 	inicializar_semaforo(&mutex_tabla_estadistica_busqueda, 1);
 	inicializar_semaforo(&buffer_codigo, 1);
+	inicializar_semaforo(&escribir_log, 1);
 }
 
 void inicializar_listas_globales() {
