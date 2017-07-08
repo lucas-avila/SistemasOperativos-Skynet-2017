@@ -122,7 +122,7 @@ int mover_PCB_de_cola(PCB* pcb, char * origen, char * destino) {
 		list_remove_by_condition((t_list*) cola(WAITING), &es_pcb_buscado);
 		queue_pop(cola(origen));
 		sem_wait(&escribir_log);
-		char * log = string_from_format("El Proceso %d se DESBLOQUEo.\n", p->PID);
+		char * log = string_from_format("El Proceso %d se DESBLOQUEO.\n", p->PID);
 		string_append(&info_log, log);
 		sem_post(&escribir_log);
 		generar_log();
@@ -278,6 +278,7 @@ void recibir_PCB_de_CPU(int clienteCPU, char * modo) {
 		mover_PCB_de_cola(pcb, EXEC, EXIT);
 	} else if (strcmp(modo, "QUANTUM") == 0) {
 		incrementar_rafagas_ejecutadas(pcb->PID, 1);
+		informar_accion_en_log("fue DESALOJADO por QUANTUM", pcb->PID);
 		mover_PCB_de_cola(pcb, EXEC, READY);
 	} else if (strcmp(modo, "WAIT_SEM") == 0) {
 		char * nombre_sem = recibir_dato_serializado(clienteCPU);

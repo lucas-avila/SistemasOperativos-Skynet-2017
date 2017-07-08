@@ -1,9 +1,10 @@
 #include "InterfazCPU.h"
 
 #include <commons/collections/list.h>
+#include <commons/string.h>
 #include <pthread.h>
 #include <semaphore.h>
-#include <stdio.h>
+#include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
 #include <Sharedlib/Socket.h>
@@ -16,6 +17,7 @@
 #include "../general/Semaforo.h"
 #include "../header/AppConfig.h"
 #include "../header/Estructuras.h"
+#include "../header/SolicitudesUsuario.h"
 #include "../planificacion/Planificacion.h"
 
 int servidor_CPU = 0;
@@ -154,7 +156,11 @@ void agregar_CPU_global(int numeroConexion, pthread_t hilo) {
 void retirar_CPU_global(int numeroConexion) {
 	int index = index_of_CPU(numeroConexion);
 	if(index == -1) return;
-	printf("Se elimino a CPU en posicion %d de la lista\n", index);
+	sem_wait(&escribir_log);
+	char * log = string_from_format("Se DESCONECTO la CPU %d", numeroConexion);
+	string_append(&info_log, log);
+	sem_post(&escribir_log);
+	generar_log();
 	sem_wait(&mutex_lista_CPUs);
 	list_remove(lista_CPUs, index);
 	sem_post(&mutex_lista_CPUs);

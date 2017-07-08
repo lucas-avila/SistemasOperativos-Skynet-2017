@@ -99,15 +99,6 @@ void abrir_archivo(clienteCPU){
 	bool flagW = flagWrite[0] == '1';
 	char*  respuesta = CU_ABRIR_ARCHIVO(PID, pathArchivo, flagC, flagR, flagW);
 
-
-	//Lo siguiente es para probar--------------------
-	printf("PID: %s", PID);
-	printf("path: %s", pathArchivo);
-	printf("flagCreate: %s", flagCreate);
-	printf("flagRead: %s", flagRead);
-	printf("flagWrite: %s", flagWrite);
-	//-------------------------------------------
-
 	enviar_dato_serializado(respuesta, clienteCPU);
 	free(PID);
 	free(pathArchivo);
