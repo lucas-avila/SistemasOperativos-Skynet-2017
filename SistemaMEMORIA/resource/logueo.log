@@ -12,7 +12,11 @@ PATH_ARCHIVO_LOGUEO=../resource/logueo.log
 [INFO] 22:28:15:222 MEMORIA/(6724:6724): Memoria Principal creada correctamente.
 [INFO] 22:28:15:223 MEMORIA/(6724:6724): Creando Estructuras administrativas...
 [INFO] 22:28:15:223 MEMORIA/(6724:6724): Estructuras administrativas creadas correctamente.
+<<<<<<< HEAD
 [INFO] 23:27:53:9 MEMORIA/(5018:5018): 
+=======
+[INFO] 23:44:17:118 MEMORIA/(9090:9090): 
+>>>>>>> 350d2cdd3dfb56c0b27cd487c7c2bf380862a23c
  Parametros de Archivo de Configuracion 
 PUERTO=8084	
 MARCOS=500	
@@ -22,11 +26,44 @@ CACHE_X_PROC=10
 RETARDO_MEMORIA=5000	
 CANTIDAD_MAXIMA_CONCURRENCIA=100	
 PATH_ARCHIVO_LOGUEO=../resource/logueo.log 
+<<<<<<< HEAD
 [INFO] 23:27:53:9 MEMORIA/(5018:5018): Creando Memoria Principal...
 [INFO] 23:27:53:10 MEMORIA/(5018:5018): Memoria Principal creada correctamente.
 [INFO] 23:27:53:10 MEMORIA/(5018:5018): Creando Estructuras administrativas...
 [INFO] 23:27:53:10 MEMORIA/(5018:5018): Estructuras administrativas creadas correctamente.
 [INFO] 23:49:55:570 MEMORIA/(7046:7046): 
+=======
+[INFO] 23:44:17:118 MEMORIA/(9090:9090): Creando Memoria Principal...
+[INFO] 23:44:17:118 MEMORIA/(9090:9090): Memoria Principal creada correctamente.
+[INFO] 23:44:17:118 MEMORIA/(9090:9090): Creando Estructuras administrativas...
+[INFO] 23:44:17:118 MEMORIA/(9090:9090): Estructuras administrativas creadas correctamente.
+[INFO] 23:47:17:401 MEMORIA/(9090:9126): PID 1000. Asignar Paginas Requeridas. | Cantidad Paginas: 2
+[INFO] 23:47:17:401 MEMORIA/(9090:9126): PID 1000. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 2 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 23:47:17:441 MEMORIA/(9090:9126): PID 1000. Asignar Paginas Requeridas. | Cantidad Paginas: 1
+[INFO] 23:47:17:442 MEMORIA/(9090:9126): PID 1000. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 1 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 23:47:17:521 MEMORIA/(9090:9126): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 0 | Longitud: 11 | Contenido: variables a. | Resultado: Almacenado Correctamente.
+[INFO] 23:47:17:601 MEMORIA/(9090:9126): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 11 | Longitud: 6 | Contenido: a <- f. | Resultado: Almacenado Correctamente.
+[INFO] 23:47:17:681 MEMORIA/(9090:9126): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 17 | Longitud: 10 | Contenido: prints n a. | Resultado: Almacenado Correctamente.
+[INFO] 23:47:17:761 MEMORIA/(9090:9126): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 27 | Longitud: 3 | Contenido: end. | Resultado: Almacenado Correctamente.
+[INFO] 23:47:17:842 MEMORIA/(9090:9126): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 30 | Longitud: 11 | Contenido: variables a. | Resultado: Almacenado Correctamente.
+[INFO] 23:47:17:921 MEMORIA/(9090:9126): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 41 | Longitud: 3 | Contenido: a=1. | Resultado: Almacenado Correctamente.
+[INFO] 23:47:17:1 MEMORIA/(9090:9126): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 44 | Longitud: 10 | Contenido: prints n a. | Resultado: Almacenado Correctamente.
+[INFO] 23:47:18:81 MEMORIA/(9090:9126): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 54 | Longitud: 6 | Contenido: a <- g. | Resultado: Almacenado Correctamente.
+[INFO] 23:47:18:161 MEMORIA/(9090:9126): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 60 | Longitud: 8 | Contenido: return a. | Resultado: Almacenado Correctamente.
+[INFO] 23:47:18:241 MEMORIA/(9090:9126): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 68 | Longitud: 3 | Contenido: end. | Resultado: Almacenado Correctamente.
+[INFO] 23:47:18:321 MEMORIA/(9090:9126): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 71 | Longitud: 11 | Contenido: variables a. | Resultado: Almacenado Correctamente.
+[INFO] 23:47:18:402 MEMORIA/(9090:9126): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 82 | Longitud: 3 | Contenido: a=0. | Resultado: Almacenado Correctamente.
+[INFO] 23:47:18:481 MEMORIA/(9090:9126): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 85 | Longitud: 10 | Contenido: prints n a. | Resultado: Almacenado Correctamente.
+[INFO] 23:47:18:561 MEMORIA/(9090:9126): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 95 | Longitud: 6 | Contenido: a <- f. | Resultado: Almacenado Correctamente.
+[INFO] 23:47:18:641 MEMORIA/(9090:9126): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 101 | Longitud: 8 | Contenido: return a. | Resultado: Almacenado Correctamente.
+[INFO] 23:47:18:721 MEMORIA/(9090:9126): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 109 | Longitud: 3 | Contenido: end. | Resultado: Almacenado Correctamente.
+[INFO] 23:48:58:201 MEMORIA/(9090:9126): PID 1000. Finalizar Programa
+[INFO] 23:48:58:201 MEMORIA/(9090:9126): PID 1000. Almacenar bytes. Pagina: 1 | Byte Incial: 0 | Longitud: 256 | Contenido: ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------.
+[INFO] 23:48:58:201 MEMORIA/(9090:9126): PID 1000. Almacenar bytes. Pagina: 0 | Byte Incial: 0 | Longitud: 256 | Contenido: ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------.
+[INFO] 23:48:58:201 MEMORIA/(9090:9126): PID 1000. Almacenar bytes. Pagina: 2 | Byte Incial: 0 | Longitud: 256 | Contenido: ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------.
+[INFO] 23:48:58:201 MEMORIA/(9090:9126): PID 1000. Programa Finalizado Correctamente
+[INFO] 23:57:56:777 MEMORIA/(9684:9684): 
+>>>>>>> 350d2cdd3dfb56c0b27cd487c7c2bf380862a23c
  Parametros de Archivo de Configuracion 
 PUERTO=8084	
 MARCOS=500	
@@ -36,6 +73,7 @@ CACHE_X_PROC=10
 RETARDO_MEMORIA=5000	
 CANTIDAD_MAXIMA_CONCURRENCIA=100	
 PATH_ARCHIVO_LOGUEO=../resource/logueo.log 
+<<<<<<< HEAD
 [INFO] 23:49:55:570 MEMORIA/(7046:7046): Creando Memoria Principal...
 [INFO] 23:49:55:570 MEMORIA/(7046:7046): Memoria Principal creada correctamente.
 [INFO] 23:49:55:570 MEMORIA/(7046:7046): Creando Estructuras administrativas...
@@ -3515,3 +3553,18 @@ PATH_ARCHIVO_LOGUEO=../resource/logueo.log
 [INFO] 00:12:29:25 MEMORIA/(8490:8602): PID 1003. Resultado Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 | Contenido : PAGINA_NO_EXISTE .
 [INFO] 00:12:29:105 MEMORIA/(8490:8602): PID 1003. Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 .
 [INFO] 00:12:29:105 MEMORIA/(8490:8602): PID 1003. Resultado Solicitar bytes. Pagina: 2 | Byte Incial: 0 | Longitud solicitada: 6 | Contenido : PAGINA_NO_EXISTE .
+=======
+[INFO] 23:57:56:777 MEMORIA/(9684:9684): Creando Memoria Principal...
+[INFO] 23:57:56:777 MEMORIA/(9684:9684): Memoria Principal creada correctamente.
+[INFO] 23:57:56:777 MEMORIA/(9684:9684): Creando Estructuras administrativas...
+[INFO] 23:57:56:777 MEMORIA/(9684:9684): Estructuras administrativas creadas correctamente.
+[INFO] 23:58:09:137 MEMORIA/(9684:9694): PID 1000. Asignar Paginas Requeridas. | Cantidad Paginas: 2
+[INFO] 23:58:09:137 MEMORIA/(9684:9694): PID 1000. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 2 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 23:58:09:177 MEMORIA/(9684:9694): PID 1000. Asignar Paginas Requeridas. | Cantidad Paginas: 1
+[INFO] 23:58:09:177 MEMORIA/(9684:9694): PID 1000. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: 1 | Resultado: Paginas Asignadas Correctamente. 
+[INFO] 23:58:09:257 MEMORIA/(9684:9694): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 0 | Longitud: 6 | Contenido: wait b. | Resultado: Almacenado Correctamente.
+[INFO] 23:58:09:337 MEMORIA/(9684:9694): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 6 | Longitud: 19 | Contenido: 	!colas = !colas +1. | Resultado: Almacenado Correctamente.
+[INFO] 23:58:09:418 MEMORIA/(9684:9694): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 25 | Longitud: 8 | Contenido: signal c. | Resultado: Almacenado Correctamente.
+[INFO] 23:58:09:498 MEMORIA/(9684:9694): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 33 | Longitud: 13 | Contenido: goto etiqueta. | Resultado: Almacenado Correctamente.
+[INFO] 23:58:09:577 MEMORIA/(9684:9694): PID 1000. Resultado Almacenar bytes. Pagina: 2 | Byte Incial: 46 | Longitud: 3 | Contenido: end. | Resultado: Almacenado Correctamente.
+>>>>>>> 350d2cdd3dfb56c0b27cd487c7c2bf380862a23c
