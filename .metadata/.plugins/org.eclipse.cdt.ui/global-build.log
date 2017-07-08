@@ -25695,3 +25695,366 @@ make: No se hace nada para «all».
 22:48:25 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
 make all 
 make: No se hace nada para «all».
+00:03:13 **** Incremental Build of configuration Debug for project Sharedlib ****
+make all 
+make: No se hace nada para «all».
+00:03:13 **** Incremental Build of configuration Debug for project SistemaCPU ****
+make all 
+Building file: ../src/CPU.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/CPU.d" -MT"src/CPU.d" -o "src/CPU.o" "../src/CPU.c"
+../src/CPU.c:29:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void testear_planificacion(servidor_kernel); //borrame
+ ^
+../src/CPU.c: In function ‘testear_planificacion’:
+../src/CPU.c:103:3: warning: implicit declaration of function ‘enviar_SYSCALL_wait_semaforo_a_kernel’ [-Wimplicit-function-declaration]
+   int res = enviar_SYSCALL_wait_semaforo_a_kernel("mutex1", pcb);
+   ^
+../src/CPU.c:109:3: warning: implicit declaration of function ‘enviar_SYSCALL_signal_semaforo_a_kernel’ [-Wimplicit-function-declaration]
+   enviar_SYSCALL_signal_semaforo_a_kernel("mutex1");
+   ^
+Finished building: ../src/CPU.c
+ 
+Building target: SistemaCPU
+Invoking: GCC C Linker
+gcc -L"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug" -o "SistemaCPU"  ./src/testing/testearPrimitivasFunciones.o ./src/testing/testingPCB.o  ./src/procesador/Ejecucion.o  ./src/primitivas/FuncionesAuxiliares.o ./src/primitivas/IndiceCodigo.o ./src/primitivas/PrimitivasFunciones.o ./src/primitivas/Stack.o  ./src/interfaz/InterfazKernel.o ./src/interfaz/InterfazMemoria.o ./src/interfaz/signals.o  ./src/header/AppConfig.o  ./src/general/Semaforo.o ./src/general/funcionesUtiles.o  ./src/CPU.o   -lSharedlib -lparser-ansisop -lpthread -lcommons
+Finished building target: SistemaCPU
+ 
+00:03:14 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+Building file: ../src/CONSOLA.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/CONSOLA.d" -MT"src/CONSOLA.d" -o "src/CONSOLA.o" "../src/CONSOLA.c"
+../src/CONSOLA.c: In function ‘main’:
+../src/CONSOLA.c:42:2: warning: passing argument 3 of ‘pthread_create’ from incompatible pointer type [enabled by default]
+  pthread_create(&t_interfaz, NULL, &atender_solicitudes_de_usuario, NULL);
+  ^
+In file included from ../src/CONSOLA.c:14:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * (*)(void *)’ but argument is of type ‘void (*)()’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/CONSOLA.c: In function ‘recibir_seniales_de_linux’:
+../src/CONSOLA.c:59:2: warning: implicit declaration of function ‘desconectar_consola’ [-Wimplicit-function-declaration]
+  desconectar_consola();
+  ^
+../src/CONSOLA.c: At top level:
+../src/CONSOLA.c:63:6: warning: conflicting types for ‘desconectar_consola’ [enabled by default]
+ void desconectar_consola() {
+      ^
+../src/CONSOLA.c:59:2: note: previous implicit declaration of ‘desconectar_consola’ was here
+  desconectar_consola();
+  ^
+../src/CONSOLA.c: In function ‘desconectar_consola’:
+../src/CONSOLA.c:67:2: warning: statement with no effect [-Wunused-value]
+  for (i; i < tamanio; i++) {
+  ^
+../src/CONSOLA.c:69:3: warning: implicit declaration of function ‘solicitar_desconexion’ [-Wimplicit-function-declaration]
+   solicitar_desconexion(info_ejecucion->pid, info_ejecucion->socket);
+   ^
+../src/CONSOLA.c:71:2: error: break statement not within loop or switch
+  break;
+  ^
+../src/CONSOLA.c: In function ‘atender_solicitudes_de_usuario’:
+../src/CONSOLA.c:78:2: warning: implicit declaration of function ‘signal’ [-Wimplicit-function-declaration]
+  signal(SIGINT, recibir_seniales_de_linux);
+  ^
+../src/CONSOLA.c:78:9: error: ‘SIGINT’ undeclared (first use in this function)
+  signal(SIGINT, recibir_seniales_de_linux);
+         ^
+../src/CONSOLA.c:78:9: note: each undeclared identifier is reported only once for each function it appears in
+../src/CONSOLA.c: In function ‘iniciar_thread’:
+../src/CONSOLA.c:117:2: warning: passing argument 3 of ‘pthread_create’ from incompatible pointer type [enabled by default]
+  pthread_create(&t_programa, NULL, &CU_iniciar_programa, path_archivo_fuente);
+  ^
+In file included from ../src/CONSOLA.c:14:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * (*)(void *)’ but argument is of type ‘void (*)()’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/CONSOLA.c: In function ‘CU_iniciar_programa’:
+../src/CONSOLA.c:130:2: warning: passing argument 2 of ‘conectar_servidor’ makes integer from pointer without a cast [enabled by default]
+  int kernel_programa = conectar_servidor(configuraciones.IP_KERNEL, configuraciones.PUERTO_KERNEL);
+  ^
+In file included from ../src/CONSOLA.c:19:0:
+/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Sharedlib/Socket.h:20:5: note: expected ‘int’ but argument is of type ‘char *’
+ int conectar_servidor(char * ip_addr, int puerto);
+     ^
+make: *** [src/CONSOLA.o] Error 1
+00:03:14 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+make: No se hace nada para «all».
+00:03:15 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+make: No se hace nada para «all».
+00:03:15 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+make: No se hace nada para «all».
+00:03:30 **** Incremental Build of configuration Debug for project Sharedlib ****
+make all 
+make: No se hace nada para «all».
+00:03:30 **** Incremental Build of configuration Debug for project SistemaCPU ****
+make all 
+make: No se hace nada para «all».
+00:03:30 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+Building file: ../src/CONSOLA.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/CONSOLA.d" -MT"src/CONSOLA.d" -o "src/CONSOLA.o" "../src/CONSOLA.c"
+../src/CONSOLA.c: In function ‘main’:
+../src/CONSOLA.c:42:2: warning: passing argument 3 of ‘pthread_create’ from incompatible pointer type [enabled by default]
+  pthread_create(&t_interfaz, NULL, &atender_solicitudes_de_usuario, NULL);
+  ^
+In file included from ../src/CONSOLA.c:14:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * (*)(void *)’ but argument is of type ‘void (*)()’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/CONSOLA.c: In function ‘recibir_seniales_de_linux’:
+../src/CONSOLA.c:59:2: warning: implicit declaration of function ‘desconectar_consola’ [-Wimplicit-function-declaration]
+  desconectar_consola();
+  ^
+../src/CONSOLA.c: At top level:
+../src/CONSOLA.c:63:6: warning: conflicting types for ‘desconectar_consola’ [enabled by default]
+ void desconectar_consola() {
+      ^
+../src/CONSOLA.c:59:2: note: previous implicit declaration of ‘desconectar_consola’ was here
+  desconectar_consola();
+  ^
+../src/CONSOLA.c: In function ‘desconectar_consola’:
+../src/CONSOLA.c:67:2: warning: statement with no effect [-Wunused-value]
+  for (i; i < tamanio; i++) {
+  ^
+../src/CONSOLA.c:69:3: warning: implicit declaration of function ‘solicitar_desconexion’ [-Wimplicit-function-declaration]
+   solicitar_desconexion(info_ejecucion->pid, info_ejecucion->socket);
+   ^
+../src/CONSOLA.c: In function ‘atender_solicitudes_de_usuario’:
+../src/CONSOLA.c:77:2: warning: implicit declaration of function ‘signal’ [-Wimplicit-function-declaration]
+  signal(SIGINT, recibir_seniales_de_linux);
+  ^
+../src/CONSOLA.c:77:9: error: ‘SIGINT’ undeclared (first use in this function)
+  signal(SIGINT, recibir_seniales_de_linux);
+         ^
+../src/CONSOLA.c:77:9: note: each undeclared identifier is reported only once for each function it appears in
+../src/CONSOLA.c: In function ‘iniciar_thread’:
+../src/CONSOLA.c:116:2: warning: passing argument 3 of ‘pthread_create’ from incompatible pointer type [enabled by default]
+  pthread_create(&t_programa, NULL, &CU_iniciar_programa, path_archivo_fuente);
+  ^
+In file included from ../src/CONSOLA.c:14:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * (*)(void *)’ but argument is of type ‘void (*)()’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/CONSOLA.c: In function ‘CU_iniciar_programa’:
+../src/CONSOLA.c:129:2: warning: passing argument 2 of ‘conectar_servidor’ makes integer from pointer without a cast [enabled by default]
+  int kernel_programa = conectar_servidor(configuraciones.IP_KERNEL, configuraciones.PUERTO_KERNEL);
+  ^
+In file included from ../src/CONSOLA.c:19:0:
+/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Sharedlib/Socket.h:20:5: note: expected ‘int’ but argument is of type ‘char *’
+ int conectar_servidor(char * ip_addr, int puerto);
+     ^
+make: *** [src/CONSOLA.o] Error 1
+00:03:31 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+make: No se hace nada para «all».
+00:03:31 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+make: No se hace nada para «all».
+00:03:31 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+make: No se hace nada para «all».
+00:04:27 **** Incremental Build of configuration Debug for project Sharedlib ****
+make all 
+make: No se hace nada para «all».
+00:04:27 **** Incremental Build of configuration Debug for project SistemaCPU ****
+make all 
+make: No se hace nada para «all».
+00:04:27 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+Building file: ../src/CONSOLA.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/CONSOLA.d" -MT"src/CONSOLA.d" -o "src/CONSOLA.o" "../src/CONSOLA.c"
+../src/CONSOLA.c: In function ‘main’:
+../src/CONSOLA.c:43:2: warning: passing argument 3 of ‘pthread_create’ from incompatible pointer type [enabled by default]
+  pthread_create(&t_interfaz, NULL, &atender_solicitudes_de_usuario, NULL);
+  ^
+In file included from ../src/CONSOLA.c:14:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * (*)(void *)’ but argument is of type ‘void (*)()’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/CONSOLA.c: In function ‘recibir_seniales_de_linux’:
+../src/CONSOLA.c:60:2: warning: implicit declaration of function ‘desconectar_consola’ [-Wimplicit-function-declaration]
+  desconectar_consola();
+  ^
+../src/CONSOLA.c: At top level:
+../src/CONSOLA.c:64:6: warning: conflicting types for ‘desconectar_consola’ [enabled by default]
+ void desconectar_consola() {
+      ^
+../src/CONSOLA.c:60:2: note: previous implicit declaration of ‘desconectar_consola’ was here
+  desconectar_consola();
+  ^
+../src/CONSOLA.c: In function ‘desconectar_consola’:
+../src/CONSOLA.c:68:2: warning: statement with no effect [-Wunused-value]
+  for (i; i < tamanio; i++) {
+  ^
+../src/CONSOLA.c:70:3: warning: implicit declaration of function ‘solicitar_desconexion’ [-Wimplicit-function-declaration]
+   solicitar_desconexion(info_ejecucion->pid, info_ejecucion->socket);
+   ^
+../src/CONSOLA.c: In function ‘iniciar_thread’:
+../src/CONSOLA.c:117:2: warning: passing argument 3 of ‘pthread_create’ from incompatible pointer type [enabled by default]
+  pthread_create(&t_programa, NULL, &CU_iniciar_programa, path_archivo_fuente);
+  ^
+In file included from ../src/CONSOLA.c:14:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * (*)(void *)’ but argument is of type ‘void (*)()’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/CONSOLA.c: In function ‘CU_iniciar_programa’:
+../src/CONSOLA.c:130:2: warning: passing argument 2 of ‘conectar_servidor’ makes integer from pointer without a cast [enabled by default]
+  int kernel_programa = conectar_servidor(configuraciones.IP_KERNEL, configuraciones.PUERTO_KERNEL);
+  ^
+In file included from ../src/CONSOLA.c:19:0:
+/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Sharedlib/Socket.h:20:5: note: expected ‘int’ but argument is of type ‘char *’
+ int conectar_servidor(char * ip_addr, int puerto);
+     ^
+Finished building: ../src/CONSOLA.c
+ 
+Building target: SistemaConsola
+Invoking: GCC C Linker
+gcc -L"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug" -o "SistemaConsola"  ./src/header/AppConfig.o  ./src/CONSOLA.o ./src/Estructuras.o ./src/ExitCodes.o ./src/InterfazKernel.o ./src/Semaforo.o ./src/funcionesUtiles.o   -lSharedlib -lpthread -lcommons
+Finished building target: SistemaConsola
+ 
+00:04:28 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+make: No se hace nada para «all».
+00:04:28 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+make: No se hace nada para «all».
+00:04:28 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+make: No se hace nada para «all».
+00:16:26 **** Incremental Build of configuration Debug for project Sharedlib ****
+make all 
+make: No se hace nada para «all».
+00:16:26 **** Incremental Build of configuration Debug for project SistemaCPU ****
+make all 
+make: No se hace nada para «all».
+00:16:26 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+make: No se hace nada para «all».
+00:16:26 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+make: No se hace nada para «all».
+00:16:27 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+make: No se hace nada para «all».
+00:16:27 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+make: No se hace nada para «all».
+00:16:43 **** Incremental Build of configuration Debug for project Sharedlib ****
+make all 
+make: No se hace nada para «all».
+00:16:43 **** Incremental Build of configuration Debug for project SistemaCPU ****
+make all 
+make: No se hace nada para «all».
+00:16:43 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+make: No se hace nada para «all».
+00:16:43 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+make: No se hace nada para «all».
+00:16:43 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+make: No se hace nada para «all».
+00:16:44 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+make: No se hace nada para «all».
+00:21:59 **** Incremental Build of configuration Debug for project Sharedlib ****
+make all 
+make: No se hace nada para «all».
+00:21:59 **** Incremental Build of configuration Debug for project SistemaCPU ****
+make all 
+make: No se hace nada para «all».
+00:22:00 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+make: No se hace nada para «all».
+00:22:00 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+make: No se hace nada para «all».
+00:22:00 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+make: No se hace nada para «all».
+00:22:01 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+make: No se hace nada para «all».
+00:24:20 **** Incremental Build of configuration Debug for project Sharedlib ****
+make all 
+make: No se hace nada para «all».
+00:24:20 **** Incremental Build of configuration Debug for project SistemaCPU ****
+make all 
+make: No se hace nada para «all».
+00:24:20 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+make: No se hace nada para «all».
+00:24:21 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+make: No se hace nada para «all».
+00:24:21 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+make: No se hace nada para «all».
+00:24:21 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+make: No se hace nada para «all».
+00:27:44 **** Incremental Build of configuration Debug for project Sharedlib ****
+make all 
+make: No se hace nada para «all».
+00:27:44 **** Incremental Build of configuration Debug for project SistemaCPU ****
+make all 
+make: No se hace nada para «all».
+00:27:44 **** Incremental Build of configuration Debug for project SistemaConsola ****
+make all 
+make: No se hace nada para «all».
+00:27:45 **** Incremental Build of configuration Debug for project SistemaFILESYSTEM ****
+make all 
+make: No se hace nada para «all».
+00:27:45 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+make all 
+Building file: ../src/KERNEL.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/KERNEL.d" -MT"src/KERNEL.d" -o "src/KERNEL.o" "../src/KERNEL.c"
+../src/KERNEL.c: In function ‘inicializar_KERNEL’:
+../src/KERNEL.c:44:2: warning: implicit declaration of function ‘inicializar_semaforos’ [-Wimplicit-function-declaration]
+  inicializar_semaforos();
+  ^
+../src/KERNEL.c:45:2: warning: implicit declaration of function ‘inicializar_listas_globales’ [-Wimplicit-function-declaration]
+  inicializar_listas_globales();
+  ^
+../src/KERNEL.c: At top level:
+../src/KERNEL.c:57:6: warning: conflicting types for ‘inicializar_semaforos’ [enabled by default]
+ void inicializar_semaforos(){
+      ^
+../src/KERNEL.c:44:2: note: previous implicit declaration of ‘inicializar_semaforos’ was here
+  inicializar_semaforos();
+  ^
+../src/KERNEL.c:82:6: warning: conflicting types for ‘inicializar_listas_globales’ [enabled by default]
+ void inicializar_listas_globales() {
+      ^
+../src/KERNEL.c:45:2: note: previous implicit declaration of ‘inicializar_listas_globales’ was here
+  inicializar_listas_globales();
+  ^
+../src/KERNEL.c: In function ‘inicializar_listas_globales’:
+../src/KERNEL.c:86:2: warning: implicit declaration of function ‘inicializar_dict_semaforos_ansisop’ [-Wimplicit-function-declaration]
+  inicializar_dict_semaforos_ansisop();
+  ^
+../src/KERNEL.c:87:2: warning: implicit declaration of function ‘inicializar_buffer_codigo’ [-Wimplicit-function-declaration]
+  inicializar_buffer_codigo();
+  ^
+Finished building: ../src/KERNEL.c
+ 
+Building target: SistemaKERNEL
+Invoking: GCC C Linker
+gcc -L"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug" -o "SistemaKERNEL"  ./src/testing/TestingCapaFileSystem.o ./src/testing/TestingGeneral.o ./src/testing/TestingInterfazMemoria.o ./src/testing/TestingMenu.o ./src/testing/TestingPlanificacion.o  ./src/planificacion/Planificacion.o ./src/planificacion/PlanificacionFIFO.o ./src/planificacion/PlanificacionRR.o  ./src/interfaz/InterfazCPU.o ./src/interfaz/InterfazConsola.o ./src/interfaz/InterfazFS.o ./src/interfaz/InterfazMemoria.o  ./src/header/AppConfig.o ./src/header/SolicitudesUsuario.o  ./src/general/Semaforo.o ./src/general/funcionesUtiles.o  ./src/capaMEMORIA/AdministrarSemaforos.o ./src/capaMEMORIA/AdministrarVarCompartidas.o ./src/capaMEMORIA/GestMemoriaFuncionesAux.o ./src/capaMEMORIA/GestionMemoriaDinamica.o  ./src/capaFILESYSTEM/GestionArchivoFuncAux.o ./src/capaFILESYSTEM/GestionArchivos.o ./src/capaFILESYSTEM/TablaGlobalArchivo.o ./src/capaFILESYSTEM/TablaProcesoArchivo.o  ./src/administrarProcesos/Proceso.o  ./src/administrarPCB/EstadisticaProceso.o ./src/administrarPCB/PCBData.o  ./src/KERNEL.o   -lcommons -lpthread -lparser-ansisop -lSharedlib
+Finished building target: SistemaKERNEL
+ 
+00:27:46 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+make all 
+Building target: SistemaMEMORIA
+Invoking: GCC C Linker
+gcc -L"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug" -o "SistemaMEMORIA"  ./src/testing/PruebasUnitarias.o ./src/testing/TestingMemoriaCache.o  ./src/header/AppConfig.o  ./src/general/Semaforo.o ./src/general/funcionesUtiles.o  ./src/Interfaz.o ./src/Main.o ./src/MemoriaCache.o ./src/MemoriaPrincipal.o ./src/SolicitudesUsuario.o   -lSharedlib -lcommons -lm -lpthread
+Finished building target: SistemaMEMORIA
+ 

@@ -1,6 +1,42 @@
-22:48:25 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+00:27:45 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
 make all 
-make: No se hace nada para «all».
+Building file: ../src/KERNEL.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/KERNEL.d" -MT"src/KERNEL.d" -o "src/KERNEL.o" "../src/KERNEL.c"
+../src/KERNEL.c: In function ‘inicializar_KERNEL’:
+../src/KERNEL.c:44:2: warning: implicit declaration of function ‘inicializar_semaforos’ [-Wimplicit-function-declaration]
+  inicializar_semaforos();
+  ^
+../src/KERNEL.c:45:2: warning: implicit declaration of function ‘inicializar_listas_globales’ [-Wimplicit-function-declaration]
+  inicializar_listas_globales();
+  ^
+../src/KERNEL.c: At top level:
+../src/KERNEL.c:57:6: warning: conflicting types for ‘inicializar_semaforos’ [enabled by default]
+ void inicializar_semaforos(){
+      ^
+../src/KERNEL.c:44:2: note: previous implicit declaration of ‘inicializar_semaforos’ was here
+  inicializar_semaforos();
+  ^
+../src/KERNEL.c:82:6: warning: conflicting types for ‘inicializar_listas_globales’ [enabled by default]
+ void inicializar_listas_globales() {
+      ^
+../src/KERNEL.c:45:2: note: previous implicit declaration of ‘inicializar_listas_globales’ was here
+  inicializar_listas_globales();
+  ^
+../src/KERNEL.c: In function ‘inicializar_listas_globales’:
+../src/KERNEL.c:86:2: warning: implicit declaration of function ‘inicializar_dict_semaforos_ansisop’ [-Wimplicit-function-declaration]
+  inicializar_dict_semaforos_ansisop();
+  ^
+../src/KERNEL.c:87:2: warning: implicit declaration of function ‘inicializar_buffer_codigo’ [-Wimplicit-function-declaration]
+  inicializar_buffer_codigo();
+  ^
+Finished building: ../src/KERNEL.c
+ 
+Building target: SistemaKERNEL
+Invoking: GCC C Linker
+gcc -L"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug" -o "SistemaKERNEL"  ./src/testing/TestingCapaFileSystem.o ./src/testing/TestingGeneral.o ./src/testing/TestingInterfazMemoria.o ./src/testing/TestingMenu.o ./src/testing/TestingPlanificacion.o  ./src/planificacion/Planificacion.o ./src/planificacion/PlanificacionFIFO.o ./src/planificacion/PlanificacionRR.o  ./src/interfaz/InterfazCPU.o ./src/interfaz/InterfazConsola.o ./src/interfaz/InterfazFS.o ./src/interfaz/InterfazMemoria.o  ./src/header/AppConfig.o ./src/header/SolicitudesUsuario.o  ./src/general/Semaforo.o ./src/general/funcionesUtiles.o  ./src/capaMEMORIA/AdministrarSemaforos.o ./src/capaMEMORIA/AdministrarVarCompartidas.o ./src/capaMEMORIA/GestMemoriaFuncionesAux.o ./src/capaMEMORIA/GestionMemoriaDinamica.o  ./src/capaFILESYSTEM/GestionArchivoFuncAux.o ./src/capaFILESYSTEM/GestionArchivos.o ./src/capaFILESYSTEM/TablaGlobalArchivo.o ./src/capaFILESYSTEM/TablaProcesoArchivo.o  ./src/administrarProcesos/Proceso.o  ./src/administrarPCB/EstadisticaProceso.o ./src/administrarPCB/PCBData.o  ./src/KERNEL.o   -lcommons -lpthread -lparser-ansisop -lSharedlib
+Finished building target: SistemaKERNEL
+ 
 
-22:48:25 Build Finished (took 69ms)
+00:27:45 Build Finished (took 477ms)
 

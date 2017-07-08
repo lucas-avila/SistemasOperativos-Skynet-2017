@@ -1,8 +1,12 @@
 
+#include <commons/string.h>
 #include <ctype.h>
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
+#include <semaphore.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "../header/SolicitudesUsuario.h"
+#include "Semaforo.h"
 
 int validarNumeroInput(int rangoMinimo, int rangoMaximo) {
 	int numero = 0;
@@ -78,4 +82,13 @@ char * obtener_codigo(char * path_archivo_fuente){
 	fread(literal, sizeof(char), size_buffer, archivo_fuente);
 
 	return literal;
+}
+
+void informar_handshake_log(char * sistema){
+
+	char * log = string_from_format("HANDSHAKE: Se conecto %s.\n", sistema);
+	sem_wait(&escribir_log);
+	string_append(&info_log, log);
+	sem_post(&escribir_log);
+	generar_log();
 }

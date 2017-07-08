@@ -81,7 +81,7 @@ void ejecutar_programa_por_FIFO() {
 void ejecutar_programa_por_RR() {
 	int topeEjecucion = pcbEjecutar->cantidad_rafagas;
 	int cantidadEjecutada = 0;
-	logSO(string_from_format("PID : %d. Algoritmo RR. Quantum Establecido: %d", pcbEjecutar->PID,topeEjecucion));
+	logSO(string_from_format("PID : %d. Algoritmo RR. Quantum Establecido: %d", pcbEjecutar->PID, topeEjecucion));
 	//printf("\n Comienzo de Ejecucion");
 	while (!esFinPrograma && cantidadEjecutada < topeEjecucion && !programaBloqueado) {
 		//printf("\n Comienzo de Solicitar sentencia...");
@@ -187,9 +187,8 @@ void lanzar_excepcion(char * mensaje) {
 		pcbEjecutar->exit_code = -22;
 	}
 
-	if (pcbEjecutar->exit_code != 0){
-		hubo_excepcion = true;
-		printf("\n\n\n Error %s",mensaje);
-	}
+	hubo_excepcion = true;
+	//printf("\n\n\n Error %s",mensaje);
+
 }
 

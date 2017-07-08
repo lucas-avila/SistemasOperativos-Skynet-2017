@@ -3,6 +3,10 @@ begin
   alocar a 100
   abrir f L /archivo.bin
     leer f a 100
+<<<<<<< HEAD
+=======
+    wait c
+>>>>>>> cda82e0a43aaf1e3d0d373258805f6d80413d3e4
     prints s a
   cerrar f
   liberar a
