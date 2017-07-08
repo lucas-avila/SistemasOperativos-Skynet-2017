@@ -7,7 +7,7 @@
 #include "general/funcionesUtiles.h"
 #include "header/MemoriaCache.h"
 #include "header/AppConfig.h"
-
+#include "general/Semaforo.h"
 int cantidadEntradasCache = 0;
 
 int cantidadMaximaEntradaPorProceso = 0;
@@ -20,26 +20,38 @@ int secuenciador_referencia() {
 }
 
 void inicializar_memoria_cache(int cantidadEntradas, int tamanioPagina, int cantMaximaPorProceso) {
+	if (cantidadEntradasCache == 0) {
+		return;
+	}
+
 	memoriaCacheGlobal = malloc(sizeof(MEMORIA_CACHE) * cantidadEntradas);
 	int i = 0;
 	for (i = 0; i < cantidadEntradas; i++) {
 		strcpy(memoriaCacheGlobal[i].PID, "");
+
 		memoriaCacheGlobal[i].contenidoPagina = malloc(tamanioPagina);
 		memoriaCacheGlobal[i].nroPagina = -1;
 
 		memoriaCacheGlobal[i].vecesUsada = -1;
+
 	}
 	cantidadEntradasCache = cantidadEntradas;
 	cantidadMaximaEntradaPorProceso = cantMaximaPorProceso;
 }
 
 void ingresar_valor_en_cache(char* PID, int nroPagina, char* punteroAPagina) {
+	if (cantidadEntradasCache == 0) {
+		return;
+	}
+
 	int i = 0;
 	for (i = 0; i < cantidadEntradasCache; i++) {
 		if ((strcmp(memoriaCacheGlobal[i].PID, PID) == 0) && memoriaCacheGlobal[i].nroPagina == nroPagina) {
+			activar_semaforo(&semaforo_Tabla_CACHE);
 			memoriaCacheGlobal[i].vecesUsada = secuenciador_referencia();
 			//memoriaCacheGlobal[i].contenidoPagina = malloc(strlen(contenidoPagina));
 			memcpy(memoriaCacheGlobal[i].contenidoPagina, punteroAPagina, configuraciones.MARCO_SIZE);
+			desactivar_semaforo(&semaforo_Tabla_CACHE);
 			return;
 		}
 	}
@@ -57,9 +69,9 @@ void ingresar_valor_en_cache(char* PID, int nroPagina, char* punteroAPagina) {
 
 		for (i = 0; i < cantidadEntradasCache; i++) {
 			if (strcmp(memoriaCacheGlobal[i].PID, "") == 0) {
-
+				activar_semaforo(&semaforo_Tabla_CACHE);
 				memoriaCacheGlobal[i] = fila;
-
+				desactivar_semaforo(&semaforo_Tabla_CACHE);
 				return;
 			}
 		}
@@ -73,14 +85,16 @@ void ingresar_valor_en_cache(char* PID, int nroPagina, char* punteroAPagina) {
 }
 
 char* buscar_valor_en_cache(char* PID, int nroPagina) {
-
+	if (cantidadEntradasCache == 0) {
+		return "No existe en Cache";
+	}
 	int i = 0;
 	char* valorBuscado;
 	for (i = 0; i < cantidadEntradasCache; i++) {
 		if ((strcmp(memoriaCacheGlobal[i].PID, PID) == 0) && (memoriaCacheGlobal[i].nroPagina == nroPagina)) {
-			//valorBuscado = string_new();
-			//string_append(&valorBuscado, memoriaCacheGlobal[i].contenidoPagina);
+			activar_semaforo(&semaforo_Tabla_CACHE);
 			memoriaCacheGlobal[i].vecesUsada = secuenciador_referencia();
+			desactivar_semaforo(&semaforo_Tabla_CACHE);
 			return memoriaCacheGlobal[i].contenidoPagina;
 		}
 	}
@@ -100,14 +114,20 @@ int obtener_cantidad_registros_de_proceso(char* PID) {
 }
 
 void eliminar_filas_de_procesos_en_cache(char* PID) {
+	if (cantidadEntradasCache == 0) {
+		return;
+	}
+
 	int i = 0;
 	for (i = 0; i < cantidadEntradasCache; i++) {
 		if (strcmp(memoriaCacheGlobal[i].PID, PID) == 0) {
+			activar_semaforo(&semaforo_Tabla_CACHE);
 			strcpy(memoriaCacheGlobal[i].PID, "");
 			strcpy(memoriaCacheGlobal[i].contenidoPagina, "");
 			memoriaCacheGlobal[i].nroPagina = -1;
 
 			memoriaCacheGlobal[i].vecesUsada = -1;
+			desactivar_semaforo(&semaforo_Tabla_CACHE);
 
 		}
 	}
@@ -166,17 +186,23 @@ int reemplazar_linea_aplicando_algoritmo(MEMORIA_CACHE fila) {
 	if (cacheLlena() == 1) {
 		if (procesoLleno(fila.PID) == 1) {
 			indice = obtener_indice_tabla_menos_usado(fila.PID);
+			activar_semaforo(&semaforo_Tabla_CACHE);
 			strcpy(memoriaCacheGlobal[indice].PID, "");
+			desactivar_semaforo(&semaforo_Tabla_CACHE);
 			return 0;
 		} else {
 			indice = obtener_indice_tabla_menos_usado(fila.PID);
+			activar_semaforo(&semaforo_Tabla_CACHE);
 			strcpy(memoriaCacheGlobal[indice].PID, "NO");
+			desactivar_semaforo(&semaforo_Tabla_CACHE);
 			return 0;
 		}
 	} else {
 		if (procesoLleno(fila.PID) == 1) {
 			indice = obtener_indice_tabla_menos_usado(fila.PID);
+			activar_semaforo(&semaforo_Tabla_CACHE);
 			strcpy(memoriaCacheGlobal[indice].PID, "");
+			desactivar_semaforo(&semaforo_Tabla_CACHE);
 			return 0;
 		} else {
 			return 0;
@@ -218,14 +244,19 @@ void mostrar_tabla_memoria_cache() {
 }
 
 void vaciar_tabla_memoria_cache(int tamanioPagina) {
-
+	if (cantidadEntradasCache == 0) {
+		return;
+	}
 	int i = 0;
 	for (i = 0; i < cantidadEntradasCache; i++) {
+
+		activar_semaforo(&semaforo_Tabla_CACHE);
 		strcpy(memoriaCacheGlobal[i].PID, "");
 		memoriaCacheGlobal[i].contenidoPagina = malloc(tamanioPagina);
 		memoriaCacheGlobal[i].nroPagina = -1;
 
 		memoriaCacheGlobal[i].vecesUsada = -1;
+		desactivar_semaforo(&semaforo_Tabla_CACHE);
 	}
 
 }

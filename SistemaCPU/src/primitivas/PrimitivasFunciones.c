@@ -160,12 +160,17 @@ t_valor_variable DEREFERENCIAR(t_puntero puntero) {
 	deserializar_puntero(puntero, &pagina, &offset, tamanio_pagina_memoria);
 	void* resultado = solicitar_bytes_memoria(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(offset), string_itoa(sizeof(uint32_t)));
 
-	if (strcmp(resultado, "PAGINA_NO_EXISTE") == 0) {
-		logSO("\n La pagina deseada no existe");
-		lanzar_excepcion(resultado);
-		return 0;
+	char* contenido = malloc(4);
+	memcpy(contenido,resultado,3);
+	contenido[3]='\0';
+
+	if (strcmp(contenido, "PAG") == 0) {
+		logSO("\n La pagina deseada no existe.");
+		lanzar_excepcion("PAGINA_NO_EXISTE");
+		return puntero;
 	}
 
+	free(contenido);
 	return *((int*) resultado); //Modificado
 
 }

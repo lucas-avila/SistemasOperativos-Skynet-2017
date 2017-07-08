@@ -73,10 +73,14 @@ void inicializar_semaforos(){
 
 	//OTROS
 	inicializar_semaforo(&mutex_memoria, 1);
+	inicializar_semaforo(&mutex_tabla_DINAMICA, 1);
 	inicializar_semaforo(&mutex_tabla_estadistica, 1);
 	inicializar_semaforo(&mutex_tabla_estadistica_busqueda, 1);
 	inicializar_semaforo(&buffer_codigo, 1);
 	inicializar_semaforo(&escribir_log, 1);
+	inicializar_semaforo(&mutex_MALLOC, 1);
+	inicializar_semaforo(&mutex_FREE, 1);
+
 }
 
 void inicializar_listas_globales() {

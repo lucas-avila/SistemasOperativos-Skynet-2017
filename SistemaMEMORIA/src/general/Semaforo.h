@@ -10,6 +10,12 @@
 
 #include <semaphore.h>
 
+sem_t mutex_SOLICITAR_BYTES;
+sem_t mutex_ALMACENAR_BYTES;
+sem_t mutex_LIBERAR_PAGINA;
+sem_t mutex_ASIGNAR_PAGINAS;
+sem_t mutex_INICIAR_PROGRAMA;
+sem_t mutex_FINALIZAR_PROGRAMA;
 
 
 void inicializar_semaforo(sem_t* variable_semaforo);

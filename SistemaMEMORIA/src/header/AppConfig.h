@@ -37,8 +37,9 @@ void inicializar_configuracion(char *PATH_ARCHIVO_CONFIGURACION);
  */
 
 sem_t semaforo_Tabla_MEMORY;
+sem_t semaforo_ARCHIVO;
 sem_t semaforo_Tabla_CACHE;
-
+//sem_t  semaforo_Tabla_CACHE_INGRESO;
 sem_t semaforo_Proceso_Asignar_Pagina;
 sem_t semaforo_Proceso_Finalizar_Programa;
 

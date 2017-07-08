@@ -10,6 +10,7 @@
 #include "header/Interfaz.h"
 #include "../../Sharedlib/Sharedlib/Socket.h"
 #include "header/MemoriaPrincipal.h"
+#include "general/Semaforo.h"
 
 void CU_Recibir_conexiones(int servidor) {
 	do {
@@ -39,17 +40,29 @@ void CU_Recibir_Conexion_KERNEL(int cliente) {
 		codigo_operacion = recibir_dato_serializado(cliente);
 
 		if (strcmp(codigo_operacion, "SOLICITAR_BYTE_MEMORIA") == 0) {
+			activar_semaforo(&mutex_SOLICITAR_BYTES);
 			CU_Solicitar_Bytes_Memoria(cliente);
+			desactivar_semaforo(&mutex_SOLICITAR_BYTES);
 		} else if (strcmp(codigo_operacion, "ALMACENAR_BYTE_MEMORIA") == 0) {
+			activar_semaforo(&mutex_ALMACENAR_BYTES);
 			CU_Almacenar_Bytes_de_Pagina(cliente);
+			desactivar_semaforo(&mutex_ALMACENAR_BYTES);
 		} else if (strcmp(codigo_operacion, "INICIALIZAR_PROGRAMA") == 0) {
+			activar_semaforo(&mutex_INICIAR_PROGRAMA);
 			CU_Inicializar_Programa(cliente);
+			desactivar_semaforo(&mutex_INICIAR_PROGRAMA);
 		} else if (strcmp(codigo_operacion, "ASIGNAR_PAGINAS_PROCESO") == 0) {
+			activar_semaforo(&mutex_ASIGNAR_PAGINAS);
 			CU_Asignar_Paginas_Programa(cliente);
+			desactivar_semaforo(&mutex_ASIGNAR_PAGINAS);
 		} else if (strcmp(codigo_operacion, "FINALIZAR_PROGRAMA") == 0) {
+			activar_semaforo(&mutex_FINALIZAR_PROGRAMA);
 			CU_Finalizar_Programa(cliente);
+			desactivar_semaforo(&mutex_FINALIZAR_PROGRAMA);
 		} else if (strcmp(codigo_operacion, "LIBERAR_PAGINAS_PROCESO") == 0) {
+			activar_semaforo(&mutex_LIBERAR_PAGINA);
 			CU_Liberar_Pagina(cliente);
+			desactivar_semaforo(&mutex_LIBERAR_PAGINA);
 		} else if (strcmp(codigo_operacion, "") == 0) {
 			close(cliente);
 			controlSeguir = 0;
@@ -67,11 +80,17 @@ void CU_Recibir_Conexion_CPU(int cliente) {
 	do {
 		codigo_operacion = recibir_dato_serializado(cliente);
 		if (strcmp(codigo_operacion, "SOLICITAR_BYTE_MEMORIA") == 0) {
+			activar_semaforo(&mutex_SOLICITAR_BYTES);
 			CU_Solicitar_Bytes_Memoria(cliente);
+			desactivar_semaforo(&mutex_SOLICITAR_BYTES);
 		} else if (strcmp(codigo_operacion, "ALMACENAR_BYTE_MEMORIA") == 0) {
+			activar_semaforo(&mutex_ALMACENAR_BYTES);
 			CU_Almacenar_Bytes_de_Pagina(cliente);
+			desactivar_semaforo(&mutex_ALMACENAR_BYTES);
 		} else if (strcmp(codigo_operacion, "ASIGNAR_PAGINAS_PROCESO") == 0) {
+			activar_semaforo(&mutex_ASIGNAR_PAGINAS);
 			CU_Asignar_Paginas_Programa(cliente);
+			desactivar_semaforo(&mutex_ASIGNAR_PAGINAS);
 		} else if (strcmp(codigo_operacion, "") == 0 || strcmp(codigo_operacion, "DESCONECTAR") == 0) {
 			close(cliente);
 			controlSeguir = 0;
@@ -154,12 +173,12 @@ void CU_Asignar_Paginas_Programa(int cliente) {
 	texto = recibir_dato_serializado(cliente);
 	int cantidad_paginas = atoi(texto);
 	free(texto);
-	char texto2[4 + 1];
+	char texto2[13 + 1];
 	strcpy(texto2, asignar_paginas_a_proceso(PID, cantidad_paginas));
 	enviar_dato_serializado(&texto2, cliente);
 
 	//enviar_dato_serializado("OK JONY", cliente);
-	free(PID);
+	//free(PID);
 }
 
 void CU_Liberar_Pagina(int cliente) {

@@ -31,11 +31,15 @@ sem_t proceso_ready;
 
 //OTROS
 sem_t mutex_memoria;
+sem_t mutex_tabla_DINAMICA;
 sem_t mutex_tabla_estadistica;
 sem_t mutex_tabla_estadistica_busqueda;
 sem_t buffer_codigo;
 sem_t eliminacion;
 sem_t escribir_log;
+
+sem_t mutex_MALLOC;
+sem_t mutex_FREE;
 
 void inicializar_semaforo(sem_t* variable_semaforo, int valor);
 void destruir_semaforo(sem_t* variable_semaforo);

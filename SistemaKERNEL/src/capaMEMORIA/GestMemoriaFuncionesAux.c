@@ -8,7 +8,7 @@
 #include "../interfaz/InterfazMemoria.h"
 #include "commons/string.h"
 #include "../administrarPCB/EstadisticaProceso.h"
-
+#include "../general/Semaforo.h"
 void inicializar_tabla_proceso_memoria() {
 	TABLA_PROCESS_MEMORY = list_create();
 }
@@ -23,7 +23,9 @@ TABLA_MEMORIA_PROCESO* crear_item_Tabla_memoria_proceso(char* PID, unsigned nroP
 }
 
 void guardar_registro_tabla_memoria(TABLA_MEMORIA_PROCESO* registro) {
+	sem_wait(&mutex_tabla_DINAMICA);
 	list_add(TABLA_PROCESS_MEMORY, registro);
+	sem_post(&mutex_tabla_DINAMICA);
 	//Guardar informacion estadistica
 	incrementar_en_uno_paginas_HEAP(registro->PID);
 }
@@ -33,7 +35,9 @@ void modificar_registro_tabla_memoria(TABLA_MEMORIA_PROCESO* registro) {
 	if (indice == -1) {
 		return;
 	}
+	sem_wait(&mutex_tabla_DINAMICA);
 	list_replace(TABLA_PROCESS_MEMORY, indice, registro);
+	sem_post(&mutex_tabla_DINAMICA);
 }
 
 void eliminar_registro_tabla_memoria(TABLA_MEMORIA_PROCESO* registro) {
@@ -41,7 +45,9 @@ void eliminar_registro_tabla_memoria(TABLA_MEMORIA_PROCESO* registro) {
 	if (indice == -1) {
 		return;
 	}
+	sem_wait(&mutex_tabla_DINAMICA);
 	list_remove(TABLA_PROCESS_MEMORY, indice);
+	sem_post(&mutex_tabla_DINAMICA);
 }
 
 void eliminar_registro_tabla_memoria_por_PID(char* PID) {
@@ -50,22 +56,27 @@ void eliminar_registro_tabla_memoria_por_PID(char* PID) {
 	for (i = 0; i < tamanioLista; i++) {
 		TABLA_MEMORIA_PROCESO* element = list_get(TABLA_PROCESS_MEMORY, i);
 		if (element != NULL && strcmp(element->PID, PID) == 0) {
+			sem_wait(&mutex_tabla_DINAMICA);
 			list_remove(TABLA_PROCESS_MEMORY, i);
+			sem_post(&mutex_tabla_DINAMICA);
 		}
 	}
 
 }
 
 TABLA_MEMORIA_PROCESO* buscar_ultima_pagina_asignada_a_proceso(char* PID) {
+	sem_wait(&mutex_tabla_DINAMICA);
 	int tamanioLista = list_size(TABLA_PROCESS_MEMORY);
 	int i = 0;
 	TABLA_MEMORIA_PROCESO* element;
 	for (i = (tamanioLista - 1); i >= 0; i--) {
 		element = list_get(TABLA_PROCESS_MEMORY, i);
 		if (element != NULL && strcmp(element->PID, PID) == 0) {
+			sem_post(&mutex_tabla_DINAMICA);
 			return element;
 		}
 	}
+	sem_post(&mutex_tabla_DINAMICA);
 	return NULL;
 }
 
@@ -89,8 +100,8 @@ TABLA_MEMORIA_PROCESO* solicitar_nueva_pagina_memoria(char* PID) {
 	almacenar_Bytes_de_Pagina(PID, nroPagina, "0", "5", metadata);
 
 	return crear_item_Tabla_memoria_proceso(PID, atoi(nroPagina), tamanio_pagina_memoria - 20);
-	free(nroPagina);
-	free(aux);
+	//free(nroPagina);
+	//free(aux);
 }
 
 /**
@@ -99,7 +110,7 @@ TABLA_MEMORIA_PROCESO* solicitar_nueva_pagina_memoria(char* PID) {
  * 3 - Es demaciado grande el tamanio, no se puede reservar en este tipo de memoria
  */
 int verificar_si_malloc_entra_en_pagina(TABLA_MEMORIA_PROCESO* registro, unsigned espacioSolicitado) {
-	if (espacioSolicitado > tamanio_pagina_memoria - 20) {
+	if (espacioSolicitado > tamanio_pagina_memoria - 10) {
 		return 3;
 	} else if (espacioSolicitado > (registro->espacioDisponible - 5)) {
 		return 2;
@@ -169,15 +180,18 @@ int reservar_espacio_memoria_en_pagina(TABLA_MEMORIA_PROCESO* registro, unsigned
 }
 
 TABLA_MEMORIA_PROCESO* buscar_pagina_por_PID_NroPagina(char* PID, unsigned pagina) {
+	sem_wait(&mutex_tabla_DINAMICA);
 	int tamanioLista = list_size(TABLA_PROCESS_MEMORY);
 	int i = 0;
 	TABLA_MEMORIA_PROCESO* element;
 	for (i = 0; i < tamanioLista; i++) {
 		element = list_get(TABLA_PROCESS_MEMORY, i);
 		if ((element != NULL) && (strcmp(element->PID, PID) == 0) && (element->nroPagina == pagina)) {
+			sem_post(&mutex_tabla_DINAMICA);
 			return element;
 		}
 	}
+	sem_post(&mutex_tabla_DINAMICA);
 	return NULL;
 }
 

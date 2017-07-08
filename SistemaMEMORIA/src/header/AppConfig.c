@@ -42,19 +42,29 @@ void inicializar_configuracion(char *PATH_ARCHIVO_CONFIGURACION) {
 
 	}
 
-	char* mensajeLogueo = string_from_format("\n Parametros de Archivo de Configuracion \nPUERTO=%d	\nMARCOS=%d	\nMARCO_SIZE=%d	\nENTRADAS_CACHE=%d	\nCACHE_X_PROC=%d	\nRETARDO_MEMORIA=%d	\nCANTIDAD_MAXIMA_CONCURRENCIA=%d	\nPATH_ARCHIVO_LOGUEO=%s ", configuraciones.PUERTO, configuraciones.MARCOS, configuraciones.MARCO_SIZE, configuraciones.ENTRADAS_CACHE, configuraciones.CACHE_X_PROC, configuraciones.RETARDO_MEMORIA, configuraciones.CANTIDAD_MAXIMA_CONCURRENCIA, configuraciones.PATH_ARCHIVO_LOG);
-	logSO(mensajeLogueo);
-	if (mensajeLogueo != NULL) {
-		free(mensajeLogueo);
-	}
-
 	config_destroy(config);
 
 	/**
 	 * Inicializar semaforos
 	 */
 	inicializar_semaforo(&semaforo_Tabla_MEMORY);
+	inicializar_semaforo(&semaforo_ARCHIVO);
 	inicializar_semaforo(&semaforo_Tabla_CACHE);
+	//inicializar_semaforo(&semaforo_Tabla_CACHE_INGRESO);
 	inicializar_semaforo(&semaforo_Proceso_Asignar_Pagina);
 	inicializar_semaforo(&semaforo_Proceso_Finalizar_Programa);
+
+
+	inicializar_semaforo(&mutex_SOLICITAR_BYTES);
+	inicializar_semaforo(&mutex_ALMACENAR_BYTES);
+	inicializar_semaforo(&mutex_LIBERAR_PAGINA);
+	inicializar_semaforo(&mutex_ASIGNAR_PAGINAS);
+	inicializar_semaforo(&mutex_INICIAR_PROGRAMA);
+	inicializar_semaforo(&mutex_FINALIZAR_PROGRAMA);
+
+	char* mensajeLogueo = string_from_format("\n Parametros de Archivo de Configuracion \nPUERTO=%d	\nMARCOS=%d	\nMARCO_SIZE=%d	\nENTRADAS_CACHE=%d	\nCACHE_X_PROC=%d	\nRETARDO_MEMORIA=%d	\nCANTIDAD_MAXIMA_CONCURRENCIA=%d	\nPATH_ARCHIVO_LOGUEO=%s ", configuraciones.PUERTO, configuraciones.MARCOS, configuraciones.MARCO_SIZE, configuraciones.ENTRADAS_CACHE, configuraciones.CACHE_X_PROC, configuraciones.RETARDO_MEMORIA, configuraciones.CANTIDAD_MAXIMA_CONCURRENCIA, configuraciones.PATH_ARCHIVO_LOG);
+	logSO(mensajeLogueo);
+	if (mensajeLogueo != NULL) {
+		free(mensajeLogueo);
+	}
 }

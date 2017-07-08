@@ -37,8 +37,10 @@ int main(int argc, char *argv[]) {
 void finalizar_sistema_memoria(int servidor) {
 	close(servidor);
 	free(MEMORIA_PRINCIPAL);
+	destruir_semaforo(&semaforo_ARCHIVO);
 	destruir_semaforo(&semaforo_Tabla_MEMORY);
 	destruir_semaforo(&semaforo_Tabla_CACHE);
+	//destruir_semaforo(&semaforo_Tabla_CACHE_INGRESO);
 	destruir_semaforo(&semaforo_Proceso_Asignar_Pagina);
 	destruir_semaforo(&semaforo_Proceso_Finalizar_Programa);
 }

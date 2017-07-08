@@ -12,42 +12,56 @@
 #include <commons/config.h>
 #include "GestionMemoriaDinamica.h"
 #include "GestMemoriaFuncionesAux.h"
-
+#include "../general/Semaforo.h"
 #include "../administrarPCB/EstadisticaProceso.h"
 
 void CU_Gestionar_HEAP(int conexionCPU) {
 	char* tipoAccionMemoria = recibir_dato_serializado(conexionCPU);
 	if (strcmp(tipoAccionMemoria, "MALLOC_MEMORIA") == 0) {
+		sem_wait(&mutex_MALLOC);
 		CU_Reservar_memoria_MALLOC(conexionCPU);
+		sem_post(&mutex_MALLOC);
 	} else if (strcmp(tipoAccionMemoria, "FREE") == 0) {
+		sem_wait(&mutex_FREE);
 		CU_Liberar_memoria_FREE(conexionCPU);
+		sem_post(&mutex_FREE);
 	}
 }
 
 void CU_Reservar_memoria_MALLOC(int conexionCPU) {
+
 	char* PID = recibir_dato_serializado(conexionCPU);
 	unsigned tamanioMALLOC = atoi(recibir_dato_serializado(conexionCPU));
 	unsigned byteInicial = 0;
+	informar_accion_en_log(string_from_format("RESERVAR MEMORIA: Proceso %s, pide %d de memoria",PID,tamanioMALLOC), atoi(PID));
+
 	TABLA_MEMORIA_PROCESO* ultima_pagina_asignada = buscar_ultima_pagina_asignada_a_proceso(PID);
 	if (ultima_pagina_asignada == NULL) {
 		ultima_pagina_asignada = solicitar_nueva_pagina_memoria(PID);
 		// Si ya no me asigna otra pagina, la memoria se quedo sin espacio.
 		if (ultima_pagina_asignada == NULL) {
+			informar_accion_en_log(string_from_format("Resultado RESERVAR MEMORIA: Proceso %s, FALTA ESPACIO EN MEMORIA",PID), atoi(PID));
 			enviar_dato_serializado("FALTA ESPACIO", conexionCPU);
+
+
 			return;
 		}
 		guardar_registro_tabla_memoria(ultima_pagina_asignada);
 	}
 	int resultadoVerificacion = verificar_si_malloc_entra_en_pagina(ultima_pagina_asignada, tamanioMALLOC);
 	if (resultadoVerificacion == 3) {
+		informar_accion_en_log(string_from_format("Resultado RESERVAR MEMORIA: Proceso %s, MALLOC_EXCEDE_TAMANIO_DE_PAGINA",PID), atoi(PID));
 		enviar_dato_serializado("MALLOC_EXCEDE_TAMANIO_DE_PAGINA", conexionCPU);
+
 		return;
 	} else if (resultadoVerificacion == 2) {
 		//No hay espacio en la pagina pido otra
 		ultima_pagina_asignada = solicitar_nueva_pagina_memoria(PID);
 		// Si ya no me asigna otra pagina, la memoria se quedo sin espacio.
 		if (ultima_pagina_asignada == NULL) {
+			informar_accion_en_log(string_from_format("Resultado RESERVAR MEMORIA: Proceso %s, FALTA ESPACIO EN MEMORIA",PID), atoi(PID));
 			enviar_dato_serializado("FALTA ESPACIO", conexionCPU);
+
 			return;
 		}
 		guardar_registro_tabla_memoria(ultima_pagina_asignada);
@@ -62,7 +76,9 @@ void CU_Reservar_memoria_MALLOC(int conexionCPU) {
 			ultima_pagina_asignada = solicitar_nueva_pagina_memoria(PID);
 			// Si ya no me asigna otra pagina, la memoria se quedo sin espacio.
 			if (ultima_pagina_asignada == NULL) {
+				informar_accion_en_log(string_from_format("Resultado RESERVAR MEMORIA: Proceso %s, FALTA ESPACIO EN MEMORIA",PID), atoi(PID));
 				enviar_dato_serializado("FALTA ESPACIO", conexionCPU);
+
 				return;
 			}
 			guardar_registro_tabla_memoria(ultima_pagina_asignada);
@@ -74,7 +90,8 @@ void CU_Reservar_memoria_MALLOC(int conexionCPU) {
 	}
 	//Lleno informacion estadistica
 	incrementar_MALLOC(atoi(PID), tamanioMALLOC);
-	informar_accion_en_log("RESERVO memoria (MALLOC)", atoi(PID));
+	informar_accion_en_log("Resultado RESERVO memoria (MALLOC)", atoi(PID));
+
 }
 
 void CU_Liberar_memoria_FREE(int conexionCPU) {

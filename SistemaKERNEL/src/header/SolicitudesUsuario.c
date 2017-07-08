@@ -163,7 +163,7 @@ void mostrar_procesos(t_list * procesos_lista) {
 void generar_log() {
 	sem_wait(&escribir_log);
 	string_append(&info_log, "\n------Fin del LOG------\n\0");
-	t_log* logger = log_create(configuraciones.PATH_ARCHIVO_LOG, "KERNEL", false, LOG_LEVEL_INFO);
+	t_log* logger = log_create(configuraciones.PATH_ARCHIVO_LOG, "KERNEL", true, LOG_LEVEL_INFO);
 	log_info(logger, "\n***LOGS del KERNEL***\n %s", info_log);
 	log_destroy(logger);
 	strcpy(info_log, "");

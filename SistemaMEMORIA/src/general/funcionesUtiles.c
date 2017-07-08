@@ -4,7 +4,7 @@
 #include<commons/string.h>
 #include<unistd.h>
 #include "../header/AppConfig.h"
-
+#include "../general/Semaforo.h"
 int validarNumeroInput(int rangoMinimo, int rangoMaximo) {
 	int numero = 0;
 	do {
@@ -23,10 +23,12 @@ void logSO(char* mensajeLoguear) {
 	va_start(pa, mensajeLoguear);
 	char* mensaje = string_from_format(mensajeLoguear, pa);
 	va_end(pa); */
+	activar_semaforo(&semaforo_ARCHIVO);
 
 	t_log* logger = log_create(configuraciones.PATH_ARCHIVO_LOG, "MEMORIA", true, LOG_LEVEL_INFO);
 	log_info(logger, "%s", mensajeLoguear);
 	//free(mensajeLoguear);
 	log_destroy(logger);
+	desactivar_semaforo(&semaforo_ARCHIVO);
 }
 

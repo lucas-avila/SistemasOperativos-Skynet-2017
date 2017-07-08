@@ -112,7 +112,7 @@ char* solicitar_bytes_de_una_pagina(char* PID, int pagina, int byteInicial, int 
 	//Inicializo contenido con todos \0 dejandole uno extra al final
 	char * contenido = calloc(longitud + 1, sizeof(char));
 	if (strcmp(paginaEnCache, "No existe en Cache") != 0) {
-        memcpy(contenido, paginaEnCache + byteInicial, longitud);
+		memcpy(contenido, paginaEnCache + byteInicial, longitud);
 		logSO(string_from_format("PID %s. Resultado en CACHE Solicitar bytes. Contenido: %s", PID, contenido));
 		return contenido;
 	} else {
@@ -130,10 +130,12 @@ char* solicitar_bytes_de_una_pagina(char* PID, int pagina, int byteInicial, int 
 		//memcpy(contenidoPaginaBuscada, MEMORIA_PRINCIPAL + numeroInicial, sizeof(char) * longitud);
 		// Almacenar pagina en memoria cache porque no existe
 		ingresar_valor_en_cache(PID, pagina, MEMORIA_PRINCIPAL + configuraciones.MARCO_SIZE * numeroFrame);
-		logSO(string_from_format("PID %s. Pagina: %d No esta en CACHE. Tiempo de Retardo %d ",PID,pagina,configuraciones.RETARDO_MEMORIA ));
+		logSO(string_from_format("PID %s. Pagina: %d No esta en CACHE. Tiempo de Retardo %d ", PID, pagina, configuraciones.RETARDO_MEMORIA));
 
 		int retardo = configuraciones.RETARDO_MEMORIA / 1000;
-		sleep(retardo);
+		if (retardo > 0) {
+			sleep(retardo);
+		}
 
 		//printf("\n Contenido Enviado: %s Pagina %d", contenidoPaginaBuscada,pagina);
 		logSO(string_from_format("PID %s. Resultado Solicitar bytes. Pagina: %d | Byte Incial: %d | Longitud solicitada: %d | Contenido : %s .", PID, pagina, byteInicial, longitud, contenido));
@@ -206,9 +208,8 @@ char* asignar_paginas_a_proceso(char *PID, int cantidad_paginas_requeridas) {
 	int numero_pagina_a_asignar = obtener_cantidad_paginas_proceso(PID) + 1;
 	char* numero_pagina_inicial;
 	int frame;
-
+	activar_semaforo(&semaforo_Proceso_Asignar_Pagina);
 	while (cantidad_paginas_pedidas < cantidad_paginas_requeridas) {
-		activar_semaforo(&semaforo_Proceso_Asignar_Pagina);
 
 		frame = buscar_frame(PID, numero_pagina_a_asignar);
 		Tabla_Pagina_Invertida registro = evitar_colisiones(frame);
@@ -230,9 +231,9 @@ char* asignar_paginas_a_proceso(char *PID, int cantidad_paginas_requeridas) {
 
 		cantidad_paginas_pedidas++;
 		numero_pagina_a_asignar++;
-		desactivar_semaforo(&semaforo_Proceso_Asignar_Pagina);
-	}
 
+	}
+	desactivar_semaforo(&semaforo_Proceso_Asignar_Pagina);
 	logSO(string_from_format("PID %s. Resultado Asignar Paginas Requeridas. | Cantidad Paginas: %d | Resultado: %s ", PID, cantidad_paginas_requeridas, "Paginas Asignadas Correctamente."));
 
 	return numero_pagina_inicial;
@@ -241,12 +242,11 @@ char* asignar_paginas_a_proceso(char *PID, int cantidad_paginas_requeridas) {
 
 void actualizar_tabla_pagina(Tabla_Pagina_Invertida registro) {
 
-	activar_semaforo(&semaforo_Tabla_MEMORY);
 	int bloqueAdmin = (TAMANIO - 1) * 3;
 	int numeroInicial = (atoi(registro.frame)) * bloqueAdmin;
-	int numeroFinal = atoi(registro.frame) == 0 ? bloqueAdmin : atoi(registro.frame) * bloqueAdmin + bloqueAdmin;
-	char* primeraParte = string_substring(MEMORIA_PRINCIPAL, 0, numeroInicial);
-	char* segundaParte = string_substring_from(MEMORIA_PRINCIPAL, numeroFinal);
+	//int numeroFinal = atoi(registro.frame) == 0 ? bloqueAdmin : atoi(registro.frame) * bloqueAdmin + bloqueAdmin;
+	//char* primeraParte = string_substring(MEMORIA_PRINCIPAL, 0, numeroInicial);
+	//char* segundaParte = string_substring_from(MEMORIA_PRINCIPAL, numeroFinal);
 
 	char* paginaAdministrativa = malloc(bloqueAdmin + 1);
 	strcpy(paginaAdministrativa, "");
@@ -276,20 +276,22 @@ void actualizar_tabla_pagina(Tabla_Pagina_Invertida registro) {
 
 	free(cerosLlenar);
 
-	strcpy(MEMORIA_PRINCIPAL, "");
-	strcpy(MEMORIA_PRINCIPAL, primeraParte);
-	strcat(MEMORIA_PRINCIPAL, paginaAdministrativa);
-	strcat(MEMORIA_PRINCIPAL, segundaParte);
-
-	free(primeraParte);
+	//strcpy(MEMORIA_PRINCIPAL, "");
+	//strcpy(MEMORIA_PRINCIPAL, primeraParte);
+	//strcat(MEMORIA_PRINCIPAL, paginaAdministrativa);
+	//strcat(MEMORIA_PRINCIPAL, segundaParte);
+	activar_semaforo(&semaforo_Tabla_MEMORY);
+	char* punteroAPosicionDondePegar = (char*) (MEMORIA_PRINCIPAL + numeroInicial);
+	memcpy(punteroAPosicionDondePegar, paginaAdministrativa, sizeof(char) * bloqueAdmin);
+	desactivar_semaforo(&semaforo_Tabla_MEMORY);
+	//free(primeraParte);
 	free(paginaAdministrativa);
-	free(segundaParte);
+	//free(segundaParte);
 
 	strcpy(TABLA_MEMORY[atoi(registro.frame)].frame, registro.frame);
 	strcpy(TABLA_MEMORY[atoi(registro.frame)].PID, registro.PID);
 	strcpy(TABLA_MEMORY[atoi(registro.frame)].pagina, registro.pagina);
 
-	desactivar_semaforo(&semaforo_Tabla_MEMORY);
 }
 
 int aplicar_hashing(char * PID, int numero_pagina) {
