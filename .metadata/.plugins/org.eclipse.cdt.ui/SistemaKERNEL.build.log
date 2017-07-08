@@ -1,4 +1,4 @@
-02:13:55 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
+02:17:52 **** Incremental Build of configuration Debug for project SistemaKERNEL ****
 make all 
 Building file: ../src/header/SolicitudesUsuario.c
 Invoking: GCC C Compiler
@@ -76,11 +76,32 @@ In file included from ../src/header/SolicitudesUsuario.c:25:0:
  ^
 Finished building: ../src/header/SolicitudesUsuario.c
  
+Building file: ../src/capaMEMORIA/GestMemoriaFuncionesAux.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/capaMEMORIA/GestMemoriaFuncionesAux.d" -MT"src/capaMEMORIA/GestMemoriaFuncionesAux.d" -o "src/capaMEMORIA/GestMemoriaFuncionesAux.o" "../src/capaMEMORIA/GestMemoriaFuncionesAux.c"
+../src/capaMEMORIA/GestMemoriaFuncionesAux.c: In function ‘guardar_registro_tabla_memoria’:
+../src/capaMEMORIA/GestMemoriaFuncionesAux.c:28:2: warning: passing argument 1 of ‘incrementar_en_uno_paginas_HEAP’ makes integer from pointer without a cast [enabled by default]
+  incrementar_en_uno_paginas_HEAP(registro->PID);
+  ^
+In file included from ../src/capaMEMORIA/GestMemoriaFuncionesAux.c:10:0:
+../src/capaMEMORIA/../administrarPCB/EstadisticaProceso.h:26:6: note: expected ‘uint32_t’ but argument is of type ‘char *’
+ void incrementar_en_uno_paginas_HEAP(uint32_t PID);
+      ^
+../src/capaMEMORIA/GestMemoriaFuncionesAux.c: In function ‘liberar_pagina_encontrada’:
+../src/capaMEMORIA/GestMemoriaFuncionesAux.c:209:3: warning: passing argument 1 of ‘incrementar_FREE’ makes integer from pointer without a cast [enabled by default]
+   incrementar_FREE(pagina_Buscada->PID, tamanioLiberado);
+   ^
+In file included from ../src/capaMEMORIA/GestMemoriaFuncionesAux.c:10:0:
+../src/capaMEMORIA/../administrarPCB/EstadisticaProceso.h:28:6: note: expected ‘uint32_t’ but argument is of type ‘char *’
+ void incrementar_FREE(uint32_t PID, uint32_t tamanioFREE);
+      ^
+Finished building: ../src/capaMEMORIA/GestMemoriaFuncionesAux.c
+ 
 Building target: SistemaKERNEL
 Invoking: GCC C Linker
 gcc -L"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug" -o "SistemaKERNEL"  ./src/testing/TestingCapaFileSystem.o ./src/testing/TestingGeneral.o ./src/testing/TestingInterfazMemoria.o ./src/testing/TestingMenu.o ./src/testing/TestingPlanificacion.o  ./src/planificacion/Planificacion.o ./src/planificacion/PlanificacionFIFO.o ./src/planificacion/PlanificacionRR.o  ./src/interfaz/InterfazCPU.o ./src/interfaz/InterfazConsola.o ./src/interfaz/InterfazFS.o ./src/interfaz/InterfazMemoria.o  ./src/header/AppConfig.o ./src/header/SolicitudesUsuario.o  ./src/general/Semaforo.o ./src/general/funcionesUtiles.o  ./src/capaMEMORIA/AdministrarSemaforos.o ./src/capaMEMORIA/AdministrarVarCompartidas.o ./src/capaMEMORIA/GestMemoriaFuncionesAux.o ./src/capaMEMORIA/GestionMemoriaDinamica.o  ./src/capaFILESYSTEM/GestionArchivoFuncAux.o ./src/capaFILESYSTEM/GestionArchivos.o ./src/capaFILESYSTEM/TablaGlobalArchivo.o ./src/capaFILESYSTEM/TablaProcesoArchivo.o  ./src/administrarProcesos/Proceso.o  ./src/administrarPCB/EstadisticaProceso.o ./src/administrarPCB/PCBData.o  ./src/KERNEL.o   -lcommons -lpthread -lparser-ansisop -lSharedlib
 Finished building target: SistemaKERNEL
  
 
-02:13:55 Build Finished (took 632ms)
+02:17:53 Build Finished (took 776ms)
 

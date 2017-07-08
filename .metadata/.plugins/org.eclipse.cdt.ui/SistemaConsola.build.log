@@ -1,6 +1,57 @@
-02:13:54 **** Incremental Build of configuration Debug for project SistemaConsola ****
+02:17:51 **** Incremental Build of configuration Debug for project SistemaConsola ****
 make all 
-make: No se hace nada para «all».
+Building file: ../src/CONSOLA.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/CONSOLA.d" -MT"src/CONSOLA.d" -o "src/CONSOLA.o" "../src/CONSOLA.c"
+../src/CONSOLA.c: In function ‘main’:
+../src/CONSOLA.c:43:2: warning: passing argument 3 of ‘pthread_create’ from incompatible pointer type [enabled by default]
+  pthread_create(&t_interfaz, NULL, &atender_solicitudes_de_usuario, NULL);
+  ^
+In file included from ../src/CONSOLA.c:14:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * (*)(void *)’ but argument is of type ‘void (*)()’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/CONSOLA.c: In function ‘recibir_seniales_de_linux’:
+../src/CONSOLA.c:60:2: warning: implicit declaration of function ‘desconectar_consola’ [-Wimplicit-function-declaration]
+  desconectar_consola();
+  ^
+../src/CONSOLA.c: At top level:
+../src/CONSOLA.c:64:6: warning: conflicting types for ‘desconectar_consola’ [enabled by default]
+ void desconectar_consola() {
+      ^
+../src/CONSOLA.c:60:2: note: previous implicit declaration of ‘desconectar_consola’ was here
+  desconectar_consola();
+  ^
+../src/CONSOLA.c: In function ‘desconectar_consola’:
+../src/CONSOLA.c:68:2: warning: statement with no effect [-Wunused-value]
+  for (i; i < tamanio; i++) {
+  ^
+../src/CONSOLA.c:70:3: warning: implicit declaration of function ‘solicitar_desconexion’ [-Wimplicit-function-declaration]
+   solicitar_desconexion(info_ejecucion->pid, info_ejecucion->socket);
+   ^
+../src/CONSOLA.c: In function ‘iniciar_thread’:
+../src/CONSOLA.c:117:2: warning: passing argument 3 of ‘pthread_create’ from incompatible pointer type [enabled by default]
+  pthread_create(&t_programa, NULL, &CU_iniciar_programa, path_archivo_fuente);
+  ^
+In file included from ../src/CONSOLA.c:14:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * (*)(void *)’ but argument is of type ‘void (*)()’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/CONSOLA.c: In function ‘CU_iniciar_programa’:
+../src/CONSOLA.c:130:2: warning: passing argument 2 of ‘conectar_servidor’ makes integer from pointer without a cast [enabled by default]
+  int kernel_programa = conectar_servidor(configuraciones.IP_KERNEL, configuraciones.PUERTO_KERNEL);
+  ^
+In file included from ../src/CONSOLA.c:19:0:
+/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Sharedlib/Socket.h:20:5: note: expected ‘int’ but argument is of type ‘char *’
+ int conectar_servidor(char * ip_addr, int puerto);
+     ^
+Finished building: ../src/CONSOLA.c
+ 
+Building target: SistemaConsola
+Invoking: GCC C Linker
+gcc -L"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug" -o "SistemaConsola"  ./src/header/AppConfig.o  ./src/CONSOLA.o ./src/Estructuras.o ./src/ExitCodes.o ./src/InterfazKernel.o ./src/Semaforo.o ./src/funcionesUtiles.o   -lSharedlib -lpthread -lcommons
+Finished building target: SistemaConsola
+ 
 
-02:13:54 Build Finished (took 80ms)
+02:17:52 Build Finished (took 422ms)
 

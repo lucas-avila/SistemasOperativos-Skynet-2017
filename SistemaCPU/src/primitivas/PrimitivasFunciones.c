@@ -423,6 +423,7 @@ void LEER_ARCHIVO_PRIM(t_descriptor_archivo descriptor_archivo, t_puntero inform
 	}
 //deserializar_puntero(*((int*)valorPuntero), &pagina, &offset, tamanio_pagina_memoria);
 //offset += 5;
+	mensaje[tamanio-1] = '\0';
 	almacenar_Bytes_de_Pagina(string_itoa(pcb->PID), string_itoa(pagina), string_itoa(offset), string_itoa(tamanio), -1, mensaje);
 
 }

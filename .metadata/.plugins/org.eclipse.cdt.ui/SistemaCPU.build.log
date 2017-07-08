@@ -1,6 +1,51 @@
-02:13:54 **** Incremental Build of configuration Debug for project SistemaCPU ****
+02:17:50 **** Incremental Build of configuration Debug for project SistemaCPU ****
 make all 
-make: No se hace nada para «all».
+Building file: ../src/primitivas/PrimitivasFunciones.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/primitivas/PrimitivasFunciones.d" -MT"src/primitivas/PrimitivasFunciones.d" -o "src/primitivas/PrimitivasFunciones.o" "../src/primitivas/PrimitivasFunciones.c"
+../src/primitivas/PrimitivasFunciones.c: In function ‘DEFINIR_VARIABLE’:
+../src/primitivas/PrimitivasFunciones.c:52:3: warning: implicit declaration of function ‘logSO’ [-Wimplicit-function-declaration]
+   logSO(string_from_format("\n El proceso %d desea definir la variable: %c", pcb->PID, variable));
+   ^
+../src/primitivas/PrimitivasFunciones.c:58:3: warning: implicit declaration of function ‘serializarPuntero’ [-Wimplicit-function-declaration]
+   return serializarPuntero(var_new->pagina, var_new->byte_inicial, tamanio_pagina_memoria);
+   ^
+../src/primitivas/PrimitivasFunciones.c:44:27: warning: unused variable ‘offsetDisp’ [-Wunused-variable]
+  int paginaDiponible = 0, offsetDisp = 0;
+                           ^
+../src/primitivas/PrimitivasFunciones.c:44:6: warning: unused variable ‘paginaDiponible’ [-Wunused-variable]
+  int paginaDiponible = 0, offsetDisp = 0;
+      ^
+../src/primitivas/PrimitivasFunciones.c: In function ‘intToChar4’:
+../src/primitivas/PrimitivasFunciones.c:90:2: warning: return makes pointer from integer without a cast [enabled by default]
+  return num;
+  ^
+../src/primitivas/PrimitivasFunciones.c: In function ‘ASIGNAR_VARIABLE’:
+../src/primitivas/PrimitivasFunciones.c:112:2: warning: implicit declaration of function ‘deserializar_puntero’ [-Wimplicit-function-declaration]
+  deserializar_puntero(direccion_variable, &pagina, &offset, tamanio_pagina_memoria);
+  ^
+../src/primitivas/PrimitivasFunciones.c: In function ‘WAIT’:
+../src/primitivas/PrimitivasFunciones.c:129:2: warning: implicit declaration of function ‘enviar_SYSCALL_wait_semaforo_a_kernel’ [-Wimplicit-function-declaration]
+  int result = enviar_SYSCALL_wait_semaforo_a_kernel(identificador_semaforo, pcb);
+  ^
+../src/primitivas/PrimitivasFunciones.c: In function ‘SIGNAL’:
+../src/primitivas/PrimitivasFunciones.c:147:2: warning: implicit declaration of function ‘enviar_SYSCALL_signal_semaforo_a_kernel’ [-Wimplicit-function-declaration]
+  enviar_SYSCALL_signal_semaforo_a_kernel(identificador_semaforo);
+  ^
+../src/primitivas/PrimitivasFunciones.c: In function ‘LIBERAR’:
+../src/primitivas/PrimitivasFunciones.c:198:7: warning: unused variable ‘ptoffset’ [-Wunused-variable]
+  int* ptoffset = &offset;
+       ^
+../src/primitivas/PrimitivasFunciones.c:197:7: warning: unused variable ‘ptPagina’ [-Wunused-variable]
+  int* ptPagina = &pagina;
+       ^
+Finished building: ../src/primitivas/PrimitivasFunciones.c
+ 
+Building target: SistemaCPU
+Invoking: GCC C Linker
+gcc -L"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug" -o "SistemaCPU"  ./src/testing/testearPrimitivasFunciones.o ./src/testing/testingPCB.o  ./src/procesador/Ejecucion.o  ./src/primitivas/FuncionesAuxiliares.o ./src/primitivas/IndiceCodigo.o ./src/primitivas/PrimitivasFunciones.o ./src/primitivas/Stack.o  ./src/interfaz/InterfazKernel.o ./src/interfaz/InterfazMemoria.o ./src/interfaz/signals.o  ./src/header/AppConfig.o  ./src/general/Semaforo.o ./src/general/funcionesUtiles.o  ./src/CPU.o   -lSharedlib -lparser-ansisop -lpthread -lcommons
+Finished building target: SistemaCPU
+ 
 
-02:13:54 Build Finished (took 68ms)
+02:17:51 Build Finished (took 486ms)
 
