@@ -1,10 +1,105 @@
-00:27:46 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
+01:23:03 **** Incremental Build of configuration Debug for project SistemaMEMORIA ****
 make all 
+Building file: ../src/Interfaz.c
+Invoking: GCC C Compiler
+gcc -I"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Interfaz.d" -MT"src/Interfaz.d" -o "src/Interfaz.o" "../src/Interfaz.c"
+../src/Interfaz.c: In function ‘CU_Recibir_conexiones’:
+../src/Interfaz.c:20:4: warning: passing argument 3 of ‘pthread_create’ from incompatible pointer type [enabled by default]
+    pthread_create(&mihilo1, NULL, &CU_Recibir_Conexion_KERNEL, cliente);
+    ^
+In file included from ../src/Interfaz.c:8:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * (*)(void *)’ but argument is of type ‘void (*)(int)’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/Interfaz.c:20:4: warning: passing argument 4 of ‘pthread_create’ makes pointer from integer without a cast [enabled by default]
+    pthread_create(&mihilo1, NULL, &CU_Recibir_Conexion_KERNEL, cliente);
+    ^
+In file included from ../src/Interfaz.c:8:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * __restrict__’ but argument is of type ‘int’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/Interfaz.c:21:4: warning: passing argument 1 of ‘pthread_detach’ makes integer from pointer without a cast [enabled by default]
+    pthread_detach(&mihilo1);
+    ^
+In file included from ../src/Interfaz.c:8:0:
+/usr/include/pthread.h:282:12: note: expected ‘pthread_t’ but argument is of type ‘pthread_t *’
+ extern int pthread_detach (pthread_t __th) __THROW;
+            ^
+../src/Interfaz.c:24:4: warning: passing argument 3 of ‘pthread_create’ from incompatible pointer type [enabled by default]
+    pthread_create(&mihilo1, NULL, &CU_Recibir_Conexion_CPU, cliente);
+    ^
+In file included from ../src/Interfaz.c:8:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * (*)(void *)’ but argument is of type ‘void (*)(int)’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/Interfaz.c:24:4: warning: passing argument 4 of ‘pthread_create’ makes pointer from integer without a cast [enabled by default]
+    pthread_create(&mihilo1, NULL, &CU_Recibir_Conexion_CPU, cliente);
+    ^
+In file included from ../src/Interfaz.c:8:0:
+/usr/include/pthread.h:244:12: note: expected ‘void * __restrict__’ but argument is of type ‘int’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/Interfaz.c:25:4: warning: passing argument 1 of ‘pthread_detach’ makes integer from pointer without a cast [enabled by default]
+    pthread_detach(&mihilo1);
+    ^
+In file included from ../src/Interfaz.c:8:0:
+/usr/include/pthread.h:282:12: note: expected ‘pthread_t’ but argument is of type ‘pthread_t *’
+ extern int pthread_detach (pthread_t __th) __THROW;
+            ^
+../src/Interfaz.c: In function ‘CU_Recibir_Conexion_KERNEL’:
+../src/Interfaz.c:35:2: warning: implicit declaration of function ‘string_itoa’ [-Wimplicit-function-declaration]
+  enviar_dato_serializado(string_itoa(configuraciones.MARCO_SIZE), cliente);
+  ^
+../src/Interfaz.c:35:2: warning: passing argument 1 of ‘enviar_dato_serializado’ makes pointer from integer without a cast [enabled by default]
+In file included from ../src/Interfaz.c:11:0:
+../src/../../Sharedlib/Sharedlib/Socket.h:18:5: note: expected ‘char *’ but argument is of type ‘int’
+ int enviar_dato_serializado(char * mensaje, int conexion);
+     ^
+../src/Interfaz.c:42:4: warning: implicit declaration of function ‘CU_Solicitar_Bytes_Memoria’ [-Wimplicit-function-declaration]
+    CU_Solicitar_Bytes_Memoria(cliente);
+    ^
+../src/Interfaz.c: In function ‘CU_Recibir_Conexion_CPU’:
+../src/Interfaz.c:65:2: warning: passing argument 1 of ‘enviar_dato_serializado’ makes pointer from integer without a cast [enabled by default]
+  enviar_dato_serializado(string_itoa(configuraciones.MARCO_SIZE), cliente);
+  ^
+In file included from ../src/Interfaz.c:11:0:
+../src/../../Sharedlib/Sharedlib/Socket.h:18:5: note: expected ‘char *’ but argument is of type ‘int’
+ int enviar_dato_serializado(char * mensaje, int conexion);
+     ^
+../src/Interfaz.c: At top level:
+../src/Interfaz.c:85:6: warning: conflicting types for ‘CU_Solicitar_Bytes_Memoria’ [enabled by default]
+ void CU_Solicitar_Bytes_Memoria(int cliente) {
+      ^
+../src/Interfaz.c:42:4: note: previous implicit declaration of ‘CU_Solicitar_Bytes_Memoria’ was here
+    CU_Solicitar_Bytes_Memoria(cliente);
+    ^
+../src/Interfaz.c: In function ‘CU_Almacenar_Bytes_de_Pagina’:
+../src/Interfaz.c:126:17: warning: initialization from incompatible pointer type [enabled by default]
+  int * entero = contenido;
+                 ^
+../src/Interfaz.c: In function ‘CU_Asignar_Paginas_Programa’:
+../src/Interfaz.c:159:2: warning: passing argument 1 of ‘enviar_dato_serializado’ from incompatible pointer type [enabled by default]
+  enviar_dato_serializado(&texto2, cliente);
+  ^
+In file included from ../src/Interfaz.c:11:0:
+../src/../../Sharedlib/Sharedlib/Socket.h:18:5: note: expected ‘char *’ but argument is of type ‘char (*)[5]’
+ int enviar_dato_serializado(char * mensaje, int conexion);
+     ^
+../src/Interfaz.c: In function ‘CU_Liberar_Pagina’:
+../src/Interfaz.c:173:2: warning: passing argument 1 of ‘enviar_dato_serializado’ from incompatible pointer type [enabled by default]
+  enviar_dato_serializado(&texto2, cliente);
+  ^
+In file included from ../src/Interfaz.c:11:0:
+../src/../../Sharedlib/Sharedlib/Socket.h:18:5: note: expected ‘char *’ but argument is of type ‘char (*)[5]’
+ int enviar_dato_serializado(char * mensaje, int conexion);
+     ^
+Finished building: ../src/Interfaz.c
+ 
 Building target: SistemaMEMORIA
 Invoking: GCC C Linker
 gcc -L"/home/utnso/workspace/tp-2017-1c-Skynet/Sharedlib/Debug" -o "SistemaMEMORIA"  ./src/testing/PruebasUnitarias.o ./src/testing/TestingMemoriaCache.o  ./src/header/AppConfig.o  ./src/general/Semaforo.o ./src/general/funcionesUtiles.o  ./src/Interfaz.o ./src/Main.o ./src/MemoriaCache.o ./src/MemoriaPrincipal.o ./src/SolicitudesUsuario.o   -lSharedlib -lcommons -lm -lpthread
 Finished building target: SistemaMEMORIA
  
 
-00:27:46 Build Finished (took 306ms)
+01:23:04 Build Finished (took 686ms)
 
